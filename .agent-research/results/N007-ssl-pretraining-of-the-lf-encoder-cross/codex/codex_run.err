@@ -1,0 +1,6 @@
+WARNING: failed to clean up stale arg0 temp dirs: Directory not empty (os error 39)
+2026-11-08T17:42:21.348625Z ERROR codex_core::tools::router: error=Exit code: 1
+Wall time: 0 seconds
+Output:
+Failed to write file /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N007-ssl-pretraining-of-the-lf-encoder-cross/codex/bsccm_ssl.py
+
