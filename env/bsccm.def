@@ -1,0 +1,15 @@
+Bootstrap: localimage
+From: /hnvme/workspace/v181bb10-salad/torch29_cu128.sif
+
+%post
+    export PIP_NO_CACHE_DIR=1
+    python3 -m pip install --upgrade pip
+    echo "torch==2.9.1" > /root/bsccm_constraints.txt
+    python3 -m pip install --extra-index-url https://download.pytorch.org/whl/cu128 -c /root/bsccm_constraints.txt "torchvision==0.24.1"
+    python3 -m pip install -c /root/bsccm_constraints.txt "zarr<3" numcodecs pandas pyarrow scikit-learn scipy pillow timm \
+        wandb matplotlib tqdm zstandard pot tifffile scikit-image lightning \
+        open_clip_torch torchmetrics lpips
+    python3 -m pip list 2>/dev/null | grep -i -E "^(torch|torchvision|numpy|numcodecs|zarr|timm|pandas|pot) "
+
+%labels
+    Project bsccm multimodal single-cell alignment

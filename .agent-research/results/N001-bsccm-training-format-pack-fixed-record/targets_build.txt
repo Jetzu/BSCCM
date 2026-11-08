@@ -1,0 +1,14 @@
+gate exclusivity: cells with >1 of the 10 gates: 13  with exactly 1: 10137
+n FOV 65096
+batch       0       1
+row_0                
+0      110104  220333
+1       13730   27716
+2       14127   26931
+targets valid counts: {'grp:CD123/HLA-DR/CD14': 183909, 'grp:CD3/CD19/CD56': 133011, 'grp:CD45': 70268, 'grp:CD16': 74538, 'single:CD45': 32984, 'single:CD123': 49114, 'single:CD19': 20504, 'single:CD56': 37353, 'single:CD14': 43665, 'single:CD16': 37254, 'single:HLA-DR': 53846, 'single:CD3': 37870}
+class counts: [3026, 3703, 399, 803, 194, 419, 92, 100, 1222, 179]
+labeled & split: col_0       0      1      2
+row_0                      
+False  322443  40484  39877
+True     7994    962   1181
+hist cells by split [12502, 1587, 1623]

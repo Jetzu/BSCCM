@@ -1,0 +1,74 @@
+/home/hpc/v181bb/v181bb10/BSCCM/scripts/audit.py:7: Pandas4Warning: Starting with pandas version 4.0 all arguments of sum will be keyword-only.
+  cnt=G.sum(1); out['gate_cells_any']=int((cnt>0).sum()); out['gate_overlap_cells']=int((cnt>1).sum())
+{
+ "gate_cells_any": 10161,
+ "gate_overlap_cells": 3024,
+ "gate_sizes": {
+  "selection_lymphocytes": 3025,
+  "selection_gated_CD3_hi_CD_16_lo": 3037,
+  "selection_gated_CD16_hi_CD45_mid": 3704,
+  "selection_gated_CD16_hi_CD45_lomid": 400,
+  "selection_gated_CD16_hi_CD45_lo": 803,
+  "selection_gated_CD16_lo_CD45_lo": 194,
+  "selection_gated_CD16_none_CD45_mid_and_hi": 419,
+  "selection_gated_CD45_mid_CD_16_mid": 97,
+  "selection_gated_CD45_hi_CD_16_lo": 104,
+  "selection_gated_CD45_hi_CD_16_mid": 1225,
+  "selection_gated_CD45_hi_CD_16_hi": 180
+ },
+ "all_b0": 10210,
+ "all_b0_labeled": 10161
+}
+batch 0 all-antibody cells 10210
+      CD123/HLA-DR/CD14_full_model_unmixed  CD3/CD19/CD56_full_model_unmixed  CD45_full_model_unmixed  CD16_full_model_unmixed
+mean                                  0.34                              1.47                     1.06                     1.62
+std                                   0.54                              0.36                     0.82                     1.36
+min                                   0.00                              0.56                     0.00                     0.04
+50%                                   0.00                              1.33                     0.90                     1.98
+max                                   3.23                              2.83                     3.09                     4.04
+batch 1 all-antibody cells 27074
+      CD123/HLA-DR/CD14_full_model_unmixed  CD3/CD19/CD56_full_model_unmixed  CD45_full_model_unmixed  CD16_full_model_unmixed
+mean                                  0.23                              1.15                     0.57                     1.56
+std                                   0.35                              0.60                     0.49                     1.02
+min                                   0.00                              0.16                     0.00                     0.04
+50%                                   0.00                              1.15                     0.48                     1.36
+max                                   2.40                              2.99                     2.56                     4.07
+unstained:
+      CD123/HLA-DR/CD14_full_model_unmixed  CD3/CD19/CD56_full_model_unmixed  CD45_full_model_unmixed  CD16_full_model_unmixed
+mean                                  0.08                              1.11                     0.15                     0.66
+std                                   0.12                              0.16                     0.14                     0.16
+50%                                   0.00                              1.08                     0.13                     0.68
+                           CD123/HLA-DR/CD14_full_model_unmixed  CD3/CD19/CD56_full_model_unmixed  CD45_full_model_unmixed  CD16_full_model_unmixed
+CD16_hi_CD45_lo                                            0.59                              1.30                     0.00                     2.89
+CD16_hi_CD45_lomid                                         0.41                              1.25                     0.05                     2.76
+CD16_hi_CD45_mid                                           0.28                              1.25                     0.49                     2.92
+CD16_lo_CD45_lo                                            0.37                              1.15                     0.00                     0.23
+CD16_none_CD45_mid_and_hi                                  0.85                              1.21                     1.26                     0.04
+CD3_hi_CD_16_lo                                            0.11                              1.95                     2.00                     0.09
+CD45_hi_CD_16_hi                                           0.42                              1.45                     2.16                     2.61
+CD45_hi_CD_16_lo                                           0.92                              1.26                     1.47                     0.14
+CD45_hi_CD_16_mid                                          0.61                              1.32                     1.43                     1.14
+CD45_mid_CD_16_mid                                         0.41                              1.24                     0.31                     0.60
+lymphocytes                                                0.15                              1.72                     1.72                     1.93
+slide_replicate       0      1
+batch antibodies              
+0     CD123       18224      0
+      CD14        18442      0
+      CD16         9397      0
+      CD19        12768      0
+      CD3          6538      0
+      CD45        10951      0
+      CD56        14212      0
+      HLA-DR      20881      0
+      all         10210      0
+      unstained   16338      0
+1     CD123       30890      0
+      CD14        25223      0
+      CD16        27857      0
+      CD19         7736      0
+      CD3         31332      0
+      CD45        22033      0
+      CD56        23141      0
+      HLA-DR      32965      0
+      all         13675  13399
+      unstained   32674  14055

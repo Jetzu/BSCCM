@@ -1,0 +1,6 @@
+shapes (412941, 23, 128, 128) (412941, 6, 128, 128) (412941, 128, 128) (15712, 398, 398, 3) uint16 float32 uint16
+sampled mismatching arrays: 0 (300 cells x 30 arrays + 60 histology)
+cells whose BF channel is all-zero: 0
+hist rows all-zero: 0 (every 50th)
+led value range sample 1547 3391 | hist range 464 4095 | dpc -1.6439656019210815 4.1047468185424805
+VERIFY_EXIT 0
