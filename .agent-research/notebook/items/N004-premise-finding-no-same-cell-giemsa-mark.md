@@ -27,7 +27,7 @@ Record the project premise (as given by the user, 2026-11-08) and the data findi
 - Literature review (N002) BEFORE committing the architecture; establish how mosaic/bridge integration is validated in the field.
 
 ## Evidence
-- results/N001-*/audit.txt, targets_build.txt (crosstabs, counts).
+- results/N001-bsccm-training-format-pack-fixed-record/audit.txt, targets_build.txt (crosstabs, counts).
 
 ## Outcome
 

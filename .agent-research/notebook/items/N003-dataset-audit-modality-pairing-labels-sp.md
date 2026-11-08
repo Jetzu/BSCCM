@@ -11,7 +11,7 @@ goal_effect: pending · scale: ?
 ## Changes
 
 ## Evidence
-- Giemsa-LF pairing (scripts/audit_match.py, job 1274223, results/N003-*/giemsa_lf_match.csv, _summary.json, montage_giemsa_lf.png):
+- Giemsa-LF pairing (scripts/audit_match.py, job 1274223, results/N003-dataset-audit-modality-pairing-labels-sp/giemsa_lf_match.csv, _summary.json, montage_giemsa_lf.png):
   Spearman(area_giemsa, area_dpc-phase) = 0.74 vs 0.00 for shuffled pairs; area_bf 0.26; DF_70 mean 0.54. Montage: shapes/lobes correspond.
 - Mismatch-rate estimate (log-area residual, robust sd 0.157, n = 15,565): 2.70 % beyond 3 sd vs 32.6 % for shuffled pairs and ~0.3 % expected
   for Gaussian residuals -> crude mismatch fraction f from 0.003(1-f) + 0.326 f = 0.027 => f ~ 7 % (upper-ish; heavy tails also count).

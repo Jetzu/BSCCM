@@ -23,7 +23,7 @@ goal_effect: n/a · scale: ? · value: - · why: infra
 ## Outputs
 - /hnvme/workspace/v181bb10-bsccm/pack/{led_array (N,23,128,128) u2, fluor (N,6,128,128) u2, dpc (N,128,128) f4, histology (15712,398,398,3) u2, hist_cells}.npy (np.load(mmap_mode='r'))
 - targets.npz (v1: asinh(x/50), masks, gates, FOV split — to be revised per N002 data corrections), led_stats.npz (provisional log1p z-score), bsccm_index.parquet, bsccm_sm.parquet
-- results/N001-*/audit.txt, targets_build.txt, verify_pack.txt, led_stats.txt
+- results/N001-bsccm-training-format-pack-fixed-record/audit.txt, targets_build.txt, verify_pack.txt, led_stats.txt
 <!-- files in .agent-research/results/N001-slug/ + external absolute paths -->
 
 ## Next
