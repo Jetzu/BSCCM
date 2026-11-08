@@ -19,16 +19,19 @@ class LFNorm:
         if s.led is None:
             s.led = np.load(s.pack + '/led_array.npy', mmap_mode='r'); s.bg = np.load(W + '/backgrounds_p50.npy', mmap_mode='r'); s.dpc = np.load(s.pack + '/dpc.npy', mmap_mode='r')
     def __call__(s, g, ch, phase=False):
-        s._open(); H = s.bg.shape[1]
-        ys = np.clip(np.arange(s.py[g] - 64, s.py[g] + 64), 0, H - 1); xs = np.clip(np.arange(s.px[g] - 64, s.px[g] + 64), 0, H - 1)
-        raw = np.asarray(s.led[g][ch], np.float32); b = np.asarray(s.bg[ch][:, ys][:, :, xs], np.float32)
+        s._open(); H = s.bg.shape[1]; y0, x0 = int(s.py[g]) - 64, int(s.px[g]) - 64
+        ya, yb, xa, xb = max(y0, 0), min(y0 + 128, H), max(x0, 0), min(x0 + 128, H)
+        b = np.asarray(s.bg[:, ya:yb, xa:xb][ch], np.float32)          # slice the 128x128 window FIRST (cheap), then channels
+        if b.shape[1:] != (128, 128):                                   # cells near the FOV edge: edge-pad the flat field
+            b = np.pad(b, ((0, 0), (ya - y0, y0 + 128 - yb), (xa - x0, x0 + 128 - xb)), mode='edge')
+        raw = np.asarray(s.led[g][ch], np.float32)
         r = (raw - 30) / (b - 30) / s.scale[s.slide[g], ch][:, None, None]
         x = np.log(np.clip(r, 1e-3, None)) / s.s_c[ch][:, None, None]
         if phase: x = np.concatenate([x, np.asarray(s.dpc[g], np.float32)[None]], 0)
         return x
 class CellSet(torch.utils.data.Dataset):
     """LF image (+ optional phase) -> marker targets/masks (targets_v2), class labels, global row."""
-    def __init__(s, rows, channels='all', phase=True, train=False, targets=W + '/targets_v2.npz'):
+    def __init__(s, rows, channels='all', phase=True, train=False, targets=W + '/targets_v3.npz'):
         s.rows = np.asarray(rows); s.ch = chan_list(channels); s.phase = phase; s.train = train; s.norm = LFNorm()
         T = np.load(targets); s.Y, s.M, s.c3, s.c10 = T['Y'], T['mask'], T['cls3'], T['cls10']
     def __len__(s): return len(s.rows)
