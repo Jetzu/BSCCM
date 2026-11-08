@@ -1,0 +1,71 @@
+{
+ "pbc_cv_acc": 0.9877135501989235,
+ "pbc_classes": [
+  "basophil",
+  "eosinophil",
+  "erythroblast",
+  "ig",
+  "lymphocyte",
+  "monocyte",
+  "neutrophil",
+  "platelet"
+ ],
+ "bsccm_conf_pct10_50_90": [
+  0.547,
+  0.96,
+  0.999
+ ],
+ "bsccm_wright_composition_b0": {
+  "basophil": 0.0,
+  "eosinophil": 0.0,
+  "erythroblast": 0.1301,
+  "ig": 0.052,
+  "lymphocyte": 0.0013,
+  "monocyte": 0.0016,
+  "neutrophil": 0.0911,
+  "platelet": 0.7239
+ },
+ "bsccm_wright_composition_b0_conf>0.8": {
+  "basophil": 0.0,
+  "eosinophil": 0.0,
+  "erythroblast": 0.0779,
+  "ig": 0.0182,
+  "lymphocyte": 0.0,
+  "monocyte": 0.0,
+  "neutrophil": 0.0448,
+  "platelet": 0.8591,
+  "n": 7146
+ },
+ "bsccm_wright_composition_b1": {
+  "basophil": 0.0,
+  "eosinophil": 0.0,
+  "erythroblast": 0.1355,
+  "ig": 0.0734,
+  "lymphocyte": 0.0023,
+  "monocyte": 0.004,
+  "neutrophil": 0.0314,
+  "platelet": 0.7534
+ },
+ "bsccm_wright_composition_b1_conf>0.8": {
+  "basophil": 0.0,
+  "eosinophil": 0.0,
+  "erythroblast": 0.0686,
+  "ig": 0.029,
+  "lymphocyte": 0.0,
+  "monocyte": 0.0002,
+  "neutrophil": 0.0118,
+  "platelet": 0.8903,
+  "n": 4313
+ },
+ "gated_composition_b0_all_cells": {
+  "lymphocyte": 0.3208,
+  "granulocyte": 0.52,
+  "monocyte": 0.1591
+ },
+ "bsccm_wright_coarse3_b0": {
+  "lymphocyte": 0.0013,
+  "granulocyte": 0.1431,
+  "monocyte": 0.0016,
+  "other(platelet/erythroblast)": 0.854
+ }
+}

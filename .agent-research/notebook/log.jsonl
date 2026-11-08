@@ -1,2 +1,4 @@
 {"ts":"2026-11-08T17:24:14+01:00","event":"goal_effect","item":"N001","effect":"n/a","value":"-","scale":"?","why":"infra"}
 {"ts":"2026-11-08T18:42:37+01:00","event":"goal_effect","item":"N005","effect":"n/a","value":"-","scale":"?","why":"infra"}
+{"ts":"2026-11-08T20:11:12+01:00","event":"goal_init","since":"N009","best":"0.4835","noise":"0.002","force":"0"}
+{"ts":"2026-11-08T20:11:29+01:00","event":"goal_effect","item":"N006","effect":"n/a","value":"-","scale":"module","why":"measurement"}

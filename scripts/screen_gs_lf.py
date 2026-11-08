@@ -49,7 +49,7 @@ for pname, (trm, tem) in protocols.items():
             if n >= 30:
                 out.append(('ridge', Ridge(alpha=10.0).fit(Gw[tr], Lw[tr]).predict(Gw[te]), Lw[te]))
             if n >= 300:
-                out.append(('mlp', MLPRegressor((512,), max_iter=300, early_stopping=True, random_state=seed).fit(Gw[tr], Lw[tr]).predict(Gw[te]), Lw[te]))
+                out.append(('mlp', MLPRegressor(hidden_layer_sizes=(512,), max_iter=300, early_stopping=True, random_state=seed).fit(Gw[tr], Lw[tr]).predict(Gw[te]), Lw[te]))
                 fg, fl = siglip_fit(Gw[tr], Lw[tr], seed=seed); out.append(('siglip_linear', fg(Gw[te]), fl(Lw[te])))
             for m, A, B in out:
                 r = {'protocol': pname, 'method': m, 'n': int(n), 'seed': seed, 'n_test': int(len(te)), 'chance_R@1': 1 / len(te)}
