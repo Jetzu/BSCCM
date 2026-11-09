@@ -24,7 +24,7 @@ class GPUNorm:
     def __call__(s, raw, dpc, g, ch='all', phase=True, shift=0):
         """raw int16 (B,23,128,128) on device; g LongTensor (B,) on device. shift>0: random translation +-shift px (training aug, applied
         to the normalised image so raw and flat field stay registered)."""
-        c = torch.tensor(chan_list(ch) if isinstance(ch, str) else list(ch), device=raw.device)
+        c = torch.tensor(chan_list(ch) if isinstance(ch, str) else list(ch), dtype=torch.long, device=raw.device)
         ys = (s.py[g][:, None] - 64 + s.ar).clamp(0, s.H - 1); xs = (s.px[g][:, None] - 64 + s.ar).clamp(0, s.H - 1)   # edge-pad == clamp
         bgc = s.bg[c[None, :, None, None], ys[:, None, :, None], xs[:, None, None, :]]                              # (B,C,128,128) gather, no full-frame copy
         r = (raw[:, c].float() - 30.0) / bgc / s.scale[s.slide[g]][:, c][:, :, None, None]

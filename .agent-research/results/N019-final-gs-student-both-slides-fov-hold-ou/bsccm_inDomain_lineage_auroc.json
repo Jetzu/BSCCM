@@ -1,0 +1,8 @@
+{
+ "CD16 gran>lym": 0.989,
+ "CD14 mono>gran+lym": 0.913,
+ "grpCD3/19/56 lym>gran+mono": 0.934,
+ "CD3 lym>gran+mono": 0.943,
+ "CD45 lym>gran": 0.987,
+ "HLA-DR mono>gran": 0.781
+}

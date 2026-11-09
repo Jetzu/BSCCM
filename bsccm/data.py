@@ -6,9 +6,11 @@ Phase channel appended (optional): dpc / 1.0 rad."""
 import numpy as np, torch
 W = '/hnvme/workspace/v181bb10-bsccm'
 LED = ["Brightfield","DF_50","DF_50_Bottom","DF_50_Right","DF_55","DF_60","DF_60_Bottom","DF_60_Right","DF_65","DF_70","DF_70_Bottom","DF_70_Right","DF_75","DF_80","DF_80_Bottom","DF_80_Right","DF_85","DF_90","DPC_Bottom","DPC_Left","DPC_Right","DPC_Top","LED119"]
-CHSETS = {'all': list(range(23)), 'bf': [0], 'dpc4': [18, 19, 20, 21], 'bf_dpc4': [0, 18, 19, 20, 21], 'df': list(range(1, 18)), 'no119': list(range(22))}
+CHSETS = {'all': list(range(23)), 'bf': [0], 'dpc4': [18, 19, 20, 21], 'bf_dpc4': [0, 18, 19, 20, 21], 'df': list(range(1, 18)), 'no119': list(range(22)),
+          'none': [], 'df_low': list(range(1, 9)), 'df_high': list(range(9, 18)), 'led119': [22]}
 def chan_list(spec):
     if spec in CHSETS: return CHSETS[spec]
+    if '+' in spec: return sorted({c for part in spec.split('+') for c in chan_list(part)})   # e.g. bf+dpc4
     return [int(c) for c in spec.split(',')]
 class LFNorm:
     def __init__(s, pack=W + '/pack'):
