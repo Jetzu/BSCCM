@@ -135,6 +135,7 @@ def parse_args():
     p.add_argument('--workers', type=int, default=15)
     p.add_argument('--bs', type=int, default=256)
     p.add_argument('--seed', type=int, default=0)
+    p.add_argument('--targets', default='targets_v4.npz')
     p.add_argument('--protocol', default='fov', choices=['fov', 'b1to0', 'b0to1'], help='fov: train split0 / test split2 (both batches); bXtoY: ridge fit on batch X, test on batch Y split2')
     p.add_argument('--all-feats', action='store_true', help='also export features of ALL cells (lf_feats_all.npy, f16) for stage 2')
     p.add_argument('--cpus', type=int, default=48, help='BLAS threads for each closed-form solve / logistic fit')
@@ -150,7 +151,7 @@ def main():
         raise RuntimeError('feature extraction requires a CUDA device with bf16 support')
     out = Path(a.out)
     out.mkdir(parents=True, exist_ok=True)
-    with np.load(W + '/targets_v3.npz') as t:
+    with np.load(W + '/' + a.targets) as t:
         y, mask, cls3 = t['Y'], t['mask'], t['cls3']
         split, hist, batch = t['split'], t['hist_row'], t['batch']
         names = [str(n) for n in t['names']]

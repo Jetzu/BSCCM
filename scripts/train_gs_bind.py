@@ -15,7 +15,7 @@ ap.add_argument('--bs', type=int, default=128); ap.add_argument('--lr', type=flo
 ap.add_argument('--dim', type=int, default=256); ap.add_argument('--w-distill', type=float, default=1.0); ap.add_argument('--holdout', default='batch1')
 ap.add_argument('--aug', type=int, default=1); ap.add_argument('--stain-norm', default='none', choices=['none', 'macenko']); ap.add_argument('--dann', type=float, default=0.0); ap.add_argument('--seed', type=int, default=0); ap.add_argument('--workers', type=int, default=12)
 a = ap.parse_args(); os.makedirs(a.out, exist_ok=True); torch.manual_seed(a.seed); np.random.seed(a.seed); dev = 'cuda'
-W = '/hnvme/workspace/v181bb10-bsccm'; T = np.load(W + '/targets_v3.npz'); names = list(T['names']); K = len(names)
+W = '/hnvme/workspace/v181bb10-bsccm'; T = np.load(W + '/targets_v4.npz'); names = list(T['names']); K = len(names)
 Y, Mk, sp, b, hrow = T['Y'], T['mask'], T['split'], T['batch'], T['hist_row']
 gidx = np.where(hrow >= 0)[0]; gidx = gidx[np.argsort(hrow[gidx])]                      # histology row r <-> global gidx[r]
 if a.holdout == 'batch1': tr_r, te_r = np.where(b[gidx] == 0)[0], np.where(b[gidx] == 1)[0]
@@ -78,6 +78,15 @@ def prep(x, train):
         y = F.conv2d(F.pad(x.reshape(1, B * 3, 398, 398), (6, 6, 0, 0), mode='reflect'), kk, groups=B * 3)
         x = F.conv2d(F.pad(y, (0, 0, 6, 6), mode='reflect'), kk.transpose(2, 3), groups=B * 3).reshape(B, 3, 398, 398)
         x = x + 0.02 * torch.randn_like(x)
+        # smooth illumination / stain-thickness gradient across the crop (seen as slide-position artefact, N012)
+        yy, xx = torch.meshgrid(torch.linspace(-1, 1, 398, device=dev), torch.linspace(-1, 1, 398, device=dev), indexing='ij')
+        gvec = 0.08 * torch.randn(B, 2, device=dev); x = x * (1 + gvec[:, 0, None, None, None] * xx + gvec[:, 1, None, None, None] * yy)
+        # axial chromatic aberration: extra blur on ONE random colour channel (sequential R/G/B LED focus differences)
+        c = int(torch.randint(3, (1,))); sg = float(1.5 * torch.rand(1)); 
+        if sg > 0.2:
+            kk1 = torch.exp(-0.5 * (k / sg) ** 2); kk1 = (kk1 / kk1.sum()).view(1, 1, 1, 13)
+            xc = x[:, c:c + 1]; xc = F.conv2d(F.pad(xc, (6, 6, 0, 0), mode='reflect'), kk1); xc = F.conv2d(F.pad(xc, (0, 0, 6, 6), mode='reflect'), kk1.transpose(2, 3))
+            x = torch.cat([x[:, :c], xc, x[:, c + 1:]], 1)
         s = (0.8 + 0.2 * torch.rand(B, device=dev)); t = (torch.rand(B, 2, device=dev) - 0.5) * 0.2 # resized crop: scale 0.8-1, shift
         th = torch.zeros(B, 2, 3, device=dev); th[:, 0, 0] = s; th[:, 1, 1] = s; th[:, :, 2] = t
         x = F.grid_sample(x, F.affine_grid(th, (B, 3, 224, 224), align_corners=False), padding_mode='reflection', align_corners=False)

@@ -9,6 +9,10 @@
 - GS<->LF pairs are real: Wright-morphology clusters (DinoBloom k-means) agree with LF-predicted lineage at 0.858 cell level [N008]; a PBC-trained classifier collapses on BSCCM Wright cells (72 % "platelet"): BSCCM GS is far from clinical smears [N008].
 - Binding v0 (frozen sup-LF + frozen DinoBloom-B): GS<->LF exact-cell retrieval near chance on the held-out slide; autofl on real GS cells: LF teacher r .61, distilled GS .27, head transfer -.05, direct GS ceiling .37 -> distillation >> head transfer (matches literature) [N009].
 
+- SLIDE-POSITION ARTEFACT in the fluorescence readouts: position alone predicts autofl (r .84) and CD19 (.84), CD56 (.53), CD123 (.49) (region-blocked, median over slides); CD16/CD14/CD45 nearly clean. LF features encode position (r .92). Labels detrended -> targets_v4 [N012, N013]. Rule: clean labels only; inputs keep real artefacts.
+- On v4 labels the LF teacher transfers across isolations: batch-held-out mean r .555 (v3 .483), FOV .635, gap .08 (was .22); CD19 held-out .28-.32 (was -.05) [N013]. GOAL re-based on v4 (best .5545).
+- Detrended autofl on GS cells: Wright-image signal transfers across the two stained slides (ridge within .57/.68, cross .55/.47) [N012].
+
 ## Topics
 
 ## Refuted

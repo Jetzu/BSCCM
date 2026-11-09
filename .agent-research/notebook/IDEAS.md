@@ -11,3 +11,5 @@ idea · mechanism · cheapest test · status open|testing|promising|dead(why)
 - cross-illumination JEPA for LF · views = disjoint LED-pattern subsets of the same cell (physical "good views", not synthetic aug) vs augmentation-only SSL · prediction: higher GS<->LF mutual-kNN and better few-pair Procrustes alignment · 2 SSL runs ~20 GPU-h · open
 - autofluorescence as real same-cell molecular ground truth on GS cells · autofl measured on all unstained cells incl. the 15.7k GS cells -> GS->(LF)->autofl checkable vs truth · minutes once heads exist · open
 - PRH diagnostic · mutual-kNN + whitened Procrustes GS(DinoBloom)<->LF with 100/1k/10k pairs vs SigLIP adapter · minutes · open
+- spatial artefact audit for ALL targets · position-only GBM (region-blocked) per slide x target; if markers also carry position signal, add position-detrended targets and a position-adversarial term to the LF encoder · CPU minutes · testing (N012b)
+- slide-position covariates in the model · feed (FOV x,y,z) as nuisance input to heads only (not encoder) so position-driven variance is absorbed explicitly; evaluate on detrended targets · cheap · open

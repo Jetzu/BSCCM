@@ -17,9 +17,9 @@ ap.add_argument('--out', required=True); ap.add_argument('--steps', type=int, de
 ap.add_argument('--dim', type=int, default=256); ap.add_argument('--lr', type=float, default=1e-3); ap.add_argument('--tau', type=float, default=0.25)
 ap.add_argument('--w-gl', type=float, default=1.0); ap.add_argument('--w-lm', type=float, default=1.0); ap.add_argument('--w-reg', type=float, default=1.0)
 ap.add_argument('--w-cls', type=float, default=0.5); ap.add_argument('--w-distill', type=float, default=1.0); ap.add_argument('--gs-holdout', default='batch1')
-ap.add_argument('--seed', type=int, default=0); ap.add_argument('--per-slide-norm', type=int, default=0)
+ap.add_argument('--seed', type=int, default=0); ap.add_argument('--targets', default='targets_v4.npz'); ap.add_argument('--per-slide-norm', type=int, default=0)
 a = ap.parse_args(); os.makedirs(a.out, exist_ok=True); torch.manual_seed(a.seed); np.random.seed(a.seed); dev = 'cuda'
-W = '/hnvme/workspace/v181bb10-bsccm'; T = np.load(W + '/targets_v3.npz')
+W = '/hnvme/workspace/v181bb10-bsccm'; T = np.load(W + '/' + a.targets)
 Y, Mk, Cz, c3, sp, b, hrow, names = T['Y'], T['mask'], T['censored'], T['cls3'], T['split'], T['batch'], T['hist_row'], list(T['names']); K = len(names)
 LF = torch.tensor(np.load(os.path.join(a.lf_feats, 'lf_feats_all.npy')), dtype=torch.float32)
 GSf = torch.tensor(np.load(a.gs_feats), dtype=torch.float32)

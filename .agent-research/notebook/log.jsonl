@@ -3,3 +3,5 @@
 {"ts":"2026-11-08T20:11:12+01:00","event":"goal_init","since":"N009","best":"0.4835","noise":"0.002","force":"0"}
 {"ts":"2026-11-08T20:11:29+01:00","event":"goal_effect","item":"N006","effect":"n/a","value":"-","scale":"module","why":"measurement"}
 {"ts":"2026-11-09T07:15:56+01:00","event":"goal_effect","item":"N007","effect":"worse","value":"0.479","scale":"paradigm","why":""}
+{"ts":"2026-11-09T10:51:15+01:00","event":"goal_init","since":"N013","best":"0.5545","noise":"0.002","force":"1"}
+{"ts":"2026-11-09T10:51:15+01:00","event":"goal_effect","item":"N013","effect":"n/a","value":"-","scale":"?","why":"measurement"}

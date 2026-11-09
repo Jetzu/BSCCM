@@ -1,0 +1,14 @@
+target,var_explained_by_trend,corr_trend_target
+autofl,0.827,0.931
+grp:CD123/HLA-DR/CD14,0.176,0.505
+grp:CD16,0.057,0.378
+grp:CD3/CD19/CD56,0.152,0.475
+grp:CD45,0.127,0.438
+single:CD123,0.282,0.553
+single:CD14,0.054,0.294
+single:CD16,0.03,0.276
+single:CD19,0.816,0.911
+single:CD3,0.184,0.493
+single:CD45,0.076,0.361
+single:CD56,0.441,0.701
+single:HLA-DR,0.119,0.382
