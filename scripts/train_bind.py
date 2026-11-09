@@ -17,7 +17,7 @@ ap.add_argument('--out', required=True); ap.add_argument('--steps', type=int, de
 ap.add_argument('--dim', type=int, default=256); ap.add_argument('--lr', type=float, default=1e-3); ap.add_argument('--tau', type=float, default=0.25)
 ap.add_argument('--w-gl', type=float, default=1.0); ap.add_argument('--w-lm', type=float, default=1.0); ap.add_argument('--w-reg', type=float, default=1.0)
 ap.add_argument('--w-cls', type=float, default=0.5); ap.add_argument('--w-distill', type=float, default=1.0); ap.add_argument('--gs-holdout', default='batch1')
-ap.add_argument('--seed', type=int, default=0)
+ap.add_argument('--seed', type=int, default=0); ap.add_argument('--per-slide-norm', type=int, default=0)
 a = ap.parse_args(); os.makedirs(a.out, exist_ok=True); torch.manual_seed(a.seed); np.random.seed(a.seed); dev = 'cuda'
 W = '/hnvme/workspace/v181bb10-bsccm'; T = np.load(W + '/targets_v3.npz')
 Y, Mk, Cz, c3, sp, b, hrow, names = T['Y'], T['mask'], T['censored'], T['cls3'], T['split'], T['batch'], T['hist_row'], list(T['names']); K = len(names)
@@ -32,6 +32,13 @@ lab_tr = np.where((sp == 0) & (c3 >= 0))[0]
 _lf_fit = np.unique(np.concatenate([gs_tr, mk_tr, lab_tr]))                 # red-team F6: fit standardisation on TRAINING rows only
 LF = (LF - LF[_lf_fit].mean(0)) / (LF[_lf_fit].std(0) + 1e-6)
 _g = torch.tensor(hrow[gs_tr]); GSf = (GSf - GSf[_g].mean(0)) / (GSf[_g].std(0) + 1e-6)
+if a.per_slide_norm:   # domain-specific normalisation: each slide's features standardised by its OWN unlabelled statistics
+    sl = torch.tensor(T['slide'])                          # (transductive on unlabelled features of the test slide; no labels used)
+    for v in sl.unique():
+        r = torch.where(sl == v)[0]; LF[r] = (LF[r] - LF[r].mean(0)) / (LF[r].std(0) + 1e-6)
+    _gi = np.where(hrow >= 0)[0]; _gi = _gi[np.argsort(hrow[_gi])]; gsl = sl[torch.tensor(_gi)]   # slide of each histology row (row r <-> global _gi[r])
+    for v in gsl.unique():
+        r = torch.where(gsl == v)[0]; GSf[r] = (GSf[r] - GSf[r].mean(0)) / (GSf[r].std(0) + 1e-6)
 class SetEnc(nn.Module):
     def __init__(s, D):
         super().__init__(); s.id = nn.Embedding(K, 128); s.val = nn.Sequential(nn.Linear(2, 128), nn.GELU(), nn.Linear(128, 128))

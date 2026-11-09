@@ -13,6 +13,7 @@ ap.add_argument('--out', required=True); ap.add_argument('--protocol', default='
 ap.add_argument('--phase', type=int, default=1); ap.add_argument('--arch', default='resnet18'); ap.add_argument('--epochs', type=int, default=8)
 ap.add_argument('--bs', type=int, default=256); ap.add_argument('--lr', type=float, default=1e-3); ap.add_argument('--workers', type=int, default=15)
 ap.add_argument('--max-train', type=int, default=0); ap.add_argument('--seed', type=int, default=0); ap.add_argument('--w-cls', type=float, default=0.5); ap.add_argument('--include-gs', type=int, default=0)
+ap.add_argument('--init-ssl', default=''); ap.add_argument('--dann', type=float, default=0.0)
 a = ap.parse_args(); os.makedirs(a.out, exist_ok=True); torch.manual_seed(a.seed); np.random.seed(a.seed)
 T = np.load(W + '/targets_v3.npz'); names = list(T['names']); K = len(names)
 Y, Mk, c3, c10, sp, b = T['Y'], T['mask'], T['cls3'], T['cls10'], T['split'], T['batch']
@@ -33,11 +34,28 @@ gnorm = GPUNorm('cuda'); CH = chan_list(a.channels)
 def prep(raw, ph, g, train):   # raw int16 records -> normalised LF on GPU (+-4 px translation when training)
     return gnorm(raw.cuda(non_blocking=True), ph.cuda(non_blocking=True), g.cuda(non_blocking=True), CH, bool(a.phase), shift=4 if train else 0)
 dtr, dev = mk(tr, True), mk(ev, False)
-net = timm.create_model(a.arch, pretrained=False, num_classes=0, in_chans=nin)
-model = nn.ModuleDict({'enc': net, 'reg': nn.Linear(net.num_features, K), 'c3': nn.Linear(net.num_features, 3), 'c10': nn.Linear(net.num_features, 10)}).cuda()
+if a.dann > 0:
+    assert a.protocol in ('b1to0', 'b0to1'), 'dann: batch hold-out protocols only'
+    tb = 0 if a.protocol == 'b1to0' else 1; tgt = np.where((b == tb) & (sp == 0))[0]      # unlabelled target images, training FOVs only
+    def _forever(dl):
+        while True:
+            for z in dl: yield z
+    it_tgt = _forever(mk(tgt, True)); print(f'DANN: {len(tgt)} unlabelled target-batch images (split 0 only)', flush=True)
+SSL = bool(a.init_ssl); net = timm.create_model(a.arch, pretrained=False, num_classes=0, in_chans=48 if SSL else nin)
+if SSL:
+    assert a.channels == 'all' and a.phase == 1, 'SSL init expects all 23 LED + phase'
+    net.load_state_dict(torch.load(a.init_ssl, map_location='cpu', weights_only=True), strict=True); print('init from SSL', a.init_ssl, flush=True)
+model = nn.ModuleDict({'enc': net, 'reg': nn.Linear(net.num_features, K), 'c3': nn.Linear(net.num_features, 3), 'c10': nn.Linear(net.num_features, 10),
+                      'dom': nn.Sequential(nn.Linear(net.num_features, 256), nn.ReLU(), nn.Linear(256, 1))}).cuda()
 opt = torch.optim.AdamW(model.parameters(), lr=a.lr, weight_decay=0.05); steps = a.epochs * len(dtr)
 sched = torch.optim.lr_scheduler.OneCycleLR(opt, a.lr, total_steps=steps, pct_start=0.1)
+class _GRL(torch.autograd.Function):
+    @staticmethod
+    def forward(ctx, x, l): ctx.l = l; return x.view_as(x)
+    @staticmethod
+    def backward(ctx, g): return -ctx.l * g, None
 def fwd(x):
+    if SSL: x = torch.cat([x, torch.ones_like(x)], 1)
     with torch.autocast('cuda', torch.bfloat16): h = model['enc'](x.contiguous(memory_format=torch.channels_last))
     h = h.float(); return model['reg'](h), model['c3'](h), model['c10'](h), h
 def pearson(p, y):
@@ -79,9 +97,13 @@ t0 = time.time(); step = ep0 * len(dtr)
 for ep in range(ep0, a.epochs):
     tl = n = 0
     for raw, ph, g, y, m, k3, k10 in dtr:
-        y, m, k3, k10 = y.cuda(), m.cuda(), k3.cuda(), k10.cuda(); p, l3, l10, _ = fwd(prep(raw, ph, g, True))
+        y, m, k3, k10 = y.cuda(), m.cuda(), k3.cuda(), k10.cuda(); _last_h = fwd(prep(raw, ph, g, True)); p, l3, l10, _ = _last_h
         reg = (((p - y) ** 2) * m).sum(0) / m.sum(0).clamp(min=1); reg = reg[m.any(0)].mean()
         ce = (F.cross_entropy(l3, k3, ignore_index=-1) + F.cross_entropy(l10, k10, ignore_index=-1)) if (k3 >= 0).any() else p.sum() * 0
+        if a.dann > 0:
+            rt, pt, gt, *_ = next(it_tgt); _, _, _, ht = fwd(prep(rt, pt, gt, True)); _, _, _, hs = _last_h
+            hh = torch.cat([hs, ht]); dl_ = torch.cat([torch.zeros(len(hs)), torch.ones(len(ht))]).cuda()
+            ce = ce + a.dann * F.binary_cross_entropy_with_logits(model['dom'](_GRL.apply(hh, 1.0))[:, 0], dl_)
         loss = reg + a.w_cls * ce; opt.zero_grad(set_to_none=True); loss.backward(); nn.utils.clip_grad_norm_(model.parameters(), 2.0); opt.step(); sched.step()
         tl += loss.item(); n += 1; step += 1
         if step % 200 == 0:

@@ -135,6 +135,7 @@ def parse_args():
     p.add_argument('--workers', type=int, default=15)
     p.add_argument('--bs', type=int, default=256)
     p.add_argument('--seed', type=int, default=0)
+    p.add_argument('--protocol', default='fov', choices=['fov', 'b1to0', 'b0to1'], help='fov: train split0 / test split2 (both batches); bXtoY: ridge fit on batch X, test on batch Y split2')
     p.add_argument('--all-feats', action='store_true', help='also export features of ALL cells (lf_feats_all.npy, f16) for stage 2')
     p.add_argument('--cpus', type=int, default=48, help='BLAS threads for each closed-form solve / logistic fit')
     a = p.parse_args()
@@ -151,14 +152,18 @@ def main():
     out.mkdir(parents=True, exist_ok=True)
     with np.load(W + '/targets_v3.npz') as t:
         y, mask, cls3 = t['Y'], t['mask'], t['cls3']
-        split, hist = t['split'], t['hist_row']
+        split, hist, batch = t['split'], t['hist_row'], t['batch']
         names = [str(n) for n in t['names']]
     if len(names) != 13 or names.count('autofl') != 1:
         raise ValueError('expected 13 targets including exactly one autofl')
     has = mask.any(1) | (cls3 >= 0)
     rng = np.random.default_rng(a.seed)
-    tr = rng.permutation(np.flatnonzero((split == 0) & has))[:a.n_train]
-    te = rng.permutation(np.flatnonzero((split == 2) & has))[:a.n_test]
+    has &= hist < 0                                     # GS cells never in probe train/test (their autofl is reserved truth)
+    if a.protocol == 'fov': trm, tem = (split == 0) & has, (split == 2) & has
+    else:
+        bx, by = int(a.protocol[1]), int(a.protocol[4]); trm, tem = (batch == bx) & has, (batch == by) & (split == 2) & has
+    tr = rng.permutation(np.flatnonzero(trm))[:a.n_train]
+    te = rng.permutation(np.flatnonzero(tem))[:a.n_test]
     if len(tr) != a.n_train or len(te) != a.n_test:
         raise ValueError('requested more eligible rows than available; choose explicit smaller counts')
     hr = np.flatnonzero(hist >= 0)  # global-index order, saved indices define alignment
@@ -213,24 +218,25 @@ def main():
             raise ValueError('cannot report a mean over 12 markers: a test marker has <=20 observations')
         metrics['r_mean_markers'] = float(np.mean(marker_rs))
         labtr, labte = cls3[tr] >= 0, cls3[te] >= 0
-        classes, counts = np.unique(cls3[tr[labtr]], return_counts=True)
-        if not np.array_equal(classes, np.arange(3)) or (counts < 5).any():
-            raise ValueError('need >=5 training rows in each cls3 class for stratified 5-fold CV')
-        if not labte.any():
-            raise ValueError('no cls3-labelled test rows')
-        logistic = make_pipeline(StandardScaler(), LogisticRegression(solver='lbfgs', max_iter=2000))
-        search = GridSearchCV(logistic, {'logisticregression__C': np.logspace(-3, 3, 7)},
-                              cv=StratifiedKFold(5, shuffle=True, random_state=a.seed),
-                              scoring='balanced_accuracy', n_jobs=1, error_score='raise')
-        search.fit(xtr[labtr], cls3[tr[labtr]])
-        cpred = search.predict(xte[labte])
-        metrics['cls3_acc'] = float(accuracy_score(cls3[te[labte]], cpred))
-        metrics['cls3_balanced_acc'] = float(balanced_accuracy_score(cls3[te[labte]], cpred))
-        metrics['cls3_C'] = float(search.best_params_['logisticregression__C'])
-        metrics['cls3_n_train'] = int(labtr.sum())
-        metrics['cls3_n_test'] = int(labte.sum())
-        cv['cls3'] = {'C': search.cv_results_['param_logisticregression__C'].tolist(),
-                      'mean_balanced_acc': search.cv_results_['mean_test_score'].tolist()}
+        if labtr.sum() >= 15 and labte.any():   # batch-holdout from batch 1: no gated labels in training -> skip cls3
+            classes, counts = np.unique(cls3[tr[labtr]], return_counts=True)
+            if not np.array_equal(classes, np.arange(3)) or (counts < 5).any():
+                raise ValueError('need >=5 training rows in each cls3 class for stratified 5-fold CV')
+            if not labte.any():
+                raise ValueError('no cls3-labelled test rows')
+            logistic = make_pipeline(StandardScaler(), LogisticRegression(solver='lbfgs', max_iter=2000))
+            search = GridSearchCV(logistic, {'logisticregression__C': np.logspace(-3, 3, 7)},
+                                  cv=StratifiedKFold(5, shuffle=True, random_state=a.seed),
+                                  scoring='balanced_accuracy', n_jobs=1, error_score='raise')
+            search.fit(xtr[labtr], cls3[tr[labtr]])
+            cpred = search.predict(xte[labte])
+            metrics['cls3_acc'] = float(accuracy_score(cls3[te[labte]], cpred))
+            metrics['cls3_balanced_acc'] = float(balanced_accuracy_score(cls3[te[labte]], cpred))
+            metrics['cls3_C'] = float(search.best_params_['logisticregression__C'])
+            metrics['cls3_n_train'] = int(labtr.sum())
+            metrics['cls3_n_test'] = int(labte.sum())
+            cv['cls3'] = {'C': search.cv_results_['param_logisticregression__C'].tolist(),
+                          'mean_balanced_acc': search.cv_results_['mean_test_score'].tolist()}
     metrics.update(evaluate_groups(predictions, y[te], mask[te], cls3[te], names))
     result = dict(args=vars(a), metrics=metrics, cv=cv, names=names,
                   n_train=len(tr), n_test=len(te), n_hist=len(hr),

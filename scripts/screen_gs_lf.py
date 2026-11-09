@@ -27,14 +27,15 @@ def mknn(A, B, k=10):
     a_, b_ = nn(A), nn(B); return float(np.mean([len(set(a_[i].tolist()) & set(b_[i].tolist())) / k for i in range(len(A))]))
 def siglip_fit(Gt, Lt, dim=128, steps=1500, seed=0):
     torch.manual_seed(seed); Wg = torch.nn.Linear(Gt.shape[1], dim); Wl = torch.nn.Linear(Lt.shape[1], dim); t = torch.nn.Parameter(torch.tensor(np.log(10.))); b = torch.nn.Parameter(torch.tensor(-10.))
-    opt = torch.optim.AdamW(list(Wg.parameters()) + list(Wl.parameters()) + [t, b], lr=1e-3, weight_decay=1e-2); Gt, Lt = torch.tensor(Gt), torch.tensor(Lt)
+    opt = torch.optim.AdamW(list(Wg.parameters()) + list(Wl.parameters()) + [t, b], lr=1e-3, weight_decay=1e-2); Gt, Lt = torch.tensor(Gt, dtype=torch.float32), torch.tensor(Lt, dtype=torch.float32)
     for _ in range(steps):
-        i = torch.randperm(len(Gt))[:min(512, len(Gt))]   # no replacement: duplicate pairs would be labelled negatives; zg = F.normalize(Wg(Gt[i]), dim=1); zl = F.normalize(Wl(Lt[i]), dim=1)
+        i = torch.randperm(len(Gt))[:min(512, len(Gt))]   # no replacement: duplicate pairs would be labelled negatives
+        zg = F.normalize(Wg(Gt[i]), dim=1); zl = F.normalize(Wl(Lt[i]), dim=1)
         lg = zg @ zl.T * t.exp() + b; lab = 2 * torch.eye(len(i)) - 1; loss = -F.logsigmoid(lab * lg).mean(); opt.zero_grad(); loss.backward(); opt.step()
     def fg(X):
-        with torch.no_grad(): return Wg(torch.tensor(X)).numpy()
+        with torch.no_grad(): return Wg(torch.tensor(X, dtype=torch.float32)).numpy()
     def fl(X):
-        with torch.no_grad(): return Wl(torch.tensor(X)).numpy()
+        with torch.no_grad(): return Wl(torch.tensor(X, dtype=torch.float32)).numpy()
     return fg, fl
 res = []
 protocols = {'slide_b0_to_b1': ((gb == 0), (gb == 1)), 'fov_within': ((gs_ == 0), (gs_ == 2))}
