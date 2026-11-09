@@ -34,7 +34,7 @@ def extract(model, rows, kind, bs, workers):
     offset = 0
     for raw, ph, g in loader:
         x = gnorm(raw.cuda(non_blocking=True), ph.cuda(non_blocking=True), g.cuda(non_blocking=True), 'all', True)
-        if kind == 'ssl':
+        if kind in ('ssl', 'supssl'):
             x = torch.cat((x, torch.ones_like(x)), dim=1)
         with torch.autocast('cuda', dtype=torch.bfloat16):
             h = model(x.contiguous(memory_format=torch.channels_last))
@@ -127,7 +127,7 @@ def evaluate_groups(pred, y, mask, cls3, names):
 def parse_args():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--ckpt', required=True)
-    p.add_argument('--kind', choices=['ssl', 'sup'], required=True)
+    p.add_argument('--kind', choices=['ssl', 'sup', 'supssl'], required=True)   # supssl = train_lf ckpt fine-tuned from an SSL init (48-ch input)
     p.add_argument('--arch', default='resnet50')
     p.add_argument('--out', required=True)
     p.add_argument('--n-train', type=int, default=60000)
@@ -171,7 +171,7 @@ def main():
     if not len(hr):
         raise ValueError('no Giemsa-paired cells found')
     all_rows = np.union1d(np.union1d(tr, te), hr)
-    model = timm.create_model(a.arch, pretrained=False, in_chans=48 if a.kind == 'ssl' else 24,
+    model = timm.create_model(a.arch, pretrained=False, in_chans=48 if a.kind in ('ssl', 'supssl') else 24,
                               num_classes=0)
     s = torch.load(a.ckpt, map_location='cpu', weights_only=False)
     if a.kind == 'ssl':

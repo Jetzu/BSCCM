@@ -4,8 +4,8 @@ metric: batch-held-out LF->MK Pearson r, mean over 12 markers, averaged over b1t
 direction: higher
 target: 0.62
 target_source: Claude proposal 2026-11-09 after the v4 re-baseline (user to confirm)
-best: 0.5545
-best_item: N013
+best: 0.5742
+best_item: N014
 noise: 0.002
 noise_source: .agent-research/results/N013-targets-v4-remove-slide-position-artefac/n013_v4_noise.csv (seed0 .5535 vs seed1 .5556)
 constraints: (none stated)
