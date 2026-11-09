@@ -12,7 +12,7 @@ usage: sim_mosaic.py --feats DIR (feats_<subset>.npy per subset, rows = global i
 import argparse, json, os, numpy as np
 ap = argparse.ArgumentParser(); ap.add_argument('--feats', required=True); ap.add_argument('--out', required=True); ap.add_argument('--A', default='A_bf_phase')
 a = ap.parse_args(); os.makedirs(a.out, exist_ok=True)
-W = '/hnvme/workspace/v181bb10-bsccm'; T = np.load(W + '/targets_v3.npz'); names = list(T['names'])
+W = '/hnvme/workspace/v181bb10-bsccm'; T = np.load(W + '/targets_v4.npz'); names = list(T['names'])
 rows = np.load(os.path.join(a.feats, 'rows.npy')); sp = T['split'][rows]; Y = T['Y'][rows]; Mk = T['mask'][rows]
 rng = np.random.default_rng(0); tr = np.where(sp == 0)[0]; half = rng.random(len(tr)) < 0.5
 S1, S2 = tr[half], tr[~half]; S3 = np.where(sp == 2)[0]; V = np.where(sp == 1)[0]          # V: held-out cells for measuring a and b

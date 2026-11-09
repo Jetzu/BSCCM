@@ -1,0 +1,14 @@
+arm,seed,metric,value
+r18_v4_teacher,0,gs_student_autofl_b0to1,0.648
+r18_v4_teacher,1,gs_student_autofl_b0to1,0.658
+r18_v4_teacher,0,gs_student_autofl_b1to0,0.323
+ssl_r50_teacher,0,gs_student_autofl_b0to1,0.641
+ssl_r50_teacher,0,gs_student_autofl_b1to0,0.303
+r18_v4_teacher,0,teacher_autofl_on_gs_b1,0.559
+r18_v4_teacher,0,teacher_autofl_on_gs_b0,0.305
+ssl_r50_teacher,0,teacher_autofl_on_gs_b1,0.400
+ssl_r50_teacher,0,teacher_autofl_on_gs_b0,0.079
+r18_v4_teacher,0,student_vs_teacher_b0to1,0.68
+ssl_r50_teacher,0,student_vs_teacher_b0to1,0.594
+ssl_r50_teacher,0,lf_probe_fov_rmean,0.650
+r18_v4_teacher,0,lf_probe_fov_rmean,0.634

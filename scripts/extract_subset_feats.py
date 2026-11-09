@@ -9,7 +9,7 @@ from bsccm.gpu_norm import RawSet, GPUNorm
 ap = argparse.ArgumentParser(); ap.add_argument('--ckpt', required=True); ap.add_argument('--arch', default='resnet50'); ap.add_argument('--out', required=True)
 ap.add_argument('--n', type=int, default=120000); ap.add_argument('--bs', type=int, default=512); ap.add_argument('--workers', type=int, default=15)
 a = ap.parse_args(); os.makedirs(a.out, exist_ok=True)
-T = np.load(W + '/targets_v3.npz'); rows = np.sort(np.random.default_rng(0).permutation(np.where(T['mask'][:, :12].any(1))[0])[:a.n]); np.save(a.out + '/rows.npy', rows)
+T = np.load(W + '/targets_v4.npz'); rows = np.sort(np.random.default_rng(0).permutation(np.where(T['mask'][:, :12].any(1))[0])[:a.n]); np.save(a.out + '/rows.npy', rows)
 df = list(np.random.default_rng(1).permutation(np.arange(1, 18)))
 subsets = {'A_bf_phase': [0, 18, 19, 20, 21, 23]}
 subsets.update({f'B_df{k:02d}': sorted(int(c) for c in df[:k]) for k in (1, 2, 4, 8, 17)})
