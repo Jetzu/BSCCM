@@ -14,8 +14,9 @@ ap.add_argument('--lf-feats', required=True); ap.add_argument('--out', required=
 ap.add_argument('--bs', type=int, default=128); ap.add_argument('--lr', type=float, default=1e-4); ap.add_argument('--freeze', type=int, default=8)
 ap.add_argument('--dim', type=int, default=256); ap.add_argument('--w-distill', type=float, default=1.0); ap.add_argument('--holdout', default='batch1')
 ap.add_argument('--aug', type=int, default=1); ap.add_argument('--stain-norm', default='none', choices=['none', 'macenko']); ap.add_argument('--dann', type=float, default=0.0); ap.add_argument('--target-zip', default=''); ap.add_argument('--anchor-ce', type=float, default=0.0); ap.add_argument('--target-half', default='A'); ap.add_argument('--seed', type=int, default=0); ap.add_argument('--workers', type=int, default=12)
+ap.add_argument('--targets', default='targets_v4.npz')   # teacher-ridge labels + eval truth; v5 = N023 label QC
 a = ap.parse_args(); os.makedirs(a.out, exist_ok=True); torch.manual_seed(a.seed); np.random.seed(a.seed); dev = 'cuda'
-W = '/hnvme/workspace/v181bb10-bsccm'; T = np.load(W + '/targets_v4.npz'); names = list(T['names']); K = len(names)
+W = '/hnvme/workspace/v181bb10-bsccm'; T = np.load(W + '/' + a.targets); names = list(T['names']); K = len(names)
 Y, Mk, sp, b, hrow = T['Y'], T['mask'], T['split'], T['batch'], T['hist_row']
 gidx = np.where(hrow >= 0)[0]; gidx = gidx[np.argsort(hrow[gidx])]                      # histology row r <-> global gidx[r]
 if a.holdout == 'batch1': tr_r, te_r = np.where(b[gidx] == 0)[0], np.where(b[gidx] == 1)[0]
