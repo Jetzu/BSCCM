@@ -19,6 +19,7 @@ W = '/hnvme/workspace/v181bb10-bsccm'; T = np.load(W + '/targets_v4.npz'); names
 Y, Mk, sp, b, hrow = T['Y'], T['mask'], T['split'], T['batch'], T['hist_row']
 gidx = np.where(hrow >= 0)[0]; gidx = gidx[np.argsort(hrow[gidx])]                      # histology row r <-> global gidx[r]
 if a.holdout == 'batch1': tr_r, te_r = np.where(b[gidx] == 0)[0], np.where(b[gidx] == 1)[0]
+elif a.holdout == 'batch0': tr_r, te_r = np.where(b[gidx] == 1)[0], np.where(b[gidx] == 0)[0]
 else: tr_r, te_r = np.where(sp[gidx] == 0)[0], np.where(sp[gidx] == 2)[0]
 LF = torch.tensor(np.load(os.path.join(a.lf_feats, 'lf_feats_all.npy')), dtype=torch.float32)
 stained_tr = np.where((sp == 0) & Mk[:, :12].any(1) & (hrow < 0))[0]

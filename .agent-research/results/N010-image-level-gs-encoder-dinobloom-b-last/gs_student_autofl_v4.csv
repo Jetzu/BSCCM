@@ -1,0 +1,9 @@
+arm,value,seed,direction
+student_v4,0.648,0,b0to1
+student_v4,0.658,1,b0to1
+teacher_v4,0.559,0,b0to1
+student_v4,0.323,0,b1to0
+student_v4,0.318,1,b1to0
+teacher_v4,0.305,0,b1to0
+student_v3,0.287,0,b0to1
+teacher_v3,0.611,0,b0to1
