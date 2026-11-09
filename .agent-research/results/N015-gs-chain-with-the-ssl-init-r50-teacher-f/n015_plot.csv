@@ -1,0 +1,6 @@
+arm,value,seed
+r18_v4_teacher_gs_student_autofl_b0to1,0.648,0
+r18_v4_teacher_gs_student_autofl_b0to1,0.658,1
+r18_v4_teacher_gs_student_autofl_b1to0,0.323,0
+ssl_r50_teacher_gs_student_autofl_b0to1,0.641,0
+ssl_r50_teacher_gs_student_autofl_b1to0,0.303,0
