@@ -1,0 +1,53 @@
+{
+ "cls3_acc_batch0": 0.945407835581246,
+ "canon": {
+  "single:CD45": [
+   "lym",
+   "gran"
+  ],
+  "single:CD19": [
+   "lym",
+   "gran"
+  ],
+  "single:CD56": [
+   "lym",
+   "gran"
+  ],
+  "single:CD14": [
+   "mono",
+   "lym"
+  ],
+  "single:CD16": [
+   "gran",
+   "lym"
+  ],
+  "single:HLA-DR": [
+   "mono",
+   "gran"
+  ],
+  "single:CD3": [
+   "lym",
+   "gran"
+  ],
+  "single:CD123": null,
+  "grp:CD123/HLA-DR/CD14": [
+   "mono",
+   "lym"
+  ],
+  "grp:CD3/CD19/CD56": [
+   "lym",
+   "mono"
+  ],
+  "grp:CD45": [
+   "lym",
+   "gran"
+  ],
+  "grp:CD16": [
+   "gran",
+   "lym"
+  ],
+  "autofl": null
+ },
+ "feats": "/hnvme/workspace/v181bb10-bsccm/runs/n022_base_fov/probe/lf_feats_all.npy",
+ "preds": "/hnvme/workspace/v181bb10-bsccm/runs/n022_tail05_fov/eval_preds.npz"
+}

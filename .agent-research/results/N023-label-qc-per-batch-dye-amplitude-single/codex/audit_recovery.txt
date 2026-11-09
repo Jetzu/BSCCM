@@ -1,0 +1,47 @@
+ORIGINAL CONTRAST 0 antibodies_all/batch_0/slide_replicate_0 raw_A d 0.830438052592735
+ORIGINAL CONTRAST 0 antibodies_all/batch_0/slide_replicate_0 v3 d 1.0197087008146761
+ORIGINAL CONTRAST 0 antibodies_all/batch_0/slide_replicate_0 v4 d 1.1380677995624944
+REFIT 0 antibodies_all/batch_0/slide_replicate_0 A_direction CD14 AF False condition 64.4744461763069 d_mono_lym 0.720605467722884 n_mono_lym 155 365
+REFIT 0 antibodies_all/batch_0/slide_replicate_0 A_direction CD14 AF True condition 219.53226904549544 d_mono_lym 0.7558449478857321 n_mono_lym 155 365
+REFIT 0 antibodies_all/batch_0/slide_replicate_0 A_direction HLA-DR AF False condition 36.0636727930707 d_mono_lym 0.6612210113616014 n_mono_lym 155 365
+REFIT 0 antibodies_all/batch_0/slide_replicate_0 A_direction HLA-DR AF True condition 94.81319994173877 d_mono_lym 0.6758356532876979 n_mono_lym 155 365
+REFIT 0 antibodies_all/batch_0/slide_replicate_0 A_direction CD123 AF False condition 38.747986854314725 d_mono_lym 0.666914710254643 n_mono_lym 155 365
+REFIT 0 antibodies_all/batch_0/slide_replicate_0 A_direction CD123 AF True condition 81.51156359963218 d_mono_lym 0.6824484896944193 n_mono_lym 155 365
+REFIT 0 antibodies_all/batch_0/slide_replicate_0 A_direction mean AF False condition 42.985060588606444 d_mono_lym 0.6530999646080041 n_mono_lym 155 365
+REFIT 0 antibodies_all/batch_0/slide_replicate_0 A_direction mean AF True condition 104.42901226552617 d_mono_lym 0.6754364573600469 n_mono_lym 155 365
+A NEGATIVE/POSITIVE CONTROL 0 all q50_q90_q99 [0.1134139247238636, 75.08715438842773, 204.5996578979491]
+A NEGATIVE/POSITIVE CONTROL 0 unstained q50_q90_q99 [0.1134139247238636, 12.557705688476567, 22.339603233337396]
+A NEGATIVE/POSITIVE CONTROL 0 CD14 q50_q90_q99 [0.1134139247238636, 15.488236045837404, 36.05355979919434]
+A NEGATIVE/POSITIVE CONTROL 0 HLA-DR q50_q90_q99 [0.1134139247238636, 24.63094711303711, 95.20273590087896]
+A NEGATIVE/POSITIVE CONTROL 0 CD123 q50_q90_q99 [0.1134139247238636, 13.428850555419924, 25.062727947235118]
+A NEGATIVE/POSITIVE CONTROL 0 CD16 q50_q90_q99 [0.1134139247238636, 32.693727874755865, 163.22960754394526]
+A NEGATIVE/POSITIVE CONTROL 0 CD45 q50_q90_q99 [0.1134139247238636, 17.88156509399414, 33.784427642822266]
+ORIGINAL CONTRAST 1 antibodies_all/batch_1/slide_replicate_1 raw_A d -0.12695386793474203
+ORIGINAL CONTRAST 1 antibodies_all/batch_1/slide_replicate_1 v3 d -0.3390555683644155
+ORIGINAL CONTRAST 1 antibodies_all/batch_1/slide_replicate_1 v4 d -0.3940558557637763
+REFIT 1 antibodies_all/batch_1/slide_replicate_1 A_direction CD14 AF False condition 46.54934193187613 d_mono_lym -0.7897892213192791 n_mono_lym 79 283
+REFIT 1 antibodies_all/batch_1/slide_replicate_1 A_direction CD14 AF True condition 178.3598591432049 d_mono_lym -0.796596138375797 n_mono_lym 79 283
+REFIT 1 antibodies_all/batch_1/slide_replicate_1 A_direction HLA-DR AF False condition 18.964072672845052 d_mono_lym -0.6500507059441035 n_mono_lym 79 283
+REFIT 1 antibodies_all/batch_1/slide_replicate_1 A_direction HLA-DR AF True condition 173.6783062331571 d_mono_lym -0.6567965713607636 n_mono_lym 79 283
+REFIT 1 antibodies_all/batch_1/slide_replicate_1 A_direction CD123 AF False condition 131.2755300578164 d_mono_lym 0.6782673773829015 n_mono_lym 79 283
+REFIT 1 antibodies_all/batch_1/slide_replicate_1 A_direction CD123 AF True condition 203.35281032871427 d_mono_lym 0.6780943959133415 n_mono_lym 79 283
+REFIT 1 antibodies_all/batch_1/slide_replicate_1 A_direction mean AF False condition 38.48205217271922 d_mono_lym -0.5570396204856106 n_mono_lym 79 283
+REFIT 1 antibodies_all/batch_1/slide_replicate_1 A_direction mean AF True condition 172.22285968976055 d_mono_lym -0.5595041905668537 n_mono_lym 79 283
+ORIGINAL CONTRAST 1 antibodies_all/batch_1/slide_replicate_0 raw_A d -0.00837608320588757
+ORIGINAL CONTRAST 1 antibodies_all/batch_1/slide_replicate_0 v3 d -0.4323856604684632
+ORIGINAL CONTRAST 1 antibodies_all/batch_1/slide_replicate_0 v4 d -0.5690942984685038
+REFIT 1 antibodies_all/batch_1/slide_replicate_0 A_direction CD14 AF False condition 46.54934193187613 d_mono_lym 0.711134889250463 n_mono_lym 124 312
+REFIT 1 antibodies_all/batch_1/slide_replicate_0 A_direction CD14 AF True condition 178.3598591432049 d_mono_lym 0.7108789648182622 n_mono_lym 124 312
+REFIT 1 antibodies_all/batch_1/slide_replicate_0 A_direction HLA-DR AF False condition 18.964072672845052 d_mono_lym 0.7550229616934003 n_mono_lym 124 312
+REFIT 1 antibodies_all/batch_1/slide_replicate_0 A_direction HLA-DR AF True condition 173.6783062331571 d_mono_lym 0.7554541206977538 n_mono_lym 124 312
+REFIT 1 antibodies_all/batch_1/slide_replicate_0 A_direction CD123 AF False condition 131.2755300578164 d_mono_lym 0.6423739523503211 n_mono_lym 124 312
+REFIT 1 antibodies_all/batch_1/slide_replicate_0 A_direction CD123 AF True condition 203.35281032871427 d_mono_lym 0.6387427638095916 n_mono_lym 124 312
+REFIT 1 antibodies_all/batch_1/slide_replicate_0 A_direction mean AF False condition 38.48205217271922 d_mono_lym 0.7064918554790778 n_mono_lym 124 312
+REFIT 1 antibodies_all/batch_1/slide_replicate_0 A_direction mean AF True condition 172.22285968976055 d_mono_lym 0.7067101899337258 n_mono_lym 124 312
+A NEGATIVE/POSITIVE CONTROL 1 all q50_q90_q99 [0.0912129515409469, 41.92457122802736, 95.75669525146486]
+A NEGATIVE/POSITIVE CONTROL 1 unstained q50_q90_q99 [0.1700184047222137, 14.889457893371583, 23.406387939453133]
+A NEGATIVE/POSITIVE CONTROL 1 CD14 q50_q90_q99 [0.0912129515409469, 14.180865478515623, 22.88557807922363]
+A NEGATIVE/POSITIVE CONTROL 1 HLA-DR q50_q90_q99 [1.359408974647522, 20.061204910278324, 27.68752952575684]
+A NEGATIVE/POSITIVE CONTROL 1 CD123 q50_q90_q99 [0.0912129515409469, 17.45430316925049, 29.342371711730955]
+A NEGATIVE/POSITIVE CONTROL 1 CD16 q50_q90_q99 [10.091075897216797, 87.80759735107425, 155.49826293945299]
+A NEGATIVE/POSITIVE CONTROL 1 CD45 q50_q90_q99 [10.779953956604004, 24.43715858459472, 35.79026016235354]

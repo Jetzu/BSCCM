@@ -1,0 +1,14 @@
+diff --git a/scripts/train_lf.py b/scripts/train_lf.py
+index 8117d22..a766e21 100644
+--- a/scripts/train_lf.py
++++ b/scripts/train_lf.py
+@@ -93,6 +93,9 @@ def evaluate(save=False):
+                 vk = v & (k3 == k)
+                 if vk.sum() > 30: r[f'r_within_{kn}/{names[j]}'] = pearson(P[vk, j], Yt[vk, j])
+     r['r_mean_markers'] = float(np.mean([r[f'r/{n}'] for n in names[:12] if f'r/{n}' in r]))
++    trained = Mk[tr].sum(0) >= 1000   # v5 QC masks can leave a target without training labels (grp:CD123/HLA-DR/CD14 when training on batch 1)
++    r['r_mean_markers_valid'] = float(np.mean([r[f'r/{n}'] for j, n in enumerate(names[:12]) if f'r/{n}' in r and trained[j]]))
++    r['n_markers_valid'] = int(sum(1 for j, n in enumerate(names[:12]) if f'r/{n}' in r and trained[j]))
+     wv = [v for k, v in r.items() if k.startswith('r_within_')]
+     if wv: r['fine/within_class_r_mean_grp'] = float(np.mean(wv))
+     k10 = c10[G]; l10m = k10 >= 0

@@ -1,0 +1,6 @@
+n014_sslinit_b1to0     targets_v4.npz  mean(all avail) 0.5714  mean(valid, n=12) 0.5714  A=-0.062 grpCD16=0.762 grpCD45=0.710 grpL=0.669
+n014_sslinit_b1to0     targets_v5.npz  mean(all avail) 0.5714  mean(valid, n=11) 0.6290  A=-0.062 grpCD16=0.762 grpCD45=0.710 grpL=0.669
+n014_sslinit_b0to1     targets_v4.npz  mean(all avail) 0.5770  mean(valid, n=12) 0.5770  A=0.012 grpCD16=0.712 grpCD45=0.690 grpL=0.701
+n014_sslinit_b0to1     targets_v5.npz  mean(all avail) 0.6397  mean(valid, n=11) 0.6397  A=nan grpCD16=0.798 grpCD45=0.646 grpL=0.784
+n022_base_b10          targets_v4.npz  mean(all avail) 0.5749  mean(valid, n=12) 0.5749  A=-0.078 grpCD16=0.758 grpCD45=0.725 grpL=0.675
+n022_base_b10          targets_v5.npz  mean(all avail) 0.5749  mean(valid, n=11) 0.6343  A=-0.078 grpCD16=0.758 grpCD45=0.725 grpL=0.675

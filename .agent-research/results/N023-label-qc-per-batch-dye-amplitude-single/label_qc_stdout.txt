@@ -1,0 +1,49 @@
+LF cls3 classifier: held-out-FOV acc (batch 0) 0.945; confident 0.95
+               target                               slide  batch     canon  canon_d  class_eta  dye_amp  dye_snr  model_r_fov  mean_lym  mean_gran  mean_mono
+          single:CD45      CD45/batch_1/slide_replicate_0      1  lym>gran     3.72       0.85    36.51    13.92         0.89      1.32      -0.63       0.53
+          single:CD45      CD45/batch_0/slide_replicate_0      0  lym>gran     1.94       0.72   158.61    27.40         0.72      0.98      -0.49       0.82
+         single:CD123     CD123/batch_1/slide_replicate_0      1                NaN       0.18    31.54     5.33         0.68     -0.06      -0.07       0.30
+         single:CD123     CD123/batch_0/slide_replicate_0      0                NaN       0.23    46.47     8.92         0.65     -0.10      -0.10       0.30
+          single:CD19      CD19/batch_0/slide_replicate_0      0  lym>gran     0.38       0.17   110.57     8.95         0.32      0.17      -0.04      -0.03
+          single:CD19      CD19/batch_1/slide_replicate_0      1  lym>gran     0.31       0.18    95.13     8.57         0.44      0.09      -0.04       0.07
+          single:CD56      CD56/batch_1/slide_replicate_0      1  lym>gran    -0.01       0.15    45.83     4.25         0.38     -0.09      -0.09       0.22
+          single:CD56      CD56/batch_0/slide_replicate_0      0  lym>gran     0.03       0.32    64.55     5.13         0.42     -0.13      -0.15       0.30
+          single:CD14      CD14/batch_0/slide_replicate_0      0  mono>lym     2.22       0.80    34.49     5.40         0.88     -0.40      -0.40       1.55
+          single:CD14      CD14/batch_1/slide_replicate_0      1  mono>lym     1.76       0.71    14.26     1.65         0.85     -0.30      -0.29       1.47
+          single:CD16      CD16/batch_1/slide_replicate_0      1  gran>lym     4.34       0.87   174.77    28.02         0.91     -1.00       0.84      -0.79
+          single:CD16      CD16/batch_0/slide_replicate_0      0  gran>lym     4.43       0.88   294.21    69.40         0.90     -0.82       0.95      -0.59
+        single:HLA-DR    HLA-DR/batch_1/slide_replicate_0      1 mono>gran     0.39       0.32    11.37     1.68         0.61     -0.48       0.06       0.42
+        single:HLA-DR    HLA-DR/batch_0/slide_replicate_0      0 mono>gran     1.04       0.51    39.05    14.11         0.64     -0.55      -0.11       1.04
+           single:CD3       CD3/batch_1/slide_replicate_0      1  lym>gran     2.01       0.62    96.68     9.05         0.63      1.14      -0.39       0.12
+           single:CD3       CD3/batch_0/slide_replicate_0      0  lym>gran     1.45       0.53   118.36     9.43         0.56      1.00      -0.20      -0.06
+grp:CD123/HLA-DR/CD14       all/batch_0/slide_replicate_0      0  mono>lym     1.21       0.38      NaN      NaN         0.25     -0.35      -0.04       0.63
+grp:CD123/HLA-DR/CD14       all/batch_1/slide_replicate_1      1  mono>lym    -0.08       0.32      NaN      NaN         0.30      0.16      -0.43       0.09
+grp:CD123/HLA-DR/CD14       all/batch_1/slide_replicate_0      1  mono>lym    -0.28       0.14      NaN      NaN         0.13      0.22       0.30      -0.02
+    grp:CD3/CD19/CD56       all/batch_0/slide_replicate_0      0  lym>mono     2.14       0.77      NaN      NaN         0.78      0.98      -0.52      -0.30
+    grp:CD3/CD19/CD56       all/batch_1/slide_replicate_1      1  lym>mono     1.93       0.93      NaN      NaN         0.92      1.12      -1.26       0.17
+    grp:CD3/CD19/CD56       all/batch_1/slide_replicate_0      1  lym>mono     1.81       0.77      NaN      NaN         0.79      1.05       0.06       0.36
+             grp:CD45       all/batch_0/slide_replicate_0      0  lym>gran     2.67       0.81      NaN      NaN         0.84      0.80      -0.71       0.62
+             grp:CD45       all/batch_1/slide_replicate_1      1  lym>gran     4.32       0.88      NaN      NaN         0.89      1.27      -1.10       0.58
+             grp:CD45       all/batch_1/slide_replicate_0      1  lym>gran     1.92       0.62      NaN      NaN         0.65      0.66      -0.09       0.15
+             grp:CD16       all/batch_0/slide_replicate_0      0  gran>lym     5.55       0.90      NaN      NaN         0.85     -1.06       0.81      -0.29
+             grp:CD16       all/batch_1/slide_replicate_1      1  gran>lym     2.81       0.82      NaN      NaN         0.82     -0.60       1.08       0.23
+             grp:CD16       all/batch_1/slide_replicate_0      1  gran>lym     3.97       0.86      NaN      NaN         0.84     -1.46       0.09      -0.80
+               autofl      CD45/batch_1/slide_replicate_0      1                NaN       0.55      NaN      NaN         0.48      0.77       0.22       0.60
+               autofl     CD123/batch_1/slide_replicate_0      1                NaN       0.36      NaN      NaN         0.69     -0.02      -0.02       0.19
+               autofl unstained/batch_0/slide_replicate_0      0                NaN       0.60      NaN      NaN         0.48      0.61       0.59       0.81
+               autofl      CD19/batch_0/slide_replicate_0      0                NaN       0.21      NaN      NaN         0.26     -1.49      -1.54      -1.26
+               autofl      CD56/batch_1/slide_replicate_0      1                NaN       0.14      NaN      NaN         0.37      0.23       0.25       0.33
+               autofl      CD45/batch_0/slide_replicate_0      0                NaN       0.29      NaN      NaN         0.31     -0.04       0.01       0.15
+               autofl      CD19/batch_1/slide_replicate_0      1                NaN       0.11      NaN      NaN         0.60     -1.09      -1.02      -0.93
+               autofl     CD123/batch_0/slide_replicate_0      0                NaN       0.27      NaN      NaN         0.32     -0.03      -0.06       0.10
+               autofl      CD14/batch_0/slide_replicate_0      0                NaN       0.17      NaN      NaN         0.29     -0.09      -0.09      -0.02
+               autofl      CD16/batch_1/slide_replicate_0      1                NaN       0.14      NaN      NaN         0.57     -0.61      -0.47      -0.46
+               autofl    HLA-DR/batch_1/slide_replicate_0      1                NaN       0.19      NaN      NaN         0.78     -0.30      -0.08      -0.16
+               autofl      CD56/batch_0/slide_replicate_0      0                NaN       0.12      NaN      NaN        -0.11      0.13       0.07       0.13
+               autofl       CD3/batch_1/slide_replicate_0      1                NaN       0.42      NaN      NaN         0.26      0.69       0.46       0.57
+               autofl    HLA-DR/batch_0/slide_replicate_0      0                NaN       0.32      NaN      NaN         0.34      0.15       0.20       0.46
+               autofl unstained/batch_1/slide_replicate_0      1                NaN       0.37      NaN      NaN         0.57      0.35       0.35       0.51
+               autofl       CD3/batch_0/slide_replicate_0      0                NaN       0.14      NaN      NaN        -0.09      0.07       0.18       0.17
+               autofl unstained/batch_1/slide_replicate_1      1                NaN       0.32      NaN      NaN         0.44      0.38       0.35       0.54
+               autofl      CD16/batch_0/slide_replicate_0      0                NaN       0.28      NaN      NaN         0.46      0.20       0.22       0.36
+               autofl      CD14/batch_1/slide_replicate_0      1                NaN       0.22      NaN      NaN         0.72     -1.10      -0.95      -0.95

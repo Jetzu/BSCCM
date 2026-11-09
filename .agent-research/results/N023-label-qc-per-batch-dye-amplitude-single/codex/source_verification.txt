@@ -1,0 +1,6 @@
+scripts/label_qc.py: OK
+scripts/dye_spectra.py: OK
+scripts/label_subset_check.py: OK
+scripts/make_targets_v5.py: OK
+scripts/rescore_targets.py: OK
+scripts/train_lf.py: OK

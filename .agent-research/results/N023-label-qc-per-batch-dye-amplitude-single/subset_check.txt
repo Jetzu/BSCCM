@@ -1,0 +1,16 @@
+CD3     b0: frac of lym above 95th pct of gran = 0.715  (null 0.05)  n=944
+CD3     b1: frac of lym above 95th pct of gran = 0.802  (null 0.05)  n=1924
+CD19    b0: frac of lym above 95th pct of gran = 0.160  (null 0.05)  n=2105
+CD19    b1: frac of lym above 95th pct of gran = 0.172  (null 0.05)  n=1218
+CD56    b0: frac of lym above 95th pct of gran = 0.110  (null 0.05)  n=1896
+CD56    b1: frac of lym above 95th pct of gran = 0.114  (null 0.05)  n=2508
+CD14    b0: frac of mono above 95th pct of lym = 0.867  (null 0.05)  n=2415
+CD14    b1: frac of mono above 95th pct of lym = 0.724  (null 0.05)  n=2093
+HLA-DR  b0: frac of mono above 95th pct of gran = 0.463  (null 0.05)  n=1833
+HLA-DR  b1: frac of mono above 95th pct of gran = 0.158  (null 0.05)  n=2158
+CD123   b0: frac of mono above 95th pct of gran = 0.313  (null 0.05)  n=2548
+CD123   b1: frac of mono above 95th pct of gran = 0.220  (null 0.05)  n=2095
+CD16    b0: frac of gran above 95th pct of lym = 0.988  (null 0.05)  n=3899
+CD16    b1: frac of gran above 95th pct of lym = 0.970  (null 0.05)  n=6178
+CD45    b0: frac of lym above 95th pct of gran = 0.717  (null 0.05)  n=1916
+CD45    b1: frac of lym above 95th pct of gran = 0.979  (null 0.05)  n=1928
