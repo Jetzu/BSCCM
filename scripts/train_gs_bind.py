@@ -13,7 +13,7 @@ ap = argparse.ArgumentParser()
 ap.add_argument('--lf-feats', required=True); ap.add_argument('--out', required=True); ap.add_argument('--steps', type=int, default=6000)
 ap.add_argument('--bs', type=int, default=128); ap.add_argument('--lr', type=float, default=1e-4); ap.add_argument('--freeze', type=int, default=8)
 ap.add_argument('--dim', type=int, default=256); ap.add_argument('--w-distill', type=float, default=1.0); ap.add_argument('--holdout', default='batch1')
-ap.add_argument('--aug', type=int, default=1); ap.add_argument('--stain-norm', default='none', choices=['none', 'macenko']); ap.add_argument('--dann', type=float, default=0.0); ap.add_argument('--target-zip', default=''); ap.add_argument('--target-half', default='A'); ap.add_argument('--seed', type=int, default=0); ap.add_argument('--workers', type=int, default=12)
+ap.add_argument('--aug', type=int, default=1); ap.add_argument('--stain-norm', default='none', choices=['none', 'macenko']); ap.add_argument('--dann', type=float, default=0.0); ap.add_argument('--target-zip', default=''); ap.add_argument('--anchor-ce', type=float, default=0.0); ap.add_argument('--target-half', default='A'); ap.add_argument('--seed', type=int, default=0); ap.add_argument('--workers', type=int, default=12)
 a = ap.parse_args(); os.makedirs(a.out, exist_ok=True); torch.manual_seed(a.seed); np.random.seed(a.seed); dev = 'cuda'
 W = '/hnvme/workspace/v181bb10-bsccm'; T = np.load(W + '/targets_v4.npz'); names = list(T['names']); K = len(names)
 Y, Mk, sp, b, hrow = T['Y'], T['mask'], T['split'], T['batch'], T['hist_row']
@@ -40,17 +40,19 @@ class GSSet(torch.utils.data.Dataset):
     def __getitem__(s, i):
         r = int(s.rows[i]); return torch.from_numpy(np.array(H[r]).astype(np.int16)), r      # uint16 <= 4095 -> int16 view-safe
 class ExtSet(torch.utils.data.Dataset):   # unlabelled external smear images (labels never read here)
-    def __init__(s, zpath, half):
+    def __init__(s, zpath, half, anchors=None):
         import zipfile; s.zp = zpath; s.z = None
         names = sorted(n for n in zipfile.ZipFile(zpath).namelist() if n.lower().endswith('.jpg') and '__MACOSX' not in n and not os.path.basename(n).startswith('.'))
         s.names = names[0::2] if half == 'A' else names[1::2]
+        if anchors: s.names = [n for n in s.names if n.split('/')[-2] in anchors]     # anchor classes only (eos/baso never seen)
+        s.cls = [anchors.index(n.split('/')[-2]) if anchors and n.split('/')[-2] in anchors else -1 for n in s.names]
     def __len__(s): return len(s.names)
     def __getitem__(s, i):
         import zipfile, io
         from PIL import Image
         if s.z is None: s.z = zipfile.ZipFile(s.zp)
         im = Image.open(io.BytesIO(s.z.read(s.names[i]))).convert('RGB').resize((398, 398), Image.BILINEAR)
-        return torch.from_numpy(np.asarray(im, np.uint8).copy()), i
+        return torch.from_numpy(np.asarray(im, np.uint8).copy()), s.cls[i]
 def loader(rows, train):
     return torch.utils.data.DataLoader(GSSet(rows), batch_size=a.bs, shuffle=train, drop_last=train, num_workers=a.workers, pin_memory=True, persistent_workers=train, prefetch_factor=4)
 MEAN = torch.tensor([0.485, 0.456, 0.406], device=dev).view(1, 3, 1, 1); STD = torch.tensor([0.229, 0.224, 0.225], device=dev).view(1, 3, 1, 1)
@@ -128,7 +130,7 @@ vit.cls_token.requires_grad = False; vit.pos_embed.requires_grad = False
 for i, blk in enumerate(vit.blocks):
     for p in blk.parameters(): p.requires_grad = i >= a.freeze
 mlp = lambda i, o: nn.Sequential(nn.Linear(i, 1024), nn.GELU(), nn.LayerNorm(1024), nn.Linear(1024, o))
-net = nn.ModuleDict({'vit': vit, 'PG': mlp(768, a.dim), 'PL': mlp(LF.shape[1], a.dim), 'S': mlp(a.dim, K), 'D': mlp(768, 1)}).to(dev)
+net = nn.ModuleDict({'vit': vit, 'PG': mlp(768, a.dim), 'PL': mlp(LF.shape[1], a.dim), 'S': mlp(a.dim, K), 'D': mlp(768, 1), 'C': mlp(a.dim, 3)}).to(dev)
 class _GRL(torch.autograd.Function):
     @staticmethod
     def forward(ctx, x, l): ctx.l = l; return x.view_as(x)
@@ -169,6 +171,13 @@ def evaluate():
     np.savez(a.out + '/test_preds.npz', rows=rr, gidx=gidx[rr], student=stud.numpy(), teacher=tch.numpy(), z=zg.cpu().numpy())
     net.train(); return out
 log = []; t0 = time.time(); it = iter(loader(tr_r, True)); acc = {}
+ANCH = ['lymphocyte', 'neutrophil', 'monocyte']
+if a.anchor_ce > 0:
+    _lfc = np.load('/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N008-external-lineage-anchor-pbc-acevedo-mgg/gs_lf_cls3_pred.npz')['pred']  # 0 lym,1 gran,2 mono
+    GS_CLS = torch.tensor(_lfc, device=dev)                                    # same order as ANCH (gran ~ neutrophil-dominated)
+    _anc = ExtSet(a.target_zip, a.target_half, ANCH); print(f'anchor CE: {len(_anc)} external anchor images {ANCH}', flush=True)
+    _anc_loader = lambda: iter(torch.utils.data.DataLoader(_anc, batch_size=a.bs, shuffle=True, drop_last=True, num_workers=a.workers, pin_memory=True))
+    it_a = _anc_loader()
 if a.dann > 0 and a.target_zip:
     _ext = ExtSet(a.target_zip, a.target_half); print(f'DANN target: {len(_ext)} unlabelled external images (half {a.target_half})', flush=True)
     _ext_loader = lambda: iter(torch.utils.data.DataLoader(_ext, batch_size=a.bs, shuffle=True, drop_last=True, num_workers=a.workers, pin_memory=True))
@@ -189,9 +198,15 @@ for step in range(a.steps):
     lg = zg @ zl.T * tsig.exp() + bsig; lab = 2 * torch.eye(len(zg), device=dev) - 1; l_sig = -F.logsigmoid(lab * lg).sum() / len(zg)
     m = torch.ones(len(r), K, device=dev)      # distil ALL 13 teacher outputs (incl. the teacher's autofl PREDICTION); measured autofl truth stays eval-only
     dist = (((net['S'](zg * math.sqrt(a.dim)) - teach[r.to(dev)]) ** 2) * m).sum() / m.sum()
-    loss = l_sig + a.w_distill * dist + a.dann * l_dann; opt.zero_grad(set_to_none=True); loss.backward(); nn.utils.clip_grad_norm_(params, 1.0); opt.step(); sched.step()
-    acc['dann'] = acc.get('dann', 0) + float(l_dann); acc['sig'] = acc.get('sig', 0) + float(l_sig); acc['dist'] = acc.get('dist', 0) + float(dist)
-    if (step + 1) % 200 == 0: print(f"step {step+1} sig {acc['sig']/200:.3f} dist {acc['dist']/200:.4f} dann {acc['dann']/200:.3f} {time.time()-t0:.0f}s", flush=True); acc = {}
+    l_anc = torch.zeros((), device=dev)
+    if a.anchor_ce > 0:
+        try: xa, ya = next(it_a)
+        except StopIteration: it_a = _anc_loader(); xa, ya = next(it_a)
+        za = encode(pipeline((xa.to(dev).float() / 255.).permute(0, 3, 1, 2), True))
+        l_anc = F.cross_entropy(net['C'](za * math.sqrt(a.dim)), ya.to(dev)) + F.cross_entropy(net['C'](zg * math.sqrt(a.dim)), GS_CLS[r.to(dev)])
+    loss = l_sig + a.w_distill * dist + a.dann * l_dann + a.anchor_ce * l_anc; opt.zero_grad(set_to_none=True); loss.backward(); nn.utils.clip_grad_norm_(params, 1.0); opt.step(); sched.step()
+    acc['anc'] = acc.get('anc', 0) + float(l_anc); acc['dann'] = acc.get('dann', 0) + float(l_dann); acc['sig'] = acc.get('sig', 0) + float(l_sig); acc['dist'] = acc.get('dist', 0) + float(dist)
+    if (step + 1) % 200 == 0: print(f"step {step+1} sig {acc['sig']/200:.3f} dist {acc['dist']/200:.4f} dann {acc['dann']/200:.3f} anc {acc['anc']/200:.3f} {time.time()-t0:.0f}s", flush=True); acc = {}
     if (step + 1) % 2000 == 0 or step + 1 == a.steps:
         e = evaluate(); e['step'] = step + 1; log.append(e); print(json.dumps(e, default=float), flush=True)
 torch.save({k: v for k, v in net.state_dict().items()}, a.out + '/gs_bind.pt')

@@ -59,6 +59,9 @@ C = {'CD16 neutrophil>lymphocyte': ('single:CD16', ['neutrophil'], ['lymphocyte'
      'CD14 monocyte>neutrophil+lymphocyte': ('single:CD14', ['monocyte'], ['neutrophil', 'lymphocyte']),
      'grpCD3/19/56 lymphocyte>neutrophil+monocyte': ('grp:CD3/CD19/CD56', ['lymphocyte'], ['neutrophil', 'monocyte']),
      'CD3 lymphocyte>neutrophil+monocyte': ('single:CD3', ['lymphocyte'], ['neutrophil', 'monocyte']), 'CD45 lymphocyte>neutrophil': ('single:CD45', ['lymphocyte'], ['neutrophil']),
-     'CD123 basophil>rest': ('single:CD123', ['basophil'], ['neutrophil', 'lymphocyte', 'monocyte', 'eosinophil']), 'HLA-DR monocyte>neutrophil': ('single:HLA-DR', ['monocyte'], ['neutrophil'])}
+     'CD123 basophil>rest': ('single:CD123', ['basophil'], ['neutrophil', 'lymphocyte', 'monocyte', 'eosinophil']), 'HLA-DR monocyte>neutrophil': ('single:HLA-DR', ['monocyte'], ['neutrophil']),
+     # added 2026-11-09 BEFORE seeing results (held-out classes, never used for alignment): CD16 rises with granulocyte maturation;
+     # erythroblasts are CD45-dim/negative
+     'CD16 neutrophil>ig (held-out)': ('single:CD16', ['neutrophil'], ['ig']), 'CD45 lymphocyte>erythroblast (held-out)': ('single:CD45', ['lymphocyte'], ['erythroblast'])}
 res['pbc_lineage_auroc'] = {k: round(auc(*v), 3) for k, v in C.items()}
 json.dump(res, open(a.out + '/lineage_consistency.json', 'w'), indent=1); print(json.dumps(res['pbc_lineage_auroc'], indent=1))
