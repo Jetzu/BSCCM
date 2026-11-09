@@ -16,14 +16,17 @@ W = '/hnvme/workspace/v181bb10-bsccm'; T = np.load(W + '/targets_v4.npz'); names
 rows = np.load(os.path.join(a.feats, 'rows.npy')); sp = T['split'][rows]; Y = T['Y'][rows]; Mk = T['mask'][rows]
 rng = np.random.default_rng(0); tr = np.where(sp == 0)[0]; half = rng.random(len(tr)) < 0.5
 S1, S2 = tr[half], tr[~half]; S3 = np.where(sp == 2)[0]; V = np.where(sp == 1)[0]          # V: held-out cells for measuring a and b
-def ridge(X, y, alpha=10.0):
-    mu, sd = X.mean(0), X.std(0) + 1e-6; Z = (X - mu) / sd; ym = y.mean()
-    w = np.linalg.solve(Z.T @ Z + alpha * np.eye(Z.shape[1]), Z.T @ (y - ym)); return lambda Q: ((Q - mu) / sd) @ w + ym
+from sklearn.linear_model import RidgeCV
+def ridge(X, y):   # cross-validated ridge (alphas 1..1e5) on PCA-256 features (fixes the alpha=10 / 2048-dim overfit of the first run)
+    m = RidgeCV(alphas=np.logspace(0, 5, 11)).fit(X, y); return m.predict
 def pr(p, y): p, y = p - p.mean(), y - y.mean(); return float((p * y).sum() / np.sqrt((p * p).sum() * (y * y).sum() + 1e-12))
-FA = np.load(os.path.join(a.feats, f'feats_{a.A}.npy')).astype(np.float64)
+from sklearn.decomposition import PCA
+def load(name):   # unsupervised PCA-256 + standardisation fitted on all rows of that subset (no labels)
+    X = np.load(os.path.join(a.feats, name)).astype(np.float64); Z = PCA(256, random_state=0).fit_transform(X); return (Z - Z.mean(0)) / (Z.std(0) + 1e-6)
+FA = load(f'feats_{a.A}.npy')
 res = []
 for fb in sorted(f for f in os.listdir(a.feats) if f.startswith('feats_B')):
-    FB = np.load(os.path.join(a.feats, fb)).astype(np.float64); bname = fb[6:-4]
+    FB = load(fb); bname = fb[6:-4]
     for j, n in enumerate(names[:12]):
         s2, s3, v = S2[Mk[S2, j]], S3[Mk[S3, j]], V[Mk[V, j]]
         if len(s2) < 200 or len(s3) < 100: continue

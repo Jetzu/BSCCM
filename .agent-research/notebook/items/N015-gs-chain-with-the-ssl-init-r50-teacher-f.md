@@ -11,6 +11,9 @@ goal_effect: flat · scale: module · value: 0.5742
 ## Changes
 
 ## Evidence
+- Teacher n015_sslinit_fov (SSL(aug)-init r50, fov protocol both batches, GS cells excluded; job 1283352, 24 min): frozen-feature probe FOV r_mean .650 (r18 v4 .634), cls3 .945.
+- GS student (train_gs_bind, aug, 2,500 steps) with this teacher's features, cross-slide vs DETRENDED autofl truth: b0->b1 student .641 (teacher on the same GS cells .400); b1->b0 student .303 (teacher .079); student-vs-teacher markers .59 / .50.
+- vs r18-v4 teacher (N010): student .648/.658 and .32/.32, teacher .56 and .31 -> the student is insensitive to the teacher's autofl quality on the TEST slide: the GS student only reads the test slide's GS images, whereas the teacher reads the test slide's LF images (slide-specific LF shift). The SSL-init teacher's LF->autofl on GS cells is worse (unstained GS slides out of its training distribution).
 - SSL(aug)-init r50 teacher trained fov on v4 (job 1283352, 24 min): probe FOV r_mean .650 (r18 v4 .634), cls3 .945.
 - GS student (jobs 1283354/5): b0->b1 autofl-truth .641 (teacher on b1 GS .400; student-vs-teacher markers .594); b1->b0 .303 (teacher .079; .504). With the r18 v4 teacher: .65/.66 and .32 (teacher .56/.31; agreement .68/.53).
 - Plot: /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/plots/gs-student-autofl-by-teacher_2026-11-09_1416.png

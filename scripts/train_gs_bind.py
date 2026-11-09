@@ -142,6 +142,17 @@ def evaluate():
     out['autofl_truth_r/student_GS'] = pearson(stud[v, j], y[v]); out['autofl_truth_r/teacher_LF'] = pearson(tch[v, j], y[v])
     out['student_vs_teacher_r_mean12'] = float(np.mean([pearson(stud[:, k], tch[:, k]) for k in range(12)]))
     out.update({f'student_vs_teacher_r/{names[k]}': pearson(stud[:, k], tch[:, k]) for k in range(K)})
+    # error-bound ingredients (N016-validated): b = RMSE(student vs teacher) on the held-out GS slide; a = RMSE(teacher vs truth) on
+    # held-out STAINED cells (split 2, non-GS) of the same batch as the test slide; bounds on the unmeasurable GS->MK MSE
+    tb = int(b[gidx[rr[0]]])
+    for k in range(12):
+        bk = float(((stud[:, k] - tch[:, k]) ** 2).mean().sqrt()); ev = np.where((sp == 2) & Mk[:, k] & (hrow < 0) & (b == tb))[0]
+        if len(ev) < 50: continue
+        tp = (torch.cat([LF[ev].to(dev), torch.ones(len(ev), 1, device=dev)], 1) @ Wt[:, k]).cpu(); yt = torch.tensor(Y[ev, k])
+        ak = float(((tp - yt) ** 2).mean().sqrt()); vy = float(yt.var())
+        out[f'bound/{names[k]}'] = dict(a=ak, b=bk, teacher_r=pearson(tp, yt), mse_lo=(ak - bk) ** 2, mse_hi=(ak + bk) ** 2, mse_cia=ak ** 2 + bk ** 2,
+                                       var_y=vy, r2_cia=1 - (ak ** 2 + bk ** 2) / vy, r2_worst=1 - (ak + bk) ** 2 / vy, r2_best=1 - (ak - bk) ** 2 / vy)
+    np.savez(a.out + '/test_preds.npz', rows=rr, gidx=gidx[rr], student=stud.numpy(), teacher=tch.numpy(), z=zg.cpu().numpy())
     net.train(); return out
 log = []; t0 = time.time(); it = iter(loader(tr_r, True)); acc = {}
 it_t = iter(loader(te_r, True)) if a.dann > 0 else None   # UNLABELLED images of the held-out slide (no markers/autofl used)
@@ -162,6 +173,6 @@ for step in range(a.steps):
     acc['dann'] = acc.get('dann', 0) + float(l_dann); acc['sig'] = acc.get('sig', 0) + float(l_sig); acc['dist'] = acc.get('dist', 0) + float(dist)
     if (step + 1) % 200 == 0: print(f"step {step+1} sig {acc['sig']/200:.3f} dist {acc['dist']/200:.4f} dann {acc['dann']/200:.3f} {time.time()-t0:.0f}s", flush=True); acc = {}
     if (step + 1) % 2000 == 0 or step + 1 == a.steps:
-        e = evaluate(); e['step'] = step + 1; log.append(e); print(json.dumps(e), flush=True)
+        e = evaluate(); e['step'] = step + 1; log.append(e); print(json.dumps(e, default=float), flush=True)
 torch.save({k: v for k, v in net.state_dict().items()}, a.out + '/gs_bind.pt')
-json.dump({'args': vars(a), 'final': log[-1], 'log': log}, open(a.out + '/result.json', 'w'), indent=1)
+json.dump({'args': vars(a), 'final': log[-1], 'log': log}, open(a.out + '/result.json', 'w'), indent=1, default=float)
