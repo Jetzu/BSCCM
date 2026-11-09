@@ -10,7 +10,7 @@ import argparse, io, json, os, zipfile, math, numpy as np, torch, torch.nn as nn
 from PIL import Image
 from sklearn.metrics import roc_auc_score
 ap = argparse.ArgumentParser(); ap.add_argument('--ckpt', required=True); ap.add_argument('--lf-dim', type=int, default=512); ap.add_argument('--dim', type=int, default=256)
-ap.add_argument('--out', required=True); ap.add_argument('--tta', type=int, default=1); ap.add_argument('--pbc-half', default='all'); ap.add_argument('--pbc-bg', default='keep', choices=['keep', 'white']); a = ap.parse_args(); os.makedirs(a.out, exist_ok=True)
+ap.add_argument('--out', required=True); ap.add_argument('--tta', type=int, default=1); ap.add_argument('--pbc-half', default='all'); ap.add_argument('--mll23', default=''); ap.add_argument('--mll-max', type=int, default=1500); ap.add_argument('--pbc-bg', default='keep', choices=['keep', 'white']); a = ap.parse_args(); os.makedirs(a.out, exist_ok=True)
 W = '/hnvme/workspace/v181bb10-bsccm'; dev = 'cuda'; T = np.load(W + '/targets_v4.npz'); names = list(T['names']); K = len(names)
 mlp = lambda i, o: nn.Sequential(nn.Linear(i, 1024), nn.GELU(), nn.LayerNorm(1024), nn.Linear(1024, o))
 vit = timm.create_model('vit_base_patch14_dinov2', pretrained=False, num_classes=0, img_size=224)
@@ -65,3 +65,36 @@ C = {'CD16 neutrophil>lymphocyte': ('single:CD16', ['neutrophil'], ['lymphocyte'
      'CD16 neutrophil>ig (held-out)': ('single:CD16', ['neutrophil'], ['ig']), 'CD45 lymphocyte>erythroblast (held-out)': ('single:CD45', ['lymphocyte'], ['erythroblast'])}
 res['pbc_lineage_auroc'] = {k: round(auc(*v), 3) for k, v in C.items()}
 json.dump(res, open(a.out + '/lineage_consistency.json', 'w'), indent=1); print(json.dumps(res['pbc_lineage_auroc'], indent=1))
+
+# --- MLL23 fine-grained clinical test (separate lab/scanner; never used in training). Contrasts pre-registered 2026-11-09 in chat before
+# any MLL23 result: LGL vs lymphocyte CD56+/CD16+; hairy cell vs lymphocyte CD123+, CD19+, HLA-DR+, CD3-; plasma cell vs lymphocyte CD45-;
+# eosinophil vs segmented neutrophil CD16-; band + myelocyte vs segmented CD16-; basophil vs rest CD123+; normoblast vs lymphocyte CD45-.
+if a.mll23:
+    import glob
+    Pm, cm = [], []
+    for zpath in sorted(glob.glob(a.mll23 + '/*.zip')):
+        c = os.path.basename(zpath)[:-4]; z = zipfile.ZipFile(zpath)
+        nm = sorted(n for n in z.namelist() if n.lower().endswith(('.jpg', '.png', '.tif', '.tiff')) and '__MACOSX' not in n and not os.path.basename(n).startswith('.'))
+        nm = [nm[i] for i in np.random.default_rng(0).permutation(len(nm))[:a.mll_max]]; buf = []
+        for i, n in enumerate(nm):
+            buf.append(np.asarray(Image.open(io.BytesIO(z.read(n))).convert('RGB'), np.float32) / 255.)
+            if len(buf) == 128 or i == len(nm) - 1: p, _ = predict(buf); Pm.append(p); cm += [c] * len(p); buf = []
+        print(c, len(nm), flush=True)
+    Pm = np.concatenate(Pm); cm = np.array(cm); np.savez(a.out + '/mll23_gs_student.npz', pred=Pm, cls=cm, names=np.array(names))
+    def aucm(marker, pos, neg, sign=1):
+        k = names.index(marker); m = np.isin(cm, pos + neg)
+        if not (np.isin(cm, pos).any() and np.isin(cm, neg).any()): return None
+        return round(float(roc_auc_score(np.isin(cm[m], pos), sign * Pm[m, k])), 3)
+    L, N = ['lymphocyte'], ['neutrophil_segmented']
+    MC = {'LGL>lym CD56': ('single:CD56', ['lymphocyte_large_granular'], L, 1), 'LGL>lym CD16': ('single:CD16', ['lymphocyte_large_granular'], L, 1),
+          'hairy>lym CD123': ('single:CD123', ['hairy_cell'], L, 1), 'hairy>lym CD19': ('single:CD19', ['hairy_cell'], L, 1),
+          'hairy>lym HLA-DR': ('single:HLA-DR', ['hairy_cell'], L, 1), 'hairy<lym CD3': ('single:CD3', ['hairy_cell'], L, -1),
+          'plasma<lym CD45': ('single:CD45', ['plasma_cell'], L, -1), 'eos<segneut CD16': ('single:CD16', ['eosinophil'], N, -1),
+          'band<segneut CD16': ('single:CD16', ['neutrophil_band'], N, -1), 'myelocyte<segneut CD16': ('single:CD16', ['myelocyte', 'metamyelocyte'], N, -1),
+          'baso>rest CD123': ('single:CD123', ['basophil'], ['lymphocyte', 'neutrophil_segmented', 'monocyte', 'eosinophil'], 1),
+          'normoblast<lym CD45': ('single:CD45', ['normoblast'], L, -1),
+          # lineage references
+          'segneut>lym CD16': ('single:CD16', N, L, 1), 'mono>lym+neut CD14': ('single:CD14', ['monocyte'], L + N, 1), 'lym>neut CD3': ('single:CD3', L, N, 1)}
+    res['mll23_auroc'] = {k: aucm(*v) for k, v in MC.items()}
+    res['mll23_class_means'] = {c: {names[k]: round(float(Pm[cm == c, k].mean()), 3) for k in range(12)} for c in sorted(set(cm))}
+    json.dump(res, open(a.out + '/lineage_consistency.json', 'w'), indent=1); print(json.dumps(res['mll23_auroc'], indent=1))
