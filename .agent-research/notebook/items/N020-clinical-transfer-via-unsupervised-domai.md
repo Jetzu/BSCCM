@@ -1,7 +1,7 @@
 # N020 · Clinical transfer via unsupervised domain adaptation: DANN against unlabelled PBC smears (half A), pre-registered lineage AUROCs on held-out PBC half B
 
 type: exp · date: 2026-11-09 · status: done
-goal_effect: pending · scale: module
+goal_effect: flat · scale: module · value: 0.5742
 
 ## Goal
 
@@ -17,6 +17,7 @@ goal_effect: pending · scale: module
   DANN .3 (job 1285663) .82 .36 .26 .47 .54 .70 .62 .68  mean .56
   bg-whitening (test-time, baseline) .51 .18 .64 .21 .35 .47 .23 .90  mean .44
   (.agent-research/results/N020-clinical-transfer-via-unsupervised-domai/pbc_transfer_auroc.csv; pbc_bg_whitening_check.png). Domain-classifier loss ~.69 (chance) -> marginals aligned; in-domain retrieval R@10 .27-.28, student-vs-teacher .48-.49 (vs .54 without DANN).
+- Plot: /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/plots/pbc-lineage-auroc_2026-11-09_1543.png
 - => no reliable clinical transfer: contrasts swing between configs (CD14 .70 -> .26); unconditional alignment mismatches classes (label-shift + extra PBC classes: platelets, erythroblasts, IG). Next: class-anchored alignment (anchors = neutrophil/lymphocyte/monocyte only), evaluation on classes never used for alignment (eosinophil CD16-neg, basophil CD123+).
 <!-- exp: each run = job id, config, seed, output dir · results vs baseline -->
 
