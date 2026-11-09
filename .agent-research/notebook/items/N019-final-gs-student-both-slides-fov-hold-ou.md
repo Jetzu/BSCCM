@@ -1,7 +1,7 @@
 # N019 · Final GS student (both slides, fov hold-out) + clinical-transfer test on PBC smears: pre-registered lineage-consistency AUROCs
 
-type: exp · date: 2026-11-09 · status: open
-goal_effect: pending · scale: module
+type: exp · date: 2026-11-09 · status: done
+goal_effect: n/a · scale: module · value: - · why: measurement
 
 ## Goal
 

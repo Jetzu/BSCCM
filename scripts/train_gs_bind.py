@@ -13,7 +13,7 @@ ap = argparse.ArgumentParser()
 ap.add_argument('--lf-feats', required=True); ap.add_argument('--out', required=True); ap.add_argument('--steps', type=int, default=6000)
 ap.add_argument('--bs', type=int, default=128); ap.add_argument('--lr', type=float, default=1e-4); ap.add_argument('--freeze', type=int, default=8)
 ap.add_argument('--dim', type=int, default=256); ap.add_argument('--w-distill', type=float, default=1.0); ap.add_argument('--holdout', default='batch1')
-ap.add_argument('--aug', type=int, default=1); ap.add_argument('--stain-norm', default='none', choices=['none', 'macenko']); ap.add_argument('--dann', type=float, default=0.0); ap.add_argument('--seed', type=int, default=0); ap.add_argument('--workers', type=int, default=12)
+ap.add_argument('--aug', type=int, default=1); ap.add_argument('--stain-norm', default='none', choices=['none', 'macenko']); ap.add_argument('--dann', type=float, default=0.0); ap.add_argument('--target-zip', default=''); ap.add_argument('--target-half', default='A'); ap.add_argument('--seed', type=int, default=0); ap.add_argument('--workers', type=int, default=12)
 a = ap.parse_args(); os.makedirs(a.out, exist_ok=True); torch.manual_seed(a.seed); np.random.seed(a.seed); dev = 'cuda'
 W = '/hnvme/workspace/v181bb10-bsccm'; T = np.load(W + '/targets_v4.npz'); names = list(T['names']); K = len(names)
 Y, Mk, sp, b, hrow = T['Y'], T['mask'], T['split'], T['batch'], T['hist_row']
@@ -39,6 +39,18 @@ class GSSet(torch.utils.data.Dataset):
     def __len__(s): return len(s.rows)
     def __getitem__(s, i):
         r = int(s.rows[i]); return torch.from_numpy(np.array(H[r]).astype(np.int16)), r      # uint16 <= 4095 -> int16 view-safe
+class ExtSet(torch.utils.data.Dataset):   # unlabelled external smear images (labels never read here)
+    def __init__(s, zpath, half):
+        import zipfile; s.zp = zpath; s.z = None
+        names = sorted(n for n in zipfile.ZipFile(zpath).namelist() if n.lower().endswith('.jpg') and '__MACOSX' not in n and not os.path.basename(n).startswith('.'))
+        s.names = names[0::2] if half == 'A' else names[1::2]
+    def __len__(s): return len(s.names)
+    def __getitem__(s, i):
+        import zipfile, io
+        from PIL import Image
+        if s.z is None: s.z = zipfile.ZipFile(s.zp)
+        im = Image.open(io.BytesIO(s.z.read(s.names[i]))).convert('RGB').resize((398, 398), Image.BILINEAR)
+        return torch.from_numpy(np.asarray(im, np.uint8).copy()), i
 def loader(rows, train):
     return torch.utils.data.DataLoader(GSSet(rows), batch_size=a.bs, shuffle=train, drop_last=train, num_workers=a.workers, pin_memory=True, persistent_workers=train, prefetch_factor=4)
 MEAN = torch.tensor([0.485, 0.456, 0.406], device=dev).view(1, 3, 1, 1); STD = torch.tensor([0.229, 0.224, 0.225], device=dev).view(1, 3, 1, 1)
@@ -64,6 +76,8 @@ def macenko(x):   # x (B,3,H,W) in [0,1] -> stain-normalised to MAC_REF
     return out.clamp(0, 1)
 def prep(x, train):
     x = (x.to(dev).float() / scale).clamp(0, 1).permute(0, 3, 1, 2)                      # (B,3,398,398) in [0,1]
+    return pipeline(x, train)
+def pipeline(x, train):   # x (B,3,398,398) float in [0,1] (BSCCM or resized external smears)
     if a.stain_norm == 'macenko': x = macenko(x)
     B = len(x)
     if train and a.aug:
@@ -155,7 +169,12 @@ def evaluate():
     np.savez(a.out + '/test_preds.npz', rows=rr, gidx=gidx[rr], student=stud.numpy(), teacher=tch.numpy(), z=zg.cpu().numpy())
     net.train(); return out
 log = []; t0 = time.time(); it = iter(loader(tr_r, True)); acc = {}
-it_t = iter(loader(te_r, True)) if a.dann > 0 else None   # UNLABELLED images of the held-out slide (no markers/autofl used)
+if a.dann > 0 and a.target_zip:
+    _ext = ExtSet(a.target_zip, a.target_half); print(f'DANN target: {len(_ext)} unlabelled external images (half {a.target_half})', flush=True)
+    _ext_loader = lambda: iter(torch.utils.data.DataLoader(_ext, batch_size=a.bs, shuffle=True, drop_last=True, num_workers=a.workers, pin_memory=True))
+    it_t = _ext_loader()
+else:
+    it_t = iter(loader(te_r, True)) if a.dann > 0 else None   # UNLABELLED images of the held-out slide (no markers/autofl used)
 for step in range(a.steps):
     try: x, r = next(it)
     except StopIteration: it = iter(loader(tr_r, True)); x, r = next(it)
@@ -163,8 +182,9 @@ for step in range(a.steps):
     l_dann = torch.zeros((), device=dev)
     if a.dann > 0:
         try: xt, _ = next(it_t)
-        except StopIteration: it_t = iter(loader(te_r, True)); xt, _ = next(it_t)
-        _, ht = encode(prep(xt, True), feats=True); hh = torch.cat([hg, ht]); dl = torch.cat([torch.zeros(len(hg)), torch.ones(len(ht))]).to(dev)
+        except StopIteration: it_t = _ext_loader() if a.target_zip else iter(loader(te_r, True)); xt, _ = next(it_t)
+        xt01 = (xt.to(dev).float() / 255.).permute(0, 3, 1, 2) if a.target_zip else None
+        _, ht = encode(pipeline(xt01, True) if a.target_zip else prep(xt, True), feats=True); hh = torch.cat([hg, ht]); dl = torch.cat([torch.zeros(len(hg)), torch.ones(len(ht))]).to(dev)
         l_dann = F.binary_cross_entropy_with_logits(net['D'](_GRL.apply(hh, 1.0))[:, 0], dl)
     lg = zg @ zl.T * tsig.exp() + bsig; lab = 2 * torch.eye(len(zg), device=dev) - 1; l_sig = -F.logsigmoid(lab * lg).sum() / len(zg)
     m = torch.ones(len(r), K, device=dev)      # distil ALL 13 teacher outputs (incl. the teacher's autofl PREDICTION); measured autofl truth stays eval-only
