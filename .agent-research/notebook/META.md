@@ -1,3 +1,3 @@
-last_lint_item: N011
-last_lint_date: 2026-11-08
-large_output_location: (unset - absolute path for outputs >5MB)
+last_lint_item: N023
+last_lint_date: 2026-11-09
+large_output_location: /hnvme/workspace/v181bb10-bsccm/agent-research-large

@@ -11,7 +11,7 @@ goal_effect: flat · scale: module · value: 0.5545
 ## Changes
 
 ## Evidence
-- Cross-slide (train b0 slide, test b1 slide 5,697), 2,500 steps, sup-LF teacher: aug only autofl-truth r .284 R@10 .041 medr 615; +Macenko .287 / .038 / 522; Macenko+DANN(.1) .304 / .032 / 587; DANN only .308 / .033 / 662 -> all within noise; stain normalisation and adversarial slide invariance do NOT fix the cross-slide gap. Macenko check: slide identity from colour stats .883 -> .707 (results/N011-*/macenko_check.png).
+- Cross-slide (train b0 slide, test b1 slide 5,697), 2,500 steps, sup-LF teacher: aug only autofl-truth r .284 R@10 .041 medr 615; +Macenko .287 / .038 / 522; Macenko+DANN(.1) .304 / .032 / 587; DANN only .308 / .033 / 662 -> all within noise; stain normalisation and adversarial slide invariance do NOT fix the cross-slide gap. Macenko check: slide identity from colour stats .883 -> .707 (.agent-research/results/N011-diagnose-the-cross-slide-gs-failure-auto/macenko_check.png).
 <!-- exp: each run = job id, config, seed, output dir · results vs baseline -->
 
 - v4 LABELS + v4 teacher (LF sup v4 fov encoder, probe r .634; runs/n013_gsbind_v4_*): cross-slide b0->b1 (5,697 test GS cells): student vs DETRENDED autofl truth r .648 (aug) / .624 (Macenko) vs LF teacher .559 on the same cells; student-vs-teacher mean r (12 markers) .67-.69 (v3: .54); retrieval R@10 .042 medr ~450-500. Within-batch FOV run (pooled slides): autofl .26 / teacher .10 (pooled-slide evaluation of per-slide-detrended target; use per-slide numbers).

@@ -1,1 +1,3 @@
 # Rules
+- Truth = position-detrended labels only (targets_v4 or later); never raw autofl/CD19/CD56/CD123 as ground truth. Inputs keep all real artefacts: no position/metadata inputs, robustness via augmentation (user ruling 2026-11-09) [permanent] (N012, N013, N014, N015, N017, N018)
+- External/clinical evals: adaptation and evaluation on disjoint data (PBC half A vs half B; MLL23 never used in training or alignment); contrasts pre-registered before results; anchored or in-domain contrasts count as partly circular (N019, N020, N021, N022)

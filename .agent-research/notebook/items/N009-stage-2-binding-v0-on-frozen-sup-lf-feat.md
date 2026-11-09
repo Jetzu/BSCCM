@@ -1,7 +1,7 @@
 # N009 · Stage-2 binding v0 on frozen sup-LF features: GS (DinoBloom-B) + MK set-encoder SigLIP to LF; distillation vs head transfer; autofl truth on held-out GS slide; zero-training GS-LF screen
 
-type: exp · date: 2026-11-08 · status: open
-goal_effect: pending · scale: module
+type: exp · date: 2026-11-08 · status: done
+goal_effect: n/a · scale: module · value: - · why: measurement
 
 ## Goal
 

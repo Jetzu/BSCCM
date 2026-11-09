@@ -1,7 +1,7 @@
 # N008 · External lineage anchor: PBC (Acevedo) MGG classifier on frozen DinoBloom features applied to BSCCM Wright cells, scale-matched
 
-type: analysis · date: 2026-11-08 · status: open
-goal_effect: pending · scale: ?
+type: analysis · date: 2026-11-08 · status: done
+goal_effect: n/a · scale: ? · value: - · why: measurement
 
 ## Goal
 

@@ -11,7 +11,7 @@ goal_effect: flat · scale: module · value: 0.5742
 ## Changes
 
 ## Evidence
-- Anchored CE (anchors neutrophil/lymphocyte/monocyte; BSCCM side = LF-model lineage of each Wright cell; PBC half A anchor images only; eosinophil/basophil/IG/erythroblast/platelet NEVER used): jobs 1285843 (s0), 1286891 (s1); +DANN .3 job 1285845. Eval on PBC half B (.agent-research/results/N021-class-anchored-alignment-to-pbc-anchors/pbc_anchor_auroc.csv; */lineage_consistency.json).
+- Anchored CE (anchors neutrophil/lymphocyte/monocyte; BSCCM side = LF-model lineage of each Wright cell; PBC half A anchor images only; eosinophil/basophil/IG/erythroblast/platelet NEVER used): jobs 1285843 (s0), 1286891 (s1); +DANN .3 job 1285845. Eval on PBC half B (.agent-research/results/N021-class-anchored-alignment-to-pbc-anchors/pbc_anchor_auroc.csv; lineage_consistency.json in each arm subfolder anc, anc_s1, anc_v2, ancdann, baseline_v2, e.g. .agent-research/results/N021-class-anchored-alignment-to-pbc-anchors/anc/lineage_consistency.json).
 - Anchored contrasts (CD16 neut>lym, CD14 mono, grp CD3/19/56, CD3, CD45 lym>neut, HLA-DR): baseline .31-.70 -> anchored s0 .79-1.00, s1 .94-1.00 (partly circular: class labels shape the alignment).
 - HELD-OUT classes: CD16 neut>eos .11 -> .95 (s0) but .36 (s1) = NOT robust; CD16 neut>IG (pre-registered before results) .30 -> .92/.83; CD45 lym>erythroblast (pre-registered) .35 -> .83/.98; CD123 baso .48 -> .49/.61. +DANN: eos .55, baso .15 -> DANN harmful.
 - In-domain cost: retrieval R@10 .28, student-vs-teacher .49 (vs .54 without alignment).
@@ -24,5 +24,6 @@ goal_effect: flat · scale: module · value: 0.5742
 
 ## Outputs
 <!-- files in .agent-research/results/N021-slug/ + external absolute paths -->
+- Student outputs {anc,anc_s1,anc_v2,ancdann,baseline_v2}/{bsccm,pbc}_gs_student.npz (>5MB) moved at lint 2026-11-09 to /hnvme/workspace/v181bb10-bsccm/agent-research-large/N021-class-anchored-alignment-to-pbc-anchors/ (symlinked back in the results folder).
 
 ## Next

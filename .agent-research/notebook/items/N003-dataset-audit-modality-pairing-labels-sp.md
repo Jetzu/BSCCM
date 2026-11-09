@@ -1,7 +1,7 @@
 # N003 · Dataset audit: modality pairing, labels, splits, Giemsa-LF match quality, batch structure
 
-type: analysis · date: 2026-11-08 · status: open
-goal_effect: pending · scale: ?
+type: analysis · date: 2026-11-08 · status: done
+goal_effect: n/a · scale: ? · value: - · why: measurement
 
 ## Goal
 

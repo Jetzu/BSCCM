@@ -15,3 +15,10 @@
 {"ts":"2026-11-09T15:43:34+01:00","event":"goal_effect","item":"N019","effect":"n/a","value":"-","scale":"module","why":"measurement"}
 {"ts":"2026-11-09T15:43:44+01:00","event":"goal_effect","item":"N020","effect":"flat","value":"0.5742","scale":"module","why":""}
 {"ts":"2026-11-09T16:50:41+01:00","event":"goal_effect","item":"N021","effect":"flat","value":"0.5742","scale":"module","why":""}
+{"ts":"2026-11-09T20:19:44+01:00","event":"goal_effect","item":"N002","effect":"n/a","value":"-","scale":"?","why":"measurement"}
+{"ts":"2026-11-09T20:19:44+01:00","event":"goal_effect","item":"N003","effect":"n/a","value":"-","scale":"?","why":"measurement"}
+{"ts":"2026-11-09T20:19:44+01:00","event":"goal_effect","item":"N004","effect":"n/a","value":"-","scale":"?","why":"measurement"}
+{"ts":"2026-11-09T20:19:44+01:00","event":"goal_effect","item":"N008","effect":"n/a","value":"-","scale":"?","why":"measurement"}
+{"ts":"2026-11-09T20:19:44+01:00","event":"goal_effect","item":"N009","effect":"n/a","value":"-","scale":"module","why":"measurement"}
+{"ts":"2026-11-09T20:19:44+01:00","event":"goal_effect","item":"N011","effect":"n/a","value":"-","scale":"?","why":"measurement"}
+{"ts":"2026-11-09T20:19:44+01:00","event":"goal_effect","item":"N012","effect":"n/a","value":"-","scale":"?","why":"measurement"}

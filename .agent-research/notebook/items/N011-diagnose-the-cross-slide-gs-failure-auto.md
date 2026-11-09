@@ -1,7 +1,7 @@
 # N011 · Diagnose the cross-slide GS failure: autofl comparability per slide, GS vs LF side, within- vs cross-slide penalty, domain separability
 
-type: analysis · date: 2026-11-08 · status: open
-goal_effect: pending · scale: ?
+type: analysis · date: 2026-11-08 · status: done
+goal_effect: n/a · scale: ? · value: - · why: measurement
 
 ## Goal
 

@@ -26,5 +26,6 @@ goal_effect: flat · scale: module · value: 0.5742
 
 ## Outputs
 <!-- files in .agent-research/results/N020-slug/ + external absolute paths -->
+- Student outputs {baseline_noDA,baseline_noDA_bgwhite,dann_0.1,dann_0.3}/{bsccm,pbc}_gs_student.npz (>5MB) moved at lint 2026-11-09 to /hnvme/workspace/v181bb10-bsccm/agent-research-large/N020-clinical-transfer-via-unsupervised-domai/ (symlinked back in the results folder).
 
 ## Next

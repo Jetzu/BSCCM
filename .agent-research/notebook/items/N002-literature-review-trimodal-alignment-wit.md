@@ -1,7 +1,7 @@
 # N002 · Literature review: trimodal alignment with a pivot modality, transitive transfer, ground truth without same-cell pairs
 
-type: research · date: 2026-11-08 · status: open
-goal_effect: pending · scale: ?
+type: research · date: 2026-11-08 · status: done
+goal_effect: n/a · scale: ? · value: - · why: measurement
 
 ## Goal
 

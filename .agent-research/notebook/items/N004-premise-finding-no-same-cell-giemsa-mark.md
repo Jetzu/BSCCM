@@ -1,7 +1,7 @@
 # N004 · Premise finding: no same-cell Giemsa-marker pairs; label-free is the pivot
 
-type: decision · date: 2026-11-08 · status: open
-goal_effect: pending · scale: ?
+type: decision · date: 2026-11-08 · status: done
+goal_effect: n/a · scale: ? · value: - · why: measurement
 
 ## Goal
 Record the project premise (as given by the user, 2026-11-08) and the data finding that changes it.
