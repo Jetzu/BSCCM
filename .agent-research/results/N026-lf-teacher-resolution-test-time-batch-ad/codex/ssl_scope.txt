@@ -1,0 +1,6 @@
+SSL config {'arm': 'aug', 'arch': 'resnet50', 'epochs': 40, 'bs': 512, 'views': 2, 'lr': 0.002, 'lam': 0.05, 'proj_dim': 256, 'rows': 'all', 'exclude_batch': [], 'seed': 0}
+SSL rows 412941 epoch 40
+b10 eval rows 13113 in SSL training 13113
+b01 eval rows 26322 in SSL training 26322
+ADABN eligibility 0 no-label filter 102097 has-label filter 102097 excluded 0
+ADABN eligibility 1 no-label filter 215838 has-label filter 215838 excluded 0

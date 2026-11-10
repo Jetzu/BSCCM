@@ -1,0 +1,8 @@
+single_base      rep0: b10 0.6437 b01 0.6409 GOAL 0.6423
+single_base      rep1: b10 0.6420 b01 0.6348 GOAL 0.6384
+single_zoom2     rep0: b10 0.6456 b01 0.6351 GOAL 0.6403
+single_zoom2     rep1: b10 0.6565 b01 0.6316 GOAL 0.6440
+single_dual2     rep0: b10 0.4864 b01 0.5284 GOAL 0.5074
+ens_base+base    rep0: b10 0.6463 b01 0.6414 GOAL 0.6438
+ens_base+zoom2   rep0: b10 0.6546 b01 0.6479 GOAL 0.6512
+ens_base+zoom2   rep1: b10 0.6574 b01 0.6461 GOAL 0.6518

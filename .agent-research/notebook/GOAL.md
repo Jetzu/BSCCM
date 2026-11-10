@@ -4,10 +4,10 @@ metric: LF->MK common-11 (re-based N023): batch-held-out Pearson r, mean over 11
 direction: higher
 target: 0.67
 target_source: Claude proposal 2026-11-09 (N023): close half of the FOV-vs-batch gap on common-11 (FOV ~.71, batch .634); user to confirm
-best: 0.6404
-best_item: N023
+best: 0.6515
+best_item: N026
 noise: 0.002
 noise_source: .agent-research/results/N023-label-qc-per-batch-dye-amplitude-single/rescore_v5_noise_n013.json (N013 seed0 .6119 vs seed1 .6136)
-constraints: (none stated)
+constraints: SSL-init numbers are TRANSDUCTIVE w.r.t. unlabelled held-out-batch images (n007 SSL pretrained on all rows; red-team N026) until the inductive control N031 lands
 stall_limit: 5
 stall_since: N023

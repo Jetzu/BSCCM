@@ -1,0 +1,6 @@
+WARNING: failed to clean up stale arg0 temp dirs: Directory not empty (os error 39)
+2026-11-10T08:42:19.497514Z ERROR codex_core::tools::router: error=Exit code: 1
+Wall time: 0.1 seconds
+Output:
+Failed to write file /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N026-lf-teacher-resolution-test-time-batch-ad/codex/audit_n026.py
+

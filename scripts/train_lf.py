@@ -14,6 +14,9 @@ ap.add_argument('--phase', type=int, default=1); ap.add_argument('--arch', defau
 ap.add_argument('--bs', type=int, default=256); ap.add_argument('--lr', type=float, default=1e-3); ap.add_argument('--workers', type=int, default=15)
 ap.add_argument('--max-train', type=int, default=0); ap.add_argument('--seed', type=int, default=0); ap.add_argument('--w-cls', type=float, default=0.5); ap.add_argument('--include-gs', type=int, default=0)
 ap.add_argument('--init-ssl', default=''); ap.add_argument('--tail-weight', type=float, default=0.0); ap.add_argument('--focal-c10', type=float, default=0.0); ap.add_argument('--targets', default='targets_v4.npz'); ap.add_argument('--dann', type=float, default=0.0)
+ap.add_argument('--stem', default='std', choices=['std', 'nomaxpool']); ap.add_argument('--zoom', type=int, default=1)   # N026 resolution: centre crop 128/zoom -> upsample to 128
+ap.add_argument('--dual-zoom', type=int, default=1)   # N026: shared encoder sees full view AND centre-zoom view; features concatenated
+ap.add_argument('--adabn', type=int, default=0)   # N026: after training, recompute BN stats on N unlabelled target-batch images (split 0), evaluate again
 a = ap.parse_args(); os.makedirs(a.out, exist_ok=True); torch.manual_seed(a.seed); np.random.seed(a.seed)
 T = np.load(W + '/' + a.targets); names = list(T['names']); K = len(names)
 Y, Mk, c3, c10, sp, b = T['Y'], T['mask'], T['cls3'], T['cls10'], T['split'], T['batch']
@@ -43,7 +46,10 @@ mk = lambda rows, train: torch.utils.data.DataLoader(RawSet(rows, LAB), batch_si
 gnorm = GPUNorm('cuda'); CH = chan_list(a.channels)
 _cnt = np.bincount(c10[tr][c10[tr] >= 0], minlength=10).astype(np.float32); C10W = torch.tensor(1 / np.sqrt(np.maximum(_cnt, 1)), device='cuda'); C10W = C10W / C10W[_cnt > 0].mean()
 def prep(raw, ph, g, train):   # raw int16 records -> normalised LF on GPU (+-4 px translation when training)
-    return gnorm(raw.cuda(non_blocking=True), ph.cuda(non_blocking=True), g.cuda(non_blocking=True), CH, bool(a.phase), shift=4 if train else 0)
+    x = gnorm(raw.cuda(non_blocking=True), ph.cuda(non_blocking=True), g.cuda(non_blocking=True), CH, bool(a.phase), shift=4 if train else 0)
+    if a.zoom > 1:
+        s_ = 128 // a.zoom; o = (128 - s_) // 2; x = F.interpolate(x[..., o:o + s_, o:o + s_], size=(128, 128), mode='bilinear', align_corners=False)
+    return x
 dtr, dev = mk(tr, True), mk(ev, False)
 if a.dann > 0:
     assert a.protocol in ('b1to0', 'b0to1'), 'dann: batch hold-out protocols only'
@@ -56,8 +62,10 @@ SSL = bool(a.init_ssl); net = timm.create_model(a.arch, pretrained=False, num_cl
 if SSL:
     assert a.channels == 'all' and a.phase == 1, 'SSL init expects all 23 LED + phase'
     net.load_state_dict(torch.load(a.init_ssl, map_location='cpu', weights_only=True), strict=True); print('init from SSL', a.init_ssl, flush=True)
-model = nn.ModuleDict({'enc': net, 'reg': nn.Linear(net.num_features, K), 'c3': nn.Linear(net.num_features, 3), 'c10': nn.Linear(net.num_features, 10),
-                      'dom': nn.Sequential(nn.Linear(net.num_features, 256), nn.ReLU(), nn.Linear(256, 1))}).cuda()
+if a.stem == 'nomaxpool': net.maxpool = nn.Identity()   # stride 2 instead of 4 before layer1 (weights unchanged)
+NF = net.num_features * (2 if a.dual_zoom > 1 else 1)
+model = nn.ModuleDict({'enc': net, 'reg': nn.Linear(NF, K), 'c3': nn.Linear(NF, 3), 'c10': nn.Linear(NF, 10),
+                      'dom': nn.Sequential(nn.Linear(NF, 256), nn.ReLU(), nn.Linear(256, 1))}).cuda()
 opt = torch.optim.AdamW(model.parameters(), lr=a.lr, weight_decay=0.05); steps = a.epochs * len(dtr)
 sched = torch.optim.lr_scheduler.OneCycleLR(opt, a.lr, total_steps=steps, pct_start=0.1)
 class _GRL(torch.autograd.Function):
@@ -67,12 +75,16 @@ class _GRL(torch.autograd.Function):
     def backward(ctx, g): return -ctx.l * g, None
 def fwd(x):
     if SSL: x = torch.cat([x, torch.ones_like(x)], 1)
-    with torch.autocast('cuda', torch.bfloat16): h = model['enc'](x.contiguous(memory_format=torch.channels_last))
+    with torch.autocast('cuda', torch.bfloat16):
+        h = model['enc'](x.contiguous(memory_format=torch.channels_last))
+        if a.dual_zoom > 1:   # second view through the SAME encoder: centre crop 128/dual_zoom upsampled to 128
+            s_ = 128 // a.dual_zoom; o = (128 - s_) // 2; xz = F.interpolate(x[..., o:o + s_, o:o + s_], size=(128, 128), mode='bilinear', align_corners=False)
+            h = torch.cat([h, model['enc'](xz.contiguous(memory_format=torch.channels_last))], 1)
     h = h.float(); return model['reg'](h), model['c3'](h), model['c10'](h), h
 def pearson(p, y):
     p, y = p - p.mean(), y - y.mean(); return float((p * y).sum() / (np.sqrt((p * p).sum() * (y * y).sum()) + 1e-9))
 @torch.no_grad()
-def evaluate(save=False):
+def evaluate(save=False, tag=''):
     model.eval(); P, C3, G = [], [], []
     C10 = []
     for raw, ph, g, y, m, k3, k10, _w in dev:
@@ -106,15 +118,17 @@ def evaluate(save=False):
         if (gran & (k10 == 5)).sum() > 5:
             from sklearn.metrics import roc_auc_score
             r['fine/eos_gate_auroc_from_predCD16'] = float(roc_auc_score(k10[gran] == 5, -P[gran, jc]))
-    if save: np.savez(a.out + '/eval_preds.npz', P=P, G=G, C3=C3)
+    if save: np.savez(a.out + f'/eval_preds{tag}.npz', P=P, G=G, C3=C3)
     model.train(); return r
 try:
     import wandb; run = wandb.init(project=os.environ.get('WANDB_PROJECT', 'BSCCM'), name=os.path.basename(a.out.rstrip('/')), id=os.path.basename(a.out.rstrip('/')), resume='allow', config=vars(a))
 except Exception as e: print('wandb off:', e); run = None
+_NEW_DEFAULTS = {'stem': 'std', 'zoom': 1, 'dual_zoom': 1}   # options added after older checkpoints were written: omitted at default so they still resume
+def _cfg(): return {k: v for k, v in vars(a).items() if k not in ('workers', 'out', 'adabn') and not (k in _NEW_DEFAULTS and v == _NEW_DEFAULTS[k])}
 ck = a.out + '/ckpt.pt'; ep0 = 0; log = []
 if os.path.exists(ck):
     s = torch.load(ck, map_location='cuda', weights_only=False)
-    cfg = {k: v for k, v in vars(a).items() if k not in ('workers', 'out')}
+    cfg = _cfg()
     if s.get('cfg') != cfg or not np.array_equal(s.get('tr'), tr) or not np.array_equal(s.get('ev'), ev):
         raise SystemExit(f'refusing to resume {ck}: config/rows differ from the checkpoint (red-team F3)')
     model.load_state_dict(s['m']); opt.load_state_dict(s['o']); sched.load_state_dict(s['s']); ep0, log = s['ep'], s['log']; print('resumed', ep0, flush=True)
@@ -144,6 +158,16 @@ for ep in range(ep0, a.epochs):
     r = evaluate(save=(ep + 1 == a.epochs)); r.update(epoch=ep + 1, train_loss=tl / n, secs=time.time() - t0); log.append(r); print(json.dumps(r, default=float), flush=True)
     if run: run.log({f'eval/{k}': v for k, v in r.items() if not isinstance(v, dict)}, step=step)
     torch.save({'m': model.state_dict(), 'o': opt.state_dict(), 's': sched.state_dict(), 'ep': ep + 1, 'log': log, 'tr': tr, 'ev': ev,
-                'cfg': {k: v for k, v in vars(a).items() if k not in ('workers', 'out')}}, ck + '.tmp'); os.replace(ck + '.tmp', ck)
+                'cfg': _cfg()}, ck + '.tmp'); os.replace(ck + '.tmp', ck)
+if a.adabn:   # unsupervised test-time BN recalibration on target-batch images from TRAINING FOVs (split 0; labels never read)
+    assert a.protocol in ('b1to0', 'b0to1'), 'adabn: batch hold-out protocols only'
+    tb = 0 if a.protocol == 'b1to0' else 1; tgt = np.random.default_rng(0).permutation(np.where((b == tb) & (sp == 0) & has)[0])[:a.adabn]
+    for m_ in model['enc'].modules():
+        if isinstance(m_, nn.modules.batchnorm._BatchNorm): m_.reset_running_stats(); m_.momentum = None
+    model.train()
+    with torch.no_grad():
+        for raw, ph, g, *_ in mk(tgt, False): fwd(prep(raw, ph, g, False))
+    ra = evaluate(save=True, tag='_adabn'); print('ADABN', json.dumps(ra, default=float), flush=True)
+    json.dump({'args': vars(a), 'n_adabn': len(tgt), 'final': ra}, open(a.out + '/result_adabn.json', 'w'), indent=1, default=float)
 if run: run.finish()
 json.dump({'args': vars(a), 'final': log[-1], 'log': log, 'n_train': len(tr), 'n_eval': len(ev), 'targets': names}, open(a.out + '/result.json', 'w'), indent=1, default=float)

@@ -13,7 +13,7 @@ Arms (anchored students: PBC half A anchors, anchor-ce .5, 3000 steps, fov holdo
 - TT6: v4 r18 markers + v6 r18 autofl.
 - GOAL: SSL-init r50 on v6, b1to0 + b0to1, seeds 0/1 (compare with N023 v5 .6404).
 Metrics: Giemsa autofl truth WITHIN-SLIDE r; MLL23 mean AUROC over 12 pre-registered fine contrasts; PBC-B. References: N024 (v4 r18 .383/.689 within, .622 MLL23; v5 r18 .510/.867, .536). Success = within-slide autofl >= v5 and MLL23 >= v4 within seed spread.
-Jobs (results/N025-*/jobs.txt): v6 teacher 1294463, probe 1294464; students/applies/GOAL 1294456-1294482. ~4.5 GPU-h, 1 H100 each, preempt.
+Jobs (.agent-research/results/N025-giemsa-chain-without-the-trade-off-two-t/jobs.txt): v6 teacher 1294463, probe 1294464; students/applies/GOAL 1294456-1294482. ~4.5 GPU-h, 1 H100 each, preempt.
 
 ## Changes
 - scripts/train_gs_bind.py: --aux-feats/--aux-targets/--aux-names (two-teacher distillation; bound ingredient a skips aux targets). scripts/make_targets_v6.py -> targets_v6.npz.

@@ -1,0 +1,10 @@
+n023_v5_b10            b1to0 targets_v5.npz  avail(n=12) 0.5726  valid(n=11) 0.6437  common11 0.6437  A=-0.210
+n023_v5_b01            b0to1 targets_v5.npz  avail(n=11) 0.6409  valid(n=11) 0.6409  common11 0.6409  A=nan
+n023_v5_b10_s1         b1to0 targets_v5.npz  avail(n=12) 0.5778  valid(n=11) 0.6420  common11 0.6420  A=-0.129
+n023_v5_b01_s1         b0to1 targets_v5.npz  avail(n=11) 0.6348  valid(n=11) 0.6348  common11 0.6348  A=nan
+n026_zoom2_b10         b1to0 targets_v5.npz  avail(n=12) 0.5680  valid(n=11) 0.6456  common11 0.6456  A=-0.285
+n026_zoom2_b01         b0to1 targets_v5.npz  avail(n=11) 0.6351  valid(n=11) 0.6351  common11 0.6351  A=nan
+n026_zoom2_b10_s1      b1to0 targets_v5.npz  avail(n=12) 0.5888  valid(n=11) 0.6565  common11 0.6565  A=-0.155
+n026_zoom2_b01_s1      b0to1 targets_v5.npz  avail(n=11) 0.6316  valid(n=11) 0.6316  common11 0.6316  A=nan
+n026_dual2_b10         b1to0 targets_v5.npz  avail(n=12) 0.4552  valid(n=11) 0.4864  common11 0.4864  A=0.111
+n026_dual2_b01         b0to1 targets_v5.npz  avail(n=11) 0.5284  valid(n=11) 0.5284  common11 0.5284  A=nan

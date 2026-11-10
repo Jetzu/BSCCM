@@ -1,0 +1,55 @@
+COMMON ['single:CD45', 'single:CD123', 'single:CD19', 'single:CD56', 'single:CD14', 'single:CD16', 'single:HLA-DR', 'single:CD3', 'grp:CD3/CD19/CD56', 'grp:CD45', 'grp:CD16']
+RUN n023_v5_b10 seed 0 ep 10 tr/ev 269283 13113 r 0.643657717 train_score_delta -1.19e-08 bn_count 74990 steps 10510 cfgdiff {} hash 02908619a734
+HISTORY n023_v5_b10 [(1, 0.4878, 0.5732), (2, 0.3966, 0.5515), (3, 0.3837, 0.6152), (4, 0.3678, 0.6226), (5, 0.3553, 0.5962), (6, 0.3425, 0.6129), (7, 0.3269, 0.6339), (8, 0.3145, 0.6385), (9, 0.3055, 0.6445), (10, 0.3014, 0.6437)]
+ADABN n023_v5_b10 r 0.634587663 delta -0.009070054 rows 20000 ev_overlap 0
+RUN n023_v5_b01 seed 0 ep 10 tr/ev 127946 26322 r 0.640881619 train_score_delta -8.9e-09 bn_count 69470 steps 4990 cfgdiff {} hash fcf1bc5c8b08
+HISTORY n023_v5_b01 [(1, 1.3216, 0.5702), (2, 0.9284, 0.5808), (3, 0.8791, 0.5826), (4, 0.8381, 0.6044), (5, 0.7993, 0.6201), (6, 0.763, 0.6252), (7, 0.7219, 0.6263), (8, 0.6927, 0.64), (9, 0.663, 0.6417), (10, 0.6502, 0.6409)]
+ADABN n023_v5_b01 r 0.635737154 delta -0.005144465 rows 20000 ev_overlap 0
+RUN n023_v5_b10_s1 seed 1 ep 10 tr/ev 269283 13113 r 0.642022426 train_score_delta -5.1e-09 bn_count 74990 steps 10510 cfgdiff {} hash dde6dd413a48
+HISTORY n023_v5_b10_s1 [(1, 0.4895, 0.5661), (2, 0.3983, 0.5911), (3, 0.3831, 0.6148), (4, 0.3705, 0.6203), (5, 0.3556, 0.6223), (6, 0.3443, 0.6381), (7, 0.3277, 0.6335), (8, 0.3152, 0.6386), (9, 0.3051, 0.6415), (10, 0.3014, 0.642)]
+ADABN n023_v5_b10_s1 r 0.631190201 delta -0.010832225 rows 20000 ev_overlap 0
+RUN n023_v5_b01_s1 seed 1 ep 10 tr/ev 127946 26322 r 0.634847495 train_score_delta 5.4e-09 bn_count 69470 steps 4990 cfgdiff {} hash c4ee4568db0e
+HISTORY n023_v5_b01_s1 [(1, 1.3365, 0.525), (2, 0.9216, 0.601), (3, 0.8707, 0.582), (4, 0.8233, 0.6021), (5, 0.7924, 0.6137), (6, 0.7565, 0.6205), (7, 0.7215, 0.6293), (8, 0.6828, 0.633), (9, 0.6604, 0.6364), (10, 0.6422, 0.6348)]
+ADABN n023_v5_b01_s1 r 0.629375323 delta -0.005472172 rows 20000 ev_overlap 0
+RUN n026_zoom2_b10 seed 0 ep 10 tr/ev 269283 13113 r 0.645598142 train_score_delta 2e-09 bn_count 74990 steps 10510 cfgdiff {'zoom': 2} hash 22e0a2a6a02f
+HISTORY n026_zoom2_b10 [(1, 0.493, 0.5799), (2, 0.4049, 0.6101), (3, 0.3923, 0.6045), (4, 0.3818, 0.6185), (5, 0.3707, 0.6353), (6, 0.3593, 0.6324), (7, 0.3467, 0.6385), (8, 0.3357, 0.6411), (9, 0.3268, 0.6489), (10, 0.3228, 0.6456)]
+ADABN n026_zoom2_b10 r 0.637731047 delta -0.007867094 rows 20000 ev_overlap 0
+RUN n026_zoom2_b01 seed 0 ep 10 tr/ev 127946 26322 r 0.635090558 train_score_delta -1.1e-09 bn_count 69470 steps 4990 cfgdiff {'zoom': 2} hash 94f86f2522a1
+HISTORY n026_zoom2_b01 [(1, 1.3476, 0.5615), (2, 0.947, 0.5941), (3, 0.9154, 0.5956), (4, 0.8836, 0.6019), (5, 0.8538, 0.6133), (6, 0.82, 0.6176), (7, 0.7847, 0.6289), (8, 0.7601, 0.6359), (9, 0.7308, 0.6348), (10, 0.7203, 0.6351)]
+ADABN n026_zoom2_b01 r 0.63090935 delta -0.004181208 rows 20000 ev_overlap 0
+RUN n026_zoom2_b10_s1 seed 1 ep 10 tr/ev 269283 13113 r 0.656484895 train_score_delta 3.5e-09 bn_count 74990 steps 10510 cfgdiff {'zoom': 2} hash d3a2e3ce87ab
+HISTORY n026_zoom2_b10_s1 [(1, 0.4978, 0.5928), (2, 0.4051, 0.5959), (3, 0.3928, 0.6191), (4, 0.3834, 0.6267), (5, 0.3726, 0.6384), (6, 0.3613, 0.6407), (7, 0.3502, 0.6472), (8, 0.3399, 0.6534), (9, 0.3302, 0.6542), (10, 0.3259, 0.6565)]
+RUN n026_zoom2_b01_s1 seed 1 ep 10 tr/ev 127946 26322 r 0.631551409 train_score_delta -1.8e-09 bn_count 69470 steps 4990 cfgdiff {'zoom': 2} hash 142be426bf5e
+HISTORY n026_zoom2_b01_s1 [(1, 1.3687, 0.5455), (2, 0.9495, 0.5963), (3, 0.9171, 0.5851), (4, 0.8778, 0.606), (5, 0.8487, 0.6109), (6, 0.8201, 0.6168), (7, 0.7864, 0.6244), (8, 0.7533, 0.6304), (9, 0.7264, 0.6324), (10, 0.7139, 0.6316)]
+RUN n026_dual2_b10 seed 0 ep 10 tr/ev 269283 13113 r 0.486426001 train_score_delta 3.3e-09 bn_count 85500 steps 10510 cfgdiff {'dual_zoom': 2} hash 13e174fc6cce
+HISTORY n026_dual2_b10 [(1, 0.4784, 0.5063), (2, 0.3966, 0.5414), (3, 0.3799, 0.4626), (4, 0.367, 0.4876), (5, 0.3535, 0.4801), (6, 0.3431, 0.4801), (7, 0.3266, 0.484), (8, 0.3148, 0.4926), (9, 0.305, 0.484), (10, 0.3006, 0.4864)]
+RUN n026_dual2_b01 seed 0 ep 10 tr/ev 127946 26322 r 0.528375244 train_score_delta 8.3e-09 bn_count 74460 steps 4990 cfgdiff {'dual_zoom': 2} hash 82c3cd37b0a9
+HISTORY n026_dual2_b01 [(1, 1.2813, 0.5442), (2, 0.9217, 0.5576), (3, 0.8562, 0.5458), (4, 0.8246, 0.5342), (5, 0.7856, 0.5272), (6, 0.7428, 0.5349), (7, 0.7099, 0.5275), (8, 0.6728, 0.534), (9, 0.645, 0.5283), (10, 0.6353, 0.5284)]
+RUN n026_nomp_b10 seed 0 ep 10 tr/ev 269283 13113 r 0.639171317 train_score_delta 5.6e-09 bn_count 74990 steps 10510 cfgdiff {'stem': 'nomaxpool'} hash 41786aa79a32
+HISTORY n026_nomp_b10 [(1, 0.4941, 0.5953), (2, 0.4009, 0.591), (3, 0.3863, 0.5922), (4, 0.3718, 0.5969), (5, 0.3617, 0.5945), (6, 0.348, 0.6257), (7, 0.3327, 0.6322), (8, 0.3187, 0.6391), (9, 0.309, 0.6421), (10, 0.3045, 0.6392)]
+ADABN n026_nomp_b10 r 0.629978051 delta -0.009193265 rows 20000 ev_overlap 0
+RUN n026_nomp_b01 seed 0 ep 10 tr/ev 127946 26322 r 0.624486972 train_score_delta 3.1e-09 bn_count 69470 steps 4990 cfgdiff {'stem': 'nomaxpool'} hash cc3c35a23b6f
+HISTORY n026_nomp_b01 [(1, 1.3473, 0.5583), (2, 0.9264, 0.5842), (3, 0.8843, 0.5839), (4, 0.8453, 0.5981), (5, 0.81, 0.6023), (6, 0.7754, 0.6118), (7, 0.7416, 0.6236), (8, 0.7116, 0.623), (9, 0.6814, 0.6233), (10, 0.6687, 0.6245)]
+ADABN n026_nomp_b01 r 0.617532623 delta -0.00695435 rows 20000 ev_overlap 0
+RUN n026_zoom2nomp_b10 seed 0 ep 10 tr/ev 269283 13113 r 0.651053769 train_score_delta -6.5e-09 bn_count 74990 steps 10510 cfgdiff {'stem': 'nomaxpool', 'zoom': 2} hash 76072b2ef79a
+HISTORY n026_zoom2nomp_b10 [(1, 0.4963, 0.5701), (2, 0.4104, 0.6081), (3, 0.398, 0.6108), (4, 0.3885, 0.6066), (5, 0.3786, 0.5922), (6, 0.3686, 0.6288), (7, 0.3567, 0.6244), (8, 0.3458, 0.6454), (9, 0.3358, 0.6517), (10, 0.3308, 0.6511)]
+ADABN n026_zoom2nomp_b10 r 0.643303051 delta -0.007750718 rows 20000 ev_overlap 0
+RUN n026_zoom2nomp_b01 seed 0 ep 10 tr/ev 127946 26322 r 0.613852098 train_score_delta -2.7e-09 bn_count 69470 steps 4990 cfgdiff {'stem': 'nomaxpool', 'zoom': 2} hash 46cefa7e300e
+HISTORY n026_zoom2nomp_b01 [(1, 1.3424, 0.5342), (2, 0.9591, 0.5761), (3, 0.9274, 0.5737), (4, 0.8951, 0.5974), (5, 0.868, 0.5914), (6, 0.8397, 0.599), (7, 0.8093, 0.6075), (8, 0.7843, 0.6142), (9, 0.7569, 0.6128), (10, 0.7481, 0.6139)]
+ADABN n026_zoom2nomp_b01 r 0.606864789 delta -0.006987309 rows 20000 ev_overlap 0
+ALL checkpoint state hashes distinct; checkpoint rows/config and saved metrics verified
+ENSEMBLE multiscale_s0 directions [0.6545958292945525, 0.6478579673116234] GOAL 0.651226898303088
+ENSEMBLE cross_scale_s0 directions [0.6590563274707407, 0.6504419920532037] GOAL 0.6547491597619722
+ENSEMBLE multiscale_s1 directions [0.6573654757650454, 0.6461413818837247] GOAL 0.6517534288243851
+ENSEMBLE cross_scale_s1 directions [0.6535645923862643, 0.6451030066677129] GOAL 0.6493337995269886
+ENSEMBLE same_base directions [0.6462679024442953, 0.6413725939697609] GOAL 0.6438202482070281
+ENSEMBLE same_zoom directions [0.656695595883233, 0.6415056027660888] GOAL 0.6491005993246609
+NOISE single_run sample_sd base/zoom 0.002711547906602279 0.0025977702525802593 pooled 0.002655268567865603
+NOISE paired scale deltas [-0.0019253185476781898, 0.005583191199991511] paired multiscale gain_vs_own_base [0.008957230155529627, 0.013318468501368086]
+RESUME change zoom 2 accepted False
+RESUME change stem nomaxpool accepted False
+RESUME change dual_zoom 2 accepted False
+RESUME change adabn 20000 accepted True
+RESUME change seed 9 accepted False
+RESUME change targets targets_v6.npz accepted False
+TARGET metadata keys ['T', 'Y', 'Y_v3', 'Y_v4', 'batch', 'censored', 'cls10', 'cls3', 'cls3_names', 'fov', 'gates', 'gs_pair_suspect', 'hist_row', 'mask', 'names', 'qc_masked', 'slide', 'slide_names', 'split', 'stained']

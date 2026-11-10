@@ -1,0 +1,10 @@
+arm,seed,value
+single_base,0,0.6423
+single_base,1,0.6384
+single_zoom2,0,0.6403
+single_zoom2,1,0.644
+single_dual2,0,0.5074
+ens_base+base,0,0.6438
+ens_zoom2+zoom2,0,0.6491
+ens_base+zoom2,0,0.6512
+ens_base+zoom2,1,0.6518
