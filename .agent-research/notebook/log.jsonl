@@ -36,3 +36,6 @@
 {"ts":"2026-11-10T12:45:33+01:00","event":"goal_effect","item":"N024","effect":"flat","value":"void","scale":"module","why":""}
 {"ts":"2026-11-10T12:45:34+01:00","event":"goal_effect","item":"N027","effect":"worse","value":"void","scale":"module","why":""}
 {"ts":"2026-11-10T12:45:34+01:00","event":"goal_effect","item":"N030","effect":"flat","value":"void","scale":"module","why":""}
+{"ts":"2026-11-10T16:03:29+01:00","event":"goal_effect","item":"N032","effect":"n/a","value":"-","scale":"module","why":"measurement"}
+{"ts":"2026-11-10T16:03:29+01:00","event":"goal_effect","item":"N033","effect":"n/a","value":"-","scale":"module","why":"measurement"}
+{"ts":"2026-11-10T16:03:36+01:00","event":"goal_effect","item":"N033","effect":"flat","value":"void","scale":"module","why":""}

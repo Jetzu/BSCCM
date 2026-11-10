@@ -15,7 +15,8 @@ ap.add_argument('--bs', type=int, default=128); ap.add_argument('--lr', type=flo
 ap.add_argument('--dim', type=int, default=256); ap.add_argument('--w-distill', type=float, default=1.0); ap.add_argument('--holdout', default='batch1')
 ap.add_argument('--aug', type=int, default=1); ap.add_argument('--stain-norm', default='none', choices=['none', 'macenko']); ap.add_argument('--dann', type=float, default=0.0); ap.add_argument('--target-zip', default=''); ap.add_argument('--anchor-ce', type=float, default=0.0); ap.add_argument('--target-half', default='A'); ap.add_argument('--seed', type=int, default=0); ap.add_argument('--workers', type=int, default=12)
 ap.add_argument('--targets', default='targets_v4.npz')   # teacher-ridge labels + eval truth; v5 = N023 label QC
-ap.add_argument('--backbone', default='B', choices=['B', 'L'])   # N027: DinoBloom-B (ViT-B/14, 768) or DinoBloom-L (ViT-L/14, 1024)
+ap.add_argument('--backbone', default='B', choices=['B', 'L'])
+ap.add_argument('--synth', default=''); ap.add_argument('--synth-targets', default='targets_v6c.npz'); ap.add_argument('--w-synth', type=float, default=0.0)   # N033 data engine: virtual Giemsa of marker-labelled cells + MEASURED labels   # N027: DinoBloom-B (ViT-B/14, 768) or DinoBloom-L (ViT-L/14, 1024)
 ap.add_argument('--aux-feats', default=''); ap.add_argument('--aux-targets', default=''); ap.add_argument('--aux-names', default='autofl')   # N025 two-teacher: these outputs come from a second LF teacher
 a = ap.parse_args(); os.makedirs(a.out, exist_ok=True); torch.manual_seed(a.seed); np.random.seed(a.seed); dev = 'cuda'
 W = '/hnvme/workspace/v181bb10-bsccm'; T = np.load(W + '/' + a.targets); names = list(T['names']); K = len(names)
@@ -92,6 +93,17 @@ def macenko(x):   # x (B,3,H,W) in [0,1] -> stain-normalised to MAC_REF
         C = torch.linalg.lstsq(S, od).solution * (MAC_REF[1] / cmax.clamp(min=1e-3))[:, None]
         out[i] = torch.exp(-(MAC_REF[0] @ C)).reshape(3, Hh, Ww)
     return out.clamp(0, 1)
+class SynthSet(torch.utils.data.Dataset):   # N033: virtual 128 px stain (field = registration scale x 398 px) embedded in a full 398 px canvas like a real crop
+    def __init__(s, d, fov, units):
+        s.d, s.fov, s.units = d, fov, units; s.im = None; s.n = len(np.load(d + '/rows.npy'))
+    def __len__(s): return s.n
+    def __getitem__(s, i):
+        if s.im is None: s.im = np.load(s.d + '/images.npy', mmap_mode='r')
+        im = torch.from_numpy(np.array(s.im[i])).permute(2, 0, 1).float()[None] / 255. * s.units           # student [0,1] units
+        side = int(round(398 * s.fov)); im = F.interpolate(im, size=(side, side), mode='bilinear', align_corners=False)[0]
+        bg = torch.cat([im[:, 0], im[:, -1], im[:, :, 0], im[:, :, -1]], 1).median(1).values[:, None, None]    # border median per channel
+        out = bg.expand(3, 398, 398).clone(); o = (398 - side) // 2; out[:, o:o + side, o:o + side] = im
+        return out.clamp(0, 1), i
 def prep(x, train):
     x = (x.to(dev).float() / scale).clamp(0, 1).permute(0, 3, 1, 2)                      # (B,3,398,398) in [0,1]
     return pipeline(x, train)
@@ -200,6 +212,14 @@ if a.dann > 0 and a.target_zip:
     it_t = _ext_loader()
 else:
     it_t = iter(loader(te_r, True)) if a.dann > 0 else None   # UNLABELLED images of the held-out slide (no markers/autofl used)
+if a.w_synth > 0:
+    _meta = json.load(open(a.synth + '/meta.json')); assert _meta.get('done'), 'synthetic set incomplete'
+    TS = np.load(W + '/' + a.synth_targets, allow_pickle=True); assert [str(n) for n in TS['names']] == [str(n) for n in names], 'synth target names differ'
+    YS, MS = TS['Y'].astype(np.float32), TS['mask']; SYN_ROWS = np.load(a.synth + '/rows.npy'); assert (TS['hist_row'][SYN_ROWS] < 0).all(), 'Giemsa cell in synthetic set'
+    _reg_scale = float(np.load(_meta['checkpoint'].replace('/train/ckpt.pt', '/register.npz'))['scale'][0])
+    _syn = SynthSet(a.synth, _reg_scale, _meta['rgb_scale'] / scale)
+    _syn_loader = lambda: iter(torch.utils.data.DataLoader(_syn, batch_size=a.bs, shuffle=True, drop_last=True, num_workers=a.workers, pin_memory=True, persistent_workers=False, prefetch_factor=4))
+    it_s = _syn_loader(); print(f'synthetic: {len(_syn)} virtual-stained labelled cells, fov {_reg_scale:.2f}, units x{_meta["rgb_scale"] / scale:.3f}', flush=True)
 for step in range(a.steps):
     try: x, r = next(it)
     except StopIteration: it = iter(loader(tr_r, True)); x, r = next(it)
@@ -220,9 +240,16 @@ for step in range(a.steps):
         except StopIteration: it_a = _anc_loader(); xa, ya = next(it_a)
         za = encode(pipeline((xa.to(dev).float() / 255.).permute(0, 3, 1, 2), True))
         l_anc = F.cross_entropy(net['C'](za * math.sqrt(a.dim)), ya.to(dev)) + F.cross_entropy(net['C'](zg * math.sqrt(a.dim)), GS_CLS[r.to(dev)])
-    loss = l_sig + a.w_distill * dist + a.dann * l_dann + a.anchor_ce * l_anc; opt.zero_grad(set_to_none=True); loss.backward(); nn.utils.clip_grad_norm_(params, 1.0); opt.step(); sched.step()
-    acc['anc'] = acc.get('anc', 0) + float(l_anc); acc['dann'] = acc.get('dann', 0) + float(l_dann); acc['sig'] = acc.get('sig', 0) + float(l_sig); acc['dist'] = acc.get('dist', 0) + float(dist)
-    if (step + 1) % 200 == 0: print(f"step {step+1} sig {acc['sig']/200:.3f} dist {acc['dist']/200:.4f} dann {acc['dann']/200:.3f} anc {acc['anc']/200:.3f} {time.time()-t0:.0f}s", flush=True); acc = {}
+    l_syn = torch.zeros((), device=dev)
+    if a.w_synth > 0:   # supervised: virtual Giemsa of labelled cells -> MEASURED fluorescence labels (masked MSE, all K outputs)
+        try: xs, ii = next(it_s)
+        except StopIteration: it_s = _syn_loader(); xs, ii = next(it_s)
+        zs = encode(pipeline(xs.to(dev, non_blocking=True), True)); gg_s = SYN_ROWS[ii.numpy()]
+        ys = torch.tensor(YS[gg_s], device=dev); ms = torch.tensor(MS[gg_s], device=dev, dtype=torch.float32)
+        l_syn = (((net['S'](zs * math.sqrt(a.dim)) - ys) ** 2) * ms).sum() / ms.sum().clamp(min=1)
+    loss = l_sig + a.w_distill * dist + a.dann * l_dann + a.anchor_ce * l_anc + a.w_synth * l_syn; opt.zero_grad(set_to_none=True); loss.backward(); nn.utils.clip_grad_norm_(params, 1.0); opt.step(); sched.step()
+    acc['anc'] = acc.get('anc', 0) + float(l_anc); acc['syn'] = acc.get('syn', 0) + float(l_syn); acc['dann'] = acc.get('dann', 0) + float(l_dann); acc['sig'] = acc.get('sig', 0) + float(l_sig); acc['dist'] = acc.get('dist', 0) + float(dist)
+    if (step + 1) % 200 == 0: print(f"step {step+1} sig {acc['sig']/200:.3f} dist {acc['dist']/200:.4f} syn {acc['syn']/200:.4f} dann {acc['dann']/200:.3f} anc {acc['anc']/200:.3f} {time.time()-t0:.0f}s", flush=True); acc = {}
     if (step + 1) % 2000 == 0 or step + 1 == a.steps:
         e = evaluate(); e['step'] = step + 1; log.append(e); print(json.dumps(e, default=float), flush=True)
 torch.save({k: v for k, v in net.state_dict().items()}, a.out + '/gs_bind.pt')
