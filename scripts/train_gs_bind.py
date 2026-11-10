@@ -15,6 +15,8 @@ ap.add_argument('--bs', type=int, default=128); ap.add_argument('--lr', type=flo
 ap.add_argument('--dim', type=int, default=256); ap.add_argument('--w-distill', type=float, default=1.0); ap.add_argument('--holdout', default='batch1')
 ap.add_argument('--aug', type=int, default=1); ap.add_argument('--stain-norm', default='none', choices=['none', 'macenko']); ap.add_argument('--dann', type=float, default=0.0); ap.add_argument('--target-zip', default=''); ap.add_argument('--anchor-ce', type=float, default=0.0); ap.add_argument('--target-half', default='A'); ap.add_argument('--seed', type=int, default=0); ap.add_argument('--workers', type=int, default=12)
 ap.add_argument('--targets', default='targets_v4.npz')   # teacher-ridge labels + eval truth; v5 = N023 label QC
+ap.add_argument('--backbone', default='B', choices=['B', 'L'])   # N027: DinoBloom-B (ViT-B/14, 768) or DinoBloom-L (ViT-L/14, 1024)
+ap.add_argument('--aux-feats', default=''); ap.add_argument('--aux-targets', default=''); ap.add_argument('--aux-names', default='autofl')   # N025 two-teacher: these outputs come from a second LF teacher
 a = ap.parse_args(); os.makedirs(a.out, exist_ok=True); torch.manual_seed(a.seed); np.random.seed(a.seed); dev = 'cuda'
 W = '/hnvme/workspace/v181bb10-bsccm'; T = np.load(W + '/' + a.targets); names = list(T['names']); K = len(names)
 Y, Mk, sp, b, hrow = T['Y'], T['mask'], T['split'], T['batch'], T['hist_row']
@@ -34,6 +36,19 @@ for j in range(K):
     r = np.where((sp == 0) & Mk[:, j] & (hrow < 0))[0]; r = np.random.default_rng(j).permutation(r)[:60000]
     Wt[:, j] = ridge_fit(LF[r].to(dev), torch.tensor(Y[r, j], device=dev))
 LFg = LF[gidx].to(dev); teach = torch.cat([LFg, torch.ones(len(LFg), 1, device=dev)], 1) @ Wt      # (Nh, K) teacher predictions on GS cells
+AUX = []
+if a.aux_feats:   # two-teacher distillation: listed targets are re-fitted on a second teacher's LF features with a second label file
+    TA = np.load(W + '/' + a.aux_targets); YA, MA = TA['Y'], TA['mask']; namesA = [str(n) for n in TA['names']]
+    for key in ('hist_row', 'split', 'batch', 'slide'):   # red-team N025 F5: rows of both target files must be the same cells
+        assert np.array_equal(TA[key], T[key]), f'aux targets {a.aux_targets}: {key} differs from {a.targets}'
+    LFA = torch.tensor(np.load(os.path.join(a.aux_feats, 'lf_feats_all.npy')), dtype=torch.float32); assert LFA.shape[0] == LF.shape[0], 'aux feature rows differ'
+    LFA = (LFA - LFA[stained_tr].mean(0)) / (LFA[stained_tr].std(0) + 1e-6); LFAg = LFA[gidx].to(dev)
+    for nm in a.aux_names.split(','):
+        j = names.index(nm); jA = namesA.index(nm); AUX.append(j)   # j indexes the student/teacher outputs, jA the aux label file (F5)
+        r = np.where((sp == 0) & MA[:, jA] & (hrow < 0))[0]; r = np.random.default_rng(j).permutation(r)[:60000]
+        teach[:, j] = torch.cat([LFAg, torch.ones(len(LFAg), 1, device=dev)], 1) @ ridge_fit(LFA[r].to(dev), torch.tensor(YA[r, jA], device=dev))
+    del LFA
+    print(f'aux teacher for {a.aux_names} from {a.aux_feats} ({a.aux_targets})', flush=True)
 H = np.load(W + '/pack/histology.npy', mmap_mode='r'); scale = float(np.percentile(H[:500:5], 99.9))
 class GSSet(torch.utils.data.Dataset):
     def __init__(s, rows): s.rows = rows
@@ -123,15 +138,15 @@ if a.stain_norm == 'macenko':
         if (S0[i][:, 0] @ S0[0][:, 0]) < (S0[i][:, 1] @ S0[0][:, 0]): S0[i] = S0[i][:, [1, 0]]; Cs[i] = Cs[i][[1, 0]]
     Sref = S0.median(0).values; Sref = Sref / Sref.norm(dim=0, keepdim=True); MAC_REF = (Sref, torch.stack(Cs).median(0).values)
     print('macenko reference stains', Sref.cpu().numpy().round(3).tolist(), 'cmax', MAC_REF[1].cpu().numpy().round(3).tolist(), flush=True)
-vit = timm.create_model('vit_base_patch14_dinov2', pretrained=False, num_classes=0, img_size=224)
-sd_ = torch.load(f'{W}/models/DinoBloom-B.pth', map_location='cpu', weights_only=True)['teacher']
+vit = timm.create_model({'B': 'vit_base_patch14_dinov2', 'L': 'vit_large_patch14_dinov2'}[a.backbone], pretrained=False, num_classes=0, img_size=224)
+sd_ = torch.load(f'{W}/models/DinoBloom-{a.backbone}.pth', map_location='cpu', weights_only=True)['teacher']; VD = vit.num_features
 vit.load_state_dict({k[9:]: v for k, v in sd_.items() if k.startswith('backbone.') and k != 'backbone.mask_token'}, strict=True)
 for p in vit.patch_embed.parameters(): p.requires_grad = False
 vit.cls_token.requires_grad = False; vit.pos_embed.requires_grad = False
 for i, blk in enumerate(vit.blocks):
     for p in blk.parameters(): p.requires_grad = i >= a.freeze
 mlp = lambda i, o: nn.Sequential(nn.Linear(i, 1024), nn.GELU(), nn.LayerNorm(1024), nn.Linear(1024, o))
-net = nn.ModuleDict({'vit': vit, 'PG': mlp(768, a.dim), 'PL': mlp(LF.shape[1], a.dim), 'S': mlp(a.dim, K), 'D': mlp(768, 1), 'C': mlp(a.dim, 3)}).to(dev)
+net = nn.ModuleDict({'vit': vit, 'PG': mlp(VD, a.dim), 'PL': mlp(LF.shape[1], a.dim), 'S': mlp(a.dim, K), 'D': mlp(VD, 1), 'C': mlp(a.dim, 3)}).to(dev)
 class _GRL(torch.autograd.Function):
     @staticmethod
     def forward(ctx, x, l): ctx.l = l; return x.view_as(x)
@@ -161,10 +176,10 @@ def evaluate():
     out.update({f'student_vs_teacher_r/{names[k]}': pearson(stud[:, k], tch[:, k]) for k in range(K)})
     # error-bound ingredients (N016-validated): b = RMSE(student vs teacher) on the held-out GS slide; a = RMSE(teacher vs truth) on
     # held-out STAINED cells (split 2, non-GS) of the same batch as the test slide; bounds on the unmeasurable GS->MK MSE
-    tb = int(b[gidx[rr[0]]])
+    tb = int(b[gidx[rr[0]]]); inb = torch.as_tensor(b[gidx[rr]] == tb)   # F7: student-teacher error b on the SAME batch as teacher error a
     for k in range(12):
-        bk = float(((stud[:, k] - tch[:, k]) ** 2).mean().sqrt()); ev = np.where((sp == 2) & Mk[:, k] & (hrow < 0) & (b == tb))[0]
-        if len(ev) < 50: continue
+        bk = float(((stud[inb, k] - tch[inb, k]) ** 2).mean().sqrt()); ev = np.where((sp == 2) & Mk[:, k] & (hrow < 0) & (b == tb))[0]
+        if len(ev) < 50 or k in AUX: continue   # bound ingredient a uses the primary teacher only
         tp = (torch.cat([LF[ev].to(dev), torch.ones(len(ev), 1, device=dev)], 1) @ Wt[:, k]).cpu(); yt = torch.tensor(Y[ev, k])
         ak = float(((tp - yt) ** 2).mean().sqrt()); vy = float(yt.var())
         out[f'bound/{names[k]}'] = dict(a=ak, b=bk, teacher_r=pearson(tp, yt), mse_lo=(ak - bk) ** 2, mse_hi=(ak + bk) ** 2, mse_cia=ak ** 2 + bk ** 2,

@@ -1,0 +1,14 @@
+Review is read-only outside this codex directory. Existing N025 was supplied by the parent; no new-item or notebook/commit mutation was attempted because the explicit brief prohibits those writes.
+Environment used: /home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python.
+All Python computations: OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1, TMPDIR=/tmp/$USER/codex-N025.
+No Slurm submission, GPU use, downloads, installs, or neural training; four single-core HGB sensitivity fits were run.
+bsccm-data-model
+142f3eda0715f5d3d27ca6bcce8499db452f7d0b
+1d49fad9e0414267abd7f4b3fb2802d807c01ca58296010fba6682a98e33041c  /home/hpc/v181bb/v181bb10/BSCCM/scripts/train_gs_bind.py
+f1bf04eeacca043c8e816807a7d27aa514a77722ad8922d69e1a00a9d088ff81  /home/hpc/v181bb/v181bb10/BSCCM/scripts/train_lf.py
+69bfeb0e9420a73fdeec53af9619837445e203da8ea67fe2c3f9198a7402d7c8  /home/hpc/v181bb/v181bb10/BSCCM/scripts/probe_lf.py
+4692bf59e3844927c52e21f1ffcef3bc99108372b0a47197d4b1f5578601ac7d  /home/hpc/v181bb/v181bb10/BSCCM/scripts/make_targets_v6.py
+38a10d0a453d48cefa41cb4b87e377f7891e7487c775d27f37fb1b21be657f6d  /home/hpc/v181bb/v181bb10/BSCCM/scripts/gs_autofl_within.py
+fde202c1fa3c8472fa6acf5369fc8aaf2642c1b81253ee3694121e5013fc87e8  /home/hpc/v181bb/v181bb10/BSCCM/scripts/aggregate_transfer.py
+063c2a3e20b24be6a3db6c2560538b6da2b87a71d272d24f079601fb49820009  /home/hpc/v181bb/v181bb10/BSCCM/scripts/apply_gs_student.py
+Cleanup verified: /tmp/v181bb10/codex-N025 does not exist.

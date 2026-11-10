@@ -1,0 +1,163 @@
+=== LABEL ALIGNMENT, MASKS, CALIBRATION ===
+alignment 5 {'names': True, 'split': True, 'hist_row': True, 'slide': True, 'slide_names': True, 'batch': True, 'fov': True}
+alignment 6 {'names': True, 'split': True, 'hist_row': True, 'slide': True, 'slide_names': True, 'batch': True, 'fov': True}
+v5/v6 markers exactly equal True True
+autofl counts 4 total 375657 nonGS 359945 ridge split0 nonGS 288432 GS 15712
+LF eligible 4 fov train 317935 fov eval 39435
+autofl counts 5 total 375657 nonGS 359945 ridge split0 nonGS 288432 GS 15712
+LF eligible 5 fov train 317935 fov eval 39435
+autofl counts 6 total 63067 nonGS 47355 ridge split0 nonGS 37844 GS 15712
+LF eligible 6 fov train 317935 fov eval 39435
+v6 norm 0 all ref 13095 GS ref 8007 nonGS ref 5088 all mean/sd 0.10663218 0.89690304 nonGS mean/sd 0.08239862 0.87755305
+v6 norm 1 all ref 37251 GS ref 4495 nonGS ref 32756 all mean/sd 0.049257483 1.0498356 nonGS mean/sd 0.048484806 1.0439268
+GS slide 2 antibodies_unstained/batch_0/slide_replicate_0 GS by split [8007, 994, 1014]
+affine v4->v5 slope/intercept [5.8683839562686835, -3.6575944956399384] max_residual 3.308354168396477e-07 r 0.9999999999999993
+affine v4->v6 slope/intercept [6.542941275184718, -4.196915936160345] max_residual 6.621495343139827e-07 r 0.9999999999999954
+GS slide 19 antibodies_unstained/batch_1/slide_replicate_1 GS by split [4495, 593, 609]
+affine v4->v5 slope/intercept [4.7509189425613405, -1.8302704222543595] max_residual 4.6655723684452255e-07 r 1.0
+affine v4->v6 slope/intercept [4.525393476928731, -1.7903069808542875] max_residual 8.204318400206745e-07 r 0.9999999999999982
+=== GS ROWS, METRIC REPRODUCTION, FAIRNESS ===
+GS args v4r18 0 non-treatment differences {} seed 0 final 3000 checkpoints [2000, 3000]
+GS recompute v4r18 0 slide 2 n 1014 r v4/v5/v6 [0.3943801032437812, 0.3943801004159071, 0.39438010339205326]
+GS recompute v4r18 0 slide 19 n 609 r v4/v5/v6 [0.6904006012682584, 0.6904006003105717, 0.6904005986950174]
+POOLED fixed prediction v4r18 [0.2549587415604405, 0.4768554107541389, 0.47521273404315845]
+GS args v4r18 1 non-treatment differences {} seed 1 final 3000 checkpoints [2000, 3000]
+GS recompute v4r18 1 slide 2 n 1014 r v4/v5/v6 [0.3700609423798826, 0.37006093837960446, 0.3700609421105294]
+GS recompute v4r18 1 slide 19 n 609 r v4/v5/v6 [0.7097695849677353, 0.7097695853074525, 0.7097695864480199]
+GS args v4r18 2 non-treatment differences {} seed 2 final 3000 checkpoints [2000, 3000]
+GS recompute v4r18 2 slide 2 n 1014 r v4/v5/v6 [0.38503812107153323, 0.38503811771511204, 0.3850381204244095]
+GS recompute v4r18 2 slide 19 n 609 r v4/v5/v6 [0.6668888154083845, 0.6668888128645776, 0.6668888126346281]
+GS args v5r18 0 non-treatment differences {} seed 0 final 3000 checkpoints [2000, 3000]
+GS recompute v5r18 0 slide 2 n 1014 r v4/v5/v6 [0.5101799006027724, 0.5101798960371646, 0.510179899484636]
+GS recompute v5r18 0 slide 19 n 609 r v4/v5/v6 [0.875049505774189, 0.875049506034772, 0.8750495060115229]
+POOLED fixed prediction v5r18 [0.6444431229235748, 0.6959208176282363, 0.6750417245829783]
+GS args v5r18 1 non-treatment differences {} seed 1 final 3000 checkpoints [2000, 3000]
+GS recompute v5r18 1 slide 2 n 1014 r v4/v5/v6 [0.496949405936594, 0.4969494019951205, 0.496949405827467]
+GS recompute v5r18 1 slide 19 n 609 r v4/v5/v6 [0.8641374908098348, 0.8641374907231844, 0.8641374910439471]
+GS args v5r18 2 non-treatment differences {} seed 2 final 3000 checkpoints [2000, 3000]
+GS recompute v5r18 2 slide 2 n 1014 r v4/v5/v6 [0.5228675709880672, 0.5228675670708425, 0.5228675700630976]
+GS recompute v5r18 2 slide 19 n 609 r v4/v5/v6 [0.8621669303246762, 0.862166929466408, 0.8621669281368122]
+GS args tt5 0 non-treatment differences {} seed 0 final 3000 checkpoints [2000, 3000]
+GS recompute tt5 0 slide 2 n 1014 r v4/v5/v6 [0.5146414859067635, 0.5146414815689732, 0.514641484713495]
+GS recompute tt5 0 slide 19 n 609 r v4/v5/v6 [0.8676211636709543, 0.8676211635266284, 0.867621162391377]
+POOLED fixed prediction tt5 [0.6418482674561334, 0.6925111295620934, 0.6727725104817955]
+GS args tt5 1 non-treatment differences {} seed 1 final 3000 checkpoints [2000, 3000]
+GS recompute tt5 1 slide 2 n 1014 r v4/v5/v6 [0.48526253929861485, 0.48526253510030504, 0.4852625379869996]
+GS recompute tt5 1 slide 19 n 609 r v4/v5/v6 [0.8665112598204834, 0.8665112600723928, 0.8665112604946583]
+GS args tt5 2 non-treatment differences {} seed 2 final 3000 checkpoints [2000, 3000]
+GS recompute tt5 2 slide 2 n 1014 r v4/v5/v6 [0.5186149941713761, 0.5186149894632673, 0.5186149927413457]
+GS recompute tt5 2 slide 19 n 609 r v4/v5/v6 [0.8595286737806954, 0.8595286723384304, 0.8595286722017056]
+GS args v6r18 0 non-treatment differences {} seed 0 final 3000 checkpoints [2000, 3000]
+GS recompute v6r18 0 slide 2 n 1014 r v4/v5/v6 [0.5769326599109249, 0.5769326564941507, 0.5769326568134236]
+GS recompute v6r18 0 slide 19 n 609 r v4/v5/v6 [0.8253458391339064, 0.8253458392942578, 0.8253458362460081]
+POOLED fixed prediction v6r18 [0.6238163576657783, 0.6952189392548794, 0.6834135522419672]
+GS args v6r18 1 non-treatment differences {} seed 1 final 3000 checkpoints [2000, 3000]
+GS recompute v6r18 1 slide 2 n 1014 r v4/v5/v6 [0.5791999597014129, 0.5791999561481024, 0.5791999564558502]
+GS recompute v6r18 1 slide 19 n 609 r v4/v5/v6 [0.8601218118116157, 0.8601218125177538, 0.860121812375716]
+GS args v6r18 2 non-treatment differences {} seed 2 final 3000 checkpoints [2000, 3000]
+GS recompute v6r18 2 slide 2 n 1014 r v4/v5/v6 [0.5819511267414613, 0.5819511234574546, 0.581951123825469]
+GS recompute v6r18 2 slide 19 n 609 r v4/v5/v6 [0.8536008356657488, 0.8536008353080682, 0.8536008329797865]
+GS args tt6 0 non-treatment differences {} seed 0 final 3000 checkpoints [2000, 3000]
+GS recompute tt6 0 slide 2 n 1014 r v4/v5/v6 [0.5844233006132181, 0.5844232970684602, 0.5844232976518688]
+GS recompute tt6 0 slide 19 n 609 r v4/v5/v6 [0.8458463089938567, 0.845846309240909, 0.845846306126391]
+POOLED fixed prediction tt6 [0.6370194726696556, 0.70811871919594, 0.6960567042675057]
+GS args tt6 1 non-treatment differences {} seed 1 final 3000 checkpoints [2000, 3000]
+GS recompute tt6 1 slide 2 n 1014 r v4/v5/v6 [0.5650215053882872, 0.5650215013514466, 0.5650215023302627]
+GS recompute tt6 1 slide 19 n 609 r v4/v5/v6 [0.8599482870771548, 0.8599482874400327, 0.8599482863766553]
+GS args tt6 2 non-treatment differences {} seed 2 final 3000 checkpoints [2000, 3000]
+GS recompute tt6 2 slide 2 n 1014 r v4/v5/v6 [0.5835766838862179, 0.5835766800015136, 0.5835766805229703]
+GS recompute tt6 2 slide 19 n 609 r v4/v5/v6 [0.8582012273038961, 0.8582012267938408, 0.8582012253219353]
+max error vs n025_metrics GS 9.992007221626409e-16
+                               mean       std  count
+metric              arm                             
+gs_autofl_within_b0 tt5    0.506173  0.018218      3
+                    tt6    0.577674  0.010965      3
+                    v4r18  0.383160  0.012268      3
+                    v5r18  0.509999  0.012960      3
+                    v6r18  0.579361  0.002513      3
+gs_autofl_within_b1 tt5    0.864554  0.004387      3
+                    tt6    0.854665  0.007687      3
+                    v4r18  0.689020  0.021474      3
+                    v5r18  0.867118  0.006939      3
+                    v6r18  0.846356  0.018485      3
+LF teacher v4r18 args {'out': '/hnvme/workspace/v181bb10-bsccm/runs/n013_lf_sup_v4_fov_s0', 'protocol': 'fov', 'channels': 'all', 'phase': 1, 'arch': 'resnet18', 'epochs': 8, 'bs': 256, 'lr': 0.001, 'workers': 15, 'max_train': 0, 'seed': 0, 'w_cls': 0.5, 'include_gs': 0, 'init_ssl': '', 'targets': 'targets_v4.npz', 'dann': 0.0} n_train/eval 317935 39435 probe checkpoint /hnvme/workspace/v181bb10-bsccm/runs/n013_lf_sup_v4_fov_s0/ckpt.pt probe GS rows {'train': 0, 'test': 0}
+LF teacher v5r18 args {'out': '/hnvme/workspace/v181bb10-bsccm/runs/n024_r18_v5_fov', 'protocol': 'fov', 'channels': 'all', 'phase': 1, 'arch': 'resnet18', 'epochs': 8, 'bs': 256, 'lr': 0.001, 'workers': 15, 'max_train': 0, 'seed': 0, 'w_cls': 0.5, 'include_gs': 0, 'init_ssl': '', 'tail_weight': 0.0, 'focal_c10': 0.0, 'targets': 'targets_v5.npz', 'dann': 0.0} n_train/eval 317935 39435 probe checkpoint /hnvme/workspace/v181bb10-bsccm/runs/n024_r18_v5_fov/ckpt.pt probe GS rows {'train': 0, 'test': 0}
+LF teacher v6r18 args {'out': '/hnvme/workspace/v181bb10-bsccm/runs/n025_r18_v6_fov', 'protocol': 'fov', 'channels': 'all', 'phase': 1, 'arch': 'resnet18', 'epochs': 8, 'bs': 256, 'lr': 0.001, 'workers': 15, 'max_train': 0, 'seed': 0, 'w_cls': 0.5, 'include_gs': 0, 'init_ssl': '', 'tail_weight': 0.0, 'focal_c10': 0.0, 'targets': 'targets_v6.npz', 'dann': 0.0} n_train/eval 317935 39435 probe checkpoint /hnvme/workspace/v181bb10-bsccm/runs/n025_r18_v6_fov/ckpt.pt probe GS rows {'train': 0, 'test': 0}
+teacher MK untouched tt5 max abs diff 0.0 autofl variance 0.9514973163604736 v4 autofl variance 0.22202983498573303
+teacher MK untouched tt6 max abs diff 0.0 autofl variance 1.1935659646987915 v4 autofl variance 0.22202983498573303
+=== MLL23 INDEPENDENT AUROC FROM PREDICTIONS ===
+MLL class counts {'basophil': 616, 'eosinophil': 1500, 'hairy_cell': 1500, 'lymphocyte': 1500, 'lymphocyte_large_granular': 1500, 'metamyelocyte': 483, 'monocyte': 1500, 'myelocyte': 747, 'neutrophil_band': 687, 'neutrophil_segmented': 1500, 'normoblast': 1500, 'plasma_cell': 1500}
+MLL predictions tt5 0 n 14533 path /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N025-giemsa-chain-without-the-trade-off-two-t/mll23_tt5_s0
+MLL predictions tt5 1 n 14533 path /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N025-giemsa-chain-without-the-trade-off-two-t/mll23_tt5_s1
+MLL predictions tt5 2 n 14533 path /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N025-giemsa-chain-without-the-trade-off-two-t/mll23_tt5_s2
+MLL predictions tt6 0 n 14533 path /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N025-giemsa-chain-without-the-trade-off-two-t/mll23_tt6_s0
+MLL predictions tt6 1 n 14533 path /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N025-giemsa-chain-without-the-trade-off-two-t/mll23_tt6_s1
+MLL predictions tt6 2 n 14533 path /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N025-giemsa-chain-without-the-trade-off-two-t/mll23_tt6_s2
+MLL predictions v4r18 0 n 14533 path /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N025-giemsa-chain-without-the-trade-off-two-t/../N022-fine-grained-teacher-rare-population-tai/mll23_anchored_s0
+MLL predictions v4r18 1 n 14533 path /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N025-giemsa-chain-without-the-trade-off-two-t/../N022-fine-grained-teacher-rare-population-tai/mll23_anchored_s1
+MLL predictions v4r18 2 n 14533 path /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N025-giemsa-chain-without-the-trade-off-two-t/../N024-v5-label-r18-supervised-teacher-for-the/mll23_v4r18_ref_s2
+MLL predictions v5r18 0 n 14533 path /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N025-giemsa-chain-without-the-trade-off-two-t/../N024-v5-label-r18-supervised-teacher-for-the/mll23_v5r18_s0
+MLL predictions v5r18 1 n 14533 path /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N025-giemsa-chain-without-the-trade-off-two-t/../N024-v5-label-r18-supervised-teacher-for-the/mll23_v5r18_s1
+MLL predictions v5r18 2 n 14533 path /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N025-giemsa-chain-without-the-trade-off-two-t/../N024-v5-label-r18-supervised-teacher-for-the/mll23_v5r18_s2
+MLL predictions v6r18 0 n 14533 path /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N025-giemsa-chain-without-the-trade-off-two-t/mll23_v6_s0
+MLL predictions v6r18 1 n 14533 path /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N025-giemsa-chain-without-the-trade-off-two-t/mll23_v6_s1
+MLL predictions v6r18 2 n 14533 path /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N025-giemsa-chain-without-the-trade-off-two-t/mll23_v6_s2
+max AUROC diff from rounded CSV 0.0004997573993206217
+unrounded MLL mean by seed
+arm        tt5       tt6     v4r18     v5r18     v6r18
+seed                                                  
+0     0.623131  0.609088  0.613068  0.531469  0.577025
+1     0.618617  0.622187  0.646384  0.584692  0.514103
+2     0.613762  0.601631  0.606815  0.491316  0.489744
+MLL mean/spread tt5 mean 0.6185030993530364 population sd 0.003825560708467398 sample sd 0.0046853358578926195 95% t CI [0.6068640798562293, 0.6301421188498435]
+MLL mean/spread tt6 mean 0.6109687093175662 population sd 0.008496579990827825 sample sd 0.010406142768134773 95% t CI [0.5851184176333847, 0.6368190010017477]
+MLL mean/spread v4r18 mean 0.6220891201766774 population sd 0.017368071428480913 sample sd 0.02127145640799479 95% t CI [0.5692478931297243, 0.6749303472236304]
+MLL mean/spread v5r18 mean 0.5358256200443434 population sd 0.038244830716534506 sample sd 0.04684016027731514 95% t CI [0.4194682114750351, 0.6521830286136517]
+MLL mean/spread v6r18 mean 0.5269575211695028 population sd 0.03677308539573213 sample sd 0.04503764774366787 95% t CI [0.41507780196093025, 0.6388372403780753]
+paired difference tt5 - v4 [0.010062368876683103, -0.02776766229062011, 0.006947230943013638] mean -0.003586020823641123 sample sd 0.020999758548959194 95% t CI [-0.05575231297276205, 0.048580271325479804]
+paired difference tt6 - v4 [-0.003980462498778703, -0.024197421987743994, -0.005183348090811224] mean -0.011120410859111307 sample sd 0.011340983135542845 95% t CI [-0.0392929747544378, 0.01705215303621518]
+per contrast mean
+arm                          tt5       tt6     v4r18     v5r18     v6r18
+contrast                                                                
+LGL>lym CD16            0.568373  0.517521  0.532412  0.517585  0.559161
+LGL>lym CD56            0.509275  0.511471  0.481622  0.475152  0.484186
+band<segneut CD16       0.626793  0.577958  0.620024  0.539827  0.463368
+baso>rest CD123         0.397628  0.405383  0.409964  0.421531  0.390975
+eos<segneut CD16        0.737556  0.736143  0.774618  0.551363  0.552060
+hairy<lym CD3           0.519496  0.553298  0.515917  0.506610  0.527122
+hairy>lym CD123         0.663217  0.673984  0.688755  0.665982  0.576049
+hairy>lym CD19          0.601168  0.559381  0.571354  0.431945  0.466832
+hairy>lym HLA-DR        0.860495  0.847508  0.862561  0.746435  0.666632
+myelocyte<segneut CD16  0.798416  0.761684  0.819925  0.642395  0.627515
+normoblast<lym CD45     0.521285  0.579765  0.551465  0.457435  0.466220
+plasma<lym CD45         0.618336  0.607528  0.636452  0.473647  0.543370
+PBC heldout contrasts
+                                                   mean       std
+contrast                                arm                      
+CD16 neutrophil>ig (held-out)           tt5    0.867667  0.035529
+                                        tt6    0.818333  0.108523
+                                        v4r18  0.885000  0.046228
+                                        v5r18  0.671667  0.181004
+                                        v6r18  0.664667  0.080749
+CD45 lymphocyte>erythroblast (held-out) tt5    0.852667  0.108519
+                                        tt6    0.865000  0.080075
+                                        v4r18  0.868667  0.094002
+                                        v5r18  0.790667  0.070302
+                                        v6r18  0.834000  0.086261
+=== GOAL SAVED PREDICTIONS ===
+GOAL recompute 5 n023_v5_b10 r 0.6436577171956193 stored 0.6436577171956193 eval rows 13113 GS eval 0 args {'out': '/hnvme/workspace/v181bb10-bsccm/runs/n023_v5_b10', 'protocol': 'b1to0', 'channels': 'all', 'phase': 1, 'arch': 'resnet50', 'epochs': 10, 'bs': 256, 'lr': 0.0005, 'workers': 15, 'max_train': 0, 'seed': 0, 'w_cls': 0.5, 'include_gs': 0, 'init_ssl': '/hnvme/workspace/v181bb10-bsccm/runs/n007_ssl_aug/encoder_final.pt', 'tail_weight': 0.0, 'focal_c10': 0.0, 'targets': 'targets_v5.npz', 'dann': 0.0} n_train 269283
+GOAL recompute 5 n023_v5_b01 r 0.6408816190994976 stored 0.6408816190994975 eval rows 26322 GS eval 0 args {'out': '/hnvme/workspace/v181bb10-bsccm/runs/n023_v5_b01', 'protocol': 'b0to1', 'channels': 'all', 'phase': 1, 'arch': 'resnet50', 'epochs': 10, 'bs': 256, 'lr': 0.0005, 'workers': 15, 'max_train': 0, 'seed': 0, 'w_cls': 0.5, 'include_gs': 0, 'init_ssl': '/hnvme/workspace/v181bb10-bsccm/runs/n007_ssl_aug/encoder_final.pt', 'tail_weight': 0.0, 'focal_c10': 0.0, 'targets': 'targets_v5.npz', 'dann': 0.0} n_train 127946
+GOAL recompute 5 n023_v5_b10_s1 r 0.6420224258105692 stored 0.6420224258105695 eval rows 13113 GS eval 0 args {'out': '/hnvme/workspace/v181bb10-bsccm/runs/n023_v5_b10_s1', 'protocol': 'b1to0', 'channels': 'all', 'phase': 1, 'arch': 'resnet50', 'epochs': 10, 'bs': 256, 'lr': 0.0005, 'workers': 15, 'max_train': 0, 'seed': 1, 'w_cls': 0.5, 'include_gs': 0, 'init_ssl': '/hnvme/workspace/v181bb10-bsccm/runs/n007_ssl_aug/encoder_final.pt', 'tail_weight': 0.0, 'focal_c10': 0.0, 'targets': 'targets_v5.npz', 'dann': 0.0} n_train 269283
+GOAL recompute 5 n023_v5_b01_s1 r 0.6348474948354648 stored 0.6348474948354647 eval rows 26322 GS eval 0 args {'out': '/hnvme/workspace/v181bb10-bsccm/runs/n023_v5_b01_s1', 'protocol': 'b0to1', 'channels': 'all', 'phase': 1, 'arch': 'resnet50', 'epochs': 10, 'bs': 256, 'lr': 0.0005, 'workers': 15, 'max_train': 0, 'seed': 1, 'w_cls': 0.5, 'include_gs': 0, 'init_ssl': '/hnvme/workspace/v181bb10-bsccm/runs/n007_ssl_aug/encoder_final.pt', 'tail_weight': 0.0, 'focal_c10': 0.0, 'targets': 'targets_v5.npz', 'dann': 0.0} n_train 127946
+GOAL recompute 5 n023_v4_b01_s1 r 0.6352187842210845 stored 0.6352187842210844 eval rows 26322 GS eval 0 args {'out': '/hnvme/workspace/v181bb10-bsccm/runs/n023_v4_b01_s1', 'protocol': 'b0to1', 'channels': 'all', 'phase': 1, 'arch': 'resnet50', 'epochs': 10, 'bs': 256, 'lr': 0.0005, 'workers': 15, 'max_train': 0, 'seed': 1, 'w_cls': 0.5, 'include_gs': 0, 'init_ssl': '/hnvme/workspace/v181bb10-bsccm/runs/n007_ssl_aug/encoder_final.pt', 'tail_weight': 0.0, 'focal_c10': 0.0, 'targets': 'targets_v4.npz', 'dann': 0.0} n_train 127946
+GOAL recompute 5 n014_sslinit_b1to0 r 0.6289737832631016 stored 0.6289737832631016 eval rows 13113 GS eval 0 args {'out': '/hnvme/workspace/v181bb10-bsccm/runs/n014_sslinit_b1to0', 'protocol': 'b1to0', 'channels': 'all', 'phase': 1, 'arch': 'resnet50', 'epochs': 10, 'bs': 256, 'lr': 0.0005, 'workers': 15, 'max_train': 0, 'seed': 0, 'w_cls': 0.5, 'include_gs': 0, 'init_ssl': '/hnvme/workspace/v181bb10-bsccm/runs/n007_ssl_aug/encoder_final.pt', 'targets': 'targets_v4.npz', 'dann': 0.0} n_train 269283
+GOAL recompute 5 n014_sslinit_b0to1 r 0.6397240046252258 stored 0.6397240046252262 eval rows 26322 GS eval 0 args {'out': '/hnvme/workspace/v181bb10-bsccm/runs/n014_sslinit_b0to1', 'protocol': 'b0to1', 'channels': 'all', 'phase': 1, 'arch': 'resnet50', 'epochs': 10, 'bs': 256, 'lr': 0.0005, 'workers': 15, 'max_train': 0, 'seed': 0, 'w_cls': 0.5, 'include_gs': 0, 'init_ssl': '/hnvme/workspace/v181bb10-bsccm/runs/n007_ssl_aug/encoder_final.pt', 'targets': 'targets_v4.npz', 'dann': 0.0} n_train 127946
+GOAL recompute 5 n022_base_b10 r 0.6342844040717899 stored 0.6342844040717899 eval rows 13113 GS eval 0 args {'out': '/hnvme/workspace/v181bb10-bsccm/runs/n022_base_b10', 'protocol': 'b1to0', 'channels': 'all', 'phase': 1, 'arch': 'resnet50', 'epochs': 10, 'bs': 256, 'lr': 0.0005, 'workers': 15, 'max_train': 0, 'seed': 0, 'w_cls': 0.5, 'include_gs': 0, 'init_ssl': '/hnvme/workspace/v181bb10-bsccm/runs/n007_ssl_aug/encoder_final.pt', 'tail_weight': 0.0, 'focal_c10': 0.0, 'targets': 'targets_v4.npz', 'dann': 0.0} n_train 269283
+GOAL mean TRAINED ON VERSION 5 0.6403523142352877 matched run count 4
+GOAL recompute 6 n025_v6_b10_s0 r 0.6414776616222784 stored 0.6414776616222782 eval rows 13113 GS eval 0 args {'out': '/hnvme/workspace/v181bb10-bsccm/runs/n025_v6_b10_s0', 'protocol': 'b1to0', 'channels': 'all', 'phase': 1, 'arch': 'resnet50', 'epochs': 10, 'bs': 256, 'lr': 0.0005, 'workers': 15, 'max_train': 0, 'seed': 0, 'w_cls': 0.5, 'include_gs': 0, 'init_ssl': '/hnvme/workspace/v181bb10-bsccm/runs/n007_ssl_aug/encoder_final.pt', 'tail_weight': 0.0, 'focal_c10': 0.0, 'targets': 'targets_v6.npz', 'dann': 0.0} n_train 269283
+GOAL recompute 6 n025_v6_b01_s0 r 0.6399272126444878 stored 0.6399272126444876 eval rows 26322 GS eval 0 args {'out': '/hnvme/workspace/v181bb10-bsccm/runs/n025_v6_b01_s0', 'protocol': 'b0to1', 'channels': 'all', 'phase': 1, 'arch': 'resnet50', 'epochs': 10, 'bs': 256, 'lr': 0.0005, 'workers': 15, 'max_train': 0, 'seed': 0, 'w_cls': 0.5, 'include_gs': 0, 'init_ssl': '/hnvme/workspace/v181bb10-bsccm/runs/n007_ssl_aug/encoder_final.pt', 'tail_weight': 0.0, 'focal_c10': 0.0, 'targets': 'targets_v6.npz', 'dann': 0.0} n_train 127946
+GOAL recompute 6 n025_v6_b10_s1 r 0.6377700811763239 stored 0.6377700811763242 eval rows 13113 GS eval 0 args {'out': '/hnvme/workspace/v181bb10-bsccm/runs/n025_v6_b10_s1', 'protocol': 'b1to0', 'channels': 'all', 'phase': 1, 'arch': 'resnet50', 'epochs': 10, 'bs': 256, 'lr': 0.0005, 'workers': 15, 'max_train': 0, 'seed': 1, 'w_cls': 0.5, 'include_gs': 0, 'init_ssl': '/hnvme/workspace/v181bb10-bsccm/runs/n007_ssl_aug/encoder_final.pt', 'tail_weight': 0.0, 'focal_c10': 0.0, 'targets': 'targets_v6.npz', 'dann': 0.0} n_train 269283
+GOAL recompute 6 n025_v6_b01_s1 r 0.6367282876125845 stored 0.6367282876125846 eval rows 26322 GS eval 0 args {'out': '/hnvme/workspace/v181bb10-bsccm/runs/n025_v6_b01_s1', 'protocol': 'b0to1', 'channels': 'all', 'phase': 1, 'arch': 'resnet50', 'epochs': 10, 'bs': 256, 'lr': 0.0005, 'workers': 15, 'max_train': 0, 'seed': 1, 'w_cls': 0.5, 'include_gs': 0, 'init_ssl': '/hnvme/workspace/v181bb10-bsccm/runs/n007_ssl_aug/encoder_final.pt', 'tail_weight': 0.0, 'focal_c10': 0.0, 'targets': 'targets_v6.npz', 'dann': 0.0} n_train 127946
+GOAL mean TRAINED ON VERSION 6 0.6389758107639187 matched run count 4
+=== AUX INTERFACE PERMUTATION REPRODUCER ===
+rolled aux names; requested autofl; current code uses grp:CD16 correct aux index 0 primary index used 12

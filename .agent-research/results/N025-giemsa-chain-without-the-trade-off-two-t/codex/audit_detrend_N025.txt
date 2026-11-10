@@ -1,0 +1,13 @@
+slide 2 train all/nonGS/GS 13095 5088 8007
+saved v4 max reproduction error 0.0
+nonGS training label changes 5088 RMSE 0.06322217732667923 old sd 0.14953912794589996 corr 0.9659419055279715
+GS split2 old-vs-clean truth correlation 0.9706322534577441
+student same predictions rescored n021_gs_anc v4 0.3943801032437812 GS-excluded detrend 0.38155351795495945
+student same predictions rescored n025_tt6_s0 v4 0.5844233006132181 GS-excluded detrend 0.5756641399030383
+slide 19 train all/nonGS/GS 11099 6604 4495
+saved v4 max reproduction error 0.0
+nonGS training label changes 6604 RMSE 0.26930728554725647 old sd 0.21039551496505737 corr 0.9746677935660478
+GS split2 old-vs-clean truth correlation 0.9836600513601145
+student same predictions rescored n021_gs_anc v4 0.6904006012682584 GS-excluded detrend 0.6834121958615218
+student same predictions rescored n025_tt6_s0 v4 0.8458463089938567 GS-excluded detrend 0.8349958090010725
+done

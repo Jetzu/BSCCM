@@ -10,11 +10,11 @@ import argparse, io, json, os, zipfile, math, numpy as np, torch, torch.nn as nn
 from PIL import Image
 from sklearn.metrics import roc_auc_score
 ap = argparse.ArgumentParser(); ap.add_argument('--ckpt', required=True); ap.add_argument('--lf-dim', type=int, default=512); ap.add_argument('--dim', type=int, default=256)
-ap.add_argument('--out', required=True); ap.add_argument('--tta', type=int, default=1); ap.add_argument('--pbc-half', default='all'); ap.add_argument('--mll23', default=''); ap.add_argument('--mll-max', type=int, default=1500); ap.add_argument('--pbc-bg', default='keep', choices=['keep', 'white']); a = ap.parse_args(); os.makedirs(a.out, exist_ok=True)
+ap.add_argument('--out', required=True); ap.add_argument('--backbone', default='B', choices=['B', 'L']); ap.add_argument('--tta', type=int, default=1); ap.add_argument('--pbc-half', default='all'); ap.add_argument('--mll23', default=''); ap.add_argument('--mll-max', type=int, default=1500); ap.add_argument('--pbc-bg', default='keep', choices=['keep', 'white']); a = ap.parse_args(); os.makedirs(a.out, exist_ok=True)
 W = '/hnvme/workspace/v181bb10-bsccm'; dev = 'cuda'; T = np.load(W + '/targets_v4.npz'); names = list(T['names']); K = len(names)
 mlp = lambda i, o: nn.Sequential(nn.Linear(i, 1024), nn.GELU(), nn.LayerNorm(1024), nn.Linear(1024, o))
-vit = timm.create_model('vit_base_patch14_dinov2', pretrained=False, num_classes=0, img_size=224)
-net = nn.ModuleDict({'vit': vit, 'PG': mlp(768, a.dim), 'S': mlp(a.dim, K)})
+vit = timm.create_model({'B': 'vit_base_patch14_dinov2', 'L': 'vit_large_patch14_dinov2'}[a.backbone], pretrained=False, num_classes=0, img_size=224)
+net = nn.ModuleDict({'vit': vit, 'PG': mlp(vit.num_features, a.dim), 'S': mlp(a.dim, K)})
 sd = torch.load(a.ckpt, map_location='cpu', weights_only=True); sd = {k: v for k, v in sd.items() if k.split('.')[0] in ('vit', 'PG', 'S')}
 print(net.load_state_dict(sd, strict=True)); net = net.to(dev).eval()
 MEAN = torch.tensor([0.485, 0.456, 0.406], device=dev).view(1, 3, 1, 1); STD = torch.tensor([0.229, 0.224, 0.225], device=dev).view(1, 3, 1, 1)
