@@ -1,7 +1,7 @@
 # N024 · v5-label r18 supervised teacher for the Giemsa chain: anchored GS students (3 seeds) on PBC/MLL23 + cross-slide GS autofl truth, vs the v4 r18 chain (N021)
 
 type: exp · date: 2026-11-09 · status: done
-goal_effect: n/a · scale: module · value: - · why: measurement
+goal_effect: flat · scale: module · value: void
 
 ## Goal
 N022 showed the r18 supervised teacher distils into the Giemsa student far better than r50 SSL teachers (MLL23 fine .63 vs .50). N023 v5 labels fixed held-out autofl transfer (LF b1to0 autofl -.08 -> +.28). Does a v5-label r18 teacher improve the Giemsa chain (clinical fine contrasts; cross-slide GS autofl truth)?

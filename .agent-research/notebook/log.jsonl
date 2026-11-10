@@ -32,3 +32,7 @@
 {"ts":"2026-11-10T09:53:48+01:00","event":"goal_effect","item":"N026","effect":"improved","value":"0.6515","scale":"module","why":""}
 {"ts":"2026-11-10T10:06:18+01:00","event":"goal_effect","item":"N028","effect":"n/a","value":"-","scale":"module","why":"measurement"}
 {"ts":"2026-11-10T11:29:13+01:00","event":"goal_effect","item":"N029","effect":"n/a","value":"-","scale":"module","why":"measurement"}
+{"ts":"2026-11-10T12:45:22+01:00","event":"goal_effect","item":"N031","effect":"n/a","value":"-","scale":"module","why":"measurement"}
+{"ts":"2026-11-10T12:45:33+01:00","event":"goal_effect","item":"N024","effect":"flat","value":"void","scale":"module","why":""}
+{"ts":"2026-11-10T12:45:34+01:00","event":"goal_effect","item":"N027","effect":"worse","value":"void","scale":"module","why":""}
+{"ts":"2026-11-10T12:45:34+01:00","event":"goal_effect","item":"N030","effect":"flat","value":"void","scale":"module","why":""}

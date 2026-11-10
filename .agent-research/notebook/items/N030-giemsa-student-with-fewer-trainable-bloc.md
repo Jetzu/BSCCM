@@ -1,7 +1,7 @@
 # N030 · Giemsa student with FEWER trainable blocks (TT6 chain): freeze 10 of 12 and fully frozen DinoBloom-B (heads + projections only), 3 seeds; does less BSCCM-domain capacity improve clinical transfer?
 
 type: exp · date: 2026-11-10 · status: done
-goal_effect: n/a · scale: module · value: - · why: measurement
+goal_effect: flat · scale: module · value: void
 
 ## Goal
 N027 showed more student capacity destroys clinical transfer. Test the other direction: fewer trainable DinoBloom-B blocks on the TT6 chain.

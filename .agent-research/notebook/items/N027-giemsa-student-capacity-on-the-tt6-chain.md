@@ -1,7 +1,7 @@
 # N027 · Giemsa student capacity on the TT6 chain: DinoBloom-B with 8 trainable blocks + 6000 steps vs DinoBloom-L (8 trainable of 24) + 6000 steps; MLL23/PBC + within-slide autofl truth
 
 type: exp · date: 2026-11-10 · status: done
-goal_effect: n/a · scale: module · value: - · why: measurement
+goal_effect: worse · scale: module · value: void
 
 ## Goal
 The recommended Giemsa chain (TT6, N025: v4 r18 markers + v6 r18 autofl) still has most MLL23 fine contrasts near chance and batch-0-slide autofl truth .58. Test student capacity/training length: is the student, not the teacher, the bottleneck?
