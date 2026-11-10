@@ -1,6 +1,6 @@
 """Overview figures for BSCCM (deliverables): fig1 = architecture (data -> models -> outputs, real cell thumbnails),
 fig2 = capabilities (results panels from recorded result files). Usage: make_figures.py --thumbs THUMBS.npz --out DIR"""
-import argparse, json, csv, glob, collections, numpy as np
+import argparse, json, csv, glob, collections, os, numpy as np
 import matplotlib; matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib.patches import FancyBboxPatch
@@ -137,3 +137,31 @@ contrast_panel(axs[1, 1], 'MLL23', 'e  Clinical cells, MLL23 (never trained on)'
 contrast_panel(axs[1, 2], 'PBC-B', 'f  Clinical cells, PBC held-out half')
 fig.savefig(a.out + '/fig2_capabilities.png', dpi=220); fig.savefig(a.out + '/fig2_capabilities.pdf'); plt.close(fig)
 print('wrote', a.out + '/fig1_architecture.{png,pdf}', a.out + '/fig2_capabilities.{png,pdf}')
+
+# ---------------------------------------------------------------- Figure 3: virtual Wright staining (held-out cells)
+def fig_virtual_stain(run_dir, out, n=6, seed=4):
+    import sys as _s; _s.path.insert(0, '/home/hpc/v181bb/v181bb10/BSCCM/scripts')
+    from vs_common import registered_rgb
+    W = '/hnvme/workspace/v181bb10-bsccm'; G = np.load(run_dir + '/eval/generated.npz'); R = np.load(run_dir + '/register.npz')
+    H = np.load(W + '/pack/histology.npy', mmap_mode='r'); L = np.load(W + '/pack/led_array.npy', mmap_mode='r'); rs = float(G['rgb_scale'])
+    D = json.load(open(run_dir + '/downstream/downstream.json')) if os.path.exists(run_dir + '/downstream/downstream.json') else json.load(open(run_dir + '/downstream_tt6s0/downstream.json'))
+    idx = np.random.default_rng(seed).choice(len(G['hist_row']), n, replace=False)
+    fig = plt.figure(figsize=(15, 6.2)); gs = fig.add_gridspec(3, n + 2, width_ratios=[1] * n + [0.95, 2.6], hspace=0.08, wspace=0.06, left=0.06, right=0.98, top=0.9, bottom=0.1)
+    rows = [('label-free', BLUE), ('virtual stain', VIOLET), ('real stain', INK2)]
+    for c, i in enumerate(idx):
+        r = int(G['hist_row'][i]); g = int(G['gidx'][i]); bf = np.array(L[g]).view(np.int16)[0].astype(np.float32); lo, hi = np.percentile(bf, [1, 99.5])
+        real = np.clip(registered_rgb(np.asarray(H[r], np.float32), R['scale'][r], R['dy'][r], R['dx'][r], 128) / rs, 0, 1)
+        for k, im in enumerate([np.clip((bf - lo) / (hi - lo), 0, 1), G['images'][i] / 255., real]):
+            ax = fig.add_subplot(gs[k, c]); ax.imshow(im, cmap='gray' if im.ndim == 2 else None); ax.set_xticks([]); ax.set_yticks([])
+            for s_ in ax.spines.values(): s_.set_visible(False)
+            if c == 0: ax.set_ylabel(rows[k][0], color=rows[k][1], fontsize=10, fontweight='bold')
+    ax = fig.add_subplot(gs[:, n + 1]); ag = D['agreement']
+    ks = [k for k in ag if k != 'autofl' and 'CD123/HLA' not in k]; ks = sorted(ks, key=lambda k: ag[k]['gen_vs_reg'])
+    y = np.arange(len(ks)); ax.barh(y, [ag[k]['gen_vs_reg'] for k in ks], color=VIOLET, height=0.62)
+    ax.set_yticks(y, [k.replace('single:', '').replace('grp:CD3/CD19/CD56', 'CD3/19/56 grp').replace('grp:CD45', 'CD45 grp').replace('grp:CD16', 'CD16 grp') for k in ks])
+    ax.set_xlim(0, 1); ax.set_xlabel('agreement r, virtual vs real'); ax.grid(axis='x', color=GRID, lw=0.8); ax.set_axisbelow(True)
+    for s_ in ('top', 'right'): ax.spines[s_].set_visible(False)
+    ax.set_title('Giemsa student reads the virtual stain', loc='left')
+    fig.suptitle('Virtual Wright staining from label-free LED images  ·  cells from a slide the generator never saw', x=0.06, ha='left', fontsize=11, fontweight='bold')
+    fig.savefig(out + '/fig3_virtual_staining.png', dpi=220); fig.savefig(out + '/fig3_virtual_staining.pdf'); plt.close(fig)
+if os.environ.get('VS_RUN'): fig_virtual_stain(os.environ['VS_RUN'], a.out); print('wrote fig3')
