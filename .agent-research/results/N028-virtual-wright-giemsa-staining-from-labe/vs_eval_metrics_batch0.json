@@ -1,0 +1,79 @@
+{
+  "config": {
+    "version": 1,
+    "checkpoint_sha256": "754138cf3b80abc82b007736052e7cf58fe5619885d1630e474c3fc26d5bdde4",
+    "registration_sha256": "f1837660f679ea69cc780c5ceac6c440c3c5c37864d38ebaf1070596c39c10bb",
+    "dino_b_sha256": "b1ea16884d1ac1331f9e2d80f730b1b72cab58c9d65cc8cc2ac7ec785a8213c7",
+    "targets_sha256": "f8b291a850860a3193181b05948141d78ef9a9080a2deda64346707b5afa14da",
+    "seed": 0,
+    "n": 9983,
+    "size": 128
+  },
+  "n_heldout": 9983,
+  "holdout": "batch0",
+  "step": 3360,
+  "epoch": 40,
+  "metrics_on": "uint8 generated RGB vs registered float real RGB",
+  "psnr": 24.888916427836225,
+  "ssim": 0.8717667359657616,
+  "dino_b_cosine": 0.746738774050223,
+  "per_batch": {
+    "0": {
+      "n": 9983,
+      "psnr": 24.888916427836225,
+      "ssim": 0.8717667359657616,
+      "cosine": 0.746738774050223
+    }
+  },
+  "generated_to_real_retrieval": {
+    "top1": 0.013,
+    "top5": 0.071,
+    "candidates": 1000,
+    "tie_tolerance": 1e-07
+  },
+  "real_to_generated_retrieval": {
+    "top1": 0.048,
+    "top5": 0.127,
+    "candidates": 1000,
+    "tie_tolerance": 1e-07
+  },
+  "color": {
+    "real": {
+      "mean": [
+        0.8152344833451594,
+        0.7951468013396402,
+        0.8536885048719061
+      ],
+      "std": [
+        0.19359324262392807,
+        0.20506614911015722,
+        0.11739532812968442
+      ],
+      "units": "RGB in [0,1]"
+    },
+    "gen": {
+      "mean": [
+        0.840477130180918,
+        0.8237386195165032,
+        0.8704714898020403
+      ],
+      "std": [
+        0.2091910299403958,
+        0.22358042543990894,
+        0.12618779810808745
+      ],
+      "units": "RGB in [0,1]"
+    }
+  },
+  "registration_report": {
+    "n_total": 15712,
+    "n_good": 15636,
+    "n_dropped": 76,
+    "train_good": 5653,
+    "test_good": 9983,
+    "global_scale": 0.66,
+    "scale_at_boundary": false,
+    "median_peak": 0.8747406441066253,
+    "min_peak": -0.99
+  }
+}
