@@ -4,7 +4,8 @@ position in FOV; HistGradientBoosting, 31 leaves max, min 200 cells/leaf) is fit
 then its prediction minus its training-cell mean is subtracted from all cells of the slide (slide mean preserved; spatial trend removed).
 User ruling 2026-11-09: position on the slide carries no biology. Also flags GS-LF pair outliers (log-area residual > 3 robust sd, N003)
 as gs_pair_suspect (for label hygiene; never used to filter test inputs). Writes targets_v4.npz (+ v3 keys unchanged otherwise)."""
-import os as _os; CLEAN = _os.environ.get('BSCCM_CLEAN', '0') == '1'; S_ = 'c' if CLEAN else ''   # N029: CLEAN=1 -> no Giemsa (hist_row>=0) cell enters ANY fit/calibration; outputs targets_v*c
+import os as _os; _os.environ.setdefault('OMP_NUM_THREADS', '3')   # BEFORE sklearn/numpy import: 16 workers x all-core OpenMP stalled N029 (load 800 on 48 cores)
+CLEAN = _os.environ.get('BSCCM_CLEAN', '0') == '1'; S_ = 'c' if CLEAN else ''   # N029: CLEAN=1 -> no Giemsa (hist_row>=0) cell enters ANY fit/calibration; outputs targets_v*c
 import numpy as np, pandas as pd, json, sys
 from sklearn.ensemble import HistGradientBoostingRegressor as HGB
 W = '/hnvme/workspace/v181bb10-bsccm'; T = dict(np.load(W + f'/targets_v3{S_}.npz', allow_pickle=True)); T['slide_names'] = T['slide_names'].astype(str);   # own file; object->str so v4 loads without pickle

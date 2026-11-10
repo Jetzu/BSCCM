@@ -2,8 +2,8 @@
 rescaling), cross-slide single-slide r from result.json, and MLL23 fine-contrast mean per seed (from a transfer_multiseed.csv). Long csv out."""
 import argparse, json, csv, collections, numpy as np
 ap = argparse.ArgumentParser(); ap.add_argument('--anc', nargs='+', required=True, help='arm=run1,run2,..'); ap.add_argument('--xs', nargs='*', default=[], help='arm:dir=run (dir b1to0|b0to1)')
-ap.add_argument('--transfer', default=''); ap.add_argument('--out', required=True); a = ap.parse_args()
-W = '/hnvme/workspace/v181bb10-bsccm'; T = np.load(W + '/targets_v4.npz', allow_pickle=True); ja = [str(n) for n in T['names']].index('autofl'); sl = T['slide']; sn = T['slide_names'].astype(str)
+ap.add_argument('--transfer', default=''); ap.add_argument('--truth', default='targets_v4.npz'); ap.add_argument('--out', required=True); a = ap.parse_args()
+W = '/hnvme/workspace/v181bb10-bsccm'; T = np.load(W + '/' + a.truth, allow_pickle=True); ja = [str(n) for n in T['names']].index('autofl'); sl = T['slide']; sn = T['slide_names'].astype(str)
 rows = []
 for spec in a.anc:
     arm, runs = spec.split('=')

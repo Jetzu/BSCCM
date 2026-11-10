@@ -31,3 +31,4 @@
 {"ts":"2026-11-10T09:40:12+01:00","event":"goal_effect","item":"N030","effect":"n/a","value":"-","scale":"module","why":"measurement"}
 {"ts":"2026-11-10T09:53:48+01:00","event":"goal_effect","item":"N026","effect":"improved","value":"0.6515","scale":"module","why":""}
 {"ts":"2026-11-10T10:06:18+01:00","event":"goal_effect","item":"N028","effect":"n/a","value":"-","scale":"module","why":"measurement"}
+{"ts":"2026-11-10T11:29:13+01:00","event":"goal_effect","item":"N029","effect":"n/a","value":"-","scale":"module","why":"measurement"}
