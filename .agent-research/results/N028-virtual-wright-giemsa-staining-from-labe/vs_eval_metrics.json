@@ -1,0 +1,85 @@
+{
+  "config": {
+    "version": 1,
+    "checkpoint_sha256": "5cc9b3b66f484ee7549d1f2ac41aa56c67d914f83f2ce8ef48777ed9bd4ba64d",
+    "registration_sha256": "3d0e1d5c842d810efc10af4a4924fc7c8b2feb61b7071c936025adb6ea4939e9",
+    "dino_b_sha256": "b1ea16884d1ac1331f9e2d80f730b1b72cab58c9d65cc8cc2ac7ec785a8213c7",
+    "targets_sha256": "f8b291a850860a3193181b05948141d78ef9a9080a2deda64346707b5afa14da",
+    "seed": 0,
+    "n": 1612,
+    "size": 128
+  },
+  "n_heldout": 1612,
+  "holdout": "fov",
+  "step": 7520,
+  "epoch": 40,
+  "metrics_on": "uint8 generated RGB vs registered float real RGB",
+  "psnr": 27.66259434915358,
+  "ssim": 0.8813307192500117,
+  "dino_b_cosine": 0.7637579791506673,
+  "per_batch": {
+    "0": {
+      "n": 1009,
+      "psnr": 27.900257713612763,
+      "ssim": 0.8842457944030686,
+      "cosine": 0.772974694803047
+    },
+    "1": {
+      "n": 603,
+      "psnr": 27.264912201990537,
+      "ssim": 0.8764529235129728,
+      "cosine": 0.7483356473210637
+    }
+  },
+  "generated_to_real_retrieval": {
+    "top1": 0.034,
+    "top5": 0.117,
+    "candidates": 1000,
+    "tie_tolerance": 1e-07
+  },
+  "real_to_generated_retrieval": {
+    "top1": 0.084,
+    "top5": 0.215,
+    "candidates": 1000,
+    "tie_tolerance": 1e-07
+  },
+  "color": {
+    "real": {
+      "mean": [
+        0.8375480024897431,
+        0.8165943579327676,
+        0.8675185615016568
+      ],
+      "std": [
+        0.1847592268398937,
+        0.1995312111373688,
+        0.11343890913109367
+      ],
+      "units": "RGB in [0,1]"
+    },
+    "gen": {
+      "mean": [
+        0.8347671627998352,
+        0.8167447282865681,
+        0.866463428358582
+      ],
+      "std": [
+        0.18490352326287837,
+        0.19827947292764544,
+        0.11234543193756998
+      ],
+      "units": "RGB in [0,1]"
+    }
+  },
+  "registration_report": {
+    "n_total": 15712,
+    "n_good": 15643,
+    "n_dropped": 69,
+    "train_good": 12450,
+    "test_good": 1612,
+    "global_scale": 0.67,
+    "scale_at_boundary": false,
+    "median_peak": 0.8762654430565684,
+    "min_peak": -0.99
+  }
+}

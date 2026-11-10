@@ -1,0 +1,122 @@
+{
+  "verdict": "PASS: bounded CPU smoke; independent Claude review and production verification pending",
+  "item": "N028",
+  "python": "/home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python",
+  "environment": {
+    "torch": "2.5.1+cu121",
+    "torchvision": "0.20.1+cu121",
+    "timm": "1.0.31",
+    "threads": 48
+  },
+  "preferred_environment": "apptainer failed: squashfuse_ll fuse device not found",
+  "command": "TMPDIR=/tmp/$USER/codex-N028 PYTHONPATH=/tmp/$USER/codex-N028/deps PYTHONDONTWRITEBYTECODE=1 OMP_NUM_THREADS=48 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=48 /home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python -u vs_smoke.py --tmp /tmp/$USER/codex-N028/smoke-final --threads 48",
+  "exit_code": 0,
+  "records": [
+    {
+      "stage": "geometry_and_data",
+      "actual_cells": 8,
+      "scale": 0.65,
+      "median_ncc": 0.8362354399555424,
+      "shifts": [
+        [
+          9.0,
+          -2.0
+        ],
+        [
+          1.0,
+          -3.0
+        ],
+        [
+          6.0,
+          1.0
+        ],
+        [
+          -4.0,
+          0.0
+        ],
+        [
+          4.0,
+          3.0
+        ],
+        [
+          -7.0,
+          3.0
+        ],
+        [
+          -1.0,
+          0.0
+        ],
+        [
+          -2.0,
+          2.0
+        ]
+      ]
+    },
+    {
+      "stage": "forward_backward",
+      "l1_dino": {
+        "loss": 0.40295761823654175,
+        "l1": 0.3534945547580719,
+        "perceptual": 0.4946306347846985,
+        "gan": 0.0,
+        "discriminator": 0.0
+      },
+      "patchgan": {
+        "loss": 0.35033562779426575,
+        "l1": 0.3500017523765564,
+        "perceptual": 0.0,
+        "gan": 0.033386144787073135,
+        "discriminator": 1.0042184591293335
+      },
+      "strict_dinobloom_s": true,
+      "checkpoint_roundtrip": true
+    },
+    {
+      "stage": "signal_control",
+      "training_cursor": true,
+      "pending_eval": true,
+      "changed_config_rejected": true,
+      "resumed_matches_uninterrupted": true
+    },
+    {
+      "result": "PASS",
+      "real_cells": 8,
+      "seconds": 12.93,
+      "checks": [
+        "phase_sign",
+        "multiprocessing_48",
+        "128_256_geometry",
+        "GPUNorm_24ch",
+        "S_perceptual_backward",
+        "PatchGAN_backward",
+        "B_eval",
+        "checkpoint_optimizer_rng",
+        "resume_sampler",
+        "SSIM_identity",
+        "pessimistic_ties",
+        "montage",
+        "uint8_NPZ_row_ids",
+        "eval_SIGUSR1_resume",
+        "train_SIGUSR1_resume"
+      ]
+    }
+  ],
+  "entrypoints_python_isolated_help": "vs_register.py, vs_train.py, vs_eval.py: python -B -I --help exited 0",
+  "not_checked": [
+    "full-dataset registration",
+    "CUDA/bf16 and H100 estimates",
+    "real training convergence",
+    "SLURM resubmission",
+    "wandb sync cron",
+    "1000-cell retrieval",
+    "downstream student and molecular validity"
+  ],
+  "integration_plan": "Run files in place or copy all five vs_*.py together to scripts/. No existing source changes required. Coordinator owns N028 notebook, Claude red-team review and commit.",
+  "source_sha256": {
+    "vs_common.py": "4d5f9f3464add859bf8756d2c6881cc5e302cbefe121a07c13e301702275478c",
+    "vs_eval.py": "97cbc394e3970a9c6b37a8395341d9071ac0e9f790c276d222fb5fe8def272f2",
+    "vs_register.py": "65f9241ab6c3328880c74f6ffe91a4b07a3a7508a1736a40cc6228e90c578643",
+    "vs_smoke.py": "bed386c81b61cb6b013832c5f6709d9cda34ba1a898973061c970fd8598f81e3",
+    "vs_train.py": "1df0c14b7c42b85c2949b3b7837262405d61da745c5245dee9718577622ba440"
+  }
+}
