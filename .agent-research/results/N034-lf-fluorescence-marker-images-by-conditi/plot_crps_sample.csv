@@ -1,0 +1,109 @@
+arm,value,seed
+flow steps 16 g1.0,0.5186093003844685,single:CD123
+flow steps 16 g1.0,0.5706391961013483,single:CD14
+flow steps 16 g1.0,0.7702272056643922,single:CD16
+flow steps 16 g1.0,0.5028092059764098,single:CD19
+flow steps 16 g1.0,0.5679437713975425,single:CD3
+flow steps 16 g1.0,0.993901062681217,single:CD45
+flow steps 16 g1.0,0.5580214588238637,single:CD56
+flow steps 16 g1.0,1.338773000578496,single:HLA-DR
+flow steps 16 g1.0,0.9277373754609323,grp:CD3/CD19/CD56
+flow steps 16 g1.0,1.1044809175936998,grp:CD45
+flow steps 16 g1.0,0.6115614120806221,grp:CD16
+flow steps 16 g1.0,0.721272963764455,autofl
+flow steps 16 g2.0,0.48409859047673015,single:CD123
+flow steps 16 g2.0,0.5097612012120839,single:CD14
+flow steps 16 g2.0,0.5921553674490335,single:CD16
+flow steps 16 g2.0,0.5516953231779703,single:CD19
+flow steps 16 g2.0,0.5955787322595142,single:CD3
+flow steps 16 g2.0,0.8192622177518373,single:CD45
+flow steps 16 g2.0,0.5966132025624342,single:CD56
+flow steps 16 g2.0,1.1660181075863936,single:HLA-DR
+flow steps 16 g2.0,0.7766614965631095,grp:CD3/CD19/CD56
+flow steps 16 g2.0,0.9432777434667042,grp:CD45
+flow steps 16 g2.0,0.5501712001754018,grp:CD16
+flow steps 16 g2.0,0.5209278747403355,autofl
+flow steps 48 g1.0,0.5155059655241909,single:CD123
+flow steps 48 g1.0,0.5166968323278623,single:CD14
+flow steps 48 g1.0,0.526015575541039,single:CD16
+flow steps 48 g1.0,0.49964267648149835,single:CD19
+flow steps 48 g1.0,0.5220764457024396,single:CD3
+flow steps 48 g1.0,0.8895314185050923,single:CD45
+flow steps 48 g1.0,0.542492761588154,single:CD56
+flow steps 48 g1.0,1.252680446092257,single:HLA-DR
+flow steps 48 g1.0,0.7406616402402876,grp:CD3/CD19/CD56
+flow steps 48 g1.0,0.9148679478215775,grp:CD45
+flow steps 48 g1.0,0.5157370397048252,grp:CD16
+flow steps 48 g1.0,0.688455175861713,autofl
+flow steps 48 g2.0,0.49091534659250596,single:CD123
+flow steps 48 g2.0,0.4728370267876964,single:CD14
+flow steps 48 g2.0,0.4187020152057442,single:CD16
+flow steps 48 g2.0,0.5627196253860339,single:CD19
+flow steps 48 g2.0,0.5356887721265329,single:CD3
+flow steps 48 g2.0,0.7812232886258178,single:CD45
+flow steps 48 g2.0,0.5767215392558607,single:CD56
+flow steps 48 g2.0,1.1284181765215708,single:HLA-DR
+flow steps 48 g2.0,0.538492284859197,grp:CD3/CD19/CD56
+flow steps 48 g2.0,0.7220594124962778,grp:CD45
+flow steps 48 g2.0,0.4062675717782615,grp:CD16
+flow steps 48 g2.0,0.5240589470262949,autofl
+flow steps 48 g3.0,0.5376315373176414,single:CD123
+flow steps 48 g3.0,0.4688236172581106,single:CD14
+flow steps 48 g3.0,0.3699324990915553,single:CD16
+flow steps 48 g3.0,0.6591705400516588,single:CD19
+flow steps 48 g3.0,0.5299714994287292,single:CD3
+flow steps 48 g3.0,0.730209484794741,single:CD45
+flow steps 48 g3.0,0.5893226903854863,single:CD56
+flow steps 48 g3.0,1.0395129649034718,single:HLA-DR
+flow steps 48 g3.0,0.4427272735565495,grp:CD3/CD19/CD56
+flow steps 48 g3.0,0.6070482376116507,grp:CD45
+flow steps 48 g3.0,0.3752731070790432,grp:CD16
+flow steps 48 g3.0,0.486913222690441,autofl
+flow steps 96 g2.0,0.4914530935980344,single:CD123
+flow steps 96 g2.0,0.46907416457769024,single:CD14
+flow steps 96 g2.0,0.40836152494580197,single:CD16
+flow steps 96 g2.0,0.5627289174808059,single:CD19
+flow steps 96 g2.0,0.5333843778461214,single:CD3
+flow steps 96 g2.0,0.778634118736404,single:CD45
+flow steps 96 g2.0,0.5779045947886396,single:CD56
+flow steps 96 g2.0,1.1253732227176196,single:HLA-DR
+flow steps 96 g2.0,0.5233814868477819,grp:CD3/CD19/CD56
+flow steps 96 g2.0,0.7085600049152594,grp:CD45
+flow steps 96 g2.0,0.399757425077042,grp:CD16
+flow steps 96 g2.0,0.5241685664425374,autofl
+flow steps 96 g3.0,0.5393022214566174,single:CD123
+flow steps 96 g3.0,0.46444960923374523,single:CD14
+flow steps 96 g3.0,0.3614867953159317,single:CD16
+flow steps 96 g3.0,0.6592921054652178,single:CD19
+flow steps 96 g3.0,0.5245023382696631,single:CD3
+flow steps 96 g3.0,0.7284279264283607,single:CD45
+flow steps 96 g3.0,0.5892555415636307,single:CD56
+flow steps 96 g3.0,1.0351277584470027,single:HLA-DR
+flow steps 96 g3.0,0.4308771681367446,grp:CD3/CD19/CD56
+flow steps 96 g3.0,0.5957129724744527,grp:CD45
+flow steps 96 g3.0,0.3682356197843605,grp:CD16
+flow steps 96 g3.0,0.4857099233411428,autofl
+flow steps 96 g4.0,0.6273375571498359,single:CD123
+flow steps 96 g4.0,0.4658378181898058,single:CD14
+flow steps 96 g4.0,0.33832644628333436,single:CD16
+flow steps 96 g4.0,0.7828414172684651,single:CD19
+flow steps 96 g4.0,0.5218221577003918,single:CD3
+flow steps 96 g4.0,0.6958633397661274,single:CD45
+flow steps 96 g4.0,0.5993400883684233,single:CD56
+flow steps 96 g4.0,0.955922345399792,single:HLA-DR
+flow steps 96 g4.0,0.401206791136728,grp:CD3/CD19/CD56
+flow steps 96 g4.0,0.5498136082442592,grp:CD45
+flow steps 96 g4.0,0.3756174876460153,grp:CD16
+flow steps 96 g4.0,0.541887417266946,autofl
+regression (same net),0.6437383045377089,single:CD123
+regression (same net),0.6237531327944827,single:CD14
+regression (same net),0.49236710045824583,single:CD16
+regression (same net),0.860008740186871,single:CD19
+regression (same net),0.3570120375372287,single:CD3
+regression (same net),0.8513732921052385,single:CD45
+regression (same net),0.5585606407605003,single:CD56
+regression (same net),1.4888479580507001,single:HLA-DR
+regression (same net),0.7186417310925821,grp:CD3/CD19/CD56
+regression (same net),0.9269877436454766,grp:CD45
+regression (same net),0.5338182114225554,grp:CD16
+regression (same net),1.261765861295742,autofl

@@ -1,0 +1,292 @@
+arm,value,seed,log2_set_size
+"same cells, random sets (bag-mean)",0.849546271234678,single:CD16,0.0
+"same cells, random sets (bag-mean)",0.8466320759360433,single:CD16,2.0
+"same cells, random sets (bag-mean)",0.8424328610941021,single:CD16,4.0
+"same cells, random sets (bag-mean)",0.7928228169033489,single:CD16,6.0
+"same cells, random sets (bag-mean)",0.692970596503468,single:CD16,8.0
+"same cells, random sets (bag-mean)",0.2336143207781147,single:CD16,11.0
+"same cells, random sets (bag-mean)",0.8072879867631028,single:CD14,0.0
+"same cells, random sets (bag-mean)",0.8036099169863827,single:CD14,2.0
+"same cells, random sets (bag-mean)",0.7885674726861915,single:CD14,4.0
+"same cells, random sets (bag-mean)",0.767778033055601,single:CD14,6.0
+"same cells, random sets (bag-mean)",0.5489251428316095,single:CD14,8.0
+"same cells, random sets (bag-mean)",0.29273266214360194,single:CD14,11.0
+"same cells, random sets (bag-mean)",0.6674393027826772,single:CD45,0.0
+"same cells, random sets (bag-mean)",0.6666483345331307,single:CD45,2.0
+"same cells, random sets (bag-mean)",0.6536697743402647,single:CD45,4.0
+"same cells, random sets (bag-mean)",0.6300606793058715,single:CD45,6.0
+"same cells, random sets (bag-mean)",0.4194011852664865,single:CD45,8.0
+"same cells, random sets (bag-mean)",0.11769210502041683,single:CD45,11.0
+"same cells, random sets (bag-mean)",0.5414602212581239,single:CD3,0.0
+"same cells, random sets (bag-mean)",0.5298202343359278,single:CD3,2.0
+"same cells, random sets (bag-mean)",0.5105407584343793,single:CD3,4.0
+"same cells, random sets (bag-mean)",0.4309896391766997,single:CD3,6.0
+"same cells, random sets (bag-mean)",0.1101068655988087,single:CD3,8.0
+"same cells, random sets (bag-mean)",0.03458576469631384,single:CD3,11.0
+"same cells, random sets (bag-mean)",0.4865120972812246,single:HLA-DR,0.0
+"same cells, random sets (bag-mean)",0.46377183719607745,single:HLA-DR,2.0
+"same cells, random sets (bag-mean)",0.3872022120658887,single:HLA-DR,4.0
+"same cells, random sets (bag-mean)",0.2619145911090453,single:HLA-DR,6.0
+"same cells, random sets (bag-mean)",0.1846427573391004,single:HLA-DR,8.0
+"same cells, random sets (bag-mean)",-0.06984611692927668,single:HLA-DR,11.0
+"same cells, random sets (bag-mean)",0.15916782565517287,single:CD19,0.0
+"same cells, random sets (bag-mean)",0.14375021790485953,single:CD19,2.0
+"same cells, random sets (bag-mean)",0.08448207532536016,single:CD19,4.0
+"same cells, random sets (bag-mean)",0.07369187474558157,single:CD19,6.0
+"same cells, random sets (bag-mean)",0.07398742740171585,single:CD19,8.0
+"same cells, random sets (bag-mean)",-0.01668194381695591,single:CD19,11.0
+"same cells, random sets (bag-mean)",0.41406400558794015,autofl,0.0
+"same cells, random sets (bag-mean)",0.3803916986221218,autofl,2.0
+"same cells, random sets (bag-mean)",0.25199881414654673,autofl,4.0
+"same cells, random sets (bag-mean)",0.20197081625840438,autofl,6.0
+"same cells, random sets (bag-mean)",0.12983404302997664,autofl,8.0
+"same cells, random sets (bag-mean)",0.13567017978795257,autofl,11.0
+"same cells, random sets (OT from bag-mean)",0.849546271234678,single:CD16,0.0
+"same cells, random sets (OT from bag-mean)",0.8424157512556814,single:CD16,2.0
+"same cells, random sets (OT from bag-mean)",0.8366507103407171,single:CD16,4.0
+"same cells, random sets (OT from bag-mean)",0.8128276715426719,single:CD16,6.0
+"same cells, random sets (OT from bag-mean)",0.8081425585378764,single:CD16,8.0
+"same cells, random sets (OT from bag-mean)",0.4320970701350867,single:CD16,11.0
+"same cells, random sets (OT from bag-mean)",0.8072879867631028,single:CD14,0.0
+"same cells, random sets (OT from bag-mean)",0.8010511683962401,single:CD14,2.0
+"same cells, random sets (OT from bag-mean)",0.778604240592063,single:CD14,4.0
+"same cells, random sets (OT from bag-mean)",0.749454265937621,single:CD14,6.0
+"same cells, random sets (OT from bag-mean)",0.6638369988564042,single:CD14,8.0
+"same cells, random sets (OT from bag-mean)",0.031201585463759698,single:CD14,11.0
+"same cells, random sets (OT from bag-mean)",0.6674393027826772,single:CD45,0.0
+"same cells, random sets (OT from bag-mean)",0.6552307173492048,single:CD45,2.0
+"same cells, random sets (OT from bag-mean)",0.6341030216127359,single:CD45,4.0
+"same cells, random sets (OT from bag-mean)",0.6308349578802965,single:CD45,6.0
+"same cells, random sets (OT from bag-mean)",0.4614358149083948,single:CD45,8.0
+"same cells, random sets (OT from bag-mean)",0.2521451771581149,single:CD45,11.0
+"same cells, random sets (OT from bag-mean)",0.5414602212581239,single:CD3,0.0
+"same cells, random sets (OT from bag-mean)",0.4861378658126007,single:CD3,2.0
+"same cells, random sets (OT from bag-mean)",0.4016867594245943,single:CD3,4.0
+"same cells, random sets (OT from bag-mean)",0.36775530381769456,single:CD3,6.0
+"same cells, random sets (OT from bag-mean)",0.2684962467374575,single:CD3,8.0
+"same cells, random sets (OT from bag-mean)",0.11543003376330735,single:CD3,11.0
+"same cells, random sets (OT from bag-mean)",0.4865120972812246,single:HLA-DR,0.0
+"same cells, random sets (OT from bag-mean)",0.4321672336632077,single:HLA-DR,2.0
+"same cells, random sets (OT from bag-mean)",0.3880224009383828,single:HLA-DR,4.0
+"same cells, random sets (OT from bag-mean)",0.1811719776216432,single:HLA-DR,6.0
+"same cells, random sets (OT from bag-mean)",0.14337462231863402,single:HLA-DR,8.0
+"same cells, random sets (OT from bag-mean)",-0.10747716095413061,single:HLA-DR,11.0
+"same cells, random sets (OT from bag-mean)",0.15916782565517287,single:CD19,0.0
+"same cells, random sets (OT from bag-mean)",0.15117077074650362,single:CD19,2.0
+"same cells, random sets (OT from bag-mean)",0.020724197480008623,single:CD19,4.0
+"same cells, random sets (OT from bag-mean)",0.03636019019624799,single:CD19,6.0
+"same cells, random sets (OT from bag-mean)",0.04574582545884585,single:CD19,8.0
+"same cells, random sets (OT from bag-mean)",-0.01644136660455491,single:CD19,11.0
+"same cells, random sets (OT from bag-mean)",0.41406400558794015,autofl,0.0
+"same cells, random sets (OT from bag-mean)",0.3144624594865746,autofl,2.0
+"same cells, random sets (OT from bag-mean)",0.22797143926255434,autofl,4.0
+"same cells, random sets (OT from bag-mean)",0.17875204608604572,autofl,6.0
+"same cells, random sets (OT from bag-mean)",0.00022647254137865102,autofl,8.0
+"same cells, random sets (OT from bag-mean)",-0.043294637950034943,autofl,11.0
+"same cells, FOV sets (OT, v1 learner)",0.849546271234678,single:CD16,0.0
+"same cells, FOV sets (OT, v1 learner)",0.8444361495381861,single:CD16,2.0
+"same cells, FOV sets (OT, v1 learner)",0.8303945480054958,single:CD16,4.0
+"same cells, FOV sets (OT, v1 learner)",0.467420430799793,single:CD16,6.0
+"same cells, FOV sets (OT, v1 learner)",-0.12487535219372874,single:CD16,8.0
+"same cells, FOV sets (OT, v1 learner)",-0.14878353479783196,single:CD16,11.0
+"same cells, FOV sets (OT, v1 learner)",0.807287986763103,single:CD14,0.0
+"same cells, FOV sets (OT, v1 learner)",0.8080505340732451,single:CD14,2.0
+"same cells, FOV sets (OT, v1 learner)",0.7909121954617718,single:CD14,4.0
+"same cells, FOV sets (OT, v1 learner)",0.5213277808024884,single:CD14,6.0
+"same cells, FOV sets (OT, v1 learner)",-0.16483920195091176,single:CD14,8.0
+"same cells, FOV sets (OT, v1 learner)",-0.1795960274733531,single:CD14,11.0
+"same cells, FOV sets (OT, v1 learner)",0.6674393027826768,single:CD45,0.0
+"same cells, FOV sets (OT, v1 learner)",0.6636543833386493,single:CD45,2.0
+"same cells, FOV sets (OT, v1 learner)",0.642888840089413,single:CD45,4.0
+"same cells, FOV sets (OT, v1 learner)",0.3412981169825423,single:CD45,6.0
+"same cells, FOV sets (OT, v1 learner)",0.21260759065096446,single:CD45,8.0
+"same cells, FOV sets (OT, v1 learner)",-0.03839813999345704,single:CD45,11.0
+"same cells, FOV sets (OT, v1 learner)",0.5414602212581235,single:CD3,0.0
+"same cells, FOV sets (OT, v1 learner)",0.5082821189400973,single:CD3,2.0
+"same cells, FOV sets (OT, v1 learner)",0.47246584293462046,single:CD3,4.0
+"same cells, FOV sets (OT, v1 learner)",0.32049326996499694,single:CD3,6.0
+"same cells, FOV sets (OT, v1 learner)",-0.12869196381300146,single:CD3,8.0
+"same cells, FOV sets (OT, v1 learner)",-0.1437723220548189,single:CD3,11.0
+"same cells, FOV sets (OT, v1 learner)",0.48651209728122463,single:HLA-DR,0.0
+"same cells, FOV sets (OT, v1 learner)",0.41783615241312444,single:HLA-DR,2.0
+"same cells, FOV sets (OT, v1 learner)",0.23122236795159481,single:HLA-DR,4.0
+"same cells, FOV sets (OT, v1 learner)",0.026482707258824928,single:HLA-DR,6.0
+"same cells, FOV sets (OT, v1 learner)",-0.030207938507732728,single:HLA-DR,8.0
+"same cells, FOV sets (OT, v1 learner)",-0.06243382132924895,single:HLA-DR,11.0
+"same cells, FOV sets (OT, v1 learner)",0.15916782565517293,single:CD19,0.0
+"same cells, FOV sets (OT, v1 learner)",0.11911752799503893,single:CD19,2.0
+"same cells, FOV sets (OT, v1 learner)",0.0211493135804739,single:CD19,4.0
+"same cells, FOV sets (OT, v1 learner)",0.027961369718808603,single:CD19,6.0
+"same cells, FOV sets (OT, v1 learner)",-0.014493180981811522,single:CD19,8.0
+"same cells, FOV sets (OT, v1 learner)",0.007345643588089657,single:CD19,11.0
+"same cells, FOV sets (OT, v1 learner)",0.41406400558794076,autofl,0.0
+"same cells, FOV sets (OT, v1 learner)",0.3533280248857458,autofl,2.0
+"same cells, FOV sets (OT, v1 learner)",0.12322990141777665,autofl,4.0
+"same cells, FOV sets (OT, v1 learner)",-0.039352562830336314,autofl,6.0
+"same cells, FOV sets (OT, v1 learner)",-0.025249498311735098,autofl,8.0
+"same cells, FOV sets (OT, v1 learner)",-0.05450782658238193,autofl,11.0
+"same cells, half budget (bag-mean)",0.8496981558061264,single:CD16,0.0
+"same cells, half budget (bag-mean)",0.8476067105936003,single:CD16,2.0
+"same cells, half budget (bag-mean)",0.8295350937135043,single:CD16,4.0
+"same cells, half budget (bag-mean)",0.7513834070164543,single:CD16,6.0
+"same cells, half budget (bag-mean)",0.5905266198218192,single:CD16,8.0
+"same cells, half budget (bag-mean)",0.15502147235603495,single:CD16,11.0
+"same cells, half budget (bag-mean)",0.8058370290822824,single:CD14,0.0
+"same cells, half budget (bag-mean)",0.7988844088322099,single:CD14,2.0
+"same cells, half budget (bag-mean)",0.772392912433332,single:CD14,4.0
+"same cells, half budget (bag-mean)",0.720123744110803,single:CD14,6.0
+"same cells, half budget (bag-mean)",0.34659397901678074,single:CD14,8.0
+"same cells, half budget (bag-mean)",0.08227552079955826,single:CD14,11.0
+"same cells, half budget (bag-mean)",0.6693233004360198,single:CD45,0.0
+"same cells, half budget (bag-mean)",0.6639520780257647,single:CD45,2.0
+"same cells, half budget (bag-mean)",0.6602086217294214,single:CD45,4.0
+"same cells, half budget (bag-mean)",0.560572350577738,single:CD45,6.0
+"same cells, half budget (bag-mean)",0.38787464896961577,single:CD45,8.0
+"same cells, half budget (bag-mean)",0.09659523397369293,single:CD45,11.0
+"same cells, half budget (bag-mean)",0.5340063068387442,single:CD3,0.0
+"same cells, half budget (bag-mean)",0.5323223394409821,single:CD3,2.0
+"same cells, half budget (bag-mean)",0.5035199743669423,single:CD3,4.0
+"same cells, half budget (bag-mean)",0.2998710675412011,single:CD3,6.0
+"same cells, half budget (bag-mean)",0.08787128746482152,single:CD3,8.0
+"same cells, half budget (bag-mean)",-0.00024209822716461082,single:CD3,11.0
+"same cells, half budget (bag-mean)",0.4779635472816944,single:HLA-DR,0.0
+"same cells, half budget (bag-mean)",0.44005758452443666,single:HLA-DR,2.0
+"same cells, half budget (bag-mean)",0.3785753624005154,single:HLA-DR,4.0
+"same cells, half budget (bag-mean)",0.19497381783890863,single:HLA-DR,6.0
+"same cells, half budget (bag-mean)",0.19623471567713638,single:HLA-DR,8.0
+"same cells, half budget (bag-mean)",-0.02926377941383871,single:HLA-DR,11.0
+"same cells, half budget (bag-mean)",0.1497199631386251,single:CD19,0.0
+"same cells, half budget (bag-mean)",0.119328063573161,single:CD19,2.0
+"same cells, half budget (bag-mean)",0.012193824920769468,single:CD19,4.0
+"same cells, half budget (bag-mean)",0.11017537901364952,single:CD19,6.0
+"same cells, half budget (bag-mean)",0.07061949422169718,single:CD19,8.0
+"same cells, half budget (bag-mean)",0.3946955157079976,autofl,0.0
+"same cells, half budget (bag-mean)",0.39320788746700325,autofl,2.0
+"same cells, half budget (bag-mean)",0.29235829280896414,autofl,4.0
+"same cells, half budget (bag-mean)",0.05504331841187029,autofl,6.0
+"same cells, half budget (bag-mean)",0.07843423164239169,autofl,8.0
+"same cells, half budget (bag-mean)",0.11348039247648789,autofl,11.0
+different cells (bag-mean),-0.00366997861442103,single:CD16,0.0
+different cells (bag-mean),0.30163918657122807,single:CD16,2.0
+different cells (bag-mean),0.029337843927497394,single:CD16,4.0
+different cells (bag-mean),0.13080541224487524,single:CD16,6.0
+different cells (bag-mean),-0.04962622398181225,single:CD16,8.0
+different cells (bag-mean),-0.13602802618008134,single:CD16,11.0
+different cells (bag-mean),0.05050761964879941,single:CD14,0.0
+different cells (bag-mean),0.19711672079545067,single:CD14,2.0
+different cells (bag-mean),0.16037012463138572,single:CD14,4.0
+different cells (bag-mean),-0.10521187935825678,single:CD14,6.0
+different cells (bag-mean),0.17870345411022753,single:CD14,8.0
+different cells (bag-mean),-0.02233315297136719,single:CD14,11.0
+different cells (bag-mean),-0.049734997437860834,single:CD45,0.0
+different cells (bag-mean),0.0011565736580108758,single:CD45,2.0
+different cells (bag-mean),0.04327869320023797,single:CD45,4.0
+different cells (bag-mean),-0.16890767990815542,single:CD45,6.0
+different cells (bag-mean),-0.04724670311982381,single:CD45,8.0
+different cells (bag-mean),0.12066361862300859,single:CD45,11.0
+different cells (bag-mean),0.13817029600195802,single:CD3,0.0
+different cells (bag-mean),-0.031016218597967556,single:CD3,2.0
+different cells (bag-mean),0.08356139287436562,single:CD3,4.0
+different cells (bag-mean),-0.09206426817836563,single:CD3,6.0
+different cells (bag-mean),0.026336855571170766,single:CD3,8.0
+different cells (bag-mean),-0.1274872902863819,single:CD3,11.0
+different cells (bag-mean),0.075712478101796,single:HLA-DR,0.0
+different cells (bag-mean),0.10279066133685734,single:HLA-DR,2.0
+different cells (bag-mean),-0.07293837468658816,single:HLA-DR,4.0
+different cells (bag-mean),-0.010370284432882435,single:HLA-DR,6.0
+different cells (bag-mean),-0.006399480960021977,single:HLA-DR,8.0
+different cells (bag-mean),0.12951293365351496,single:HLA-DR,11.0
+different cells (bag-mean),0.003902445502363238,single:CD19,0.0
+different cells (bag-mean),0.013515865890306051,single:CD19,2.0
+different cells (bag-mean),-0.06642949436160517,single:CD19,4.0
+different cells (bag-mean),0.10665920203451265,single:CD19,6.0
+different cells (bag-mean),0.02848294506163789,single:CD19,8.0
+different cells (bag-mean),0.010733088234104633,autofl,0.0
+different cells (bag-mean),0.03673420922991044,autofl,2.0
+different cells (bag-mean),0.2266070609710179,autofl,4.0
+different cells (bag-mean),0.056122883770236436,autofl,6.0
+different cells (bag-mean),0.0618957891240497,autofl,8.0
+different cells (bag-mean),-0.05968053698405291,autofl,11.0
+"different cells, same FOV group (bag-mean)",-0.3070183201349634,single:CD16,0.0
+"different cells, same FOV group (bag-mean)",-0.11381298956139353,single:CD16,2.0
+"different cells, same FOV group (bag-mean)",-0.08975915323674145,single:CD16,4.0
+"different cells, same FOV group (bag-mean)",-0.18450920269908025,single:CD16,6.0
+"different cells, same FOV group (bag-mean)",-0.12457283245825737,single:CD16,8.0
+"different cells, same FOV group (bag-mean)",0.07969822550506571,single:CD16,11.0
+"different cells, same FOV group (bag-mean)",-0.11637613603827703,single:CD14,0.0
+"different cells, same FOV group (bag-mean)",0.031210375424618908,single:CD14,2.0
+"different cells, same FOV group (bag-mean)",0.035247570573966186,single:CD14,4.0
+"different cells, same FOV group (bag-mean)",-0.22629363035681233,single:CD14,6.0
+"different cells, same FOV group (bag-mean)",-0.07018840806333253,single:CD14,8.0
+"different cells, same FOV group (bag-mean)",0.13270760181202607,single:CD14,11.0
+"different cells, same FOV group (bag-mean)",-0.030326678281352177,single:CD45,0.0
+"different cells, same FOV group (bag-mean)",0.1064784081730825,single:CD45,2.0
+"different cells, same FOV group (bag-mean)",0.021641890436205135,single:CD45,4.0
+"different cells, same FOV group (bag-mean)",0.11394004639291201,single:CD45,6.0
+"different cells, same FOV group (bag-mean)",-0.032045647890550914,single:CD45,8.0
+"different cells, same FOV group (bag-mean)",-0.1649342704897686,single:CD45,11.0
+"different cells, same FOV group (bag-mean)",0.05408773056210502,single:CD3,0.0
+"different cells, same FOV group (bag-mean)",-0.08247950119344506,single:CD3,2.0
+"different cells, same FOV group (bag-mean)",-0.10085427285783384,single:CD3,4.0
+"different cells, same FOV group (bag-mean)",-0.06536924425891956,single:CD3,6.0
+"different cells, same FOV group (bag-mean)",-0.06978014656536871,single:CD3,8.0
+"different cells, same FOV group (bag-mean)",0.01080210843834006,single:CD3,11.0
+"different cells, same FOV group (bag-mean)",0.03264886331480354,single:HLA-DR,0.0
+"different cells, same FOV group (bag-mean)",-0.11011916813882237,single:HLA-DR,2.0
+"different cells, same FOV group (bag-mean)",-0.02829047958996356,single:HLA-DR,4.0
+"different cells, same FOV group (bag-mean)",-0.17102449539860815,single:HLA-DR,6.0
+"different cells, same FOV group (bag-mean)",0.023995178733482423,single:HLA-DR,8.0
+"different cells, same FOV group (bag-mean)",-0.06445963191577961,single:HLA-DR,11.0
+"different cells, same FOV group (bag-mean)",-0.029181898026564304,single:CD19,0.0
+"different cells, same FOV group (bag-mean)",-0.001678502978451182,single:CD19,2.0
+"different cells, same FOV group (bag-mean)",0.021986678428172975,single:CD19,4.0
+"different cells, same FOV group (bag-mean)",0.02595288698071925,single:CD19,6.0
+"different cells, same FOV group (bag-mean)",-0.055432068933692055,single:CD19,8.0
+"different cells, same FOV group (bag-mean)",0.06896675348253224,autofl,0.0
+"different cells, same FOV group (bag-mean)",-0.013049744176547291,autofl,2.0
+"different cells, same FOV group (bag-mean)",0.223632647199511,autofl,4.0
+"different cells, same FOV group (bag-mean)",0.022983961192321947,autofl,6.0
+"different cells, same FOV group (bag-mean)",0.022607679236805855,autofl,8.0
+"different cells, same FOV group (bag-mean)",0.057482031703989946,autofl,11.0
+paired (reference),0.8495462712346782,single:CD16,0.0
+paired (reference),0.8495462712346782,single:CD16,2.0
+paired (reference),0.8495462712346782,single:CD16,4.0
+paired (reference),0.8495462712346782,single:CD16,6.0
+paired (reference),0.8495462712346782,single:CD16,8.0
+paired (reference),0.8495462712346782,single:CD16,11.0
+paired (reference),0.8072879867631028,single:CD14,0.0
+paired (reference),0.8072879867631028,single:CD14,2.0
+paired (reference),0.8072879867631028,single:CD14,4.0
+paired (reference),0.8072879867631028,single:CD14,6.0
+paired (reference),0.8072879867631028,single:CD14,8.0
+paired (reference),0.8072879867631028,single:CD14,11.0
+paired (reference),0.6674393027826773,single:CD45,0.0
+paired (reference),0.6674393027826773,single:CD45,2.0
+paired (reference),0.6674393027826773,single:CD45,4.0
+paired (reference),0.6674393027826773,single:CD45,6.0
+paired (reference),0.6674393027826773,single:CD45,8.0
+paired (reference),0.6674393027826773,single:CD45,11.0
+paired (reference),0.5414602212581244,single:CD3,0.0
+paired (reference),0.5414602212581244,single:CD3,2.0
+paired (reference),0.5414602212581244,single:CD3,4.0
+paired (reference),0.5414602212581244,single:CD3,6.0
+paired (reference),0.5414602212581244,single:CD3,8.0
+paired (reference),0.5414602212581244,single:CD3,11.0
+paired (reference),0.486512097281224,single:HLA-DR,0.0
+paired (reference),0.486512097281224,single:HLA-DR,2.0
+paired (reference),0.486512097281224,single:HLA-DR,4.0
+paired (reference),0.486512097281224,single:HLA-DR,6.0
+paired (reference),0.486512097281224,single:HLA-DR,8.0
+paired (reference),0.486512097281224,single:HLA-DR,11.0
+paired (reference),0.15916782565517296,single:CD19,0.0
+paired (reference),0.15916782565517296,single:CD19,2.0
+paired (reference),0.15916782565517296,single:CD19,4.0
+paired (reference),0.15916782565517296,single:CD19,6.0
+paired (reference),0.15916782565517296,single:CD19,8.0
+paired (reference),0.15916782565517296,single:CD19,11.0
+paired (reference),0.4140640055879401,autofl,0.0
+paired (reference),0.4140640055879401,autofl,2.0
+paired (reference),0.4140640055879401,autofl,4.0
+paired (reference),0.4140640055879401,autofl,6.0
+paired (reference),0.4140640055879401,autofl,8.0
+paired (reference),0.4140640055879401,autofl,11.0

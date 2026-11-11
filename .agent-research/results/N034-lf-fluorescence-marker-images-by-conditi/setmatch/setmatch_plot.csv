@@ -1,0 +1,127 @@
+arm,value,seed,x
+"same cells, pairing hidden",0.849063627891292,single:CD16,0.0
+"same cells, pairing hidden",0.8445140698871547,single:CD16,2.0
+"same cells, pairing hidden",0.8286631751790197,single:CD16,4.0
+"same cells, pairing hidden",0.47601391297885753,single:CD16,6.0
+"same cells, pairing hidden",-0.14169734946900384,single:CD16,8.0
+"same cells, pairing hidden",-0.1597098138768723,single:CD16,11.0
+"same cells, pairing hidden",0.7954748024355144,single:CD14,0.0
+"same cells, pairing hidden",0.7956658703310937,single:CD14,2.0
+"same cells, pairing hidden",0.7759512254479262,single:CD14,4.0
+"same cells, pairing hidden",0.2612819007763791,single:CD14,6.0
+"same cells, pairing hidden",0.006191436977659547,single:CD14,8.0
+"same cells, pairing hidden",0.047103735844545996,single:CD14,11.0
+"same cells, pairing hidden",0.700543829595417,single:CD45,0.0
+"same cells, pairing hidden",0.691570246143003,single:CD45,2.0
+"same cells, pairing hidden",0.6692961526385219,single:CD45,4.0
+"same cells, pairing hidden",0.38994952647413894,single:CD45,6.0
+"same cells, pairing hidden",0.2241727907369382,single:CD45,8.0
+"same cells, pairing hidden",-0.06855811625648413,single:CD45,11.0
+"same cells, pairing hidden",0.5425965688375488,single:CD3,0.0
+"same cells, pairing hidden",0.5112432001739362,single:CD3,2.0
+"same cells, pairing hidden",0.4597949016551716,single:CD3,4.0
+"same cells, pairing hidden",0.2889121105616283,single:CD3,6.0
+"same cells, pairing hidden",0.16735730034469443,single:CD3,8.0
+"same cells, pairing hidden",0.1703685564836499,single:CD3,11.0
+"same cells, pairing hidden",0.4855082201827823,single:HLA-DR,0.0
+"same cells, pairing hidden",0.4475431727825305,single:HLA-DR,2.0
+"same cells, pairing hidden",0.23819841149540244,single:HLA-DR,4.0
+"same cells, pairing hidden",-0.08687361349029903,single:HLA-DR,6.0
+"same cells, pairing hidden",-0.03575689837615585,single:HLA-DR,8.0
+"same cells, pairing hidden",-0.09348884523882432,single:HLA-DR,11.0
+"same cells, pairing hidden",0.13228792751737825,single:CD19,0.0
+"same cells, pairing hidden",0.06401644076310653,single:CD19,2.0
+"same cells, pairing hidden",0.02852835872580099,single:CD19,4.0
+"same cells, pairing hidden",0.014874450005153724,single:CD19,6.0
+"same cells, pairing hidden",0.0051190253530428685,single:CD19,8.0
+"same cells, pairing hidden",0.005559366703854419,single:CD19,11.0
+"same cells, pairing hidden",0.42992428020278656,autofl,0.0
+"same cells, pairing hidden",0.2960408700871388,autofl,2.0
+"same cells, pairing hidden",0.023042048388805664,autofl,4.0
+"same cells, pairing hidden",-0.006605882131270948,autofl,6.0
+"same cells, pairing hidden",-0.02278777240933043,autofl,8.0
+"same cells, pairing hidden",-0.04392965725615824,autofl,11.0
+different cells (Giemsa-like),-0.029707420554995517,single:CD16,0.0
+different cells (Giemsa-like),-0.027877399758103192,single:CD16,2.0
+different cells (Giemsa-like),-0.10765894953576864,single:CD16,4.0
+different cells (Giemsa-like),0.1656478178286535,single:CD16,6.0
+different cells (Giemsa-like),-0.16291571186328846,single:CD16,8.0
+different cells (Giemsa-like),-0.18308508213348992,single:CD16,11.0
+different cells (Giemsa-like),-0.18113124633532063,single:CD14,0.0
+different cells (Giemsa-like),-0.07644619770464631,single:CD14,2.0
+different cells (Giemsa-like),-0.029800174455715728,single:CD14,4.0
+different cells (Giemsa-like),0.09474688018764986,single:CD14,6.0
+different cells (Giemsa-like),-0.14831051306533383,single:CD14,8.0
+different cells (Giemsa-like),0.05792973403572646,single:CD14,11.0
+different cells (Giemsa-like),-0.020473505294026757,single:CD45,0.0
+different cells (Giemsa-like),0.13982463601962278,single:CD45,2.0
+different cells (Giemsa-like),-0.14961975272973174,single:CD45,4.0
+different cells (Giemsa-like),0.1204001626288393,single:CD45,6.0
+different cells (Giemsa-like),-0.13281932435730537,single:CD45,8.0
+different cells (Giemsa-like),-0.2006911223823524,single:CD45,11.0
+different cells (Giemsa-like),0.025156390265126744,single:CD3,0.0
+different cells (Giemsa-like),-0.140676600319594,single:CD3,2.0
+different cells (Giemsa-like),0.06846916991214778,single:CD3,4.0
+different cells (Giemsa-like),0.24839742585102137,single:CD3,6.0
+different cells (Giemsa-like),0.13646637871662065,single:CD3,8.0
+different cells (Giemsa-like),0.13676271912541738,single:CD3,11.0
+different cells (Giemsa-like),-0.03863601663131337,single:HLA-DR,0.0
+different cells (Giemsa-like),0.03358556959597924,single:HLA-DR,2.0
+different cells (Giemsa-like),-0.05089332285317835,single:HLA-DR,4.0
+different cells (Giemsa-like),-0.03487640918604843,single:HLA-DR,6.0
+different cells (Giemsa-like),-0.045297044018081725,single:HLA-DR,8.0
+different cells (Giemsa-like),-0.14216362915410996,single:HLA-DR,11.0
+different cells (Giemsa-like),0.018509292326001847,single:CD19,0.0
+different cells (Giemsa-like),0.014778498716602745,single:CD19,2.0
+different cells (Giemsa-like),-0.01010284589795987,single:CD19,4.0
+different cells (Giemsa-like),-0.04180703433558732,single:CD19,6.0
+different cells (Giemsa-like),-0.005478358270578266,single:CD19,8.0
+different cells (Giemsa-like),-0.03316475963884337,single:CD19,11.0
+different cells (Giemsa-like),0.11014253616082666,autofl,0.0
+different cells (Giemsa-like),0.08646496194211353,autofl,2.0
+different cells (Giemsa-like),0.010876460041411025,autofl,4.0
+different cells (Giemsa-like),-0.004340380192612548,autofl,6.0
+different cells (Giemsa-like),-0.01834502806873692,autofl,8.0
+different cells (Giemsa-like),-0.004178235413586522,autofl,11.0
+paired (reference),0.8490636278912915,single:CD16,0.0
+paired (reference),0.8490636278912915,single:CD16,2.0
+paired (reference),0.8490636278912915,single:CD16,4.0
+paired (reference),0.8490636278912915,single:CD16,6.0
+paired (reference),0.8490636278912915,single:CD16,8.0
+paired (reference),0.8490636278912915,single:CD16,11.0
+paired (reference),0.7954748024355145,single:CD14,0.0
+paired (reference),0.7954748024355145,single:CD14,2.0
+paired (reference),0.7954748024355145,single:CD14,4.0
+paired (reference),0.7954748024355145,single:CD14,6.0
+paired (reference),0.7954748024355145,single:CD14,8.0
+paired (reference),0.7954748024355145,single:CD14,11.0
+paired (reference),0.700543829595417,single:CD45,0.0
+paired (reference),0.700543829595417,single:CD45,2.0
+paired (reference),0.700543829595417,single:CD45,4.0
+paired (reference),0.700543829595417,single:CD45,6.0
+paired (reference),0.700543829595417,single:CD45,8.0
+paired (reference),0.700543829595417,single:CD45,11.0
+paired (reference),0.5425965688375491,single:CD3,0.0
+paired (reference),0.5425965688375491,single:CD3,2.0
+paired (reference),0.5425965688375491,single:CD3,4.0
+paired (reference),0.5425965688375491,single:CD3,6.0
+paired (reference),0.5425965688375491,single:CD3,8.0
+paired (reference),0.5425965688375491,single:CD3,11.0
+paired (reference),0.4855082201827825,single:HLA-DR,0.0
+paired (reference),0.4855082201827825,single:HLA-DR,2.0
+paired (reference),0.4855082201827825,single:HLA-DR,4.0
+paired (reference),0.4855082201827825,single:HLA-DR,6.0
+paired (reference),0.4855082201827825,single:HLA-DR,8.0
+paired (reference),0.4855082201827825,single:HLA-DR,11.0
+paired (reference),0.13228792751737836,single:CD19,0.0
+paired (reference),0.13228792751737836,single:CD19,2.0
+paired (reference),0.13228792751737836,single:CD19,4.0
+paired (reference),0.13228792751737836,single:CD19,6.0
+paired (reference),0.13228792751737836,single:CD19,8.0
+paired (reference),0.13228792751737836,single:CD19,11.0
+paired (reference),0.4299242802027867,autofl,0.0
+paired (reference),0.4299242802027867,autofl,2.0
+paired (reference),0.4299242802027867,autofl,4.0
+paired (reference),0.4299242802027867,autofl,6.0
+paired (reference),0.4299242802027867,autofl,8.0
+paired (reference),0.4299242802027867,autofl,11.0
