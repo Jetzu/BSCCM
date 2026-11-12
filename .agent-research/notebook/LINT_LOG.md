@@ -11,3 +11,9 @@
 - KNOWLEDGE: K ids + tags assigned (K001-K018); Headline rewritten to 10 verified bullets (added N010, N014-N021 findings); non-headline bullets moved to new Topics subsections.
 - merged 0, superseded 1 (K004 GOAL best .4835 -> K008/K010), verified 16 (numbers re-read from cited results files), partial 1 (K018), stale 1 (K006: autofl truth not detrended), refuted +6 (N009 PRH rotation, N010/N011 Macenko/DANN, N012 within-slide autofl biology, N013 v3 CD19/CD56 collapse, N014 SSL-useless, N020 unconditional DANN), promoted 2 rules (detrended-labels-only [permanent]; disjoint/pre-registered external evals). Rules dropped: none.
 - Follow-ups to TODO: close stale-open items N002-N004, N008, N009, N011, N012; re-check K013/GOAL after targets_v5 (N023).
+
+## 2026-11-12 (through N036; N035/N036 open and left untouched)
+- fixed 0: check.sh printed nothing (N022 npz issue from last lint already gone). Misplaced K026/K027 (were appended under Refuted) moved to new Topics subsection "Generative / set-level matching". Stale TODO entries removed (INDEX items N002-N012 now done; N023 re-check done, K013 already [partial]).
+- merged 0, superseded 0, verified 0 (no [unverified] bullets), stale 0, promoted 0 (rules unchanged, 2 lines, none dropped).
+- Headline rewritten from 15 to 10 verified bullets (K019 K025 K023 K020 K011 K012 K016 K001 K007 K008); K010/K013/K014/K015/K021/K022/K024 moved to Topics "Clinical transfer and LF teacher". All K001-K027 retained.
+- Not covered: N034 K026/K027 are [partial] 1-seed; N035 result pending (open); N036 open. INDEX.md/N035 item/N036 files carry uncommitted edits of a parallel session and were NOT staged.
