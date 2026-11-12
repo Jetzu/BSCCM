@@ -1,0 +1,5 @@
+2026-11-12T16:39:40.032204Z ERROR codex_core::tools::router: error=Exit code: 1
+Wall time: 0 seconds
+Output:
+Failed to write file /tmp/codex_n036_rt/audit_data.py
+

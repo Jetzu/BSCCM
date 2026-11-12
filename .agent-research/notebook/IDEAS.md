@@ -28,3 +28,6 @@ idea · mechanism · cheapest test · status open|testing|promising|dead(why)
   draw (an evaluation instrument only, the generator never sees it) so draw-specific spectra (HLA-DR transfers at .11 across draws)
   stop contaminating cross-draw image scores; and condition the generator on a per-draw spectral token learnt from unlabelled
   fluorescence statistics. Cheap: readout refit on CPU from saved eval readouts? (needs per-cell real/sample integrals, in per_cell.npy).
+- 2026-11-12 (N039 QC fail): label v8b -- per-cell background ONLY for the dim dye channel targets (CD3/CD19/CD56), v5 elsewhere; a NEW
+  pre-registration needed (criterion (a) as "<= .05 or <= v5's own value", draw-1 CD19 bimodality dropped as unattainable in any
+  version) -- this is a post-hoc candidate after seeing N039's QC, so it needs the user's go and its own frozen criteria. · open

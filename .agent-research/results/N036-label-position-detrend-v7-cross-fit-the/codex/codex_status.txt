@@ -1,0 +1,1 @@
+CODEX-UNAVAILABLE model/quota refused: {"type":"item.completed","item":{"id":"item_5","type":"command_execution","command":"/usr/bin/bash -lc 'cat .agent-research/notebook/GOAL.md .agent-research/not
