@@ -69,6 +69,14 @@ Pre-registered verdicts (primary, applied exactly as frozen):
 - calibration: NOT achieved (outside .526 > .272); new-draw samples over-dispersed (sd ratio 1.25).
 So N034-A replicates in the untouched direction: flow samples give a better per-cell predictive DISTRIBUTION (mostly through
 spread) but a worse per-cell point estimate than the same net trained by regression, and are not calibrated. No goal metric touched.
+
+POST-HOC (after the verdicts; not part of the pre-registration): results/N035-frozen-confirmation-of-n034-a-in-the-unt/n035_posthoc_hladr.py
+-> n035_posthoc_label_vs_integrals.json. Ridge of the curated label on the 6x4 log fluorescence integrals: HLA-DR within-draw FOV-CV r
+.88 (draw 0) / .65 (draw 1) but the draw-0 map transfers to draw 1 at .11 (every other single marker transfers at .42-.96, CD16 .96,
+CD45 .80, CD14 .73). So the draw-1 HLA-DR labels are coherent (also predicted from LF at .45 by the GOAL ensemble) but the spectral
+image-to-label relation differs between draws (dimmer HLA-DR relative to autofluorescence in draw 1) -> the cross-draw image readout
+yardstick is invalid for HLA-DR; HLA-DR image-readout numbers in N034/N035 should be read as uninformative. GOAL labels are per-draw
+unmixed by the dataset authors and unaffected.
 <!-- on close: bin/effect.sh N035 improved|flat|worse --value V | --void  (n/a --why infra|measurement) [--scale knob|module|paradigm] -->
 
 ## Outputs
