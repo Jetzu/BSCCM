@@ -1,0 +1,18 @@
+{
+  "shape": [
+    412941,
+    13
+  ],
+  "finite_measured_labels": true,
+  "grp_autofl_Y_bitwise_unchanged_vs_v5cx": true,
+  "grp_autofl_Yv3_bitwise_unchanged_vs_v3c": true,
+  "mask_unchanged": true,
+  "batch_unchanged": true,
+  "split_unchanged": true,
+  "fov_unchanged": true,
+  "hist_row_unchanged": true,
+  "gs_pair_suspect_unchanged": true,
+  "cls3_unchanged": true,
+  "cls10_unchanged": true,
+  "min_split2_map_fidelity_r": 0.9989374427886952
+}

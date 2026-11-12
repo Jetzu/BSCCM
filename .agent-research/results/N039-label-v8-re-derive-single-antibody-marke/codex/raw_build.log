@@ -1,0 +1,16 @@
+CD45 draw 0: r=1.000000000, residual_sd=1.01447e-05, recovered_clipped_affine
+CD45 draw 1: r=0.999999996, residual_sd=0.00179807, recovered_clipped_affine
+CD123 draw 0: r=0.999987103, residual_sd=0.0624545, recovered_clipped_affine
+CD123 draw 1: r=1.000000000, residual_sd=2.85853e-06, recovered_clipped_affine
+CD19 draw 0: r=0.998070731, residual_sd=2.52153, recovered_clipped_affine
+CD19 draw 1: r=0.999999748, residual_sd=0.0272037, recovered_clipped_affine
+CD56 draw 0: r=0.999973905, residual_sd=0.119342, recovered_clipped_affine
+CD56 draw 1: r=1.000000000, residual_sd=1.80976e-05, recovered_clipped_affine
+CD14 draw 0: r=1.000000000, residual_sd=4.79954e-06, recovered_clipped_affine
+CD14 draw 1: r=1.000000000, residual_sd=4.91748e-06, recovered_clipped_affine
+CD16 draw 0: r=1.000000000, residual_sd=1.35792e-05, recovered_clipped_affine
+CD16 draw 1: r=0.999999376, residual_sd=0.114919, recovered_clipped_affine
+HLA-DR draw 0: r=0.999998820, residual_sd=0.0411041, recovered_clipped_affine
+HLA-DR draw 1: r=1.000000000, residual_sd=5.71535e-06, recovered_clipped_affine
+CD3 draw 0: r=1.000000000, residual_sd=1.25426e-05, recovered_clipped_affine
+CD3 draw 1: r=1.000000000, residual_sd=1.75711e-05, recovered_clipped_affine

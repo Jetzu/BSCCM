@@ -1,0 +1,31 @@
+{
+  "overall": "FAIL",
+  "source": "/hnvme/workspace/v181bb10-bsccm",
+  "candidate": "/tmp/codex_N039/targets/targets_v8cx.npz",
+  "baseline": "targets_v5.npz (frozen)",
+  "sensitivity_baseline": "targets_v5cx.npz",
+  "cohort": "all measured finite hist_row<0 rows, splits 0/1/2",
+  "gmm_fit": "clean split-0 only; same draw",
+  "proxy_as_primary": false,
+  "no_models_scored": true,
+  "criterion_counts": {
+    "a": {
+      "PASS": 15,
+      "FAIL": 1
+    },
+    "b": {
+      "N/A": 14,
+      "PASS": 1,
+      "FAIL": 1
+    },
+    "c": {
+      "N/A": 10,
+      "PASS": 5,
+      "FAIL": 1
+    },
+    "d": {
+      "N/A": 13,
+      "FAIL": 3
+    }
+  }
+}

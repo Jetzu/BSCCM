@@ -1,0 +1,16 @@
+                       var_explained_by_trend  corr_trend_target
+target                                                          
+autofl                                  0.824              0.893
+grp:CD123/HLA-DR/CD14                   0.167              0.336
+grp:CD16                                0.000              0.300
+grp:CD3/CD19/CD56                       0.137              0.378
+grp:CD45                                0.115              0.404
+single:CD123                            0.000                NaN
+single:CD14                             0.000                NaN
+single:CD16                             0.000                NaN
+single:CD19                             0.000                NaN
+single:CD3                              0.009              0.113
+single:CD45                             0.000                NaN
+single:CD56                             0.000                NaN
+single:HLA-DR                           0.000                NaN
+GS pair suspects: 567

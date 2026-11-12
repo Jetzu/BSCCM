@@ -1,0 +1,60 @@
+{
+  "versions": {
+    "numpy": "2.4.6",
+    "pandas": "3.1.1",
+    "scipy": "1.17.1",
+    "sklearn": "1.9.1",
+    "pyarrow": "26.0.1"
+  },
+  "repo": "/home/hpc/v181bb/v181bb10/BSCCM",
+  "scratch": "/tmp/codex_N039",
+  "hashes": {
+    "raw_v8.parquet": "22f07d537fe3517208c1624b2921a3b892e7a7d456d265950302682069ee1514",
+    "targets_v8cx.npz": "96c2c5d52c6ce8768bd413b1c69f137d61267023ff4a64472c1946ec2195f314"
+  },
+  "config": {
+    "BSCCM_RAW": "v8",
+    "BSCCM_CLEAN": "1",
+    "BSCCM_DETREND": "xfit"
+  },
+  "qc": {
+    "overall": "FAIL",
+    "source": "/hnvme/workspace/v181bb10-bsccm",
+    "candidate": "/tmp/codex_N039/targets/targets_v8cx.npz",
+    "baseline": "targets_v5.npz (frozen)",
+    "sensitivity_baseline": "targets_v5cx.npz",
+    "cohort": "all measured finite hist_row<0 rows, splits 0/1/2",
+    "gmm_fit": "clean split-0 only; same draw",
+    "proxy_as_primary": false,
+    "no_models_scored": true,
+    "criterion_counts": {
+      "a": {
+        "PASS": 15,
+        "FAIL": 1
+      },
+      "b": {
+        "N/A": 14,
+        "PASS": 1,
+        "FAIL": 1
+      },
+      "c": {
+        "N/A": 10,
+        "PASS": 5,
+        "FAIL": 1
+      },
+      "d": {
+        "N/A": 13,
+        "FAIL": 3
+      }
+    }
+  },
+  "model_scoring": false,
+  "bundle_source_sha256": {
+    "scripts/make_targets_v8_raw.py": "97dd10cb9d37af1506d95aec0acd5840f72e37d12efe909e3dccb94d0ef43026",
+    "scripts/qc_targets_v8.py": "7decd2bf9f4eb957ca4fbe9214ee399467110b592cb89ad94413f3b0baaa9d6d",
+    "scripts/run_stage1_v8.py": "35f31bc2096cc5fd70acb758a5ab6a8b64a1bfe8a08f26cf938ba76a235d1907"
+  },
+  "pipeline_patch_sha256": "467daf294455f843266ce93b580da2fa435f5dce3c171d593b19b621bcb9aae5",
+  "note": "Unused fallback floor handling was corrected after the run; the selected recovered maps and all candidate/QC values are unchanged.",
+  "execution_note": "The first scratch v4 invocation executed the inherited ancillary Giemsa-pair regression. The delivered patch avoids that fit and the candidate was rebuilt with the frozen annotation; no Giemsa rows entered fluorescence label fits."
+}
