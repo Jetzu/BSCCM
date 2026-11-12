@@ -1,0 +1,5 @@
+eval,cohort,n_labels,r_realref,r_avgread,r_reg,r_shuffled,crps_sample,crps_reg,condw1_sample,condw1_reg,condw1_shuffled,w1_sample,w1_reg,w1_shuffled,frac_outside,ideal_outside,sd_ratio_sample
+eval_split1,inbatch,13,0.769,0.511,0.627,-0.015,0.362,0.38,0.263,0.28,0.722,0.208,0.172,0.217,0.376,0.222,0.918
+eval_split1,newdraw,12,0.617,0.476,0.576,0.012,0.674,0.815,0.692,0.727,0.934,0.646,0.624,0.641,0.526,0.222,1.253
+eval_split2,inbatch,13,0.769,0.511,0.627,-0.015,0.362,0.38,0.263,0.28,0.722,0.208,0.172,0.217,0.376,0.222,0.918
+eval_split2,newdraw,12,0.629,0.486,0.616,-0.02,0.692,0.844,0.718,0.756,0.981,0.675,0.664,0.688,0.515,0.222,1.313

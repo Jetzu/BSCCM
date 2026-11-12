@@ -1,7 +1,7 @@
 # N035 · Frozen confirmation of N034-A in the untouched direction: CFM vs same-net regression trained on blood draw 0, tested on draw 1 (primary split 1, secondary split 2) with the sampler FROZEN at Heun 48 steps + CFG 2 (chosen on N034 in-batch FOVs), K 8, 400 cells/stain; pre-registered r_avgread, CRPS, conditional W1, outside-fraction
 
-type: exp · date: 2026-11-11 · status: open
-goal_effect: pending · scale: ?
+type: exp · date: 2026-11-11 · status: done
+goal_effect: n/a · scale: ? · value: - · why: measurement
 
 ## Goal
 Untouched test of the N034-A conclusions (rereview N1: N034's sampler was selected while looking at its new-draw scores, so those are
@@ -31,10 +31,44 @@ separately; no re-selection, no extra arms on these cohorts.
 ## Changes
 
 ## Evidence
-- Training 1303666 n035_cfm (runs/n035/cfm_b0), 1303667 n035_reg (runs/n035/reg_b0): preempt, 1 H100 each, ~1 h each (102k cells x 30 ep).
+- Training 1303666 n035_cfm (runs/n035/cfm_b0), 1303667 n035_reg (runs/n035/reg_b0): preempt, 1 H100 each, 58 min each, 30 epochs /
+  23,940 steps, final EMA val loss cfm .3388, reg .0813 (draw-0 split 1).
+- Frozen evals as pre-registered: 1305263 (primary, draw 1 split 1 -> runs/n035/eval_split1), 1305264 (secondary, split 2 -> eval_split2).
+  Chains preempted (16/20 groups lost) -> fm_eval.py made resumable per (cohort, stain) group (each group seeds its own generator;
+  no change to any computed value), restarted 1311490 -> 1312304 (primary) and 1311491 -> 1312303 (secondary), both COMPLETED 16:45.
+  Consistency check of the resume: the shared in-batch cohort (draw 0 split 2, same seed) gives identical means in both evals
+  (r_avgread .511, CRPS .362, condW1 .263) although different groups were resumed in each.
+- Tables: results/N035-frozen-confirmation-of-n034-a-in-the-unt/n035_per_label.csv, n035_means.csv, n035_verdict.json
+  (script n035_summary.py in the same folder). Plots: .agent-research/plots/n035-primary-crps_2026-11-12_1647.png,
+  .agent-research/plots/n035-primary-condw1_2026-11-12_1647.png, .agent-research/plots/n035-primary-r_2026-11-12_1647.png (one dot per label;
+  the 'noise' band there is a display convention, not a measured rerun sd -- single seed).
+  Figure: /home/hpc/v181bb/v181bb10/bsccm_deliverables/figures/fig4b_marker_images_flow_confirmation.png.
+
+PRIMARY (draw 1 split 1, 12 labels, mean)       flow    regression  shuffled-LF  real-image ref
+  r with curated label                          .476    .576        .012         .617
+  CRPS (lower better)                           .674    .815        -
+  conditional W1                                .692    .727        .934
+  marginal W1                                   .646    .624        .641
+  outside-fraction (ideal .222)                 .526
+  sd ratio samples/real readouts                1.25
+SECONDARY (draw 1 split 2): r .486 vs .616; CRPS .692 vs .844; condW1 .718 vs .756; outside .515 -- same direction everywhere.
+IN-BATCH (draw 0 split 2): r .511 vs .627; CRPS .362 vs .380; condW1 .263 vs .280; outside .376.
+Per label (primary): flow CRPS lower on 10/12 (not grp:CD3/CD19/CD56, autofl); condW1 lower on 7/12 (worse on CD123, CD3,
+grp:CD3/CD19/CD56, autofl, and 0 margin elsewhere); r below regression on all 12 (largest gaps CD123 .08 vs .37, CD3 .34 vs .56,
+CD19 .10 vs .24, grp:CD45 .51 vs .68).
+Caveats: HLA-DR real-image reference is -.11 on draw 1 (the readout fitted on real draw-0 images does not transfer to real draw-1
+HLA-DR images, while both models give .42) -> HLA-DR stain/label relation differs between draws; CD14 FOV clustering on this split
+(check3 F5) as disclosed. On the NEW draw the frozen sampler (CFG 2) OVER-disperses (sd ratio 1.25, in-batch .92): CFG 2 was chosen
+in-batch and does not transfer -- consistent with outside .53.
 <!-- exp: each run = job id, config, seed, output dir · results vs baseline -->
 
 ## Outcome
+Pre-registered verdicts (primary, applied exactly as frozen):
+- 'flow is distributionally better': CONFIRMED (CRPS .674 < .815 AND condW1 .692 < .727; condW1 margin small, 7/12 labels).
+- 'flow is not better per cell': CONFIRMED (r_avgread .476 <= r_reg .576 + .01; gap .10, at the edge of the predicted .03-.10).
+- calibration: NOT achieved (outside .526 > .272); new-draw samples over-dispersed (sd ratio 1.25).
+So N034-A replicates in the untouched direction: flow samples give a better per-cell predictive DISTRIBUTION (mostly through
+spread) but a worse per-cell point estimate than the same net trained by regression, and are not calibrated. No goal metric touched.
 <!-- on close: bin/effect.sh N035 improved|flat|worse --value V | --void  (n/a --why infra|measurement) [--scale knob|module|paradigm] -->
 
 ## Outputs

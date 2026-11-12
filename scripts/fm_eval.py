@@ -80,6 +80,11 @@ res = dict(train_batch=int(tb), newdraw_split=a.newdraw_split, K=a.K, steps=a.st
 for set_name, base in (('inbatch', clean & (T['batch'] == tb) & (T['split'] == 2)), ('newdraw', clean & (T['batch'] != tb) & (T['split'] == a.newdraw_split))):
     res['sets'][set_name] = {}
     for si, s in enumerate(SN):
+        part = f'{a.out}/part_{set_name}_{s}.npy'   # preemption-safe: finished groups are reloaded (every group has its own seeds)
+        if os.path.exists(part):
+            P_ = np.load(part, allow_pickle=True).item(); res['sets'][set_name][s] = P_['r']; per_cell.update(P_['per_cell'])
+            if P_['montage'] is not None: montage[f'{set_name}|{s}'] = P_['montage']
+            print('resumed', set_name, s, flush=True); continue
         rng = np.random.default_rng([a.seed, 1 if set_name == 'inbatch' else 2, si])
         rows = np.flatnonzero(base & (stain == si)); rows = np.sort(rng.choice(rows, min(a.per_stain, len(rows)), replace=False))
         g = torch.Generator(device=dev).manual_seed(a.seed * 1000 + si + (500 if set_name == 'newdraw' else 0))
@@ -139,6 +144,10 @@ for set_name, base in (('inbatch', clean & (T['batch'] == tb) & (T['split'] == 2
                     e.update(condw1_sample=float(np.mean([cw1(ro_s[:, k]) for k in range(a.K)])), condw1_shuffled=cw1(ro_sh))
             r[lab] = e; per_cell[f'{set_name}|{s}|{lab}'] = pc
         res['sets'][set_name][s] = r
+        with open(part + '.tmp', 'wb') as fh:
+            np.save(fh, np.array(dict(r=r, per_cell={k: v for k, v in per_cell.items() if k.startswith(f'{set_name}|{s}|')},
+                                      montage=montage.get(f'{set_name}|{s}')), dtype=object), allow_pickle=True)
+        os.replace(part + '.tmp', part)
         print(set_name, s, json.dumps({k: ({kk: (round(vv, 3) if isinstance(vv, float) else vv) for kk, vv in v.items() if kk != 'rank_hist'} if isinstance(v, dict) else v)
                                        for k, v in r.items()}), flush=True)
 json.dump(res, open(a.out + '/eval.json', 'w'), indent=1)
