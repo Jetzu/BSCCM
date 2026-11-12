@@ -1,0 +1,8 @@
+# Codex idea-writer brief (N038 project review, BSCCM)
+Context files (read first): .agent-research/notebook/GOAL.md, .agent-research/notebook/KNOWLEDGE.md, .agent-research/results/N038-review-lf-mk-common-11-batch-held-out-go/attempts.md, .agent-research/results/N038-review-lf-mk-common-11-batch-held-out-go/declined.md (binding constraints). Repo /home/hpc/v181bb/v181bb10/BSCCM (code scripts/train_lf.py = GOAL predictor; src/bsccm/). Data /hnvme/workspace/v181bb10-bsccm (read-only for you). Python: apptainer exec --bind /hnvme/workspace/v181bb10-bsccm /hnvme/workspace/v181bb10-bsccm/env/bsccm.sif python3 -I ... ; keep any computation light (< 5 min CPU, login node). Scratch (pip, caches, temp) ONLY under /tmp/codex_n038/, never in the repo, results/ (except your report) or /hnvme. Do not edit repo files. Do not submit jobs.
+Also read .agent-research/results/N038-review-lf-mk-common-11-batch-held-out-go/diagnosis.md.
+Task: give >= 5 ideas to raise the GOAL (LF->MK common-11, batch-held-out mean r, best .6527, target .67, noise .002), of which >= 2
+CONTRADICT how we work now (e.g. per-cell regression on 128-px crops, one training draw, ResNet-50 SSL init, MSE on asinh/z labels,
+masked multi-task head). For each: mechanism · why it moves the DIAGNOSED bottleneck (per-cell info on CD19/CD56/CD123/HLA-DR; draw
+shift ~.016) · expected gain (reasoned) · cheapest falsifier with H100 GPU-h · build cost · which constraint it might touch. Ground
+each in what the code/data actually allow (cite file:line or data keys). Write the report to .agent-research/results/N038-review-lf-mk-common-11-batch-held-out-go/codex/ideas/ideas_codex.md.

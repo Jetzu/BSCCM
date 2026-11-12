@@ -1,0 +1,78 @@
+/tmp/n038_ab/f_extra.py:43: Pandas4Warning: Starting with pandas version 4.0 all arguments of max will be keyword-only.
+  d = pd.DataFrame(rows); d['best_fov'] = d[['n015_v5', 'r18v5']].max(1); print(d.round(3).to_string(index=False))
+(1) seed pairs, GOAL = mean of b10/b01 directions
+  n023_v5: s0 0.6423 s1 0.6384 diff -0.0038
+  n026_zoom2: s0 0.6403 s1 0.6440 diff +0.0037
+(2)+(3) FOV bootstrap (B=500)
+  GOAL ens bootstrap sd 0.0081; paired diff ens - single: mean +0.0105 sd 0.0030
+  per-target r bootstrap sd:
+0  single:CD45          0.017
+   single:CD123         0.098
+   single:CD19          0.040
+   single:CD56          0.027
+   single:CD14          0.011
+   single:CD16          0.008
+   single:HLA-DR        0.023
+   single:CD3           0.038
+   grp:CD3/CD19/CD56    0.012
+   grp:CD45             0.015
+   grp:CD16             0.016
+1  single:CD45          0.006
+   single:CD123         0.072
+   single:CD19          0.090
+   single:CD56          0.027
+   single:CD14          0.017
+   single:CD16          0.005
+   single:HLA-DR        0.024
+   single:CD3           0.016
+   grp:CD3/CD19/CD56    0.010
+   grp:CD45             0.013
+   grp:CD16             0.008
+(4) D1b ceiling, identical cells, per target: n015 (v4-trained r50) vs n024_r18 (v5-trained) FOV models vs N031 ensemble
+ draw            target  n015_v5  n015_vs_v4labels  r18v5   ens  best_fov
+    0       single:CD45    0.712             0.712  0.716 0.711     0.716
+    0      single:CD123    0.408             0.408  0.304 0.615     0.408
+    0       single:CD19    0.279             0.279  0.247 0.299     0.279
+    0       single:CD56    0.411             0.411  0.407 0.383     0.411
+    0       single:CD14    0.876             0.876  0.868 0.861     0.876
+    0       single:CD16    0.892             0.892  0.886 0.904     0.892
+    0     single:HLA-DR    0.614             0.614  0.623 0.575     0.623
+    0        single:CD3    0.550             0.550  0.556 0.560     0.556
+    0 grp:CD3/CD19/CD56    0.773             0.773  0.802 0.787     0.802
+    0          grp:CD45    0.840             0.840  0.830 0.752     0.840
+    0          grp:CD16    0.853             0.853  0.864 0.825     0.864
+    1       single:CD45    0.879             0.879  0.867 0.845     0.879
+    1      single:CD123    0.528             0.528  0.400 0.459     0.528
+    1       single:CD19    0.467             0.467  0.483 0.395     0.483
+    1       single:CD56    0.386             0.386  0.360 0.362     0.386
+    1       single:CD14    0.848             0.848  0.830 0.826     0.848
+    1       single:CD16    0.908             0.908  0.899 0.898     0.908
+    1     single:HLA-DR    0.599             0.599  0.594 0.446     0.599
+    1        single:CD3    0.620             0.620  0.621 0.602     0.621
+    1 grp:CD3/CD19/CD56    0.679             0.886  0.833 0.794     0.833
+    1          grp:CD45    0.648             0.834  0.711 0.655     0.711
+    1          grp:CD16    0.711             0.846  0.818 0.803     0.818
+  means: {'n015_v5': 0.6582, 'r18v5': 0.6599, 'best_fov': 0.6764, 'ens': 0.6527}
+  n015 with grp targets taken from the v5-trained r18 FOV model: 0.6743
+(5) composition: draw-1 test cells reweighted to draw-0 predicted cls3 composition (per slide; C3 from the v5 FOV r18 model)
+  single:CD45          n  2232 comp d1 [0.2  0.58 0.23] d0 [0.17 0.65 0.17]  r 0.845 -> reweighted 0.857
+  single:CD123         n  2973 comp d1 [0.21 0.57 0.22] d0 [0.16 0.58 0.25]  r 0.459 -> reweighted 0.476
+  single:CD19          n   722 comp d1 [0.16 0.63 0.2 ] d0 [0.17 0.57 0.26]  r 0.395 -> reweighted 0.400
+  single:CD56          n  2112 comp d1 [0.21 0.59 0.2 ] d0 [0.18 0.54 0.28]  r 0.362 -> reweighted 0.370
+  single:CD14          n  2168 comp d1 [0.2  0.61 0.19] d0 [0.17 0.61 0.22]  r 0.826 -> reweighted 0.833
+  single:CD16          n  2911 comp d1 [0.23 0.51 0.26] d0 [0.29 0.41 0.31]  r 0.898 -> reweighted 0.891
+  single:HLA-DR        n  3418 comp d1 [0.19 0.59 0.22] d0 [0.18 0.65 0.17]  r 0.446 -> reweighted 0.429
+  single:CD3           n  2968 comp d1 [0.2  0.61 0.19] d0 [0.17 0.62 0.21]  r 0.602 -> reweighted 0.581
+  grp:CD3/CD19/CD56    n  2807 comp d1 [0.23 0.55 0.21] d0 [0.36 0.47 0.17]  r 0.794 -> reweighted 0.813
+  grp:CD45             n  2807 comp d1 [0.23 0.55 0.21] d0 [0.36 0.47 0.17]  r 0.655 -> reweighted 0.683
+  grp:CD16             n  2807 comp d1 [0.23 0.55 0.21] d0 [0.36 0.47 0.17]  r 0.803 -> reweighted 0.799
+(6) r without censored labels
+  draw 0 single:CD56          censored 0.11  r 0.383  r_noncens 0.421  label sd cens 0.59 vs non 0.61
+  draw 0 single:CD3           censored 0.12  r 0.560  r_noncens 0.624  label sd cens 0.39 vs non 0.82
+  draw 0 grp:CD45             censored 0.10  r 0.752  r_noncens 0.753  label sd cens 0.28 vs non 0.89
+  draw 0 grp:CD16             censored 0.34  r 0.825  r_noncens 0.694  label sd cens 0.23 vs non 0.70
+  draw 1 single:CD56          censored 0.11  r 0.362  r_noncens 0.376  label sd cens 0.49 vs non 0.62
+  draw 1 single:CD3           censored 0.45  r 0.602  r_noncens 0.686  label sd cens 0.26 vs non 0.66
+  draw 1 grp:CD3/CD19/CD56    censored 0.08  r 0.794  r_noncens 0.788  label sd cens 0.12 vs non 1.06
+  draw 1 grp:CD45             censored 0.17  r 0.655  r_noncens 0.626  label sd cens 0.34 vs non 1.06
+  draw 1 grp:CD16             censored 0.08  r 0.803  r_noncens 0.800  label sd cens 0.76 vs non 0.86

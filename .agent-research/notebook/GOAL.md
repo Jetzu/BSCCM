@@ -6,8 +6,8 @@ target: 0.67
 target_source: Claude proposal 2026-11-09 (N023): close half of the FOV-vs-batch gap on common-11 (FOV ~.71, batch .634); user to confirm
 best: 0.6527
 best_item: N031
-noise: 0.002
-noise_source: .agent-research/results/N023-label-qc-per-batch-dye-amplitude-single/rescore_v5_noise_n013.json (N013 seed0 .6119 vs seed1 .6136)
+noise: 0.0027
+noise_source: .agent-research/results/N038-review-lf-mk-common-11-batch-held-out-go/d3_seed_noise.json (N038: two v5 seed pairs, n023_v5 diff .0038, n026_zoom2 diff .0037 -> sd .0027; was .002 from one v4 pair, N023)
 constraints: SSL pretraining must EXCLUDE the held-out batch (inductive; N031: inductive ensemble .6527 vs transductive .6512 -- caveat resolved)
 stall_limit: 5
 stall_since: N023
