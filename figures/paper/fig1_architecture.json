@@ -1,0 +1,22 @@
+{
+ "png": "/home/hpc/v181bb/v181bb10/BSCCM/figures/paper/fig1_architecture.png",
+ "svg": "/home/hpc/v181bb/v181bb10/BSCCM/figures/paper/fig1_architecture.svg",
+ "created": "2026-11-17T11:03:40",
+ "command": [
+  "/home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python",
+  "scripts/make_figures_pfig.py",
+  "fig1"
+ ],
+ "cwd": "/home/hpc/v181bb/v181bb10/BSCCM",
+ "source": "diagram",
+ "notes": "Parameter counts from checkpoints: marker predictor encoders 23.65 M each (+13-output head), Giemsa-chain teachers ResNet-18 11.24 M each (markers: v4c labels; autofluorescence: unstained slides, v6c), Giemsa student DinoBloom-B ViT 85.7 M with 8 of 12 blocks frozen, distilled from the two teachers on the 15,712 Giemsa-label-free pairs and class-anchored to PBC half A; virtual stainer UNet 1.96 M trained on 12k registered pairs; flow-matching CondUNet 27.7 M (label-free + stain token -> 6-channel fluorescence images).",
+ "width_in": 8.5,
+ "height_in": 4.4882,
+ "png_px": [
+  3840,
+  2027
+ ],
+ "significance": "two-sided; Holm-corrected over all comparisons of a panel (one family per panel); * <0.05 ** <0.01 *** <0.001 **** <0.0001",
+ "panels": [],
+ "matplotlib": "3.11.0"
+}

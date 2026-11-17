@@ -1,0 +1,208 @@
+{
+ "png": "/home/hpc/v181bb/v181bb10/BSCCM/figures/paper/fig6_setlevel_matching.png",
+ "svg": "/home/hpc/v181bb/v181bb10/BSCCM/figures/paper/fig6_setlevel_matching.svg",
+ "created": "2026-11-17T11:01:20",
+ "command": [
+  "/home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python",
+  "scripts/make_figures_pfig.py",
+  "fig5",
+  "fig6"
+ ],
+ "cwd": "/home/hpc/v181bb/v181bb10/BSCCM",
+ "source": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N034-lf-fluorescence-marker-images-by-conditi/setmatch/setmatch_sim_v2.csv",
+ "notes": "Linear readout of frozen SSL label-free features (n007, 64 PCs) learnt from set-level information only; 7 targets (CD16, CD14, CD45, CD3, HLA-DR, CD19 single stains + autofluorescence), trained on draw 2 split 0, tested on draw 1 split 2. a: mean over targets (spread per target in b), dashed line = paired (cell-level) ridge; b,c: rings = targets, paired by target.",
+ "width_in": 8.5,
+ "height_in": 2.4409,
+ "png_px": [
+  3840,
+  1102
+ ],
+ "significance": "two-sided; Holm-corrected over all comparisons of a panel (one family per panel); * <0.05 ** <0.01 *** <0.001 **** <0.0001",
+ "panels": [
+  {
+   "panel": "a",
+   "kind": "lines",
+   "series": [
+    {
+     "label": "Same cells, FOV sets",
+     "color": "#3A6C9E",
+     "points": 6
+    },
+    {
+     "label": "Same cells, random sets",
+     "color": "#55BDB2",
+     "points": 6
+    },
+    {
+     "label": "Other cells, same FOVs",
+     "color": "#CF832F",
+     "points": 6
+    },
+    {
+     "label": "Other cells, random",
+     "color": "#B94A58",
+     "points": 6
+    }
+   ],
+   "xlabel": "Cells per set",
+   "ylabel": "r with marker label, new draw"
+  },
+  {
+   "panel": "b",
+   "kind": "bar",
+   "groups": [
+    "Paired",
+    "FOV sets",
+    "Random sets",
+    "Other, FOV",
+    "Other"
+   ],
+   "colors": [
+    "#767E86",
+    "#3A6C9E",
+    "#55BDB2",
+    "#CF832F",
+    "#B94A58"
+   ],
+   "n": [
+    7,
+    7,
+    7,
+    7,
+    7
+   ],
+   "mean": [
+    0.5607825300804171,
+    0.48292168904743155,
+    0.5026991382989618,
+    0.01194355442190235,
+    0.057683892365187305
+   ],
+   "sd": [
+    0.23952565992993857,
+    0.293839407527526,
+    0.2802049949662798,
+    0.10819414595074836,
+    0.1104735729039736
+   ],
+   "median": [
+    0.5414602212581244,
+    0.4476420395301705,
+    0.5105407584343793,
+    0.0216418904362051,
+    0.0432786932002379
+   ],
+   "whisker": "sd",
+   "stats": [
+    {
+     "test": "paired t-test",
+     "p": 0.016283101915926704,
+     "n_i": 7,
+     "n_j": 7,
+     "p_holm": 0.03256620383185341,
+     "stars": "*",
+     "a": "Paired",
+     "b": "FOV sets",
+     "reference": "Paired"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.036233556403781966,
+     "n_i": 7,
+     "n_j": 7,
+     "p_holm": 0.036233556403781966,
+     "stars": "*",
+     "a": "Paired",
+     "b": "Random sets",
+     "reference": "Paired"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.0026173227059885975,
+     "n_i": 7,
+     "n_j": 7,
+     "p_holm": 0.007851968117965792,
+     "stars": "**",
+     "a": "Paired",
+     "b": "Other, FOV",
+     "reference": "Paired"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.0011680466890730756,
+     "n_i": 7,
+     "n_j": 7,
+     "p_holm": 0.004672186756292302,
+     "stars": "**",
+     "a": "Paired",
+     "b": "Other",
+     "reference": "Paired"
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "r at 16 cells per set"
+  },
+  {
+   "panel": "c",
+   "kind": "bar",
+   "groups": [
+    "Bag mean",
+    "1-D OT",
+    "OT from bag mean"
+   ],
+   "colors": [
+    "#55BDB2",
+    "#A584D9",
+    "#A1CA8A"
+   ],
+   "n": [
+    7,
+    7,
+    7
+   ],
+   "mean": [
+    0.4513183500792217,
+    0.26247677750094706,
+    0.4224509161546029
+   ],
+   "sd": [
+    0.2857107628243795,
+    0.2643493534897248,
+    0.3088719893674424
+   ],
+   "median": [
+    0.4309896391766997,
+    0.2404981711456284,
+    0.3677553038176945
+   ],
+   "whisker": "sd",
+   "stats": [
+    {
+     "test": "paired t-test",
+     "p": 0.006670461212487282,
+     "n_i": 7,
+     "n_j": 7,
+     "p_holm": 0.013340922424974564,
+     "stars": "*",
+     "a": "Bag mean",
+     "b": "1-D OT",
+     "reference": "Bag mean"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.07190414020713916,
+     "n_i": 7,
+     "n_j": 7,
+     "p_holm": 0.07190414020713916,
+     "stars": "ns",
+     "a": "Bag mean",
+     "b": "OT from bag mean",
+     "reference": "Bag mean"
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "r at 64 cells per set"
+  }
+ ],
+ "matplotlib": "3.11.0"
+}

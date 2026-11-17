@@ -1,0 +1,280 @@
+{
+ "png": "/home/hpc/v181bb/v181bb10/BSCCM/figures/paper/fig3_label_limits.png",
+ "svg": "/home/hpc/v181bb/v181bb10/BSCCM/figures/paper/fig3_label_limits.svg",
+ "created": "2026-11-17T10:59:50",
+ "command": [
+  "/home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python",
+  "scripts/make_figures_pfig.py",
+  "fig3",
+  "fig4"
+ ],
+ "cwd": "/home/hpc/v181bb/v181bb10/BSCCM",
+ "source": [
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N038-review-lf-mk-common-11-batch-held-out-go/d2_within_fov.csv",
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N036-label-position-detrend-v7-cross-fit-the/fov_share.csv",
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N039-label-v8-re-derive-single-antibody-marke/codex/qc_v8.csv",
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N039-label-v8-re-derive-single-antibody-marke/n039_ceiling_per_target.csv"
+ ],
+ "notes": "a-c: final GOAL ensemble (N031), 22 = 11 markers x 2 directions; FOV-level share = variance share of FOV means minus a 20-permutation null (FOVs >= 3 cells); c Spearman rho 0.807, p 5.7e-06, n 22. d: per target x draw, split-0 minus mean of splits 1/2 FOV-mean variance share, label versions v3c (no position correction) / v5c (HGB fitted in-sample on split 0) / v5cx (FOV-fold cross-fit). e: 8 single markers x 2 draws, authors' smoothed background_lowess (v5) vs per-cell background (v8 candidate). f: r50 FOV-split model trained on 128k cells of both draws minus held-out N031 base, per marker; test draw 1 = batch 0, test draw 2 = batch 1.",
+ "width_in": 8.5,
+ "height_in": 4.6457,
+ "png_px": [
+  3840,
+  2098
+ ],
+ "significance": "two-sided; Holm-corrected over all comparisons of a panel (one family per panel); * <0.05 ** <0.01 *** <0.001 **** <0.0001",
+ "panels": [
+  {
+   "panel": "a",
+   "kind": "paired",
+   "groups": [
+    "Pooled",
+    "Within FOV"
+   ],
+   "colors": [
+    "#767E86",
+    "#3A6C9E"
+   ],
+   "n": [
+    22,
+    22
+   ],
+   "mean": [
+    0.6527410549948667,
+    0.72110012114898
+   ],
+   "sd": [
+    0.1933359253287468,
+    0.1445276576854036
+   ],
+   "median": [
+    0.6834517100714678,
+    0.7532668334115262
+   ],
+   "whisker": null,
+   "stats": [
+    {
+     "test": "Wilcoxon signed-rank",
+     "p": 4.76837158203125e-06,
+     "p_holm": 4.76837158203125e-06,
+     "stars": "****",
+     "n_i": 22,
+     "n_j": 22,
+     "a": "Pooled",
+     "b": "Within FOV"
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "Pearson r, final model"
+  },
+  {
+   "panel": "b",
+   "kind": "paired",
+   "groups": [
+    "Prediction",
+    "Label"
+   ],
+   "colors": [
+    "#3A6C9E",
+    "#CF832F"
+   ],
+   "n": [
+    22,
+    22
+   ],
+   "mean": [
+    0.007740442974855158,
+    0.15593536455018697
+   ],
+   "sd": [
+    0.020292113450854753,
+    0.17759362442322632
+   ],
+   "median": [
+    0.011853187136866051,
+    0.0652983984661572
+   ],
+   "whisker": null,
+   "stats": [
+    {
+     "test": "Wilcoxon signed-rank",
+     "p": 1.5735626220703125e-05,
+     "p_holm": 1.5735626220703125e-05,
+     "stars": "****",
+     "n_i": 22,
+     "n_j": 22,
+     "a": "Prediction",
+     "b": "Label"
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "FOV-level variance share"
+  },
+  {
+   "panel": "c",
+   "kind": "lines",
+   "series": [
+    {
+     "label": "Other markers",
+     "color": "#3A6C9E",
+     "points": 16
+    },
+    {
+     "label": "CD3, CD19, CD56",
+     "color": "#CF832F",
+     "points": 6
+    }
+   ],
+   "xlabel": "FOV-level label variance share",
+   "ylabel": "Within-FOV minus pooled r"
+  },
+  {
+   "panel": "d",
+   "kind": "raincloud",
+   "groups": [
+    "None",
+    "In-sample",
+    "Cross-fit"
+   ],
+   "colors": [
+    "#767E86",
+    "#B94A58",
+    "#3A6C9E"
+   ],
+   "n": [
+    26,
+    25,
+    25
+   ],
+   "mean": [
+    -0.001724295817017511,
+    -0.054805997097809804,
+    -0.0001547165137113088
+   ],
+   "sd": [
+    0.022928657305974768,
+    0.04938538196463469,
+    0.0242605991942246
+   ],
+   "median": [
+    0.0023095025547097414,
+    -0.04462859837705965,
+    0.004029366180014232
+   ],
+   "whisker": null,
+   "stats": [
+    {
+     "test": "Wilcoxon signed-rank",
+     "p": 0.5430157923729039,
+     "n_i": 25,
+     "n_j": 25,
+     "p_holm": 0.5430157923729039,
+     "stars": "ns",
+     "a": "Cross-fit",
+     "b": "None",
+     "reference": "Cross-fit"
+    },
+    {
+     "test": "Wilcoxon signed-rank",
+     "p": 5.960464477539063e-08,
+     "n_i": 25,
+     "n_j": 25,
+     "p_holm": 1.1920928955078125e-07,
+     "stars": "****",
+     "a": "Cross-fit",
+     "b": "In-sample",
+     "reference": "Cross-fit"
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "FOV share, split 0 minus held-out"
+  },
+  {
+   "panel": "e",
+   "kind": "paired",
+   "groups": [
+    "Smoothed bg",
+    "Per-cell bg"
+   ],
+   "colors": [
+    "#767E86",
+    "#55BDB2"
+   ],
+   "n": [
+    16,
+    16
+   ],
+   "mean": [
+    0.18287392567487287,
+    0.012736882283151039
+   ],
+   "sd": [
+    0.2007168358818351,
+    0.016729841294960898
+   ],
+   "median": [
+    0.0967835797429955,
+    0.0076423710722605
+   ],
+   "whisker": null,
+   "stats": [
+    {
+     "test": "Wilcoxon signed-rank",
+     "p": 0.005157470703125,
+     "p_holm": 0.005157470703125,
+     "stars": "**",
+     "n_i": 16,
+     "n_j": 16,
+     "a": "Smoothed bg",
+     "b": "Per-cell bg"
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "FOV-level label variance share"
+  },
+  {
+   "panel": "f",
+   "kind": "bar",
+   "groups": [
+    "Test draw 1",
+    "Test draw 2"
+   ],
+   "colors": [
+    "#A1CA8A",
+    "#A584D9"
+   ],
+   "n": [
+    11,
+    11
+   ],
+   "mean": [
+    -0.002351068749213829,
+    0.03417304936388513
+   ],
+   "sd": [
+    0.09775616584818432,
+    0.04728380547333344
+   ],
+   "median": [
+    0.006751647237722147,
+    0.022854258804433925
+   ],
+   "whisker": "sd",
+   "stats": [
+    {
+     "test": "paired t-test",
+     "p": 0.2212927032684927,
+     "n_i": 11,
+     "n_j": 11,
+     "p_holm": 0.2212927032684927,
+     "stars": "ns",
+     "a": "Test draw 1",
+     "b": "Test draw 2"
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "Seen minus held-out r"
+  }
+ ],
+ "matplotlib": "3.11.0"
+}

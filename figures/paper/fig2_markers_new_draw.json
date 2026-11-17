@@ -1,0 +1,330 @@
+{
+ "png": "/home/hpc/v181bb/v181bb10/BSCCM/figures/paper/fig2_markers_new_draw.png",
+ "svg": "/home/hpc/v181bb/v181bb10/BSCCM/figures/paper/fig2_markers_new_draw.svg",
+ "created": "2026-11-17T10:58:20",
+ "command": [
+  "/home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python",
+  "scripts/make_figures_pfig.py",
+  "fig2"
+ ],
+ "cwd": "/home/hpc/v181bb/v181bb10/BSCCM",
+ "source": [
+  "runs/*/eval_preds.npz (n013, n014, n023, n026, n031, n039, n040, n042)",
+  "targets_v5.npz",
+  "/home/hpc/v181bb/v181bb10/bsccm_deliverables/results/lf_information_map_fov_v4.csv"
+ ],
+ "notes": "a: GOAL milestones, 22 = 11 markers x 2 directions per group, paired vs final; b: final model per marker, rings = two directions; c: FOV split v4 information map; d: mean over directions, whiskers = sd over the 2 directions; e: in-distribution FOV-split models (seen both draws; full 318k / data-matched 128k cells) vs held-out final ensemble on identical cells; f: input low-pass sigma 1.5 px vs N031 base.",
+ "width_in": 8.5,
+ "height_in": 4.7244,
+ "png_px": [
+  3840,
+  2134
+ ],
+ "significance": "two-sided; Holm-corrected over all comparisons of a panel (one family per panel); * <0.05 ** <0.01 *** <0.001 **** <0.0001",
+ "panels": [
+  {
+   "panel": "a",
+   "kind": "bar",
+   "groups": [
+    "ResNet-18",
+    "SSL R50",
+    "Clean labels",
+    "Two scales",
+    "Final"
+   ],
+   "colors": [
+    "#767E86",
+    "#767E86",
+    "#767E86",
+    "#767E86",
+    "#3A6C9E"
+   ],
+   "n": [
+    22,
+    22,
+    22,
+    22,
+    22
+   ],
+   "mean": [
+    0.6118969784714694,
+    0.6343488939441637,
+    0.6422696681475585,
+    0.6512268983030881,
+    0.6527410549948663
+   ],
+   "sd": [
+    0.21395771280649284,
+    0.19053770590238223,
+    0.19596389042263124,
+    0.1938841696709385,
+    0.19333592532874655
+   ],
+   "median": [
+    0.6548348175788148,
+    0.6577781855179731,
+    0.6793792818459184,
+    0.6845319631650343,
+    0.683451710071467
+   ],
+   "whisker": "sd",
+   "stats": [
+    {
+     "test": "Wilcoxon signed-rank",
+     "p": 9.5367431640625e-07,
+     "n_i": 22,
+     "n_j": 22,
+     "p_holm": 3.814697265625e-06,
+     "stars": "****",
+     "a": "Final",
+     "b": "ResNet-18",
+     "reference": "Final"
+    },
+    {
+     "test": "Wilcoxon signed-rank",
+     "p": 0.009274482727050781,
+     "n_i": 22,
+     "n_j": 22,
+     "p_holm": 0.027823448181152344,
+     "stars": "*",
+     "a": "Final",
+     "b": "SSL R50",
+     "reference": "Final"
+    },
+    {
+     "test": "Wilcoxon signed-rank",
+     "p": 0.009274482727050781,
+     "n_i": 22,
+     "n_j": 22,
+     "p_holm": 0.027823448181152344,
+     "stars": "*",
+     "a": "Final",
+     "b": "Clean labels",
+     "reference": "Final"
+    },
+    {
+     "test": "Wilcoxon signed-rank",
+     "p": 0.3705310821533203,
+     "n_i": 22,
+     "n_j": 22,
+     "p_holm": 0.3705310821533203,
+     "stars": "ns",
+     "a": "Final",
+     "b": "Two scales",
+     "reference": "Final"
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "Pearson r, new blood draw"
+  },
+  {
+   "panel": "b",
+   "kind": "bar",
+   "groups": [
+    "CD19",
+    "CD56",
+    "HLA-DR",
+    "CD123",
+    "CD3",
+    "CD45 pool",
+    "CD45",
+    "CD3/19/56 pool",
+    "CD16 pool",
+    "CD14",
+    "CD16"
+   ],
+   "colors": [
+    "#3A6C9E",
+    "#3A6C9E",
+    "#3A6C9E",
+    "#3A6C9E",
+    "#3A6C9E",
+    "#3A6C9E",
+    "#3A6C9E",
+    "#3A6C9E",
+    "#3A6C9E",
+    "#3A6C9E",
+    "#3A6C9E"
+   ],
+   "n": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "mean": [
+    0.3469835084726106,
+    0.3729151729998121,
+    0.5107858894978924,
+    0.5367976029830257,
+    0.5810821367780409,
+    0.7038037244623948,
+    0.7784494884273243,
+    0.7903465333038345,
+    0.8140200885550338,
+    0.8436495740221841,
+    0.9013178854413759
+   ],
+   "sd": [
+    0.06788953656294529,
+    0.014768339745158643,
+    0.09135878264070704,
+    0.11035499005968606,
+    0.02935759975584283,
+    0.06839982100756102,
+    0.09472942031186811,
+    0.004638054330140696,
+    0.014934358929228503,
+    0.024542414973020298,
+    0.004192146604159452
+   ],
+   "median": [
+    0.3469835084726106,
+    0.3729151729998121,
+    0.5107858894978924,
+    0.5367976029830257,
+    0.5810821367780409,
+    0.7038037244623948,
+    0.7784494884273243,
+    0.7903465333038345,
+    0.8140200885550338,
+    0.8436495740221841,
+    0.9013178854413759
+   ],
+   "whisker": "sd",
+   "stats": [],
+   "no_stats_reason": "descriptive per-marker profile; markers are not compared with each other",
+   "ylabel": "Pearson r, new blood draw"
+  },
+  {
+   "panel": "d",
+   "kind": "lines",
+   "series": [
+    {
+     "label": "CD19, CD56, CD123, HLA-DR",
+     "color": "#CF832F",
+     "points": 3
+    },
+    {
+     "label": "Other 7 markers",
+     "color": "#3A6C9E",
+     "points": 3
+    }
+   ],
+   "xlabel": "Training cells (%)",
+   "ylabel": "Pearson r, new blood draw"
+  },
+  {
+   "panel": "e",
+   "kind": "bar",
+   "groups": [
+    "Seen draw",
+    "Seen, 128k",
+    "Final"
+   ],
+   "colors": [
+    "#55BDB2",
+    "#A1CA8A",
+    "#3A6C9E"
+   ],
+   "n": [
+    22,
+    22,
+    22
+   ],
+   "mean": [
+    0.6775849470827192,
+    0.6584604581212387,
+    0.6527410549948667
+   ],
+   "sd": [
+    0.19709917022436935,
+    0.2114819040792658,
+    0.1933359253287468
+   ],
+   "median": [
+    0.7164825653470306,
+    0.7076866079369024,
+    0.6834517100714678
+   ],
+   "whisker": "sd",
+   "stats": [
+    {
+     "test": "Wilcoxon signed-rank",
+     "p": 0.0021948814392089844,
+     "n_i": 22,
+     "n_j": 22,
+     "p_holm": 0.004389762878417969,
+     "stars": "**",
+     "a": "Final",
+     "b": "Seen draw",
+     "reference": "Final"
+    },
+    {
+     "test": "Wilcoxon signed-rank",
+     "p": 0.11287164688110352,
+     "n_i": 22,
+     "n_j": 22,
+     "p_holm": 0.11287164688110352,
+     "stars": "ns",
+     "a": "Final",
+     "b": "Seen, 128k",
+     "reference": "Final"
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "Pearson r, same test cells"
+  },
+  {
+   "panel": "f",
+   "kind": "paired",
+   "groups": [
+    "Full detail",
+    "Blurred 1.5 px"
+   ],
+   "colors": [
+    "#767E86",
+    "#B94A58"
+   ],
+   "n": [
+    22,
+    22
+   ],
+   "mean": [
+    0.6425494678139031,
+    0.6410976512609057
+   ],
+   "sd": [
+    0.19426935128238515,
+    0.19682356882021418
+   ],
+   "median": [
+    0.678484421752257,
+    0.6785430730201096
+   ],
+   "whisker": null,
+   "stats": [
+    {
+     "test": "Wilcoxon signed-rank",
+     "p": 0.11287164688110352,
+     "p_holm": 0.11287164688110352,
+     "stars": "ns",
+     "n_i": 22,
+     "n_j": 22,
+     "a": "Full detail",
+     "b": "Blurred 1.5 px"
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "Pearson r, new blood draw"
+  }
+ ],
+ "matplotlib": "3.11.0"
+}

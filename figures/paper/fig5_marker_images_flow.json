@@ -1,0 +1,211 @@
+{
+ "png": "/home/hpc/v181bb/v181bb10/BSCCM/figures/paper/fig5_marker_images_flow.png",
+ "svg": "/home/hpc/v181bb/v181bb10/BSCCM/figures/paper/fig5_marker_images_flow.svg",
+ "created": "2026-11-17T11:01:19",
+ "command": [
+  "/home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python",
+  "scripts/make_figures_pfig.py",
+  "fig5",
+  "fig6"
+ ],
+ "cwd": "/home/hpc/v181bb/v181bb10/BSCCM",
+ "source": [
+  "/hnvme/workspace/v181bb10-bsccm/runs/n035/eval_split1/eval.json",
+  "/hnvme/workspace/v181bb10-bsccm/runs/n035/eval_split1/montage.npy",
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N035-frozen-confirmation-of-n034-a-in-the-unt/n035_per_label.csv"
+ ],
+ "notes": "Frozen pre-registered test N035: models trained on blood draw 1 (batch 0), tested on untouched draw 2 split 1, Heun 48 steps, CFG 2, K 8, 400 cells per stain. a: brightest and dimmest of the first six evaluated cells per stain in that stain's most variable channel (illustration, not marker calls); one colour scale per row. b-d: 12 labels with a valid readout, paired by label; r = readout of generated images vs curated label (flow = mean over K samples), real image = readout of the real fluorescence images; CRPS and conditional W1 vs the real images' readout, lower is better. HLA-DR real-image readout does not transfer between draws (r -.11), see N035 post-hoc.",
+ "width_in": 8.5,
+ "height_in": 10.6299,
+ "png_px": [
+  3840,
+  4802
+ ],
+ "significance": "two-sided; Holm-corrected over all comparisons of a panel (one family per panel); * <0.05 ** <0.01 *** <0.001 **** <0.0001",
+ "panels": [
+  {
+   "panel": "b",
+   "kind": "bar",
+   "groups": [
+    "Flow",
+    "Regression",
+    "Shuffled",
+    "Real image"
+   ],
+   "colors": [
+    "#3A6C9E",
+    "#767E86",
+    "#B94A58",
+    "#A1CA8A"
+   ],
+   "n": [
+    12,
+    12,
+    12,
+    12
+   ],
+   "mean": [
+    0.47641677018244954,
+    0.5760947292694997,
+    0.012083704909044875,
+    0.6165658682359639
+   ],
+   "sd": [
+    0.24637592299265132,
+    0.20879965643341367,
+    0.04819270047061501,
+    0.2808425326972539
+   ],
+   "median": [
+    0.5269255541297894,
+    0.6197525001567863,
+    0.0097332603013373,
+    0.6889675466935584
+   ],
+   "whisker": "sd",
+   "stats": [
+    {
+     "test": "paired t-test",
+     "p": 0.0025437039320754798,
+     "n_i": 12,
+     "n_j": 12,
+     "p_holm": 0.0050874078641509595,
+     "stars": "**",
+     "a": "Flow",
+     "b": "Regression",
+     "reference": "Flow"
+    },
+    {
+     "test": "paired t-test",
+     "p": 6.157880372701498e-05,
+     "n_i": 12,
+     "n_j": 12,
+     "p_holm": 0.00018473641118104496,
+     "stars": "***",
+     "a": "Flow",
+     "b": "Shuffled",
+     "reference": "Flow"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.16365143692806103,
+     "n_i": 12,
+     "n_j": 12,
+     "p_holm": 0.16365143692806103,
+     "stars": "ns",
+     "a": "Flow",
+     "b": "Real image",
+     "reference": "Flow"
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "r with marker label"
+  },
+  {
+   "panel": "c",
+   "kind": "bar",
+   "groups": [
+    "Flow",
+    "Regression"
+   ],
+   "colors": [
+    "#3A6C9E",
+    "#767E86"
+   ],
+   "n": [
+    12,
+    12
+   ],
+   "mean": [
+    0.6739608245805871,
+    0.8150621210074624
+   ],
+   "sd": [
+    0.1837124403472371,
+    0.23037104133189398
+   ],
+   "median": [
+    0.6684198697545597,
+    0.7818408815557158
+   ],
+   "whisker": "sd",
+   "stats": [
+    {
+     "test": "paired t-test",
+     "p": 0.04827365772241418,
+     "n_i": 12,
+     "n_j": 12,
+     "p_holm": 0.04827365772241418,
+     "stars": "*",
+     "a": "Flow",
+     "b": "Regression",
+     "reference": "Flow"
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "CRPS (sd units)"
+  },
+  {
+   "panel": "d",
+   "kind": "bar",
+   "groups": [
+    "Flow",
+    "Regression",
+    "Shuffled"
+   ],
+   "colors": [
+    "#3A6C9E",
+    "#767E86",
+    "#B94A58"
+   ],
+   "n": [
+    12,
+    12,
+    12
+   ],
+   "mean": [
+    0.6920262863327231,
+    0.7265370647704178,
+    0.9337542806092304
+   ],
+   "sd": [
+    0.265772157356845,
+    0.2401330428887246,
+    0.22935822426186175
+   ],
+   "median": [
+    0.6809595181781177,
+    0.7105050951321752,
+    1.0304307422700958
+   ],
+   "whisker": "sd",
+   "stats": [
+    {
+     "test": "paired t-test",
+     "p": 0.6093106200751128,
+     "n_i": 12,
+     "n_j": 12,
+     "p_holm": 0.6093106200751128,
+     "stars": "ns",
+     "a": "Flow",
+     "b": "Regression",
+     "reference": "Flow"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.0008669067667688498,
+     "n_i": 12,
+     "n_j": 12,
+     "p_holm": 0.0017338135335376995,
+     "stars": "**",
+     "a": "Flow",
+     "b": "Shuffled",
+     "reference": "Flow"
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "Conditional W1 (sd units)"
+  }
+ ],
+ "matplotlib": "3.11.0"
+}

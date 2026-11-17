@@ -46,3 +46,4 @@
 {"ts":"2026-11-12T18:26:59+01:00","event":"goal_effect","item":"N036","effect":"n/a","value":"-","scale":"?","why":"infra"}
 {"ts":"2026-11-12T18:36:24+01:00","event":"goal_effect","item":"N042","effect":"flat","value":"void","scale":"module","why":""}
 {"ts":"2026-11-12T18:46:25+01:00","event":"goal_effect","item":"N039","effect":"flat","value":"void","scale":"module","why":""}
+{"ts":"2026-11-17T11:04:12+01:00","event":"goal_effect","item":"N043","effect":"n/a","value":"-","scale":"?","why":"infra"}

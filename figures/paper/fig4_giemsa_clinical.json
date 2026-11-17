@@ -1,0 +1,204 @@
+{
+ "png": "/home/hpc/v181bb/v181bb10/BSCCM/figures/paper/fig4_giemsa_clinical.png",
+ "svg": "/home/hpc/v181bb/v181bb10/BSCCM/figures/paper/fig4_giemsa_clinical.svg",
+ "created": "2026-11-17T10:59:51",
+ "command": [
+  "/home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python",
+  "scripts/make_figures_pfig.py",
+  "fig3",
+  "fig4"
+ ],
+ "cwd": "/home/hpc/v181bb/v181bb10/BSCCM",
+ "source": [
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N029-clean-calibration-cohort-no-giemsa-hist/n029_metrics.csv",
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N032-teacher-run-variance-of-clinical-transfe/n032_n033_metrics.csv",
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N025-giemsa-chain-without-the-trade-off-two-t/gs_mk_estimates_v4_v5_tt6.csv",
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N032-teacher-run-variance-of-clinical-transfe/transfer_all.csv",
+  "/hnvme/workspace/v181bb10-bsccm/runs/n028_vs_batch0/downstream/downstream.json"
+ ],
+ "notes": "a,b: within-slide r of Giemsa-student autofluorescence prediction vs measured autofluorescence on the same cells, one teacher (v4c) vs two teachers (TT6c and its re-trained teacher runs t0-t2), rings = runs, Welch t. c: transitive estimate r(S,T) x r(T,M), rings = two directions. d,e: per clinical contrast, square = mean over 4 LF-teacher runs (student seeds averaged within a run), line = min-max over the 4 runs (NOT a confidence interval), vertical line = chance .5. f: Giemsa-student prediction on virtual Wright images vs on real Wright images of the same cells (N028, one value per marker).",
+ "width_in": 8.5,
+ "height_in": 5.9055,
+ "png_px": [
+  3840,
+  2667
+ ],
+ "significance": "two-sided; Holm-corrected over all comparisons of a panel (one family per panel); * <0.05 ** <0.01 *** <0.001 **** <0.0001",
+ "panels": [
+  {
+   "panel": "a",
+   "kind": "bar",
+   "groups": [
+    "One teacher",
+    "Two teachers"
+   ],
+   "colors": [
+    "#767E86",
+    "#3A6C9E"
+   ],
+   "n": [
+    3,
+    7
+   ],
+   "mean": [
+    0.3954982819018833,
+    0.5652156928352635
+   ],
+   "sd": [
+    0.02588586583932062,
+    0.008472587854417485
+   ],
+   "median": [
+    0.38478165816686344,
+    0.565049557256955
+   ],
+   "whisker": "sd",
+   "stats": [
+    {
+     "test": "Welch t-test",
+     "p": 0.005795834441133736,
+     "n_i": 7,
+     "n_j": 3,
+     "p_holm": 0.005795834441133736,
+     "stars": "**",
+     "a": "Two teachers",
+     "b": "One teacher",
+     "reference": "Two teachers"
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "Giemsa vs measured autofluor. r, slide 1"
+  },
+  {
+   "panel": "b",
+   "kind": "bar",
+   "groups": [
+    "One teacher",
+    "Two teachers"
+   ],
+   "colors": [
+    "#767E86",
+    "#3A6C9E"
+   ],
+   "n": [
+    3,
+    7
+   ],
+   "mean": [
+    0.6542971616178915,
+    0.8459475042112464
+   ],
+   "sd": [
+    0.02629206646174359,
+    0.010509430720036132
+   ],
+   "median": [
+    0.6613975018234999,
+    0.8462075534189414
+   ],
+   "whisker": "sd",
+   "stats": [
+    {
+     "test": "Welch t-test",
+     "p": 0.003991146837772979,
+     "n_i": 7,
+     "n_j": 3,
+     "p_holm": 0.003991146837772979,
+     "stars": "**",
+     "a": "Two teachers",
+     "b": "One teacher",
+     "reference": "Two teachers"
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "Giemsa vs measured autofluor. r, slide 2"
+  },
+  {
+   "panel": "c",
+   "kind": "bar",
+   "groups": [
+    "CD19",
+    "CD123",
+    "CD56",
+    "CD3",
+    "HLA-DR",
+    "CD45 pool",
+    "CD3/19/56 pool",
+    "CD16 pool",
+    "CD45",
+    "CD14",
+    "CD16"
+   ],
+   "colors": [
+    "#A584D9",
+    "#A584D9",
+    "#A584D9",
+    "#A584D9",
+    "#A584D9",
+    "#A584D9",
+    "#A584D9",
+    "#A584D9",
+    "#A584D9",
+    "#A584D9",
+    "#A584D9"
+   ],
+   "n": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "mean": [
+    0.10873237936779345,
+    0.1110941537861847,
+    0.21912437031215948,
+    0.44471062069783507,
+    0.4634289033978334,
+    0.5534096345588964,
+    0.575996173373035,
+    0.6041685033459618,
+    0.6181803305004969,
+    0.7072813494807093,
+    0.808189129126399
+   ],
+   "sd": [
+    0.10757316360874093,
+    0.08079175950079086,
+    0.000931298801621396,
+    0.05531328288377903,
+    0.043794065201282026,
+    0.21820708583966042,
+    0.20140344451526496,
+    0.09271045536248923,
+    0.24800680045051782,
+    0.050585594500361826,
+    0.011143366452159806
+   ],
+   "median": [
+    0.10873237936779345,
+    0.1110941537861847,
+    0.21912437031215948,
+    0.44471062069783507,
+    0.4634289033978334,
+    0.5534096345588964,
+    0.575996173373035,
+    0.6041685033459618,
+    0.6181803305004969,
+    0.7072813494807093,
+    0.808189129126399
+   ],
+   "whisker": "sd",
+   "stats": [],
+   "no_stats_reason": "descriptive per-marker estimate r(GS,M) ~ r(S,T) r(T,M); markers not compared",
+   "ylabel": "Estimated Giemsa -> marker r"
+  }
+ ],
+ "matplotlib": "3.11.0"
+}
