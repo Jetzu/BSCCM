@@ -1,0 +1,50 @@
+test_em_separated_and_single_gaussian_null (test_n049.NoiseTests.test_em_separated_and_single_gaussian_null) ... ok
+test_fitting_never_uses_other_draw_nonzero_splits_giemsa_or_missing (test_n049.NoiseTests.test_fitting_never_uses_other_draw_nonzero_splits_giemsa_or_missing) ... draw=0 single:CD45 n=46 d'=8.917 eta=0.9444 phi=0.0208 delta_BIC=68.4
+draw=0 single:CD123 n=46 d'=9.191 eta=0.9444 phi=0.0208 delta_BIC=71.1
+draw=0 single:CD19 n=46 d'=8.138 eta=0.9444 phi=0.0208 delta_BIC=60.3
+draw=0 single:CD56 n=46 d'=7.790 eta=0.9444 phi=0.0208 delta_BIC=56.2
+draw=0 single:CD14 n=46 d'=10.975 eta=0.9444 phi=0.0208 delta_BIC=86.7
+draw=0 single:CD16 n=46 d'=9.039 eta=0.9444 phi=0.0208 delta_BIC=69.5
+draw=0 single:HLA-DR n=46 d'=10.501 eta=0.9444 phi=0.0208 delta_BIC=82.8
+draw=0 single:CD3 n=46 d'=9.663 eta=0.9444 phi=0.0208 delta_BIC=75.4
+draw=0 single:CD45 n=46 d'=8.917 eta=0.9444 phi=0.0208 delta_BIC=68.4
+draw=0 single:CD123 n=46 d'=9.191 eta=0.9444 phi=0.0208 delta_BIC=71.1
+draw=0 single:CD19 n=46 d'=8.138 eta=0.9444 phi=0.0208 delta_BIC=60.3
+draw=0 single:CD56 n=46 d'=7.790 eta=0.9444 phi=0.0208 delta_BIC=56.2
+draw=0 single:CD14 n=46 d'=10.975 eta=0.9444 phi=0.0208 delta_BIC=86.7
+draw=0 single:CD16 n=46 d'=9.039 eta=0.9444 phi=0.0208 delta_BIC=69.5
+draw=0 single:HLA-DR n=46 d'=10.501 eta=0.9444 phi=0.0208 delta_BIC=82.8
+draw=0 single:CD3 n=46 d'=9.663 eta=0.9444 phi=0.0208 delta_BIC=75.4
+ok
+test_posterior_matches_latent_enumeration_and_is_soft (test_n049.NoiseTests.test_posterior_matches_latent_enumeration_and_is_soft) ... ok
+test_archive_integrity_and_content_fingerprint (test_n049.SupervisionTests.test_archive_integrity_and_content_fingerprint) ... ok
+test_soft_bce_value_gradient_and_missing_entries (test_n049.SupervisionTests.test_soft_bce_value_gradient_and_missing_entries) ... ok
+test_default_full_cpu_training_bit_identical_and_old_checkpoint_resume (test_n049.TrainerSmoke.test_default_full_cpu_training_bit_identical_and_old_checkpoint_resume) ... /tmp/codex_n049/venv/lib/python3.13/site-packages/numpy/_core/fromnumeric.py:3862: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/tmp/codex_n049/venv/lib/python3.13/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+/home/hpc/v181bb/v181bb10/BSCCM/scripts/train_lf.py:254: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/codex_n049/tmpnan17pvb/old/result.json' mode='w' encoding='UTF-8'>
+  json.dump({'args': vars(a), 'final': log[-1], 'log': log, 'n_train': len(tr), 'n_eval': len(ev), 'targets': names}, open(a.out + '/result.json', 'w'), indent=1, default=float)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N049-noise-aware-positive-negative-marker-lab/codex/scripts/train_lf.py:280: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/codex_n049/tmpnan17pvb/new/result.json' mode='w' encoding='UTF-8'>
+  json.dump({'args': vars(a), 'final': log[-1], 'log': log, 'n_train': len(tr), 'n_eval': len(ev), 'targets': names}, open(a.out + '/result.json', 'w'), indent=1, default=float)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N049-noise-aware-positive-negative-marker-lab/codex/scripts/train_lf.py:280: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/codex_n049/tmpnan17pvb/old/result.json' mode='w' encoding='UTF-8'>
+  json.dump({'args': vars(a), 'final': log[-1], 'log': log, 'n_train': len(tr), 'n_eval': len(ev), 'targets': names}, open(a.out + '/result.json', 'w'), indent=1, default=float)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_opt_in_full_cpu_smoke_predictions_loss_and_resume_rejection (test_n049.TrainerSmoke.test_opt_in_full_cpu_smoke_predictions_loss_and_resume_rejection) ... /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N049-noise-aware-positive-negative-marker-lab/codex/scripts/train_lf.py:280: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/codex_n049/tmpnan17pvb/enabled/result.json' mode='w' encoding='UTF-8'>
+  json.dump({'args': vars(a), 'final': log[-1], 'log': log, 'n_train': len(tr), 'n_eval': len(ev), 'targets': names}, open(a.out + '/result.json', 'w'), indent=1, default=float)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N049-noise-aware-positive-negative-marker-lab/codex/scripts/train_lf.py:280: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/codex_n049/tmpnan17pvb/enabled/result.json' mode='w' encoding='UTF-8'>
+  json.dump({'args': vars(a), 'final': log[-1], 'log': log, 'n_train': len(tr), 'n_eval': len(ev), 'targets': names}, open(a.out + '/result.json', 'w'), indent=1, default=float)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N049-noise-aware-positive-negative-marker-lab/codex/scripts/train_lf.py:280: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/codex_n049/tmpnan17pvb/combined/result.json' mode='w' encoding='UTF-8'>
+  json.dump({'args': vars(a), 'final': log[-1], 'log': log, 'n_train': len(tr), 'n_eval': len(ev), 'targets': names}, open(a.out + '/result.json', 'w'), indent=1, default=float)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 6.822s
+
+OK

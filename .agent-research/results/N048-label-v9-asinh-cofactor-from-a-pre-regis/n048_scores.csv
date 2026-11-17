@@ -1,0 +1,13 @@
+labels,arm,model,b01,b10,goal
+v5 (GOAL),base,N031 (trained v5),0.6363,0.6488,0.6425
+v5 (GOAL),base,N048 (trained v9),0.6365,0.6547,0.6456
+v5 (GOAL),ens,N031 (trained v5),0.6443,0.6612,0.6527
+v5 (GOAL),ens,N048 (trained v9),0.6421,0.6624,0.6522
+v5 (GOAL),zoom2,N031 (trained v5),0.6333,0.6552,0.6442
+v5 (GOAL),zoom2,N048 (trained v9),0.6288,0.6468,0.6378
+v9 cf150,base,N031 (trained v5),0.6514,0.6779,0.6647
+v9 cf150,base,N048 (trained v9),0.6621,0.6948,0.6784
+v9 cf150,ens,N031 (trained v5),0.6603,0.6908,0.6755
+v9 cf150,ens,N048 (trained v9),0.6685,0.7016,0.6851
+v9 cf150,zoom2,N031 (trained v5),0.6494,0.6846,0.667
+v9 cf150,zoom2,N048 (trained v9),0.6552,0.6836,0.6694

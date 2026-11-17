@@ -1,0 +1,338 @@
+{
+  "schema": "n049-v1",
+  "source_draw": 0,
+  "source_sha256": "0af54beefbfb04cbe7242e36b6c67f5a6d0947f8c0b37f73caa56d0b17e737d4",
+  "model": "Z -> S -> Y; two tied-variance Gaussian emissions, joint MAP EM + ridge ascent",
+  "eta_bounds": [
+    0.6,
+    0.99
+  ],
+  "phi_bounds": [
+    0.001,
+    0.15
+  ],
+  "eta_beta": [
+    18.0,
+    2.0
+  ],
+  "phi_beta": [
+    2.0,
+    48.0
+  ],
+  "pi_prior": "Uniform(0,1)",
+  "identifiability": "Only q=pi*eta+(1-pi)*phi is identified; eta/phi/pi are prior-dependent.",
+  "bic_note": "BIC uses 4 identifiable marginal parameters versus 2 for one Gaussian; descriptive MAP plug-in.",
+  "fit_selection": "batch=source_draw AND split=0 AND hist_row<0 AND single-marker mask",
+  "target_selection": "same source draw, hist_row<0, original single-marker mask; all splits",
+  "fits": {
+    "single:CD45": {
+      "mu": [
+        -0.4178424303903947,
+        1.814185186722807
+      ],
+      "variance": [
+        0.241952275761446,
+        0.241952275761446
+      ],
+      "pi": 0.1801296646397747,
+      "eta": 0.9444444444444444,
+      "phi": 0.020833333333333332,
+      "q_observed": 0.18720309303534746,
+      "log_likelihood": -10225.11802696842,
+      "map_objective": -10233.840803004801,
+      "n_fit": 8885,
+      "n_iter": 12,
+      "converged": true,
+      "min_objective_step": 0.0,
+      "variance_floor": 0.009999958238087357,
+      "init_quantiles": [
+        5,
+        95
+      ],
+      "d_prime": 4.537688800434366,
+      "bic_1": 25232.68486899135,
+      "bic_2": 20486.604532899193,
+      "delta_bic_1_minus_2": 4746.080336092156,
+      "warnings": [],
+      "fit_rows_sha256": "f6557779b33e5e39dd7404a9c1e4ed0f73c17d371a8d4923077bcc1c02638666",
+      "n_targets": 10951
+    },
+    "single:CD123": {
+      "mu": [
+        -0.018541087121584816,
+        0.022486690583322547
+      ],
+      "variance": [
+        0.8512904060529163,
+        0.8512904060529163
+      ],
+      "pi": 0.46673553580748445,
+      "eta": 0.9444444444444444,
+      "phi": 0.020833333333333332,
+      "q_observed": 0.4519154601555238,
+      "log_likelihood": -19388.12857056198,
+      "map_objective": -19396.851346598363,
+      "n_fit": 14483,
+      "n_iter": 47,
+      "converged": true,
+      "min_objective_step": 0.0,
+      "variance_floor": 0.008517073337397381,
+      "init_quantiles": [
+        5,
+        95
+      ],
+      "d_prime": 0.04446713247717319,
+      "bic_1": 38795.4351394499,
+      "bic_2": 38814.58006443117,
+      "delta_bic_1_minus_2": -19.14492498126492,
+      "warnings": [
+        "weak separation: d_prime < 1",
+        "one component preferred by BIC"
+      ],
+      "fit_rows_sha256": "9e8bd0ea82778b6c513d1b9dea42a379537882b1bd873f29e762d22ba19c0e99",
+      "n_targets": 18224
+    },
+    "single:CD19": {
+      "mu": [
+        -0.058592490590002336,
+        1.9018939141495466
+      ],
+      "variance": [
+        0.14272228280915827,
+        0.14272228280915827
+      ],
+      "pi": 0.009802181393068505,
+      "eta": 0.9444444444444444,
+      "phi": 0.020833333333333332,
+      "q_observed": 0.02988673698109799,
+      "log_likelihood": -5912.204206486496,
+      "map_objective": -5920.926982522878,
+      "n_fit": 10305,
+      "n_iter": 175,
+      "converged": true,
+      "min_objective_step": 0.0,
+      "variance_floor": 0.0025415898448766273,
+      "init_quantiles": [
+        20,
+        80
+      ],
+      "d_prime": 5.189409508074046,
+      "bic_1": 15147.06353061402,
+      "bic_2": 11861.369950946291,
+      "delta_bic_1_minus_2": 3285.693579667728,
+      "warnings": [
+        "true prevalence near boundary: prior-sensitive or constant soft targets"
+      ],
+      "fit_rows_sha256": "88be5c216dbdefd6cf0c798f05d508b6c0b2cf926b38ea7a7b1ee2c6dfd71cd9",
+      "n_targets": 12768
+    },
+    "single:CD56": {
+      "mu": [
+        -0.0782916288769885,
+        3.479693999100089
+      ],
+      "variance": [
+        0.38253175071059325,
+        0.38253175071059325
+      ],
+      "pi": 0.0012680308864007146,
+      "eta": 0.9444444444444444,
+      "phi": 0.020833333333333332,
+      "q_observed": 0.022004500749245103,
+      "log_likelihood": -11506.479118981562,
+      "map_objective": -11515.201895017944,
+      "n_fit": 11077,
+      "n_iter": 33,
+      "converged": true,
+      "min_objective_step": 0.0,
+      "variance_floor": 0.006549626491749269,
+      "init_quantiles": [
+        50,
+        90
+      ],
+      "d_prime": 5.752683032143638,
+      "bic_1": 26766.257122158433,
+      "bic_2": 23050.208742625193,
+      "delta_bic_1_minus_2": 3716.04837953324,
+      "warnings": [
+        "true prevalence near boundary: prior-sensitive or constant soft targets"
+      ],
+      "fit_rows_sha256": "f3e2265cf367829d2eb0f8e75808f147d8c7600c351567a8fc7d12d664670690",
+      "n_targets": 14212
+    },
+    "single:CD14": {
+      "mu": [
+        -0.34785306020201234,
+        2.3292856574460523
+      ],
+      "variance": [
+        0.1897287954227472,
+        0.1897287954227472
+      ],
+      "pi": 0.11812473533378362,
+      "eta": 0.9444444444444444,
+      "phi": 0.020833333333333332,
+      "q_observed": 0.12993465138467514,
+      "log_likelihood": -14191.25971437366,
+      "map_objective": -14199.982490410042,
+      "n_fit": 14788,
+      "n_iter": 11,
+      "converged": true,
+      "min_objective_step": 0.0,
+      "variance_floor": 0.009999779393223092,
+      "init_quantiles": [
+        50,
+        90
+      ],
+      "d_prime": 6.146165497559972,
+      "bic_1": 41985.4029638013,
+      "bic_2": 28420.925714027548,
+      "delta_bic_1_minus_2": 13564.477249773754,
+      "warnings": [],
+      "fit_rows_sha256": "34682feea48a23bd636dcce114775ec01701ae087fbc65e45cf3b0c06353fbcd",
+      "n_targets": 18442
+    },
+    "single:CD16": {
+      "mu": [
+        -0.8116032780352036,
+        1.045885662165392
+      ],
+      "variance": [
+        0.1511527647547068,
+        0.1511527647547068
+      ],
+      "pi": 0.4505168675878825,
+      "eta": 0.9444444444444444,
+      "phi": 0.020833333333333332,
+      "q_observed": 0.43693571798047476,
+      "log_likelihood": -8365.603158599908,
+      "map_objective": -8374.32593463629,
+      "n_fit": 7431,
+      "n_iter": 11,
+      "converged": true,
+      "min_objective_step": 0.0,
+      "variance_floor": 0.009999969965842003,
+      "init_quantiles": [
+        50,
+        90
+      ],
+      "d_prime": 4.7776924394659925,
+      "bic_1": 21106.06899350784,
+      "bic_2": 16766.859980072448,
+      "delta_bic_1_minus_2": 4339.209013435393,
+      "warnings": [],
+      "fit_rows_sha256": "3a867a2f6963851caf41c16ce97be48e435b25d8d7172676f558943b5240008e",
+      "n_targets": 9397
+    },
+    "single:HLA-DR": {
+      "mu": [
+        -0.12816216220970003,
+        4.147311723193357
+      ],
+      "variance": [
+        0.43796015753216716,
+        0.43796015753216716
+      ],
+      "pi": 0.009898984249489207,
+      "eta": 0.9444444444444444,
+      "phi": 0.020833333333333332,
+      "q_observed": 0.029976145174875447,
+      "log_likelihood": -18947.511800713233,
+      "map_objective": -18956.234576749615,
+      "n_fit": 16694,
+      "n_iter": 20,
+      "converged": true,
+      "min_objective_step": 0.0,
+      "variance_floor": 0.009694885967826392,
+      "init_quantiles": [
+        5,
+        95
+      ],
+      "d_prime": 6.460512282020668,
+      "bic_1": 46877.67561770197,
+      "bic_2": 37933.91482003611,
+      "delta_bic_1_minus_2": 8943.760797665862,
+      "warnings": [
+        "true prevalence near boundary: prior-sensitive or constant soft targets"
+      ],
+      "fit_rows_sha256": "8809d152b986f4b4ba8a20992f8dd9a0e7674edb83bdf165946f11b60ae0c400",
+      "n_targets": 20881
+    },
+    "single:CD3": {
+      "mu": [
+        -0.2893751705211985,
+        2.861726094350749
+      ],
+      "variance": [
+        0.17187953001105358,
+        0.17187953001105358
+      ],
+      "pi": 0.07687186330917885,
+      "eta": 0.9444444444444444,
+      "phi": 0.020833333333333332,
+      "q_observed": 0.09183304041750545,
+      "log_likelihood": -4445.632273540551,
+      "map_objective": -4454.355049576932,
+      "n_fit": 5292,
+      "n_iter": 11,
+      "converged": true,
+      "min_objective_step": 0.0,
+      "variance_floor": 0.009999920072403549,
+      "init_quantiles": [
+        50,
+        90
+      ],
+      "d_prime": 7.600642071950272,
+      "bic_1": 15035.151040635645,
+      "bic_2": 8925.560353182042,
+      "delta_bic_1_minus_2": 6109.590687453603,
+      "warnings": [],
+      "fit_rows_sha256": "63b6a2cab5a5e80dc33f2c312e55ead85dbaf58f828b8a559fbdbedc8331af6d",
+      "n_targets": 6538
+    }
+  },
+  "target_diagnostics": {
+    "single:CD45": {
+      "posterior_min": 0.012312083505094051,
+      "posterior_max": 0.908758819103241,
+      "posterior_mean": 0.18025539815425873
+    },
+    "single:CD123": {
+      "posterior_min": 0.4543464779853821,
+      "posterior_max": 0.6701855659484863,
+      "posterior_mean": 0.46668756008148193
+    },
+    "single:CD19": {
+      "posterior_min": 0.000561342341825366,
+      "posterior_max": 0.30975666642189026,
+      "posterior_mean": 0.009406864643096924
+    },
+    "single:CD56": {
+      "posterior_min": 7.203117274912074e-05,
+      "posterior_max": 0.05442453548312187,
+      "posterior_mean": 0.0013102238299325109
+    },
+    "single:CD14": {
+      "posterior_min": 0.0075425198301672935,
+      "posterior_max": 0.85860276222229,
+      "posterior_mean": 0.11862033605575562
+    },
+    "single:CD16": {
+      "posterior_min": 0.044451311230659485,
+      "posterior_max": 0.9738003611564636,
+      "posterior_mean": 0.44655609130859375
+    },
+    "single:HLA-DR": {
+      "posterior_min": 0.0005669381935149431,
+      "posterior_max": 0.3118826746940613,
+      "posterior_mean": 0.009738096967339516
+    },
+    "single:CD3": {
+      "posterior_min": 0.004702504258602858,
+      "posterior_max": 0.7905782461166382,
+      "posterior_mean": 0.07886074483394623
+    }
+  },
+  "elapsed_seconds": 3.260724595049396,
+  "targets_path": "/hnvme/workspace/v181bb10-bsccm/targets_v5cx_cf150.npz"
+}

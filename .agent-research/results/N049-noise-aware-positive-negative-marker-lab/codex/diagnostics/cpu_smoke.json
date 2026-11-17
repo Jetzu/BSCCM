@@ -1,0 +1,22 @@
+{
+  "cpu": true,
+  "architecture": "resnet18",
+  "input": "synthetic BF only, actual RawSet + GPUNorm",
+  "train_steps": 2,
+  "batch_size": 4,
+  "eval_rows": 24,
+  "enabled_train_loss": 1.397695779800415,
+  "output_shapes": {
+    "P": [
+      24,
+      13
+    ],
+    "P_pos": [
+      24,
+      8
+    ]
+  },
+  "default_bit_identical": "model, optimizer, scheduler, predictions, training loss",
+  "resume": "defaults compatible; content and weight changes rejected",
+  "torch": "2.15.0+cpu"
+}

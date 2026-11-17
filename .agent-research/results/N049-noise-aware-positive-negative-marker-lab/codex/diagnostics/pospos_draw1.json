@@ -1,0 +1,337 @@
+{
+  "schema": "n049-v1",
+  "source_draw": 1,
+  "source_sha256": "da6ac21d44ba8f4316de53e43541a16bf89a0cf9c30a9f16aada7e0af3b7caf8",
+  "model": "Z -> S -> Y; two tied-variance Gaussian emissions, joint MAP EM + ridge ascent",
+  "eta_bounds": [
+    0.6,
+    0.99
+  ],
+  "phi_bounds": [
+    0.001,
+    0.15
+  ],
+  "eta_beta": [
+    18.0,
+    2.0
+  ],
+  "phi_beta": [
+    2.0,
+    48.0
+  ],
+  "pi_prior": "Uniform(0,1)",
+  "identifiability": "Only q=pi*eta+(1-pi)*phi is identified; eta/phi/pi are prior-dependent.",
+  "bic_note": "BIC uses 4 identifiable marginal parameters versus 2 for one Gaussian; descriptive MAP plug-in.",
+  "fit_selection": "batch=source_draw AND split=0 AND hist_row<0 AND single-marker mask",
+  "target_selection": "same source draw, hist_row<0, original single-marker mask; all splits",
+  "fits": {
+    "single:CD45": {
+      "mu": [
+        -0.44053466733479607,
+        1.4098852979837007
+      ],
+      "variance": [
+        0.24081667279444832,
+        0.24081667279444832
+      ],
+      "pi": 0.235206654628679,
+      "eta": 0.9444444444444444,
+      "phi": 0.020833333333333332,
+      "q_observed": 0.2380728129556549,
+      "log_likelihood": -20791.22242168102,
+      "map_objective": -20799.945197717403,
+      "n_fit": 17753,
+      "n_iter": 61,
+      "converged": true,
+      "min_objective_step": 0.0,
+      "variance_floor": 0.008619200238515031,
+      "init_quantiles": [
+        10,
+        60
+      ],
+      "d_prime": 3.7707438360512326,
+      "bic_1": 47762.43233647875,
+      "bic_2": 41621.58208254087,
+      "delta_bic_1_minus_2": 6140.850253937882,
+      "warnings": [],
+      "fit_rows_sha256": "513c5d8f683853ea9761e9eec1395d029021f46eb35a0cb7046a11475bd581b6",
+      "n_targets": 22033
+    },
+    "single:CD123": {
+      "mu": [
+        -0.021255065316416154,
+        0.02600900558314789
+      ],
+      "variance": [
+        0.740696206516781,
+        0.740696206516781
+      ],
+      "pi": 0.46434629866318655,
+      "eta": 0.9444444444444444,
+      "phi": 0.020833333333333332,
+      "q_observed": 0.44970873418197094,
+      "log_likelihood": -31794.1666395481,
+      "map_objective": -31802.889415584483,
+      "n_fit": 25050,
+      "n_iter": 55,
+      "converged": true,
+      "min_objective_step": 0.0,
+      "variance_floor": 0.007412490296278694,
+      "init_quantiles": [
+        50,
+        90
+      ],
+      "d_prime": 0.05491753871943585,
+      "bic_1": 63608.64089554278,
+      "bic_2": 63628.847795522255,
+      "delta_bic_1_minus_2": -20.206899979471928,
+      "warnings": [
+        "weak separation: d_prime < 1",
+        "one component preferred by BIC"
+      ],
+      "fit_rows_sha256": "760728fb6c49174b4eb421e1378c957eefc531bd47f0cf355baae9fa336aaf62",
+      "n_targets": 30890
+    },
+    "single:CD19": {
+      "mu": [
+        -0.012416928348754318,
+        0.0065694445210592025
+      ],
+      "variance": [
+        0.11218612502939633,
+        0.11218612502939633
+      ],
+      "pi": 0.6855246922377654,
+      "eta": 0.9444444444444444,
+      "phi": 0.020833333333333332,
+      "q_observed": 0.6539915560251583,
+      "log_likelihood": -2001.8512679727264,
+      "map_objective": -2010.5740440091076,
+      "n_fit": 6150,
+      "n_iter": 199,
+      "converged": true,
+      "min_objective_step": 0.0,
+      "variance_floor": 0.001122676973558403,
+      "init_quantiles": [
+        10,
+        60
+      ],
+      "d_prime": 0.05668555875729844,
+      "bic_1": 4021.1473798418515,
+      "bic_2": 4038.5993653886553,
+      "delta_bic_1_minus_2": -17.451985546803826,
+      "warnings": [
+        "weak separation: d_prime < 1",
+        "one component preferred by BIC"
+      ],
+      "fit_rows_sha256": "478ff1e4bfe976592d2fbfbf23df9580112e637d989d19c7dcc86e28c2cd408e",
+      "n_targets": 7736
+    },
+    "single:CD56": {
+      "mu": [
+        -1.4175239208350436,
+        0.19804808345858957
+      ],
+      "variance": [
+        0.2915438689690949,
+        0.2915438689690949
+      ],
+      "pi": 0.9274246179188077,
+      "eta": 0.9444444444444444,
+      "phi": 0.020833333333333332,
+      "q_observed": 0.877413015161121,
+      "log_likelihood": -20368.134618431235,
+      "map_objective": -20376.857394467617,
+      "n_fit": 18786,
+      "n_iter": 66,
+      "converged": true,
+      "min_objective_step": 0.0,
+      "variance_floor": 0.005722817571393479,
+      "init_quantiles": [
+        20,
+        80
+      ],
+      "d_prime": 2.992088000178622,
+      "bic_1": 42847.12609988573,
+      "bic_2": 40775.63270562469,
+      "delta_bic_1_minus_2": 2071.493394261044,
+      "warnings": [],
+      "fit_rows_sha256": "54be1b42ab3235f4c06c2cc6bb0a7c4ffeefc6b927771df72778ec697a5d5235",
+      "n_targets": 23141
+    },
+    "single:CD14": {
+      "mu": [
+        -0.288966559013223,
+        2.35015139490539
+      ],
+      "variance": [
+        0.1865109174499816,
+        0.1865109174499816
+      ],
+      "pi": 0.09599308727893391,
+      "eta": 0.9444444444444444,
+      "phi": 0.020833333333333332,
+      "q_observed": 0.10949361533401535,
+      "log_likelihood": -18888.823430887252,
+      "map_objective": -18897.546206923635,
+      "n_fit": 20598,
+      "n_iter": 9,
+      "converged": true,
+      "min_objective_step": 0.0,
+      "variance_floor": 0.008656260786017158,
+      "init_quantiles": [
+        50,
+        90
+      ],
+      "d_prime": 6.110921037575297,
+      "bic_1": 55502.120099388194,
+      "bic_2": 37817.37865882525,
+      "delta_bic_1_minus_2": 17684.741440562946,
+      "warnings": [],
+      "fit_rows_sha256": "6f9dcb0121e780cc2e10f52c050d574ed78239802f08cd242146bb0ac97ed04e",
+      "n_targets": 25223
+    },
+    "single:CD16": {
+      "mu": [
+        -1.0743109472831325,
+        0.7949720116766127
+      ],
+      "variance": [
+        0.11095365772463407,
+        0.11095365772463407
+      ],
+      "pi": 0.5996948984347263,
+      "eta": 0.9444444444444444,
+      "phi": 0.020833333333333332,
+      "q_observed": 0.5747182048042959,
+      "log_likelihood": -21887.878253669085,
+      "map_objective": -21896.601029705467,
+      "n_fit": 22108,
+      "n_iter": 15,
+      "converged": true,
+      "min_objective_step": 0.0,
+      "variance_floor": 0.00965000792348557,
+      "init_quantiles": [
+        50,
+        90
+      ],
+      "d_prime": 5.611826491413061,
+      "bic_1": 61972.166083043754,
+      "bic_2": 43815.77128658998,
+      "delta_bic_1_minus_2": 18156.394796453773,
+      "warnings": [],
+      "fit_rows_sha256": "4b0283c2c3e7bfa0011df1f6d84c1bc3973fb535dc4a237316d8c821ef24dc77",
+      "n_targets": 27857
+    },
+    "single:HLA-DR": {
+      "mu": [
+        -0.0471542354717243,
+        3.8287638611470256
+      ],
+      "variance": [
+        0.6026993738277728,
+        0.6026993738277728
+      ],
+      "pi": 0.0,
+      "eta": 0.9444444444444444,
+      "phi": 0.012181946021343244,
+      "q_observed": 0.012181946021343244,
+      "log_likelihood": -31853.498824713337,
+      "map_objective": -31862.34475720611,
+      "n_fit": 25980,
+      "n_iter": 61,
+      "converged": true,
+      "min_objective_step": 0.0,
+      "variance_floor": 0.007832418078265601,
+      "init_quantiles": [
+        5,
+        95
+      ],
+      "d_prime": 4.992570670902894,
+      "bic_1": 67401.10360737827,
+      "bic_2": 63747.65797858757,
+      "delta_bic_1_minus_2": 3653.4456287907014,
+      "warnings": [
+        "true prevalence near boundary: prior-sensitive or constant soft targets"
+      ],
+      "fit_rows_sha256": "80f22fb97ac990550ea073af7508c70ad0be8fbe85d0adf0a31aa447949bf48b",
+      "n_targets": 32965
+    },
+    "single:CD3": {
+      "mu": [
+        -0.6668444623019432,
+        0.8504040814932792
+      ],
+      "variance": [
+        0.2721677528444508,
+        0.2721677528444508
+      ],
+      "pi": 0.4533030471812305,
+      "eta": 0.9444444444444444,
+      "phi": 0.020833333333333332,
+      "q_observed": 0.4395090644104421,
+      "log_likelihood": -31921.492152334155,
+      "map_objective": -31930.214928370537,
+      "n_fit": 25208,
+      "n_iter": 28,
+      "converged": true,
+      "min_objective_step": 0.0,
+      "variance_floor": 0.008392550079001929,
+      "init_quantiles": [
+        10,
+        60
+      ],
+      "d_prime": 2.90829459093649,
+      "bic_1": 67140.00796214843,
+      "bic_2": 63883.52397140206,
+      "delta_bic_1_minus_2": 3256.4839907463756,
+      "warnings": [],
+      "fit_rows_sha256": "7f302a2c4f97f82c51cda24fb3d9258a2a44a0c7dc19a2cd044ccd743f56120f",
+      "n_targets": 31332
+    }
+  },
+  "target_diagnostics": {
+    "single:CD45": {
+      "posterior_min": 0.01714998669922352,
+      "posterior_max": 0.9330742955207825,
+      "posterior_mean": 0.23695537447929382
+    },
+    "single:CD123": {
+      "posterior_min": 0.41513726115226746,
+      "posterior_max": 0.6742659211158752,
+      "posterior_mean": 0.4643401503562927
+    },
+    "single:CD19": {
+      "posterior_min": 0.5929145812988281,
+      "posterior_max": 0.7845603823661804,
+      "posterior_mean": 0.6854601502418518
+    },
+    "single:CD56": {
+      "posterior_min": 0.42033928632736206,
+      "posterior_max": 0.9982767701148987,
+      "posterior_mean": 0.9253410696983337
+    },
+    "single:CD14": {
+      "posterior_min": 0.005988670513033867,
+      "posterior_max": 0.8279947638511658,
+      "posterior_mean": 0.09731088578701019
+    },
+    "single:CD16": {
+      "posterior_min": 0.07833954691886902,
+      "posterior_max": 0.9854890704154968,
+      "posterior_mean": 0.6005882024765015
+    },
+    "single:HLA-DR": {
+      "posterior_min": 0.0,
+      "posterior_max": 0.0,
+      "posterior_mean": 0.0
+    },
+    "single:CD3": {
+      "posterior_min": 0.04494994133710861,
+      "posterior_max": 0.974084734916687,
+      "posterior_mean": 0.4570780098438263
+    }
+  },
+  "elapsed_seconds": 7.08629195089452,
+  "targets_path": "/hnvme/workspace/v181bb10-bsccm/targets_v5.npz"
+}

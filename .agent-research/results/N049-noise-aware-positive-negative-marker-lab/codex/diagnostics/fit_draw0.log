@@ -1,0 +1,8 @@
+draw=0 single:CD45 n=8885 d'=3.694 eta=0.9444 phi=0.0208 delta_BIC=2702.0
+draw=0 single:CD123 n=14483 d'=21.678 eta=0.9444 phi=0.0049 delta_BIC=16200.0
+draw=0 single:CD19 n=10305 d'=4.413 eta=0.9444 phi=0.0186 delta_BIC=1417.9
+draw=0 single:CD56 n=11077 d'=2.699 eta=0.9444 phi=0.0208 delta_BIC=521.3
+draw=0 single:CD14 n=14788 d'=6.405 eta=0.9444 phi=0.0208 delta_BIC=14798.8
+draw=0 single:CD16 n=7431 d'=5.308 eta=0.9444 phi=0.0208 delta_BIC=5418.5
+draw=0 single:HLA-DR n=16694 d'=4.675 eta=0.9444 phi=0.0208 delta_BIC=5307.0
+draw=0 single:CD3 n=5292 d'=2.945 eta=0.9444 phi=0.0208 delta_BIC=411.4

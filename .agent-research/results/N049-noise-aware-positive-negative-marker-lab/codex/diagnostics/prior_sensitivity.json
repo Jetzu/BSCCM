@@ -1,0 +1,146 @@
+{
+  "draw0/single:CD45": {
+    "fixed_q": 0.21704502861841726,
+    "fixed_eta": 0.9444444444444444,
+    "alternative_phi": 0.001,
+    "alternative_pi": 0.2289960260941886,
+    "default_pi": 0.21243973023347432,
+    "default_p_true_given_observed_pos": 0.9244050613617985,
+    "alternative_p_true_given_observed_pos": 0.9964477234110656
+  },
+  "draw0/single:CD123": {
+    "fixed_q": 0.004879995732575385,
+    "fixed_eta": 0.9444444444444444,
+    "alternative_phi": 0.001,
+    "alternative_pi": 0.004112585277726824,
+    "default_pi": 0.0,
+    "default_p_true_given_observed_pos": 0.0,
+    "alternative_p_true_given_observed_pos": 0.7959245316395595
+  },
+  "draw0/single:CD19": {
+    "fixed_q": 0.018626744043857925,
+    "fixed_eta": 0.9444444444444444,
+    "alternative_phi": 0.001,
+    "alternative_pi": 0.018683393757475127,
+    "default_pi": 0.0,
+    "default_p_true_given_observed_pos": 0.0,
+    "alternative_p_true_given_observed_pos": 0.9473167933197583
+  },
+  "draw0/single:CD56": {
+    "fixed_q": 0.9428674715912966,
+    "fixed_eta": 0.9444444444444444,
+    "alternative_phi": 0.001,
+    "alternative_pi": 0.9983284942081815,
+    "default_pi": 0.998292600820652,
+    "default_p_true_given_observed_pos": 0.9999622737899989,
+    "alternative_p_true_given_observed_pos": 0.9999982272102472
+  },
+  "draw0/single:CD14": {
+    "fixed_q": 0.14425337826490778,
+    "fixed_eta": 0.9444444444444444,
+    "alternative_phi": 0.001,
+    "alternative_pi": 0.1518408202077694,
+    "default_pi": 0.13362771782065203,
+    "default_p_true_given_observed_pos": 0.8748769508034882,
+    "alternative_p_true_given_observed_pos": 0.9941203513568004
+  },
+  "draw0/single:CD16": {
+    "fixed_q": 0.4616343985133038,
+    "fixed_eta": 0.9444444444444444,
+    "alternative_phi": 0.001,
+    "alternative_pi": 0.4882475075514938,
+    "default_pi": 0.4772582961347049,
+    "default_p_true_given_observed_pos": 0.9764089240339692,
+    "alternative_p_true_given_observed_pos": 0.9988914333635088
+  },
+  "draw0/single:HLA-DR": {
+    "fixed_q": 0.04251999726147414,
+    "fixed_eta": 0.9444444444444444,
+    "alternative_phi": 0.001,
+    "alternative_pi": 0.0440089477509442,
+    "default_pi": 0.02348029778685922,
+    "default_p_true_given_observed_pos": 0.5215389987523145,
+    "alternative_p_true_given_observed_pos": 0.9775166718292514
+  },
+  "draw0/single:CD3": {
+    "fixed_q": 0.07289033325956612,
+    "fixed_eta": 0.9444444444444444,
+    "alternative_phi": 0.001,
+    "alternative_pi": 0.07619985859570075,
+    "default_pi": 0.05636246608554528,
+    "default_p_true_given_observed_pos": 0.7302918725878591,
+    "alternative_p_true_given_observed_pos": 0.9873261638396602
+  },
+  "draw1/single:CD45": {
+    "fixed_q": 0.2380728129556549,
+    "fixed_eta": 0.9444444444444444,
+    "alternative_phi": 0.001,
+    "alternative_pi": 0.2512843383112583,
+    "default_pi": 0.235206654628679,
+    "default_p_true_given_observed_pos": 0.933074278841727,
+    "alternative_p_true_given_observed_pos": 0.9968550980164703
+  },
+  "draw1/single:CD123": {
+    "fixed_q": 0.44970873418197094,
+    "fixed_eta": 0.9444444444444444,
+    "alternative_phi": 0.001,
+    "alternative_pi": 0.4756069494332515,
+    "default_pi": 0.46434629866318655,
+    "default_p_true_given_observed_pos": 0.9751851559399154,
+    "alternative_p_true_given_observed_pos": 0.998833927360738
+  },
+  "draw1/single:CD19": {
+    "fixed_q": 0.6539915560251583,
+    "fixed_eta": 0.9444444444444444,
+    "alternative_phi": 0.001,
+    "alternative_pi": 0.6921356735633524,
+    "default_pi": 0.6855246922377654,
+    "default_p_true_given_observed_pos": 0.9899821811897198,
+    "alternative_p_true_given_observed_pos": 0.9995292533617592
+  },
+  "draw1/single:CD56": {
+    "fixed_q": 0.877413015161121,
+    "fixed_eta": 0.9444444444444444,
+    "alternative_phi": 0.001,
+    "alternative_pi": 0.9289503163879507,
+    "default_pi": 0.9274246179188077,
+    "default_p_true_given_observed_pos": 0.9982767669266749,
+    "alternative_p_true_given_observed_pos": 0.9999190236725642
+  },
+  "draw1/single:CD14": {
+    "fixed_q": 0.10949361533401535,
+    "fixed_eta": 0.9444444444444444,
+    "alternative_phi": 0.001,
+    "alternative_pi": 0.11499735461148723,
+    "default_pi": 0.09599308727893391,
+    "default_p_true_given_observed_pos": 0.8279947438861787,
+    "alternative_p_true_given_observed_pos": 0.9919173127794824
+  },
+  "draw1/single:CD16": {
+    "fixed_q": 0.5747182048042959,
+    "fixed_eta": 0.9444444444444444,
+    "alternative_phi": 0.001,
+    "alternative_pi": 0.6081102159037408,
+    "default_pi": 0.5996948984347263,
+    "default_p_true_given_observed_pos": 0.9854890804811324,
+    "alternative_p_true_given_observed_pos": 0.9993181183738041
+  },
+  "draw1/single:HLA-DR": {
+    "fixed_q": 0.012181946021343244,
+    "fixed_eta": 0.9444444444444444,
+    "alternative_phi": 0.001,
+    "alternative_pi": 0.011852257000599364,
+    "default_pi": 0.0,
+    "default_p_true_given_observed_pos": 0.0,
+    "alternative_p_true_given_observed_pos": 0.9188842454835929
+  },
+  "draw1/single:CD3": {
+    "fixed_q": 0.4395090644104421,
+    "fixed_eta": 0.9444444444444444,
+    "alternative_phi": 0.001,
+    "alternative_pi": 0.46479585204263085,
+    "default_pi": 0.4533030471812305,
+    "default_p_true_given_observed_pos": 0.9740858135299918,
+    "alternative_p_true_given_observed_pos": 0.9987822682367762
+  }
+}
