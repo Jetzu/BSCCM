@@ -10,7 +10,8 @@ Markers (masked; each cell only gets targets it actually measured):
   censored mask: x at the per-(batch,column) floor (authors clip below the 0.5th pct of non-zero values).
 Classes: cls10 = 10 gates (batch-0 'all' only; 13 double-gated -> -1); cls3 = lymphocyte {0}, granulocyte {1,2,3}, monocyte {7,8,9}; RBC(4)/unknown(5,6) -> -1.
 Splits: split_fov (80/10/10 by FOV, seed 0, from v1); batch kept for batch-holdout protocols."""
-import os as _os; CLEAN = _os.environ.get('BSCCM_CLEAN', '0') == '1'; S_ = 'c' if CLEAN else ''   # N029: CLEAN=1 -> no Giemsa (hist_row>=0) cell enters ANY fit/calibration; outputs targets_v*c
+import os as _os; CLEAN = _os.environ.get('BSCCM_CLEAN', '0') == '1'; S_ = 'c' if CLEAN else ''
+CF = _os.environ.get('BSCCM_COFACTOR', 'q10'); TAG = '' if CF == 'q10' else f'_cf{CF}'   # N048: single-marker asinh cofactor (q10 = v3-v5 default; q50 | numeric fixed)   # N029: CLEAN=1 -> no Giemsa (hist_row>=0) cell enters ANY fit/calibration; outputs targets_v*c
 import numpy as np, pandas as pd, json
 W='/hnvme/workspace/v181bb10-bsccm'
 idx=pd.read_parquet(f'{W}/bsccm_index.parquet'); sm=pd.read_parquet(f'{W}/bsccm_sm.parquet'); v1=np.load(f'{W}/targets.npz'); CAL=(v1['split']==0)&((v1['hist_row']<0) if CLEAN else True)
@@ -25,7 +26,8 @@ for j,m in enumerate(S8):
     for bb in (0,1):
         sel=(ab==m)&(b==bb)
         if not sel.any(): continue
-        q10=np.percentile(x[sel&CAL],10); fl=x[sel&CAL].min(); t=np.arcsinh(x/q10)
+        q10=np.percentile(x[sel&CAL],10); fl=x[sel&CAL].min()
+        cof={'q10':q10,'q50':np.percentile(x[sel&CAL],50)}.get(CF) or float(CF); t=np.arcsinh(x/cof)
         z,mu,sd=zfit(t,sel); Y[sel,j]=z[sel]; T[sel,j]=t[sel]; Mk[sel,j]=True; Cz[sel,j]=x[sel]<=fl*(1+1e-6)
         info[f'{names[j]}|b{bb}']=dict(n=int(sel.sum()),q10=float(q10),floor=float(fl),censored=float(Cz[sel,j].mean()),mu=mu,sd=sd)
 for k,g in enumerate(G4):
@@ -44,7 +46,7 @@ for bb in (0,1):
 gates=[c for c in sm.columns if c.startswith('selection_gated_')]; Gm=sm[gates].astype(bool).values; ng=Gm.sum(1)
 cls10=np.where(ng==1,Gm.argmax(1),-1).astype(np.int16)
 map3={0:0,1:1,2:1,3:1,7:2,8:2,9:2}; cls3=np.array([map3.get(int(c),-1) for c in cls10],np.int16)
-np.savez(f'{W}/targets_v3{S_}.npz',Y=Y,T=T,mask=Mk,censored=Cz,names=np.array(names),cls10=cls10,cls3=cls3,cls3_names=np.array(['lymphocyte','granulocyte','monocyte']),
+np.savez(f'{W}/targets_v3{S_}{TAG}.npz',Y=Y,T=T,mask=Mk,censored=Cz,names=np.array(names),cls10=cls10,cls3=cls3,cls3_names=np.array(['lymphocyte','granulocyte','monocyte']),
          gates=np.array([g.replace('selection_gated_','') for g in gates]),split=v1['split'],fov=v1['fov'],hist_row=v1['hist_row'],batch=b,
          slide=pd.factorize(idx.data_path)[0].astype(np.int16),slide_names=np.array(pd.factorize(idx.data_path)[1]),stained=(ab!='unstained'))
 print(json.dumps(info,indent=0)); print('valid per target:',dict(zip(names,Mk.sum(0).tolist())))

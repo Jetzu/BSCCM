@@ -1,0 +1,62 @@
+/tmp/n047_ab/b2_readout.py:55: Pandas4Warning: Setting a new column on a DataFrame with a MultiIndex using a key that is not a full-length tuple is deprecated and will raise in a future version. Use a full-length tuple key instead.
+  q['gap_raw'] = q[('raw', 'IN128')] - q[('raw', 'HO10')]; q['gap_remapped'] = q[('remapped', 'IN128')] - q[('remapped', 'HO10')]
+/tmp/n047_ab/b2_readout.py:55: Pandas4Warning: Setting a new column on a DataFrame with a MultiIndex using a key that is not a full-length tuple is deprecated and will raise in a future version. Use a full-length tuple key instead.
+  q['gap_raw'] = q[('raw', 'IN128')] - q[('raw', 'HO10')]; q['gap_remapped'] = q[('remapped', 'IN128')] - q[('remapped', 'HO10')]
+/tmp/n047_ab/b2_readout.py:55: Pandas4Warning: Setting a new column on a DataFrame with a MultiIndex using a key that is not a full-length tuple is deprecated and will raise in a future version. Use a full-length tuple key instead.
+  q['gap_raw'] = q[('raw', 'IN128')] - q[('raw', 'HO10')]; q['gap_remapped'] = q[('remapped', 'IN128')] - q[('remapped', 'HO10')]
+/tmp/n047_ab/b2_readout.py:55: Pandas4Warning: Setting a new column on a DataFrame with a MultiIndex using a key that is not a full-length tuple is deprecated and will raise in a future version. Use a full-length tuple key instead.
+  q['gap_raw'] = q[('raw', 'IN128')] - q[('raw', 'HO10')]; q['gap_remapped'] = q[('remapped', 'IN128')] - q[('remapped', 'HO10')]
+dose check HO10 antibodies_all/batch_1/slide_replicate_1 {0: np.float64(0.8371), 0.1: np.float64(0.837), 0.2: np.float64(0.8289), 0.3: np.float64(0.8111), 0.5: np.float64(0.7435), 0.65: np.float64(0.6678)}
+dose check HO10 antibodies_all/batch_1/slide_replicate_0 {0: np.float64(0.8071), 0.1: np.float64(0.8108), 0.2: np.float64(0.8068), 0.3: np.float64(0.7937), 0.5: np.float64(0.7385), 0.65: np.float64(0.6754)}
+dose check IN128 antibodies_all/batch_1/slide_replicate_1 {0: np.float64(0.8933), 0.1: np.float64(0.888), 0.2: np.float64(0.8734), 0.3: np.float64(0.8487), 0.5: np.float64(0.7696), 0.65: np.float64(0.6906)}
+dose check IN128 antibodies_all/batch_1/slide_replicate_0 {0: np.float64(0.8131), 0.1: np.float64(0.8114), 0.2: np.float64(0.8014), 0.3: np.float64(0.7827), 0.5: np.float64(0.7219), 0.65: np.float64(0.6621)}
+== draw 0
+                     raw        remapped        A13_gain_sd        gap_raw gap_remapped
+model               HO10  IN128     HO10  IN128        HO10  IN128                     
+target                                                                                 
+grp:CD16           0.828  0.866    0.865  0.872       0.002  0.002   0.038        0.007
+grp:CD3/CD19/CD56  0.791  0.805    0.814  0.815       0.002  0.002   0.014        0.001
+grp:CD45           0.757  0.826    0.822  0.847       0.002  0.002   0.069        0.024
+single:CD123       0.618  0.324    0.619  0.327       0.012  0.016  -0.293       -0.292
+single:CD14        0.865  0.862    0.872  0.859       0.003  0.002  -0.004       -0.012
+single:CD16        0.904  0.885    0.901  0.883       0.001  0.002  -0.020       -0.018
+single:CD19        0.308  0.239    0.298  0.231       0.020  0.011  -0.068       -0.066
+single:CD3         0.559  0.559    0.559  0.548       0.020  0.014  -0.000       -0.012
+single:CD45        0.713  0.708    0.716  0.703       0.006  0.010  -0.004       -0.013
+single:CD56        0.389  0.434    0.419  0.437       0.004  0.004   0.045        0.018
+single:HLA-DR      0.581  0.603    0.661  0.631       0.007  0.008   0.022       -0.030
+MEAN {('raw', 'HO10'): 0.6648, ('raw', 'IN128'): 0.6465, ('remapped', 'HO10'): 0.686, ('remapped', 'IN128'): 0.6503, ('A13_gain_sd', 'HO10'): 0.0072, ('A13_gain_sd', 'IN128'): 0.0066, ('gap_raw', ''): -0.0183, ('gap_remapped', ''): -0.0356}
+MEAN excl CD123 {('gap_raw', ''): 0.0092, ('gap_remapped', ''): -0.01}
+== draw 1
+                     raw        remapped        A13_gain_sd        gap_raw gap_remapped
+model               HO10  IN128     HO10  IN128        HO10  IN128                     
+target                                                                                 
+grp:CD16           0.808  0.821    0.813  0.818       0.002  0.001   0.013        0.005
+grp:CD3/CD19/CD56  0.796  0.825    0.821  0.823       0.001  0.002   0.029        0.002
+grp:CD45           0.657  0.707    0.703  0.706       0.002  0.003   0.050        0.003
+single:CD123       0.484  0.389    0.503  0.378       0.007  0.007  -0.095       -0.126
+single:CD14        0.827  0.836    0.835  0.835       0.001  0.001   0.009       -0.001
+single:CD16        0.901  0.903    0.901  0.901       0.000  0.000   0.002        0.000
+single:CD19        0.397  0.464    0.452  0.490       0.025  0.007   0.067        0.038
+single:CD3         0.606  0.618    0.622  0.613       0.002  0.003   0.012       -0.009
+single:CD45        0.850  0.868    0.860  0.865       0.001  0.001   0.018        0.006
+single:CD56        0.368  0.354    0.372  0.346       0.012  0.009  -0.015       -0.026
+single:HLA-DR      0.448  0.589    0.580  0.591       0.004  0.003   0.141        0.011
+MEAN {('raw', 'HO10'): 0.6494, ('raw', 'IN128'): 0.6705, ('remapped', 'HO10'): 0.6784, ('remapped', 'IN128'): 0.6697, ('A13_gain_sd', 'HO10'): 0.0051, ('A13_gain_sd', 'IN128'): 0.0034, ('gap_raw', ''): 0.0211, ('gap_remapped', ''): -0.0088}
+MEAN excl CD123 {('gap_raw', ''): 0.0327, ('gap_remapped', ''): 0.0029}
+draw       0       1
+k                   
+25   -0.1681 -0.1709
+50   -0.0937 -0.0848
+100  -0.0441 -0.0148
+250   0.0050  0.0201
+500   0.0164  0.0218
+1000  0.0149  0.0260
+draw       0       1
+k                   
+25   -0.1536 -0.1656
+50   -0.0759 -0.0638
+100  -0.0276 -0.0040
+250   0.0109  0.0236
+500   0.0205  0.0239
+1000  0.0446  0.0273

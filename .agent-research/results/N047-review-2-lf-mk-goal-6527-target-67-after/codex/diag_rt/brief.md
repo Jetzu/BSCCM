@@ -1,0 +1,8 @@
+# Diagnosis red-team brief (N047 review 2, BSCCM)
+Read first: .agent-research/notebook/GOAL.md, KNOWLEDGE.md (esp. K001, K019, K023, K028), .agent-research/results/N047-review-2-lf-mk-goal-6527-target-67-after/attempts.md, .agent-research/results/N047-review-2-lf-mk-goal-6527-target-67-after/declined.md (binding). Repo /home/hpc/v181bb/v181bb10/BSCCM read-only (scripts/train_lf.py = GOAL predictor). Data /hnvme/workspace/v181bb10-bsccm read-only. Light computation only (< 5 min CPU); apptainer fails in your sandbox, use a uv venv under /tmp/codex_n047/. Scratch ONLY in /tmp/codex_n047/. Do not edit repo files; do not submit jobs.
+Claim (Claude): .agent-research/results/N047-review-2-lf-mk-goal-6527-target-67-after/diagnosis.md -- 'the frozen pooled-v5 GOAL is saturated for this predictor family; the remaining gap is eval-label
+noise (FOV-level offsets in CD19/CD56/CD3) and draw-specific label definitions'. Evidence: .agent-research/results/N047-review-2-lf-mk-goal-6527-target-67-after/d1_big_ensemble.py/.csv (runs/<run>/eval_preds.npz),
+N038 d2_within_fov.csv, N039 n039_ceiling_per_target.csv, N040/N041/N046 scores (results folders). Do NOT fix. What simpler
+explanation fits equally well? Is the 10-model ensemble a valid saturation test (members highly correlated?) Does within-FOV r
+overstate the achievable (it also removes real between-FOV biology)? Reproduce with command + output; [unverified] otherwise.
+Check the scale labels (knob/module/paradigm) in attempts.md. If nothing breaks, say NOTHING BREAKS. Write .agent-research/results/N047-review-2-lf-mk-goal-6527-target-67-after/codex/diag_rt/diag_redteam.md.

@@ -1,0 +1,28 @@
+ test_draw            target   raw  full_fit_oracle  xdir_transfer  indist_stack_from_train_draw                                                            top_weights
+         0       single:CD45 0.713            0.728          0.693                         0.711            CD45:+1.00 g:CD45:+0.91 CD3:+0.61 g:CD123/HLA-DR/CD14:-0.47
+         0      single:CD123 0.618            0.628          0.573                         0.585                       CD123:+1.00 CD14:+0.13 g:CD16:-0.11 autofl:+0.11
+         0       single:CD19 0.308            0.334          0.195                         0.158                        CD19:+1.00 autofl:+0.33 CD14:-0.22 g:CD16:-0.17
+         0       single:CD56 0.389            0.435          0.374                         0.365 CD56:+1.00 g:CD3/CD19/CD56:+0.37 g:CD123/HLA-DR/CD14:-0.34 CD123:+0.27
+         0       single:CD14 0.865            0.875          0.748                         0.745  CD14:+1.00 g:CD123/HLA-DR/CD14:-0.29 g:CD3/CD19/CD56:-0.17 CD16:-0.15
+         0       single:CD16 0.904            0.903          0.900                         0.899                        CD16:+1.00 g:CD16:+0.52 CD14:-0.25 g:CD45:+0.15
+         0     single:HLA-DR 0.581            0.668          0.386                         0.517                         HLA-DR:+1.00 autofl:+0.57 CD14:+0.31 CD3:-0.15
+         0        single:CD3 0.559            0.587          0.516                         0.548            CD3:+1.00 CD56:-0.98 g:CD123/HLA-DR/CD14:+0.72 g:CD45:+0.71
+         0 grp:CD3/CD19/CD56 0.791            0.818          0.768                         0.780                g:CD3/CD19/CD56:+1.00 CD3:+0.87 g:CD45:+0.72 CD19:+0.62
+         0          grp:CD45 0.757            0.827          0.736                         0.754            g:CD45:+1.00 CD3:+0.87 CD16:-0.58 g:CD123/HLA-DR/CD14:-0.57
+         0          grp:CD16 0.828            0.870          0.834                         0.848                           CD16:+1.00 g:CD16:+0.80 CD3:-0.36 CD45:-0.33
+         1       single:CD45 0.850            0.862          0.847                         0.817                CD45:+1.00 g:CD3/CD19/CD56:+0.59 g:CD45:+0.47 CD3:+0.27
+         1      single:CD123 0.484            0.516          0.441                         0.407                       CD123:+1.00 autofl:-0.29 HLA-DR:+0.17 CD45:-0.11
+         1       single:CD19 0.397            0.505          0.301                         0.268               autofl:-1.00 CD14:+0.42 CD19:+0.38 g:CD3/CD19/CD56:+0.30
+         1       single:CD56 0.368            0.391          0.349                         0.325              CD56:+1.00 CD19:-0.32 CD3:-0.30 g:CD123/HLA-DR/CD14:-0.23
+         1       single:CD14 0.827            0.837          0.801                         0.814         CD14:+1.00 autofl:-0.36 g:CD123/HLA-DR/CD14:+0.32 g:CD45:+0.29
+         1       single:CD16 0.901            0.902          0.896                         0.896                        CD16:+1.00 g:CD16:+0.73 CD14:-0.24 g:CD45:-0.12
+         1     single:HLA-DR 0.448            0.587          0.316                         0.357                      HLA-DR:+1.00 autofl:-0.69 g:CD16:+0.23 CD14:+0.13
+         1        single:CD3 0.606            0.628          0.609                         0.603                CD3:+1.00 g:CD3/CD19/CD56:+0.50 g:CD16:-0.29 CD56:-0.20
+         1 grp:CD3/CD19/CD56 0.796            0.824          0.733                         0.774                g:CD3/CD19/CD56:+1.00 CD45:+0.80 CD3:+0.64 g:CD16:-0.51
+         1          grp:CD45 0.657            0.707          0.661                         0.648                CD45:+1.00 g:CD3/CD19/CD56:+0.69 g:CD45:+0.61 CD3:+0.46
+         1          grp:CD16 0.808            0.817          0.793                         0.798           CD16:+1.00 g:CD16:+0.85 g:CD123/HLA-DR/CD14:+0.29 CD45:-0.22
+              raw  full_fit_oracle  xdir_transfer  indist_stack_from_train_draw
+test_draw                                                                      
+0          0.6648           0.6978         0.6112                        0.6280
+1          0.6494           0.6885         0.6134                        0.6096
+GOAL-equiv {'raw': 0.6571, 'full_fit_oracle': 0.6932, 'xdir_transfer': 0.6123, 'indist_stack_from_train_draw': 0.6188}

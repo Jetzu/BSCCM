@@ -1,0 +1,3 @@
+Wrote [diag_redteam.md](/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N047-review-2-lf-mk-goal-6527-target-67-after/codex/diag_rt/diag_redteam.md).
+
+**BREAKS:** scores reproduce, but saturation remains unproven. Residual correlations average .953–.973, weakening the ensemble test. Within-FOV centering cannot isolate label error, and N042’s architecture module was never tested. The report includes commands, outputs and the scale audit.

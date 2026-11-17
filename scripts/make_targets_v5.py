@@ -10,7 +10,8 @@ Keeps Y_v4 (and Y_v3); adds qc_masked (bool rows x targets)."""
 import os as _os; CLEAN = _os.environ.get('BSCCM_CLEAN', '0') == '1'; S_ = 'c' if CLEAN else ''; D_ = {'hgb': '', 'xfit': 'x'}[_os.environ.get('BSCCM_DETREND', 'hgb')]   # N029 / N036: CLEAN=1 -> no Giemsa (hist_row>=0) cell enters ANY fit/calibration; outputs targets_v*c
 import numpy as np
 W = '/hnvme/workspace/v181bb10-bsccm'
-T = dict(np.load(W + f'/targets_v4{S_}{D_}.npz', allow_pickle=True)); T['slide_names'] = T['slide_names'].astype(str)
+TAG = '' if _os.environ.get('BSCCM_COFACTOR', 'q10') == 'q10' else '_cf' + _os.environ['BSCCM_COFACTOR']   # N048
+T = dict(np.load(W + f'/targets_v4{S_}{D_}{TAG}.npz', allow_pickle=True)); T['slide_names'] = T['slide_names'].astype(str)
 names = [str(n) for n in T['names']]; Y = T['Y'].astype(np.float64).copy(); Mk = T['mask'].copy(); sl, b, sn, sp = T['slide'], T['batch'], T['slide_names'], T['split']
 is_all = np.char.startswith(sn.astype(str), 'antibodies_all/')[sl]
 qc = np.zeros_like(Mk); OKC = (T['hist_row'] < 0) if CLEAN else np.ones(len(sp), bool)
@@ -30,4 +31,4 @@ for j, n in enumerate(names):
         print(f'{n:24s} batch {bb}: per-slide robust z over {len(slides)} slides ({sel.sum()} cells)')
 Y[~Mk] = 0.0
 T['Y_v4'] = T['Y']; T['Y'] = Y.astype(np.float32); T['mask'] = Mk; T['qc_masked'] = qc
-np.savez(W + f'/targets_v5{S_}{D_}.npz', **T); print(f'wrote targets_v5{S_}{D_}.npz')
+np.savez(W + f'/targets_v5{S_}{D_}{TAG}.npz', **T); print(f'wrote targets_v5{S_}{D_}{TAG}.npz')

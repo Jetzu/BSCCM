@@ -6,10 +6,11 @@ User ruling 2026-11-09: position on the slide carries no biology. Also flags GS-
 as gs_pair_suspect (for label hygiene; never used to filter test inputs). Writes targets_v4.npz (+ v3 keys unchanged otherwise)."""
 import os as _os; _os.environ.setdefault('OMP_NUM_THREADS', '3')   # BEFORE sklearn/numpy import: 16 workers x all-core OpenMP stalled N029 (load 800 on 48 cores)
 CLEAN = _os.environ.get('BSCCM_CLEAN', '0') == '1'; S_ = 'c' if CLEAN else ''
+CF = _os.environ.get('BSCCM_COFACTOR', 'q10'); TAG = '' if CF == 'q10' else f'_cf{CF}'   # N048
 DET = _os.environ.get('BSCCM_DETREND', 'hgb'); D_ = {'hgb': '', 'xfit': 'x'}[DET]   # N036: xfit = FOV-fold cross-fitted trend (out-of-fold for every cell)   # N029: CLEAN=1 -> no Giemsa (hist_row>=0) cell enters ANY fit/calibration; outputs targets_v*c
 import numpy as np, pandas as pd, json, sys
 from sklearn.ensemble import HistGradientBoostingRegressor as HGB
-W = '/hnvme/workspace/v181bb10-bsccm'; T = dict(np.load(W + f'/targets_v3{S_}.npz', allow_pickle=True)); T['slide_names'] = T['slide_names'].astype(str);   # own file; object->str so v4 loads without pickle
+W = '/hnvme/workspace/v181bb10-bsccm'; T = dict(np.load(W + f'/targets_v3{S_}{TAG}.npz', allow_pickle=True)); T['slide_names'] = T['slide_names'].astype(str);   # own file; object->str so v4 loads without pickle
 idx = pd.read_parquet(W + '/bsccm_index.parquet')
 P = idx[['fov_center_x', 'fov_center_y', 'fov_center_z', 'position_in_fov_x_pix', 'position_in_fov_y_pix']].values.astype(float)
 slide = idx.data_path.values; Y, Mk, sp = T['Y'].copy(), T['mask'], T['split']; OKC = (T['hist_row'] < 0) if CLEAN else np.ones(len(sp), bool); names = list(T['names']); info = {}
@@ -43,13 +44,13 @@ for s, j, m, trend in outs:
     if m is None: continue
     n = names[j]; before = float(np.var(Y[m, j])); orig = Y[m, j].copy(); Y[m, j] = orig - trend
     info[f'{n}|{s}'] = dict(n=int(len(m)), var_explained_by_trend=float(np.var(trend) / before), corr_trend_target=float(np.corrcoef(trend, orig)[0, 1]))
-T['Y'] = Y.astype(np.float32); T['Y_v3'] = np.load(W + f'/targets_v3{S_}.npz', allow_pickle=True)['Y']
+T['Y'] = Y.astype(np.float32); T['Y_v3'] = np.load(W + f'/targets_v3{S_}{TAG}.npz', allow_pickle=True)['Y']
 # GS-LF pair hygiene flag from the N003 area audit
 d = pd.read_csv('/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N003-dataset-audit-modality-pairing-labels-sp/giemsa_lf_match.csv')
 ok = (d.area_giemsa > 5) & (d.area_dpc > 5); x, yv = np.log(d.area_giemsa[ok]), np.log(d.area_dpc[ok]); b = np.polyfit(yv, x, 1); r = x - np.polyval(b, yv)
 mad = np.median(np.abs(r - np.median(r))) * 1.4826; sus = np.zeros(len(Y), bool); sus[d.global_index[ok][np.abs(r) > 3 * mad].values] = True
 sus[d.global_index[~ok].values] = True; T['gs_pair_suspect'] = sus
-np.savez(W + f'/targets_v4{S_}{D_}.npz', **T)
+np.savez(W + f'/targets_v4{S_}{D_}{TAG}.npz', **T)
 v = pd.DataFrame(info).T; v['target'] = [k.split('|')[0] for k in v.index]
 summ = v.groupby('target')[['var_explained_by_trend', 'corr_trend_target']].median().round(3)
 print(summ.to_string()); print('GS pair suspects:', int(sus.sum()))

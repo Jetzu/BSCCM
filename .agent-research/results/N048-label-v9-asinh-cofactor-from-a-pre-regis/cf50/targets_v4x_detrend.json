@@ -1,0 +1,237 @@
+{
+"single:CD123|antibodies_CD123/batch_0/slide_replicate_0": {
+"n": 18224,
+"var_explained_by_trend": 0.2748970961610615,
+"corr_trend_target": 0.5301894025635264
+},
+"autofl|antibodies_CD123/batch_0/slide_replicate_0": {
+"n": 18224,
+"var_explained_by_trend": 0.9194021996821472,
+"corr_trend_target": 0.9598116129230814
+},
+"single:CD123|antibodies_CD123/batch_1/slide_replicate_0": {
+"n": 30890,
+"var_explained_by_trend": 0.1926547880806777,
+"corr_trend_target": 0.42063633484011614
+},
+"autofl|antibodies_CD123/batch_1/slide_replicate_0": {
+"n": 30890,
+"var_explained_by_trend": 0.8599268294992979,
+"corr_trend_target": 0.9275831825923221
+},
+"single:CD14|antibodies_CD14/batch_0/slide_replicate_0": {
+"n": 18442,
+"var_explained_by_trend": 0.0,
+"corr_trend_target": NaN
+},
+"autofl|antibodies_CD14/batch_0/slide_replicate_0": {
+"n": 18442,
+"var_explained_by_trend": 0.8919384167633425,
+"corr_trend_target": 0.9410542223088125
+},
+"single:CD14|antibodies_CD14/batch_1/slide_replicate_0": {
+"n": 25223,
+"var_explained_by_trend": 0.09475999638979289,
+"corr_trend_target": 0.29047962597867716
+},
+"autofl|antibodies_CD14/batch_1/slide_replicate_0": {
+"n": 25223,
+"var_explained_by_trend": 0.5881787432375917,
+"corr_trend_target": 0.7620111780468755
+},
+"single:CD16|antibodies_CD16/batch_0/slide_replicate_0": {
+"n": 9397,
+"var_explained_by_trend": 0.0,
+"corr_trend_target": NaN
+},
+"autofl|antibodies_CD16/batch_0/slide_replicate_0": {
+"n": 9397,
+"var_explained_by_trend": 0.8573716586028851,
+"corr_trend_target": 0.9245582701169608
+},
+"single:CD16|antibodies_CD16/batch_1/slide_replicate_0": {
+"n": 27857,
+"var_explained_by_trend": 0.0,
+"corr_trend_target": NaN
+},
+"autofl|antibodies_CD16/batch_1/slide_replicate_0": {
+"n": 27857,
+"var_explained_by_trend": 0.9379182394167701,
+"corr_trend_target": 0.9676525005549799
+},
+"single:CD19|antibodies_CD19/batch_0/slide_replicate_0": {
+"n": 12768,
+"var_explained_by_trend": 0.7800187652756643,
+"corr_trend_target": 0.8631134906352826
+},
+"autofl|antibodies_CD19/batch_0/slide_replicate_0": {
+"n": 12768,
+"var_explained_by_trend": 0.5113616057385052,
+"corr_trend_target": 0.6691778697310741
+},
+"single:CD19|antibodies_CD19/batch_1/slide_replicate_0": {
+"n": 7736,
+"var_explained_by_trend": 0.8908875484897493,
+"corr_trend_target": 0.9305062210518977
+},
+"autofl|antibodies_CD19/batch_1/slide_replicate_0": {
+"n": 7736,
+"var_explained_by_trend": 0.4340478180354101,
+"corr_trend_target": 0.5607791092116203
+},
+"single:CD3|antibodies_CD3/batch_0/slide_replicate_0": {
+"n": 6538,
+"var_explained_by_trend": 0.11296255164152481,
+"corr_trend_target": 0.21692882680396133
+},
+"autofl|antibodies_CD3/batch_0/slide_replicate_0": {
+"n": 6538,
+"var_explained_by_trend": 0.8236197410415875,
+"corr_trend_target": 0.8933637606033366
+},
+"single:CD3|antibodies_CD3/batch_1/slide_replicate_0": {
+"n": 31332,
+"var_explained_by_trend": 0.0,
+"corr_trend_target": NaN
+},
+"autofl|antibodies_CD3/batch_1/slide_replicate_0": {
+"n": 31332,
+"var_explained_by_trend": 0.6283150088936936,
+"corr_trend_target": 0.7709613499633972
+},
+"single:CD45|antibodies_CD45/batch_0/slide_replicate_0": {
+"n": 10951,
+"var_explained_by_trend": 0.0,
+"corr_trend_target": NaN
+},
+"autofl|antibodies_CD45/batch_0/slide_replicate_0": {
+"n": 10951,
+"var_explained_by_trend": 0.9154037869972724,
+"corr_trend_target": 0.9554205364849473
+},
+"single:CD45|antibodies_CD45/batch_1/slide_replicate_0": {
+"n": 22033,
+"var_explained_by_trend": 0.08494814417417482,
+"corr_trend_target": 0.26664802247675207
+},
+"autofl|antibodies_CD45/batch_1/slide_replicate_0": {
+"n": 22033,
+"var_explained_by_trend": 0.8549275875244223,
+"corr_trend_target": 0.9218068108701114
+},
+"single:CD56|antibodies_CD56/batch_0/slide_replicate_0": {
+"n": 14212,
+"var_explained_by_trend": 0.45237658117693136,
+"corr_trend_target": 0.6380993286351022
+},
+"autofl|antibodies_CD56/batch_0/slide_replicate_0": {
+"n": 14212,
+"var_explained_by_trend": 0.7895930357237765,
+"corr_trend_target": 0.8917022476737139
+},
+"single:CD56|antibodies_CD56/batch_1/slide_replicate_0": {
+"n": 23141,
+"var_explained_by_trend": 0.24671982339139664,
+"corr_trend_target": 0.4326313058780079
+},
+"autofl|antibodies_CD56/batch_1/slide_replicate_0": {
+"n": 23141,
+"var_explained_by_trend": 0.5658382936331111,
+"corr_trend_target": 0.7031491658908954
+},
+"single:HLA-DR|antibodies_HLA-DR/batch_0/slide_replicate_0": {
+"n": 20881,
+"var_explained_by_trend": 0.05644572611575022,
+"corr_trend_target": 0.23571566997887555
+},
+"autofl|antibodies_HLA-DR/batch_0/slide_replicate_0": {
+"n": 20881,
+"var_explained_by_trend": 0.926377811802074,
+"corr_trend_target": 0.9606281671715016
+},
+"single:HLA-DR|antibodies_HLA-DR/batch_1/slide_replicate_0": {
+"n": 32965,
+"var_explained_by_trend": 0.16855807668119235,
+"corr_trend_target": 0.3889319016913646
+},
+"autofl|antibodies_HLA-DR/batch_1/slide_replicate_0": {
+"n": 32965,
+"var_explained_by_trend": 0.49668304719324996,
+"corr_trend_target": 0.7050380001002625
+},
+"grp:CD123/HLA-DR/CD14|antibodies_all/batch_0/slide_replicate_0": {
+"n": 10210,
+"var_explained_by_trend": 0.16704716487782065,
+"corr_trend_target": 0.3362016027953109
+},
+"grp:CD3/CD19/CD56|antibodies_all/batch_0/slide_replicate_0": {
+"n": 10210,
+"var_explained_by_trend": 0.1371421364815148,
+"corr_trend_target": 0.293707767270537
+},
+"grp:CD45|antibodies_all/batch_0/slide_replicate_0": {
+"n": 10210,
+"var_explained_by_trend": 0.11461637930568377,
+"corr_trend_target": 0.24278834216342166
+},
+"grp:CD16|antibodies_all/batch_0/slide_replicate_0": {
+"n": 10210,
+"var_explained_by_trend": 0.0,
+"corr_trend_target": NaN
+},
+"grp:CD123/HLA-DR/CD14|antibodies_all/batch_1/slide_replicate_0": {
+"n": 13675,
+"var_explained_by_trend": 0.25846451292304407,
+"corr_trend_target": 0.4353426665764675
+},
+"grp:CD3/CD19/CD56|antibodies_all/batch_1/slide_replicate_0": {
+"n": 13675,
+"var_explained_by_trend": 0.2586711244919887,
+"corr_trend_target": 0.4615031777036624
+},
+"grp:CD45|antibodies_all/batch_1/slide_replicate_0": {
+"n": 13675,
+"var_explained_by_trend": 0.3654352708835989,
+"corr_trend_target": 0.56476226890638
+},
+"grp:CD16|antibodies_all/batch_1/slide_replicate_0": {
+"n": 13675,
+"var_explained_by_trend": 0.14573705102871615,
+"corr_trend_target": 0.30048899862718237
+},
+"grp:CD123/HLA-DR/CD14|antibodies_all/batch_1/slide_replicate_1": {
+"n": 13399,
+"var_explained_by_trend": 0.1455819775585851,
+"corr_trend_target": 0.2963356235710051
+},
+"grp:CD3/CD19/CD56|antibodies_all/batch_1/slide_replicate_1": {
+"n": 13399,
+"var_explained_by_trend": 0.0,
+"corr_trend_target": NaN
+},
+"grp:CD45|antibodies_all/batch_1/slide_replicate_1": {
+"n": 13399,
+"var_explained_by_trend": 0.0,
+"corr_trend_target": NaN
+},
+"grp:CD16|antibodies_all/batch_1/slide_replicate_1": {
+"n": 13399,
+"var_explained_by_trend": 0.0,
+"corr_trend_target": NaN
+},
+"autofl|antibodies_unstained/batch_0/slide_replicate_0": {
+"n": 16338,
+"var_explained_by_trend": 0.5483327985690374,
+"corr_trend_target": 0.7339130600978269
+},
+"autofl|antibodies_unstained/batch_1/slide_replicate_0": {
+"n": 32674,
+"var_explained_by_trend": 0.38035733802588556,
+"corr_trend_target": 0.6190913396619171
+},
+"autofl|antibodies_unstained/batch_1/slide_replicate_1": {
+"n": 14055,
+"var_explained_by_trend": 0.9090385327865156,
+"corr_trend_target": 0.9451520831422466
+}
+}

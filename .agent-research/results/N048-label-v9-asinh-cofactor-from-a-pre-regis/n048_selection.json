@@ -1,0 +1,24 @@
+{
+ "q50": {
+  "mean_excess": 0.16033505605621906,
+  "lineage_r_ok": true,
+  "no_rise_ok": true,
+  "passes": true
+ },
+ "50": {
+  "mean_excess": 0.1271660904922047,
+  "lineage_r_ok": true,
+  "no_rise_ok": true,
+  "passes": true
+ },
+ "150": {
+  "mean_excess": 0.10880906467776022,
+  "lineage_r_ok": true,
+  "no_rise_ok": true,
+  "passes": true
+ },
+ "q10": {
+  "mean_excess": 0.20250082268906733
+ },
+ "SELECTED": "150"
+}
