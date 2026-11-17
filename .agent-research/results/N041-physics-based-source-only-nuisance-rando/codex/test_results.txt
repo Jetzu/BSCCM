@@ -1,0 +1,16 @@
+test_actual_consistency_loss_has_two_symmetric_gradients (test_phys_aug.PhysAugTests.test_actual_consistency_loss_has_two_symmetric_gradients) ... ok
+test_added_shot_variance_matches_signal (test_phys_aug.PhysAugTests.test_added_shot_variance_matches_signal) ... ok
+test_calibration_recovers_synthetic_gain_and_validates_before_image_read (test_phys_aug.PhysAugTests.test_calibration_recovers_synthetic_gain_and_validates_before_image_read) ... ok
+test_checkpoint_config_defaults_omit_new_options (test_phys_aug.PhysAugTests.test_checkpoint_config_defaults_omit_new_options) ... ok
+test_family_gains_and_offsets_shared_in_actual_output (test_phys_aug.PhysAugTests.test_family_gains_and_offsets_shared_in_actual_output) ... ok
+test_gain_offset_probability_and_defocus_statistics (test_phys_aug.PhysAugTests.test_gain_offset_probability_and_defocus_statistics) ... ok
+test_no_channel_mixing_and_fractional_shift_geometry (test_phys_aug.PhysAugTests.test_no_channel_mixing_and_fractional_shift_geometry) ... ok
+test_prep_eval_and_off_path_match_original_norm_and_preserve_phase (test_phys_aug.PhysAugTests.test_prep_eval_and_off_path_match_original_norm_and_preserve_phase) ... ok
+test_shape_dtype_determinism_and_no_mutation (test_phys_aug.PhysAugTests.test_shape_dtype_determinism_and_no_mutation) ... ok
+test_unperturbed_fraction_exact_including_suboffset_counts (test_phys_aug.PhysAugTests.test_unperturbed_fraction_exact_including_suboffset_counts) ... ok
+test_zero_is_identity_without_rng_use (test_phys_aug.PhysAugTests.test_zero_is_identity_without_rng_use) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.242s
+
+OK

@@ -1,0 +1,84 @@
+{
+ "png": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/plots/n040-noisy-student-goal-r_2026-11-17_1839.png",
+ "svg": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/plots/n040-noisy-student-goal-r_2026-11-17_1839.svg",
+ "created": "2026-11-17T18:39:48",
+ "command": [
+  "/home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python",
+  "/home/hpc/v181bb/v181bb10/.claude/skills/work-log/bin/plot_compare.py",
+  "--metric",
+  "n040-noisy-student-goal-r",
+  "--csv",
+  ".agent-research/results/N040-dense-label-completion-noisy-student-lab/plot_n040.csv",
+  "--item",
+  "N040",
+  "--baseline",
+  "N031 ensemble",
+  "--direction",
+  "higher",
+  "--noise",
+  "0.0027"
+ ],
+ "cwd": "/home/hpc/v181bb/v181bb10/BSCCM",
+ "source": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N040-dense-label-completion-noisy-student-lab/plot_n040.csv",
+ "notes": {
+  "item": "N040",
+  "metric": "n040-noisy-student-goal-r",
+  "direction": "higher",
+  "noise_sd": 0.0027,
+  "stats": null
+ },
+ "width_in": 8.5,
+ "height_in": 2.5591,
+ "png_px": [
+  3840,
+  1156
+ ],
+ "significance": "two-sided; Holm-corrected over all comparisons of a panel (one family per panel); * <0.05 ** <0.01 *** <0.001 **** <0.0001",
+ "panels": [
+  {
+   "panel": "a",
+   "kind": "raincloud",
+   "groups": [
+    "N031 ensemble",
+    "N040 student ensemble"
+   ],
+   "colors": [
+    "#767E86",
+    "#3A6C9E"
+   ],
+   "n": [
+    22,
+    22
+   ],
+   "mean": [
+    0.6527410549948667,
+    0.6563707944947081
+   ],
+   "sd": [
+    0.1933359253287468,
+    0.1920449817178889
+   ],
+   "median": [
+    0.6834517100714678,
+    0.6854208821323726
+   ],
+   "whisker": null,
+   "stats": [
+    {
+     "test": "Wilcoxon signed-rank",
+     "p": 0.0012617111206054688,
+     "n_i": 22,
+     "n_j": 22,
+     "p_holm": 0.0012617111206054688,
+     "stars": "**",
+     "a": "N031 ensemble",
+     "b": "N040 student ensemble",
+     "reference": "N031 ensemble"
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "n040-noisy-student-goal-r"
+  }
+ ],
+ "matplotlib": "3.11.0"
+}
