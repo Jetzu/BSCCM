@@ -1,0 +1,136 @@
+{
+  "config": {
+    "data_root": "/hnvme/workspace/v181bb10-bsccm",
+    "repo": "/home/hpc/v181bb/v181bb10/BSCCM",
+    "sotalign_root": "/hnvme/workspace/v181bb10-bsccm/external/SOTAlign",
+    "out": "/tmp/codex_n045/smoke",
+    "lf_dir": "/hnvme/workspace/v181bb10-bsccm/runs/n029_r18_v4c_fov/probe",
+    "giemsa": "/hnvme/workspace/v181bb10-bsccm/emb/giemsa_dinobloom_B.npy",
+    "pbc": "/hnvme/workspace/v181bb10-bsccm/emb/pbc_dinobloom_B.npy",
+    "targets": "/hnvme/workspace/v181bb10-bsccm/targets_v5c.npz",
+    "legacy_truth": "/hnvme/workspace/v181bb10-bsccm/gs_autofl_detrended.npy",
+    "device": "cpu",
+    "protocols": [
+      "cross_b0to1",
+      "cross_b1to0",
+      "fov_b0",
+      "fov_b1"
+    ],
+    "arms": [
+      "raw_ridge",
+      "procrustes",
+      "cca",
+      "siglip_pairs",
+      "sotalign",
+      "sotalign_lf_only",
+      "n009_siglip"
+    ],
+    "seeds": [
+      0
+    ],
+    "steps": 6,
+    "batch_pairs": 32,
+    "batch_unpaired": 32,
+    "dim": 32,
+    "lr": 0.0001,
+    "wd": 1e-05,
+    "optimizer": "lion",
+    "cca_lam": 0.1,
+    "klot_weight": 0.001,
+    "eps_student": 0.05,
+    "eps_teacher": 0.01,
+    "sinkhorn_iters": 100,
+    "sail_negatives": "expanded",
+    "n_unpaired": 128,
+    "max_pairs": 0,
+    "max_val_pairs": 0,
+    "max_pbc": 128,
+    "head_train": 128,
+    "head_val": 64,
+    "min_head_labels": 3,
+    "ridge_alphas": [
+      1.0,
+      10.0,
+      100.0,
+      1000.0
+    ],
+    "eval_every": 3,
+    "checkpoint_every": 3,
+    "threads": 4,
+    "allow_unverified_lf_provenance": false,
+    "smoke": true,
+    "environment": {
+      "torch": "2.15.0+cpu",
+      "numpy": "2.4.6",
+      "scipy": "1.17.1",
+      "sklearn": "1.9.1",
+      "device": "cpu"
+    }
+  },
+  "sources": {
+    "inputs": {
+      "/hnvme/workspace/v181bb10-bsccm/targets_v5c.npz": {
+        "bytes": 113982888,
+        "mtime_ns": 1794300303000000000,
+        "sha256": "99697f2898946d4852c57357a23b86c0220e6d1825338626de1719e372a39683"
+      },
+      "/hnvme/workspace/v181bb10-bsccm/emb/giemsa_dinobloom_B.npy": {
+        "bytes": 48267392,
+        "mtime_ns": 1794153270000000000
+      },
+      "/hnvme/workspace/v181bb10-bsccm/emb/pbc_dinobloom_B.npy": {
+        "bytes": 52506752,
+        "mtime_ns": 1794162726000000000
+      },
+      "/hnvme/workspace/v181bb10-bsccm/emb/pbc_labels.npy": {
+        "bytes": 136864,
+        "mtime_ns": 1794162726000000000,
+        "sha256": "fe4ded27529e29c7a6e97555d1dfaba6a92933f369a55c5a4d396e38fe2f7c9b"
+      },
+      "/hnvme/workspace/v181bb10-bsccm/emb/pbc_classes.json": {
+        "bytes": 100,
+        "mtime_ns": 1794162726000000000,
+        "sha256": "edbc6052ca745d0069b2bb770fbdea80f3021ee25b02ad602e045d6213d69c07"
+      },
+      "/hnvme/workspace/v181bb10-bsccm/pack/hist_cells.npy": {
+        "bytes": 125824,
+        "mtime_ns": 1794152228000000000,
+        "sha256": "5c7eb565618fb0e125c56c3b8505fed8cbbd6b8ac86bc5e5f51b35ba60def8aa"
+      },
+      "/hnvme/workspace/v181bb10-bsccm/runs/n029_r18_v4c_fov/probe/lf_feats_all.npy": {
+        "bytes": 422851712,
+        "mtime_ns": 1794302636000000000
+      },
+      "/hnvme/workspace/v181bb10-bsccm/runs/n029_r18_v4c_fov/probe/lf_feats_hist.npy": {
+        "bytes": 32178304,
+        "mtime_ns": 1794302637000000000
+      },
+      "/hnvme/workspace/v181bb10-bsccm/runs/n029_r18_v4c_fov/probe/lf_feats_hist_indices.npy": {
+        "bytes": 125824,
+        "mtime_ns": 1794302637000000000,
+        "sha256": "5c7eb565618fb0e125c56c3b8505fed8cbbd6b8ac86bc5e5f51b35ba60def8aa"
+      },
+      "/hnvme/workspace/v181bb10-bsccm/runs/n029_r18_v4c_fov/probe/lf_feats_hist_hist_row.npy": {
+        "bytes": 62976,
+        "mtime_ns": 1794302637000000000,
+        "sha256": "d8303d01f7669042186411fa9373152b97aca0978697471cdd24474edc1a69d5"
+      },
+      "/hnvme/workspace/v181bb10-bsccm/gs_autofl_detrended.npy": {
+        "bytes": 62976,
+        "mtime_ns": 1794211802000000000,
+        "sha256": "6860f361008246421e41c95a648b96d495ca1ebc1cd8fb7e91beb78a64af2a9a"
+      }
+    },
+    "upstream_sha256": {
+      "src/optimal_transport/matching.py": "d56505aaf64f202148f482afacb6d89bd8bb0fe9bcba05be3e7f3dbf854faef4",
+      "src/optimal_transport/similarity.py": "d076eb2ffc3b8f6d1455938c1dc9ba95c8740ba046c79ac0f25017144764d0a3",
+      "src/optimal_transport/klot.py": "6670cb96d6e56123baf524774647d55e9e30a9c1a563fa402c459454adb47e2c",
+      "src/optimal_transport/utils.py": "afe187c8634b5e8bbf0e99b53e211d7ab4d3df954878a2ccabd0206cd8160b8e",
+      "src/models/sail_model.py": "1e2f74d36eeed0ace0cb4aedb7b4f80a5c3c1dc8c4f5cc8ca09a9d4047044251",
+      "src/models/linear.py": "96953d329a901fb35f74b59efbe473d1e2617da1e799da288aa01347597b855b",
+      "scripts/sotalign.sh": "978ce0fae2b70cd7806c93ae13a20afac11822aaf34cc9a0e00c932453e2fc71"
+    },
+    "runner_sha256": "f06fb8c9f566d2873a538bf2a9ce628f2d542be2b5b791d1cd68633a774fa872"
+  },
+  "fingerprint": "80e1a4c0399e73e87656edc974f4b134e038277d1d8a598c126937fcf3e1d51b"
+}

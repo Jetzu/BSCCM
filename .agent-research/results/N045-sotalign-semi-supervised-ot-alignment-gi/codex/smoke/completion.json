@@ -1,0 +1,29 @@
+{
+  "completed": true,
+  "smoke": true,
+  "sample_budget": {
+    "unique_bsccm_cells": 1408,
+    "unique_pbc_cells": 256,
+    "total_unique_cells": 1664,
+    "unique_gs_cells": 768
+  },
+  "protocols": [
+    "cross_b0to1",
+    "cross_b1to0",
+    "fov_b0",
+    "fov_b1"
+  ],
+  "seeds": [
+    0
+  ],
+  "arms": [
+    "raw_ridge",
+    "procrustes",
+    "cca",
+    "siglip_pairs",
+    "sotalign",
+    "sotalign_lf_only",
+    "n009_siglip"
+  ],
+  "note": "single supplied LF teacher; alignment seeds are not teacher replications"
+}

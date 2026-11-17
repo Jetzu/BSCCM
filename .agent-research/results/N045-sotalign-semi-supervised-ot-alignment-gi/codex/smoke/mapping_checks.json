@@ -1,0 +1,54 @@
+{
+  "n_global": 412941,
+  "n_pairs": 15712,
+  "hist_mapping_exact": true,
+  "lf_hist_index_mapping_exact": true,
+  "lf_independent_pass_max_abs": 0.0078125,
+  "lf_independent_pass_mean_abs": 8.592352465737816e-08,
+  "lf_independent_pass_rmse": 1.3487183217589786e-05,
+  "canonical_lf": "lf_feats_all.npy",
+  "smoke_unique_gs_cells": 768,
+  "pbc_a_n": 128,
+  "pbc_b_n": 128,
+  "pbc_split": "sorted original filename order, even adaptation A / odd evaluation B",
+  "giemsa_slides": [
+    {
+      "draw": 0,
+      "slide": 2,
+      "name": "antibodies_unstained/batch_0/slide_replicate_0",
+      "n": 10015
+    },
+    {
+      "draw": 1,
+      "slide": 19,
+      "name": "antibodies_unstained/batch_1/slide_replicate_1",
+      "n": 5697
+    }
+  ],
+  "gs_pair_suspect_n": 567,
+  "test_suspects_filtered": false,
+  "lf_teacher_args": {
+    "out": "/hnvme/workspace/v181bb10-bsccm/runs/n029_r18_v4c_fov",
+    "protocol": "fov",
+    "channels": "all",
+    "phase": 1,
+    "arch": "resnet18",
+    "epochs": 8,
+    "bs": 256,
+    "lr": 0.001,
+    "workers": 15,
+    "max_train": 0,
+    "seed": 0,
+    "w_cls": 0.5,
+    "include_gs": 0,
+    "init_ssl": "",
+    "tail_weight": 0.0,
+    "focal_c10": 0.0,
+    "targets": "targets_v4c.npz",
+    "dann": 0.0,
+    "stem": "std",
+    "zoom": 1,
+    "dual_zoom": 1,
+    "adabn": 0
+  }
+}

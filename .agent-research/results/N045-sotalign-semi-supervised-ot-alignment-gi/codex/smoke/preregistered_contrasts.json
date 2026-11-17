@@ -1,0 +1,114 @@
+{
+  "CD16 neutrophil>lymphocyte": [
+    "single:CD16",
+    [
+      "neutrophil"
+    ],
+    [
+      "lymphocyte"
+    ]
+  ],
+  "CD16 neutrophil>eosinophil": [
+    "single:CD16",
+    [
+      "neutrophil"
+    ],
+    [
+      "eosinophil"
+    ]
+  ],
+  "CD14 monocyte>neutrophil+lymphocyte": [
+    "single:CD14",
+    [
+      "monocyte"
+    ],
+    [
+      "neutrophil",
+      "lymphocyte"
+    ]
+  ],
+  "grpCD3/19/56 lymphocyte>neutrophil+monocyte": [
+    "grp:CD3/CD19/CD56",
+    [
+      "lymphocyte"
+    ],
+    [
+      "neutrophil",
+      "monocyte"
+    ]
+  ],
+  "CD3 lymphocyte>neutrophil+monocyte": [
+    "single:CD3",
+    [
+      "lymphocyte"
+    ],
+    [
+      "neutrophil",
+      "monocyte"
+    ]
+  ],
+  "CD45 lymphocyte>neutrophil": [
+    "single:CD45",
+    [
+      "lymphocyte"
+    ],
+    [
+      "neutrophil"
+    ]
+  ],
+  "CD123 basophil>rest": [
+    "single:CD123",
+    [
+      "basophil"
+    ],
+    [
+      "neutrophil",
+      "lymphocyte",
+      "monocyte",
+      "eosinophil"
+    ]
+  ],
+  "HLA-DR monocyte>neutrophil": [
+    "single:HLA-DR",
+    [
+      "monocyte"
+    ],
+    [
+      "neutrophil"
+    ]
+  ],
+  "CD16 neutrophil>ig (label-held-out)": [
+    "single:CD16",
+    [
+      "neutrophil"
+    ],
+    [
+      "ig"
+    ]
+  ],
+  "CD45 lymphocyte>erythroblast (label-held-out)": [
+    "single:CD45",
+    [
+      "lymphocyte"
+    ],
+    [
+      "erythroblast"
+    ]
+  ],
+  "CD14 monocyte>all_other_classes": [
+    "single:CD14",
+    [
+      "monocyte"
+    ],
+    null
+  ],
+  "CD3 lymphocyte>neutrophil": [
+    "single:CD3",
+    [
+      "lymphocyte"
+    ],
+    [
+      "neutrophil"
+    ]
+  ]
+}

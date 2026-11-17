@@ -1,0 +1,12 @@
+[
+  {
+    "arm": "raw_giemsa",
+    "protocol": "independent_PBC_sanity",
+    "seed": -1,
+    "family": "PBC_sanity",
+    "split": "PBC_B",
+    "metric": "knn_accuracy",
+    "value": 0.8671875,
+    "n": 128
+  }
+]

@@ -1,0 +1,18 @@
+1374892 cross_b0to1 seed0
+1374893 cross_b1to0 seed0
+1374894 fov_b0 seed0
+1374895 fov_b1 seed0
+# resubmitted after output-guard failure (1374892-5: output inside data tree)
+1374934 cross_b0to1 seed0
+1374935 cross_b1to0 seed0
+1374936 fov_b0 seed0
+1374937 fov_b1 seed0
+# v2 CPU runs (red-team: exit 143, 4,500 steps, PBC original vs re-centred on training-draw Giemsa mean)
+1375024 original cross_b0to1 seed0 steps4500
+1375025 original cross_b1to0 seed0 steps4500
+1375026 original fov_b0 seed0 steps4500
+1375027 original fov_b1 seed0 steps4500
+1375028 recentred cross_b0to1 seed0 steps4500
+1375029 recentred cross_b1to0 seed0 steps4500
+1375030 recentred fov_b0 seed0 steps4500
+1375031 recentred fov_b1 seed0 steps4500
