@@ -17,3 +17,9 @@
 - merged 0, superseded 0, verified 0 (no [unverified] bullets), stale 0, promoted 0 (rules unchanged, 2 lines, none dropped).
 - Headline rewritten from 15 to 10 verified bullets (K019 K025 K023 K020 K011 K012 K016 K001 K007 K008); K010/K013/K014/K015/K021/K022/K024 moved to Topics "Clinical transfer and LF teacher". All K001-K027 retained.
 - Not covered: N034 K026/K027 are [partial] 1-seed; N035 result pending (open); N036 open. INDEX.md/N035 item/N036 files carry uncommitted edits of a parallel session and were NOT staged.
+
+## 2026-11-18 (through N051; N044 open and parallel N052+ left untouched)
+- fixed 1: check.sh printed nothing; INDEX N034 row had its commit hash in the outcome column -> moved to commit column (outcome text added). Other done rows already carry hashes.
+- KNOWLEDGE: added K031 (N036/N037/N039 label-side fixes, flat/QC-fail), K032 (N041/N042/N050 model-side nulls), K033 (N040/N046 noisy student), K034 (N049 noise model not identifiable + N051 correction), K035 (N045 SOTAlign negative); K031-K035 numbers re-read from results CSVs. Headline rewritten from 13 to 10 bullets (K030 K029 K028 K033 K019 K025 K023 K011 K001 K007); K008/K012/K016/K020 moved to Topics. K023 annotated: v5-metric best, GOAL since re-based (K030).
+- merged 0, superseded 0, verified 0 (no [unverified] bullets), stale 0, promoted 2 rules (re-base is not progress; <2 x noise = flat; total 4 lines, none dropped).
+- Not covered: N044 (open). K035 [partial] 1-seed screen. N043 figures item has no knowledge bullet (infra).
