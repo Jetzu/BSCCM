@@ -40,7 +40,7 @@ From review N038 (results/N038-review-lf-mk-common-11-batch-held-out-go/ideas.md
 
 - Stage 2 (jobs 1374321/22/25/26, 1 H100 each, 12-22 min; runs/n040_student_{base,zoom2}_{b10,b01}; teacher = N031 base+zoom2
   predictions on the training draw, pseudo labels only where a cell lacks a real label, common-11 columns, w .3, phys aug .7):
-  GOAL (results/N041-*/scores_goal.csv, scores_per_target.csv; plot .agent-research/plots/n040-noisy-student-goal-r_2026-11-17_1839.png):
+  GOAL (.agent-research/results/N041-physics-based-source-only-nuisance-rando/scores_goal.csv and scores_per_target.csv; plot .agent-research/plots/n040-noisy-student-goal-r_2026-11-17_1839.png):
   student ensemble .6564 (b10 .6650, b01 .6477) vs N031 ensemble .6527 (+.0037; better on 16/22 marker x direction items, Wilcoxon
   p .0013); student base alone .6529 vs N031 base .6425 (+.0103, 19/22, p 3e-5) = one model matches the old two-model ensemble.
   Phys aug alone (N041) gives base +.0025, so pseudo labels add ~+.008 to a single model.
