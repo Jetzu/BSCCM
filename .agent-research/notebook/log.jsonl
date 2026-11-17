@@ -54,3 +54,7 @@
 {"ts":"2026-11-17T19:53:20+01:00","event":"review_closed","item":"N047"}
 {"ts":"2026-11-17T20:24:51+01:00","event":"goal_effect","item":"N050","effect":"flat","value":"0.6533","scale":"module","why":""}
 {"ts":"2026-11-17T20:25:38+01:00","event":"goal_effect","item":"N048","effect":"flat","value":"0.6522","scale":"module","why":""}
+{"ts":"2026-11-17T20:26:30+01:00","event":"goal_effect","item":"N049","effect":"flat","value":"void","scale":"paradigm","why":""}
+{"ts":"2026-11-17T21:25:36+01:00","event":"goal_effect","item":"N051","effect":"n/a","value":"-","scale":"?","why":"measurement"}
+{"ts":"2026-11-17T21:25:36+01:00","event":"goal_effect","item":"N048","effect":"flat","value":"0.6804","scale":"module","why":""}
+{"ts":"2026-11-17T21:25:42+01:00","event":"goal_effect","item":"N048","effect":"improved","value":"0.6804","scale":"module","why":""}

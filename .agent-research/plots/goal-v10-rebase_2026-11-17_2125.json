@@ -1,0 +1,101 @@
+{
+ "png": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/plots/goal-v10-rebase_2026-11-17_2125.png",
+ "svg": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/plots/goal-v10-rebase_2026-11-17_2125.svg",
+ "created": "2026-11-17T21:25:36",
+ "command": [
+  "/home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python",
+  "/home/hpc/v181bb/v181bb10/.claude/skills/work-log/bin/plot_compare.py",
+  "--metric",
+  "goal-v10-rebase",
+  "--csv",
+  ".agent-research/results/N051-label-v10-per-marker-asinh-cofactor-pre/plot_v10.csv",
+  "--item",
+  "N051",
+  "--baseline",
+  "N031 (v5)",
+  "--direction",
+  "higher",
+  "--noise",
+  "0.0027"
+ ],
+ "cwd": "/home/hpc/v181bb/v181bb10/BSCCM",
+ "source": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N051-label-v10-per-marker-asinh-cofactor-pre/plot_v10.csv",
+ "notes": {
+  "item": "N051",
+  "metric": "goal-v10-rebase",
+  "direction": "higher",
+  "noise_sd": 0.0027,
+  "stats": null
+ },
+ "width_in": 8.5,
+ "height_in": 2.5591,
+ "png_px": [
+  3840,
+  1156
+ ],
+ "significance": "two-sided; Holm-corrected over all comparisons of a panel (one family per panel); * <0.05 ** <0.01 *** <0.001 **** <0.0001",
+ "panels": [
+  {
+   "panel": "a",
+   "kind": "raincloud",
+   "groups": [
+    "N031 (v5)",
+    "N048 (v9)",
+    "N051 (v10)"
+   ],
+   "colors": [
+    "#767E86",
+    "#3A6C9E",
+    "#55BDB2"
+   ],
+   "n": [
+    22,
+    22,
+    22
+   ],
+   "mean": [
+    0.6702703521796584,
+    0.6804190377388957,
+    0.6787578432177402
+   ],
+   "sd": [
+    0.18331653522882146,
+    0.17818514392061563,
+    0.17999664390920517
+   ],
+   "median": [
+    0.7436497025200312,
+    0.7591522400488703,
+    0.7586796206018845
+   ],
+   "whisker": null,
+   "stats": [
+    {
+     "test": "Wilcoxon signed-rank",
+     "p": 0.02513885498046875,
+     "n_i": 22,
+     "n_j": 22,
+     "p_holm": 0.0502777099609375,
+     "stars": "ns",
+     "a": "N031 (v5)",
+     "b": "N048 (v9)",
+     "reference": "N031 (v5)"
+    },
+    {
+     "test": "Wilcoxon signed-rank",
+     "p": 0.1054534912109375,
+     "n_i": 22,
+     "n_j": 22,
+     "p_holm": 0.1054534912109375,
+     "stars": "ns",
+     "a": "N031 (v5)",
+     "b": "N051 (v10)",
+     "reference": "N031 (v5)"
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "goal-v10-rebase"
+  }
+ ],
+ "matplotlib": "3.11.0"
+}

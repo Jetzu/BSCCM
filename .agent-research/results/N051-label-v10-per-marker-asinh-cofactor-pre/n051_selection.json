@@ -1,0 +1,13 @@
+{
+ "selection": {
+  "CD123": "500",
+  "CD14": "500",
+  "CD16": "150",
+  "CD19": "500",
+  "CD3": "500",
+  "CD45": "150",
+  "CD56": "500",
+  "HLA-DR": "500"
+ },
+ "rule": "N051 pre-registered per-marker cofactor selection (label-only). Candidates q10 (v5cx), q50, 15, 50, 150, 500 (targets_v5cx[_cf*].npz).\nPer single marker: (a) split-0 FOV excess (vs 20-perm null, FOVs >= 3 cells), mean over draws; (b) tail contrast = (mean of top 0.5 % -\nmedian) / (1.4826 MAD) on split-0, mean over draws; lineage r(cand, v5) per draw. RULE: lowest (a) s.t. (b) >= .5 x (b)[q10] and, for\nCD16/CD45/CD14, r >= .95 in both draws; ties within .005 in (a) -> larger cofactor. Writes n051_metrics.csv, n051_selection.json and\nprints the BSCCM_COFACTOR map string on the last line."
+}

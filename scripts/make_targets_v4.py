@@ -6,7 +6,7 @@ User ruling 2026-11-09: position on the slide carries no biology. Also flags GS-
 as gs_pair_suspect (for label hygiene; never used to filter test inputs). Writes targets_v4.npz (+ v3 keys unchanged otherwise)."""
 import os as _os; _os.environ.setdefault('OMP_NUM_THREADS', '3')   # BEFORE sklearn/numpy import: 16 workers x all-core OpenMP stalled N029 (load 800 on 48 cores)
 CLEAN = _os.environ.get('BSCCM_CLEAN', '0') == '1'; S_ = 'c' if CLEAN else ''
-CF = _os.environ.get('BSCCM_COFACTOR', 'q10'); TAG = '' if CF == 'q10' else f'_cf{CF}'   # N048
+CF = _os.environ.get('BSCCM_COFACTOR', 'q10'); TAG = '' if CF == 'q10' else (_os.environ['BSCCM_TAG'] if CF.startswith('map:') else f'_cf{CF}')   # N048/N051
 DET = _os.environ.get('BSCCM_DETREND', 'hgb'); D_ = {'hgb': '', 'xfit': 'x'}[DET]   # N036: xfit = FOV-fold cross-fitted trend (out-of-fold for every cell)   # N029: CLEAN=1 -> no Giemsa (hist_row>=0) cell enters ANY fit/calibration; outputs targets_v*c
 import numpy as np, pandas as pd, json, sys
 from sklearn.ensemble import HistGradientBoostingRegressor as HGB

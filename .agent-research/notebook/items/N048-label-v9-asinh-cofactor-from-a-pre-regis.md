@@ -1,7 +1,7 @@
 # N048 · Label v9: asinh cofactor from a pre-registered label-only rule (negative-control spread) instead of the per-slide q10 that inflates CD3/CD56 background noise; label QC; retrain GOAL recipe; score frozen v5 and v9
 
 type: exp · date: 2026-11-17 · status: done
-goal_effect: flat · scale: module · value: 0.6522
+goal_effect: improved · scale: module · value: 0.6804
 
 ## Goal
 Fix a label-curation error found in review N047: v3-v5 single-antibody labels use asinh(x / q10) with q10 = the slide's 10th percentile
@@ -43,3 +43,6 @@ FLAT on the frozen v5 GOAL (.6522). On the corrected (cofactor-150) labels, trai
 <!-- files in .agent-research/results/N048-slug/ + external absolute paths -->
 
 ## Next
+
+## Correction (2026-11-17, N051 metrics)
+The claim that cofactor 150 'erases the rare bright CD123+ mode' is WRONG: N051's label-only tail contrast ((top-0.5 % mean - median)/robust sd, split 0) for CD123 is 49.5 at q10 vs 68.7 at 150 (76.3 at 500), i.e. the bright tail is MORE distinct. The d' = 0 CD123 mixture fit was the local optimum the N049 red-team flagged (m1: a 0.4-0.6 % tail solution with higher likelihood exists). Source: .agent-research/results/N051-label-v10-per-marker-asinh-cofactor-pre/n051_metrics.csv.

@@ -1,7 +1,7 @@
 # N049 · Noise-aware positive/negative marker labels: per-marker two-component mixture with explicit labelling efficiency and false-positive rate -> P(positive) targets + probabilistic head trained jointly with the intensity head; GOAL r + AUROC
 
 type: exp · date: 2026-11-17 · status: done
-goal_effect: pending · scale: paradigm
+goal_effect: flat · scale: paradigm · value: void
 
 ## Goal
 User's dataset notes (2026-11-17): antibody labelling efficiency 60-99 %, cross-reactive false positives, SNR/threshold-dependent false
@@ -48,3 +48,6 @@ separable (CD3 d' 7.4-7.6, CD56 5.5-5.8, CD19 5.2-8.8) -> supports N048; CD123 n
 <!-- files in .agent-research/results/N049-slug/ + external absolute paths -->
 
 ## Next
+
+## Correction (2026-11-17, N051 metrics)
+The claim that cofactor 150 'erases the rare bright CD123+ mode' is WRONG: N051's label-only tail contrast ((top-0.5 % mean - median)/robust sd, split 0) for CD123 is 49.5 at q10 vs 68.7 at 150 (76.3 at 500), i.e. the bright tail is MORE distinct. The d' = 0 CD123 mixture fit was the local optimum the N049 red-team flagged (m1: a 0.4-0.6 % tail solution with higher likelihood exists). Source: .agent-research/results/N051-label-v10-per-marker-asinh-cofactor-pre/n051_metrics.csv.
