@@ -1,0 +1,101 @@
+{
+ "png": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/plots/n046-student-round2-goal-r_2026-11-17_1921.png",
+ "svg": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/plots/n046-student-round2-goal-r_2026-11-17_1921.svg",
+ "created": "2026-11-17T19:21:24",
+ "command": [
+  "/home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python",
+  "/home/hpc/v181bb/v181bb10/.claude/skills/work-log/bin/plot_compare.py",
+  "--metric",
+  "n046-student-round2-goal-r",
+  "--csv",
+  ".agent-research/results/N046-noisy-student-round-2-teacher-n040-stude/plot_n046.csv",
+  "--item",
+  "N046",
+  "--baseline",
+  "N031 ensemble",
+  "--direction",
+  "higher",
+  "--noise",
+  "0.0027"
+ ],
+ "cwd": "/home/hpc/v181bb/v181bb10/BSCCM",
+ "source": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N046-noisy-student-round-2-teacher-n040-stude/plot_n046.csv",
+ "notes": {
+  "item": "N046",
+  "metric": "n046-student-round2-goal-r",
+  "direction": "higher",
+  "noise_sd": 0.0027,
+  "stats": null
+ },
+ "width_in": 8.5,
+ "height_in": 2.5591,
+ "png_px": [
+  3840,
+  1156
+ ],
+ "significance": "two-sided; Holm-corrected over all comparisons of a panel (one family per panel); * <0.05 ** <0.01 *** <0.001 **** <0.0001",
+ "panels": [
+  {
+   "panel": "a",
+   "kind": "raincloud",
+   "groups": [
+    "N031 ensemble",
+    "N040 student ensemble",
+    "N046 round-2 ensemble"
+   ],
+   "colors": [
+    "#767E86",
+    "#3A6C9E",
+    "#55BDB2"
+   ],
+   "n": [
+    22,
+    22,
+    22
+   ],
+   "mean": [
+    0.6527410549948667,
+    0.6563707944947081,
+    0.6545891660531962
+   ],
+   "sd": [
+    0.1933359253287468,
+    0.1920449817178889,
+    0.19264764040190077
+   ],
+   "median": [
+    0.6834517100714678,
+    0.6854208821323726,
+    0.6860181340514565
+   ],
+   "whisker": null,
+   "stats": [
+    {
+     "test": "Wilcoxon signed-rank",
+     "p": 0.0012617111206054688,
+     "n_i": 22,
+     "n_j": 22,
+     "p_holm": 0.0025234222412109375,
+     "stars": "**",
+     "a": "N031 ensemble",
+     "b": "N040 student ensemble",
+     "reference": "N031 ensemble"
+    },
+    {
+     "test": "Wilcoxon signed-rank",
+     "p": 0.032894134521484375,
+     "n_i": 22,
+     "n_j": 22,
+     "p_holm": 0.032894134521484375,
+     "stars": "*",
+     "a": "N031 ensemble",
+     "b": "N046 round-2 ensemble",
+     "reference": "N031 ensemble"
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "n046-student-round2-goal-r"
+  }
+ ],
+ "matplotlib": "3.11.0"
+}
