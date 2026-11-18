@@ -1,0 +1,35 @@
+CPU 2.15.0+cpu GPU available False
+PASS verbatim augmentation, anchor loader and 10+15 contrasts
+PASS 3 paired saved students; common v6c auxiliary teacher
+PASS split PBC fit 8546 eval 8546 (filenames only)
+PASS split MLL23 fit 7268 eval 7265 (filenames only)
+PASS UOT identity, finite extremes, serialization, inductive/permutation invariance, conditional routing {'mass': 1.0682417154312134, 'row_mass_min': 0.26706042885780334, 'row_mass_max': 0.26706042885780334, 'tau': 0.9090909090909091, 'scale': 1.9999998807907104, 'fit_n': 4, 'source_n': 4, 'iterations': 200}
+PASS all synthetic AUROCs=.5 and missing-class AUROCs=NA
+PASS primary unsupported fractions=NA; proxy fractions separately labeled
+PASS source mixture high-mode positivity and heldout-label exclusion
+SYNTHETIC aggregate fixture follows (these are not clinical results)
+{
+  "best_macro": {
+    "arm": "H+OT",
+    "summary": "all25",
+    "n_teachers": 3,
+    "mean": 0.56,
+    "sd": 0.010000000000000009
+  }
+}
+PASS exactly-three-teacher aggregation and paired deltas; CCOT has no all25 score
+ready hub at 0/4
+{"stage": "hub", "step": 4, "loss": 10.671041488647461}
+ready student at 0/4
+{"stage": "student", "step": 4, "loss": 2.555361270904541}
+ready hub at 0/4
+SIGTERM: checkpoint at next optimizer boundary
+ready hub at 1/4
+{"stage": "hub", "step": 4, "loss": 10.671041488647461}
+ready student at 0/4
+{"stage": "student", "step": 4, "loss": 2.555361270904541}
+PASS tiny real-source/anchor-A training, SIGTERM exit143, optimizer/RNG resume bitwise equal
+completed run: immediate exit
+PASS completed successor is idempotent
+PASS actual t0 T checkpoint, 8-view inference on 2 source training cells; no clinical test predictions
+ALL CPU SMOKE CHECKS PASSED

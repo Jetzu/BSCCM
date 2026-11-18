@@ -1,0 +1,5 @@
+thumbnail audit 4000
+thumbnail audit 8000
+thumbnail audit 12000
+thumbnail audit 16000
+{"original_counts": {"A": 8546, "B": 8546}, "remaining_counts": {"A": 8538, "B": 8538}} excluded 16 exact groups 7 near pairs 8

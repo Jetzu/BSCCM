@@ -1,0 +1,4722 @@
+{
+  "macro_means": [
+    {
+      "arm": "H",
+      "summary": "primary16",
+      "mean": 0.6319094932140726,
+      "n_teachers": 3,
+      "max_seed_range": 0.1410649276768523
+    },
+    {
+      "arm": "H",
+      "summary": "PBC_primary4",
+      "mean": 0.6222602978863144,
+      "n_teachers": 3,
+      "max_seed_range": 0.04789459024435483
+    },
+    {
+      "arm": "H",
+      "summary": "MLL23_primary12",
+      "mean": 0.6351258916566587,
+      "n_teachers": 3,
+      "max_seed_range": 0.1867194696087664
+    },
+    {
+      "arm": "H",
+      "summary": "all25",
+      "mean": 0.7609045236814529,
+      "n_teachers": 3,
+      "max_seed_range": 0.0908122084980667
+    },
+    {
+      "arm": "H",
+      "summary": "PBC10",
+      "mean": 0.8460529058823085,
+      "n_teachers": 3,
+      "max_seed_range": 0.028037547670914598
+    },
+    {
+      "arm": "H",
+      "summary": "MLL23_15",
+      "mean": 0.7041389355475491,
+      "n_teachers": 3,
+      "max_seed_range": 0.14977871642775398
+    },
+    {
+      "arm": "H",
+      "summary": "PBC_robust",
+      "mean": 0.9475496247541256,
+      "n_teachers": 3,
+      "max_seed_range": 0.017120146506898193
+    },
+    {
+      "arm": "H",
+      "summary": "PBC_failing",
+      "mean": 0.6131711186554156,
+      "n_teachers": 3,
+      "max_seed_range": 0.2307909512009635
+    },
+    {
+      "arm": "H",
+      "summary": "PBC_teacher_dependent",
+      "mean": 0.2669609421346648,
+      "n_teachers": 3,
+      "max_seed_range": 0.3475121891684793
+    },
+    {
+      "arm": "H",
+      "summary": "PBC_other",
+      "mean": null,
+      "n_teachers": 0,
+      "max_seed_range": null
+    },
+    {
+      "arm": "H",
+      "summary": "MLL23_robust",
+      "mean": 0.8905218899264083,
+      "n_teachers": 3,
+      "max_seed_range": 0.0515576454578357
+    },
+    {
+      "arm": "H",
+      "summary": "MLL23_failing",
+      "mean": 0.6001812750635608,
+      "n_teachers": 3,
+      "max_seed_range": 0.20105714945372088
+    },
+    {
+      "arm": "H",
+      "summary": "MLL23_teacher_dependent",
+      "mean": 0.7581905185185184,
+      "n_teachers": 3,
+      "max_seed_range": 0.22457244444444457
+    },
+    {
+      "arm": "H",
+      "summary": "MLL23_other",
+      "mean": 0.5750075698088759,
+      "n_teachers": 3,
+      "max_seed_range": 0.2784635698088758
+    },
+    {
+      "arm": "H+CCOT",
+      "summary": "primary16",
+      "mean": null,
+      "n_teachers": 0,
+      "max_seed_range": null
+    },
+    {
+      "arm": "H+CCOT",
+      "summary": "PBC_primary4",
+      "mean": 0.7116817446775601,
+      "n_teachers": 3,
+      "max_seed_range": 0.10656114858053378
+    },
+    {
+      "arm": "H+CCOT",
+      "summary": "MLL23_primary12",
+      "mean": null,
+      "n_teachers": 0,
+      "max_seed_range": null
+    },
+    {
+      "arm": "H+CCOT",
+      "summary": "all25",
+      "mean": null,
+      "n_teachers": 0,
+      "max_seed_range": null
+    },
+    {
+      "arm": "H+CCOT",
+      "summary": "PBC10",
+      "mean": 0.8814817363808559,
+      "n_teachers": 3,
+      "max_seed_range": 0.040185277926569674
+    },
+    {
+      "arm": "H+CCOT",
+      "summary": "MLL23_15",
+      "mean": null,
+      "n_teachers": 0,
+      "max_seed_range": null
+    },
+    {
+      "arm": "H+CCOT",
+      "summary": "PBC_robust",
+      "mean": 0.9581174939486591,
+      "n_teachers": 3,
+      "max_seed_range": 0.021514225597042413
+    },
+    {
+      "arm": "H+CCOT",
+      "summary": "PBC_failing",
+      "mean": 0.6560979692236037,
+      "n_teachers": 3,
+      "max_seed_range": 0.20888978644281175
+    },
+    {
+      "arm": "H+CCOT",
+      "summary": "PBC_teacher_dependent",
+      "mean": 0.4937794429956826,
+      "n_teachers": 3,
+      "max_seed_range": 0.2950547353915365
+    },
+    {
+      "arm": "H+CCOT",
+      "summary": "PBC_other",
+      "mean": null,
+      "n_teachers": 0,
+      "max_seed_range": null
+    },
+    {
+      "arm": "H+CCOT",
+      "summary": "MLL23_robust",
+      "mean": null,
+      "n_teachers": 0,
+      "max_seed_range": null
+    },
+    {
+      "arm": "H+CCOT",
+      "summary": "MLL23_failing",
+      "mean": null,
+      "n_teachers": 0,
+      "max_seed_range": null
+    },
+    {
+      "arm": "H+CCOT",
+      "summary": "MLL23_teacher_dependent",
+      "mean": null,
+      "n_teachers": 0,
+      "max_seed_range": null
+    },
+    {
+      "arm": "H+CCOT",
+      "summary": "MLL23_other",
+      "mean": null,
+      "n_teachers": 0,
+      "max_seed_range": null
+    },
+    {
+      "arm": "H+CORAL",
+      "summary": "primary16",
+      "mean": 0.6001797042110217,
+      "n_teachers": 3,
+      "max_seed_range": 0.10617521025942178
+    },
+    {
+      "arm": "H+CORAL",
+      "summary": "PBC_primary4",
+      "mean": 0.642088982875186,
+      "n_teachers": 3,
+      "max_seed_range": 0.06867320313282987
+    },
+    {
+      "arm": "H+CORAL",
+      "summary": "MLL23_primary12",
+      "mean": 0.5862099446563004,
+      "n_teachers": 3,
+      "max_seed_range": 0.12982513829374553
+    },
+    {
+      "arm": "H+CORAL",
+      "summary": "all25",
+      "mean": 0.7190406445422787,
+      "n_teachers": 3,
+      "max_seed_range": 0.07132709982847951
+    },
+    {
+      "arm": "H+CORAL",
+      "summary": "PBC10",
+      "mean": 0.827322640731099,
+      "n_teachers": 3,
+      "max_seed_range": 0.0207076725075932
+    },
+    {
+      "arm": "H+CORAL",
+      "summary": "MLL23_15",
+      "mean": 0.646852647083065,
+      "n_teachers": 3,
+      "max_seed_range": 0.10507338470907046
+    },
+    {
+      "arm": "H+CORAL",
+      "summary": "PBC_robust",
+      "mean": 0.8937567273567156,
+      "n_teachers": 3,
+      "max_seed_range": 0.010604945008350297
+    },
+    {
+      "arm": "H+CORAL",
+      "summary": "PBC_failing",
+      "mean": 0.550895795202453,
+      "n_teachers": 3,
+      "max_seed_range": 0.12630621386284152
+    },
+    {
+      "arm": "H+CORAL",
+      "summary": "PBC_teacher_dependent",
+      "mean": 0.5722767932548118,
+      "n_teachers": 3,
+      "max_seed_range": 0.3060518294566938
+    },
+    {
+      "arm": "H+CORAL",
+      "summary": "PBC_other",
+      "mean": null,
+      "n_teachers": 0,
+      "max_seed_range": null
+    },
+    {
+      "arm": "H+CORAL",
+      "summary": "MLL23_robust",
+      "mean": 0.8218358361201593,
+      "n_teachers": 3,
+      "max_seed_range": 0.07301191111111116
+    },
+    {
+      "arm": "H+CORAL",
+      "summary": "MLL23_failing",
+      "mean": 0.5441174829931972,
+      "n_teachers": 3,
+      "max_seed_range": 0.14643550896722335
+    },
+    {
+      "arm": "H+CORAL",
+      "summary": "MLL23_teacher_dependent",
+      "mean": 0.615978074074074,
+      "n_teachers": 3,
+      "max_seed_range": 0.03784177777777775
+    },
+    {
+      "arm": "H+CORAL",
+      "summary": "MLL23_other",
+      "mean": 0.5844050353093618,
+      "n_teachers": 3,
+      "max_seed_range": 0.19246878652413346
+    },
+    {
+      "arm": "H+OT_tau0.30",
+      "summary": "primary16",
+      "mean": 0.6189727202067024,
+      "n_teachers": 3,
+      "max_seed_range": 0.11246665906502629
+    },
+    {
+      "arm": "H+OT_tau0.30",
+      "summary": "PBC_primary4",
+      "mean": 0.6018904461016809,
+      "n_teachers": 3,
+      "max_seed_range": 0.08256946449654567
+    },
+    {
+      "arm": "H+OT_tau0.30",
+      "summary": "MLL23_primary12",
+      "mean": 0.6246668115750428,
+      "n_teachers": 3,
+      "max_seed_range": 0.15758074309515868
+    },
+    {
+      "arm": "H+OT_tau0.30",
+      "summary": "all25",
+      "mean": 0.752916066322492,
+      "n_teachers": 3,
+      "max_seed_range": 0.07165021889298029
+    },
+    {
+      "arm": "H+OT_tau0.30",
+      "summary": "PBC10",
+      "mean": 0.8390470437680303,
+      "n_teachers": 3,
+      "max_seed_range": 0.031037521957368086
+    },
+    {
+      "arm": "H+OT_tau0.30",
+      "summary": "MLL23_15",
+      "mean": 0.6954954146921329,
+      "n_teachers": 3,
+      "max_seed_range": 0.12563164632797863
+    },
+    {
+      "arm": "H+OT_tau0.30",
+      "summary": "PBC_robust",
+      "mean": 0.9352158010075463,
+      "n_teachers": 3,
+      "max_seed_range": 0.042262951397720405
+    },
+    {
+      "arm": "H+OT_tau0.30",
+      "summary": "PBC_failing",
+      "mean": 0.6118066547558835,
+      "n_teachers": 3,
+      "max_seed_range": 0.19474639856488402
+    },
+    {
+      "arm": "H+OT_tau0.30",
+      "summary": "PBC_teacher_dependent",
+      "mean": 0.2969373748640498,
+      "n_teachers": 3,
+      "max_seed_range": 0.43963078715147325
+    },
+    {
+      "arm": "H+OT_tau0.30",
+      "summary": "PBC_other",
+      "mean": null,
+      "n_teachers": 0,
+      "max_seed_range": null
+    },
+    {
+      "arm": "H+OT_tau0.30",
+      "summary": "MLL23_robust",
+      "mean": 0.882405102666184,
+      "n_teachers": 3,
+      "max_seed_range": 0.03850556293883456
+    },
+    {
+      "arm": "H+OT_tau0.30",
+      "summary": "MLL23_failing",
+      "mean": 0.5813298752834467,
+      "n_teachers": 3,
+      "max_seed_range": 0.16835217068645647
+    },
+    {
+      "arm": "H+OT_tau0.30",
+      "summary": "MLL23_teacher_dependent",
+      "mean": 0.6681346666666667,
+      "n_teachers": 3,
+      "max_seed_range": 0.19612444444444443
+    },
+    {
+      "arm": "H+OT_tau0.30",
+      "summary": "MLL23_other",
+      "mean": 0.6414809567001404,
+      "n_teachers": 3,
+      "max_seed_range": 0.2617206530612246
+    },
+    {
+      "arm": "H+OT_tau0.91",
+      "summary": "primary16",
+      "mean": 0.6210383766295549,
+      "n_teachers": 3,
+      "max_seed_range": 0.12164328928688017
+    },
+    {
+      "arm": "H+OT_tau0.91",
+      "summary": "PBC_primary4",
+      "mean": 0.6737227175162364,
+      "n_teachers": 3,
+      "max_seed_range": 0.08350068223479712
+    },
+    {
+      "arm": "H+OT_tau0.91",
+      "summary": "MLL23_primary12",
+      "mean": 0.6034769296673277,
+      "n_teachers": 3,
+      "max_seed_range": 0.1657353918785388
+    },
+    {
+      "arm": "H+OT_tau0.91",
+      "summary": "all25",
+      "mean": 0.7518970718234931,
+      "n_teachers": 3,
+      "max_seed_range": 0.07669691634845788
+    },
+    {
+      "arm": "H+OT_tau0.91",
+      "summary": "PBC10",
+      "mean": 0.8679079121060876,
+      "n_teachers": 3,
+      "max_seed_range": 0.03222524468350296
+    },
+    {
+      "arm": "H+OT_tau0.91",
+      "summary": "MLL23_15",
+      "mean": 0.6745565116350966,
+      "n_teachers": 3,
+      "max_seed_range": 0.1309759875769051
+    },
+    {
+      "arm": "H+OT_tau0.91",
+      "summary": "PBC_robust",
+      "mean": 0.9447061470178543,
+      "n_teachers": 3,
+      "max_seed_range": 0.03153884076205693
+    },
+    {
+      "arm": "H+OT_tau0.91",
+      "summary": "PBC_failing",
+      "mean": 0.6629567670107694,
+      "n_teachers": 3,
+      "max_seed_range": 0.16017280338838735
+    },
+    {
+      "arm": "H+OT_tau0.91",
+      "summary": "PBC_teacher_dependent",
+      "mean": 0.45847317790727377,
+      "n_teachers": 3,
+      "max_seed_range": 0.3652666245427131
+    },
+    {
+      "arm": "H+OT_tau0.91",
+      "summary": "PBC_other",
+      "mean": null,
+      "n_teachers": 0,
+      "max_seed_range": null
+    },
+    {
+      "arm": "H+OT_tau0.91",
+      "summary": "MLL23_robust",
+      "mean": 0.8499538607310896,
+      "n_teachers": 3,
+      "max_seed_range": 0.03090991473036553
+    },
+    {
+      "arm": "H+OT_tau0.91",
+      "summary": "MLL23_failing",
+      "mean": 0.5785821207311207,
+      "n_teachers": 3,
+      "max_seed_range": 0.1798781579055866
+    },
+    {
+      "arm": "H+OT_tau0.91",
+      "summary": "MLL23_teacher_dependent",
+      "mean": 0.5761506666666666,
+      "n_teachers": 3,
+      "max_seed_range": 0.27070222222222223
+    },
+    {
+      "arm": "H+OT_tau0.91",
+      "summary": "MLL23_other",
+      "mean": 0.6211764295432459,
+      "n_teachers": 3,
+      "max_seed_range": 0.24698945513443482
+    },
+    {
+      "arm": "H+kNN",
+      "summary": "primary16",
+      "mean": 0.6036271704752402,
+      "n_teachers": 3,
+      "max_seed_range": 0.07392949359701784
+    },
+    {
+      "arm": "H+kNN",
+      "summary": "PBC_primary4",
+      "mean": 0.5728628990297359,
+      "n_teachers": 3,
+      "max_seed_range": 0.13380688689347497
+    },
+    {
+      "arm": "H+kNN",
+      "summary": "MLL23_primary12",
+      "mean": 0.6138819276237417,
+      "n_teachers": 3,
+      "max_seed_range": 0.14317495376051537
+    },
+    {
+      "arm": "H+kNN",
+      "summary": "all25",
+      "mean": 0.7420713428132827,
+      "n_teachers": 3,
+      "max_seed_range": 0.0465800657391936
+    },
+    {
+      "arm": "H+kNN",
+      "summary": "PBC10",
+      "mean": 0.8263056068476793,
+      "n_teachers": 3,
+      "max_seed_range": 0.054004846831301134
+    },
+    {
+      "arm": "H+kNN",
+      "summary": "MLL23_15",
+      "mean": 0.6859151667903514,
+      "n_teachers": 3,
+      "max_seed_range": 0.11363667411952338
+    },
+    {
+      "arm": "H+kNN",
+      "summary": "PBC_robust",
+      "mean": 0.9281034272174121,
+      "n_teachers": 3,
+      "max_seed_range": 0.043840526024411464
+    },
+    {
+      "arm": "H+kNN",
+      "summary": "PBC_failing",
+      "mean": 0.5789291635889057,
+      "n_teachers": 3,
+      "max_seed_range": 0.2364717397869886
+    },
+    {
+      "arm": "H+kNN",
+      "summary": "PBC_teacher_dependent",
+      "mean": 0.2592994871485894,
+      "n_teachers": 3,
+      "max_seed_range": 0.13117569087403602
+    },
+    {
+      "arm": "H+kNN",
+      "summary": "PBC_other",
+      "mean": null,
+      "n_teachers": 0,
+      "max_seed_range": null
+    },
+    {
+      "arm": "H+kNN",
+      "summary": "MLL23_robust",
+      "mean": 0.8720153287972012,
+      "n_teachers": 3,
+      "max_seed_range": 0.05142525428881661
+    },
+    {
+      "arm": "H+kNN",
+      "summary": "MLL23_failing",
+      "mean": 0.5726726534735106,
+      "n_teachers": 3,
+      "max_seed_range": 0.1515130298907441
+    },
+    {
+      "arm": "H+kNN",
+      "summary": "MLL23_teacher_dependent",
+      "mean": 0.652021925925926,
+      "n_teachers": 3,
+      "max_seed_range": 0.20491555555555563
+    },
+    {
+      "arm": "H+kNN",
+      "summary": "MLL23_other",
+      "mean": 0.6339601788143829,
+      "n_teachers": 3,
+      "max_seed_range": 0.24348609912536423
+    },
+    {
+      "arm": "H+mean",
+      "summary": "primary16",
+      "mean": 0.6219602541069059,
+      "n_teachers": 3,
+      "max_seed_range": 0.1505027782207884
+    },
+    {
+      "arm": "H+mean",
+      "summary": "PBC_primary4",
+      "mean": 0.6748910344907856,
+      "n_teachers": 3,
+      "max_seed_range": 0.04625656233282627
+    },
+    {
+      "arm": "H+mean",
+      "summary": "MLL23_primary12",
+      "mean": 0.6043166606456126,
+      "n_teachers": 3,
+      "max_seed_range": 0.18525151685010888
+    },
+    {
+      "arm": "H+mean",
+      "summary": "all25",
+      "mean": 0.7531460686693433,
+      "n_teachers": 3,
+      "max_seed_range": 0.09820780236189075
+    },
+    {
+      "arm": "H+mean",
+      "summary": "PBC10",
+      "mean": 0.8690982455652897,
+      "n_teachers": 3,
+      "max_seed_range": 0.01824817457348471
+    },
+    {
+      "arm": "H+mean",
+      "summary": "MLL23_15",
+      "mean": 0.675844617405379,
+      "n_teachers": 3,
+      "max_seed_range": 0.15151422088749467
+    },
+    {
+      "arm": "H+mean",
+      "summary": "PBC_robust",
+      "mean": 0.9576127411479511,
+      "n_teachers": 3,
+      "max_seed_range": 0.023109820647124635
+    },
+    {
+      "arm": "H+mean",
+      "summary": "PBC_failing",
+      "mean": 0.6325400594083664,
+      "n_teachers": 3,
+      "max_seed_range": 0.09107328042616836
+    },
+    {
+      "arm": "H+mean",
+      "summary": "PBC_teacher_dependent",
+      "mean": 0.39754046706092216,
+      "n_teachers": 3,
+      "max_seed_range": 0.3670260591754004
+    },
+    {
+      "arm": "H+mean",
+      "summary": "PBC_other",
+      "mean": null,
+      "n_teachers": 0,
+      "max_seed_range": null
+    },
+    {
+      "arm": "H+mean",
+      "summary": "MLL23_robust",
+      "mean": 0.8799038739534323,
+      "n_teachers": 3,
+      "max_seed_range": 0.0608783183496201
+    },
+    {
+      "arm": "H+mean",
+      "summary": "MLL23_failing",
+      "mean": 0.5699746387686387,
+      "n_teachers": 3,
+      "max_seed_range": 0.1945544716553289
+    },
+    {
+      "arm": "H+mean",
+      "summary": "MLL23_teacher_dependent",
+      "mean": 0.5990173333333333,
+      "n_teachers": 3,
+      "max_seed_range": 0.17587555555555545
+    },
+    {
+      "arm": "H+mean",
+      "summary": "MLL23_other",
+      "mean": 0.5746550432998596,
+      "n_teachers": 3,
+      "max_seed_range": 0.2659893203757694
+    },
+    {
+      "arm": "H_matched",
+      "summary": "primary16",
+      "mean": 0.563289542133087,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched",
+      "summary": "PBC_primary4",
+      "mean": 0.5675648416704101,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched",
+      "summary": "MLL23_primary12",
+      "mean": 0.5618644422873126,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched",
+      "summary": "all25",
+      "mean": 0.7127837687704964,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched",
+      "summary": "PBC10",
+      "mean": 0.8222086096999842,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched",
+      "summary": "MLL23_15",
+      "mean": 0.6398338748175044,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched",
+      "summary": "PBC_robust",
+      "mean": 0.9276169177517346,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched",
+      "summary": "PBC_failing",
+      "mean": 0.524839440945197,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched",
+      "summary": "PBC_teacher_dependent",
+      "mean": 0.27631131404076853,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched",
+      "summary": "PBC_other",
+      "mean": null,
+      "n_teachers": 0,
+      "max_seed_range": null
+    },
+    {
+      "arm": "H_matched",
+      "summary": "MLL23_robust",
+      "mean": 0.8479646494390155,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched",
+      "summary": "MLL23_failing",
+      "mean": 0.5264464973544973,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched",
+      "summary": "MLL23_teacher_dependent",
+      "mean": 0.6322026666666667,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched",
+      "summary": "MLL23_other",
+      "mean": 0.5201783634596696,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+CCOT",
+      "summary": "primary16",
+      "mean": null,
+      "n_teachers": 0,
+      "max_seed_range": null
+    },
+    {
+      "arm": "H_matched+CCOT",
+      "summary": "PBC_primary4",
+      "mean": 0.6847994364782132,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+CCOT",
+      "summary": "MLL23_primary12",
+      "mean": null,
+      "n_teachers": 0,
+      "max_seed_range": null
+    },
+    {
+      "arm": "H_matched+CCOT",
+      "summary": "all25",
+      "mean": null,
+      "n_teachers": 0,
+      "max_seed_range": null
+    },
+    {
+      "arm": "H_matched+CCOT",
+      "summary": "PBC10",
+      "mean": 0.8698224769106163,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+CCOT",
+      "summary": "MLL23_15",
+      "mean": null,
+      "n_teachers": 0,
+      "max_seed_range": null
+    },
+    {
+      "arm": "H_matched+CCOT",
+      "summary": "PBC_robust",
+      "mean": 0.943577660866282,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+CCOT",
+      "summary": "PBC_failing",
+      "mean": 0.5849309186706984,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+CCOT",
+      "summary": "PBC_teacher_dependent",
+      "mean": 0.5646725635052073,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+CCOT",
+      "summary": "PBC_other",
+      "mean": null,
+      "n_teachers": 0,
+      "max_seed_range": null
+    },
+    {
+      "arm": "H_matched+CCOT",
+      "summary": "MLL23_robust",
+      "mean": null,
+      "n_teachers": 0,
+      "max_seed_range": null
+    },
+    {
+      "arm": "H_matched+CCOT",
+      "summary": "MLL23_failing",
+      "mean": null,
+      "n_teachers": 0,
+      "max_seed_range": null
+    },
+    {
+      "arm": "H_matched+CCOT",
+      "summary": "MLL23_teacher_dependent",
+      "mean": null,
+      "n_teachers": 0,
+      "max_seed_range": null
+    },
+    {
+      "arm": "H_matched+CCOT",
+      "summary": "MLL23_other",
+      "mean": null,
+      "n_teachers": 0,
+      "max_seed_range": null
+    },
+    {
+      "arm": "H_matched+CORAL",
+      "summary": "primary16",
+      "mean": 0.5737023838047876,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+CORAL",
+      "summary": "PBC_primary4",
+      "mean": 0.641602670605358,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+CORAL",
+      "summary": "MLL23_primary12",
+      "mean": 0.5510689548712642,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+CORAL",
+      "summary": "all25",
+      "mean": 0.6950775429215387,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+CORAL",
+      "summary": "PBC10",
+      "mean": 0.8227349188657372,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+CORAL",
+      "summary": "MLL23_15",
+      "mean": 0.6099726256254064,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+CORAL",
+      "summary": "PBC_robust",
+      "mean": 0.8796042684817794,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+CORAL",
+      "summary": "PBC_failing",
+      "mean": 0.5025782236437536,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+CORAL",
+      "summary": "PBC_teacher_dependent",
+      "mean": 0.687936817159383,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+CORAL",
+      "summary": "PBC_other",
+      "mean": null,
+      "n_teachers": 0,
+      "max_seed_range": null
+    },
+    {
+      "arm": "H_matched+CORAL",
+      "summary": "MLL23_robust",
+      "mean": 0.7840611539148269,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+CORAL",
+      "summary": "MLL23_failing",
+      "mean": 0.4975905264893836,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+CORAL",
+      "summary": "MLL23_teacher_dependent",
+      "mean": 0.5775543703703704,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+CORAL",
+      "summary": "MLL23_other",
+      "mean": 0.5842977795054529,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+OT_tau0.30",
+      "summary": "primary16",
+      "mean": 0.6078114793470316,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+OT_tau0.30",
+      "summary": "PBC_primary4",
+      "mean": 0.6300362857794813,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+OT_tau0.30",
+      "summary": "MLL23_primary12",
+      "mean": 0.6004032105362148,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+OT_tau0.30",
+      "summary": "all25",
+      "mean": 0.7399614277889638,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+OT_tau0.30",
+      "summary": "PBC10",
+      "mean": 0.8502576723845067,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+OT_tau0.30",
+      "summary": "MLL23_15",
+      "mean": 0.6664305980586015,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+OT_tau0.30",
+      "summary": "PBC_robust",
+      "mean": 0.93100044337287,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+OT_tau0.30",
+      "summary": "PBC_failing",
+      "mean": 0.5840690849680338,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+OT_tau0.30",
+      "summary": "PBC_teacher_dependent",
+      "mean": 0.47050409189407416,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+OT_tau0.30",
+      "summary": "PBC_other",
+      "mean": null,
+      "n_teachers": 0,
+      "max_seed_range": null
+    },
+    {
+      "arm": "H_matched+OT_tau0.30",
+      "summary": "MLL23_robust",
+      "mean": 0.8542364797683678,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+OT_tau0.30",
+      "summary": "MLL23_failing",
+      "mean": 0.5362021789321788,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+OT_tau0.30",
+      "summary": "MLL23_teacher_dependent",
+      "mean": 0.7042103703703705,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+OT_tau0.30",
+      "summary": "MLL23_other",
+      "mean": 0.6338254745707806,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+OT_tau0.91",
+      "summary": "primary16",
+      "mean": 0.6179458133557009,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+OT_tau0.91",
+      "summary": "PBC_primary4",
+      "mean": 0.7041806245735408,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+OT_tau0.91",
+      "summary": "MLL23_primary12",
+      "mean": 0.5892008762830876,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+OT_tau0.91",
+      "summary": "all25",
+      "mean": 0.7405994288853127,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+OT_tau0.91",
+      "summary": "PBC10",
+      "mean": 0.8793932836365398,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+OT_tau0.91",
+      "summary": "MLL23_15",
+      "mean": 0.6480701923844947,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+OT_tau0.91",
+      "summary": "PBC_robust",
+      "mean": 0.9429948486448833,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+OT_tau0.91",
+      "summary": "PBC_failing",
+      "mean": 0.6680104504386492,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+OT_tau0.91",
+      "summary": "PBC_teacher_dependent",
+      "mean": 0.5819635967676817,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+OT_tau0.91",
+      "summary": "PBC_other",
+      "mean": null,
+      "n_teachers": 0,
+      "max_seed_range": null
+    },
+    {
+      "arm": "H_matched+OT_tau0.91",
+      "summary": "MLL23_robust",
+      "mean": 0.8176421103631318,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+OT_tau0.91",
+      "summary": "MLL23_failing",
+      "mean": 0.5251140472754758,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+OT_tau0.91",
+      "summary": "MLL23_teacher_dependent",
+      "mean": 0.6706637037037035,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+OT_tau0.91",
+      "summary": "MLL23_other",
+      "mean": 0.6431901496598639,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+kNN",
+      "summary": "primary16",
+      "mean": 0.5780491466866481,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+kNN",
+      "summary": "PBC_primary4",
+      "mean": 0.5749805565081836,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+kNN",
+      "summary": "MLL23_primary12",
+      "mean": 0.5790720100794696,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+kNN",
+      "summary": "all25",
+      "mean": 0.7200206573966517,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+kNN",
+      "summary": "PBC10",
+      "mean": 0.8269906684333025,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+kNN",
+      "summary": "MLL23_15",
+      "mean": 0.648707316705551,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+kNN",
+      "summary": "PBC_robust",
+      "mean": 0.920049854528784,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+kNN",
+      "summary": "PBC_failing",
+      "mean": 0.4737988242043609,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+kNN",
+      "summary": "PBC_teacher_dependent",
+      "mean": 0.43570902389839167,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+kNN",
+      "summary": "PBC_other",
+      "mean": null,
+      "n_teachers": 0,
+      "max_seed_range": null
+    },
+    {
+      "arm": "H_matched+kNN",
+      "summary": "MLL23_robust",
+      "mean": 0.8371226598142115,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+kNN",
+      "summary": "MLL23_failing",
+      "mean": 0.5293999373325088,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+kNN",
+      "summary": "MLL23_teacher_dependent",
+      "mean": 0.6259087407407408,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+kNN",
+      "summary": "MLL23_other",
+      "mean": 0.6066440747219523,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+mean",
+      "summary": "primary16",
+      "mean": 0.5794439190182961,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+mean",
+      "summary": "PBC_primary4",
+      "mean": 0.6771195261215003,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+mean",
+      "summary": "MLL23_primary12",
+      "mean": 0.5468853833172281,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+mean",
+      "summary": "all25",
+      "mean": 0.7220705370991175,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+mean",
+      "summary": "PBC10",
+      "mean": 0.8699828605448979,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+mean",
+      "summary": "MLL23_15",
+      "mean": 0.6234623214685973,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+mean",
+      "summary": "PBC_robust",
+      "mean": 0.9516074297134849,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+mean",
+      "summary": "PBC_failing",
+      "mean": 0.5397795898663736,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+mean",
+      "summary": "PBC_teacher_dependent",
+      "mean": 0.547189577874728,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+mean",
+      "summary": "PBC_other",
+      "mean": null,
+      "n_teachers": 0,
+      "max_seed_range": null
+    },
+    {
+      "arm": "H_matched+mean",
+      "summary": "MLL23_robust",
+      "mean": 0.8398242883821933,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+mean",
+      "summary": "MLL23_failing",
+      "mean": 0.4979606798598227,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+mean",
+      "summary": "MLL23_teacher_dependent",
+      "mean": 0.552152,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "H_matched+mean",
+      "summary": "MLL23_other",
+      "mean": 0.5574683105496167,
+      "n_teachers": 3,
+      "max_seed_range": 0.0
+    },
+    {
+      "arm": "T",
+      "summary": "primary16",
+      "mean": 0.5399671237119105,
+      "n_teachers": 3,
+      "max_seed_range": 0.10827184323372008
+    },
+    {
+      "arm": "T",
+      "summary": "PBC_primary4",
+      "mean": 0.647532634505881,
+      "n_teachers": 3,
+      "max_seed_range": 0.3491916564160776
+    },
+    {
+      "arm": "T",
+      "summary": "MLL23_primary12",
+      "mean": 0.5041119534472537,
+      "n_teachers": 3,
+      "max_seed_range": 0.07099387985692412
+    },
+    {
+      "arm": "T",
+      "summary": "all25",
+      "mean": 0.6774937362824808,
+      "n_teachers": 3,
+      "max_seed_range": 0.06939641447224609
+    },
+    {
+      "arm": "T",
+      "summary": "PBC10",
+      "mean": 0.8414683422485097,
+      "n_teachers": 3,
+      "max_seed_range": 0.16956128290642758
+    },
+    {
+      "arm": "T",
+      "summary": "MLL23_15",
+      "mean": 0.5681773323051279,
+      "n_teachers": 3,
+      "max_seed_range": 0.07403125203368749
+    },
+    {
+      "arm": "T",
+      "summary": "PBC_robust",
+      "mean": 0.9353656100543137,
+      "n_teachers": 3,
+      "max_seed_range": 0.11499931475164205
+    },
+    {
+      "arm": "T",
+      "summary": "PBC_failing",
+      "mean": 0.44525980345186306,
+      "n_teachers": 3,
+      "max_seed_range": 0.44534842679416786
+    },
+    {
+      "arm": "T",
+      "summary": "PBC_teacher_dependent",
+      "mean": 0.4864987385987245,
+      "n_teachers": 3,
+      "max_seed_range": 0.5474139728964801
+    },
+    {
+      "arm": "T",
+      "summary": "PBC_other",
+      "mean": null,
+      "n_teachers": 0,
+      "max_seed_range": null
+    },
+    {
+      "arm": "T",
+      "summary": "MLL23_robust",
+      "mean": 0.7641290529617567,
+      "n_teachers": 3,
+      "max_seed_range": 0.14310917119073474
+    },
+    {
+      "arm": "T",
+      "summary": "MLL23_failing",
+      "mean": 0.42321007756705376,
+      "n_teachers": 3,
+      "max_seed_range": 0.07895148381776951
+    },
+    {
+      "arm": "T",
+      "summary": "MLL23_teacher_dependent",
+      "mean": 0.5459829135802469,
+      "n_teachers": 3,
+      "max_seed_range": 0.15428622222222227
+    },
+    {
+      "arm": "T",
+      "summary": "MLL23_other",
+      "mean": 0.5967806316092575,
+      "n_teachers": 3,
+      "max_seed_range": 0.08679659993521216
+    },
+    {
+      "arm": "T+CCOT",
+      "summary": "primary16",
+      "mean": null,
+      "n_teachers": 0,
+      "max_seed_range": null
+    },
+    {
+      "arm": "T+CCOT",
+      "summary": "PBC_primary4",
+      "mean": 0.6424366069383654,
+      "n_teachers": 3,
+      "max_seed_range": 0.22758865022006303
+    },
+    {
+      "arm": "T+CCOT",
+      "summary": "MLL23_primary12",
+      "mean": null,
+      "n_teachers": 0,
+      "max_seed_range": null
+    },
+    {
+      "arm": "T+CCOT",
+      "summary": "all25",
+      "mean": null,
+      "n_teachers": 0,
+      "max_seed_range": null
+    },
+    {
+      "arm": "T+CCOT",
+      "summary": "PBC10",
+      "mean": 0.8548472407597161,
+      "n_teachers": 3,
+      "max_seed_range": 0.09022344658564319
+    },
+    {
+      "arm": "T+CCOT",
+      "summary": "MLL23_15",
+      "mean": null,
+      "n_teachers": 0,
+      "max_seed_range": null
+    },
+    {
+      "arm": "T+CCOT",
+      "summary": "PBC_robust",
+      "mean": 0.953346585012644,
+      "n_teachers": 3,
+      "max_seed_range": 0.041785986947907805
+    },
+    {
+      "arm": "T+CCOT",
+      "summary": "PBC_failing",
+      "mean": 0.5620449310642199,
+      "n_teachers": 3,
+      "max_seed_range": 0.15556489496799736
+    },
+    {
+      "arm": "T+CCOT",
+      "summary": "PBC_teacher_dependent",
+      "mean": 0.3596547964317887,
+      "n_teachers": 3,
+      "max_seed_range": 0.5403011141734231
+    },
+    {
+      "arm": "T+CCOT",
+      "summary": "PBC_other",
+      "mean": null,
+      "n_teachers": 0,
+      "max_seed_range": null
+    },
+    {
+      "arm": "T+CCOT",
+      "summary": "MLL23_robust",
+      "mean": null,
+      "n_teachers": 0,
+      "max_seed_range": null
+    },
+    {
+      "arm": "T+CCOT",
+      "summary": "MLL23_failing",
+      "mean": null,
+      "n_teachers": 0,
+      "max_seed_range": null
+    },
+    {
+      "arm": "T+CCOT",
+      "summary": "MLL23_teacher_dependent",
+      "mean": null,
+      "n_teachers": 0,
+      "max_seed_range": null
+    },
+    {
+      "arm": "T+CCOT",
+      "summary": "MLL23_other",
+      "mean": null,
+      "n_teachers": 0,
+      "max_seed_range": null
+    },
+    {
+      "arm": "T+CORAL",
+      "summary": "primary16",
+      "mean": 0.5432070228856446,
+      "n_teachers": 3,
+      "max_seed_range": 0.06483404887296607
+    },
+    {
+      "arm": "T+CORAL",
+      "summary": "PBC_primary4",
+      "mean": 0.6237209893013556,
+      "n_teachers": 3,
+      "max_seed_range": 0.10550518437077416
+    },
+    {
+      "arm": "T+CORAL",
+      "summary": "MLL23_primary12",
+      "mean": 0.5163690340804075,
+      "n_teachers": 3,
+      "max_seed_range": 0.06221581677896154
+    },
+    {
+      "arm": "T+CORAL",
+      "summary": "all25",
+      "mean": 0.663398452770354,
+      "n_teachers": 3,
+      "max_seed_range": 0.06721482934116019
+    },
+    {
+      "arm": "T+CORAL",
+      "summary": "PBC10",
+      "mean": 0.801456481152853,
+      "n_teachers": 3,
+      "max_seed_range": 0.0655537639711552
+    },
+    {
+      "arm": "T+CORAL",
+      "summary": "MLL23_15",
+      "mean": 0.5713597671820215,
+      "n_teachers": 3,
+      "max_seed_range": 0.07140471268242832
+    },
+    {
+      "arm": "T+CORAL",
+      "summary": "PBC_robust",
+      "mean": 0.8622793481127218,
+      "n_teachers": 3,
+      "max_seed_range": 0.08086220252543486
+    },
+    {
+      "arm": "T+CORAL",
+      "summary": "PBC_failing",
+      "mean": 0.49158831263501207,
+      "n_teachers": 3,
+      "max_seed_range": 0.09310678587153087
+    },
+    {
+      "arm": "T+CORAL",
+      "summary": "PBC_teacher_dependent",
+      "mean": 0.6247417139917442,
+      "n_teachers": 3,
+      "max_seed_range": 0.17875322881649214
+    },
+    {
+      "arm": "T+CORAL",
+      "summary": "PBC_other",
+      "mean": null,
+      "n_teachers": 0,
+      "max_seed_range": null
+    },
+    {
+      "arm": "T+CORAL",
+      "summary": "MLL23_robust",
+      "mean": 0.7325693903727831,
+      "n_teachers": 3,
+      "max_seed_range": 0.14293828273615639
+    },
+    {
+      "arm": "T+CORAL",
+      "summary": "MLL23_failing",
+      "mean": 0.4557272894248608,
+      "n_teachers": 3,
+      "max_seed_range": 0.0694680828695114
+    },
+    {
+      "arm": "T+CORAL",
+      "summary": "MLL23_teacher_dependent",
+      "mean": 0.5851828148148148,
+      "n_teachers": 3,
+      "max_seed_range": 0.09743644444444444
+    },
+    {
+      "arm": "T+CORAL",
+      "summary": "MLL23_other",
+      "mean": 0.5661378575387827,
+      "n_teachers": 3,
+      "max_seed_range": 0.09184047942986717
+    },
+    {
+      "arm": "T+OT_tau0.30",
+      "summary": "primary16",
+      "mean": 0.52136513312454,
+      "n_teachers": 3,
+      "max_seed_range": 0.06161781445111336
+    },
+    {
+      "arm": "T+OT_tau0.30",
+      "summary": "PBC_primary4",
+      "mean": 0.6224656182238286,
+      "n_teachers": 3,
+      "max_seed_range": 0.25268050609462867
+    },
+    {
+      "arm": "T+OT_tau0.30",
+      "summary": "MLL23_primary12",
+      "mean": 0.4876649714247772,
+      "n_teachers": 3,
+      "max_seed_range": 0.08141218603655254
+    },
+    {
+      "arm": "T+OT_tau0.30",
+      "summary": "all25",
+      "mean": 0.6724462609879277,
+      "n_teachers": 3,
+      "max_seed_range": 0.05594965910783123
+    },
+    {
+      "arm": "T+OT_tau0.30",
+      "summary": "PBC10",
+      "mean": 0.8474758892292225,
+      "n_teachers": 3,
+      "max_seed_range": 0.10103150472242728
+    },
+    {
+      "arm": "T+OT_tau0.30",
+      "summary": "MLL23_15",
+      "mean": 0.555759842160398,
+      "n_teachers": 3,
+      "max_seed_range": 0.0908758821625753
+    },
+    {
+      "arm": "T+OT_tau0.30",
+      "summary": "PBC_robust",
+      "mean": 0.9549748109900712,
+      "n_teachers": 3,
+      "max_seed_range": 0.051110837890627314
+    },
+    {
+      "arm": "T+OT_tau0.30",
+      "summary": "PBC_failing",
+      "mean": 0.42709153311509024,
+      "n_teachers": 3,
+      "max_seed_range": 0.17180746740605707
+    },
+    {
+      "arm": "T+OT_tau0.30",
+      "summary": "PBC_teacher_dependent",
+      "mean": 0.40786887125656407,
+      "n_teachers": 3,
+      "max_seed_range": 0.4783908752719004
+    },
+    {
+      "arm": "T+OT_tau0.30",
+      "summary": "PBC_other",
+      "mean": null,
+      "n_teachers": 0,
+      "max_seed_range": null
+    },
+    {
+      "arm": "T+OT_tau0.30",
+      "summary": "MLL23_robust",
+      "mean": 0.7609786431817268,
+      "n_teachers": 3,
+      "max_seed_range": 0.1373100751357219
+    },
+    {
+      "arm": "T+OT_tau0.30",
+      "summary": "MLL23_failing",
+      "mean": 0.42494718465837505,
+      "n_teachers": 3,
+      "max_seed_range": 0.07804533415790549
+    },
+    {
+      "arm": "T+OT_tau0.30",
+      "summary": "MLL23_teacher_dependent",
+      "mean": 0.3853612839506173,
+      "n_teachers": 3,
+      "max_seed_range": 0.19813155555555562
+    },
+    {
+      "arm": "T+OT_tau0.30",
+      "summary": "MLL23_other",
+      "mean": 0.5857564199690458,
+      "n_teachers": 3,
+      "max_seed_range": 0.1008266070618723
+    },
+    {
+      "arm": "T+OT_tau0.91",
+      "summary": "primary16",
+      "mean": 0.5337612463957796,
+      "n_teachers": 3,
+      "max_seed_range": 0.05374169729377015
+    },
+    {
+      "arm": "T+OT_tau0.91",
+      "summary": "PBC_primary4",
+      "mean": 0.6517481525494803,
+      "n_teachers": 3,
+      "max_seed_range": 0.14519149472570014
+    },
+    {
+      "arm": "T+OT_tau0.91",
+      "summary": "MLL23_primary12",
+      "mean": 0.4944322776778794,
+      "n_teachers": 3,
+      "max_seed_range": 0.054300092100176944
+    },
+    {
+      "arm": "T+OT_tau0.91",
+      "summary": "all25",
+      "mean": 0.6804446690464249,
+      "n_teachers": 3,
+      "max_seed_range": 0.04705380940777004
+    },
+    {
+      "arm": "T+OT_tau0.91",
+      "summary": "PBC10",
+      "mean": 0.8586138677976688,
+      "n_teachers": 3,
+      "max_seed_range": 0.056962999338215026
+    },
+    {
+      "arm": "T+OT_tau0.91",
+      "summary": "MLL23_15",
+      "mean": 0.5616652032122623,
+      "n_teachers": 3,
+      "max_seed_range": 0.06260985145791931
+    },
+    {
+      "arm": "T+OT_tau0.91",
+      "summary": "PBC_robust",
+      "mean": 0.9509643256514749,
+      "n_teachers": 3,
+      "max_seed_range": 0.04489743511655986
+    },
+    {
+      "arm": "T+OT_tau0.91",
+      "summary": "PBC_failing",
+      "mean": 0.4779878134818259,
+      "n_teachers": 3,
+      "max_seed_range": 0.0993472114576397
+    },
+    {
+      "arm": "T+OT_tau0.91",
+      "summary": "PBC_teacher_dependent",
+      "mean": 0.500436259283062,
+      "n_teachers": 3,
+      "max_seed_range": 0.15353176908246008
+    },
+    {
+      "arm": "T+OT_tau0.91",
+      "summary": "PBC_other",
+      "mean": null,
+      "n_teachers": 0,
+      "max_seed_range": null
+    },
+    {
+      "arm": "T+OT_tau0.91",
+      "summary": "MLL23_robust",
+      "mean": 0.7646540134314553,
+      "n_teachers": 3,
+      "max_seed_range": 0.10582744553022072
+    },
+    {
+      "arm": "T+OT_tau0.91",
+      "summary": "MLL23_failing",
+      "mean": 0.4311983269772555,
+      "n_teachers": 3,
+      "max_seed_range": 0.06577539682539679
+    },
+    {
+      "arm": "T+OT_tau0.91",
+      "summary": "MLL23_teacher_dependent",
+      "mean": 0.41591772839506175,
+      "n_teachers": 3,
+      "max_seed_range": 0.17454755555555557
+    },
+    {
+      "arm": "T+OT_tau0.91",
+      "summary": "MLL23_other",
+      "mean": 0.5837009818954036,
+      "n_teachers": 3,
+      "max_seed_range": 0.07341829478458062
+    },
+    {
+      "arm": "T+kNN",
+      "summary": "primary16",
+      "mean": 0.5140943278125598,
+      "n_teachers": 3,
+      "max_seed_range": 0.06277499402387282
+    },
+    {
+      "arm": "T+kNN",
+      "summary": "PBC_primary4",
+      "mean": 0.6154950218186862,
+      "n_teachers": 3,
+      "max_seed_range": 0.22260679790313176
+    },
+    {
+      "arm": "T+kNN",
+      "summary": "MLL23_primary12",
+      "mean": 0.4802940964771843,
+      "n_teachers": 3,
+      "max_seed_range": 0.08714712086324161
+    },
+    {
+      "arm": "T+kNN",
+      "summary": "all25",
+      "mean": 0.6625597421317603,
+      "n_teachers": 3,
+      "max_seed_range": 0.05895566758188009
+    },
+    {
+      "arm": "T+kNN",
+      "summary": "PBC10",
+      "mean": 0.8437330025197426,
+      "n_teachers": 3,
+      "max_seed_range": 0.08814150944537713
+    },
+    {
+      "arm": "T+kNN",
+      "summary": "MLL23_15",
+      "mean": 0.5417775685397722,
+      "n_teachers": 3,
+      "max_seed_range": 0.09847094113503779
+    },
+    {
+      "arm": "T+kNN",
+      "summary": "PBC_robust",
+      "mean": 0.9510699086129053,
+      "n_teachers": 3,
+      "max_seed_range": 0.039160913184752455
+    },
+    {
+      "arm": "T+kNN",
+      "summary": "PBC_failing",
+      "mean": 0.3926967310843543,
+      "n_teachers": 3,
+      "max_seed_range": 0.1951861393416079
+    },
+    {
+      "arm": "T+kNN",
+      "summary": "PBC_teacher_dependent",
+      "mean": 0.4360740252098301,
+      "n_teachers": 3,
+      "max_seed_range": 0.5282117840987739
+    },
+    {
+      "arm": "T+kNN",
+      "summary": "PBC_other",
+      "mean": null,
+      "n_teachers": 0,
+      "max_seed_range": null
+    },
+    {
+      "arm": "T+kNN",
+      "summary": "MLL23_robust",
+      "mean": 0.7278057184541763,
+      "n_teachers": 3,
+      "max_seed_range": 0.15347046138255516
+    },
+    {
+      "arm": "T+kNN",
+      "summary": "MLL23_failing",
+      "mean": 0.4256389968276873,
+      "n_teachers": 3,
+      "max_seed_range": 0.07593796907854045
+    },
+    {
+      "arm": "T+kNN",
+      "summary": "MLL23_teacher_dependent",
+      "mean": 0.36667674074074075,
+      "n_teachers": 3,
+      "max_seed_range": 0.17238755555555557
+    },
+    {
+      "arm": "T+kNN",
+      "summary": "MLL23_other",
+      "mean": 0.5707426086455747,
+      "n_teachers": 3,
+      "max_seed_range": 0.1210772037576936
+    },
+    {
+      "arm": "T+mean",
+      "summary": "primary16",
+      "mean": 0.5355225262344386,
+      "n_teachers": 3,
+      "max_seed_range": 0.10094185143894929
+    },
+    {
+      "arm": "T+mean",
+      "summary": "PBC_primary4",
+      "mean": 0.6232547384859465,
+      "n_teachers": 3,
+      "max_seed_range": 0.2684251508993939
+    },
+    {
+      "arm": "T+mean",
+      "summary": "MLL23_primary12",
+      "mean": 0.506278455483936,
+      "n_teachers": 3,
+      "max_seed_range": 0.102266802494961
+    },
+    {
+      "arm": "T+mean",
+      "summary": "all25",
+      "mean": 0.6761306817243664,
+      "n_teachers": 3,
+      "max_seed_range": 0.07970421305843123
+    },
+    {
+      "arm": "T+mean",
+      "summary": "PBC10",
+      "mean": 0.8343854713104397,
+      "n_teachers": 3,
+      "max_seed_range": 0.12261458771153289
+    },
+    {
+      "arm": "T+mean",
+      "summary": "MLL23_15",
+      "mean": 0.5706274886669843,
+      "n_teachers": 3,
+      "max_seed_range": 0.10139833088485767
+    },
+    {
+      "arm": "T+mean",
+      "summary": "PBC_robust",
+      "mean": 0.9314187421677033,
+      "n_teachers": 3,
+      "max_seed_range": 0.09478271651137304
+    },
+    {
+      "arm": "T+mean",
+      "summary": "PBC_failing",
+      "mean": 0.485732753723737,
+      "n_teachers": 3,
+      "max_seed_range": 0.3491872891809579
+    },
+    {
+      "arm": "T+mean",
+      "summary": "PBC_teacher_dependent",
+      "mean": 0.4067720220390328,
+      "n_teachers": 3,
+      "max_seed_range": 0.38772099626754997
+    },
+    {
+      "arm": "T+mean",
+      "summary": "PBC_other",
+      "mean": null,
+      "n_teachers": 0,
+      "max_seed_range": null
+    },
+    {
+      "arm": "T+mean",
+      "summary": "MLL23_robust",
+      "mean": 0.7660907270840873,
+      "n_teachers": 3,
+      "max_seed_range": 0.1631319580166486
+    },
+    {
+      "arm": "T+mean",
+      "summary": "MLL23_failing",
+      "mean": 0.4310720021988594,
+      "n_teachers": 3,
+      "max_seed_range": 0.1021426856318286
+    },
+    {
+      "arm": "T+mean",
+      "summary": "MLL23_teacher_dependent",
+      "mean": 0.51779812345679,
+      "n_teachers": 3,
+      "max_seed_range": 0.1320195555555556
+    },
+    {
+      "arm": "T+mean",
+      "summary": "MLL23_other",
+      "mean": 0.5968282778677608,
+      "n_teachers": 3,
+      "max_seed_range": 0.08563298995788782
+    }
+  ],
+  "paired_macro": [
+    {
+      "comparison": "H minus T",
+      "summary": "primary16",
+      "mean": 0.09194236950216213,
+      "noise_floor": 0.1410649276768523,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H minus T",
+      "summary": "PBC_primary4",
+      "mean": -0.025272336619566627,
+      "noise_floor": 0.3491916564160776,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H minus T",
+      "summary": "MLL23_primary12",
+      "mean": 0.131013938209405,
+      "noise_floor": 0.1867194696087664,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H minus T",
+      "summary": "all25",
+      "mean": 0.08341078739897216,
+      "noise_floor": 0.0908122084980667,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H minus T",
+      "summary": "PBC10",
+      "mean": 0.004584563633798888,
+      "noise_floor": 0.16956128290642758,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H minus T",
+      "summary": "MLL23_15",
+      "mean": 0.1359616032424212,
+      "noise_floor": 0.14977871642775398,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H minus T",
+      "summary": "PBC_robust",
+      "mean": 0.012184014699812007,
+      "noise_floor": 0.11499931475164205,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H minus T",
+      "summary": "PBC_failing",
+      "mean": 0.16791131520355265,
+      "noise_floor": 0.44534842679416786,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H minus T",
+      "summary": "PBC_teacher_dependent",
+      "mean": -0.21953779646405966,
+      "noise_floor": 0.5474139728964801,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H minus T",
+      "summary": "PBC_other",
+      "mean": null,
+      "noise_floor": null,
+      "decision": "incomplete",
+      "n_teachers": 0
+    },
+    {
+      "comparison": "H minus T",
+      "summary": "MLL23_robust",
+      "mean": 0.12639283696465187,
+      "noise_floor": 0.14310917119073474,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H minus T",
+      "summary": "MLL23_failing",
+      "mean": 0.176971197496507,
+      "noise_floor": 0.20105714945372088,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H minus T",
+      "summary": "MLL23_teacher_dependent",
+      "mean": 0.21220760493827154,
+      "noise_floor": 0.22457244444444457,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H minus T",
+      "summary": "MLL23_other",
+      "mean": -0.02177306180038156,
+      "noise_floor": 0.2784635698088758,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched minus T",
+      "summary": "primary16",
+      "mean": 0.02332241842117644,
+      "noise_floor": 0.10827184323372008,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched minus T",
+      "summary": "PBC_primary4",
+      "mean": -0.07996779283547091,
+      "noise_floor": 0.3491916564160776,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched minus T",
+      "summary": "MLL23_primary12",
+      "mean": 0.057752488840058826,
+      "noise_floor": 0.07099387985692412,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched minus T",
+      "summary": "all25",
+      "mean": 0.03529003248801558,
+      "noise_floor": 0.06939641447224609,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched minus T",
+      "summary": "PBC10",
+      "mean": -0.01925973254852531,
+      "noise_floor": 0.16956128290642758,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched minus T",
+      "summary": "MLL23_15",
+      "mean": 0.07165654251237637,
+      "noise_floor": 0.07403125203368749,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched minus T",
+      "summary": "PBC_robust",
+      "mean": -0.007748692302578945,
+      "noise_floor": 0.11499931475164205,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched minus T",
+      "summary": "PBC_failing",
+      "mean": 0.07957963749333401,
+      "noise_floor": 0.44534842679416786,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched minus T",
+      "summary": "PBC_teacher_dependent",
+      "mean": -0.21018742455795594,
+      "noise_floor": 0.5474139728964801,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched minus T",
+      "summary": "PBC_other",
+      "mean": null,
+      "noise_floor": null,
+      "decision": "incomplete",
+      "n_teachers": 0
+    },
+    {
+      "comparison": "H_matched minus T",
+      "summary": "MLL23_robust",
+      "mean": 0.08383559647725887,
+      "noise_floor": 0.14310917119073474,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched minus T",
+      "summary": "MLL23_failing",
+      "mean": 0.10323641978744352,
+      "noise_floor": 0.07895148381776951,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched minus T",
+      "summary": "MLL23_teacher_dependent",
+      "mean": 0.08621975308641976,
+      "noise_floor": 0.15428622222222227,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched minus T",
+      "summary": "MLL23_other",
+      "mean": -0.07660226814958787,
+      "noise_floor": 0.08679659993521216,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+OT_tau0.91 minus T",
+      "summary": "primary16",
+      "mean": -0.006205877316130944,
+      "noise_floor": 0.10827184323372008,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+OT_tau0.91 minus T",
+      "summary": "PBC_primary4",
+      "mean": 0.004215518043599283,
+      "noise_floor": 0.3491916564160776,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+OT_tau0.91 minus T",
+      "summary": "MLL23_primary12",
+      "mean": -0.009679675769374377,
+      "noise_floor": 0.07099387985692412,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+OT_tau0.91 minus T",
+      "summary": "all25",
+      "mean": 0.002950932763944092,
+      "noise_floor": 0.06939641447224609,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+OT_tau0.91 minus T",
+      "summary": "PBC10",
+      "mean": 0.017145525549159046,
+      "noise_floor": 0.16956128290642758,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+OT_tau0.91 minus T",
+      "summary": "MLL23_15",
+      "mean": -0.006512129092865693,
+      "noise_floor": 0.07403125203368749,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+OT_tau0.91 minus T",
+      "summary": "PBC_robust",
+      "mean": 0.015598715597161195,
+      "noise_floor": 0.11499931475164205,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+OT_tau0.91 minus T",
+      "summary": "PBC_failing",
+      "mean": 0.032728010029962916,
+      "noise_floor": 0.44534842679416786,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+OT_tau0.91 minus T",
+      "summary": "PBC_teacher_dependent",
+      "mean": 0.013937520684337531,
+      "noise_floor": 0.5474139728964801,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+OT_tau0.91 minus T",
+      "summary": "PBC_other",
+      "mean": null,
+      "noise_floor": null,
+      "decision": "incomplete",
+      "n_teachers": 0
+    },
+    {
+      "comparison": "T+OT_tau0.91 minus T",
+      "summary": "MLL23_robust",
+      "mean": 0.0005249604696987431,
+      "noise_floor": 0.14310917119073474,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+OT_tau0.91 minus T",
+      "summary": "MLL23_failing",
+      "mean": 0.007988249410201745,
+      "noise_floor": 0.07895148381776951,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+OT_tau0.91 minus T",
+      "summary": "MLL23_teacher_dependent",
+      "mean": -0.13006518518518517,
+      "noise_floor": 0.17454755555555557,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+OT_tau0.91 minus T",
+      "summary": "MLL23_other",
+      "mean": -0.013079649713853817,
+      "noise_floor": 0.08679659993521216,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+OT_tau0.91 minus H",
+      "summary": "primary16",
+      "mean": -0.010871116584517782,
+      "noise_floor": 0.1410649276768523,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+OT_tau0.91 minus H",
+      "summary": "PBC_primary4",
+      "mean": 0.05146241962992212,
+      "noise_floor": 0.08350068223479712,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+OT_tau0.91 minus H",
+      "summary": "MLL23_primary12",
+      "mean": -0.03164896198933098,
+      "noise_floor": 0.1867194696087664,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+OT_tau0.91 minus H",
+      "summary": "all25",
+      "mean": -0.009007451857959778,
+      "noise_floor": 0.0908122084980667,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+OT_tau0.91 minus H",
+      "summary": "PBC10",
+      "mean": 0.021855006223779155,
+      "noise_floor": 0.03222524468350296,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+OT_tau0.91 minus H",
+      "summary": "MLL23_15",
+      "mean": -0.02958242391245251,
+      "noise_floor": 0.14977871642775398,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+OT_tau0.91 minus H",
+      "summary": "PBC_robust",
+      "mean": -0.0028434777362714714,
+      "noise_floor": 0.03153884076205693,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+OT_tau0.91 minus H",
+      "summary": "PBC_failing",
+      "mean": 0.04978564835535373,
+      "noise_floor": 0.2307909512009635,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+OT_tau0.91 minus H",
+      "summary": "PBC_teacher_dependent",
+      "mean": 0.19151223577260892,
+      "noise_floor": 0.3652666245427131,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+OT_tau0.91 minus H",
+      "summary": "PBC_other",
+      "mean": null,
+      "noise_floor": null,
+      "decision": "incomplete",
+      "n_teachers": 0
+    },
+    {
+      "comparison": "H+OT_tau0.91 minus H",
+      "summary": "MLL23_robust",
+      "mean": -0.04056802919531902,
+      "noise_floor": 0.0515576454578357,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+OT_tau0.91 minus H",
+      "summary": "MLL23_failing",
+      "mean": -0.021599154332440047,
+      "noise_floor": 0.20105714945372088,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+OT_tau0.91 minus H",
+      "summary": "MLL23_teacher_dependent",
+      "mean": -0.18203985185185179,
+      "noise_floor": 0.27070222222222223,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+OT_tau0.91 minus H",
+      "summary": "MLL23_other",
+      "mean": 0.046168859734370016,
+      "noise_floor": 0.2784635698088758,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+OT_tau0.91 minus H_matched",
+      "summary": "primary16",
+      "mean": 0.05465627122261393,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+OT_tau0.91 minus H_matched",
+      "summary": "PBC_primary4",
+      "mean": 0.13661578290313067,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+OT_tau0.91 minus H_matched",
+      "summary": "MLL23_primary12",
+      "mean": 0.02733643399577505,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+OT_tau0.91 minus H_matched",
+      "summary": "all25",
+      "mean": 0.02781566011481647,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+OT_tau0.91 minus H_matched",
+      "summary": "PBC10",
+      "mean": 0.05718467393655543,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+OT_tau0.91 minus H_matched",
+      "summary": "MLL23_15",
+      "mean": 0.008236317566990356,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+OT_tau0.91 minus H_matched",
+      "summary": "PBC_robust",
+      "mean": 0.015377930893148503,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+OT_tau0.91 minus H_matched",
+      "summary": "PBC_failing",
+      "mean": 0.14317100949345207,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+OT_tau0.91 minus H_matched",
+      "summary": "PBC_teacher_dependent",
+      "mean": 0.3056522827269132,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+OT_tau0.91 minus H_matched",
+      "summary": "PBC_other",
+      "mean": null,
+      "noise_floor": null,
+      "decision": "incomplete",
+      "n_teachers": 0
+    },
+    {
+      "comparison": "H_matched+OT_tau0.91 minus H_matched",
+      "summary": "MLL23_robust",
+      "mean": -0.030322539075883632,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+OT_tau0.91 minus H_matched",
+      "summary": "MLL23_failing",
+      "mean": -0.001332450079021515,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+OT_tau0.91 minus H_matched",
+      "summary": "MLL23_teacher_dependent",
+      "mean": 0.038461037037036995,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+OT_tau0.91 minus H_matched",
+      "summary": "MLL23_other",
+      "mean": 0.12301178620019436,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+OT_tau0.91 minus T+OT_tau0.91",
+      "summary": "primary16",
+      "mean": 0.0872771302337753,
+      "noise_floor": 0.12164328928688017,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+OT_tau0.91 minus T+OT_tau0.91",
+      "summary": "PBC_primary4",
+      "mean": 0.021974564966756205,
+      "noise_floor": 0.14519149472570014,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+OT_tau0.91 minus T+OT_tau0.91",
+      "summary": "MLL23_primary12",
+      "mean": 0.10904465198944839,
+      "noise_floor": 0.1657353918785388,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+OT_tau0.91 minus T+OT_tau0.91",
+      "summary": "all25",
+      "mean": 0.07145240277706828,
+      "noise_floor": 0.07669691634845788,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+OT_tau0.91 minus T+OT_tau0.91",
+      "summary": "PBC10",
+      "mean": 0.009294044308418995,
+      "noise_floor": 0.056962999338215026,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+OT_tau0.91 minus T+OT_tau0.91",
+      "summary": "MLL23_15",
+      "mean": 0.11289130842283439,
+      "noise_floor": 0.1309759875769051,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+OT_tau0.91 minus T+OT_tau0.91",
+      "summary": "PBC_robust",
+      "mean": -0.006258178633620659,
+      "noise_floor": 0.04489743511655986,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+OT_tau0.91 minus T+OT_tau0.91",
+      "summary": "PBC_failing",
+      "mean": 0.18496895352894346,
+      "noise_floor": 0.16017280338838735,
+      "decision": "H+OT_tau0.91 higher",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+OT_tau0.91 minus T+OT_tau0.91",
+      "summary": "PBC_teacher_dependent",
+      "mean": -0.04196308137578827,
+      "noise_floor": 0.3652666245427131,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+OT_tau0.91 minus T+OT_tau0.91",
+      "summary": "PBC_other",
+      "mean": null,
+      "noise_floor": null,
+      "decision": "incomplete",
+      "n_teachers": 0
+    },
+    {
+      "comparison": "H+OT_tau0.91 minus T+OT_tau0.91",
+      "summary": "MLL23_robust",
+      "mean": 0.0852998472996341,
+      "noise_floor": 0.10582744553022072,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+OT_tau0.91 minus T+OT_tau0.91",
+      "summary": "MLL23_failing",
+      "mean": 0.14738379375386518,
+      "noise_floor": 0.1798781579055866,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+OT_tau0.91 minus T+OT_tau0.91",
+      "summary": "MLL23_teacher_dependent",
+      "mean": 0.16023293827160492,
+      "noise_floor": 0.27070222222222223,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+OT_tau0.91 minus T+OT_tau0.91",
+      "summary": "MLL23_other",
+      "mean": 0.037475447647842275,
+      "noise_floor": 0.24698945513443482,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+OT_tau0.30 minus T",
+      "summary": "primary16",
+      "mean": -0.018601990587370425,
+      "noise_floor": 0.10827184323372008,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+OT_tau0.30 minus T",
+      "summary": "PBC_primary4",
+      "mean": -0.025067016282052396,
+      "noise_floor": 0.3491916564160776,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+OT_tau0.30 minus T",
+      "summary": "MLL23_primary12",
+      "mean": -0.01644698202247648,
+      "noise_floor": 0.08141218603655254,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+OT_tau0.30 minus T",
+      "summary": "all25",
+      "mean": -0.005047475294552961,
+      "noise_floor": 0.06939641447224609,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+OT_tau0.30 minus T",
+      "summary": "PBC10",
+      "mean": 0.006007546980712819,
+      "noise_floor": 0.16956128290642758,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+OT_tau0.30 minus T",
+      "summary": "MLL23_15",
+      "mean": -0.012417490144730073,
+      "noise_floor": 0.0908758821625753,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+OT_tau0.30 minus T",
+      "summary": "PBC_robust",
+      "mean": 0.019609200935757576,
+      "noise_floor": 0.11499931475164205,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+OT_tau0.30 minus T",
+      "summary": "PBC_failing",
+      "mean": -0.018168270336772763,
+      "noise_floor": 0.44534842679416786,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+OT_tau0.30 minus T",
+      "summary": "PBC_teacher_dependent",
+      "mean": -0.07862986734216042,
+      "noise_floor": 0.5474139728964801,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+OT_tau0.30 minus T",
+      "summary": "PBC_other",
+      "mean": null,
+      "noise_floor": null,
+      "decision": "incomplete",
+      "n_teachers": 0
+    },
+    {
+      "comparison": "T+OT_tau0.30 minus T",
+      "summary": "MLL23_robust",
+      "mean": -0.0031504097800297837,
+      "noise_floor": 0.14310917119073474,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+OT_tau0.30 minus T",
+      "summary": "MLL23_failing",
+      "mean": 0.0017371070913212994,
+      "noise_floor": 0.07895148381776951,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+OT_tau0.30 minus T",
+      "summary": "MLL23_teacher_dependent",
+      "mean": -0.1606216296296296,
+      "noise_floor": 0.19813155555555562,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+OT_tau0.30 minus T",
+      "summary": "MLL23_other",
+      "mean": -0.011024211640211612,
+      "noise_floor": 0.1008266070618723,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+OT_tau0.30 minus H",
+      "summary": "primary16",
+      "mean": -0.012936773007370247,
+      "noise_floor": 0.1410649276768523,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+OT_tau0.30 minus H",
+      "summary": "PBC_primary4",
+      "mean": -0.020369851784633502,
+      "noise_floor": 0.08256946449654567,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+OT_tau0.30 minus H",
+      "summary": "MLL23_primary12",
+      "mean": -0.010459080081615927,
+      "noise_floor": 0.1867194696087664,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+OT_tau0.30 minus H",
+      "summary": "all25",
+      "mean": -0.007988457358960921,
+      "noise_floor": 0.0908122084980667,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+OT_tau0.30 minus H",
+      "summary": "PBC10",
+      "mean": -0.007005862114278154,
+      "noise_floor": 0.031037521957368086,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+OT_tau0.30 minus H",
+      "summary": "MLL23_15",
+      "mean": -0.008643520855416234,
+      "noise_floor": 0.14977871642775398,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+OT_tau0.30 minus H",
+      "summary": "PBC_robust",
+      "mean": -0.01233382374657932,
+      "noise_floor": 0.042262951397720405,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+OT_tau0.30 minus H",
+      "summary": "PBC_failing",
+      "mean": -0.0013644638995321718,
+      "noise_floor": 0.2307909512009635,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+OT_tau0.30 minus H",
+      "summary": "PBC_teacher_dependent",
+      "mean": 0.029976432729384994,
+      "noise_floor": 0.43963078715147325,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+OT_tau0.30 minus H",
+      "summary": "PBC_other",
+      "mean": null,
+      "noise_floor": null,
+      "decision": "incomplete",
+      "n_teachers": 0
+    },
+    {
+      "comparison": "H+OT_tau0.30 minus H",
+      "summary": "MLL23_robust",
+      "mean": -0.008116787260224356,
+      "noise_floor": 0.0515576454578357,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+OT_tau0.30 minus H",
+      "summary": "MLL23_failing",
+      "mean": -0.018851399780114075,
+      "noise_floor": 0.20105714945372088,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+OT_tau0.30 minus H",
+      "summary": "MLL23_teacher_dependent",
+      "mean": -0.09005585185185179,
+      "noise_floor": 0.22457244444444457,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+OT_tau0.30 minus H",
+      "summary": "MLL23_other",
+      "mean": 0.06647338689126452,
+      "noise_floor": 0.2784635698088758,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+OT_tau0.30 minus H_matched",
+      "summary": "primary16",
+      "mean": 0.04452193721394456,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+OT_tau0.30 minus H_matched",
+      "summary": "PBC_primary4",
+      "mean": 0.062471444109071315,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+OT_tau0.30 minus H_matched",
+      "summary": "MLL23_primary12",
+      "mean": 0.038538768248902344,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+OT_tau0.30 minus H_matched",
+      "summary": "all25",
+      "mean": 0.02717765901846736,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+OT_tau0.30 minus H_matched",
+      "summary": "PBC10",
+      "mean": 0.02804906268452238,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+OT_tau0.30 minus H_matched",
+      "summary": "MLL23_15",
+      "mean": 0.026596723241097187,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+OT_tau0.30 minus H_matched",
+      "summary": "PBC_robust",
+      "mean": 0.003383525621135234,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+OT_tau0.30 minus H_matched",
+      "summary": "PBC_failing",
+      "mean": 0.059229644022836724,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+OT_tau0.30 minus H_matched",
+      "summary": "PBC_teacher_dependent",
+      "mean": 0.19419277785330566,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+OT_tau0.30 minus H_matched",
+      "summary": "PBC_other",
+      "mean": null,
+      "noise_floor": null,
+      "decision": "incomplete",
+      "n_teachers": 0
+    },
+    {
+      "comparison": "H_matched+OT_tau0.30 minus H_matched",
+      "summary": "MLL23_robust",
+      "mean": 0.006271830329352339,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+OT_tau0.30 minus H_matched",
+      "summary": "MLL23_failing",
+      "mean": 0.009755681577681566,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+OT_tau0.30 minus H_matched",
+      "summary": "MLL23_teacher_dependent",
+      "mean": 0.07200770370370375,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+OT_tau0.30 minus H_matched",
+      "summary": "MLL23_other",
+      "mean": 0.11364711111111109,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+OT_tau0.30 minus T+OT_tau0.30",
+      "summary": "primary16",
+      "mean": 0.09760758708216231,
+      "noise_floor": 0.11246665906502629,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+OT_tau0.30 minus T+OT_tau0.30",
+      "summary": "PBC_primary4",
+      "mean": -0.02057517212214773,
+      "noise_floor": 0.25268050609462867,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+OT_tau0.30 minus T+OT_tau0.30",
+      "summary": "MLL23_primary12",
+      "mean": 0.13700184015026554,
+      "noise_floor": 0.15758074309515868,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+OT_tau0.30 minus T+OT_tau0.30",
+      "summary": "all25",
+      "mean": 0.0804698053345642,
+      "noise_floor": 0.07165021889298029,
+      "decision": "H+OT_tau0.30 higher",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+OT_tau0.30 minus T+OT_tau0.30",
+      "summary": "PBC10",
+      "mean": -0.008428845461192084,
+      "noise_floor": 0.10103150472242728,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+OT_tau0.30 minus T+OT_tau0.30",
+      "summary": "MLL23_15",
+      "mean": 0.13973557253173505,
+      "noise_floor": 0.12563164632797863,
+      "decision": "H+OT_tau0.30 higher",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+OT_tau0.30 minus T+OT_tau0.30",
+      "summary": "PBC_robust",
+      "mean": -0.01975900998252489,
+      "noise_floor": 0.051110837890627314,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+OT_tau0.30 minus T+OT_tau0.30",
+      "summary": "PBC_failing",
+      "mean": 0.18471512164079326,
+      "noise_floor": 0.19474639856488402,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+OT_tau0.30 minus T+OT_tau0.30",
+      "summary": "PBC_teacher_dependent",
+      "mean": -0.11093149639251425,
+      "noise_floor": 0.4783908752719004,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+OT_tau0.30 minus T+OT_tau0.30",
+      "summary": "PBC_other",
+      "mean": null,
+      "noise_floor": null,
+      "decision": "incomplete",
+      "n_teachers": 0
+    },
+    {
+      "comparison": "H+OT_tau0.30 minus T+OT_tau0.30",
+      "summary": "MLL23_robust",
+      "mean": 0.1214264594844573,
+      "noise_floor": 0.1373100751357219,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+OT_tau0.30 minus T+OT_tau0.30",
+      "summary": "MLL23_failing",
+      "mean": 0.1563826906250716,
+      "noise_floor": 0.16835217068645647,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+OT_tau0.30 minus T+OT_tau0.30",
+      "summary": "MLL23_teacher_dependent",
+      "mean": 0.28277338271604935,
+      "noise_floor": 0.19813155555555562,
+      "decision": "H+OT_tau0.30 higher",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+OT_tau0.30 minus T+OT_tau0.30",
+      "summary": "MLL23_other",
+      "mean": 0.055724536731094565,
+      "noise_floor": 0.2617206530612246,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+mean minus T",
+      "summary": "primary16",
+      "mean": -0.004444597477471834,
+      "noise_floor": 0.10827184323372008,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+mean minus T",
+      "summary": "PBC_primary4",
+      "mean": -0.024277896019934575,
+      "noise_floor": 0.3491916564160776,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+mean minus T",
+      "summary": "MLL23_primary12",
+      "mean": 0.002166502036682357,
+      "noise_floor": 0.102266802494961,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+mean minus T",
+      "summary": "all25",
+      "mean": -0.0013630545581142888,
+      "noise_floor": 0.07970421305843123,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+mean minus T",
+      "summary": "PBC10",
+      "mean": -0.007082870938069956,
+      "noise_floor": 0.16956128290642758,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+mean minus T",
+      "summary": "MLL23_15",
+      "mean": 0.002450156361856267,
+      "noise_floor": 0.10139833088485767,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+mean minus T",
+      "summary": "PBC_robust",
+      "mean": -0.0039468678866102875,
+      "noise_floor": 0.11499931475164205,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+mean minus T",
+      "summary": "PBC_failing",
+      "mean": 0.04047295027187394,
+      "noise_floor": 0.44534842679416786,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+mean minus T",
+      "summary": "PBC_teacher_dependent",
+      "mean": -0.0797267165596917,
+      "noise_floor": 0.5474139728964801,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+mean minus T",
+      "summary": "PBC_other",
+      "mean": null,
+      "noise_floor": null,
+      "decision": "incomplete",
+      "n_teachers": 0
+    },
+    {
+      "comparison": "T+mean minus T",
+      "summary": "MLL23_robust",
+      "mean": 0.0019616741223307623,
+      "noise_floor": 0.1631319580166486,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+mean minus T",
+      "summary": "MLL23_failing",
+      "mean": 0.007861924631805536,
+      "noise_floor": 0.1021426856318286,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+mean minus T",
+      "summary": "MLL23_teacher_dependent",
+      "mean": -0.028184790123456833,
+      "noise_floor": 0.15428622222222227,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+mean minus T",
+      "summary": "MLL23_other",
+      "mean": 4.764625850343466e-05,
+      "noise_floor": 0.08679659993521216,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+mean minus H",
+      "summary": "primary16",
+      "mean": -0.009949239107166719,
+      "noise_floor": 0.1505027782207884,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+mean minus H",
+      "summary": "PBC_primary4",
+      "mean": 0.0526307366044713,
+      "noise_floor": 0.04789459024435483,
+      "decision": "H+mean higher",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+mean minus H",
+      "summary": "MLL23_primary12",
+      "mean": -0.030809231011046045,
+      "noise_floor": 0.1867194696087664,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+mean minus H",
+      "summary": "all25",
+      "mean": -0.0077584550121095885,
+      "noise_floor": 0.09820780236189075,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+mean minus H",
+      "summary": "PBC10",
+      "mean": 0.02304533968298128,
+      "noise_floor": 0.028037547670914598,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+mean minus H",
+      "summary": "MLL23_15",
+      "mean": -0.028294318142170167,
+      "noise_floor": 0.15151422088749467,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+mean minus H",
+      "summary": "PBC_robust",
+      "mean": 0.010063116393825474,
+      "noise_floor": 0.023109820647124635,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+mean minus H",
+      "summary": "PBC_failing",
+      "mean": 0.019368940752950703,
+      "noise_floor": 0.2307909512009635,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+mean minus H",
+      "summary": "PBC_teacher_dependent",
+      "mean": 0.13057952492625732,
+      "noise_floor": 0.3670260591754004,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+mean minus H",
+      "summary": "PBC_other",
+      "mean": null,
+      "noise_floor": null,
+      "decision": "incomplete",
+      "n_teachers": 0
+    },
+    {
+      "comparison": "H+mean minus H",
+      "summary": "MLL23_robust",
+      "mean": -0.010618015972976217,
+      "noise_floor": 0.0608783183496201,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+mean minus H",
+      "summary": "MLL23_failing",
+      "mean": -0.030206636294922002,
+      "noise_floor": 0.20105714945372088,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+mean minus H",
+      "summary": "MLL23_teacher_dependent",
+      "mean": -0.1591731851851851,
+      "noise_floor": 0.22457244444444457,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+mean minus H",
+      "summary": "MLL23_other",
+      "mean": -0.00035252650901633026,
+      "noise_floor": 0.2784635698088758,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+mean minus H_matched",
+      "summary": "primary16",
+      "mean": 0.016154376885209116,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+mean minus H_matched",
+      "summary": "PBC_primary4",
+      "mean": 0.10955468445109011,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+mean minus H_matched",
+      "summary": "MLL23_primary12",
+      "mean": -0.014979058970084521,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+mean minus H_matched",
+      "summary": "all25",
+      "mean": 0.009286768328621223,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+mean minus H_matched",
+      "summary": "PBC10",
+      "mean": 0.047774250844913636,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+mean minus H_matched",
+      "summary": "MLL23_15",
+      "mean": -0.016371553348907126,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+mean minus H_matched",
+      "summary": "PBC_robust",
+      "mean": 0.0239905119617501,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+mean minus H_matched",
+      "summary": "PBC_failing",
+      "mean": 0.014940148921176585,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+mean minus H_matched",
+      "summary": "PBC_teacher_dependent",
+      "mean": 0.27087826383395947,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+mean minus H_matched",
+      "summary": "PBC_other",
+      "mean": null,
+      "noise_floor": null,
+      "decision": "incomplete",
+      "n_teachers": 0
+    },
+    {
+      "comparison": "H_matched+mean minus H_matched",
+      "summary": "MLL23_robust",
+      "mean": -0.008140361056822143,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+mean minus H_matched",
+      "summary": "MLL23_failing",
+      "mean": -0.02848581749467464,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+mean minus H_matched",
+      "summary": "MLL23_teacher_dependent",
+      "mean": -0.08005066666666667,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+mean minus H_matched",
+      "summary": "MLL23_other",
+      "mean": 0.037289947089947095,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+mean minus T+mean",
+      "summary": "primary16",
+      "mean": 0.08643772787246724,
+      "noise_floor": 0.1505027782207884,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+mean minus T+mean",
+      "summary": "PBC_primary4",
+      "mean": 0.051636296004839245,
+      "noise_floor": 0.2684251508993939,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+mean minus T+mean",
+      "summary": "MLL23_primary12",
+      "mean": 0.09803820516167659,
+      "noise_floor": 0.18525151685010888,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+mean minus T+mean",
+      "summary": "all25",
+      "mean": 0.07701538694497685,
+      "noise_floor": 0.09820780236189075,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+mean minus T+mean",
+      "summary": "PBC10",
+      "mean": 0.03471277425485012,
+      "noise_floor": 0.12261458771153289,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+mean minus T+mean",
+      "summary": "MLL23_15",
+      "mean": 0.10521712873839477,
+      "noise_floor": 0.15151422088749467,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+mean minus T+mean",
+      "summary": "PBC_robust",
+      "mean": 0.026193998980247768,
+      "noise_floor": 0.09478271651137304,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+mean minus T+mean",
+      "summary": "PBC_failing",
+      "mean": 0.14680730568462944,
+      "noise_floor": 0.3491872891809579,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+mean minus T+mean",
+      "summary": "PBC_teacher_dependent",
+      "mean": -0.00923155497811066,
+      "noise_floor": 0.38772099626754997,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+mean minus T+mean",
+      "summary": "PBC_other",
+      "mean": null,
+      "noise_floor": null,
+      "decision": "incomplete",
+      "n_teachers": 0
+    },
+    {
+      "comparison": "H+mean minus T+mean",
+      "summary": "MLL23_robust",
+      "mean": 0.11381314686934489,
+      "noise_floor": 0.1631319580166486,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+mean minus T+mean",
+      "summary": "MLL23_failing",
+      "mean": 0.13890263656977944,
+      "noise_floor": 0.1945544716553289,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+mean minus T+mean",
+      "summary": "MLL23_teacher_dependent",
+      "mean": 0.08121920987654326,
+      "noise_floor": 0.17587555555555545,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+mean minus T+mean",
+      "summary": "MLL23_other",
+      "mean": -0.022173234567901323,
+      "noise_floor": 0.2659893203757694,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+CORAL minus T",
+      "summary": "primary16",
+      "mean": 0.0032398991737340546,
+      "noise_floor": 0.10827184323372008,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+CORAL minus T",
+      "summary": "PBC_primary4",
+      "mean": -0.0238116452045255,
+      "noise_floor": 0.3491916564160776,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+CORAL minus T",
+      "summary": "MLL23_primary12",
+      "mean": 0.01225708063315382,
+      "noise_floor": 0.07099387985692412,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+CORAL minus T",
+      "summary": "all25",
+      "mean": -0.014095283512126707,
+      "noise_floor": 0.06939641447224609,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+CORAL minus T",
+      "summary": "PBC10",
+      "mean": -0.04001186109565661,
+      "noise_floor": 0.16956128290642758,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+CORAL minus T",
+      "summary": "MLL23_15",
+      "mean": 0.003182434876893477,
+      "noise_floor": 0.07403125203368749,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+CORAL minus T",
+      "summary": "PBC_robust",
+      "mean": -0.07308626194159189,
+      "noise_floor": 0.11499931475164205,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+CORAL minus T",
+      "summary": "PBC_failing",
+      "mean": 0.046328509183149104,
+      "noise_floor": 0.44534842679416786,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+CORAL minus T",
+      "summary": "PBC_teacher_dependent",
+      "mean": 0.13824297539301963,
+      "noise_floor": 0.5474139728964801,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+CORAL minus T",
+      "summary": "PBC_other",
+      "mean": null,
+      "noise_floor": null,
+      "decision": "incomplete",
+      "n_teachers": 0
+    },
+    {
+      "comparison": "T+CORAL minus T",
+      "summary": "MLL23_robust",
+      "mean": -0.03155966258897347,
+      "noise_floor": 0.14310917119073474,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+CORAL minus T",
+      "summary": "MLL23_failing",
+      "mean": 0.03251721185780706,
+      "noise_floor": 0.07895148381776951,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+CORAL minus T",
+      "summary": "MLL23_teacher_dependent",
+      "mean": 0.03919990123456792,
+      "noise_floor": 0.15428622222222227,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+CORAL minus T",
+      "summary": "MLL23_other",
+      "mean": -0.030642774070474815,
+      "noise_floor": 0.09184047942986717,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+CORAL minus H",
+      "summary": "primary16",
+      "mean": -0.031729789003050866,
+      "noise_floor": 0.1410649276768523,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+CORAL minus H",
+      "summary": "PBC_primary4",
+      "mean": 0.01982868498887162,
+      "noise_floor": 0.06867320313282987,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+CORAL minus H",
+      "summary": "MLL23_primary12",
+      "mean": -0.04891594700035836,
+      "noise_floor": 0.1867194696087664,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+CORAL minus H",
+      "summary": "all25",
+      "mean": -0.041863879139174255,
+      "noise_floor": 0.0908122084980667,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+CORAL minus H",
+      "summary": "PBC10",
+      "mean": -0.018730265151209496,
+      "noise_floor": 0.028037547670914598,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+CORAL minus H",
+      "summary": "MLL23_15",
+      "mean": -0.05728628846448425,
+      "noise_floor": 0.14977871642775398,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+CORAL minus H",
+      "summary": "PBC_robust",
+      "mean": -0.053792897397409965,
+      "noise_floor": 0.017120146506898193,
+      "decision": "H higher",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+CORAL minus H",
+      "summary": "PBC_failing",
+      "mean": -0.062275323452962696,
+      "noise_floor": 0.2307909512009635,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+CORAL minus H",
+      "summary": "PBC_teacher_dependent",
+      "mean": 0.305315851120147,
+      "noise_floor": 0.3475121891684793,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+CORAL minus H",
+      "summary": "PBC_other",
+      "mean": null,
+      "noise_floor": null,
+      "decision": "incomplete",
+      "n_teachers": 0
+    },
+    {
+      "comparison": "H+CORAL minus H",
+      "summary": "MLL23_robust",
+      "mean": -0.06868605380624919,
+      "noise_floor": 0.07301191111111116,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+CORAL minus H",
+      "summary": "MLL23_failing",
+      "mean": -0.05606379207036357,
+      "noise_floor": 0.20105714945372088,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+CORAL minus H",
+      "summary": "MLL23_teacher_dependent",
+      "mean": -0.1422124444444444,
+      "noise_floor": 0.22457244444444457,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+CORAL minus H",
+      "summary": "MLL23_other",
+      "mean": 0.009397465500485924,
+      "noise_floor": 0.2784635698088758,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+CORAL minus H_matched",
+      "summary": "primary16",
+      "mean": 0.010412841671700646,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+CORAL minus H_matched",
+      "summary": "PBC_primary4",
+      "mean": 0.07403782893494788,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+CORAL minus H_matched",
+      "summary": "MLL23_primary12",
+      "mean": -0.010795487416048374,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+CORAL minus H_matched",
+      "summary": "all25",
+      "mean": -0.017706225848957608,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+CORAL minus H_matched",
+      "summary": "PBC10",
+      "mean": 0.000526309165752951,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+CORAL minus H_matched",
+      "summary": "MLL23_15",
+      "mean": -0.029861249192097945,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+CORAL minus H_matched",
+      "summary": "PBC_robust",
+      "mean": -0.0480126492699553,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+CORAL minus H_matched",
+      "summary": "PBC_failing",
+      "mean": -0.022261217301443426,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+CORAL minus H_matched",
+      "summary": "PBC_teacher_dependent",
+      "mean": 0.41162550311861446,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+CORAL minus H_matched",
+      "summary": "PBC_other",
+      "mean": null,
+      "noise_floor": null,
+      "decision": "incomplete",
+      "n_teachers": 0
+    },
+    {
+      "comparison": "H_matched+CORAL minus H_matched",
+      "summary": "MLL23_robust",
+      "mean": -0.06390349552418857,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+CORAL minus H_matched",
+      "summary": "MLL23_failing",
+      "mean": -0.02885597086511375,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+CORAL minus H_matched",
+      "summary": "MLL23_teacher_dependent",
+      "mean": -0.05464829629629634,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+CORAL minus H_matched",
+      "summary": "MLL23_other",
+      "mean": 0.06411941604578336,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+CORAL minus T+CORAL",
+      "summary": "primary16",
+      "mean": 0.056972681325377215,
+      "noise_floor": 0.10617521025942178,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+CORAL minus T+CORAL",
+      "summary": "PBC_primary4",
+      "mean": 0.018367993573830493,
+      "noise_floor": 0.10550518437077416,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+CORAL minus T+CORAL",
+      "summary": "MLL23_primary12",
+      "mean": 0.06984091057589281,
+      "noise_floor": 0.12982513829374553,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+CORAL minus T+CORAL",
+      "summary": "all25",
+      "mean": 0.05564219177192461,
+      "noise_floor": 0.07132709982847951,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+CORAL minus T+CORAL",
+      "summary": "PBC10",
+      "mean": 0.025866159578246006,
+      "noise_floor": 0.0655537639711552,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+CORAL minus T+CORAL",
+      "summary": "MLL23_15",
+      "mean": 0.07549287990104347,
+      "noise_floor": 0.10507338470907046,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+CORAL minus T+CORAL",
+      "summary": "PBC_robust",
+      "mean": 0.03147737924399393,
+      "noise_floor": 0.08086220252543486,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+CORAL minus T+CORAL",
+      "summary": "PBC_failing",
+      "mean": 0.05930748256744086,
+      "noise_floor": 0.12630621386284152,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+CORAL minus T+CORAL",
+      "summary": "PBC_teacher_dependent",
+      "mean": -0.05246492073693232,
+      "noise_floor": 0.3060518294566938,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+CORAL minus T+CORAL",
+      "summary": "PBC_other",
+      "mean": null,
+      "noise_floor": null,
+      "decision": "incomplete",
+      "n_teachers": 0
+    },
+    {
+      "comparison": "H+CORAL minus T+CORAL",
+      "summary": "MLL23_robust",
+      "mean": 0.08926644574737615,
+      "noise_floor": 0.14293828273615639,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+CORAL minus T+CORAL",
+      "summary": "MLL23_failing",
+      "mean": 0.08839019356833634,
+      "noise_floor": 0.14643550896722335,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+CORAL minus T+CORAL",
+      "summary": "MLL23_teacher_dependent",
+      "mean": 0.030795259259259227,
+      "noise_floor": 0.09743644444444444,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+CORAL minus T+CORAL",
+      "summary": "MLL23_other",
+      "mean": 0.01826717777057918,
+      "noise_floor": 0.19246878652413346,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+kNN minus T",
+      "summary": "primary16",
+      "mean": -0.02587279589935069,
+      "noise_floor": 0.10827184323372008,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+kNN minus T",
+      "summary": "PBC_primary4",
+      "mean": -0.032037612687194704,
+      "noise_floor": 0.3491916564160776,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+kNN minus T",
+      "summary": "MLL23_primary12",
+      "mean": -0.0238178569700694,
+      "noise_floor": 0.08714712086324161,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+kNN minus T",
+      "summary": "all25",
+      "mean": -0.014933994150720423,
+      "noise_floor": 0.06939641447224609,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+kNN minus T",
+      "summary": "PBC10",
+      "mean": 0.0022646602712329913,
+      "noise_floor": 0.16956128290642758,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+kNN minus T",
+      "summary": "MLL23_15",
+      "mean": -0.026399763765355872,
+      "noise_floor": 0.09847094113503779,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+kNN minus T",
+      "summary": "PBC_robust",
+      "mean": 0.015704298558591605,
+      "noise_floor": 0.11499931475164205,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+kNN minus T",
+      "summary": "PBC_failing",
+      "mean": -0.05256307236750871,
+      "noise_floor": 0.44534842679416786,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+kNN minus T",
+      "summary": "PBC_teacher_dependent",
+      "mean": -0.05042471338889437,
+      "noise_floor": 0.5474139728964801,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+kNN minus T",
+      "summary": "PBC_other",
+      "mean": null,
+      "noise_floor": null,
+      "decision": "incomplete",
+      "n_teachers": 0
+    },
+    {
+      "comparison": "T+kNN minus T",
+      "summary": "MLL23_robust",
+      "mean": -0.036323334507580296,
+      "noise_floor": 0.15347046138255516,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+kNN minus T",
+      "summary": "MLL23_failing",
+      "mean": 0.0024289192606335073,
+      "noise_floor": 0.07895148381776951,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+kNN minus T",
+      "summary": "MLL23_teacher_dependent",
+      "mean": -0.17930617283950614,
+      "noise_floor": 0.17238755555555557,
+      "decision": "T higher",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+kNN minus T",
+      "summary": "MLL23_other",
+      "mean": -0.026038022963682777,
+      "noise_floor": 0.1210772037576936,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+kNN minus H",
+      "summary": "primary16",
+      "mean": -0.028282322738832428,
+      "noise_floor": 0.1410649276768523,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+kNN minus H",
+      "summary": "PBC_primary4",
+      "mean": -0.04939739885657857,
+      "noise_floor": 0.13380688689347497,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+kNN minus H",
+      "summary": "MLL23_primary12",
+      "mean": -0.02124396403291695,
+      "noise_floor": 0.1867194696087664,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+kNN minus H",
+      "summary": "all25",
+      "mean": -0.01883318086817032,
+      "noise_floor": 0.0908122084980667,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+kNN minus H",
+      "summary": "PBC10",
+      "mean": -0.01974729903462924,
+      "noise_floor": 0.054004846831301134,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+kNN minus H",
+      "summary": "MLL23_15",
+      "mean": -0.018223768757197778,
+      "noise_floor": 0.14977871642775398,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+kNN minus H",
+      "summary": "PBC_robust",
+      "mean": -0.019446197536713505,
+      "noise_floor": 0.043840526024411464,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+kNN minus H",
+      "summary": "PBC_failing",
+      "mean": -0.034241955066509976,
+      "noise_floor": 0.2364717397869886,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+kNN minus H",
+      "summary": "PBC_teacher_dependent",
+      "mean": -0.007661454986075432,
+      "noise_floor": 0.3475121891684793,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+kNN minus H",
+      "summary": "PBC_other",
+      "mean": null,
+      "noise_floor": null,
+      "decision": "incomplete",
+      "n_teachers": 0
+    },
+    {
+      "comparison": "H+kNN minus H",
+      "summary": "MLL23_robust",
+      "mean": -0.018506561129207344,
+      "noise_floor": 0.0515576454578357,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+kNN minus H",
+      "summary": "MLL23_failing",
+      "mean": -0.027508621590050148,
+      "noise_floor": 0.20105714945372088,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+kNN minus H",
+      "summary": "MLL23_teacher_dependent",
+      "mean": -0.10616859259259252,
+      "noise_floor": 0.22457244444444457,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+kNN minus H",
+      "summary": "MLL23_other",
+      "mean": 0.058952609005506994,
+      "noise_floor": 0.2784635698088758,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+kNN minus H_matched",
+      "summary": "primary16",
+      "mean": 0.014759604553561142,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+kNN minus H_matched",
+      "summary": "PBC_primary4",
+      "mean": 0.007415714837773553,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+kNN minus H_matched",
+      "summary": "MLL23_primary12",
+      "mean": 0.01720756779215704,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+kNN minus H_matched",
+      "summary": "all25",
+      "mean": 0.007236888626155273,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+kNN minus H_matched",
+      "summary": "PBC10",
+      "mean": 0.004782058733318199,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+kNN minus H_matched",
+      "summary": "MLL23_15",
+      "mean": 0.008873441888046618,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+kNN minus H_matched",
+      "summary": "PBC_robust",
+      "mean": -0.007567063222950643,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+kNN minus H_matched",
+      "summary": "PBC_failing",
+      "mean": -0.0510406167408361,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+kNN minus H_matched",
+      "summary": "PBC_teacher_dependent",
+      "mean": 0.1593977098576231,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+kNN minus H_matched",
+      "summary": "PBC_other",
+      "mean": null,
+      "noise_floor": null,
+      "decision": "incomplete",
+      "n_teachers": 0
+    },
+    {
+      "comparison": "H_matched+kNN minus H_matched",
+      "summary": "MLL23_robust",
+      "mean": -0.010841989624803946,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+kNN minus H_matched",
+      "summary": "MLL23_failing",
+      "mean": 0.002953439978011433,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+kNN minus H_matched",
+      "summary": "MLL23_teacher_dependent",
+      "mean": -0.006293925925925925,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+kNN minus H_matched",
+      "summary": "MLL23_other",
+      "mean": 0.08646571126228265,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+kNN minus T+kNN",
+      "summary": "primary16",
+      "mean": 0.0895328426626804,
+      "noise_floor": 0.07392949359701784,
+      "decision": "H+kNN higher",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+kNN minus T+kNN",
+      "summary": "PBC_primary4",
+      "mean": -0.04263212278895049,
+      "noise_floor": 0.22260679790313176,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+kNN minus T+kNN",
+      "summary": "MLL23_primary12",
+      "mean": 0.13358783114655745,
+      "noise_floor": 0.14317495376051537,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+kNN minus T+kNN",
+      "summary": "all25",
+      "mean": 0.07951160068152226,
+      "noise_floor": 0.05895566758188009,
+      "decision": "H+kNN higher",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+kNN minus T+kNN",
+      "summary": "PBC10",
+      "mean": -0.017427395672063344,
+      "noise_floor": 0.08814150944537713,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+kNN minus T+kNN",
+      "summary": "MLL23_15",
+      "mean": 0.14413759825057929,
+      "noise_floor": 0.11363667411952338,
+      "decision": "H+kNN higher",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+kNN minus T+kNN",
+      "summary": "PBC_robust",
+      "mean": -0.022966481395493104,
+      "noise_floor": 0.043840526024411464,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+kNN minus T+kNN",
+      "summary": "PBC_failing",
+      "mean": 0.18623243250455138,
+      "noise_floor": 0.2364717397869886,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+kNN minus T+kNN",
+      "summary": "PBC_teacher_dependent",
+      "mean": -0.17677453806124074,
+      "noise_floor": 0.5282117840987739,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+kNN minus T+kNN",
+      "summary": "PBC_other",
+      "mean": null,
+      "noise_floor": null,
+      "decision": "incomplete",
+      "n_teachers": 0
+    },
+    {
+      "comparison": "H+kNN minus T+kNN",
+      "summary": "MLL23_robust",
+      "mean": 0.14420961034302482,
+      "noise_floor": 0.15347046138255516,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+kNN minus T+kNN",
+      "summary": "MLL23_failing",
+      "mean": 0.14703365664582332,
+      "noise_floor": 0.1515130298907441,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+kNN minus T+kNN",
+      "summary": "MLL23_teacher_dependent",
+      "mean": 0.2853451851851852,
+      "noise_floor": 0.20491555555555563,
+      "decision": "H+kNN higher",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+kNN minus T+kNN",
+      "summary": "MLL23_other",
+      "mean": 0.0632175701688082,
+      "noise_floor": 0.24348609912536423,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+CCOT minus T",
+      "summary": "PBC_primary4",
+      "mean": -0.005096027567515593,
+      "noise_floor": 0.3491916564160776,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+CCOT minus T",
+      "summary": "PBC10",
+      "mean": 0.013378898511206438,
+      "noise_floor": 0.16956128290642758,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+CCOT minus T",
+      "summary": "PBC_robust",
+      "mean": 0.017980974958330325,
+      "noise_floor": 0.11499931475164205,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+CCOT minus T",
+      "summary": "PBC_failing",
+      "mean": 0.11678512761235695,
+      "noise_floor": 0.44534842679416786,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+CCOT minus T",
+      "summary": "PBC_teacher_dependent",
+      "mean": -0.12684394216693576,
+      "noise_floor": 0.5474139728964801,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "T+CCOT minus T",
+      "summary": "PBC_other",
+      "mean": null,
+      "noise_floor": null,
+      "decision": "incomplete",
+      "n_teachers": 0
+    },
+    {
+      "comparison": "H+CCOT minus H",
+      "summary": "PBC_primary4",
+      "mean": 0.08942144679124568,
+      "noise_floor": 0.10656114858053378,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+CCOT minus H",
+      "summary": "PBC10",
+      "mean": 0.03542883049854743,
+      "noise_floor": 0.040185277926569674,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+CCOT minus H",
+      "summary": "PBC_robust",
+      "mean": 0.010567869194533489,
+      "noise_floor": 0.021514225597042413,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+CCOT minus H",
+      "summary": "PBC_failing",
+      "mean": 0.04292685056818807,
+      "noise_floor": 0.2307909512009635,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+CCOT minus H",
+      "summary": "PBC_teacher_dependent",
+      "mean": 0.22681850086101776,
+      "noise_floor": 0.3475121891684793,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+CCOT minus H",
+      "summary": "PBC_other",
+      "mean": null,
+      "noise_floor": null,
+      "decision": "incomplete",
+      "n_teachers": 0
+    },
+    {
+      "comparison": "H_matched+CCOT minus H_matched",
+      "summary": "PBC_primary4",
+      "mean": 0.11723459480780307,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+CCOT minus H_matched",
+      "summary": "PBC10",
+      "mean": 0.04761386721063184,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+CCOT minus H_matched",
+      "summary": "PBC_robust",
+      "mean": 0.01596074311454739,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+CCOT minus H_matched",
+      "summary": "PBC_failing",
+      "mean": 0.060091477725501365,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+CCOT minus H_matched",
+      "summary": "PBC_teacher_dependent",
+      "mean": 0.2883612494644388,
+      "noise_floor": 0.0,
+      "decision": "sensitivity only (one H_matched seed)",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H_matched+CCOT minus H_matched",
+      "summary": "PBC_other",
+      "mean": null,
+      "noise_floor": null,
+      "decision": "incomplete",
+      "n_teachers": 0
+    },
+    {
+      "comparison": "H+CCOT minus T+CCOT",
+      "summary": "PBC_primary4",
+      "mean": 0.06924513773919465,
+      "noise_floor": 0.22758865022006303,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+CCOT minus T+CCOT",
+      "summary": "PBC10",
+      "mean": 0.02663449562113988,
+      "noise_floor": 0.09022344658564319,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+CCOT minus T+CCOT",
+      "summary": "PBC_robust",
+      "mean": 0.004770908936015172,
+      "noise_floor": 0.041785986947907805,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+CCOT minus T+CCOT",
+      "summary": "PBC_failing",
+      "mean": 0.09405303815938378,
+      "noise_floor": 0.20888978644281175,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+CCOT minus T+CCOT",
+      "summary": "PBC_teacher_dependent",
+      "mean": 0.13412464656389386,
+      "noise_floor": 0.5403011141734231,
+      "decision": "no difference",
+      "n_teachers": 3
+    },
+    {
+      "comparison": "H+CCOT minus T+CCOT",
+      "summary": "PBC_other",
+      "mean": null,
+      "noise_floor": null,
+      "decision": "incomplete",
+      "n_teachers": 0
+    }
+  ],
+  "claim_rule": "abs paired mean > max within-teacher seed range of either arm; otherwise no difference",
+  "caveat": "H_matched sensitivity only; RQ3 aligned arms not interpretable (shrinkage toward source). No across-teacher SD ranking."
+}

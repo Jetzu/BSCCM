@@ -1,0 +1,65 @@
+CPU 2.15.0+cpu GPU available False
+PASS verbatim augmentation, anchor loader and 10+15 contrasts
+PASS all 7 saved T students; H seeds0/1, H_matched seed0; common v6c auxiliary teacher
+PASS split PBC fit 8538 eval 8538 (filenames only)
+PASS split MLL23 fit 7268 eval 7265 (filenames only)
+PASS UOT identity, finite extremes, serialization, inductive/permutation invariance, conditional routing {'mass': 1.0682417154312134, 'row_mass_min': 0.26706042885780334, 'row_mass_max': 0.26706042885780334, 'tau': 0.9090909090909091, 'scale': 1.9999998807907104, 'fit_n': 4, 'source_n': 4, 'iterations': 200}
+PASS all synthetic AUROCs=.5 and missing-class AUROCs=NA
+PASS primary unsupported fractions=NA; proxy fractions separately labeled
+PASS source mixture high-mode positivity and heldout-label exclusion
+aggregate complete; see paired_macros.csv for registered decisions
+PASS 16 complete seeded runs, equal teacher weighting, primary16, seed floor claim/no-difference and matched sensitivity
+PASS gradient budget algebra, all alignment controls and both fixed taus, separate RQ3 errors
+PASS transactional single-file inference interruption/resume, no retained batch files
+ready hub at 0/4
+{"stage": "hub", "step": 4, "loss": 8.894536972045898, "elapsed_s": 0.036}
+ready student at 0/4
+student update 1
+student update 2
+student update 3
+student update 4
+{"stage": "student", "step": 4, "loss": 3.669410467147827, "elapsed_s": 0.422}
+ready hub at 0/4
+{"stage": "hub", "step": 4, "loss": 8.894536972045898, "elapsed_s": 0.036}
+ready student at 0/4
+student update 1
+SIGTERM: checkpoint at next optimizer boundary
+student update 2
+ready student at 2/4
+student update 3
+student update 4
+{"stage": "student", "step": 4, "loss": 3.669410467147827, "elapsed_s": 0.277}
+PASS tiny real-source/anchor-A training, SIGTERM exit143, optimizer/RNG resume bitwise equal
+completed run: immediate exit
+PASS completed successor is idempotent
+ready hub at 0/4
+{"stage": "hub", "step": 4, "loss": 8.894536972045898, "elapsed_s": 0.036}
+ready student at 0/4
+student update 1
+student update 2
+student update 3
+student update 4
+{"stage": "student", "step": 4, "loss": 1.8531721830368042, "elapsed_s": 0.631}
+PASS real-source H_matched T-recipe replay and measured equal gradient shares
+ready hub at 0/4
+{"stage": "hub", "step": 4, "loss": 8.894536972045898, "elapsed_s": 0.038}
+ready student at 0/4
+student update 1
+SIGTERM: checkpoint at next optimizer boundary
+student update 2
+ready student at 2/4
+student update 3
+student update 4
+{"stage": "student", "step": 4, "loss": 1.8531721830368042, "elapsed_s": 0.362}
+PASS H_matched SIGTERM resume includes reference optimizer/RNG/calibration and identical shares
+ready hub at 0/4
+{"stage": "hub", "step": 4, "loss": 8.894536972045898, "elapsed_s": 0.03}
+ready student at 0/4
+student update 1
+student update 2
+student update 3
+student update 4
+{"stage": "student", "step": 4, "loss": 2.3064444065093994, "elapsed_s": 0.41}
+PASS two H student seeds differ with identical teacher-paired hub
+PASS actual t0 T checkpoint, 8-view inference on 2 source training cells; no clinical test predictions
+ALL CPU SMOKE CHECKS PASSED

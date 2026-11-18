@@ -1,0 +1,591 @@
+comparison,domain,contrast,mean,noise_floor,decision,n_teachers
+H minus T,MLL23,LGL>lym CD16,0.057570567901234604,0.11372444444444452,no difference,3
+H minus T,MLL23,LGL>lym CD56,-0.010421728395061744,0.15255822222222226,no difference,3
+H minus T,MLL23,band<segneut CD16,0.011281827016520862,0.09041788143828966,no difference,3
+H minus T,MLL23,baso>rest CD123,0.10634514790764786,0.2562153679653679,no difference,3
+H minus T,MLL23,eos<segneut CD16,0.21220760493827154,0.22457244444444457,no difference,3
+H minus T,MLL23,hairy<lym CD3,0.2944698271604938,0.4543235555555555,no difference,3
+H minus T,MLL23,hairy>lym CD123,-0.05482795061728396,0.4887288888888889,no difference,3
+H minus T,MLL23,hairy>lym CD19,0.029119901234567907,0.4567431111111111,no difference,3
+H minus T,MLL23,hairy>lym HLA-DR,-0.025971456790123432,0.4668746666666667,no difference,3
+H minus T,MLL23,lym>neut CD3,0.3177101234567901,0.41540266666666675,no difference,3
+H minus T,MLL23,mono>lym+neut CD14,0.06221362962962954,0.21419555555555558,no difference,3
+H minus T,MLL23,myelocyte<segneut CD16,0.19067885148992633,0.36670141150922914,no difference,3
+H minus T,MLL23,normoblast<lym CD45,0.4513022222222223,0.23055288888888903,H higher,3
+H minus T,MLL23,plasma<lym CD45,0.31041244444444444,0.48414400000000013,no difference,3
+H minus T,MLL23,segneut>lym CD16,0.0873330370370371,0.1465439999999999,no difference,3
+H minus T,PBC,CD123 basophil>rest,0.16791131520355265,0.44534842679416786,no difference,3
+H minus T,PBC,CD14 monocyte>neutrophil+lymphocyte,-0.004226438709866609,0.02580746678209922,no difference,3
+H minus T,PBC,CD16 neutrophil>eosinophil,-0.21953779646405966,0.5474139728964801,no difference,3
+H minus T,PBC,CD16 neutrophil>ig (held-out),-0.13836411467285695,0.1950269705890172,no difference,3
+H minus T,PBC,CD16 neutrophil>lymphocyte,0.0013123688731184746,0.0013930031048028368,no difference,3
+H minus T,PBC,CD3 lymphocyte>neutrophil+monocyte,0.021227696424112114,0.09046717469877841,no difference,3
+H minus T,PBC,CD45 lymphocyte>erythroblast (held-out),0.08890124945509714,0.4996178603576828,no difference,3
+H minus T,PBC,CD45 lymphocyte>neutrophil,0.00031142634365440475,0.0009613404511469303,no difference,3
+H minus T,PBC,HLA-DR monocyte>neutrophil,0.08682804917246123,0.42550029199261197,no difference,3
+H minus T,PBC,grpCD3/19/56 lymphocyte>neutrophil+monocyte,0.04148188071277603,0.13429050065147752,no difference,3
+H_matched minus T,MLL23,LGL>lym CD16,-0.07093135802469129,0.11372444444444452,sensitivity only (one H_matched seed),3
+H_matched minus T,MLL23,LGL>lym CD56,-0.0012392098765432273,0.15255822222222226,sensitivity only (one H_matched seed),3
+H_matched minus T,MLL23,band<segneut CD16,-0.10008325234855847,0.07442176870748307,sensitivity only (one H_matched seed),3
+H_matched minus T,MLL23,baso>rest CD123,0.00825207431457431,0.2562153679653679,sensitivity only (one H_matched seed),3
+H_matched minus T,MLL23,eos<segneut CD16,0.08621975308641976,0.15428622222222227,sensitivity only (one H_matched seed),3
+H_matched minus T,MLL23,hairy<lym CD3,0.19262538271604943,0.14414222222222217,sensitivity only (one H_matched seed),3
+H_matched minus T,MLL23,hairy>lym CD123,-0.05312128395061729,0.2076728888888889,sensitivity only (one H_matched seed),3
+H_matched minus T,MLL23,hairy>lym CD19,0.03640790123456792,0.22745244444444435,sensitivity only (one H_matched seed),3
+H_matched minus T,MLL23,hairy>lym HLA-DR,-0.0510357530864198,0.09501866666666658,sensitivity only (one H_matched seed),3
+H_matched minus T,MLL23,lym>neut CD3,0.28930656790123455,0.41540266666666675,sensitivity only (one H_matched seed),3
+H_matched minus T,MLL23,mono>lym+neut CD14,0.029222814814814774,0.21419555555555558,sensitivity only (one H_matched seed),3
+H_matched minus T,MLL23,myelocyte<segneut CD16,0.08839546386777652,0.36670141150922914,sensitivity only (one H_matched seed),3
+H_matched minus T,MLL23,normoblast<lym CD45,0.37292711111111115,0.17774577777777778,sensitivity only (one H_matched seed),3
+H_matched minus T,MLL23,plasma<lym CD45,0.184613037037037,0.2048515555555555,sensitivity only (one H_matched seed),3
+H_matched minus T,MLL23,segneut>lym CD16,0.06328888888888899,0.1465439999999999,sensitivity only (one H_matched seed),3
+H_matched minus T,PBC,CD123 basophil>rest,0.07957963749333401,0.44534842679416786,sensitivity only (one H_matched seed),3
+H_matched minus T,PBC,CD14 monocyte>neutrophil+lymphocyte,-0.008026190928332197,0.006622434179920034,sensitivity only (one H_matched seed),3
+H_matched minus T,PBC,CD16 neutrophil>eosinophil,-0.21018742455795594,0.5474139728964801,sensitivity only (one H_matched seed),3
+H_matched minus T,PBC,CD16 neutrophil>ig (held-out),-0.2683942430441113,0.18920279357822556,sensitivity only (one H_matched seed),3
+H_matched minus T,PBC,CD16 neutrophil>lymphocyte,0.001278707106548982,0.0013930031048028368,sensitivity only (one H_matched seed),3
+H_matched minus T,PBC,CD3 lymphocyte>neutrophil+monocyte,0.019827853112105814,0.09046717469877841,sensitivity only (one H_matched seed),3
+H_matched minus T,PBC,CD45 lymphocyte>erythroblast (held-out),0.07913085876684949,0.4996178603576828,sensitivity only (one H_matched seed),3
+H_matched minus T,PBC,CD45 lymphocyte>neutrophil,5.120768737939171e-05,0.0009613404511469303,sensitivity only (one H_matched seed),3
+H_matched minus T,PBC,HLA-DR monocyte>neutrophil,0.09207726713023323,0.42550029199261197,sensitivity only (one H_matched seed),3
+H_matched minus T,PBC,grpCD3/19/56 lymphocyte>neutrophil+monocyte,0.022065001748694857,0.13429050065147752,sensitivity only (one H_matched seed),3
+T+OT_tau0.91 minus T,MLL23,LGL>lym CD16,-0.01072355555555556,0.13008533333333339,no difference,3
+T+OT_tau0.91 minus T,MLL23,LGL>lym CD56,0.0060641975308641976,0.15255822222222226,no difference,3
+T+OT_tau0.91 minus T,MLL23,band<segneut CD16,-0.008518410538818688,0.10669387755102044,no difference,3
+T+OT_tau0.91 minus T,MLL23,baso>rest CD123,0.000280363155363154,0.2562153679653679,no difference,3
+T+OT_tau0.91 minus T,MLL23,eos<segneut CD16,-0.13006518518518517,0.17454755555555557,no difference,3
+T+OT_tau0.91 minus T,MLL23,hairy<lym CD3,0.07968335802469134,0.16432533333333332,no difference,3
+T+OT_tau0.91 minus T,MLL23,hairy>lym CD123,-0.017640888888888928,0.2076728888888889,no difference,3
+T+OT_tau0.91 minus T,MLL23,hairy>lym CD19,-0.07271990123456791,0.22745244444444435,no difference,3
+T+OT_tau0.91 minus T,MLL23,hairy>lym HLA-DR,0.031097185185185228,0.11090488888888883,no difference,3
+T+OT_tau0.91 minus T,MLL23,lym>neut CD3,0.09028790123456791,0.41540266666666675,no difference,3
+T+OT_tau0.91 minus T,MLL23,mono>lym+neut CD14,-0.03707111111111113,0.21419555555555558,no difference,3
+T+OT_tau0.91 minus T,MLL23,myelocyte<segneut CD16,-0.04694655567619743,0.36670141150922914,no difference,3
+T+OT_tau0.91 minus T,MLL23,normoblast<lym CD45,0.003858074074074088,0.19227555555555556,no difference,3
+T+OT_tau0.91 minus T,MLL23,plasma<lym CD45,0.04947520987654321,0.2048515555555555,no difference,3
+T+OT_tau0.91 minus T,MLL23,segneut>lym CD16,-0.034742617283950526,0.1465439999999999,no difference,3
+T+OT_tau0.91 minus T,PBC,CD123 basophil>rest,0.032728010029962916,0.44534842679416786,no difference,3
+T+OT_tau0.91 minus T,PBC,CD14 monocyte>neutrophil+lymphocyte,0.00020009243434289856,0.006622434179920034,no difference,3
+T+OT_tau0.91 minus T,PBC,CD16 neutrophil>eosinophil,0.013937520684337531,0.5474139728964801,no difference,3
+T+OT_tau0.91 minus T,PBC,CD16 neutrophil>ig (held-out),-0.060796398863844504,0.26915850433257127,no difference,3
+T+OT_tau0.91 minus T,PBC,CD16 neutrophil>lymphocyte,0.0006660299532519712,0.0031632160055757863,no difference,3
+T+OT_tau0.91 minus T,PBC,CD3 lymphocyte>neutrophil+monocyte,0.01753000948585907,0.09046717469877841,no difference,3
+T+OT_tau0.91 minus T,PBC,CD45 lymphocyte>erythroblast (held-out),0.030992940323941103,0.4996178603576828,no difference,3
+T+OT_tau0.91 minus T,PBC,CD45 lymphocyte>neutrophil,-0.0007006267688928943,0.005704679381573818,no difference,3
+T+OT_tau0.91 minus T,PBC,HLA-DR monocyte>neutrophil,0.09869487036131634,0.42550029199261197,no difference,3
+T+OT_tau0.91 minus T,PBC,grpCD3/19/56 lymphocyte>neutrophil+monocyte,0.0382028078513155,0.13429050065147752,no difference,3
+H+OT_tau0.91 minus H,MLL23,LGL>lym CD16,-0.03544429629629627,0.0792106666666666,no difference,3
+H+OT_tau0.91 minus H,MLL23,LGL>lym CD56,0.007492740740740744,0.09865066666666666,no difference,3
+H+OT_tau0.91 minus H,MLL23,band<segneut CD16,-0.025637836086815653,0.11914868804664724,no difference,3
+H+OT_tau0.91 minus H,MLL23,baso>rest CD123,-0.031331709956709884,0.23514718614718622,no difference,3
+H+OT_tau0.91 minus H,MLL23,eos<segneut CD16,-0.18203985185185179,0.27070222222222223,no difference,3
+H+OT_tau0.91 minus H,MLL23,hairy<lym CD3,-0.013531555555555482,0.4543235555555555,no difference,3
+H+OT_tau0.91 minus H,MLL23,hairy>lym CD123,0.11797555555555557,0.4887288888888889,no difference,3
+H+OT_tau0.91 minus H,MLL23,hairy>lym CD19,-0.03216385185185185,0.4567431111111111,no difference,3
+H+OT_tau0.91 minus H,MLL23,hairy>lym HLA-DR,0.058348444444444425,0.4668746666666667,no difference,3
+H+OT_tau0.91 minus H,MLL23,lym>neut CD3,-0.0313413333333333,0.022028444444444406,H higher,3
+H+OT_tau0.91 minus H,MLL23,mono>lym+neut CD14,-0.020630296296296313,0.06963288888888886,no difference,3
+H+OT_tau0.91 minus H,MLL23,myelocyte<segneut CD16,-0.19723977560622508,0.2151335504885994,no difference,3
+H+OT_tau0.91 minus H,MLL23,normoblast<lym CD45,-0.0423253333333334,0.23055288888888903,no difference,3
+H+OT_tau0.91 minus H,MLL23,plasma<lym CD45,-0.0038900740740740827,0.48414400000000013,no difference,3
+H+OT_tau0.91 minus H,MLL23,segneut>lym CD16,-0.011977185185185202,0.015224888888888954,no difference,3
+H+OT_tau0.91 minus H,PBC,CD123 basophil>rest,0.04978564835535373,0.2307909512009635,no difference,3
+H+OT_tau0.91 minus H,PBC,CD14 monocyte>neutrophil+lymphocyte,0.004587544914549417,0.02580746678209922,no difference,3
+H+OT_tau0.91 minus H,PBC,CD16 neutrophil>eosinophil,0.19151223577260892,0.3652666245427131,no difference,3
+H+OT_tau0.91 minus H,PBC,CD16 neutrophil>ig (held-out),0.07702469078376135,0.1950269705890172,no difference,3
+H+OT_tau0.91 minus H,PBC,CD16 neutrophil>lymphocyte,-1.617084864617239e-05,9.207483208717449e-05,no difference,3
+H+OT_tau0.91 minus H,PBC,CD3 lymphocyte>neutrophil+monocyte,-0.00018220072546903943,0.0011543237829594322,no difference,3
+H+OT_tau0.91 minus H,PBC,CD45 lymphocyte>erythroblast (held-out),-0.11247289639203562,0.1701137077735696,no difference,3
+H+OT_tau0.91 minus H,PBC,CD45 lymphocyte>neutrophil,-2.227616905329614e-05,0.00012969680648833304,no difference,3
+H+OT_tau0.91 minus H,PBC,HLA-DR monocyte>neutrophil,0.007912943194987698,0.06300334772924798,no difference,3
+H+OT_tau0.91 minus H,PBC,grpCD3/19/56 lymphocyte>neutrophil+monocyte,0.0004205433517339892,0.0010966770477092158,no difference,3
+H_matched+OT_tau0.91 minus H_matched,MLL23,LGL>lym CD16,-0.004029037037037053,0.0,sensitivity only (one H_matched seed),3
+H_matched+OT_tau0.91 minus H_matched,MLL23,LGL>lym CD56,0.016699851851851837,0.0,sensitivity only (one H_matched seed),3
+H_matched+OT_tau0.91 minus H_matched,MLL23,band<segneut CD16,0.04680401684483315,0.0,sensitivity only (one H_matched seed),3
+H_matched+OT_tau0.91 minus H_matched,MLL23,baso>rest CD123,0.05788203463203465,0.0,sensitivity only (one H_matched seed),3
+H_matched+OT_tau0.91 minus H_matched,MLL23,eos<segneut CD16,0.038461037037036995,0.0,sensitivity only (one H_matched seed),3
+H_matched+OT_tau0.91 minus H_matched,MLL23,hairy<lym CD3,-0.09992562962962959,0.0,sensitivity only (one H_matched seed),3
+H_matched+OT_tau0.91 minus H_matched,MLL23,hairy>lym CD123,0.19921955555555557,0.0,sensitivity only (one H_matched seed),3
+H_matched+OT_tau0.91 minus H_matched,MLL23,hairy>lym CD19,0.1349902222222222,0.0,sensitivity only (one H_matched seed),3
+H_matched+OT_tau0.91 minus H_matched,MLL23,hairy>lym HLA-DR,0.07334518518518518,0.0,sensitivity only (one H_matched seed),3
+H_matched+OT_tau0.91 minus H_matched,MLL23,lym>neut CD3,-0.10506962962962962,0.0,sensitivity only (one H_matched seed),3
+H_matched+OT_tau0.91 minus H_matched,MLL23,mono>lym+neut CD14,-0.001408888888888941,0.0,sensitivity only (one H_matched seed),3
+H_matched+OT_tau0.91 minus H_matched,MLL23,myelocyte<segneut CD16,-0.020465436120159237,0.0,sensitivity only (one H_matched seed),3
+H_matched+OT_tau0.91 minus H_matched,MLL23,normoblast<lym CD45,-0.08808385185185193,0.0,sensitivity only (one H_matched seed),3
+H_matched+OT_tau0.91 minus H_matched,MLL23,plasma<lym CD45,-0.026860740740740702,0.0,sensitivity only (one H_matched seed),3
+H_matched+OT_tau0.91 minus H_matched,MLL23,segneut>lym CD16,-0.09801392592592599,0.0,sensitivity only (one H_matched seed),3
+H_matched+OT_tau0.91 minus H_matched,PBC,CD123 basophil>rest,0.14317100949345207,0.0,sensitivity only (one H_matched seed),3
+H_matched+OT_tau0.91 minus H_matched,PBC,CD14 monocyte>neutrophil+lymphocyte,0.008161739645294208,0.0,sensitivity only (one H_matched seed),3
+H_matched+OT_tau0.91 minus H_matched,PBC,CD16 neutrophil>eosinophil,0.3056522827269132,0.0,sensitivity only (one H_matched seed),3
+H_matched+OT_tau0.91 minus H_matched,PBC,CD16 neutrophil>ig (held-out),0.1368501973579289,0.0,sensitivity only (one H_matched seed),3
+H_matched+OT_tau0.91 minus H_matched,PBC,CD16 neutrophil>lymphocyte,-2.2111160393782175e-05,0.0,sensitivity only (one H_matched seed),3
+H_matched+OT_tau0.91 minus H_matched,PBC,CD3 lymphocyte>neutrophil+monocyte,0.0014249624717438032,0.0,sensitivity only (one H_matched seed),3
+H_matched+OT_tau0.91 minus H_matched,PBC,CD45 lymphocyte>erythroblast (held-out),-0.03921035796577158,0.0,sensitivity only (one H_matched seed),3
+H_matched+OT_tau0.91 minus H_matched,PBC,CD45 lymphocyte>neutrophil,0.0002333222447514031,0.0,sensitivity only (one H_matched seed),3
+H_matched+OT_tau0.91 minus H_matched,PBC,HLA-DR monocyte>neutrophil,-0.0044593949188758515,0.0,sensitivity only (one H_matched seed),3
+H_matched+OT_tau0.91 minus H_matched,PBC,grpCD3/19/56 lymphocyte>neutrophil+monocyte,0.0200450894705112,0.0,sensitivity only (one H_matched seed),3
+H+OT_tau0.91 minus T+OT_tau0.91,MLL23,LGL>lym CD16,0.032849827160493894,0.13008533333333339,no difference,3
+H+OT_tau0.91 minus T+OT_tau0.91,MLL23,LGL>lym CD56,-0.008993185185185196,0.12668444444444443,no difference,3
+H+OT_tau0.91 minus T+OT_tau0.91,MLL23,band<segneut CD16,-0.005837598531476103,0.11914868804664724,no difference,3
+H+OT_tau0.91 minus T+OT_tau0.91,MLL23,baso>rest CD123,0.07473307479557482,0.18146536796536805,no difference,3
+H+OT_tau0.91 minus T+OT_tau0.91,MLL23,eos<segneut CD16,0.16023293827160492,0.27070222222222223,no difference,3
+H+OT_tau0.91 minus T+OT_tau0.91,MLL23,hairy<lym CD3,0.20125491358024702,0.33552000000000004,no difference,3
+H+OT_tau0.91 minus T+OT_tau0.91,MLL23,hairy>lym CD123,0.08078849382716054,0.3748302222222223,no difference,3
+H+OT_tau0.91 minus T+OT_tau0.91,MLL23,hairy>lym CD19,0.06967595061728397,0.21404266666666666,no difference,3
+H+OT_tau0.91 minus T+OT_tau0.91,MLL23,hairy>lym HLA-DR,0.001279802469135764,0.26746133333333333,no difference,3
+H+OT_tau0.91 minus T+OT_tau0.91,MLL23,lym>neut CD3,0.1960808888888889,0.20042311111111122,no difference,3
+H+OT_tau0.91 minus T+OT_tau0.91,MLL23,mono>lym+neut CD14,0.07865444444444436,0.046117333333333455,H+OT_tau0.91 higher,3
+H+OT_tau0.91 minus T+OT_tau0.91,MLL23,myelocyte<segneut CD16,0.04038563155989868,0.2512616720955483,no difference,3
+H+OT_tau0.91 minus T+OT_tau0.91,MLL23,normoblast<lym CD45,0.4051188148148148,0.2156017777777779,H+OT_tau0.91 higher,3
+H+OT_tau0.91 minus T+OT_tau0.91,MLL23,plasma<lym CD45,0.25704716049382714,0.4464142222222224,no difference,3
+H+OT_tau0.91 minus T+OT_tau0.91,MLL23,segneut>lym CD16,0.11009846913580242,0.0860533333333332,H+OT_tau0.91 higher,3
+H+OT_tau0.91 minus T+OT_tau0.91,PBC,CD123 basophil>rest,0.18496895352894346,0.16017280338838735,H+OT_tau0.91 higher,3
+H+OT_tau0.91 minus T+OT_tau0.91,PBC,CD14 monocyte>neutrophil+lymphocyte,0.00016101377033990913,0.003900195787216232,no difference,3
+H+OT_tau0.91 minus T+OT_tau0.91,PBC,CD16 neutrophil>eosinophil,-0.04196308137578827,0.3652666245427131,no difference,3
+H+OT_tau0.91 minus T+OT_tau0.91,PBC,CD16 neutrophil>ig (held-out),-0.0005430250252510908,0.26915850433257127,no difference,3
+H+OT_tau0.91 minus T+OT_tau0.91,PBC,CD16 neutrophil>lymphocyte,0.0006301680712203309,0.0031632160055757863,no difference,3
+H+OT_tau0.91 minus T+OT_tau0.91,PBC,CD3 lymphocyte>neutrophil+monocyte,0.003515486212784006,0.010248617172892938,no difference,3
+H+OT_tau0.91 minus T+OT_tau0.91,PBC,CD45 lymphocyte>erythroblast (held-out),-0.05456458726087957,0.1701137077735696,no difference,3
+H+OT_tau0.91 minus T+OT_tau0.91,PBC,CD45 lymphocyte>neutrophil,0.000989776943494003,0.005704679381573818,no difference,3
+H+OT_tau0.91 minus T+OT_tau0.91,PBC,HLA-DR monocyte>neutrophil,-0.003953877993867409,0.015231998315949569,no difference,3
+H+OT_tau0.91 minus T+OT_tau0.91,PBC,grpCD3/19/56 lymphocyte>neutrophil+monocyte,0.0036996162131945156,0.009024144953063029,no difference,3
+T+OT_tau0.30 minus T,MLL23,LGL>lym CD16,-0.01124661728395058,0.160624,no difference,3
+T+OT_tau0.30 minus T,MLL23,LGL>lym CD56,-0.008954074074074095,0.15255822222222226,no difference,3
+T+OT_tau0.30 minus T,MLL23,band<segneut CD16,-0.008724867724867783,0.1430242954324587,no difference,3
+T+OT_tau0.30 minus T,MLL23,baso>rest CD123,-0.031455657768157765,0.2562153679653679,no difference,3
+T+OT_tau0.30 minus T,MLL23,eos<segneut CD16,-0.1606216296296296,0.19813155555555562,no difference,3
+T+OT_tau0.30 minus T,MLL23,hairy<lym CD3,0.08915397530864201,0.1943804444444444,no difference,3
+T+OT_tau0.30 minus T,MLL23,hairy>lym CD123,-0.01332355555555557,0.2076728888888889,no difference,3
+T+OT_tau0.30 minus T,MLL23,hairy>lym CD19,-0.08123427160493829,0.22745244444444435,no difference,3
+T+OT_tau0.30 minus T,MLL23,hairy>lym HLA-DR,0.029508444444444448,0.1200000000000001,no difference,3
+T+OT_tau0.30 minus T,MLL23,lym>neut CD3,0.08630538271604941,0.41540266666666675,no difference,3
+T+OT_tau0.30 minus T,MLL23,mono>lym+neut CD14,-0.04650864197530861,0.21419555555555558,no difference,3
+T+OT_tau0.30 minus T,MLL23,myelocyte<segneut CD16,-0.05636192544335872,0.36670141150922914,no difference,3
+T+OT_tau0.30 minus T,MLL23,normoblast<lym CD45,-0.00408375308641971,0.2027217777777778,no difference,3
+T+OT_tau0.30 minus T,MLL23,plasma<lym CD45,0.05998014814814814,0.2048515555555555,no difference,3
+T+OT_tau0.30 minus T,MLL23,segneut>lym CD16,-0.028695308641975188,0.1465439999999999,no difference,3
+T+OT_tau0.30 minus T,PBC,CD123 basophil>rest,-0.018168270336772763,0.44534842679416786,no difference,3
+T+OT_tau0.30 minus T,PBC,CD14 monocyte>neutrophil+lymphocyte,0.001134075959248082,0.006622434179920034,no difference,3
+T+OT_tau0.30 minus T,PBC,CD16 neutrophil>eosinophil,-0.07862986734216042,0.5474139728964801,no difference,3
+T+OT_tau0.30 minus T,PBC,CD16 neutrophil>ig (held-out),-0.0665375935290522,0.3139795614932752,no difference,3
+T+OT_tau0.30 minus T,PBC,CD16 neutrophil>lymphocyte,0.0003552086413495248,0.003773088011658876,no difference,3
+T+OT_tau0.30 minus T,PBC,CD3 lymphocyte>neutrophil+monocyte,0.01826996359689707,0.09046717469877841,no difference,3
+T+OT_tau0.30 minus T,PBC,CD45 lymphocyte>erythroblast (held-out),0.06306766607977565,0.4996178603576828,no difference,3
+T+OT_tau0.30 minus T,PBC,CD45 lymphocyte>neutrophil,-0.00023530234866727304,0.0016415061462424774,no difference,3
+T+OT_tau0.30 minus T,PBC,HLA-DR monocyte>neutrophil,0.10193894977727076,0.42550029199261197,no difference,3
+T+OT_tau0.30 minus T,PBC,grpCD3/19/56 lymphocyte>neutrophil+monocyte,0.038880639309239275,0.13429050065147752,no difference,3
+H+OT_tau0.30 minus H,MLL23,LGL>lym CD16,-0.06261629629629628,0.0929226666666666,no difference,3
+H+OT_tau0.30 minus H,MLL23,LGL>lym CD56,0.0096177777777778,0.10901333333333335,no difference,3
+H+OT_tau0.30 minus H,MLL23,band<segneut CD16,0.014320699708454843,0.12068415937803689,no difference,3
+H+OT_tau0.30 minus H,MLL23,baso>rest CD123,-0.03898394660894653,0.23514718614718622,no difference,3
+H+OT_tau0.30 minus H,MLL23,eos<segneut CD16,-0.09005585185185179,0.22457244444444457,no difference,3
+H+OT_tau0.30 minus H,MLL23,hairy<lym CD3,0.030612740740740718,0.4543235555555555,no difference,3
+H+OT_tau0.30 minus H,MLL23,hairy>lym CD123,0.11862607407407415,0.4887288888888889,no difference,3
+H+OT_tau0.30 minus H,MLL23,hairy>lym CD19,-0.029047851851851863,0.4567431111111111,no difference,3
+H+OT_tau0.30 minus H,MLL23,hairy>lym HLA-DR,0.04561185185185179,0.4668746666666667,no difference,3
+H+OT_tau0.30 minus H,MLL23,lym>neut CD3,-0.0026708148148147925,0.012787555555555663,no difference,3
+H+OT_tau0.30 minus H,MLL23,mono>lym+neut CD14,0.0023165925925926847,0.06963288888888886,no difference,3
+H+OT_tau0.30 minus H,MLL23,myelocyte<segneut CD16,-0.08205193630112191,0.2151335504885994,no difference,3
+H+OT_tau0.30 minus H,MLL23,normoblast<lym CD45,-0.0813176296296297,0.29452088888888883,no difference,3
+H+OT_tau0.30 minus H,MLL23,plasma<lym CD45,0.03977540740740737,0.48414400000000013,no difference,3
+H+OT_tau0.30 minus H,MLL23,segneut>lym CD16,-0.003789629629629624,0.007614222222222189,no difference,3
+H+OT_tau0.30 minus H,PBC,CD123 basophil>rest,-0.0013644638995321718,0.2307909512009635,no difference,3
+H+OT_tau0.30 minus H,PBC,CD14 monocyte>neutrophil+lymphocyte,0.0042350076830519985,0.02580746678209922,no difference,3
+H+OT_tau0.30 minus H,PBC,CD16 neutrophil>eosinophil,0.029976432729384994,0.43963078715147325,no difference,3
+H+OT_tau0.30 minus H,PBC,CD16 neutrophil>ig (held-out),0.020555798745858,0.1950269705890172,no difference,3
+H+OT_tau0.30 minus H,PBC,CD16 neutrophil>lymphocyte,-0.0002204515692983596,0.0013167691040426588,no difference,3
+H+OT_tau0.30 minus H,PBC,CD3 lymphocyte>neutrophil+monocyte,-0.00019400788811067363,0.001336292995435473,no difference,3
+H+OT_tau0.30 minus H,PBC,CD45 lymphocyte>erythroblast (held-out),-0.13064717471424447,0.2162825455595372,no difference,3
+H+OT_tau0.30 minus H,PBC,CD45 lymphocyte>neutrophil,-0.00038117000380170446,0.0016543768216955579,no difference,3
+H+OT_tau0.30 minus H,PBC,HLA-DR monocyte>neutrophil,0.008066720311821022,0.06300334772924798,no difference,3
+H+OT_tau0.30 minus H,PBC,grpCD3/19/56 lymphocyte>neutrophil+monocyte,-8.531253791025743e-05,0.0012196104469773816,no difference,3
+H_matched+OT_tau0.30 minus H_matched,MLL23,LGL>lym CD16,-0.00872177777777781,0.0,sensitivity only (one H_matched seed),3
+H_matched+OT_tau0.30 minus H_matched,MLL23,LGL>lym CD56,-0.005102814814814782,0.0,sensitivity only (one H_matched seed),3
+H_matched+OT_tau0.30 minus H_matched,MLL23,band<segneut CD16,0.0815555555555555,0.0,sensitivity only (one H_matched seed),3
+H_matched+OT_tau0.30 minus H_matched,MLL23,baso>rest CD123,-0.0007247474747474706,0.0,sensitivity only (one H_matched seed),3
+H_matched+OT_tau0.30 minus H_matched,MLL23,eos<segneut CD16,0.07200770370370375,0.0,sensitivity only (one H_matched seed),3
+H_matched+OT_tau0.30 minus H_matched,MLL23,hairy<lym CD3,-0.0006038518518518924,0.0,sensitivity only (one H_matched seed),3
+H_matched+OT_tau0.30 minus H_matched,MLL23,hairy>lym CD123,0.1457386666666667,0.0,sensitivity only (one H_matched seed),3
+H_matched+OT_tau0.30 minus H_matched,MLL23,hairy>lym CD19,0.031421037037037025,0.0,sensitivity only (one H_matched seed),3
+H_matched+OT_tau0.30 minus H_matched,MLL23,hairy>lym HLA-DR,0.062386370370370425,0.0,sensitivity only (one H_matched seed),3
+H_matched+OT_tau0.30 minus H_matched,MLL23,lym>neut CD3,-0.042236444444444445,0.0,sensitivity only (one H_matched seed),3
+H_matched+OT_tau0.30 minus H_matched,MLL23,mono>lym+neut CD14,0.017616888888888977,0.0,sensitivity only (one H_matched seed),3
+H_matched+OT_tau0.30 minus H_matched,MLL23,myelocyte<segneut CD16,0.03248715164676078,0.0,sensitivity only (one H_matched seed),3
+H_matched+OT_tau0.30 minus H_matched,MLL23,normoblast<lym CD45,-0.040604740740740795,0.0,sensitivity only (one H_matched seed),3
+H_matched+OT_tau0.30 minus H_matched,MLL23,plasma<lym CD45,0.09262666666666675,0.0,sensitivity only (one H_matched seed),3
+H_matched+OT_tau0.30 minus H_matched,MLL23,segneut>lym CD16,-0.038894814814814826,0.0,sensitivity only (one H_matched seed),3
+H_matched+OT_tau0.30 minus H_matched,PBC,CD123 basophil>rest,0.059229644022836724,0.0,sensitivity only (one H_matched seed),3
+H_matched+OT_tau0.30 minus H_matched,PBC,CD14 monocyte>neutrophil+lymphocyte,0.007766599414048114,0.0,sensitivity only (one H_matched seed),3
+H_matched+OT_tau0.30 minus H_matched,PBC,CD16 neutrophil>eosinophil,0.19419277785330566,0.0,sensitivity only (one H_matched seed),3
+H_matched+OT_tau0.30 minus H_matched,PBC,CD16 neutrophil>ig (held-out),0.03886882453528967,0.0,sensitivity only (one H_matched seed),3
+H_matched+OT_tau0.30 minus H_matched,PBC,CD16 neutrophil>lymphocyte,-2.277119503235614e-05,0.0,sensitivity only (one H_matched seed),3
+H_matched+OT_tau0.30 minus H_matched,PBC,CD3 lymphocyte>neutrophil+monocyte,0.0006438376334556203,0.0,sensitivity only (one H_matched seed),3
+H_matched+OT_tau0.30 minus H_matched,PBC,CD45 lymphocyte>erythroblast (held-out),-0.04240546997514675,0.0,sensitivity only (one H_matched seed),3
+H_matched+OT_tau0.30 minus H_matched,PBC,CD45 lymphocyte>neutrophil,0.0002306821061968852,0.0,sensitivity only (one H_matched seed),3
+H_matched+OT_tau0.30 minus H_matched,PBC,HLA-DR monocyte>neutrophil,0.00305800014486457,0.0,sensitivity only (one H_matched seed),3
+H_matched+OT_tau0.30 minus H_matched,PBC,grpCD3/19/56 lymphocyte>neutrophil+monocyte,0.018928502305406325,0.0,sensitivity only (one H_matched seed),3
+H+OT_tau0.30 minus T+OT_tau0.30,MLL23,LGL>lym CD16,0.006200888888888904,0.160624,no difference,3
+H+OT_tau0.30 minus T+OT_tau0.30,MLL23,LGL>lym CD56,0.008150123456790151,0.10901333333333335,no difference,3
+H+OT_tau0.30 minus T+OT_tau0.30,MLL23,band<segneut CD16,0.034327394449843486,0.1430242954324587,no difference,3
+H+OT_tau0.30 minus T+OT_tau0.30,MLL23,baso>rest CD123,0.0988168590668591,0.14651569264069259,no difference,3
+H+OT_tau0.30 minus T+OT_tau0.30,MLL23,eos<segneut CD16,0.28277338271604935,0.19813155555555562,H+OT_tau0.30 higher,3
+H+OT_tau0.30 minus T+OT_tau0.30,MLL23,hairy<lym CD3,0.23592859259259255,0.3388604444444444,no difference,3
+H+OT_tau0.30 minus T+OT_tau0.30,MLL23,hairy>lym CD123,0.07712167901234575,0.40284266666666674,no difference,3
+H+OT_tau0.30 minus T+OT_tau0.30,MLL23,hairy>lym CD19,0.08130632098765433,0.3103999999999999,no difference,3
+H+OT_tau0.30 minus T+OT_tau0.30,MLL23,hairy>lym HLA-DR,-0.00986804938271609,0.29826844444444456,no difference,3
+H+OT_tau0.30 minus T+OT_tau0.30,MLL23,lym>neut CD3,0.2287339259259259,0.1885582222222223,H+OT_tau0.30 higher,3
+H+OT_tau0.30 minus T+OT_tau0.30,MLL23,mono>lym+neut CD14,0.11103886419753084,0.06424533333333338,H+OT_tau0.30 higher,3
+H+OT_tau0.30 minus T+OT_tau0.30,MLL23,myelocyte<segneut CD16,0.16498884063216313,0.34024104234527686,no difference,3
+H+OT_tau0.30 minus T+OT_tau0.30,MLL23,normoblast<lym CD45,0.37406834567901237,0.29452088888888883,H+OT_tau0.30 higher,3
+H+OT_tau0.30 minus T+OT_tau0.30,MLL23,plasma<lym CD45,0.29020770370370363,0.43287288888888875,no difference,3
+H+OT_tau0.30 minus T+OT_tau0.30,MLL23,segneut>lym CD16,0.11223871604938267,0.1410026666666665,no difference,3
+H+OT_tau0.30 minus T+OT_tau0.30,PBC,CD123 basophil>rest,0.18471512164079326,0.19474639856488402,no difference,3
+H+OT_tau0.30 minus T+OT_tau0.30,PBC,CD14 monocyte>neutrophil+lymphocyte,-0.0011255069860626927,0.0036924672920911616,no difference,3
+H+OT_tau0.30 minus T+OT_tau0.30,PBC,CD16 neutrophil>eosinophil,-0.11093149639251425,0.4783908752719004,no difference,3
+H+OT_tau0.30 minus T+OT_tau0.30,PBC,CD16 neutrophil>ig (held-out),-0.05127072239794676,0.3139795614932752,no difference,3
+H+OT_tau0.30 minus T+OT_tau0.30,PBC,CD16 neutrophil>lymphocyte,0.0007367086624705902,0.003773088011658876,no difference,3
+H+OT_tau0.30 minus T+OT_tau0.30,PBC,CD3 lymphocyte>neutrophil+monocyte,0.0027637249391043728,0.013153179182722186,no difference,3
+H+OT_tau0.30 minus T+OT_tau0.30,PBC,CD45 lymphocyte>erythroblast (held-out),-0.10481359133892298,0.2162825455595372,no difference,3
+H+OT_tau0.30 minus T+OT_tau0.30,PBC,CD45 lymphocyte>neutrophil,0.00016555868851997335,0.0016543768216955579,no difference,3
+H+OT_tau0.30 minus T+OT_tau0.30,PBC,HLA-DR monocyte>neutrophil,-0.007044180292988515,0.01819436522164286,no difference,3
+H+OT_tau0.30 minus T+OT_tau0.30,PBC,grpCD3/19/56 lymphocyte>neutrophil+monocyte,0.002515928865626497,0.005821625721278756,no difference,3
+T+mean minus T,MLL23,LGL>lym CD16,-0.0061373827160493555,0.1313475555555555,no difference,3
+T+mean minus T,MLL23,LGL>lym CD56,0.0005529876543209725,0.15255822222222226,no difference,3
+T+mean minus T,MLL23,band<segneut CD16,0.002786848072562298,0.10707871720116602,no difference,3
+T+mean minus T,MLL23,baso>rest CD123,0.012051497113997112,0.2562153679653679,no difference,3
+T+mean minus T,MLL23,eos<segneut CD16,-0.028184790123456833,0.15428622222222227,no difference,3
+T+mean minus T,MLL23,hairy<lym CD3,0.017139308641975288,0.14414222222222217,no difference,3
+T+mean minus T,MLL23,hairy>lym CD123,-0.002691555555555558,0.2076728888888889,no difference,3
+T+mean minus T,MLL23,hairy>lym CD19,0.021762370370370338,0.22745244444444435,no difference,3
+T+mean minus T,MLL23,hairy>lym HLA-DR,0.0024757530864197483,0.09501866666666658,no difference,3
+T+mean minus T,MLL23,lym>neut CD3,0.010165925925925948,0.41540266666666675,no difference,3
+T+mean minus T,MLL23,mono>lym+neut CD14,0.0065799999999998455,0.21419555555555558,no difference,3
+T+mean minus T,MLL23,myelocyte<segneut CD16,-0.0034217034624201004,0.4297709011943539,no difference,3
+T+mean minus T,MLL23,normoblast<lym CD45,0.005911604938271624,0.20882844444444446,no difference,3
+T+mean minus T,MLL23,plasma<lym CD45,0.0037530864197530454,0.20935822222222222,no difference,3
+T+mean minus T,MLL23,segneut>lym CD16,-0.005991604938271518,0.1465439999999999,no difference,3
+T+mean minus T,PBC,CD123 basophil>rest,0.04047295027187394,0.44534842679416786,no difference,3
+T+mean minus T,PBC,CD14 monocyte>neutrophil+lymphocyte,0.0003047859373750776,0.006622434179920034,no difference,3
+T+mean minus T,PBC,CD16 neutrophil>eosinophil,-0.0797267165596917,0.5474139728964801,no difference,3
+T+mean minus T,PBC,CD16 neutrophil>ig (held-out),-0.015374091751132654,0.18920279357822556,no difference,3
+T+mean minus T,PBC,CD16 neutrophil>lymphocyte,-0.008294875315056535,0.05131637308325954,no difference,3
+T+mean minus T,PBC,CD3 lymphocyte>neutrophil+monocyte,-0.01758194556728232,0.12681448308241938,no difference,3
+T+mean minus T,PBC,CD45 lymphocyte>erythroblast (held-out),-0.04248372604078795,0.5404155131710797,no difference,3
+T+mean minus T,PBC,CD45 lymphocyte>neutrophil,-0.0003077411502555953,0.001596953808135737,no difference,3
+T+mean minus T,PBC,HLA-DR monocyte>neutrophil,0.04234109792240089,0.42550029199261197,no difference,3
+T+mean minus T,PBC,grpCD3/19/56 lymphocyte>neutrophil+monocyte,0.009821552871856968,0.13429050065147752,no difference,3
+H+mean minus H,MLL23,LGL>lym CD16,0.0020493333333333474,0.09947022222222218,no difference,3
+H+mean minus H,MLL23,LGL>lym CD56,0.0002874074074074399,0.11837155555555556,no difference,3
+H+mean minus H,MLL23,band<segneut CD16,-0.02449497894395854,0.09472886297376104,no difference,3
+H+mean minus H,MLL23,baso>rest CD123,-0.10811075036075031,0.23514718614718622,no difference,3
+H+mean minus H,MLL23,eos<segneut CD16,-0.1591731851851851,0.22457244444444457,no difference,3
+H+mean minus H,MLL23,hairy<lym CD3,-0.01548888888888881,0.4543235555555555,no difference,3
+H+mean minus H,MLL23,hairy>lym CD123,0.023789925925925954,0.4887288888888889,no difference,3
+H+mean minus H,MLL23,hairy>lym CD19,-0.06646281481481485,0.4567431111111111,no difference,3
+H+mean minus H,MLL23,hairy>lym HLA-DR,0.04860414814814803,0.4668746666666667,no difference,3
+H+mean minus H,MLL23,lym>neut CD3,-0.025139259259259195,0.036926222222222305,no difference,3
+H+mean minus H,MLL23,mono>lym+neut CD14,-0.02674103703703697,0.12591022222222237,no difference,3
+H+mean minus H,MLL23,myelocyte<segneut CD16,-0.04699022801302932,0.21889685124864278,no difference,3
+H+mean minus H,MLL23,normoblast<lym CD45,-0.002287555555555635,0.23055288888888903,no difference,3
+H+mean minus H,MLL23,plasma<lym CD45,-0.021433185185185184,0.48414400000000013,no difference,3
+H+mean minus H,MLL23,segneut>lym CD16,-0.0028237037037036616,0.009219555555555536,no difference,3
+H+mean minus H,PBC,CD123 basophil>rest,0.019368940752950703,0.2307909512009635,no difference,3
+H+mean minus H,PBC,CD14 monocyte>neutrophil+lymphocyte,0.005661845375366699,0.02580746678209922,no difference,3
+H+mean minus H,PBC,CD16 neutrophil>eosinophil,0.13057952492625732,0.3670260591754004,no difference,3
+H+mean minus H,PBC,CD16 neutrophil>ig (held-out),0.06549452863351239,0.1950269705890172,no difference,3
+H+mean minus H,PBC,CD16 neutrophil>lymphocyte,4.950259789489783e-07,3.960207831776863e-06,no difference,3
+H+mean minus H,PBC,CD3 lymphocyte>neutrophil+monocyte,0.00010846383720752861,0.0006230014640880022,no difference,3
+H+mean minus H,PBC,CD45 lymphocyte>erythroblast (held-out),-0.004920047894835096,0.061549958389239046,no difference,3
+H+mean minus H,PBC,CD45 lymphocyte>neutrophil,-0.00018959494994293577,0.0011484602711949732,no difference,3
+H+mean minus H,PBC,HLA-DR monocyte>neutrophil,0.014036582826307412,0.06300334772924798,no difference,3
+H+mean minus H,PBC,grpCD3/19/56 lymphocyte>neutrophil+monocyte,0.00031265829700895714,0.0014682554014295857,no difference,3
+H_matched+mean minus H_matched,MLL23,LGL>lym CD16,-0.03536118518518524,0.0,sensitivity only (one H_matched seed),3
+H_matched+mean minus H_matched,MLL23,LGL>lym CD56,0.018923851851851897,0.0,sensitivity only (one H_matched seed),3
+H_matched+mean minus H_matched,MLL23,band<segneut CD16,-0.015079365079365118,0.0,sensitivity only (one H_matched seed),3
+H_matched+mean minus H_matched,MLL23,baso>rest CD123,-0.07100901875901876,0.0,sensitivity only (one H_matched seed),3
+H_matched+mean minus H_matched,MLL23,eos<segneut CD16,-0.08005066666666667,0.0,sensitivity only (one H_matched seed),3
+H_matched+mean minus H_matched,MLL23,hairy<lym CD3,-0.0669813333333333,0.0,sensitivity only (one H_matched seed),3
+H_matched+mean minus H_matched,MLL23,hairy>lym CD123,0.08965925925925929,0.0,sensitivity only (one H_matched seed),3
+H_matched+mean minus H_matched,MLL23,hairy>lym CD19,0.04352888888888884,0.0,sensitivity only (one H_matched seed),3
+H_matched+mean minus H_matched,MLL23,hairy>lym HLA-DR,0.05960414814814822,0.0,sensitivity only (one H_matched seed),3
+H_matched+mean minus H_matched,MLL23,lym>neut CD3,-0.04937007407407409,0.0,sensitivity only (one H_matched seed),3
+H_matched+mean minus H_matched,MLL23,mono>lym+neut CD14,0.0075792592592592856,0.0,sensitivity only (one H_matched seed),3
+H_matched+mean minus H_matched,MLL23,myelocyte<segneut CD16,-0.034481360839667095,0.0,sensitivity only (one H_matched seed),3
+H_matched+mean minus H_matched,MLL23,normoblast<lym CD45,-0.03819525925925934,0.0,sensitivity only (one H_matched seed),3
+H_matched+mean minus H_matched,MLL23,plasma<lym CD45,-0.050306666666666645,0.0,sensitivity only (one H_matched seed),3
+H_matched+mean minus H_matched,MLL23,segneut>lym CD16,-0.02403377777777782,0.0,sensitivity only (one H_matched seed),3
+H_matched+mean minus H_matched,PBC,CD123 basophil>rest,0.014940148921176585,0.0,sensitivity only (one H_matched seed),3
+H_matched+mean minus H_matched,PBC,CD14 monocyte>neutrophil+lymphocyte,0.009764275840222325,0.0,sensitivity only (one H_matched seed),3
+H_matched+mean minus H_matched,PBC,CD16 neutrophil>eosinophil,0.27087826383395947,0.0,sensitivity only (one H_matched seed),3
+H_matched+mean minus H_matched,PBC,CD16 neutrophil>ig (held-out),0.13359197798717062,0.0,sensitivity only (one H_matched seed),3
+H_matched+mean minus H_matched,PBC,CD16 neutrophil>lymphocyte,9.240484940627644e-06,0.0,sensitivity only (one H_matched seed),3
+H_matched+mean minus H_matched,PBC,CD3 lymphocyte>neutrophil+monocyte,0.0018215442287051742,0.0,sensitivity only (one H_matched seed),3
+H_matched+mean minus H_matched,PBC,CD45 lymphocyte>erythroblast (held-out),0.018808347062053848,0.0,sensitivity only (one H_matched seed),3
+H_matched+mean minus H_matched,PBC,CD45 lymphocyte>neutrophil,-0.0006012915557808881,0.0,sensitivity only (one H_matched seed),3
+H_matched+mean minus H_matched,PBC,HLA-DR monocyte>neutrophil,0.009209084818194971,0.0,sensitivity only (one H_matched seed),3
+H_matched+mean minus H_matched,PBC,grpCD3/19/56 lymphocyte>neutrophil+monocyte,0.019320916828494166,0.0,sensitivity only (one H_matched seed),3
+H+mean minus T+mean,MLL23,LGL>lym CD16,0.0657572839506173,0.1313475555555555,no difference,3
+H+mean minus T+mean,MLL23,LGL>lym CD56,-0.010687308641975276,0.13983111111111107,no difference,3
+H+mean minus T+mean,MLL23,band<segneut CD16,-0.015999999999999976,0.10707871720116602,no difference,3
+H+mean minus T+mean,MLL23,baso>rest CD123,-0.01381709956709957,0.24264502164502177,no difference,3
+H+mean minus T+mean,MLL23,eos<segneut CD16,0.08121920987654326,0.17587555555555545,no difference,3
+H+mean minus T+mean,MLL23,hairy<lym CD3,0.26184162962962976,0.44846400000000003,no difference,3
+H+mean minus T+mean,MLL23,hairy>lym CD123,-0.02834646913580245,0.43724977777777774,no difference,3
+H+mean minus T+mean,MLL23,hairy>lym CD19,-0.05910528395061728,0.45068977777777774,no difference,3
+H+mean minus T+mean,MLL23,hairy>lym HLA-DR,0.020156938271604845,0.37217955555555543,no difference,3
+H+mean minus T+mean,MLL23,lym>neut CD3,0.28240493827160495,0.3408284444444445,no difference,3
+H+mean minus T+mean,MLL23,mono>lym+neut CD14,0.02889259259259273,0.21129955555555535,no difference,3
+H+mean minus T+mean,MLL23,myelocyte<segneut CD16,0.1471103269393171,0.4297709011943539,no difference,3
+H+mean minus T+mean,MLL23,normoblast<lym CD45,0.4431030617283951,0.20882844444444446,H+mean higher,3
+H+mean minus T+mean,MLL23,plasma<lym CD45,0.2852261728395062,0.4752622222222222,no difference,3
+H+mean minus T+mean,MLL23,segneut>lym CD16,0.09050093827160495,0.1195288888888888,no difference,3
+H+mean minus T+mean,PBC,CD123 basophil>rest,0.14680730568462944,0.3491872891809579,no difference,3
+H+mean minus T+mean,PBC,CD14 monocyte>neutrophil+lymphocyte,0.001130620728125013,0.004076827202233124,no difference,3
+H+mean minus T+mean,PBC,CD16 neutrophil>eosinophil,-0.00923155497811066,0.38772099626754997,no difference,3
+H+mean minus T+mean,PBC,CD16 neutrophil>ig (held-out),-0.057495494288211914,0.17275962202966333,no difference,3
+H+mean minus T+mean,PBC,CD16 neutrophil>lymphocyte,0.009607739214153957,0.05131637308325954,no difference,3
+H+mean minus T+mean,PBC,CD3 lymphocyte>neutrophil+monocyte,0.038918105828601966,0.12681448308241938,no difference,3
+H+mean minus T+mean,PBC,CD45 lymphocyte>erythroblast (held-out),0.12646492760105,0.5404155131710797,no difference,3
+H+mean minus T+mean,PBC,CD45 lymphocyte>neutrophil,0.0004295725439670643,0.001596953808135737,no difference,3
+H+mean minus T+mean,PBC,HLA-DR monocyte>neutrophil,0.058523534076367754,0.19379736391786195,no difference,3
+H+mean minus T+mean,PBC,grpCD3/19/56 lymphocyte>neutrophil+monocyte,0.03197298613792802,0.11527541248669948,no difference,3
+T+CORAL minus T,MLL23,LGL>lym CD16,-0.024168493827160447,0.11372444444444452,no difference,3
+T+CORAL minus T,MLL23,LGL>lym CD56,0.01376908641975307,0.15255822222222226,no difference,3
+T+CORAL minus T,MLL23,band<segneut CD16,-0.011477054313789037,0.09544023323615147,no difference,3
+T+CORAL minus T,MLL23,baso>rest CD123,0.03511035954785959,0.2562153679653679,no difference,3
+T+CORAL minus T,MLL23,eos<segneut CD16,0.03919990123456792,0.15428622222222227,no difference,3
+T+CORAL minus T,MLL23,hairy<lym CD3,0.0823208888888889,0.14414222222222217,no difference,3
+T+CORAL minus T,MLL23,hairy>lym CD123,-0.04980849382716054,0.2076728888888889,no difference,3
+T+CORAL minus T,MLL23,hairy>lym CD19,0.007913975308641982,0.22745244444444435,no difference,3
+T+CORAL minus T,MLL23,hairy>lym HLA-DR,-0.05275111111111116,0.10247111111111107,no difference,3
+T+CORAL minus T,MLL23,lym>neut CD3,0.053502419753086415,0.41540266666666675,no difference,3
+T+CORAL minus T,MLL23,mono>lym+neut CD14,-0.08624641975308645,0.21419555555555558,no difference,3
+T+CORAL minus T,MLL23,myelocyte<segneut CD16,-0.005698757389311175,0.36670141150922914,no difference,3
+T+CORAL minus T,MLL23,normoblast<lym CD45,0.030484049382716094,0.19333511111111112,no difference,3
+T+CORAL minus T,MLL23,plasma<lym CD45,0.08219061728395055,0.2048515555555555,no difference,3
+T+CORAL minus T,MLL23,segneut>lym CD16,-0.0666044444444444,0.1465439999999999,no difference,3
+T+CORAL minus T,PBC,CD123 basophil>rest,0.046328509183149104,0.44534842679416786,no difference,3
+T+CORAL minus T,PBC,CD14 monocyte>neutrophil+lymphocyte,-0.07285482666763976,0.06969228817290973,T higher,3
+T+CORAL minus T,PBC,CD16 neutrophil>eosinophil,0.13824297539301963,0.5474139728964801,no difference,3
+T+CORAL minus T,PBC,CD16 neutrophil>ig (held-out),-0.07684034838141403,0.18920279357822556,no difference,3
+T+CORAL minus T,PBC,CD16 neutrophil>lymphocyte,-0.03730251763612554,0.036238871815992835,T higher,3
+T+CORAL minus T,PBC,CD3 lymphocyte>neutrophil+monocyte,-0.08237031645356659,0.1525922972849083,no difference,3
+T+CORAL minus T,PBC,CD45 lymphocyte>erythroblast (held-out),-0.20297771701285694,0.4996178603576828,no difference,3
+T+CORAL minus T,PBC,CD45 lymphocyte>neutrophil,-0.03296009474577233,0.054500380179951846,no difference,3
+T+CORAL minus T,PBC,HLA-DR monocyte>neutrophil,-0.016623301614032544,0.42550029199261197,no difference,3
+T+CORAL minus T,PBC,grpCD3/19/56 lymphocyte>neutrophil+monocyte,-0.06276097302132788,0.17744498556747978,no difference,3
+H+CORAL minus H,MLL23,LGL>lym CD16,-0.026438518518518455,0.07841955555555563,no difference,3
+H+CORAL minus H,MLL23,LGL>lym CD56,0.013728000000000037,0.09865066666666666,no difference,3
+H+CORAL minus H,MLL23,band<segneut CD16,-0.031212180110139265,0.09041788143828966,no difference,3
+H+CORAL minus H,MLL23,baso>rest CD123,-0.03655735930735928,0.23514718614718622,no difference,3
+H+CORAL minus H,MLL23,eos<segneut CD16,-0.1422124444444444,0.22457244444444457,no difference,3
+H+CORAL minus H,MLL23,hairy<lym CD3,-0.10617214814814817,0.4543235555555555,no difference,3
+H+CORAL minus H,MLL23,hairy>lym CD123,0.05000711111111115,0.4887288888888889,no difference,3
+H+CORAL minus H,MLL23,hairy>lym CD19,-0.028874370370370384,0.4567431111111111,no difference,3
+H+CORAL minus H,MLL23,hairy>lym HLA-DR,0.0329881481481481,0.4668746666666667,no difference,3
+H+CORAL minus H,MLL23,lym>neut CD3,-0.0689179259259259,0.057102222222222276,H higher,3
+H+CORAL minus H,MLL23,mono>lym+neut CD14,-0.15881229629629626,0.15306933333333328,H higher,3
+H+CORAL minus H,MLL23,myelocyte<segneut CD16,-0.10411545421643142,0.2151335504885994,no difference,3
+H+CORAL minus H,MLL23,normoblast<lym CD45,-0.11079703703703718,0.23055288888888903,no difference,3
+H+CORAL minus H,MLL23,plasma<lym CD45,-0.09733511111111111,0.48414400000000013,no difference,3
+H+CORAL minus H,MLL23,segneut>lym CD16,-0.04457274074074069,0.01933511111111108,H higher,3
+H+CORAL minus H,PBC,CD123 basophil>rest,-0.062275323452962696,0.2307909512009635,no difference,3
+H+CORAL minus H,PBC,CD14 monocyte>neutrophil+lymphocyte,-0.08204487764750172,0.0834427950553156,no difference,3
+H+CORAL minus H,PBC,CD16 neutrophil>eosinophil,0.305315851120147,0.3475121891684793,no difference,3
+H+CORAL minus H,PBC,CD16 neutrophil>ig (held-out),0.06202532898525696,0.1950269705890172,no difference,3
+H+CORAL minus H,PBC,CD16 neutrophil>lymphocyte,-0.0016585020381870337,0.0030483699784563667,no difference,3
+H+CORAL minus H,PBC,CD3 lymphocyte>neutrophil+monocyte,-0.01410284547989397,0.009868704351425617,H higher,3
+H+CORAL minus H,PBC,CD45 lymphocyte>erythroblast (held-out),-0.2257511166969548,0.07493546086040881,H higher,3
+H+CORAL minus H,PBC,CD45 lymphocyte>neutrophil,-0.0013321149093904101,0.0010177734127486682,H higher,3
+H+CORAL minus H,PBC,HLA-DR monocyte>neutrophil,-0.15153313097566276,0.1044170673076924,H higher,3
+H+CORAL minus H,PBC,grpCD3/19/56 lymphocyte>neutrophil+monocyte,-0.01594592041694561,0.012725343171709369,H higher,3
+H_matched+CORAL minus H_matched,MLL23,LGL>lym CD16,0.019320592592592594,0.0,sensitivity only (one H_matched seed),3
+H_matched+CORAL minus H_matched,MLL23,LGL>lym CD56,0.04643288888888889,0.0,sensitivity only (one H_matched seed),3
+H_matched+CORAL minus H_matched,MLL23,band<segneut CD16,0.01329186912860377,0.0,sensitivity only (one H_matched seed),3
+H_matched+CORAL minus H_matched,MLL23,baso>rest CD123,0.032092352092352096,0.0,sensitivity only (one H_matched seed),3
+H_matched+CORAL minus H_matched,MLL23,eos<segneut CD16,-0.05464829629629634,0.0,sensitivity only (one H_matched seed),3
+H_matched+CORAL minus H_matched,MLL23,hairy<lym CD3,-0.16419199999999998,0.0,sensitivity only (one H_matched seed),3
+H_matched+CORAL minus H_matched,MLL23,hairy>lym CD123,0.11494696296296299,0.0,sensitivity only (one H_matched seed),3
+H_matched+CORAL minus H_matched,MLL23,hairy>lym CD19,0.11361244444444439,0.0,sensitivity only (one H_matched seed),3
+H_matched+CORAL minus H_matched,MLL23,hairy>lym HLA-DR,0.044084148148148206,0.0,sensitivity only (one H_matched seed),3
+H_matched+CORAL minus H_matched,MLL23,lym>neut CD3,-0.1185351111111111,0.0,sensitivity only (one H_matched seed),3
+H_matched+CORAL minus H_matched,MLL23,mono>lym+neut CD14,-0.09045911111111105,0.0,sensitivity only (one H_matched seed),3
+H_matched+CORAL minus H_matched,MLL23,myelocyte<segneut CD16,-0.045228736880202645,0.0,sensitivity only (one H_matched seed),3
+H_matched+CORAL minus H_matched,MLL23,normoblast<lym CD45,-0.1453122962962963,0.0,sensitivity only (one H_matched seed),3
+H_matched+CORAL minus H_matched,MLL23,plasma<lym CD45,-0.10394577777777773,0.0,sensitivity only (one H_matched seed),3
+H_matched+CORAL minus H_matched,MLL23,segneut>lym CD16,-0.10937866666666667,0.0,sensitivity only (one H_matched seed),3
+H_matched+CORAL minus H_matched,PBC,CD123 basophil>rest,-0.022261217301443426,0.0,sensitivity only (one H_matched seed),3
+H_matched+CORAL minus H_matched,PBC,CD14 monocyte>neutrophil+lymphocyte,-0.0652103696737959,0.0,sensitivity only (one H_matched seed),3
+H_matched+CORAL minus H_matched,PBC,CD16 neutrophil>eosinophil,0.41162550311861446,0.0,sensitivity only (one H_matched seed),3
+H_matched+CORAL minus H_matched,PBC,CD16 neutrophil>ig (held-out),0.11806637683181825,0.0,sensitivity only (one H_matched seed),3
+H_matched+CORAL minus H_matched,PBC,CD16 neutrophil>lymphocyte,-0.0059894843281376176,0.0,sensitivity only (one H_matched seed),3
+H_matched+CORAL minus H_matched,PBC,CD3 lymphocyte>neutrophil+monocyte,-0.05000449135206372,0.0,sensitivity only (one H_matched seed),3
+H_matched+CORAL minus H_matched,PBC,CD45 lymphocyte>erythroblast (held-out),-0.21127934690919792,0.0,sensitivity only (one H_matched seed),3
+H_matched+CORAL minus H_matched,PBC,CD45 lymphocyte>neutrophil,-0.003851962150973683,0.0,sensitivity only (one H_matched seed),3
+H_matched+CORAL minus H_matched,PBC,HLA-DR monocyte>neutrophil,-0.1364343967296828,0.0,sensitivity only (one H_matched seed),3
+H_matched+CORAL minus H_matched,PBC,grpCD3/19/56 lymphocyte>neutrophil+monocyte,-0.029397519847608928,0.0,sensitivity only (one H_matched seed),3
+H+CORAL minus T+CORAL,MLL23,LGL>lym CD16,0.055300543209876596,0.09207288888888893,no difference,3
+H+CORAL minus T+CORAL,MLL23,LGL>lym CD56,-0.010462814814814777,0.10278577777777781,no difference,3
+H+CORAL minus T+CORAL,MLL23,band<segneut CD16,-0.008453298779829366,0.09544023323615147,no difference,3
+H+CORAL minus T+CORAL,MLL23,baso>rest CD123,0.03467742905242899,0.07718722943722933,no difference,3
+H+CORAL minus T+CORAL,MLL23,eos<segneut CD16,0.030795259259259227,0.09743644444444444,no difference,3
+H+CORAL minus T+CORAL,MLL23,hairy<lym CD3,0.10597679012345677,0.3570702222222222,no difference,3
+H+CORAL minus T+CORAL,MLL23,hairy>lym CD123,0.044987654320987724,0.3375128888888889,no difference,3
+H+CORAL minus T+CORAL,MLL23,hairy>lym CD19,-0.0076684444444444595,0.1773386666666667,no difference,3
+H+CORAL minus T+CORAL,MLL23,hairy>lym HLA-DR,0.05976780246913582,0.27952,no difference,3
+H+CORAL minus T+CORAL,MLL23,lym>neut CD3,0.19528977777777778,0.1591111111111111,H+CORAL higher,3
+H+CORAL minus T+CORAL,MLL23,mono>lym+neut CD14,-0.010352246913580276,0.15306933333333328,no difference,3
+H+CORAL minus T+CORAL,MLL23,myelocyte<segneut CD16,0.09226215466280607,0.2877394136807817,no difference,3
+H+CORAL minus T+CORAL,MLL23,normoblast<lym CD45,0.3100211358024691,0.19333511111111112,H+CORAL higher,3
+H+CORAL minus T+CORAL,MLL23,plasma<lym CD45,0.13088671604938276,0.3254951111111111,no difference,3
+H+CORAL minus T+CORAL,MLL23,segneut>lym CD16,0.1093647407407408,0.11894577777777748,no difference,3
+H+CORAL minus T+CORAL,PBC,CD123 basophil>rest,0.05930748256744086,0.12630621386284152,no difference,3
+H+CORAL minus T+CORAL,PBC,CD14 monocyte>neutrophil+lymphocyte,-0.013416489689728564,0.0834427950553156,no difference,3
+H+CORAL minus T+CORAL,PBC,CD16 neutrophil>eosinophil,-0.05246492073693232,0.3060518294566938,no difference,3
+H+CORAL minus T+CORAL,PBC,CD16 neutrophil>ig (held-out),0.0005015626938140357,0.17427884615384626,no difference,3
+H+CORAL minus T+CORAL,PBC,CD16 neutrophil>lymphocyte,0.03695638447105698,0.036238871815992835,H+CORAL higher,3
+H+CORAL minus T+CORAL,PBC,CD3 lymphocyte>neutrophil+monocyte,0.08949516739778474,0.1525922972849083,no difference,3
+H+CORAL minus T+CORAL,PBC,CD45 lymphocyte>erythroblast (held-out),0.06612784977099928,0.39305397510147916,no difference,3
+H+CORAL minus T+CORAL,PBC,CD45 lymphocyte>neutrophil,0.03193940618003632,0.054500380179951846,no difference,3
+H+CORAL minus T+CORAL,PBC,HLA-DR monocyte>neutrophil,-0.04808178018916898,0.1044170673076924,no difference,3
+H+CORAL minus T+CORAL,PBC,grpCD3/19/56 lymphocyte>neutrophil+monocyte,0.08829693331715831,0.17744498556747978,no difference,3
+T+kNN minus T,MLL23,LGL>lym CD16,-0.009369283950617202,0.1571466666666666,no difference,3
+T+kNN minus T,MLL23,LGL>lym CD56,-0.009695999999999982,0.15255822222222226,no difference,3
+T+kNN minus T,MLL23,band<segneut CD16,-0.015023107655760704,0.15033624878522833,no difference,3
+T+kNN minus T,MLL23,baso>rest CD123,-0.03737000962000966,0.2562153679653679,no difference,3
+T+kNN minus T,MLL23,eos<segneut CD16,-0.17930617283950614,0.17238755555555557,T higher,3
+T+kNN minus T,MLL23,hairy<lym CD3,0.07995269135802469,0.20971911111111108,no difference,3
+T+kNN minus T,MLL23,hairy>lym CD123,-0.03705293827160494,0.2076728888888889,no difference,3
+T+kNN minus T,MLL23,hairy>lym CD19,-0.07268869135802469,0.22745244444444435,no difference,3
+T+kNN minus T,MLL23,hairy>lym HLA-DR,0.01597688888888889,0.116672,no difference,3
+T+kNN minus T,MLL23,lym>neut CD3,0.04599812345679014,0.41540266666666675,no difference,3
+T+kNN minus T,MLL23,mono>lym+neut CD14,-0.10145081481481488,0.21419555555555558,no difference,3
+T+kNN minus T,MLL23,myelocyte<segneut CD16,-0.08741138858728432,0.36670141150922914,no difference,3
+T+kNN minus T,MLL23,normoblast<lym CD45,-0.005080049382716038,0.2004791111111111,no difference,3
+T+kNN minus T,MLL23,plasma<lym CD45,0.07125377777777774,0.205696,no difference,3
+T+kNN minus T,MLL23,segneut>lym CD16,-0.054729481481481344,0.15134399999999992,no difference,3
+T+kNN minus T,PBC,CD123 basophil>rest,-0.05256307236750871,0.44534842679416786,no difference,3
+T+kNN minus T,PBC,CD14 monocyte>neutrophil+lymphocyte,-0.0005905681035729785,0.006622434179920034,no difference,3
+T+kNN minus T,PBC,CD16 neutrophil>eosinophil,-0.05042471338889437,0.5474139728964801,no difference,3
+T+kNN minus T,PBC,CD16 neutrophil>ig (held-out),-0.0745614083662632,0.18920279357822556,no difference,3
+T+kNN minus T,PBC,CD16 neutrophil>lymphocyte,-0.0009069425963474931,0.006875910847801259,no difference,3
+T+kNN minus T,PBC,CD3 lymphocyte>neutrophil+monocyte,0.015166609097102471,0.09046717469877841,no difference,3
+T+kNN minus T,PBC,CD45 lymphocyte>erythroblast (held-out),0.04939874337388728,0.4996178603576828,no difference,3
+T+kNN minus T,PBC,CD45 lymphocyte>neutrophil,-0.000526212615638196,0.003308753643391338,no difference,3
+T+kNN minus T,PBC,HLA-DR monocyte>neutrophil,0.10082322865360471,0.42550029199261197,no difference,3
+T+kNN minus T,PBC,grpCD3/19/56 lymphocyte>neutrophil+monocyte,0.03683093902596002,0.13429050065147752,no difference,3
+H+kNN minus H,MLL23,LGL>lym CD16,-0.06557259259259256,0.08703022222222223,no difference,3
+H+kNN minus H,MLL23,LGL>lym CD56,0.0067306666666667,0.10549866666666669,no difference,3
+H+kNN minus H,MLL23,band<segneut CD16,0.02618788467768063,0.15933722060252675,no difference,3
+H+kNN minus H,MLL23,baso>rest CD123,-0.04802849927849925,0.23514718614718622,no difference,3
+H+kNN minus H,MLL23,eos<segneut CD16,-0.10616859259259252,0.22457244444444457,no difference,3
+H+kNN minus H,MLL23,hairy<lym CD3,0.025926962962962968,0.4543235555555555,no difference,3
+H+kNN minus H,MLL23,hairy>lym CD123,0.09171733333333336,0.4887288888888889,no difference,3
+H+kNN minus H,MLL23,hairy>lym CD19,-0.0524834074074074,0.4567431111111111,no difference,3
+H+kNN minus H,MLL23,hairy>lym HLA-DR,0.014439407407407345,0.4668746666666667,no difference,3
+H+kNN minus H,MLL23,lym>neut CD3,-0.000500592592592571,0.012787555555555663,no difference,3
+H+kNN minus H,MLL23,mono>lym+neut CD14,-0.014018740740740684,0.09233644444444444,no difference,3
+H+kNN minus H,MLL23,myelocyte<segneut CD16,-0.08854325009048129,0.23820086862106415,no difference,3
+H+kNN minus H,MLL23,normoblast<lym CD45,-0.10491614814814824,0.3079511111111113,no difference,3
+H+kNN minus H,MLL23,plasma<lym CD45,0.04578266666666664,0.48414400000000013,no difference,3
+H+kNN minus H,MLL23,segneut>lym CD16,-0.003909629629629596,0.011288888888888793,no difference,3
+H+kNN minus H,PBC,CD123 basophil>rest,-0.034241955066509976,0.2364717397869886,no difference,3
+H+kNN minus H,PBC,CD14 monocyte>neutrophil+lymphocyte,0.0017231410372825495,0.02580746678209922,no difference,3
+H+kNN minus H,PBC,CD16 neutrophil>eosinophil,-0.007661454986075432,0.3475121891684793,no difference,3
+H+kNN minus H,PBC,CD16 neutrophil>ig (held-out),-0.005781295684705645,0.25900154829620947,no difference,3
+H+kNN minus H,PBC,CD16 neutrophil>lymphocyte,-0.00025757851772064316,0.001546461158281609,no difference,3
+H+kNN minus H,PBC,CD3 lymphocyte>neutrophil+monocyte,-0.00023458054012907384,0.0015370147603421813,no difference,3
+H+kNN minus H,PBC,CD45 lymphocyte>erythroblast (held-out),-0.14990488968902324,0.21578045652949274,no difference,3
+H+kNN minus H,PBC,CD45 lymphocyte>neutrophil,-1.7655926583019326e-05,0.00010395545558217201,no difference,3
+H+kNN minus H,PBC,HLA-DR monocyte>neutrophil,-0.000934546121251619,0.0653180682312039,no difference,3
+H+kNN minus H,PBC,grpCD3/19/56 lymphocyte>neutrophil+monocyte,-0.00016217485157702752,0.0010682009495737166,no difference,3
+H_matched+kNN minus H_matched,MLL23,LGL>lym CD16,-0.009727111111111186,0.0,sensitivity only (one H_matched seed),3
+H_matched+kNN minus H_matched,MLL23,LGL>lym CD56,-0.0139659259259259,0.0,sensitivity only (one H_matched seed),3
+H_matched+kNN minus H_matched,MLL23,band<segneut CD16,0.06974149659863943,0.0,sensitivity only (one H_matched seed),3
+H_matched+kNN minus H_matched,MLL23,baso>rest CD123,-0.028172438672438665,0.0,sensitivity only (one H_matched seed),3
+H_matched+kNN minus H_matched,MLL23,eos<segneut CD16,-0.006293925925925925,0.0,sensitivity only (one H_matched seed),3
+H_matched+kNN minus H_matched,MLL23,hairy<lym CD3,0.01520948148148149,0.0,sensitivity only (one H_matched seed),3
+H_matched+kNN minus H_matched,MLL23,hairy>lym CD123,0.10318992592592591,0.0,sensitivity only (one H_matched seed),3
+H_matched+kNN minus H_matched,MLL23,hairy>lym CD19,-0.023301037037037026,0.0,sensitivity only (one H_matched seed),3
+H_matched+kNN minus H_matched,MLL23,hairy>lym HLA-DR,0.02819733333333337,0.0,sensitivity only (one H_matched seed),3
+H_matched+kNN minus H_matched,MLL23,lym>neut CD3,-0.03819851851851852,0.0,sensitivity only (one H_matched seed),3
+H_matched+kNN minus H_matched,MLL23,mono>lym+neut CD14,0.008862666666666685,0.0,sensitivity only (one H_matched seed),3
+H_matched+kNN minus H_matched,MLL23,myelocyte<segneut CD16,-0.009018096272167875,0.0,sensitivity only (one H_matched seed),3
+H_matched+kNN minus H_matched,MLL23,normoblast<lym CD45,-0.03231881481481488,0.0,sensitivity only (one H_matched seed),3
+H_matched+kNN minus H_matched,MLL23,plasma<lym CD45,0.11294992592592601,0.0,sensitivity only (one H_matched seed),3
+H_matched+kNN minus H_matched,MLL23,segneut>lym CD16,-0.04405333333333331,0.0,sensitivity only (one H_matched seed),3
+H_matched+kNN minus H_matched,PBC,CD123 basophil>rest,-0.0510406167408361,0.0,sensitivity only (one H_matched seed),3
+H_matched+kNN minus H_matched,PBC,CD14 monocyte>neutrophil+lymphocyte,0.0023499026868707418,0.0,sensitivity only (one H_matched seed),3
+H_matched+kNN minus H_matched,PBC,CD16 neutrophil>eosinophil,0.1593977098576231,0.0,sensitivity only (one H_matched seed),3
+H_matched+kNN minus H_matched,PBC,CD16 neutrophil>ig (held-out),-0.011747614427728445,0.0,sensitivity only (one H_matched seed),3
+H_matched+kNN minus H_matched,PBC,CD16 neutrophil>lymphocyte,-0.0005808304819836888,0.0,sensitivity only (one H_matched seed),3
+H_matched+kNN minus H_matched,PBC,CD3 lymphocyte>neutrophil+monocyte,-0.00012756365912773107,0.0,sensitivity only (one H_matched seed),3
+H_matched+kNN minus H_matched,PBC,CD45 lymphocyte>erythroblast (held-out),-0.06694661933796435,0.0,sensitivity only (one H_matched seed),3
+H_matched+kNN minus H_matched,PBC,CD45 lymphocyte>neutrophil,3.531185316603865e-05,0.0,sensitivity only (one H_matched seed),3
+H_matched+kNN minus H_matched,PBC,HLA-DR monocyte>neutrophil,-0.0018306125959727249,0.0,sensitivity only (one H_matched seed),3
+H_matched+kNN minus H_matched,PBC,grpCD3/19/56 lymphocyte>neutrophil+monocyte,0.01831152017913547,0.0,sensitivity only (one H_matched seed),3
+H+kNN minus T+kNN,MLL23,LGL>lym CD16,0.0013672592592592532,0.1571466666666666,no difference,3
+H+kNN minus T+kNN,MLL23,LGL>lym CD56,0.006004938271604939,0.10549866666666669,no difference,3
+H+kNN minus T+kNN,MLL23,band<segneut CD16,0.052492819349962194,0.15933722060252675,no difference,3
+H+kNN minus T+kNN,MLL23,baso>rest CD123,0.09568665824915827,0.10853192640692644,no difference,3
+H+kNN minus T+kNN,MLL23,eos<segneut CD16,0.2853451851851852,0.20491555555555563,H+kNN higher,3
+H+kNN minus T+kNN,MLL23,hairy<lym CD3,0.24044409876543213,0.3524435555555556,no difference,3
+H+kNN minus T+kNN,MLL23,hairy>lym CD123,0.07394232098765434,0.41304799999999986,no difference,3
+H+kNN minus T+kNN,MLL23,hairy>lym CD19,0.049325185185185194,0.28944622222222216,no difference,3
+H+kNN minus T+kNN,MLL23,hairy>lym HLA-DR,-0.02750893827160498,0.337504,no difference,3
+H+kNN minus T+kNN,MLL23,lym>neut CD3,0.2712114074074074,0.2080373333333334,H+kNN higher,3
+H+kNN minus T+kNN,MLL23,mono>lym+neut CD14,0.14964570370370375,0.11061511111111111,H+kNN higher,3
+H+kNN minus T+kNN,MLL23,myelocyte<segneut CD16,0.18954698998672936,0.34714875135722045,no difference,3
+H+kNN minus T+kNN,MLL23,normoblast<lym CD45,0.3514661234567901,0.3079511111111113,H+kNN higher,3
+H+kNN minus T+kNN,MLL23,plasma<lym CD45,0.2849413333333333,0.38070488888888887,no difference,3
+H+kNN minus T+kNN,MLL23,segneut>lym CD16,0.13815288888888885,0.15134399999999992,no difference,3
+H+kNN minus T+kNN,PBC,CD123 basophil>rest,0.18623243250455138,0.2364717397869886,no difference,3
+H+kNN minus T+kNN,PBC,CD14 monocyte>neutrophil+lymphocyte,-0.0019127295690110808,0.010067057743546215,no difference,3
+H+kNN minus T+kNN,PBC,CD16 neutrophil>eosinophil,-0.17677453806124074,0.5282117840987739,no difference,3
+H+kNN minus T+kNN,PBC,CD16 neutrophil>ig (held-out),-0.0695840019912994,0.25900154829620947,no difference,3
+H+kNN minus T+kNN,PBC,CD16 neutrophil>lymphocyte,0.0019617329517453244,0.006875910847801259,no difference,3
+H+kNN minus T+kNN,PBC,CD3 lymphocyte>neutrophil+monocyte,0.00582650678688057,0.021779353300866,no difference,3
+H+kNN minus T+kNN,PBC,CD45 lymphocyte>erythroblast (held-out),-0.11040238360781336,0.21578045652949274,no difference,3
+H+kNN minus T+kNN,PBC,CD45 lymphocyte>neutrophil,0.0008199830327095814,0.003308753643391338,no difference,3
+H+kNN minus T+kNN,PBC,HLA-DR monocyte>neutrophil,-0.014929725602395102,0.0653180682312039,no difference,3
+H+kNN minus T+kNN,PBC,grpCD3/19/56 lymphocyte>neutrophil+monocyte,0.004488766835238985,0.005017349583693487,no difference,3
+T+CCOT minus T,PBC,CD123 basophil>rest,0.11678512761235695,0.44534842679416786,no difference,3
+T+CCOT minus T,PBC,CD14 monocyte>neutrophil+lymphocyte,0.0007442567839316405,0.006622434179920034,no difference,3
+T+CCOT minus T,PBC,CD16 neutrophil>eosinophil,-0.12684394216693576,0.5474139728964801,no difference,3
+T+CCOT minus T,PBC,CD16 neutrophil>ig (held-out),-0.07265864037147292,0.3148515163999789,no difference,3
+T+CCOT minus T,PBC,CD16 neutrophil>lymphocyte,0.0011042379504075939,0.0013930031048028368,no difference,3
+T+CCOT minus T,PBC,CD3 lymphocyte>neutrophil+monocyte,0.020236782228692334,0.09046717469877841,no difference,3
+T+CCOT minus T,PBC,CD45 lymphocyte>erythroblast (held-out),0.06233334465598935,0.4996178603576828,no difference,3
+T+CCOT minus T,PBC,CD45 lymphocyte>neutrophil,0.00021880148270170263,0.0009613404511469303,no difference,3
+T+CCOT minus T,PBC,HLA-DR monocyte>neutrophil,0.09107731504116567,0.42550029199261197,no difference,3
+T+CCOT minus T,PBC,grpCD3/19/56 lymphocyte>neutrophil+monocyte,0.04079170189522711,0.13429050065147752,no difference,3
+H+CCOT minus H,PBC,CD123 basophil>rest,0.04292685056818807,0.2307909512009635,no difference,3
+H+CCOT minus H,PBC,CD14 monocyte>neutrophil+lymphocyte,0.0032843699441330587,0.02580746678209922,no difference,3
+H+CCOT minus H,PBC,CD16 neutrophil>eosinophil,0.22681850086101776,0.3475121891684793,no difference,3
+H+CCOT minus H,PBC,CD16 neutrophil>ig (held-out),0.11892417640166227,0.1950269705890172,no difference,3
+H+CCOT minus H,PBC,CD16 neutrophil>lymphocyte,-0.0002498231107168625,0.0015009187682170078,no difference,3
+H+CCOT minus H,PBC,CD3 lymphocyte>neutrophil+monocyte,-3.889418281932677e-05,0.0023517089826115,no difference,3
+H+CCOT minus H,PBC,CD45 lymphocyte>erythroblast (held-out),-0.030983740665885346,0.09628645187588092,no difference,3
+H+CCOT minus H,PBC,CD45 lymphocyte>neutrophil,-5.44528576858679e-06,8.91046762119263e-06,no difference,3
+H+CCOT minus H,PBC,HLA-DR monocyte>neutrophil,-0.006671408717224418,0.06300334772924798,no difference,3
+H+CCOT minus H,PBC,grpCD3/19/56 lymphocyte>neutrophil+monocyte,0.00028371917288734966,0.0012050251284202451,no difference,3
+H_matched+CCOT minus H_matched,PBC,CD123 basophil>rest,0.060091477725501365,0.0,sensitivity only (one H_matched seed),3
+H_matched+CCOT minus H_matched,PBC,CD14 monocyte>neutrophil+lymphocyte,0.007204364205685154,0.0,sensitivity only (one H_matched seed),3
+H_matched+CCOT minus H_matched,PBC,CD16 neutrophil>eosinophil,0.2883612494644388,0.0,sensitivity only (one H_matched seed),3
+H_matched+CCOT minus H_matched,PBC,CD16 neutrophil>ig (held-out),0.12434809309269396,0.0,sensitivity only (one H_matched seed),3
+H_matched+CCOT minus H_matched,PBC,CD16 neutrophil>lymphocyte,2.9701558737678844e-06,0.0,sensitivity only (one H_matched seed),3
+H_matched+CCOT minus H_matched,PBC,CD3 lymphocyte>neutrophil+monocyte,0.00040896770208535366,0.0,sensitivity only (one H_matched seed),3
+H_matched+CCOT minus H_matched,PBC,CD45 lymphocyte>erythroblast (held-out),-0.003862441051421861,0.0,sensitivity only (one H_matched seed),3
+H_matched+CCOT minus H_matched,PBC,CD45 lymphocyte>neutrophil,-0.0003234169729227447,0.0,sensitivity only (one H_matched seed),3
+H_matched+CCOT minus H_matched,PBC,HLA-DR monocyte>neutrophil,-0.019245199098218164,0.0,sensitivity only (one H_matched seed),3
+H_matched+CCOT minus H_matched,PBC,grpCD3/19/56 lymphocyte>neutrophil+monocyte,0.01915260688260338,0.0,sensitivity only (one H_matched seed),3
+H+CCOT minus T+CCOT,PBC,CD123 basophil>rest,0.09405303815938378,0.20888978644281175,no difference,3
+H+CCOT minus T+CCOT,PBC,CD14 monocyte>neutrophil+lymphocyte,-0.0016863255496651908,0.0029647956175508083,no difference,3
+H+CCOT minus T+CCOT,PBC,CD16 neutrophil>eosinophil,0.13412464656389386,0.5403011141734231,no difference,3
+H+CCOT minus T+CCOT,PBC,CD16 neutrophil>ig (held-out),0.05321870210027824,0.3148515163999789,no difference,3
+H+CCOT minus T+CCOT,PBC,CD16 neutrophil>lymphocyte,-4.1692188005981734e-05,0.0015009187682170078,no difference,3
+H+CCOT minus T+CCOT,PBC,CD3 lymphocyte>neutrophil+monocyte,0.0009520200126004555,0.0034372734066581145,no difference,3
+H+CCOT minus T+CCOT,PBC,CD45 lymphocyte>erythroblast (held-out),-0.004415835866777555,0.10186993664973909,no difference,3
+H+CCOT minus T+CCOT,PBC,CD45 lymphocyte>neutrophil,8.717957518411534e-05,0.0002910752756305479,no difference,3
+H+CCOT minus T+CCOT,PBC,HLA-DR monocyte>neutrophil,-0.010920674585928861,0.027745239841373337,no difference,3
+H+CCOT minus T+CCOT,PBC,grpCD3/19/56 lymphocyte>neutrophil+monocyte,0.0009738979904362713,0.0020877841706230527,no difference,3

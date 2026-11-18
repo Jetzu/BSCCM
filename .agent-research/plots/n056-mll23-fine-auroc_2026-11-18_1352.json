@@ -1,0 +1,99 @@
+{
+ "png": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/plots/n056-mll23-fine-auroc_2026-11-18_1352.png",
+ "svg": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/plots/n056-mll23-fine-auroc_2026-11-18_1352.svg",
+ "created": "2026-11-18T13:52:46",
+ "command": [
+  "/home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python",
+  "/home/hpc/v181bb/v181bb10/.claude/skills/work-log/bin/plot_compare.py",
+  "--metric",
+  "n056_mll23_fine_auroc",
+  "--csv",
+  "N056-e3-clinical-transfer-class-anchored-giem/plot_MLL23_15.csv",
+  "--item",
+  "N056",
+  "--baseline",
+  "TT6c student (T)",
+  "--direction",
+  "higher"
+ ],
+ "cwd": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results",
+ "source": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N056-e3-clinical-transfer-class-anchored-giem/plot_MLL23_15.csv",
+ "notes": {
+  "item": "N056",
+  "metric": "n056_mll23_fine_auroc",
+  "direction": "higher",
+  "noise_sd": 0.0027,
+  "stats": null
+ },
+ "width_in": 8.5,
+ "height_in": 2.5591,
+ "png_px": [
+  3840,
+  1156
+ ],
+ "significance": "two-sided; Holm-corrected over all comparisons of a panel (one family per panel); * <0.05 ** <0.01 *** <0.001 **** <0.0001",
+ "panels": [
+  {
+   "panel": "a",
+   "kind": "bar",
+   "groups": [
+    "TT6c student (T)",
+    "hub student (H)",
+    "hub, matched anchoring"
+   ],
+   "colors": [
+    "#767E86",
+    "#3A6C9E",
+    "#55BDB2"
+   ],
+   "n": [
+    7,
+    6,
+    3
+   ],
+   "mean": [
+    0.5742857142857142,
+    0.7041666666666666,
+    0.6396666666666667
+   ],
+   "sd": [
+    0.04219286782429105,
+    0.04996965745996931,
+    0.011590225767142484
+   ],
+   "median": [
+    0.573,
+    0.7075,
+    0.634
+   ],
+   "whisker": "sd",
+   "stats": [
+    {
+     "test": "Welch t-test",
+     "p": 0.0005415167316062111,
+     "n_i": 7,
+     "n_j": 6,
+     "p_holm": 0.0010830334632124222,
+     "stars": "**",
+     "a": "TT6c student (T)",
+     "b": "hub student (H)",
+     "reference": "TT6c student (T)"
+    },
+    {
+     "test": "Welch t-test",
+     "p": 0.005927294585535402,
+     "n_i": 7,
+     "n_j": 3,
+     "p_holm": 0.005927294585535402,
+     "stars": "**",
+     "a": "TT6c student (T)",
+     "b": "hub, matched anchoring",
+     "reference": "TT6c student (T)"
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "n056_mll23_fine_auroc"
+  }
+ ],
+ "matplotlib": "3.11.0"
+}

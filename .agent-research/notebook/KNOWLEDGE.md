@@ -80,3 +80,11 @@ K ids assigned at lint 2026-11-09; results paths are under `.agent-research/resu
   labels-only by +.00-.07 within a draw, <= 0 across draws (draw-specific); large autofl gains for CD3/CD19/CD56 are shared-dye
   artefact. Unanchored cross-slide students are at chance on PBC/MLL23 (anchoring needed, K016) [verified 1 seed] (N054;
   .agent-research/results/N054-tri-modal-latent-user-two-space-design-l/n054_arm_summary.csv) {cites:0}
+- K039: ENSEMBLE SATURATION (N055): adding Cytoland zoom2 to N048 + Cytoland gives .6902 (pre-registered bar .6916 missed); 5-6
+  member variants .6906-.6912; Cytoland on cf150 labels single .6704 but same ensemble value as the v10 member. Ensembling saturates
+  near .69 on the v10 GOAL [verified] (N055; .agent-research/results/N055-ensemble-diversification-with-microscopy/n055_scores.csv) {cites:0}
+- K040: HUB STUDENTS TRANSFER BETTER TO MLL23 (N056, class-anchored, 3 teachers): hub latent-distillation student MLL23 15-contrast
+  AUROC .704 vs TT6c .568 (every H seed > every T seed; per teacher +.10..+.155), non-anchor contrasts .632 vs .540, PBC equal
+  (.85); registered seed-floor rule not passed (floor .15); anchoring-share-matched hub .640 (part of the gain = anchoring). Unbalanced
+  OT / CORAL / kNN / mean-shift alignment of clinical embeddings do not help (mean-shift = OT on PBC). Eosinophils predicted CD16+
+  in every arm [partial: post-hoc rank evidence] (N056; .agent-research/results/N056-e3-clinical-transfer-class-anchored-giem/n056_per_run.csv) {cites:0}
