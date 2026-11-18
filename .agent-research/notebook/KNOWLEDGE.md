@@ -59,3 +59,15 @@ K ids assigned at lint 2026-11-09; results paths are under `.agent-research/resu
 - "SSL pretraining does not help LF->MK (weak linear probe, N007)" -- killed by N014: SSL(aug)-init fine-tune is the best teacher, .5742 vs r50 .5654 (n014_goal.csv).
 - "Unconditional DANN to unlabelled PBC gives clinical transfer" -- killed by N020: per-contrast AUROCs swing between configs (CD14 .70 -> .26, CD16 neut>lym .49 -> .22 -> .82) (pbc_transfer_auroc.csv); class-anchored alignment (K016) is needed.
 - "Procrustes rotation (PRH/shared-latent) transfers GS<->LF better out-of-slide than learned heads" -- killed by N009 zero-training screen: cross-slide Procrustes R@10 .018 vs linear SigLIP .033 (N009-stage-2-binding-v0-on-frozen-sup-lf-feat/screen_B/screen.json).
+- K036: PRETRAINED LF ENCODERS (N053): with a learned per-LED gate + 24-channel patch embedding, fine-tuned at encoder lr x0.1, no
+  pretrained encoder beats the SSL ResNet-50 alone on the v10 GOAL (r50 .6730; Cytoland VSCyto2D ConvNeXtV2 .6671/.6649 two seeds;
+  DinoBloom-B .6552; DINOv3-B .6515; DINOv3-S .6495; Cytoland at full lr .6464). As a third ensemble member Cytoland lifts the
+  N048 ensemble .6804 -> .6862 / .6864 (seed 0 / 1) = new GOAL best; best same-size r50-family control .6826, Cytoland-specific
+  part +.0036 (FOV-bootstrap CI [.0007, .0062]); its errors correlate least with the r50 family (.91 vs .95-.99) while staying
+  accurate; ViT members add nothing (.6803-.6816). All encoders up-weight high-angle darkfield (DF_90/85/80) [verified] (N053;
+  .agent-research/results/N053-lf-encoder-swap-on-the-v10-goal-dinov3-v/n053_followup.csv) {cites:0}
+- K037: RESIDUAL FLOW MATCHING (N044, CorrDiff-style): flow on (y - mu)/sigma conditioned on LF + frozen regressor mean removes the
+  plain flow's per-cell accuracy loss (r_avgread in-batch .692 vs plain .612, new draw .594 vs .550; regressor .695/.599) and
+  improves in-batch calibration (CRPS .254 vs .307), but on a new blood draw it is not better calibrated than the plain flow
+  (CRPS .591 vs .569; outside-80 %-band .73 vs .70; sd ratio .72): calibration under draw shift is limited by the shift, not the
+  generator [verified] (N044; .agent-research/results/N044-residual-flow-matching-corrdiff-style-fo/n044_summary.csv) {cites:0}
