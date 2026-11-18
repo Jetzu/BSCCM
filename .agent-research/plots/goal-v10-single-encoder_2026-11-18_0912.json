@@ -1,0 +1,155 @@
+{
+ "png": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/plots/goal-v10-single-encoder_2026-11-18_0912.png",
+ "svg": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/plots/goal-v10-single-encoder_2026-11-18_0912.svg",
+ "created": "2026-11-18T09:12:47",
+ "command": [
+  "/home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python",
+  "/home/hpc/v181bb/v181bb10/.claude/skills/work-log/bin/plot_compare.py",
+  "--metric",
+  "goal_v10_single_encoder",
+  "--csv",
+  ".agent-research/results/N053-lf-encoder-swap-on-the-v10-goal-dinov3-v/plot_n053_single.csv",
+  "--item",
+  "N053",
+  "--baseline",
+  "r50 SSL (N051)",
+  "--noise",
+  "0.0027"
+ ],
+ "cwd": "/home/hpc/v181bb/v181bb10/BSCCM",
+ "source": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N053-lf-encoder-swap-on-the-v10-goal-dinov3-v/plot_n053_single.csv",
+ "notes": {
+  "item": "N053",
+  "metric": "goal_v10_single_encoder",
+  "direction": "higher",
+  "noise_sd": 0.0027,
+  "stats": null
+ },
+ "width_in": 8.5,
+ "height_in": 2.5591,
+ "png_px": [
+  3840,
+  1156
+ ],
+ "significance": "two-sided; Holm-corrected over all comparisons of a panel (one family per panel); * <0.05 ** <0.01 *** <0.001 **** <0.0001",
+ "panels": [
+  {
+   "panel": "a",
+   "kind": "bar",
+   "groups": [
+    "r50 SSL (N051)",
+    "Cytoland",
+    "DinoBloom-B",
+    "DINOv3-B",
+    "DINOv3-S",
+    "Cytoland full lr"
+   ],
+   "colors": [
+    "#767E86",
+    "#3A6C9E",
+    "#55BDB2",
+    "#A1CA8A",
+    "#CF832F",
+    "#B94A58"
+   ],
+   "n": [
+    1,
+    2,
+    1,
+    1,
+    1,
+    1
+   ],
+   "mean": [
+    0.673,
+    0.666,
+    0.6552,
+    0.6515,
+    0.6495,
+    0.6464
+   ],
+   "sd": [
+    null,
+    0.0015556349186103902,
+    null,
+    null,
+    null,
+    null
+   ],
+   "median": [
+    0.673,
+    0.666,
+    0.6552,
+    0.6515,
+    0.6495,
+    0.6464
+   ],
+   "whisker": "sd",
+   "stats": [
+    {
+     "test": null,
+     "p": null,
+     "n_i": 1,
+     "n_j": 2,
+     "p_holm": null,
+     "stars": "",
+     "note": "test undefined (n < 2 or zero variance)",
+     "a": "r50 SSL (N051)",
+     "b": "Cytoland",
+     "reference": "r50 SSL (N051)"
+    },
+    {
+     "test": null,
+     "p": null,
+     "n_i": 1,
+     "n_j": 1,
+     "p_holm": null,
+     "stars": "",
+     "note": "test undefined (n < 2 or zero variance)",
+     "a": "r50 SSL (N051)",
+     "b": "DinoBloom-B",
+     "reference": "r50 SSL (N051)"
+    },
+    {
+     "test": null,
+     "p": null,
+     "n_i": 1,
+     "n_j": 1,
+     "p_holm": null,
+     "stars": "",
+     "note": "test undefined (n < 2 or zero variance)",
+     "a": "r50 SSL (N051)",
+     "b": "DINOv3-B",
+     "reference": "r50 SSL (N051)"
+    },
+    {
+     "test": null,
+     "p": null,
+     "n_i": 1,
+     "n_j": 1,
+     "p_holm": null,
+     "stars": "",
+     "note": "test undefined (n < 2 or zero variance)",
+     "a": "r50 SSL (N051)",
+     "b": "DINOv3-S",
+     "reference": "r50 SSL (N051)"
+    },
+    {
+     "test": null,
+     "p": null,
+     "n_i": 1,
+     "n_j": 1,
+     "p_holm": null,
+     "stars": "",
+     "note": "test undefined (n < 2 or zero variance)",
+     "a": "r50 SSL (N051)",
+     "b": "Cytoland full lr",
+     "reference": "r50 SSL (N051)"
+    }
+   ],
+   "no_stats_reason": "no testable comparison (n < 2 per group)",
+   "ylabel": "goal_v10_single_encoder"
+  }
+ ],
+ "matplotlib": "3.11.0"
+}

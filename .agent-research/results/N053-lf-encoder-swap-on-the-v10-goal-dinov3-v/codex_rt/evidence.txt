@@ -1,0 +1,45 @@
+versions 2.15.0+cpu 1.0.31
+rows b1to0 269283 13113 overlap 0 sha 192f4a98cfb89d65a64e1b4d25f5dba9fb79b2a8fdc068b6ddb939b05fdf0413 e0b81e71ca44ab021a77454572047d57253c618295d12e13c12577f7b43a7cd9
+baseline args {'out': '/hnvme/workspace/v181bb10-bsccm/runs/n051_v10_base_b10', 'protocol': 'b1to0', 'channels': 'all', 'phase': 1, 'arch': 'resnet50', 'epochs': 10, 'bs': 256, 'lr': 0.0005, 'workers': 15, 'max_train': 0, 'seed': 0, 'w_cls': 0.5, 'include_gs': 0, 'init_ssl': '/hnvme/workspace/v181bb10-bsccm/runs/n031_ssl_aug_ex0/encoder_final.pt', 'tail_weight': 0.0, 'focal_c10': 0.0, 'targets': 'targets_v5cx_v10.npz', 'dann': 0.0, 'stem': 'std', 'zoom': 1, 'phys_aug': 0.0, 'consist': 0.0, 'pseudo': '', 'pseudo_w': 0.3, 'dump_train_preds': 0, 'lowpass': 0.0, 'dual_zoom': 1, 'adabn': 0}
+baseline G exact True
+baseline checkpoint rows True True
+rows b0to1 127946 26322 overlap 0 sha 535c57ca70845b3ed86b6fecac043ec7ba38d760d48d59c8fe3906ef7ab8b98a 827428056837f4b79ed62f82296cb23b792c930763e99f2f7180563cc1c4fa98
+baseline args {'out': '/hnvme/workspace/v181bb10-bsccm/runs/n051_v10_base_b01', 'protocol': 'b0to1', 'channels': 'all', 'phase': 1, 'arch': 'resnet50', 'epochs': 10, 'bs': 256, 'lr': 0.0005, 'workers': 15, 'max_train': 0, 'seed': 0, 'w_cls': 0.5, 'include_gs': 0, 'init_ssl': '/hnvme/workspace/v181bb10-bsccm/runs/n031_ssl_aug_ex1/encoder_final.pt', 'tail_weight': 0.0, 'focal_c10': 0.0, 'targets': 'targets_v5cx_v10.npz', 'dann': 0.0, 'stem': 'std', 'zoom': 1, 'phys_aug': 0.0, 'consist': 0.0, 'pseudo': '', 'pseudo_w': 0.3, 'dump_train_preds': 0, 'lowpass': 0.0, 'dual_zoom': 1, 'adabn': 0}
+baseline G exact True
+baseline checkpoint rows True True
+real input [0, 52923] range -9.342493057250977 8.603826522827148 std [0.8778995871543884, 0.8524396419525146, 0.904597282409668, 0.8732889890670776, 0.7823635935783386, 0.7740957736968994, 0.789242684841156, 0.7674254775047302, 0.7864997386932373, 0.7915307879447937, 0.82082599401474, 0.7607200741767883, 0.7759383916854858, 0.781967282295227, 0.7744141817092896, 0.8097376227378845, 0.8385480642318726, 0.860944390296936, 1.038722276687622, 1.0318691730499268, 1.0196090936660767, 1.0062987804412842, 0.8957589864730835, 0.825874388217926]
+DINO architecture dinov3_s prefix 5 registers 4 rope RotaryEmbeddingDinoV3 pool avg
+WEIGHTS dinov3_s expected 162 actual 162 unequal [] extra []
+FORWARD dinov3_s (1, 384) finite True layout maxdiff 1.9073486328125e-06 bf16 meanabs 0.0020235448610037565
+BACKWARD dinov3_s nonfinite [] gategrad 0.013570379465818405
+DECAY dinov3_s gate norm tokens ['gate.g', 'net.reg_token', 'net.norm.weight'] frozen 0
+DINO architecture dinov3_b prefix 5 registers 4 rope RotaryEmbeddingDinoV3 pool avg
+WEIGHTS dinov3_b expected 162 actual 162 unequal [] extra []
+FORWARD dinov3_b (1, 768) finite True layout maxdiff 1.0728836059570312e-06 bf16 meanabs 0.003439059481024742
+BACKWARD dinov3_b nonfinite [] gategrad 0.004628463182598352
+DECAY dinov3_b gate norm tokens ['gate.g', 'net.reg_token', 'net.norm.weight'] frozen 0
+BLOOM pos torch.Size([1, 257, 768]) pool token
+WEIGHTS dinobloom_b expected 174 actual 174 unequal [] extra []
+FORWARD dinobloom_b (1, 768) finite True layout maxdiff 7.3909759521484375e-06 bf16 meanabs 0.011472716927528381
+BACKWARD dinobloom_b nonfinite [] gategrad 0.18155114352703094
+DECAY dinobloom_b gate norm tokens ['gate.g', 'net.pos_embed', 'net.norm.weight'] frozen 0
+WEIGHTS cytoland expected 196 actual 198 unequal [] extra ['head.norm.bias', 'head.norm.weight']
+FORWARD cytoland (1, 768) finite True layout maxdiff 9.685754776000977e-07 bf16 meanabs 0.010917834006249905
+BACKWARD cytoland nonfinite [] gategrad 3.3229498512810096e-05
+DECAY cytoland gate norm tokens ['gate.g', 'net.stages.0.blocks.0.norm.weight', 'net.stages.0.blocks.1.norm.weight', 'net.stages.0.blocks.2.norm.weight', 'net.stages.1.blocks.0.norm.weight', 'net.stages.1.blocks.1.norm.weight', 'net.stages.1.blocks.2.norm.weight', 'net.stages.2.blocks.0.norm.weight'] frozen 18
+CYTO original strict <All keys matched successfully>
+CYTO original mapping unequal [] dw biases [('stages.0.blocks.0.conv_dw.bias', 0.0, False), ('stages.0.blocks.1.conv_dw.bias', 0.0, False), ('stages.0.blocks.2.conv_dw.bias', 0.0, False), ('stages.1.blocks.0.conv_dw.bias', 0.0, False), ('stages.1.blocks.1.conv_dw.bias', 0.0, False), ('stages.1.blocks.2.conv_dw.bias', 0.0, False), ('stages.2.blocks.0.conv_dw.bias', 0.0, False), ('stages.2.blocks.1.conv_dw.bias', 0.0, False), ('stages.2.blocks.2.conv_dw.bias', 0.0, False), ('stages.2.blocks.3.conv_dw.bias', 0.0, False), ('stages.2.blocks.4.conv_dw.bias', 0.0, False), ('stages.2.blocks.5.conv_dw.bias', 0.0, False), ('stages.2.blocks.6.conv_dw.bias', 0.0, False), ('stages.2.blocks.7.conv_dw.bias', 0.0, False), ('stages.2.blocks.8.conv_dw.bias', 0.0, False), ('stages.3.blocks.0.conv_dw.bias', 0.0, False), ('stages.3.blocks.1.conv_dw.bias', 0.0, False), ('stages.3.blocks.2.conv_dw.bias', 0.0, False)]
+CYTO eps ref [('stem.norm', 1e-05), ('stages.0.blocks.0.layernorm', 1e-05), ('stages.0.blocks.0.mlp.grn', 1e-06), ('stages.0.blocks.1.layernorm', 1e-05), ('stages.0.blocks.1.mlp.grn', 1e-06), ('stages.0.blocks.2.layernorm', 1e-05), ('stages.0.blocks.2.mlp.grn', 1e-06), ('stages.1.downsample.0', 1e-06), ('stages.1.blocks.0.layernorm', 1e-05), ('stages.1.blocks.0.mlp.grn', 1e-06), ('stages.1.blocks.1.layernorm', 1e-05), ('stages.1.blocks.1.mlp.grn', 1e-06), ('stages.1.blocks.2.layernorm', 1e-05), ('stages.1.blocks.2.mlp.grn', 1e-06), ('stages.2.downsample.0', 1e-06), ('stages.2.blocks.0.layernorm', 1e-05), ('stages.2.blocks.0.mlp.grn', 1e-06), ('stages.2.blocks.1.layernorm', 1e-05), ('stages.2.blocks.1.mlp.grn', 1e-06), ('stages.2.blocks.2.layernorm', 1e-05), ('stages.2.blocks.2.mlp.grn', 1e-06), ('stages.2.blocks.3.layernorm', 1e-05), ('stages.2.blocks.3.mlp.grn', 1e-06), ('stages.2.blocks.4.layernorm', 1e-05), ('stages.2.blocks.4.mlp.grn', 1e-06), ('stages.2.blocks.5.layernorm', 1e-05), ('stages.2.blocks.5.mlp.grn', 1e-06), ('stages.2.blocks.6.layernorm', 1e-05), ('stages.2.blocks.6.mlp.grn', 1e-06), ('stages.2.blocks.7.layernorm', 1e-05), ('stages.2.blocks.7.mlp.grn', 1e-06), ('stages.2.blocks.8.layernorm', 1e-05), ('stages.2.blocks.8.mlp.grn', 1e-06), ('stages.3.downsample.0', 1e-06), ('stages.3.blocks.0.layernorm', 1e-05), ('stages.3.blocks.0.mlp.grn', 1e-06), ('stages.3.blocks.1.layernorm', 1e-05), ('stages.3.blocks.1.mlp.grn', 1e-06), ('stages.3.blocks.2.layernorm', 1e-05), ('stages.3.blocks.2.mlp.grn', 1e-06)]
+CYTO feature diff before eps fix 0.00013975799083709717 2.2621301468461752e-05
+CYTO feature diff after eps fix 0.0 0.0
+CYTO repeat stem 2.0265579223632812e-06
+SCHED ratio 0.09999999999999999 0.10000000000000006 resume True True frozen unchanged 1.0 False
+RESUME RNG repeats first True matches uninterrupted second False
+NORM FIT slide_scale total 6600 draw0 3000 draw1 3600 split2 663
+NORM FIT s_c total 2000 draw0 663 draw1 1337 split2 206
+CFG new defaults stripped True
+POOL dinov3_s avg vs cls cosine 0.6392199993133545 meanabs 0.26442888379096985
+POOL dinov3_b avg vs cls cosine 0.5408810973167419 meanabs 0.3790718615055084
+CFG changing Y with same path passes config True row selection unchanged True
+METRIC b1to0 trained first12 [True, True, True, True, True, True, True, True, False, True, True, True]
+METRIC b0to1 trained first12 [True, True, True, True, True, True, True, True, True, True, True, True]

@@ -1,0 +1,59 @@
+diff --git a/scripts/train_lf.py b/scripts/train_lf.py
+index b57416a..2aa52df 100644
+--- a/scripts/train_lf.py
++++ b/scripts/train_lf.py
+@@ -23,6 +23,8 @@ ap.add_argument('--dump-train-preds', type=int, default=0)   # N040: load the fi
+ ap.add_argument('--lowpass', type=float, default=0.0)   # N042 probe: Gaussian low-pass (sigma px) on the normalised LF input, train AND eval (0 = off)
+ ap.add_argument('--dual-zoom', type=int, default=1)   # N026: shared encoder sees full view AND centre-zoom view; features concatenated
+ ap.add_argument('--adabn', type=int, default=0)   # N026: after training, recompute BN stats on N unlabelled target-batch images (split 0), evaluate again
++ap.add_argument('--enc-lr-mult', type=float, default=1.0)   # N053: encoder lr = lr x this (pretrained ViTs: 0.1); heads keep lr
++ap.add_argument('--drop-path', type=float, default=0.1)   # N053: stochastic depth of the pretrained ViT backbones (bsccm.encoders only)
+ a = ap.parse_args(); os.makedirs(a.out, exist_ok=True); torch.manual_seed(a.seed); np.random.seed(a.seed)
+ if not np.isfinite(a.phys_aug) or not 0 <= a.phys_aug <= 1: ap.error('--phys-aug must be in [0,1]')
+ if not np.isfinite(a.consist) or a.consist < 0: ap.error('--consist must be nonnegative')
+@@ -115,7 +117,12 @@ if a.dann > 0:
+         while True:
+             for z in dl: yield z
+     it_tgt = _forever(mk(tgt, True)); print(f'DANN: {len(tgt)} unlabelled target-batch images (split 0 only)', flush=True)
+-SSL = bool(a.init_ssl); net = timm.create_model(a.arch, pretrained=False, num_classes=0, in_chans=48 if SSL else nin)
++SSL = bool(a.init_ssl)
++from bsccm.encoders import ARCHS as _N053, LFBackbone
++if a.arch in _N053:   # N053: pretrained ViT/ConvNeXt with a learned per-LED gate and a 24-channel patch embedding
++    if SSL or a.stem != 'std' or a.adabn: ap.error('N053 archs: no --init-ssl / --stem / --adabn')
++    net = LFBackbone(a.arch, nin, a.drop_path)
++else: net = timm.create_model(a.arch, pretrained=False, num_classes=0, in_chans=48 if SSL else nin)
+ if SSL:
+     assert a.channels == 'all' and a.phase == 1, 'SSL init expects all 23 LED + phase'
+     net.load_state_dict(torch.load(a.init_ssl, map_location='cpu', weights_only=True), strict=True); print('init from SSL', a.init_ssl, flush=True)
+@@ -123,8 +130,13 @@ if a.stem == 'nomaxpool': net.maxpool = nn.Identity()   # stride 2 instead of 4
+ NF = net.num_features * (2 if a.dual_zoom > 1 else 1)
+ model = nn.ModuleDict({'enc': net, 'reg': nn.Linear(NF, K), 'c3': nn.Linear(NF, 3), 'c10': nn.Linear(NF, 10),
+                       'dom': nn.Sequential(nn.Linear(NF, 256), nn.ReLU(), nn.Linear(256, 1))}).cuda()
+-opt = torch.optim.AdamW(model.parameters(), lr=a.lr, weight_decay=0.05); steps = a.epochs * len(dtr)
+-sched = torch.optim.lr_scheduler.OneCycleLR(opt, a.lr, total_steps=steps, pct_start=0.1)
++steps = a.epochs * len(dtr)
++if a.enc_lr_mult == 1.0:   # legacy single param group (older checkpoints resume / dump unchanged)
++    opt = torch.optim.AdamW(model.parameters(), lr=a.lr, weight_decay=0.05); sched = torch.optim.lr_scheduler.OneCycleLR(opt, a.lr, total_steps=steps, pct_start=0.1)
++else:   # N053: lower lr for the pretrained encoder
++    _enc = list(model['enc'].parameters()); _ids = {id(q) for q in _enc}; _rest = [q for q in model.parameters() if id(q) not in _ids]
++    opt = torch.optim.AdamW([{'params': _enc, 'lr': a.lr * a.enc_lr_mult}, {'params': _rest, 'lr': a.lr}], weight_decay=0.05)
++    sched = torch.optim.lr_scheduler.OneCycleLR(opt, [a.lr * a.enc_lr_mult, a.lr], total_steps=steps, pct_start=0.1)
+ class _GRL(torch.autograd.Function):
+     @staticmethod
+     def forward(ctx, x, l): ctx.l = l; return x.view_as(x)
+@@ -181,7 +193,7 @@ try:
+     if a.dump_train_preds: raise RuntimeError('no wandb for a teacher dump (would append to the teacher run)')
+     import wandb; run = wandb.init(project=os.environ.get('WANDB_PROJECT', 'BSCCM'), name=os.path.basename(a.out.rstrip('/')), id=os.path.basename(a.out.rstrip('/')), resume='allow', config=vars(a))
+ except Exception as e: print('wandb off:', e); run = None
+-_NEW_DEFAULTS = {'stem': 'std', 'zoom': 1, 'dual_zoom': 1, 'lowpass': 0.0, 'phys_aug': 0.0, 'consist': 0.0, 'pseudo': '', 'pseudo_w': 0.3}   # options added after older checkpoints were written: omitted at default so they still resume
++_NEW_DEFAULTS = {'stem': 'std', 'zoom': 1, 'dual_zoom': 1, 'lowpass': 0.0, 'phys_aug': 0.0, 'consist': 0.0, 'pseudo': '', 'pseudo_w': 0.3, 'enc_lr_mult': 1.0, 'drop_path': 0.1}   # options added after older checkpoints were written: omitted at default so they still resume
+ def _cfg():
+     cfg = {k: v for k, v in vars(a).items() if k not in ('workers', 'out', 'adabn', 'dump_train_preds') and not (k in _NEW_DEFAULTS and v == _NEW_DEFAULTS[k])}
+     if PHYS: cfg['phys_calibration'] = phys_calibration   # pin source row IDs, fitted gain/offsets and method on resume
+@@ -251,4 +263,5 @@ if a.adabn:   # unsupervised test-time BN recalibration on target-batch images f
+     ra = evaluate(save=True, tag='_adabn'); print('ADABN', json.dumps(ra, default=float), flush=True)
+     json.dump({'args': vars(a), 'n_adabn': len(tgt), 'final': ra}, open(a.out + '/result_adabn.json', 'w'), indent=1, default=float)
+ if run: run.finish()
+-json.dump({'args': vars(a), 'final': log[-1], 'log': log, 'n_train': len(tr), 'n_eval': len(ev), 'targets': names}, open(a.out + '/result.json', 'w'), indent=1, default=float)
++_extra = {'led_weights': model['enc'].led_weights(), 'led_channels': CH + (['phase'] if a.phase else [])} if a.arch in _N053 else {}   # N053
++json.dump({'args': vars(a), 'final': log[-1], 'log': log, 'n_train': len(tr), 'n_eval': len(ev), 'targets': names, **_extra}, open(a.out + '/result.json', 'w'), indent=1, default=float)

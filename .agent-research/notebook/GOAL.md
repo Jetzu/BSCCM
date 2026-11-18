@@ -4,8 +4,8 @@ metric: LF->MK common-11, RE-BASED 2026-11-17 (N051, user decision 'per-marker s
 direction: higher
 target: 0.70
 target_source: USER 2026-11-18 (after the v10 re-base): .70 on v10 labels (best .6804 N048; re-scored N031 .6703; in-distribution reference .6862)
-best: 0.6804
-best_item: N048
+best: 0.6862
+best_item: N053
 noise: 0.0027
 noise_source: .agent-research/results/N051-label-v10-per-marker-asinh-cofactor-pre/n051_noise_v10.json (two seed pairs on v10: .0031/.0045 -> sd .0027)
 constraints: SSL pretraining must EXCLUDE the held-out batch (inductive; N031: inductive ensemble .6527 vs transductive .6512 -- caveat resolved)

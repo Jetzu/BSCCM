@@ -1,0 +1,173 @@
+{
+ "png": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/plots/goal-v10-ensemble_2026-11-18_0912.png",
+ "svg": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/plots/goal-v10-ensemble_2026-11-18_0912.svg",
+ "created": "2026-11-18T09:12:45",
+ "command": [
+  "/home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python",
+  "/home/hpc/v181bb/v181bb10/.claude/skills/work-log/bin/plot_compare.py",
+  "--metric",
+  "goal_v10_ensemble",
+  "--csv",
+  ".agent-research/results/N053-lf-encoder-swap-on-the-v10-goal-dinov3-v/plot_n053.csv",
+  "--item",
+  "N053",
+  "--baseline",
+  "N048 (2x r50)",
+  "--noise",
+  "0.0027"
+ ],
+ "cwd": "/home/hpc/v181bb/v181bb10/BSCCM",
+ "source": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N053-lf-encoder-swap-on-the-v10-goal-dinov3-v/plot_n053.csv",
+ "notes": {
+  "item": "N053",
+  "metric": "goal_v10_ensemble",
+  "direction": "higher",
+  "noise_sd": 0.0027,
+  "stats": null
+ },
+ "width_in": 8.5,
+ "height_in": 2.5591,
+ "png_px": [
+  3840,
+  1156
+ ],
+ "significance": "two-sided; Holm-corrected over all comparisons of a panel (one family per panel); * <0.05 ** <0.01 *** <0.001 **** <0.0001",
+ "panels": [
+  {
+   "panel": "a",
+   "kind": "bar",
+   "groups": [
+    "N048 (2x r50)",
+    "+ Cytoland",
+    "+ r50 member (best)",
+    "+ DinoBloom-B",
+    "+ DINOv3-B",
+    "+ Cytoland full lr",
+    "+ DINOv3-S"
+   ],
+   "colors": [
+    "#767E86",
+    "#3A6C9E",
+    "#55BDB2",
+    "#A1CA8A",
+    "#CF832F",
+    "#B94A58",
+    "#A584D9"
+   ],
+   "n": [
+    1,
+    2,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "mean": [
+    0.6804,
+    0.6863,
+    0.6826,
+    0.6816,
+    0.6811,
+    0.681,
+    0.6803
+   ],
+   "sd": [
+    null,
+    0.00014142135623729392,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "median": [
+    0.6804,
+    0.6863,
+    0.6826,
+    0.6816,
+    0.6811,
+    0.681,
+    0.6803
+   ],
+   "whisker": "sd",
+   "stats": [
+    {
+     "test": null,
+     "p": null,
+     "n_i": 1,
+     "n_j": 2,
+     "p_holm": null,
+     "stars": "",
+     "note": "test undefined (n < 2 or zero variance)",
+     "a": "N048 (2x r50)",
+     "b": "+ Cytoland",
+     "reference": "N048 (2x r50)"
+    },
+    {
+     "test": null,
+     "p": null,
+     "n_i": 1,
+     "n_j": 1,
+     "p_holm": null,
+     "stars": "",
+     "note": "test undefined (n < 2 or zero variance)",
+     "a": "N048 (2x r50)",
+     "b": "+ r50 member (best)",
+     "reference": "N048 (2x r50)"
+    },
+    {
+     "test": null,
+     "p": null,
+     "n_i": 1,
+     "n_j": 1,
+     "p_holm": null,
+     "stars": "",
+     "note": "test undefined (n < 2 or zero variance)",
+     "a": "N048 (2x r50)",
+     "b": "+ DinoBloom-B",
+     "reference": "N048 (2x r50)"
+    },
+    {
+     "test": null,
+     "p": null,
+     "n_i": 1,
+     "n_j": 1,
+     "p_holm": null,
+     "stars": "",
+     "note": "test undefined (n < 2 or zero variance)",
+     "a": "N048 (2x r50)",
+     "b": "+ DINOv3-B",
+     "reference": "N048 (2x r50)"
+    },
+    {
+     "test": null,
+     "p": null,
+     "n_i": 1,
+     "n_j": 1,
+     "p_holm": null,
+     "stars": "",
+     "note": "test undefined (n < 2 or zero variance)",
+     "a": "N048 (2x r50)",
+     "b": "+ Cytoland full lr",
+     "reference": "N048 (2x r50)"
+    },
+    {
+     "test": null,
+     "p": null,
+     "n_i": 1,
+     "n_j": 1,
+     "p_holm": null,
+     "stars": "",
+     "note": "test undefined (n < 2 or zero variance)",
+     "a": "N048 (2x r50)",
+     "b": "+ DINOv3-S",
+     "reference": "N048 (2x r50)"
+    }
+   ],
+   "no_stats_reason": "no testable comparison (n < 2 per group)",
+   "ylabel": "goal_v10_ensemble"
+  }
+ ],
+ "matplotlib": "3.11.0"
+}

@@ -1,0 +1,9 @@
+arm,value,seed
+N048 (2x r50),0.6804,0
++ r50 member (best),0.6826,0
++ Cytoland,0.6862,0
++ Cytoland,0.6864,1
++ DinoBloom-B,0.6816,0
++ DINOv3-B,0.6811,0
++ DINOv3-S,0.6803,0
++ Cytoland full lr,0.6810,0

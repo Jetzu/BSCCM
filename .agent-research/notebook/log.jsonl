@@ -58,3 +58,6 @@
 {"ts":"2026-11-17T21:25:36+01:00","event":"goal_effect","item":"N051","effect":"n/a","value":"-","scale":"?","why":"measurement"}
 {"ts":"2026-11-17T21:25:36+01:00","event":"goal_effect","item":"N048","effect":"flat","value":"0.6804","scale":"module","why":""}
 {"ts":"2026-11-17T21:25:42+01:00","event":"goal_effect","item":"N048","effect":"improved","value":"0.6804","scale":"module","why":""}
+{"ts":"2026-11-18T09:29:48+01:00","event":"goal_effect","item":"N053","effect":"improved","value":"0.6862","scale":"module","why":""}
+{"ts":"2026-11-18T09:29:48+01:00","event":"goal_effect","item":"N044","effect":"flat","value":"void","scale":"module","why":""}
+{"ts":"2026-11-18T09:29:48+01:00","event":"goal_effect","item":"N052","effect":"n/a","value":"-","scale":"?","why":"measurement"}
