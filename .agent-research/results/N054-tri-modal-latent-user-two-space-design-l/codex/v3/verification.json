@@ -1,0 +1,17 @@
+{
+  "n054v3_batch1": {
+    "identical_primary_train_holdout_rows": true,
+    "oos_training_rows": 40,
+    "holdout_rows": 10
+  },
+  "n054v3_batch0": {
+    "identical_primary_train_holdout_rows": true,
+    "oos_training_rows": 38,
+    "holdout_rows": 12
+  },
+  "stack_train_test_disjoint": true,
+  "no_bytecode_directories": true,
+  "python_ast": "passed",
+  "shell_syntax": "passed (bash -n n054_unit.sbatch)",
+  "main_signature": "811ffe1c23e7d78d9788b89c70d36dee3c3740ead25000c42c1d9bace14ec511"
+}

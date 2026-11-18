@@ -1,0 +1,150 @@
+{
+ "png": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/plots/n054-gs-marker-r-est_2026-11-18_1237.png",
+ "svg": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/plots/n054-gs-marker-r-est_2026-11-18_1237.svg",
+ "created": "2026-11-18T12:37:26",
+ "command": [
+  "/home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python",
+  "/home/hpc/v181bb/v181bb10/.claude/skills/work-log/bin/plot_compare.py",
+  "--metric",
+  "n054_gs_marker_r_est",
+  "--csv",
+  "plot_m2.csv",
+  "--item",
+  "N054",
+  "--baseline",
+  "TT6c student (A0)",
+  "--direction",
+  "higher"
+ ],
+ "cwd": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l",
+ "source": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/plot_m2.csv",
+ "notes": {
+  "item": "N054",
+  "metric": "n054_gs_marker_r_est",
+  "direction": "higher",
+  "noise_sd": 0.0027,
+  "stats": null
+ },
+ "width_in": 8.5,
+ "height_in": 2.5591,
+ "png_px": [
+  3840,
+  1156
+ ],
+ "significance": "two-sided; Holm-corrected over all comparisons of a panel (one family per panel); * <0.05 ** <0.01 *** <0.001 **** <0.0001",
+ "panels": [
+  {
+   "panel": "a",
+   "kind": "bar",
+   "groups": [
+    "TT6c student (A0)",
+    "LF hub (A3)",
+    "two-space + GS flow",
+    "two-space + LF flow",
+    "direct map",
+    "two-space + unpaired GW"
+   ],
+   "colors": [
+    "#767E86",
+    "#3A6C9E",
+    "#55BDB2",
+    "#A1CA8A",
+    "#CF832F",
+    "#B94A58"
+   ],
+   "n": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "mean": [
+    0.49750000000000005,
+    0.5165,
+    0.512,
+    0.508,
+    0.5065000000000001,
+    0.406
+   ],
+   "sd": [
+    0.06151828996322965,
+    0.047376154339498724,
+    0.055154328932550754,
+    0.03676955262170051,
+    0.05727564927611036,
+    0.031112698372208078
+   ],
+   "median": [
+    0.49750000000000005,
+    0.5165,
+    0.512,
+    0.508,
+    0.5065000000000001,
+    0.406
+   ],
+   "whisker": "sd",
+   "stats": [
+    {
+     "test": "paired t-test",
+     "p": 0.30842822890066657,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 0.9578588554966614,
+     "stars": "ns",
+     "a": "TT6c student (A0)",
+     "b": "LF hub (A3)",
+     "reference": "TT6c student (A0)"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.19157177109933227,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 0.9578588554966614,
+     "stars": "ns",
+     "a": "TT6c student (A0)",
+     "b": "two-space + GS flow",
+     "reference": "TT6c student (A0)"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.655958260754739,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 0.9578588554966614,
+     "stars": "ns",
+     "a": "TT6c student (A0)",
+     "b": "two-space + LF flow",
+     "reference": "TT6c student (A0)"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.20483276469913345,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 0.9578588554966614,
+     "stars": "ns",
+     "a": "TT6c student (A0)",
+     "b": "direct map",
+     "reference": "TT6c student (A0)"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.3955207513976367,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 0.9578588554966614,
+     "stars": "ns",
+     "a": "TT6c student (A0)",
+     "b": "two-space + unpaired GW",
+     "reference": "TT6c student (A0)"
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "n054_gs_marker_r_est"
+  }
+ ],
+ "matplotlib": "3.11.0"
+}

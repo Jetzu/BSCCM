@@ -1,0 +1,18 @@
+{
+  "batch1": {
+    "source_slide": 2,
+    "map_train_rows": 795,
+    "holdout_rows": 199,
+    "train_fovs": 223,
+    "holdout_fovs": 56,
+    "total_split1_rows": 994
+  },
+  "batch0": {
+    "source_slide": 19,
+    "map_train_rows": 469,
+    "holdout_rows": 124,
+    "train_fovs": 156,
+    "holdout_fovs": 39,
+    "total_split1_rows": 593
+  }
+}

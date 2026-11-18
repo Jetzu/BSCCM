@@ -71,3 +71,12 @@ K ids assigned at lint 2026-11-09; results paths are under `.agent-research/resu
   improves in-batch calibration (CRPS .254 vs .307), but on a new blood draw it is not better calibrated than the plain flow
   (CRPS .591 vs .569; outside-80 %-band .73 vs .70; sd ratio .72): calibration under draw shift is limited by the shift, not the
   generator [verified] (N044; .agent-research/results/N044-residual-flow-matching-corrdiff-style-fo/n044_summary.csv) {cites:0}
+- K038: TRI-MODAL LATENT DESIGNS (N054, user two-space plan vs LF hub; seed 0, cross-slide Giemsa): with pairs through the LF image,
+  the user's two-space design (LF+marker-matrix space, LF+Giemsa space, flow alignment) performs like the LF-anchored hub and the
+  TT6c output-distilled student: same-cell autofl r TT6c .658, hub .650, direct map .647, two-space + LF flow .642, + GS flow .625;
+  CIA marker estimate latent arms .506-.516 vs TT6c .497. Truly unpaired alignment (entropic Gromov-Wasserstein) fails (.322); GW
+  recovers only 1.3-2.0 % identities even for the SAME LF cells in both spaces (chance .39 %). Bottleneck = Giemsa->LF encoder gap
+  (oracle flow from the own LF embedding .794/.640). Marker-matrix "hidden information": shared space beats a stack of LF-only +
+  labels-only by +.00-.07 within a draw, <= 0 across draws (draw-specific); large autofl gains for CD3/CD19/CD56 are shared-dye
+  artefact. Unanchored cross-slide students are at chance on PBC/MLL23 (anchoring needed, K016) [verified 1 seed] (N054;
+  .agent-research/results/N054-tri-modal-latent-user-two-space-design-l/n054_arm_summary.csv) {cites:0}

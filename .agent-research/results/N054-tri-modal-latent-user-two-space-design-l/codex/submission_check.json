@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "job_count": 78,
+  "stages": {
+    "lf_spaces": 12,
+    "gs_encoder": 12,
+    "flow": 12,
+    "eval": 26,
+    "select": 1,
+    "clinical": 14,
+    "completion": 1
+  },
+  "selection_before_all_test_jobs": true
+}

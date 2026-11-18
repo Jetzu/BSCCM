@@ -1,0 +1,67 @@
+{
+  "status": "passed",
+  "real_slurm": false,
+  "real_container": false,
+  "house_wrapper_plain_fallback": true,
+  "units": [
+    "lf",
+    "batch1",
+    "batch0"
+  ],
+  "calls": [
+    [
+      "exec",
+      "--nv",
+      "--bind",
+      "/hnvme/workspace/v181bb10-bsccm",
+      "/hnvme/workspace/v181bb10-bsccm/env/bsccm.sif",
+      "python3",
+      "-I",
+      "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/v2/n054_trimodal.py",
+      "--stage",
+      "all",
+      "--unit",
+      "lf",
+      "--out",
+      "/tmp/codex_n054/v2_wrapper_mock/runs/n054v2_lf",
+      "--lf-unit",
+      "/tmp/codex_n054/v2_wrapper_mock/runs/n054v2_lf"
+    ],
+    [
+      "exec",
+      "--nv",
+      "--bind",
+      "/hnvme/workspace/v181bb10-bsccm",
+      "/hnvme/workspace/v181bb10-bsccm/env/bsccm.sif",
+      "python3",
+      "-I",
+      "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/v2/n054_trimodal.py",
+      "--stage",
+      "all",
+      "--unit",
+      "batch1",
+      "--out",
+      "/tmp/codex_n054/v2_wrapper_mock/runs/n054v2_batch1",
+      "--lf-unit",
+      "/tmp/codex_n054/v2_wrapper_mock/runs/n054v2_lf"
+    ],
+    [
+      "exec",
+      "--nv",
+      "--bind",
+      "/hnvme/workspace/v181bb10-bsccm",
+      "/hnvme/workspace/v181bb10-bsccm/env/bsccm.sif",
+      "python3",
+      "-I",
+      "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/v2/n054_trimodal.py",
+      "--stage",
+      "all",
+      "--unit",
+      "batch0",
+      "--out",
+      "/tmp/codex_n054/v2_wrapper_mock/runs/n054v2_batch0",
+      "--lf-unit",
+      "/tmp/codex_n054/v2_wrapper_mock/runs/n054v2_lf"
+    ]
+  ]
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "holdout": "batch1",
+    "n": 150,
+    "mean_absolute_difference": 0.005524572916328907,
+    "max_absolute_difference": 0.04439258575439453,
+    "min_target_prediction_correlation": 0.9993171641425812,
+    "autofl_prediction_correlation": 0.9998850069083197,
+    "reference": "saved original GPU test_preds.npz; CPU float32 versus GPU bfloat16 backbone"
+  },
+  {
+    "holdout": "batch0",
+    "n": 150,
+    "mean_absolute_difference": 0.004881573375314474,
+    "max_absolute_difference": 0.04672360420227051,
+    "min_target_prediction_correlation": 0.9998313819671355,
+    "autofl_prediction_correlation": 0.9999787340929447,
+    "reference": "saved original GPU test_preds.npz; CPU float32 versus GPU bfloat16 backbone"
+  }
+]

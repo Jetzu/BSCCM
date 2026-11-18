@@ -1,0 +1,45 @@
+{
+  "status": "passed",
+  "cases": [
+    {
+      "seed": 0,
+      "dim": 16,
+      "n": 48,
+      "identity_rate": 1.0,
+      "chance": 0.020833333333333332,
+      "row_error": 1.0408340855860843e-17,
+      "col_error": 1.0408340855860843e-17,
+      "rotation_error": 2.7917345673664684e-23
+    },
+    {
+      "seed": 1,
+      "dim": 16,
+      "n": 48,
+      "identity_rate": 1.0,
+      "chance": 0.020833333333333332,
+      "row_error": 1.734723475976807e-17,
+      "col_error": 3.469446951953614e-18,
+      "rotation_error": 1.0736142606448257e-19
+    },
+    {
+      "seed": 2,
+      "dim": 16,
+      "n": 48,
+      "identity_rate": 1.0,
+      "chance": 0.020833333333333332,
+      "row_error": 1.734723475976807e-17,
+      "col_error": 6.938893903907228e-18,
+      "rotation_error": 8.725101101209336e-21
+    },
+    {
+      "seed": 3,
+      "dim": 256,
+      "n": 64,
+      "identity_rate": 1.0,
+      "chance": 0.015625,
+      "row_error": 5.204170427930421e-18,
+      "col_error": 5.204170427930421e-18,
+      "rotation_error": 1.734723475976807e-18
+    }
+  ]
+}

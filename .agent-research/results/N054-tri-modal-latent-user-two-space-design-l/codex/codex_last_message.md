@@ -1,0 +1,5 @@
+Delivered the training/evaluation package, clinical adapter, Slurm template, submission script, and smoke artifacts. Exact commands are in [README.md](/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/README.md); deviations and risks are in [report.md](/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/report.md).
+
+- **CPU smoke passed:** all stages, 14 arm/direction evaluations, completion, and clinical inference; 303 seconds. SIGUSR1 resume matched uninterrupted weights bitwise.
+- **Data corrections:** C1 is unavailable because supplied labels contain no single-marker/autofl truth pairs. The documented failed pooled-group observations are masked consistently.
+- **GPU work remains:** CUDA/container execution and full scientific comparisons await your runs. Launch `bash n054_submit.sh`; estimated total is **12–30 GPU-hours**.

@@ -1,0 +1,463 @@
+{
+  "status": "passed",
+  "seconds": 156.77,
+  "scratch": "/tmp/codex_n054/v2_final_smoke",
+  "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411",
+  "units": [
+    "lf",
+    "batch1",
+    "batch0"
+  ],
+  "signal": "SIGTERM via --stage all driver",
+  "interrupted_step": 10,
+  "signal_to_exit_seconds": 0.7515921592712402,
+  "resume_bitwise_equal": true,
+  "completed_unit_mtimes_unchanged": true,
+  "gs_fits": 6,
+  "lf_space_fits": 2,
+  "completion_protocol_fits": 3,
+  "clinical_evaluations": 10,
+  "clinical_images_per_run": {
+    "PBC": 16,
+    "MLL23": 24
+  },
+  "primary_rows": 10,
+  "grid_rows": 24,
+  "completion_rows": 39,
+  "per_observed_marker_C1_rows": 24,
+  "direct_and_flow_capacity": 535808,
+  "shared_sources": [
+    {
+      "run": "/tmp/codex_n054/v2_final_smoke/n054v2_batch1/A2_s0",
+      "space": "/tmp/codex_n054/v2_final_smoke/n054v2_lf/space1",
+      "gs": "/tmp/codex_n054/v2_final_smoke/n054v2_batch1/space2"
+    },
+    {
+      "run": "/tmp/codex_n054/v2_final_smoke/n054v2_batch1/A2-EM_s0.1",
+      "space": "/tmp/codex_n054/v2_final_smoke/n054v2_lf/space1",
+      "gs": "/tmp/codex_n054/v2_final_smoke/n054v2_batch1/space2"
+    },
+    {
+      "run": "/tmp/codex_n054/v2_final_smoke/n054v2_batch1/A1-LF_s0",
+      "space": "/tmp/codex_n054/v2_final_smoke/n054v2_lf/space1",
+      "gs": "/tmp/codex_n054/v2_final_smoke/n054v2_batch1/space2"
+    },
+    {
+      "run": "/tmp/codex_n054/v2_final_smoke/n054v2_batch1/direct",
+      "space": "/tmp/codex_n054/v2_final_smoke/n054v2_lf/space1",
+      "gs": "/tmp/codex_n054/v2_final_smoke/n054v2_batch1/space2"
+    },
+    {
+      "run": "/tmp/codex_n054/v2_final_smoke/n054v2_batch1/A1-LF_s0.1",
+      "space": "/tmp/codex_n054/v2_final_smoke/n054v2_lf/space1",
+      "gs": "/tmp/codex_n054/v2_final_smoke/n054v2_batch1/space2"
+    },
+    {
+      "run": "/tmp/codex_n054/v2_final_smoke/n054v2_batch1/A1-GS_s0",
+      "space": "/tmp/codex_n054/v2_final_smoke/n054v2_lf/space1",
+      "gs": "/tmp/codex_n054/v2_final_smoke/n054v2_batch1/space2"
+    },
+    {
+      "run": "/tmp/codex_n054/v2_final_smoke/n054v2_batch1/A2_s0.1",
+      "space": "/tmp/codex_n054/v2_final_smoke/n054v2_lf/space1",
+      "gs": "/tmp/codex_n054/v2_final_smoke/n054v2_batch1/space2"
+    },
+    {
+      "run": "/tmp/codex_n054/v2_final_smoke/n054v2_batch1/A1-GS_s0.1",
+      "space": "/tmp/codex_n054/v2_final_smoke/n054v2_lf/space1",
+      "gs": "/tmp/codex_n054/v2_final_smoke/n054v2_batch1/space2"
+    },
+    {
+      "run": "/tmp/codex_n054/v2_final_smoke/n054v2_batch1/A2-EM_s0",
+      "space": "/tmp/codex_n054/v2_final_smoke/n054v2_lf/space1",
+      "gs": "/tmp/codex_n054/v2_final_smoke/n054v2_batch1/space2"
+    },
+    {
+      "run": "/tmp/codex_n054/v2_final_smoke/n054v2_batch0/A2_s0",
+      "space": "/tmp/codex_n054/v2_final_smoke/n054v2_lf/space1",
+      "gs": "/tmp/codex_n054/v2_final_smoke/n054v2_batch0/space2"
+    },
+    {
+      "run": "/tmp/codex_n054/v2_final_smoke/n054v2_batch0/A2-EM_s0.1",
+      "space": "/tmp/codex_n054/v2_final_smoke/n054v2_lf/space1",
+      "gs": "/tmp/codex_n054/v2_final_smoke/n054v2_batch0/space2"
+    },
+    {
+      "run": "/tmp/codex_n054/v2_final_smoke/n054v2_batch0/A1-LF_s0",
+      "space": "/tmp/codex_n054/v2_final_smoke/n054v2_lf/space1",
+      "gs": "/tmp/codex_n054/v2_final_smoke/n054v2_batch0/space2"
+    },
+    {
+      "run": "/tmp/codex_n054/v2_final_smoke/n054v2_batch0/direct",
+      "space": "/tmp/codex_n054/v2_final_smoke/n054v2_lf/space1",
+      "gs": "/tmp/codex_n054/v2_final_smoke/n054v2_batch0/space2"
+    },
+    {
+      "run": "/tmp/codex_n054/v2_final_smoke/n054v2_batch0/A1-LF_s0.1",
+      "space": "/tmp/codex_n054/v2_final_smoke/n054v2_lf/space1",
+      "gs": "/tmp/codex_n054/v2_final_smoke/n054v2_batch0/space2"
+    },
+    {
+      "run": "/tmp/codex_n054/v2_final_smoke/n054v2_batch0/A1-GS_s0",
+      "space": "/tmp/codex_n054/v2_final_smoke/n054v2_lf/space1",
+      "gs": "/tmp/codex_n054/v2_final_smoke/n054v2_batch0/space2"
+    },
+    {
+      "run": "/tmp/codex_n054/v2_final_smoke/n054v2_batch0/A2_s0.1",
+      "space": "/tmp/codex_n054/v2_final_smoke/n054v2_lf/space1",
+      "gs": "/tmp/codex_n054/v2_final_smoke/n054v2_batch0/space2"
+    },
+    {
+      "run": "/tmp/codex_n054/v2_final_smoke/n054v2_batch0/A1-GS_s0.1",
+      "space": "/tmp/codex_n054/v2_final_smoke/n054v2_lf/space1",
+      "gs": "/tmp/codex_n054/v2_final_smoke/n054v2_batch0/space2"
+    },
+    {
+      "run": "/tmp/codex_n054/v2_final_smoke/n054v2_batch0/A2-EM_s0",
+      "space": "/tmp/codex_n054/v2_final_smoke/n054v2_lf/space1",
+      "gs": "/tmp/codex_n054/v2_final_smoke/n054v2_batch0/space2"
+    }
+  ],
+  "runs": [
+    {
+      "unit": "n054v2_batch1",
+      "arm": "A0",
+      "M1": 0.2802649507630704,
+      "selected": true
+    },
+    {
+      "unit": "n054v2_batch1",
+      "arm": "A2",
+      "M1": 0.04622645522662616,
+      "selected": true
+    },
+    {
+      "unit": "n054v2_batch1",
+      "arm": "A2-EM",
+      "M1": 0.041126085246078296,
+      "selected": false
+    },
+    {
+      "unit": "n054v2_batch1",
+      "arm": "A1-LF",
+      "M1": 0.0990760000519172,
+      "selected": true
+    },
+    {
+      "unit": "n054v2_batch1",
+      "arm": "direct",
+      "M1": -0.07725737973564556,
+      "selected": false
+    },
+    {
+      "unit": "n054v2_batch1",
+      "arm": "A3",
+      "M1": -0.1461060145338738,
+      "selected": false
+    },
+    {
+      "unit": "n054v2_batch1",
+      "arm": "A1-LF",
+      "M1": 0.05468713173370721,
+      "selected": false
+    },
+    {
+      "unit": "n054v2_batch1",
+      "arm": "A1-GS",
+      "M1": -0.2659816604347187,
+      "selected": false
+    },
+    {
+      "unit": "n054v2_batch1",
+      "arm": "A2",
+      "M1": 0.033548259958958125,
+      "selected": false
+    },
+    {
+      "unit": "n054v2_batch1",
+      "arm": "A1-GS",
+      "M1": -0.2392203599103121,
+      "selected": true
+    },
+    {
+      "unit": "n054v2_batch1",
+      "arm": "A3",
+      "M1": -0.132171922433774,
+      "selected": true
+    },
+    {
+      "unit": "n054v2_batch1",
+      "arm": "A2-EM",
+      "M1": 0.04695571234483956,
+      "selected": false
+    },
+    {
+      "unit": "n054v2_batch0",
+      "arm": "A0",
+      "M1": 0.7655425944175985,
+      "selected": true
+    },
+    {
+      "unit": "n054v2_batch0",
+      "arm": "A2",
+      "M1": 0.1797350612894136,
+      "selected": true
+    },
+    {
+      "unit": "n054v2_batch0",
+      "arm": "A2-EM",
+      "M1": 0.19115320635439922,
+      "selected": false
+    },
+    {
+      "unit": "n054v2_batch0",
+      "arm": "A1-LF",
+      "M1": 0.22832746598301357,
+      "selected": true
+    },
+    {
+      "unit": "n054v2_batch0",
+      "arm": "direct",
+      "M1": 0.0036549043304453703,
+      "selected": false
+    },
+    {
+      "unit": "n054v2_batch0",
+      "arm": "A3",
+      "M1": -0.35619342005882376,
+      "selected": false
+    },
+    {
+      "unit": "n054v2_batch0",
+      "arm": "A1-LF",
+      "M1": 0.22041276963243933,
+      "selected": false
+    },
+    {
+      "unit": "n054v2_batch0",
+      "arm": "A1-GS",
+      "M1": -0.0687172430579053,
+      "selected": true
+    },
+    {
+      "unit": "n054v2_batch0",
+      "arm": "A2",
+      "M1": 0.18105904889489766,
+      "selected": false
+    },
+    {
+      "unit": "n054v2_batch0",
+      "arm": "A1-GS",
+      "M1": -0.1389051161423881,
+      "selected": false
+    },
+    {
+      "unit": "n054v2_batch0",
+      "arm": "A3",
+      "M1": -0.34740249018941244,
+      "selected": true
+    },
+    {
+      "unit": "n054v2_batch0",
+      "arm": "A2-EM",
+      "M1": 0.18424989387810978,
+      "selected": false
+    }
+  ],
+  "commands": [
+    {
+      "command": [
+        "/tmp/codex_n054/venv/bin/python",
+        "-I",
+        "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/v2/n054_trimodal.py",
+        "--stage",
+        "all",
+        "--smoke",
+        "--device",
+        "cpu",
+        "--threads",
+        "2",
+        "--unit",
+        "lf",
+        "--out",
+        "/tmp/codex_n054/v2_final_smoke/n054v2_lf"
+      ],
+      "exit": 0,
+      "signal_to_exit_seconds": null
+    },
+    {
+      "command": [
+        "/tmp/codex_n054/venv/bin/python",
+        "-I",
+        "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/v2/n054_trimodal.py",
+        "--stage",
+        "all",
+        "--smoke",
+        "--device",
+        "cpu",
+        "--threads",
+        "2",
+        "--unit",
+        "batch1",
+        "--out",
+        "/tmp/codex_n054/v2_final_smoke/n054v2_batch1",
+        "--lf-unit",
+        "/tmp/codex_n054/v2_final_smoke/n054v2_lf"
+      ],
+      "exit": 143,
+      "signal_to_exit_seconds": 0.7515921592712402
+    },
+    {
+      "command": [
+        "/tmp/codex_n054/venv/bin/python",
+        "-I",
+        "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/v2/n054_trimodal.py",
+        "--stage",
+        "all",
+        "--smoke",
+        "--device",
+        "cpu",
+        "--threads",
+        "2",
+        "--unit",
+        "batch1",
+        "--out",
+        "/tmp/codex_n054/v2_final_smoke/n054v2_batch1",
+        "--lf-unit",
+        "/tmp/codex_n054/v2_final_smoke/n054v2_lf"
+      ],
+      "exit": 0,
+      "signal_to_exit_seconds": null
+    },
+    {
+      "command": [
+        "/tmp/codex_n054/venv/bin/python",
+        "-I",
+        "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/v2/n054_trimodal.py",
+        "--stage",
+        "all",
+        "--smoke",
+        "--device",
+        "cpu",
+        "--threads",
+        "2",
+        "--unit",
+        "batch0",
+        "--out",
+        "/tmp/codex_n054/v2_final_smoke/n054v2_batch0",
+        "--lf-unit",
+        "/tmp/codex_n054/v2_final_smoke/n054v2_lf"
+      ],
+      "exit": 0,
+      "signal_to_exit_seconds": null
+    },
+    {
+      "command": [
+        "/tmp/codex_n054/venv/bin/python",
+        "-I",
+        "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/v2/n054_trimodal.py",
+        "--stage",
+        "all",
+        "--smoke",
+        "--device",
+        "cpu",
+        "--threads",
+        "2",
+        "--unit",
+        "lf",
+        "--out",
+        "/tmp/codex_n054/v2_final_smoke/n054v2_lf"
+      ],
+      "exit": 0,
+      "signal_to_exit_seconds": null
+    },
+    {
+      "command": [
+        "/tmp/codex_n054/venv/bin/python",
+        "-I",
+        "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/v2/n054_trimodal.py",
+        "--stage",
+        "all",
+        "--smoke",
+        "--device",
+        "cpu",
+        "--threads",
+        "2",
+        "--unit",
+        "batch1",
+        "--out",
+        "/tmp/codex_n054/v2_final_smoke/n054v2_batch1",
+        "--lf-unit",
+        "/tmp/codex_n054/v2_final_smoke/n054v2_lf"
+      ],
+      "exit": 0,
+      "signal_to_exit_seconds": null
+    },
+    {
+      "command": [
+        "/tmp/codex_n054/venv/bin/python",
+        "-I",
+        "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/v2/n054_trimodal.py",
+        "--stage",
+        "gs_encoder",
+        "--unit",
+        "batch1",
+        "--holdout",
+        "batch1",
+        "--out",
+        "/tmp/codex_n054/v2_final_smoke/resume_reference",
+        "--space-dir",
+        "/tmp/codex_n054/v2_final_smoke/n054v2_lf/space1",
+        "--ridge-cache",
+        "/tmp/codex_n054/v2_final_smoke/n054v2_lf/ridge.npz",
+        "--lf-unit",
+        "/tmp/codex_n054/v2_final_smoke/n054v2_lf",
+        "--arm",
+        "A1-LF",
+        "--smoke",
+        "--device",
+        "cpu",
+        "--threads",
+        "2"
+      ],
+      "exit": 0,
+      "signal_to_exit_seconds": null
+    },
+    {
+      "command": [
+        "/tmp/codex_n054/venv/bin/python",
+        "-I",
+        "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/v2/n054_aggregate.py",
+        "--units",
+        "/tmp/codex_n054/v2_final_smoke/n054v2_batch1",
+        "/tmp/codex_n054/v2_final_smoke/n054v2_batch0",
+        "--lf-unit",
+        "/tmp/codex_n054/v2_final_smoke/n054v2_lf",
+        "--out",
+        "/tmp/codex_n054/v2_final_smoke/n054v2_tables"
+      ],
+      "exit": 0,
+      "signal_to_exit_seconds": null
+    },
+    {
+      "command": [
+        "/tmp/codex_n054/venv/bin/python",
+        "-I",
+        "/tmp/codex_n054/v2_final_smoke/changed.py",
+        "--stage",
+        "all",
+        "--smoke",
+        "--device",
+        "cpu",
+        "--threads",
+        "2",
+        "--unit",
+        "lf",
+        "--out",
+        "/tmp/codex_n054/v2_final_smoke/n054v2_lf"
+      ],
+      "exit": 1,
+      "signal_to_exit_seconds": null
+    }
+  ]
+}

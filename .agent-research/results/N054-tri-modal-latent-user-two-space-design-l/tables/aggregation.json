@@ -1,0 +1,176 @@
+{
+  "code_signature": "811ffe1c23e7d78d9788b89c70d36dee3c3740ead25000c42c1d9bace14ec511",
+  "aggregate_signature": "d9c5eff0c95c1c4a24b5e530ad8a25ddd25d94df7b1780bd1c856bd892a5d2d2",
+  "frozen_selections": [
+    {
+      "path": "/hnvme/workspace/v181bb10-bsccm/runs/n054v3_batch1/selection.json",
+      "sha256": "cbb2fca1ad0278665b3f2e7303da639ea7a8e2d530441ad73b5e17a18ba49876",
+      "selected": {
+        "A1-GS": {
+          "arm": "A1-GS",
+          "sigma_bridge": 0,
+          "w_sig": 0,
+          "run": "/hnvme/workspace/v181bb10-bsccm/runs/n054v3_batch1/A1-GS_oos_s0",
+          "map_source": "split1",
+          "a2_cost": "gw",
+          "r": 0.7131434995996844,
+          "validation": {
+            "path": "/hnvme/workspace/v181bb10-bsccm/runs/n054v3_batch1/A1-GS_oos_s0/validation.json",
+            "size": 14926,
+            "mtime_ns": 1794993680000000000
+          },
+          "n": 199
+        },
+        "A1-LF": {
+          "arm": "A1-LF",
+          "sigma_bridge": 0.1,
+          "w_sig": 0,
+          "run": "/hnvme/workspace/v181bb10-bsccm/runs/n054v3_batch1/A1-LF_s0.1",
+          "map_source": "lf",
+          "a2_cost": "gw",
+          "r": 0.5636071426322566,
+          "validation": {
+            "path": "/hnvme/workspace/v181bb10-bsccm/runs/n054v3_batch1/A1-LF_s0.1/validation.json",
+            "size": 15072,
+            "mtime_ns": 1794993666000000000
+          },
+          "n": 994
+        },
+        "A2": {
+          "arm": "A2",
+          "sigma_bridge": 0,
+          "w_sig": 0,
+          "run": "/hnvme/workspace/v181bb10-bsccm/runs/n054v3_batch1/A2_s0",
+          "map_source": "split0",
+          "a2_cost": "gw",
+          "r": 0.23158726837653978,
+          "validation": {
+            "path": "/hnvme/workspace/v181bb10-bsccm/runs/n054v3_batch1/A2_s0/validation.json",
+            "size": 14944,
+            "mtime_ns": 1794993660000000000
+          },
+          "n": 994
+        },
+        "A3": {
+          "arm": "A3",
+          "sigma_bridge": 0,
+          "w_sig": 0,
+          "run": "/hnvme/workspace/v181bb10-bsccm/runs/n054v3_batch1/A3_w0",
+          "map_source": "split0",
+          "a2_cost": "gw",
+          "r": 0.570083849146215,
+          "validation": {
+            "path": "/hnvme/workspace/v181bb10-bsccm/runs/n054v3_batch1/A3_w0/validation.json",
+            "size": 14171,
+            "mtime_ns": 1794993649000000000
+          },
+          "n": 994
+        },
+        "direct": {
+          "arm": "direct",
+          "sigma_bridge": 0,
+          "w_sig": 0,
+          "run": "/hnvme/workspace/v181bb10-bsccm/runs/n054v3_batch1/direct",
+          "map_source": "split1",
+          "a2_cost": "gw",
+          "r": 0.684314152166078,
+          "validation": {
+            "path": "/hnvme/workspace/v181bb10-bsccm/runs/n054v3_batch1/direct/validation.json",
+            "size": 14923,
+            "mtime_ns": 1794993679000000000
+          },
+          "n": 199
+        }
+      }
+    },
+    {
+      "path": "/hnvme/workspace/v181bb10-bsccm/runs/n054v3_batch0/selection.json",
+      "sha256": "f404472a865c0929e34199d1a863d9a4095c94abf78980cea2212d6f7b6b1c0b",
+      "selected": {
+        "A1-GS": {
+          "arm": "A1-GS",
+          "sigma_bridge": 0,
+          "w_sig": 0,
+          "run": "/hnvme/workspace/v181bb10-bsccm/runs/n054v3_batch0/A1-GS_oos_s0",
+          "map_source": "split1",
+          "a2_cost": "gw",
+          "r": 0.776036840717,
+          "validation": {
+            "path": "/hnvme/workspace/v181bb10-bsccm/runs/n054v3_batch0/A1-GS_oos_s0/validation.json",
+            "size": 14842,
+            "mtime_ns": 1794993701000000000
+          },
+          "n": 124
+        },
+        "A1-LF": {
+          "arm": "A1-LF",
+          "sigma_bridge": 0.1,
+          "w_sig": 0,
+          "run": "/hnvme/workspace/v181bb10-bsccm/runs/n054v3_batch0/A1-LF_s0.1",
+          "map_source": "lf",
+          "a2_cost": "gw",
+          "r": 0.7317179436971502,
+          "validation": {
+            "path": "/hnvme/workspace/v181bb10-bsccm/runs/n054v3_batch0/A1-LF_s0.1/validation.json",
+            "size": 15016,
+            "mtime_ns": 1794993688000000000
+          },
+          "n": 593
+        },
+        "A2": {
+          "arm": "A2",
+          "sigma_bridge": 0.1,
+          "w_sig": 0,
+          "run": "/hnvme/workspace/v181bb10-bsccm/runs/n054v3_batch0/A2_s0.1",
+          "map_source": "split0",
+          "a2_cost": "gw",
+          "r": 0.34508714153295444,
+          "validation": {
+            "path": "/hnvme/workspace/v181bb10-bsccm/runs/n054v3_batch0/A2_s0.1/validation.json",
+            "size": 14882,
+            "mtime_ns": 1794993691000000000
+          },
+          "n": 593
+        },
+        "A3": {
+          "arm": "A3",
+          "sigma_bridge": 0,
+          "w_sig": 0.5,
+          "run": "/hnvme/workspace/v181bb10-bsccm/runs/n054v3_batch0/A3_w0.5",
+          "map_source": "split0",
+          "a2_cost": "gw",
+          "r": 0.7576871708899882,
+          "validation": {
+            "path": "/hnvme/workspace/v181bb10-bsccm/runs/n054v3_batch0/A3_w0.5/validation.json",
+            "size": 14111,
+            "mtime_ns": 1794993677000000000
+          },
+          "n": 593
+        },
+        "direct": {
+          "arm": "direct",
+          "sigma_bridge": 0,
+          "w_sig": 0,
+          "run": "/hnvme/workspace/v181bb10-bsccm/runs/n054v3_batch0/direct",
+          "map_source": "split1",
+          "a2_cost": "gw",
+          "r": 0.7906938262258087,
+          "validation": {
+            "path": "/hnvme/workspace/v181bb10-bsccm/runs/n054v3_batch0/direct/validation.json",
+            "size": 14855,
+            "mtime_ns": 1794993699000000000
+          },
+          "n": 124
+        }
+      }
+    }
+  ],
+  "n_primary": 12,
+  "n_grid": 34,
+  "n_diagnostics": 14,
+  "completion_source": {
+    "path": "/hnvme/workspace/v181bb10-bsccm/runs/n054v3_lf/completion/completion/completion.json",
+    "size": 111455,
+    "mtime_ns": 1794989762000000000
+  }
+}

@@ -1,0 +1,352 @@
+{
+  "status": "passed",
+  "seconds": 302.85,
+  "runs": [
+    {
+      "run": "A1_s0_w0_batch1",
+      "M1": 0.07686336991793714,
+      "retrieval": {
+        "n": 150,
+        "R_at_1": 0.006666666666666667,
+        "R_at_10": 0.06666666666666667,
+        "median_rank": 75.0,
+        "chance_R_at_1": 0.006666666666666667,
+        "chance_R_at_10": 0.06666666666666667
+      },
+      "cka": 0.32741458809818286
+    },
+    {
+      "run": "A1_s0.1_w0_batch1",
+      "M1": 0.05019953859585275,
+      "retrieval": {
+        "n": 150,
+        "R_at_1": 0.006666666666666667,
+        "R_at_10": 0.06666666666666667,
+        "median_rank": 75.0,
+        "chance_R_at_1": 0.006666666666666667,
+        "chance_R_at_10": 0.06666666666666667
+      },
+      "cka": 0.32741458809818286
+    },
+    {
+      "run": "A2_s0_w0_batch1",
+      "M1": 0.07422051258447677,
+      "retrieval": {
+        "n": 150,
+        "R_at_1": 0.006666666666666667,
+        "R_at_10": 0.06666666666666667,
+        "median_rank": 75.0,
+        "chance_R_at_1": 0.006666666666666667,
+        "chance_R_at_10": 0.06666666666666667
+      },
+      "cka": 0.32741458809818286
+    },
+    {
+      "run": "A2_s0.1_w0_batch1",
+      "M1": 0.05849866935283798,
+      "retrieval": {
+        "n": 150,
+        "R_at_1": 0.006666666666666667,
+        "R_at_10": 0.06666666666666667,
+        "median_rank": 75.0,
+        "chance_R_at_1": 0.006666666666666667,
+        "chance_R_at_10": 0.06666666666666667
+      },
+      "cka": 0.32741458809818286
+    },
+    {
+      "run": "A3_s0_w0_batch1",
+      "M1": -0.1666294625476822,
+      "retrieval": {
+        "n": 150,
+        "R_at_1": 0.006666666666666667,
+        "R_at_10": 0.06666666666666667,
+        "median_rank": 75.0,
+        "chance_R_at_1": 0.006666666666666667,
+        "chance_R_at_10": 0.06666666666666667
+      },
+      "cka": 0.37726806634711335
+    },
+    {
+      "run": "A3_s0_w0.5_batch1",
+      "M1": -0.13032984306124953,
+      "retrieval": {
+        "n": 150,
+        "R_at_1": 0.006666666666666667,
+        "R_at_10": 0.06666666666666667,
+        "median_rank": 74.5,
+        "chance_R_at_1": 0.006666666666666667,
+        "chance_R_at_10": 0.06666666666666667
+      },
+      "cka": 0.3779339074082201
+    },
+    {
+      "run": "A0_batch1",
+      "M1": 0.2802649507630704,
+      "retrieval": {
+        "n": 150,
+        "R_at_1": 0.10666666666666667,
+        "R_at_10": 0.36666666666666664,
+        "median_rank": 16.5,
+        "chance_R_at_1": 0.006666666666666667,
+        "chance_R_at_10": 0.06666666666666667
+      }
+    },
+    {
+      "run": "A1_s0_w0_batch0",
+      "M1": 0.31278485194353145,
+      "retrieval": {
+        "n": 150,
+        "R_at_1": 0.006666666666666667,
+        "R_at_10": 0.06666666666666667,
+        "median_rank": 75.5,
+        "chance_R_at_1": 0.006666666666666667,
+        "chance_R_at_10": 0.06666666666666667
+      },
+      "cka": 0.47167251821252976
+    },
+    {
+      "run": "A1_s0.1_w0_batch0",
+      "M1": 0.3006899068772739,
+      "retrieval": {
+        "n": 150,
+        "R_at_1": 0.006666666666666667,
+        "R_at_10": 0.06666666666666667,
+        "median_rank": 75.5,
+        "chance_R_at_1": 0.006666666666666667,
+        "chance_R_at_10": 0.06666666666666667
+      },
+      "cka": 0.47167251821252976
+    },
+    {
+      "run": "A2_s0_w0_batch0",
+      "M1": 0.25644266883687217,
+      "retrieval": {
+        "n": 150,
+        "R_at_1": 0.006666666666666667,
+        "R_at_10": 0.06666666666666667,
+        "median_rank": 75.5,
+        "chance_R_at_1": 0.006666666666666667,
+        "chance_R_at_10": 0.06666666666666667
+      },
+      "cka": 0.47167251821252976
+    },
+    {
+      "run": "A2_s0.1_w0_batch0",
+      "M1": 0.23213335098789595,
+      "retrieval": {
+        "n": 150,
+        "R_at_1": 0.006666666666666667,
+        "R_at_10": 0.06666666666666667,
+        "median_rank": 75.5,
+        "chance_R_at_1": 0.006666666666666667,
+        "chance_R_at_10": 0.06666666666666667
+      },
+      "cka": 0.47167251821252976
+    },
+    {
+      "run": "A3_s0_w0_batch0",
+      "M1": -0.3077461314030141,
+      "retrieval": {
+        "n": 150,
+        "R_at_1": 0.006666666666666667,
+        "R_at_10": 0.06666666666666667,
+        "median_rank": 75.5,
+        "chance_R_at_1": 0.006666666666666667,
+        "chance_R_at_10": 0.06666666666666667
+      },
+      "cka": 0.2770640550720925
+    },
+    {
+      "run": "A3_s0_w0.5_batch0",
+      "M1": -0.3426289016158691,
+      "retrieval": {
+        "n": 150,
+        "R_at_1": 0.013333333333333334,
+        "R_at_10": 0.06666666666666667,
+        "median_rank": 75.0,
+        "chance_R_at_1": 0.006666666666666667,
+        "chance_R_at_10": 0.06666666666666667
+      },
+      "cka": 0.2758935903033322
+    },
+    {
+      "run": "A0_batch0",
+      "M1": 0.7655425944175985,
+      "retrieval": {
+        "n": 150,
+        "R_at_1": 0.06666666666666667,
+        "R_at_10": 0.41333333333333333,
+        "median_rank": 16.0,
+        "chance_R_at_1": 0.006666666666666667,
+        "chance_R_at_10": 0.06666666666666667
+      }
+    }
+  ],
+  "completion": [
+    {
+      "test": "C1",
+      "protocol": "fov",
+      "target": "autofl",
+      "n": 0,
+      "status": "unavailable: no single-marker cells with observed autofl in targets_tt6c"
+    },
+    {
+      "test": "C2",
+      "protocol": "fov",
+      "target": "grp:CD123/HLA-DR/CD14",
+      "n": 33,
+      "r_lf": -0.2822560801074419,
+      "r_fused": 0.24710770838315255,
+      "delta": 0.5293637884905944,
+      "n_train_target": 34,
+      "status": "ok",
+      "mean_observed_inputs": 3.0
+    },
+    {
+      "test": "C2",
+      "protocol": "fov",
+      "target": "grp:CD3/CD19/CD56",
+      "n": 66,
+      "r_lf": 0.7490640378764949,
+      "r_fused": 0.8479115540618785,
+      "delta": 0.09884751618538357,
+      "n_train_target": 68,
+      "status": "ok",
+      "mean_observed_inputs": 2.5
+    },
+    {
+      "test": "C2",
+      "protocol": "fov",
+      "target": "grp:CD45",
+      "n": 66,
+      "r_lf": 0.3593681989781296,
+      "r_fused": -0.28049824918790817,
+      "delta": -0.6398664481660378,
+      "n_train_target": 68,
+      "status": "ok",
+      "mean_observed_inputs": 2.5
+    },
+    {
+      "test": "C2",
+      "protocol": "fov",
+      "target": "grp:CD16",
+      "n": 66,
+      "r_lf": 0.7976967315228097,
+      "r_fused": 0.8113447688183976,
+      "delta": 0.013648037295587834,
+      "n_train_target": 68,
+      "status": "ok",
+      "mean_observed_inputs": 2.5
+    },
+    {
+      "test": "C1",
+      "protocol": "draw0_to_1",
+      "target": "autofl",
+      "n": 0,
+      "status": "unavailable: no single-marker cells with observed autofl in targets_tt6c"
+    },
+    {
+      "test": "C2",
+      "protocol": "draw0_to_1",
+      "target": "grp:CD3/CD19/CD56",
+      "n": 33,
+      "r_lf": 0.7041003018692635,
+      "r_fused": 0.8239274595413019,
+      "delta": 0.11982715767203833,
+      "n_train_target": 34,
+      "status": "ok",
+      "mean_observed_inputs": 2.0
+    },
+    {
+      "test": "C2",
+      "protocol": "draw0_to_1",
+      "target": "grp:CD45",
+      "n": 33,
+      "r_lf": 0.4741862663449154,
+      "r_fused": 0.5560047576979004,
+      "delta": 0.08181849135298497,
+      "n_train_target": 34,
+      "status": "ok",
+      "mean_observed_inputs": 2.0
+    },
+    {
+      "test": "C2",
+      "protocol": "draw0_to_1",
+      "target": "grp:CD16",
+      "n": 33,
+      "r_lf": 0.7093238121733579,
+      "r_fused": 0.731584796606375,
+      "delta": 0.02226098443301705,
+      "n_train_target": 34,
+      "status": "ok",
+      "mean_observed_inputs": 2.0
+    },
+    {
+      "test": "C1",
+      "protocol": "draw1_to_0",
+      "target": "autofl",
+      "n": 0,
+      "status": "unavailable: no single-marker cells with observed autofl in targets_tt6c"
+    },
+    {
+      "test": "C2",
+      "protocol": "draw1_to_0",
+      "target": "grp:CD123/HLA-DR/CD14",
+      "n": 33,
+      "r_lf": null,
+      "r_fused": null,
+      "delta": null,
+      "n_train_target": 0,
+      "status": "unavailable: no observed source-draw training labels",
+      "mean_observed_inputs": 3.0
+    },
+    {
+      "test": "C2",
+      "protocol": "draw1_to_0",
+      "target": "grp:CD3/CD19/CD56",
+      "n": 33,
+      "r_lf": 0.8058501736684174,
+      "r_fused": 0.725711464626247,
+      "delta": -0.08013870904217035,
+      "n_train_target": 34,
+      "status": "ok",
+      "mean_observed_inputs": 3.0
+    },
+    {
+      "test": "C2",
+      "protocol": "draw1_to_0",
+      "target": "grp:CD45",
+      "n": 33,
+      "r_lf": 0.8097241523521047,
+      "r_fused": 0.9133673448681,
+      "delta": 0.1036431925159953,
+      "n_train_target": 34,
+      "status": "ok",
+      "mean_observed_inputs": 3.0
+    },
+    {
+      "test": "C2",
+      "protocol": "draw1_to_0",
+      "target": "grp:CD16",
+      "n": 33,
+      "r_lf": 0.9088963275906202,
+      "r_fused": 0.9146122053314004,
+      "delta": 0.005715877740780195,
+      "n_train_target": 34,
+      "status": "ok",
+      "mean_observed_inputs": 3.0
+    },
+    {
+      "test": "C2",
+      "protocol": "draw0_to_1",
+      "target": "grp:CD123/HLA-DR/CD14",
+      "n": 0,
+      "status": "no observed test truth after QC"
+    }
+  ],
+  "signal_restart": "SIGUSR1 exit 99 then resume; bitwise equal to uninterrupted CPU GS training",
+  "clinical": "4 arms, 16 PBC images and 24 MLL23 images per arm; 25 contrasts each",
+  "scratch": "/tmp/codex_n054/final_smoke",
+  "artifacts": "smoke_artifacts/index.json"
+}

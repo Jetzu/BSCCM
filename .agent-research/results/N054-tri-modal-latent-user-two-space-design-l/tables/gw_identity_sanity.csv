@@ -1,0 +1,5 @@
+holdout,run,identity_rate,chance
+batch1,/hnvme/workspace/v181bb10-bsccm/runs/n054v3_batch1/A2_s0,0.01328125,0.00390625
+batch1,/hnvme/workspace/v181bb10-bsccm/runs/n054v3_batch1/A2_s0.1,0.01328125,0.00390625
+batch0,/hnvme/workspace/v181bb10-bsccm/runs/n054v3_batch0/A2_s0,0.0203125,0.00390625
+batch0,/hnvme/workspace/v181bb10-bsccm/runs/n054v3_batch0/A2_s0.1,0.0203125,0.00390625

@@ -1,0 +1,166 @@
+[
+  {
+    "holdout": "batch1",
+    "run": "/hnvme/workspace/v181bb10-bsccm/runs/n054v3_batch1/A2_s0",
+    "source": "P2(f)",
+    "target": "P1(f)",
+    "same_lf_cells": true,
+    "rows": [
+      {
+        "n": 256,
+        "identity_rate": 0.0078125,
+        "identity_mass": 0.010986808440369976,
+        "chance": 0.00390625
+      },
+      {
+        "n": 256,
+        "identity_rate": 0.00390625,
+        "identity_mass": 0.00783893206941804,
+        "chance": 0.00390625
+      },
+      {
+        "n": 256,
+        "identity_rate": 0.02734375,
+        "identity_mass": 0.016984163560844617,
+        "chance": 0.00390625
+      },
+      {
+        "n": 256,
+        "identity_rate": 0.02734375,
+        "identity_mass": 0.018625058549264835,
+        "chance": 0.00390625
+      },
+      {
+        "n": 256,
+        "identity_rate": 0.0,
+        "identity_mass": 0.007072254159844055,
+        "chance": 0.00390625
+      }
+    ],
+    "mean_identity_rate": 0.01328125,
+    "chance": 0.00390625
+  },
+  {
+    "holdout": "batch1",
+    "run": "/hnvme/workspace/v181bb10-bsccm/runs/n054v3_batch1/A2_s0.1",
+    "source": "P2(f)",
+    "target": "P1(f)",
+    "same_lf_cells": true,
+    "rows": [
+      {
+        "n": 256,
+        "identity_rate": 0.0078125,
+        "identity_mass": 0.010986808440369976,
+        "chance": 0.00390625
+      },
+      {
+        "n": 256,
+        "identity_rate": 0.00390625,
+        "identity_mass": 0.00783893206941804,
+        "chance": 0.00390625
+      },
+      {
+        "n": 256,
+        "identity_rate": 0.02734375,
+        "identity_mass": 0.016984163560844617,
+        "chance": 0.00390625
+      },
+      {
+        "n": 256,
+        "identity_rate": 0.02734375,
+        "identity_mass": 0.018625058549264835,
+        "chance": 0.00390625
+      },
+      {
+        "n": 256,
+        "identity_rate": 0.0,
+        "identity_mass": 0.007072254159844055,
+        "chance": 0.00390625
+      }
+    ],
+    "mean_identity_rate": 0.01328125,
+    "chance": 0.00390625
+  },
+  {
+    "holdout": "batch0",
+    "run": "/hnvme/workspace/v181bb10-bsccm/runs/n054v3_batch0/A2_s0",
+    "source": "P2(f)",
+    "target": "P1(f)",
+    "same_lf_cells": true,
+    "rows": [
+      {
+        "n": 256,
+        "identity_rate": 0.0234375,
+        "identity_mass": 0.019480874531696668,
+        "chance": 0.00390625
+      },
+      {
+        "n": 256,
+        "identity_rate": 0.01953125,
+        "identity_mass": 0.015786660889390767,
+        "chance": 0.00390625
+      },
+      {
+        "n": 256,
+        "identity_rate": 0.03125,
+        "identity_mass": 0.019663977366937466,
+        "chance": 0.00390625
+      },
+      {
+        "n": 256,
+        "identity_rate": 0.015625,
+        "identity_mass": 0.011823224978997366,
+        "chance": 0.00390625
+      },
+      {
+        "n": 256,
+        "identity_rate": 0.01171875,
+        "identity_mass": 0.016485598578007535,
+        "chance": 0.00390625
+      }
+    ],
+    "mean_identity_rate": 0.0203125,
+    "chance": 0.00390625
+  },
+  {
+    "holdout": "batch0",
+    "run": "/hnvme/workspace/v181bb10-bsccm/runs/n054v3_batch0/A2_s0.1",
+    "source": "P2(f)",
+    "target": "P1(f)",
+    "same_lf_cells": true,
+    "rows": [
+      {
+        "n": 256,
+        "identity_rate": 0.0234375,
+        "identity_mass": 0.019480874531696668,
+        "chance": 0.00390625
+      },
+      {
+        "n": 256,
+        "identity_rate": 0.01953125,
+        "identity_mass": 0.015786660889390767,
+        "chance": 0.00390625
+      },
+      {
+        "n": 256,
+        "identity_rate": 0.03125,
+        "identity_mass": 0.019663977366937466,
+        "chance": 0.00390625
+      },
+      {
+        "n": 256,
+        "identity_rate": 0.015625,
+        "identity_mass": 0.011823224978997366,
+        "chance": 0.00390625
+      },
+      {
+        "n": 256,
+        "identity_rate": 0.01171875,
+        "identity_mass": 0.016485598578007535,
+        "chance": 0.00390625
+      }
+    ],
+    "mean_identity_rate": 0.0203125,
+    "chance": 0.00390625
+  }
+]

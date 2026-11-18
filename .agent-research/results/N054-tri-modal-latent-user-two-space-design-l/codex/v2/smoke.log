@@ -1,0 +1,484 @@
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/v2/n054_trimodal.py --stage all --smoke --device cpu --threads 2 --unit lf --out /tmp/codex_n054/v2_final_smoke/n054v2_lf
+{"event": "start", "stage": "lf_spaces", "arm": "A1-LF", "holdout": "batch1", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"job": "lf_spaces", "step": 10, "loss": 7.104691028594971, "val_loss": 56.37263488769531}
+{"job": "lf_spaces", "step": 20, "loss": 5.469061374664307, "val_loss": 53.09225845336914}
+fixed ridge saved: /tmp/codex_n054/v2_final_smoke/n054v2_lf/ridge.npz
+{"event": "done", "stage": "lf_spaces", "seconds": 0.76}
+{"event": "start", "stage": "lf_spaces", "arm": "A3", "holdout": "batch1", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"job": "lf_spaces", "step": 10, "loss": 5.245271682739258, "val_loss": 65.10247802734375}
+{"job": "lf_spaces", "step": 20, "loss": 4.5702433586120605, "val_loss": 43.3180046081543}
+{"event": "done", "stage": "lf_spaces", "seconds": 0.26}
+{"event": "start", "stage": "completion", "arm": "A3", "holdout": "batch1", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"job": "completion_fov", "step": 10, "loss": 10.248433113098145, "val_loss": 5.094460487365723}
+{"job": "completion_fov", "step": 20, "loss": 7.58604097366333, "val_loss": 3.043898344039917}
+completion fov: trained=680, tested=660
+{"job": "completion_draw0_to_1", "step": 10, "loss": 7.89639139175415, "val_loss": 3.9678611755371094}
+{"job": "completion_draw0_to_1", "step": 20, "loss": 8.391487121582031, "val_loss": 3.5012574195861816}
+completion draw0_to_1: trained=340, tested=330
+{"job": "completion_draw1_to_0", "step": 10, "loss": 7.841959476470947, "val_loss": 3.5232934951782227}
+{"job": "completion_draw1_to_0", "step": 20, "loss": 7.9467573165893555, "val_loss": 3.1390042304992676}
+completion draw1_to_0: trained=340, tested=330
+{"event": "done", "stage": "completion", "seconds": 2.22}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/v2/n054_trimodal.py --stage all --smoke --device cpu --threads 2 --unit batch1 --out /tmp/codex_n054/v2_final_smoke/n054v2_batch1 --lf-unit /tmp/codex_n054/v2_final_smoke/n054v2_lf
+{"event": "start", "stage": "gs_encoder", "arm": "A1-LF", "holdout": "batch1", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"job": "gs_encoder", "step": 10, "loss": 5.693236351013184, "val_loss": 4.739777317047119}
+signal 15: checkpoint and exit at next optimizer boundary
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/v2/n054_trimodal.py --stage all --smoke --device cpu --threads 2 --unit batch1 --out /tmp/codex_n054/v2_final_smoke/n054v2_batch1 --lf-unit /tmp/codex_n054/v2_final_smoke/n054v2_lf
+{"event": "start", "stage": "gs_encoder", "arm": "A1-LF", "holdout": "batch1", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+resume gs_encoder at 10/20
+{"job": "gs_encoder", "step": 20, "loss": 2.9835848808288574, "val_loss": 3.615548362731934}
+{"event": "done", "stage": "gs_encoder", "seconds": 1.08}
+{"event": "start", "stage": "gs_cache", "arm": "A1-LF", "holdout": "batch1", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"event": "done", "stage": "gs_cache", "seconds": 0.16}
+{"event": "start", "stage": "gs_encoder", "arm": "A3", "holdout": "batch1", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"job": "gs_encoder", "step": 10, "loss": 0.4570094645023346, "val_loss": 0.4444826567173004}
+{"job": "gs_encoder", "step": 20, "loss": 0.3509365916252136, "val_loss": 0.3566879343986511}
+{"event": "done", "stage": "gs_encoder", "seconds": 1.12}
+{"event": "start", "stage": "gs_encoder", "arm": "A3", "holdout": "batch1", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"job": "gs_encoder", "step": 10, "loss": 1.8573417663574219, "val_loss": 1.8383414459228515}
+{"job": "gs_encoder", "step": 20, "loss": 1.5543988943099976, "val_loss": 1.5946861124038696}
+{"event": "done", "stage": "gs_encoder", "seconds": 1.12}
+{"event": "start", "stage": "flow", "arm": "A1-LF", "holdout": "batch1", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"job": "flow", "step": 10, "loss": 0.06370827555656433, "val_loss": 0.05280430242419243}
+{"job": "flow", "step": 20, "loss": 0.034140512347221375, "val_loss": 0.03434286266565323}
+{"event": "done", "stage": "flow", "seconds": 0.11}
+{"event": "start", "stage": "flow", "arm": "A1-GS", "holdout": "batch1", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"job": "flow", "step": 10, "loss": 0.01570611447095871, "val_loss": 0.013788925483822823}
+{"job": "flow", "step": 20, "loss": 0.007310251705348492, "val_loss": 0.0072787851095199585}
+{"event": "done", "stage": "flow", "seconds": 0.1}
+{"event": "start", "stage": "flow", "arm": "A2", "holdout": "batch1", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"job": "flow", "step": 10, "loss": 0.054694805294275284, "val_loss": 0.04278092831373215}
+{"job": "flow", "step": 20, "loss": 0.028459805995225906, "val_loss": 0.027270877733826637}
+{"event": "done", "stage": "flow", "seconds": 0.22}
+{"event": "start", "stage": "flow", "arm": "A2-EM", "holdout": "batch1", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"job": "flow", "step": 10, "loss": 0.05383947864174843, "val_loss": 0.04301432520151138}
+{"job": "flow", "step": 20, "loss": 0.027556031942367554, "val_loss": 0.026744402945041656}
+{"event": "done", "stage": "flow", "seconds": 0.09}
+{"event": "start", "stage": "flow", "arm": "A1-LF", "holdout": "batch1", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"job": "flow", "step": 10, "loss": 0.0683421790599823, "val_loss": 0.059000253677368164}
+{"job": "flow", "step": 20, "loss": 0.038294050842523575, "val_loss": 0.03903492912650108}
+{"event": "done", "stage": "flow", "seconds": 0.11}
+{"event": "start", "stage": "flow", "arm": "A1-GS", "holdout": "batch1", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"job": "flow", "step": 10, "loss": 0.019767459481954575, "val_loss": 0.01707596331834793}
+{"job": "flow", "step": 20, "loss": 0.010861326940357685, "val_loss": 0.010935536585748196}
+{"event": "done", "stage": "flow", "seconds": 0.1}
+{"event": "start", "stage": "flow", "arm": "A2", "holdout": "batch1", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"job": "flow", "step": 10, "loss": 0.059352606534957886, "val_loss": 0.04840124025940895}
+{"job": "flow", "step": 20, "loss": 0.03275419399142265, "val_loss": 0.031652338802814484}
+{"event": "done", "stage": "flow", "seconds": 0.1}
+{"event": "start", "stage": "flow", "arm": "A2-EM", "holdout": "batch1", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"job": "flow", "step": 10, "loss": 0.058320678770542145, "val_loss": 0.04858975484967232}
+{"job": "flow", "step": 20, "loss": 0.03180807828903198, "val_loss": 0.03108738549053669}
+{"event": "done", "stage": "flow", "seconds": 0.09}
+{"event": "start", "stage": "flow", "arm": "direct", "holdout": "batch1", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"job": "flow", "step": 10, "loss": 0.31046026945114136, "val_loss": 0.2670828700065613}
+{"job": "flow", "step": 20, "loss": 0.281498521566391, "val_loss": 0.2554914355278015}
+{"event": "done", "stage": "flow", "seconds": 0.1}
+{"event": "start", "stage": "validation", "arm": "A3", "holdout": "batch1", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"output": "validation", "arm": "A3", "M1": -0.02149922015782725, "M3": {"n": 50, "R_at_1": 0.02, "R_at_10": 0.2, "median_rank": 25.5, "chance_R_at_1": 0.02, "chance_R_at_10": 0.2}}
+{"event": "done", "stage": "validation", "seconds": 0.16}
+{"event": "start", "stage": "validation", "arm": "A3", "holdout": "batch1", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"output": "validation", "arm": "A3", "M1": 0.06624394880064417, "M3": {"n": 50, "R_at_1": 0.02, "R_at_10": 0.2, "median_rank": 25.5, "chance_R_at_1": 0.02, "chance_R_at_10": 0.2}}
+{"event": "done", "stage": "validation", "seconds": 0.16}
+{"event": "start", "stage": "validation", "arm": "A1-LF", "holdout": "batch1", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"output": "validation", "arm": "A1-LF", "M1": -0.06324092272674034, "M3": {"n": 50, "R_at_1": 0.02, "R_at_10": 0.2, "median_rank": 25.0, "chance_R_at_1": 0.02, "chance_R_at_10": 0.2}}
+{"event": "done", "stage": "validation", "seconds": 0.24}
+{"event": "start", "stage": "validation", "arm": "A1-GS", "holdout": "batch1", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"output": "validation", "arm": "A1-GS", "M1": -0.071656299500022, "M3": {"n": 50, "R_at_1": 0.02, "R_at_10": 0.2, "median_rank": 25.0, "chance_R_at_1": 0.02, "chance_R_at_10": 0.2}}
+{"event": "done", "stage": "validation", "seconds": 0.23}
+{"event": "start", "stage": "validation", "arm": "A2", "holdout": "batch1", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"output": "validation", "arm": "A2", "M1": -0.16733230789885162, "M3": {"n": 50, "R_at_1": 0.02, "R_at_10": 0.2, "median_rank": 25.0, "chance_R_at_1": 0.02, "chance_R_at_10": 0.2}}
+{"event": "done", "stage": "validation", "seconds": 0.22}
+{"event": "start", "stage": "validation", "arm": "A2-EM", "holdout": "batch1", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"output": "validation", "arm": "A2-EM", "M1": -0.15857898172236448, "M3": {"n": 50, "R_at_1": 0.02, "R_at_10": 0.2, "median_rank": 25.0, "chance_R_at_1": 0.02, "chance_R_at_10": 0.2}}
+{"event": "done", "stage": "validation", "seconds": 0.22}
+{"event": "start", "stage": "validation", "arm": "A1-LF", "holdout": "batch1", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"output": "validation", "arm": "A1-LF", "M1": -0.11095919905794119, "M3": {"n": 50, "R_at_1": 0.02, "R_at_10": 0.2, "median_rank": 25.0, "chance_R_at_1": 0.02, "chance_R_at_10": 0.2}}
+{"event": "done", "stage": "validation", "seconds": 0.24}
+{"event": "start", "stage": "validation", "arm": "A1-GS", "holdout": "batch1", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"output": "validation", "arm": "A1-GS", "M1": -0.03557950310344814, "M3": {"n": 50, "R_at_1": 0.02, "R_at_10": 0.2, "median_rank": 25.0, "chance_R_at_1": 0.02, "chance_R_at_10": 0.2}}
+{"event": "done", "stage": "validation", "seconds": 0.23}
+{"event": "start", "stage": "validation", "arm": "A2", "holdout": "batch1", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"output": "validation", "arm": "A2", "M1": -0.19955729950580384, "M3": {"n": 50, "R_at_1": 0.02, "R_at_10": 0.2, "median_rank": 25.0, "chance_R_at_1": 0.02, "chance_R_at_10": 0.2}}
+{"event": "done", "stage": "validation", "seconds": 0.22}
+{"event": "start", "stage": "validation", "arm": "A2-EM", "holdout": "batch1", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"output": "validation", "arm": "A2-EM", "M1": -0.18135419703989847, "M3": {"n": 50, "R_at_1": 0.02, "R_at_10": 0.2, "median_rank": 25.0, "chance_R_at_1": 0.02, "chance_R_at_10": 0.2}}
+{"event": "done", "stage": "validation", "seconds": 0.22}
+{"event": "start", "stage": "validation", "arm": "direct", "holdout": "batch1", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"output": "validation", "arm": "direct", "M1": -0.28045890080879166, "M3": {"n": 50, "R_at_1": 0.02, "R_at_10": 0.2, "median_rank": 25.0, "chance_R_at_1": 0.02, "chance_R_at_10": 0.2}}
+{"event": "done", "stage": "validation", "seconds": 0.17}
+{"event": "start", "stage": "eval", "arm": "A0", "holdout": "batch1", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"output": "eval", "arm": "A0", "M1": 0.2802649507630704, "M3": {"n": 150, "R_at_1": 0.10666666666666667, "R_at_10": 0.36666666666666664, "median_rank": 16.5, "chance_R_at_1": 0.006666666666666667, "chance_R_at_10": 0.06666666666666667}}
+{"event": "done", "stage": "eval", "seconds": 34.12}
+{"event": "start", "stage": "clinical", "arm": "A0", "holdout": "batch1", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+MLL23 basophil 2
+MLL23 eosinophil 2
+MLL23 hairy_cell 2
+MLL23 lymphocyte 2
+MLL23 lymphocyte_large_granular 2
+MLL23 metamyelocyte 2
+MLL23 monocyte 2
+MLL23 myelocyte 2
+MLL23 neutrophil_band 2
+MLL23 neutrophil_segmented 2
+MLL23 normoblast 2
+MLL23 plasma_cell 2
+{"status": "done", "pbc_n": 16, "mll_n": 24, "contrasts": 25, "smoke": true}
+{"event": "done", "stage": "clinical", "seconds": 11.24}
+{"event": "start", "stage": "eval", "arm": "A3", "holdout": "batch1", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"output": "eval", "arm": "A3", "M1": -0.1461060145338738, "M3": {"n": 150, "R_at_1": 0.006666666666666667, "R_at_10": 0.06666666666666667, "median_rank": 75.5, "chance_R_at_1": 0.006666666666666667, "chance_R_at_10": 0.06666666666666667}}
+{"event": "done", "stage": "eval", "seconds": 0.42}
+{"event": "start", "stage": "eval", "arm": "A3", "holdout": "batch1", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"output": "eval", "arm": "A3", "M1": -0.132171922433774, "M3": {"n": 150, "R_at_1": 0.006666666666666667, "R_at_10": 0.06666666666666667, "median_rank": 75.5, "chance_R_at_1": 0.006666666666666667, "chance_R_at_10": 0.06666666666666667}}
+{"event": "done", "stage": "eval", "seconds": 0.42}
+{"event": "start", "stage": "clinical", "arm": "A3", "holdout": "batch1", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+MLL23 basophil 2
+MLL23 eosinophil 2
+MLL23 hairy_cell 2
+MLL23 lymphocyte 2
+MLL23 lymphocyte_large_granular 2
+MLL23 metamyelocyte 2
+MLL23 monocyte 2
+MLL23 myelocyte 2
+MLL23 neutrophil_band 2
+MLL23 neutrophil_segmented 2
+MLL23 normoblast 2
+MLL23 plasma_cell 2
+{"status": "done", "pbc_n": 16, "mll_n": 24, "contrasts": 25, "smoke": true}
+{"event": "done", "stage": "clinical", "seconds": 0.99}
+{"event": "start", "stage": "eval", "arm": "A1-LF", "holdout": "batch1", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"output": "eval", "arm": "A1-LF", "M1": 0.0990760000519172, "M3": {"n": 150, "R_at_1": 0.006666666666666667, "R_at_10": 0.06666666666666667, "median_rank": 75.0, "chance_R_at_1": 0.006666666666666667, "chance_R_at_10": 0.06666666666666667}}
+{"event": "done", "stage": "eval", "seconds": 0.73}
+{"event": "start", "stage": "clinical", "arm": "A1-LF", "holdout": "batch1", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+MLL23 basophil 2
+MLL23 eosinophil 2
+MLL23 hairy_cell 2
+MLL23 lymphocyte 2
+MLL23 lymphocyte_large_granular 2
+MLL23 metamyelocyte 2
+MLL23 monocyte 2
+MLL23 myelocyte 2
+MLL23 neutrophil_band 2
+MLL23 neutrophil_segmented 2
+MLL23 normoblast 2
+MLL23 plasma_cell 2
+{"status": "done", "pbc_n": 16, "mll_n": 24, "contrasts": 25, "smoke": true}
+{"event": "done", "stage": "clinical", "seconds": 1.72}
+{"event": "start", "stage": "eval", "arm": "A1-GS", "holdout": "batch1", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"output": "eval", "arm": "A1-GS", "M1": -0.2659816604347187, "M3": {"n": 150, "R_at_1": 0.006666666666666667, "R_at_10": 0.06666666666666667, "median_rank": 75.0, "chance_R_at_1": 0.006666666666666667, "chance_R_at_10": 0.06666666666666667}}
+{"event": "done", "stage": "eval", "seconds": 0.66}
+{"event": "start", "stage": "eval", "arm": "A2", "holdout": "batch1", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"output": "eval", "arm": "A2", "M1": 0.04622645522662616, "M3": {"n": 150, "R_at_1": 0.006666666666666667, "R_at_10": 0.06666666666666667, "median_rank": 75.0, "chance_R_at_1": 0.006666666666666667, "chance_R_at_10": 0.06666666666666667}}
+{"event": "done", "stage": "eval", "seconds": 0.66}
+{"event": "start", "stage": "clinical", "arm": "A2", "holdout": "batch1", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+MLL23 basophil 2
+MLL23 eosinophil 2
+MLL23 hairy_cell 2
+MLL23 lymphocyte 2
+MLL23 lymphocyte_large_granular 2
+MLL23 metamyelocyte 2
+MLL23 monocyte 2
+MLL23 myelocyte 2
+MLL23 neutrophil_band 2
+MLL23 neutrophil_segmented 2
+MLL23 normoblast 2
+MLL23 plasma_cell 2
+{"status": "done", "pbc_n": 16, "mll_n": 24, "contrasts": 25, "smoke": true}
+{"event": "done", "stage": "clinical", "seconds": 1.52}
+{"event": "start", "stage": "eval", "arm": "A2-EM", "holdout": "batch1", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"output": "eval", "arm": "A2-EM", "M1": 0.04695571234483956, "M3": {"n": 150, "R_at_1": 0.006666666666666667, "R_at_10": 0.06666666666666667, "median_rank": 75.0, "chance_R_at_1": 0.006666666666666667, "chance_R_at_10": 0.06666666666666667}}
+{"event": "done", "stage": "eval", "seconds": 0.66}
+{"event": "start", "stage": "eval", "arm": "A1-LF", "holdout": "batch1", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"output": "eval", "arm": "A1-LF", "M1": 0.05468713173370721, "M3": {"n": 150, "R_at_1": 0.006666666666666667, "R_at_10": 0.06666666666666667, "median_rank": 75.0, "chance_R_at_1": 0.006666666666666667, "chance_R_at_10": 0.06666666666666667}}
+{"event": "done", "stage": "eval", "seconds": 0.69}
+{"event": "start", "stage": "eval", "arm": "A1-GS", "holdout": "batch1", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"output": "eval", "arm": "A1-GS", "M1": -0.2392203599103121, "M3": {"n": 150, "R_at_1": 0.006666666666666667, "R_at_10": 0.06666666666666667, "median_rank": 75.0, "chance_R_at_1": 0.006666666666666667, "chance_R_at_10": 0.06666666666666667}}
+{"event": "done", "stage": "eval", "seconds": 0.65}
+{"event": "start", "stage": "clinical", "arm": "A1-GS", "holdout": "batch1", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+MLL23 basophil 2
+MLL23 eosinophil 2
+MLL23 hairy_cell 2
+MLL23 lymphocyte 2
+MLL23 lymphocyte_large_granular 2
+MLL23 metamyelocyte 2
+MLL23 monocyte 2
+MLL23 myelocyte 2
+MLL23 neutrophil_band 2
+MLL23 neutrophil_segmented 2
+MLL23 normoblast 2
+MLL23 plasma_cell 2
+{"status": "done", "pbc_n": 16, "mll_n": 24, "contrasts": 25, "smoke": true}
+{"event": "done", "stage": "clinical", "seconds": 1.53}
+{"event": "start", "stage": "eval", "arm": "A2", "holdout": "batch1", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"output": "eval", "arm": "A2", "M1": 0.033548259958958125, "M3": {"n": 150, "R_at_1": 0.006666666666666667, "R_at_10": 0.06666666666666667, "median_rank": 75.0, "chance_R_at_1": 0.006666666666666667, "chance_R_at_10": 0.06666666666666667}}
+{"event": "done", "stage": "eval", "seconds": 0.65}
+{"event": "start", "stage": "eval", "arm": "A2-EM", "holdout": "batch1", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"output": "eval", "arm": "A2-EM", "M1": 0.041126085246078296, "M3": {"n": 150, "R_at_1": 0.006666666666666667, "R_at_10": 0.06666666666666667, "median_rank": 75.0, "chance_R_at_1": 0.006666666666666667, "chance_R_at_10": 0.06666666666666667}}
+{"event": "done", "stage": "eval", "seconds": 0.66}
+{"event": "start", "stage": "eval", "arm": "direct", "holdout": "batch1", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"output": "eval", "arm": "direct", "M1": -0.07725737973564556, "M3": {"n": 150, "R_at_1": 0.006666666666666667, "R_at_10": 0.06666666666666667, "median_rank": 75.0, "chance_R_at_1": 0.006666666666666667, "chance_R_at_10": 0.06666666666666667}}
+{"event": "done", "stage": "eval", "seconds": 0.5}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/v2/n054_trimodal.py --stage all --smoke --device cpu --threads 2 --unit batch0 --out /tmp/codex_n054/v2_final_smoke/n054v2_batch0 --lf-unit /tmp/codex_n054/v2_final_smoke/n054v2_lf
+{"event": "start", "stage": "gs_encoder", "arm": "A1-LF", "holdout": "batch0", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"job": "gs_encoder", "step": 10, "loss": 3.2227232456207275, "val_loss": 4.962503242492676}
+{"job": "gs_encoder", "step": 20, "loss": 2.3863906860351562, "val_loss": 4.202348041534424}
+{"event": "done", "stage": "gs_encoder", "seconds": 1.62}
+{"event": "start", "stage": "gs_cache", "arm": "A1-LF", "holdout": "batch0", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"event": "done", "stage": "gs_cache", "seconds": 0.18}
+{"event": "start", "stage": "gs_encoder", "arm": "A3", "holdout": "batch0", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"job": "gs_encoder", "step": 10, "loss": 0.35436058044433594, "val_loss": 0.546872615814209}
+{"job": "gs_encoder", "step": 20, "loss": 0.3079005479812622, "val_loss": 0.4549608898162842}
+{"event": "done", "stage": "gs_encoder", "seconds": 1.2}
+{"event": "start", "stage": "gs_encoder", "arm": "A3", "holdout": "batch0", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"job": "gs_encoder", "step": 10, "loss": 1.5801010131835938, "val_loss": 2.111195697784424}
+{"job": "gs_encoder", "step": 20, "loss": 1.5661081075668335, "val_loss": 1.8448737335205079}
+{"event": "done", "stage": "gs_encoder", "seconds": 1.2}
+{"event": "start", "stage": "flow", "arm": "A1-LF", "holdout": "batch0", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"job": "flow", "step": 10, "loss": 0.06595469266176224, "val_loss": 0.05365685746073723}
+{"job": "flow", "step": 20, "loss": 0.03797215595841408, "val_loss": 0.03428211063146591}
+{"event": "done", "stage": "flow", "seconds": 0.11}
+{"event": "start", "stage": "flow", "arm": "A1-GS", "holdout": "batch0", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"job": "flow", "step": 10, "loss": 0.014977206476032734, "val_loss": 0.0134548619389534}
+{"job": "flow", "step": 20, "loss": 0.007180394604802132, "val_loss": 0.00787941925227642}
+{"event": "done", "stage": "flow", "seconds": 0.1}
+{"event": "start", "stage": "flow", "arm": "A2", "holdout": "batch0", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"job": "flow", "step": 10, "loss": 0.05358920246362686, "val_loss": 0.04210980609059334}
+{"job": "flow", "step": 20, "loss": 0.026273194700479507, "val_loss": 0.025663180276751518}
+{"event": "done", "stage": "flow", "seconds": 0.22}
+{"event": "start", "stage": "flow", "arm": "A2-EM", "holdout": "batch0", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"job": "flow", "step": 10, "loss": 0.05049126595258713, "val_loss": 0.039958905428647995}
+{"job": "flow", "step": 20, "loss": 0.02421853318810463, "val_loss": 0.024277154356241226}
+{"event": "done", "stage": "flow", "seconds": 0.09}
+{"event": "start", "stage": "flow", "arm": "A1-LF", "holdout": "batch0", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"job": "flow", "step": 10, "loss": 0.07035854458808899, "val_loss": 0.0597638338804245}
+{"job": "flow", "step": 20, "loss": 0.04199381172657013, "val_loss": 0.03918005898594856}
+{"event": "done", "stage": "flow", "seconds": 0.11}
+{"event": "start", "stage": "flow", "arm": "A1-GS", "holdout": "batch0", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"job": "flow", "step": 10, "loss": 0.019728543236851692, "val_loss": 0.01734178513288498}
+{"job": "flow", "step": 20, "loss": 0.011129804886877537, "val_loss": 0.011866666376590729}
+{"event": "done", "stage": "flow", "seconds": 0.1}
+{"event": "start", "stage": "flow", "arm": "A2", "holdout": "batch0", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"job": "flow", "step": 10, "loss": 0.05791013315320015, "val_loss": 0.04790356755256653}
+{"job": "flow", "step": 20, "loss": 0.03076128289103508, "val_loss": 0.030319346114993095}
+{"event": "done", "stage": "flow", "seconds": 0.1}
+{"event": "start", "stage": "flow", "arm": "A2-EM", "holdout": "batch0", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"job": "flow", "step": 10, "loss": 0.05477839335799217, "val_loss": 0.04546716436743736}
+{"job": "flow", "step": 20, "loss": 0.028561316430568695, "val_loss": 0.028803562745451927}
+{"event": "done", "stage": "flow", "seconds": 0.09}
+{"event": "start", "stage": "flow", "arm": "direct", "holdout": "batch0", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"job": "flow", "step": 10, "loss": 0.31615856289863586, "val_loss": 0.39350971579551697}
+{"job": "flow", "step": 20, "loss": 0.3192327916622162, "val_loss": 0.3694470226764679}
+{"event": "done", "stage": "flow", "seconds": 0.1}
+{"event": "start", "stage": "validation", "arm": "A3", "holdout": "batch0", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"output": "validation", "arm": "A3", "M1": -0.17301882559631582, "M3": {"n": 50, "R_at_1": 0.02, "R_at_10": 0.2, "median_rank": 25.5, "chance_R_at_1": 0.02, "chance_R_at_10": 0.2}}
+{"event": "done", "stage": "validation", "seconds": 0.16}
+{"event": "start", "stage": "validation", "arm": "A3", "holdout": "batch0", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"output": "validation", "arm": "A3", "M1": -0.1726747471245295, "M3": {"n": 50, "R_at_1": 0.02, "R_at_10": 0.2, "median_rank": 25.5, "chance_R_at_1": 0.02, "chance_R_at_10": 0.2}}
+{"event": "done", "stage": "validation", "seconds": 0.16}
+{"event": "start", "stage": "validation", "arm": "A1-LF", "holdout": "batch0", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"output": "validation", "arm": "A1-LF", "M1": 0.18037051262320722, "M3": {"n": 50, "R_at_1": 0.02, "R_at_10": 0.22, "median_rank": 25.5, "chance_R_at_1": 0.02, "chance_R_at_10": 0.2}}
+{"event": "done", "stage": "validation", "seconds": 0.25}
+{"event": "start", "stage": "validation", "arm": "A1-GS", "holdout": "batch0", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"output": "validation", "arm": "A1-GS", "M1": -0.15772705241344728, "M3": {"n": 50, "R_at_1": 0.02, "R_at_10": 0.22, "median_rank": 25.5, "chance_R_at_1": 0.02, "chance_R_at_10": 0.2}}
+{"event": "done", "stage": "validation", "seconds": 0.23}
+{"event": "start", "stage": "validation", "arm": "A2", "holdout": "batch0", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"output": "validation", "arm": "A2", "M1": 0.20784182694935788, "M3": {"n": 50, "R_at_1": 0.02, "R_at_10": 0.22, "median_rank": 25.5, "chance_R_at_1": 0.02, "chance_R_at_10": 0.2}}
+{"event": "done", "stage": "validation", "seconds": 0.23}
+{"event": "start", "stage": "validation", "arm": "A2-EM", "holdout": "batch0", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"output": "validation", "arm": "A2-EM", "M1": 0.2204958901553478, "M3": {"n": 50, "R_at_1": 0.02, "R_at_10": 0.22, "median_rank": 25.5, "chance_R_at_1": 0.02, "chance_R_at_10": 0.2}}
+{"event": "done", "stage": "validation", "seconds": 0.23}
+{"event": "start", "stage": "validation", "arm": "A1-LF", "holdout": "batch0", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"output": "validation", "arm": "A1-LF", "M1": 0.16104581103578455, "M3": {"n": 50, "R_at_1": 0.02, "R_at_10": 0.22, "median_rank": 25.5, "chance_R_at_1": 0.02, "chance_R_at_10": 0.2}}
+{"event": "done", "stage": "validation", "seconds": 0.24}
+{"event": "start", "stage": "validation", "arm": "A1-GS", "holdout": "batch0", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"output": "validation", "arm": "A1-GS", "M1": -0.17328688010830087, "M3": {"n": 50, "R_at_1": 0.02, "R_at_10": 0.22, "median_rank": 25.5, "chance_R_at_1": 0.02, "chance_R_at_10": 0.2}}
+{"event": "done", "stage": "validation", "seconds": 0.23}
+{"event": "start", "stage": "validation", "arm": "A2", "holdout": "batch0", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"output": "validation", "arm": "A2", "M1": 0.20653859222671195, "M3": {"n": 50, "R_at_1": 0.02, "R_at_10": 0.22, "median_rank": 25.5, "chance_R_at_1": 0.02, "chance_R_at_10": 0.2}}
+{"event": "done", "stage": "validation", "seconds": 0.23}
+{"event": "start", "stage": "validation", "arm": "A2-EM", "holdout": "batch0", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"output": "validation", "arm": "A2-EM", "M1": 0.23679934735810032, "M3": {"n": 50, "R_at_1": 0.02, "R_at_10": 0.22, "median_rank": 25.5, "chance_R_at_1": 0.02, "chance_R_at_10": 0.2}}
+{"event": "done", "stage": "validation", "seconds": 0.23}
+{"event": "start", "stage": "validation", "arm": "direct", "holdout": "batch0", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"output": "validation", "arm": "direct", "M1": 0.0943664484279046, "M3": {"n": 50, "R_at_1": 0.02, "R_at_10": 0.22, "median_rank": 25.5, "chance_R_at_1": 0.02, "chance_R_at_10": 0.2}}
+{"event": "done", "stage": "validation", "seconds": 0.17}
+{"event": "start", "stage": "eval", "arm": "A0", "holdout": "batch0", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"output": "eval", "arm": "A0", "M1": 0.7655425944175985, "M3": {"n": 150, "R_at_1": 0.06666666666666667, "R_at_10": 0.41333333333333333, "median_rank": 16.0, "chance_R_at_1": 0.006666666666666667, "chance_R_at_10": 0.06666666666666667}}
+{"event": "done", "stage": "eval", "seconds": 34.39}
+{"event": "start", "stage": "clinical", "arm": "A0", "holdout": "batch0", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+MLL23 basophil 2
+MLL23 eosinophil 2
+MLL23 hairy_cell 2
+MLL23 lymphocyte 2
+MLL23 lymphocyte_large_granular 2
+MLL23 metamyelocyte 2
+MLL23 monocyte 2
+MLL23 myelocyte 2
+MLL23 neutrophil_band 2
+MLL23 neutrophil_segmented 2
+MLL23 normoblast 2
+MLL23 plasma_cell 2
+{"status": "done", "pbc_n": 16, "mll_n": 24, "contrasts": 25, "smoke": true}
+{"event": "done", "stage": "clinical", "seconds": 11.27}
+{"event": "start", "stage": "eval", "arm": "A3", "holdout": "batch0", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"output": "eval", "arm": "A3", "M1": -0.35619342005882376, "M3": {"n": 150, "R_at_1": 0.006666666666666667, "R_at_10": 0.06666666666666667, "median_rank": 75.5, "chance_R_at_1": 0.006666666666666667, "chance_R_at_10": 0.06666666666666667}}
+{"event": "done", "stage": "eval", "seconds": 0.42}
+{"event": "start", "stage": "eval", "arm": "A3", "holdout": "batch0", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"output": "eval", "arm": "A3", "M1": -0.34740249018941244, "M3": {"n": 150, "R_at_1": 0.006666666666666667, "R_at_10": 0.06666666666666667, "median_rank": 75.5, "chance_R_at_1": 0.006666666666666667, "chance_R_at_10": 0.06666666666666667}}
+{"event": "done", "stage": "eval", "seconds": 0.4}
+{"event": "start", "stage": "clinical", "arm": "A3", "holdout": "batch0", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+MLL23 basophil 2
+MLL23 eosinophil 2
+MLL23 hairy_cell 2
+MLL23 lymphocyte 2
+MLL23 lymphocyte_large_granular 2
+MLL23 metamyelocyte 2
+MLL23 monocyte 2
+MLL23 myelocyte 2
+MLL23 neutrophil_band 2
+MLL23 neutrophil_segmented 2
+MLL23 normoblast 2
+MLL23 plasma_cell 2
+{"status": "done", "pbc_n": 16, "mll_n": 24, "contrasts": 25, "smoke": true}
+{"event": "done", "stage": "clinical", "seconds": 1.0}
+{"event": "start", "stage": "eval", "arm": "A1-LF", "holdout": "batch0", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"output": "eval", "arm": "A1-LF", "M1": 0.22832746598301357, "M3": {"n": 150, "R_at_1": 0.006666666666666667, "R_at_10": 0.06666666666666667, "median_rank": 75.5, "chance_R_at_1": 0.006666666666666667, "chance_R_at_10": 0.06666666666666667}}
+{"event": "done", "stage": "eval", "seconds": 0.72}
+{"event": "start", "stage": "clinical", "arm": "A1-LF", "holdout": "batch0", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+MLL23 basophil 2
+MLL23 eosinophil 2
+MLL23 hairy_cell 2
+MLL23 lymphocyte 2
+MLL23 lymphocyte_large_granular 2
+MLL23 metamyelocyte 2
+MLL23 monocyte 2
+MLL23 myelocyte 2
+MLL23 neutrophil_band 2
+MLL23 neutrophil_segmented 2
+MLL23 normoblast 2
+MLL23 plasma_cell 2
+{"status": "done", "pbc_n": 16, "mll_n": 24, "contrasts": 25, "smoke": true}
+{"event": "done", "stage": "clinical", "seconds": 1.72}
+{"event": "start", "stage": "eval", "arm": "A1-GS", "holdout": "batch0", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"output": "eval", "arm": "A1-GS", "M1": -0.0687172430579053, "M3": {"n": 150, "R_at_1": 0.006666666666666667, "R_at_10": 0.06666666666666667, "median_rank": 75.5, "chance_R_at_1": 0.006666666666666667, "chance_R_at_10": 0.06666666666666667}}
+{"event": "done", "stage": "eval", "seconds": 0.67}
+{"event": "start", "stage": "clinical", "arm": "A1-GS", "holdout": "batch0", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+MLL23 basophil 2
+MLL23 eosinophil 2
+MLL23 hairy_cell 2
+MLL23 lymphocyte 2
+MLL23 lymphocyte_large_granular 2
+MLL23 metamyelocyte 2
+MLL23 monocyte 2
+MLL23 myelocyte 2
+MLL23 neutrophil_band 2
+MLL23 neutrophil_segmented 2
+MLL23 normoblast 2
+MLL23 plasma_cell 2
+{"status": "done", "pbc_n": 16, "mll_n": 24, "contrasts": 25, "smoke": true}
+{"event": "done", "stage": "clinical", "seconds": 1.52}
+{"event": "start", "stage": "eval", "arm": "A2", "holdout": "batch0", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"output": "eval", "arm": "A2", "M1": 0.1797350612894136, "M3": {"n": 150, "R_at_1": 0.006666666666666667, "R_at_10": 0.06666666666666667, "median_rank": 75.5, "chance_R_at_1": 0.006666666666666667, "chance_R_at_10": 0.06666666666666667}}
+{"event": "done", "stage": "eval", "seconds": 0.68}
+{"event": "start", "stage": "clinical", "arm": "A2", "holdout": "batch0", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+MLL23 basophil 2
+MLL23 eosinophil 2
+MLL23 hairy_cell 2
+MLL23 lymphocyte 2
+MLL23 lymphocyte_large_granular 2
+MLL23 metamyelocyte 2
+MLL23 monocyte 2
+MLL23 myelocyte 2
+MLL23 neutrophil_band 2
+MLL23 neutrophil_segmented 2
+MLL23 normoblast 2
+MLL23 plasma_cell 2
+{"status": "done", "pbc_n": 16, "mll_n": 24, "contrasts": 25, "smoke": true}
+{"event": "done", "stage": "clinical", "seconds": 1.54}
+{"event": "start", "stage": "eval", "arm": "A2-EM", "holdout": "batch0", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"output": "eval", "arm": "A2-EM", "M1": 0.18424989387810978, "M3": {"n": 150, "R_at_1": 0.006666666666666667, "R_at_10": 0.06666666666666667, "median_rank": 75.5, "chance_R_at_1": 0.006666666666666667, "chance_R_at_10": 0.06666666666666667}}
+{"event": "done", "stage": "eval", "seconds": 0.69}
+{"event": "start", "stage": "eval", "arm": "A1-LF", "holdout": "batch0", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"output": "eval", "arm": "A1-LF", "M1": 0.22041276963243933, "M3": {"n": 150, "R_at_1": 0.006666666666666667, "R_at_10": 0.06666666666666667, "median_rank": 75.5, "chance_R_at_1": 0.006666666666666667, "chance_R_at_10": 0.06666666666666667}}
+{"event": "done", "stage": "eval", "seconds": 0.72}
+{"event": "start", "stage": "eval", "arm": "A1-GS", "holdout": "batch0", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"output": "eval", "arm": "A1-GS", "M1": -0.1389051161423881, "M3": {"n": 150, "R_at_1": 0.006666666666666667, "R_at_10": 0.06666666666666667, "median_rank": 75.5, "chance_R_at_1": 0.006666666666666667, "chance_R_at_10": 0.06666666666666667}}
+{"event": "done", "stage": "eval", "seconds": 0.68}
+{"event": "start", "stage": "eval", "arm": "A2", "holdout": "batch0", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"output": "eval", "arm": "A2", "M1": 0.18105904889489766, "M3": {"n": 150, "R_at_1": 0.006666666666666667, "R_at_10": 0.06666666666666667, "median_rank": 75.5, "chance_R_at_1": 0.006666666666666667, "chance_R_at_10": 0.06666666666666667}}
+{"event": "done", "stage": "eval", "seconds": 0.68}
+{"event": "start", "stage": "eval", "arm": "A2-EM", "holdout": "batch0", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"output": "eval", "arm": "A2-EM", "M1": 0.19115320635439922, "M3": {"n": 150, "R_at_1": 0.006666666666666667, "R_at_10": 0.06666666666666667, "median_rank": 75.5, "chance_R_at_1": 0.006666666666666667, "chance_R_at_10": 0.06666666666666667}}
+{"event": "done", "stage": "eval", "seconds": 0.68}
+{"event": "start", "stage": "eval", "arm": "direct", "holdout": "batch0", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"output": "eval", "arm": "direct", "M1": 0.0036549043304453703, "M3": {"n": 150, "R_at_1": 0.006666666666666667, "R_at_10": 0.06666666666666667, "median_rank": 75.5, "chance_R_at_1": 0.006666666666666667, "chance_R_at_10": 0.06666666666666667}}
+{"event": "done", "stage": "eval", "seconds": 0.5}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/v2/n054_trimodal.py --stage all --smoke --device cpu --threads 2 --unit lf --out /tmp/codex_n054/v2_final_smoke/n054v2_lf
+SKIP lf_spaces /tmp/codex_n054/v2_final_smoke/n054v2_lf/space1
+SKIP lf_spaces /tmp/codex_n054/v2_final_smoke/n054v2_lf/hub
+SKIP completion /tmp/codex_n054/v2_final_smoke/n054v2_lf/completion
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/v2/n054_trimodal.py --stage all --smoke --device cpu --threads 2 --unit batch1 --out /tmp/codex_n054/v2_final_smoke/n054v2_batch1 --lf-unit /tmp/codex_n054/v2_final_smoke/n054v2_lf
+SKIP gs_encoder /tmp/codex_n054/v2_final_smoke/n054v2_batch1/space2
+SKIP gs_cache /tmp/codex_n054/v2_final_smoke/n054v2_batch1/space2/source_cache
+SKIP gs_encoder /tmp/codex_n054/v2_final_smoke/n054v2_batch1/A3_w0
+SKIP gs_encoder /tmp/codex_n054/v2_final_smoke/n054v2_batch1/A3_w0.5
+SKIP flow /tmp/codex_n054/v2_final_smoke/n054v2_batch1/A1-LF_s0
+SKIP flow /tmp/codex_n054/v2_final_smoke/n054v2_batch1/A1-GS_s0
+SKIP flow /tmp/codex_n054/v2_final_smoke/n054v2_batch1/A2_s0
+SKIP flow /tmp/codex_n054/v2_final_smoke/n054v2_batch1/A2-EM_s0
+SKIP flow /tmp/codex_n054/v2_final_smoke/n054v2_batch1/A1-LF_s0.1
+SKIP flow /tmp/codex_n054/v2_final_smoke/n054v2_batch1/A1-GS_s0.1
+SKIP flow /tmp/codex_n054/v2_final_smoke/n054v2_batch1/A2_s0.1
+SKIP flow /tmp/codex_n054/v2_final_smoke/n054v2_batch1/A2-EM_s0.1
+SKIP flow /tmp/codex_n054/v2_final_smoke/n054v2_batch1/direct
+SKIP validation /tmp/codex_n054/v2_final_smoke/n054v2_batch1/A3_w0
+SKIP validation /tmp/codex_n054/v2_final_smoke/n054v2_batch1/A3_w0.5
+SKIP validation /tmp/codex_n054/v2_final_smoke/n054v2_batch1/A1-LF_s0
+SKIP validation /tmp/codex_n054/v2_final_smoke/n054v2_batch1/A1-GS_s0
+SKIP validation /tmp/codex_n054/v2_final_smoke/n054v2_batch1/A2_s0
+SKIP validation /tmp/codex_n054/v2_final_smoke/n054v2_batch1/A2-EM_s0
+SKIP validation /tmp/codex_n054/v2_final_smoke/n054v2_batch1/A1-LF_s0.1
+SKIP validation /tmp/codex_n054/v2_final_smoke/n054v2_batch1/A1-GS_s0.1
+SKIP validation /tmp/codex_n054/v2_final_smoke/n054v2_batch1/A2_s0.1
+SKIP validation /tmp/codex_n054/v2_final_smoke/n054v2_batch1/A2-EM_s0.1
+SKIP validation /tmp/codex_n054/v2_final_smoke/n054v2_batch1/direct
+SKIP eval /tmp/codex_n054/v2_final_smoke/n054v2_batch1/A0
+SKIP clinical /tmp/codex_n054/v2_final_smoke/n054v2_batch1/A0
+SKIP eval /tmp/codex_n054/v2_final_smoke/n054v2_batch1/A3_w0
+SKIP eval /tmp/codex_n054/v2_final_smoke/n054v2_batch1/A3_w0.5
+SKIP clinical /tmp/codex_n054/v2_final_smoke/n054v2_batch1/A3_w0.5
+SKIP eval /tmp/codex_n054/v2_final_smoke/n054v2_batch1/A1-LF_s0
+SKIP clinical /tmp/codex_n054/v2_final_smoke/n054v2_batch1/A1-LF_s0
+SKIP eval /tmp/codex_n054/v2_final_smoke/n054v2_batch1/A1-GS_s0
+SKIP eval /tmp/codex_n054/v2_final_smoke/n054v2_batch1/A2_s0
+SKIP clinical /tmp/codex_n054/v2_final_smoke/n054v2_batch1/A2_s0
+SKIP eval /tmp/codex_n054/v2_final_smoke/n054v2_batch1/A2-EM_s0
+SKIP eval /tmp/codex_n054/v2_final_smoke/n054v2_batch1/A1-LF_s0.1
+SKIP eval /tmp/codex_n054/v2_final_smoke/n054v2_batch1/A1-GS_s0.1
+SKIP clinical /tmp/codex_n054/v2_final_smoke/n054v2_batch1/A1-GS_s0.1
+SKIP eval /tmp/codex_n054/v2_final_smoke/n054v2_batch1/A2_s0.1
+SKIP eval /tmp/codex_n054/v2_final_smoke/n054v2_batch1/A2-EM_s0.1
+SKIP eval /tmp/codex_n054/v2_final_smoke/n054v2_batch1/direct
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/v2/n054_trimodal.py --stage gs_encoder --unit batch1 --holdout batch1 --out /tmp/codex_n054/v2_final_smoke/resume_reference --space-dir /tmp/codex_n054/v2_final_smoke/n054v2_lf/space1 --ridge-cache /tmp/codex_n054/v2_final_smoke/n054v2_lf/ridge.npz --lf-unit /tmp/codex_n054/v2_final_smoke/n054v2_lf --arm A1-LF --smoke --device cpu --threads 2
+{"event": "start", "stage": "gs_encoder", "arm": "A1-LF", "holdout": "batch1", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411"}
+{"job": "gs_encoder", "step": 10, "loss": 5.693236351013184, "val_loss": 4.739777317047119}
+{"job": "gs_encoder", "step": 20, "loss": 2.9835848808288574, "val_loss": 3.615548362731934}
+{"event": "done", "stage": "gs_encoder", "seconds": 1.62}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/v2/n054_aggregate.py --units /tmp/codex_n054/v2_final_smoke/n054v2_batch1 /tmp/codex_n054/v2_final_smoke/n054v2_batch0 --lf-unit /tmp/codex_n054/v2_final_smoke/n054v2_lf --out /tmp/codex_n054/v2_final_smoke/n054v2_tables
+{"primary": 10, "full_grid": 24, "diagnostics": 6, "out": "/tmp/codex_n054/v2_final_smoke/n054v2_tables"}
+COMMAND /tmp/codex_n054/venv/bin/python -I /tmp/codex_n054/v2_final_smoke/changed.py --stage all --smoke --device cpu --threads 2 --unit lf --out /tmp/codex_n054/v2_final_smoke/n054v2_lf
+Traceback (most recent call last):
+  File "/tmp/codex_n054/v2_final_smoke/changed.py", line 1133, in <module>
+    if __name__=='__main__': main()
+                             ~~~~^^
+  File "/tmp/codex_n054/v2_final_smoke/changed.py", line 1127, in main
+    if a.stage=='all': driver(a,dev)
+                       ~~~~~~^^^^^^^
+  File "/tmp/codex_n054/v2_final_smoke/changed.py", line 1032, in driver
+    run_stage(c,d,dev,outputs=[root/name/'lf_spaces.pt',root/'ridge.npz'])
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/codex_n054/v2_final_smoke/changed.py", line 968, in run_stage
+    if prior['signature']!=sig: raise ValueError(f'stage signature mismatch: {mark}; use a new versioned output directory')
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: stage signature mismatch: /tmp/codex_n054/v2_final_smoke/n054v2_lf/space1/lf_spaces.done.json; use a new versioned output directory
+SMOKE PASSED {"status": "passed", "seconds": 156.77, "scratch": "/tmp/codex_n054/v2_final_smoke", "code_signature": "05183097e503337572daab9b36e79516252050f050c0ed0428f321b3845d7411", "units": ["lf", "batch1", "batch0"], "signal": "SIGTERM via --stage all driver", "interrupted_step": 10, "signal_to_exit_seconds": 0.7515921592712402, "resume_bitwise_equal": true, "completed_unit_mtimes_unchanged": true, "gs_fits": 6, "lf_space_fits": 2, "completion_protocol_fits": 3, "clinical_evaluations": 10, "clinical_images_per_run": {"PBC": 16, "MLL23": 24}, "primary_rows": 10, "grid_rows": 24, "completion_rows": 39, "per_observed_marker_C1_rows": 24, "direct_and_flow_capacity": 535808}

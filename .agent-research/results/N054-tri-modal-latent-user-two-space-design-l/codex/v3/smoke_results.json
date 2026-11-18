@@ -1,0 +1,592 @@
+{
+  "status": "passed",
+  "seconds": 173.75,
+  "scratch": "/tmp/codex_n054/v3_final_smoke",
+  "code_signature": "811ffe1c23e7d78d9788b89c70d36dee3c3740ead25000c42c1d9bace14ec511",
+  "units": [
+    "lf",
+    "batch1",
+    "batch0"
+  ],
+  "signal": "SIGTERM via --stage all driver",
+  "interrupted_step": 10,
+  "signal_to_exit_seconds": 0.7413320541381836,
+  "resume_bitwise_equal": true,
+  "completed_unit_mtimes_unchanged": true,
+  "gs_fits": 6,
+  "lf_space_fits": 2,
+  "completion_protocol_fits": 3,
+  "clinical_evaluations": 12,
+  "clinical_images_per_run": {
+    "PBC": 16,
+    "MLL23": 24
+  },
+  "primary_rows": 12,
+  "grid_rows": 34,
+  "completion_rows": 39,
+  "per_observed_marker_C1_rows": 24,
+  "direct_and_flow_capacity": 535808,
+  "shared_sources": [
+    {
+      "run": "/tmp/codex_n054/v3_final_smoke/n054v3_batch1/A2_euclidean_s0",
+      "space": "/tmp/codex_n054/v3_final_smoke/n054v3_lf/space1",
+      "gs": "/tmp/codex_n054/v3_final_smoke/n054v3_batch1/space2"
+    },
+    {
+      "run": "/tmp/codex_n054/v3_final_smoke/n054v3_batch1/direct_pre",
+      "space": "/tmp/codex_n054/v3_final_smoke/n054v3_lf/space1",
+      "gs": "/tmp/codex_n054/v3_final_smoke/n054v3_batch1/space2"
+    },
+    {
+      "run": "/tmp/codex_n054/v3_final_smoke/n054v3_batch1/A2_s0",
+      "space": "/tmp/codex_n054/v3_final_smoke/n054v3_lf/space1",
+      "gs": "/tmp/codex_n054/v3_final_smoke/n054v3_batch1/space2"
+    },
+    {
+      "run": "/tmp/codex_n054/v3_final_smoke/n054v3_batch1/A2-EM_s0.1",
+      "space": "/tmp/codex_n054/v3_final_smoke/n054v3_lf/space1",
+      "gs": "/tmp/codex_n054/v3_final_smoke/n054v3_batch1/space2"
+    },
+    {
+      "run": "/tmp/codex_n054/v3_final_smoke/n054v3_batch1/A1-LF_s0",
+      "space": "/tmp/codex_n054/v3_final_smoke/n054v3_lf/space1",
+      "gs": "/tmp/codex_n054/v3_final_smoke/n054v3_batch1/space2"
+    },
+    {
+      "run": "/tmp/codex_n054/v3_final_smoke/n054v3_batch1/direct",
+      "space": "/tmp/codex_n054/v3_final_smoke/n054v3_lf/space1",
+      "gs": "/tmp/codex_n054/v3_final_smoke/n054v3_batch1/space2"
+    },
+    {
+      "run": "/tmp/codex_n054/v3_final_smoke/n054v3_batch1/A1-GS_insample_s0",
+      "space": "/tmp/codex_n054/v3_final_smoke/n054v3_lf/space1",
+      "gs": "/tmp/codex_n054/v3_final_smoke/n054v3_batch1/space2"
+    },
+    {
+      "run": "/tmp/codex_n054/v3_final_smoke/n054v3_batch1/A1-GS_oos_s0",
+      "space": "/tmp/codex_n054/v3_final_smoke/n054v3_lf/space1",
+      "gs": "/tmp/codex_n054/v3_final_smoke/n054v3_batch1/space2"
+    },
+    {
+      "run": "/tmp/codex_n054/v3_final_smoke/n054v3_batch1/A2_euclidean_s0.1",
+      "space": "/tmp/codex_n054/v3_final_smoke/n054v3_lf/space1",
+      "gs": "/tmp/codex_n054/v3_final_smoke/n054v3_batch1/space2"
+    },
+    {
+      "run": "/tmp/codex_n054/v3_final_smoke/n054v3_batch1/A1-LF_s0.1",
+      "space": "/tmp/codex_n054/v3_final_smoke/n054v3_lf/space1",
+      "gs": "/tmp/codex_n054/v3_final_smoke/n054v3_batch1/space2"
+    },
+    {
+      "run": "/tmp/codex_n054/v3_final_smoke/n054v3_batch1/A1-GS_insample_s0.1",
+      "space": "/tmp/codex_n054/v3_final_smoke/n054v3_lf/space1",
+      "gs": "/tmp/codex_n054/v3_final_smoke/n054v3_batch1/space2"
+    },
+    {
+      "run": "/tmp/codex_n054/v3_final_smoke/n054v3_batch1/A2_s0.1",
+      "space": "/tmp/codex_n054/v3_final_smoke/n054v3_lf/space1",
+      "gs": "/tmp/codex_n054/v3_final_smoke/n054v3_batch1/space2"
+    },
+    {
+      "run": "/tmp/codex_n054/v3_final_smoke/n054v3_batch1/A2-EM_s0",
+      "space": "/tmp/codex_n054/v3_final_smoke/n054v3_lf/space1",
+      "gs": "/tmp/codex_n054/v3_final_smoke/n054v3_batch1/space2"
+    },
+    {
+      "run": "/tmp/codex_n054/v3_final_smoke/n054v3_batch1/direct_insample",
+      "space": "/tmp/codex_n054/v3_final_smoke/n054v3_lf/space1",
+      "gs": "/tmp/codex_n054/v3_final_smoke/n054v3_batch1/space2"
+    },
+    {
+      "run": "/tmp/codex_n054/v3_final_smoke/n054v3_batch0/A2_euclidean_s0",
+      "space": "/tmp/codex_n054/v3_final_smoke/n054v3_lf/space1",
+      "gs": "/tmp/codex_n054/v3_final_smoke/n054v3_batch0/space2"
+    },
+    {
+      "run": "/tmp/codex_n054/v3_final_smoke/n054v3_batch0/direct_pre",
+      "space": "/tmp/codex_n054/v3_final_smoke/n054v3_lf/space1",
+      "gs": "/tmp/codex_n054/v3_final_smoke/n054v3_batch0/space2"
+    },
+    {
+      "run": "/tmp/codex_n054/v3_final_smoke/n054v3_batch0/A2_s0",
+      "space": "/tmp/codex_n054/v3_final_smoke/n054v3_lf/space1",
+      "gs": "/tmp/codex_n054/v3_final_smoke/n054v3_batch0/space2"
+    },
+    {
+      "run": "/tmp/codex_n054/v3_final_smoke/n054v3_batch0/A2-EM_s0.1",
+      "space": "/tmp/codex_n054/v3_final_smoke/n054v3_lf/space1",
+      "gs": "/tmp/codex_n054/v3_final_smoke/n054v3_batch0/space2"
+    },
+    {
+      "run": "/tmp/codex_n054/v3_final_smoke/n054v3_batch0/A1-LF_s0",
+      "space": "/tmp/codex_n054/v3_final_smoke/n054v3_lf/space1",
+      "gs": "/tmp/codex_n054/v3_final_smoke/n054v3_batch0/space2"
+    },
+    {
+      "run": "/tmp/codex_n054/v3_final_smoke/n054v3_batch0/direct",
+      "space": "/tmp/codex_n054/v3_final_smoke/n054v3_lf/space1",
+      "gs": "/tmp/codex_n054/v3_final_smoke/n054v3_batch0/space2"
+    },
+    {
+      "run": "/tmp/codex_n054/v3_final_smoke/n054v3_batch0/A1-GS_insample_s0",
+      "space": "/tmp/codex_n054/v3_final_smoke/n054v3_lf/space1",
+      "gs": "/tmp/codex_n054/v3_final_smoke/n054v3_batch0/space2"
+    },
+    {
+      "run": "/tmp/codex_n054/v3_final_smoke/n054v3_batch0/A1-GS_oos_s0",
+      "space": "/tmp/codex_n054/v3_final_smoke/n054v3_lf/space1",
+      "gs": "/tmp/codex_n054/v3_final_smoke/n054v3_batch0/space2"
+    },
+    {
+      "run": "/tmp/codex_n054/v3_final_smoke/n054v3_batch0/A2_euclidean_s0.1",
+      "space": "/tmp/codex_n054/v3_final_smoke/n054v3_lf/space1",
+      "gs": "/tmp/codex_n054/v3_final_smoke/n054v3_batch0/space2"
+    },
+    {
+      "run": "/tmp/codex_n054/v3_final_smoke/n054v3_batch0/A1-LF_s0.1",
+      "space": "/tmp/codex_n054/v3_final_smoke/n054v3_lf/space1",
+      "gs": "/tmp/codex_n054/v3_final_smoke/n054v3_batch0/space2"
+    },
+    {
+      "run": "/tmp/codex_n054/v3_final_smoke/n054v3_batch0/A1-GS_insample_s0.1",
+      "space": "/tmp/codex_n054/v3_final_smoke/n054v3_lf/space1",
+      "gs": "/tmp/codex_n054/v3_final_smoke/n054v3_batch0/space2"
+    },
+    {
+      "run": "/tmp/codex_n054/v3_final_smoke/n054v3_batch0/A2_s0.1",
+      "space": "/tmp/codex_n054/v3_final_smoke/n054v3_lf/space1",
+      "gs": "/tmp/codex_n054/v3_final_smoke/n054v3_batch0/space2"
+    },
+    {
+      "run": "/tmp/codex_n054/v3_final_smoke/n054v3_batch0/A2-EM_s0",
+      "space": "/tmp/codex_n054/v3_final_smoke/n054v3_lf/space1",
+      "gs": "/tmp/codex_n054/v3_final_smoke/n054v3_batch0/space2"
+    },
+    {
+      "run": "/tmp/codex_n054/v3_final_smoke/n054v3_batch0/direct_insample",
+      "space": "/tmp/codex_n054/v3_final_smoke/n054v3_lf/space1",
+      "gs": "/tmp/codex_n054/v3_final_smoke/n054v3_batch0/space2"
+    }
+  ],
+  "runs": [
+    {
+      "unit": "n054v3_batch1",
+      "arm": "A2",
+      "M1": 0.04622645522662616,
+      "selected": false
+    },
+    {
+      "unit": "n054v3_batch1",
+      "arm": "A0",
+      "M1": 0.2802649507630704,
+      "selected": true
+    },
+    {
+      "unit": "n054v3_batch1",
+      "arm": "direct",
+      "M1": -0.03878011242212599,
+      "selected": false
+    },
+    {
+      "unit": "n054v3_batch1",
+      "arm": "A2",
+      "M1": 0.02516844796555488,
+      "selected": false
+    },
+    {
+      "unit": "n054v3_batch1",
+      "arm": "A2-EM",
+      "M1": 0.041126085246078296,
+      "selected": false
+    },
+    {
+      "unit": "n054v3_batch1",
+      "arm": "A1-LF",
+      "M1": 0.0990760000519172,
+      "selected": true
+    },
+    {
+      "unit": "n054v3_batch1",
+      "arm": "direct",
+      "M1": -0.022833214638696354,
+      "selected": true
+    },
+    {
+      "unit": "n054v3_batch1",
+      "arm": "A1-GS",
+      "M1": -0.2659816604347187,
+      "selected": false
+    },
+    {
+      "unit": "n054v3_batch1",
+      "arm": "A3",
+      "M1": -0.1461060145338738,
+      "selected": false
+    },
+    {
+      "unit": "n054v3_batch1",
+      "arm": "A1-GS",
+      "M1": -0.2608928595123535,
+      "selected": true
+    },
+    {
+      "unit": "n054v3_batch1",
+      "arm": "A2",
+      "M1": 0.033548259958958125,
+      "selected": false
+    },
+    {
+      "unit": "n054v3_batch1",
+      "arm": "A1-LF",
+      "M1": 0.05468713173370721,
+      "selected": false
+    },
+    {
+      "unit": "n054v3_batch1",
+      "arm": "A1-GS",
+      "M1": -0.2392203599103121,
+      "selected": false
+    },
+    {
+      "unit": "n054v3_batch1",
+      "arm": "A2",
+      "M1": 0.05996813291481674,
+      "selected": true
+    },
+    {
+      "unit": "n054v3_batch1",
+      "arm": "A3",
+      "M1": -0.132171922433774,
+      "selected": true
+    },
+    {
+      "unit": "n054v3_batch1",
+      "arm": "A2-EM",
+      "M1": 0.04695571234483956,
+      "selected": false
+    },
+    {
+      "unit": "n054v3_batch1",
+      "arm": "direct",
+      "M1": -0.02891518959528414,
+      "selected": false
+    },
+    {
+      "unit": "n054v3_batch0",
+      "arm": "A2",
+      "M1": 0.1797350612894136,
+      "selected": false
+    },
+    {
+      "unit": "n054v3_batch0",
+      "arm": "A0",
+      "M1": 0.7655425944175985,
+      "selected": true
+    },
+    {
+      "unit": "n054v3_batch0",
+      "arm": "direct",
+      "M1": -0.3598551445797862,
+      "selected": false
+    },
+    {
+      "unit": "n054v3_batch0",
+      "arm": "A2",
+      "M1": 0.06622059440444299,
+      "selected": false
+    },
+    {
+      "unit": "n054v3_batch0",
+      "arm": "A2-EM",
+      "M1": 0.19115320635439922,
+      "selected": false
+    },
+    {
+      "unit": "n054v3_batch0",
+      "arm": "A1-LF",
+      "M1": 0.22832746598301357,
+      "selected": true
+    },
+    {
+      "unit": "n054v3_batch0",
+      "arm": "direct",
+      "M1": -0.40705159503349764,
+      "selected": true
+    },
+    {
+      "unit": "n054v3_batch0",
+      "arm": "A1-GS",
+      "M1": -0.0687172430579053,
+      "selected": false
+    },
+    {
+      "unit": "n054v3_batch0",
+      "arm": "A3",
+      "M1": -0.35619342005882376,
+      "selected": false
+    },
+    {
+      "unit": "n054v3_batch0",
+      "arm": "A1-GS",
+      "M1": -0.1863822440473926,
+      "selected": true
+    },
+    {
+      "unit": "n054v3_batch0",
+      "arm": "A2",
+      "M1": 0.18105904889489766,
+      "selected": false
+    },
+    {
+      "unit": "n054v3_batch0",
+      "arm": "A1-LF",
+      "M1": 0.22041276963243933,
+      "selected": false
+    },
+    {
+      "unit": "n054v3_batch0",
+      "arm": "A1-GS",
+      "M1": -0.1389051161423881,
+      "selected": false
+    },
+    {
+      "unit": "n054v3_batch0",
+      "arm": "A2",
+      "M1": 0.08126998282521058,
+      "selected": true
+    },
+    {
+      "unit": "n054v3_batch0",
+      "arm": "A3",
+      "M1": -0.34740249018941244,
+      "selected": true
+    },
+    {
+      "unit": "n054v3_batch0",
+      "arm": "A2-EM",
+      "M1": 0.18424989387810978,
+      "selected": false
+    },
+    {
+      "unit": "n054v3_batch0",
+      "arm": "direct",
+      "M1": -0.2396173013632002,
+      "selected": false
+    }
+  ],
+  "commands": [
+    {
+      "command": [
+        "/tmp/codex_n054/venv/bin/python",
+        "-I",
+        "-B",
+        "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/v3/n054_trimodal.py",
+        "--stage",
+        "all",
+        "--smoke",
+        "--device",
+        "cpu",
+        "--threads",
+        "2",
+        "--unit",
+        "lf",
+        "--out",
+        "/tmp/codex_n054/v3_final_smoke/n054v3_lf"
+      ],
+      "exit": 0,
+      "signal_to_exit_seconds": null
+    },
+    {
+      "command": [
+        "/tmp/codex_n054/venv/bin/python",
+        "-I",
+        "-B",
+        "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/v3/n054_trimodal.py",
+        "--stage",
+        "all",
+        "--smoke",
+        "--device",
+        "cpu",
+        "--threads",
+        "2",
+        "--unit",
+        "batch1",
+        "--out",
+        "/tmp/codex_n054/v3_final_smoke/n054v3_batch1",
+        "--lf-unit",
+        "/tmp/codex_n054/v3_final_smoke/n054v3_lf"
+      ],
+      "exit": 143,
+      "signal_to_exit_seconds": 0.7413320541381836
+    },
+    {
+      "command": [
+        "/tmp/codex_n054/venv/bin/python",
+        "-I",
+        "-B",
+        "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/v3/n054_trimodal.py",
+        "--stage",
+        "all",
+        "--smoke",
+        "--device",
+        "cpu",
+        "--threads",
+        "2",
+        "--unit",
+        "batch1",
+        "--out",
+        "/tmp/codex_n054/v3_final_smoke/n054v3_batch1",
+        "--lf-unit",
+        "/tmp/codex_n054/v3_final_smoke/n054v3_lf"
+      ],
+      "exit": 0,
+      "signal_to_exit_seconds": null
+    },
+    {
+      "command": [
+        "/tmp/codex_n054/venv/bin/python",
+        "-I",
+        "-B",
+        "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/v3/n054_trimodal.py",
+        "--stage",
+        "all",
+        "--smoke",
+        "--device",
+        "cpu",
+        "--threads",
+        "2",
+        "--unit",
+        "batch0",
+        "--out",
+        "/tmp/codex_n054/v3_final_smoke/n054v3_batch0",
+        "--lf-unit",
+        "/tmp/codex_n054/v3_final_smoke/n054v3_lf"
+      ],
+      "exit": 0,
+      "signal_to_exit_seconds": null
+    },
+    {
+      "command": [
+        "/tmp/codex_n054/venv/bin/python",
+        "-I",
+        "-B",
+        "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/v3/n054_trimodal.py",
+        "--stage",
+        "all",
+        "--smoke",
+        "--device",
+        "cpu",
+        "--threads",
+        "2",
+        "--unit",
+        "lf",
+        "--out",
+        "/tmp/codex_n054/v3_final_smoke/n054v3_lf"
+      ],
+      "exit": 0,
+      "signal_to_exit_seconds": null
+    },
+    {
+      "command": [
+        "/tmp/codex_n054/venv/bin/python",
+        "-I",
+        "-B",
+        "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/v3/n054_trimodal.py",
+        "--stage",
+        "all",
+        "--smoke",
+        "--device",
+        "cpu",
+        "--threads",
+        "2",
+        "--unit",
+        "batch1",
+        "--out",
+        "/tmp/codex_n054/v3_final_smoke/n054v3_batch1",
+        "--lf-unit",
+        "/tmp/codex_n054/v3_final_smoke/n054v3_lf"
+      ],
+      "exit": 0,
+      "signal_to_exit_seconds": null
+    },
+    {
+      "command": [
+        "/tmp/codex_n054/venv/bin/python",
+        "-I",
+        "-B",
+        "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/v3/n054_trimodal.py",
+        "--stage",
+        "gs_encoder",
+        "--unit",
+        "batch1",
+        "--holdout",
+        "batch1",
+        "--out",
+        "/tmp/codex_n054/v3_final_smoke/resume_reference",
+        "--space-dir",
+        "/tmp/codex_n054/v3_final_smoke/n054v3_lf/space1",
+        "--ridge-cache",
+        "/tmp/codex_n054/v3_final_smoke/n054v3_lf/ridge.npz",
+        "--lf-unit",
+        "/tmp/codex_n054/v3_final_smoke/n054v3_lf",
+        "--arm",
+        "A1-LF",
+        "--smoke",
+        "--device",
+        "cpu",
+        "--threads",
+        "2"
+      ],
+      "exit": 0,
+      "signal_to_exit_seconds": null
+    },
+    {
+      "command": [
+        "/tmp/codex_n054/venv/bin/python",
+        "-I",
+        "-B",
+        "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/v3/n054_aggregate.py",
+        "--units",
+        "/tmp/codex_n054/v3_final_smoke/n054v3_batch1",
+        "/tmp/codex_n054/v3_final_smoke/n054v3_batch0",
+        "--lf-unit",
+        "/tmp/codex_n054/v3_final_smoke/n054v3_lf",
+        "--out",
+        "/tmp/codex_n054/v3_final_smoke/n054v3_tables"
+      ],
+      "exit": 0,
+      "signal_to_exit_seconds": null
+    },
+    {
+      "command": [
+        "/tmp/codex_n054/venv/bin/python",
+        "-I",
+        "-B",
+        "/tmp/codex_n054/v3_final_smoke/changed.py",
+        "--stage",
+        "all",
+        "--smoke",
+        "--device",
+        "cpu",
+        "--threads",
+        "2",
+        "--unit",
+        "lf",
+        "--out",
+        "/tmp/codex_n054/v3_final_smoke/n054v3_lf"
+      ],
+      "exit": 1,
+      "signal_to_exit_seconds": null
+    },
+    {
+      "command": [
+        "/tmp/codex_n054/venv/bin/python",
+        "-I",
+        "-B",
+        "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/v3/n054_gw_test.py"
+      ],
+      "exit": 0,
+      "signal_to_exit_seconds": null
+    }
+  ]
+}

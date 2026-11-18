@@ -1,0 +1,13 @@
+arm,value,seed
+TT6c student (A0),0.601,1
+two-space + GS flow,0.55,1
+two-space + LF flow,0.581,1
+two-space + unpaired GW,0.463,1
+LF hub (A3),0.549,1
+direct map,0.546,1
+TT6c student (A0),0.715,0
+two-space + GS flow,0.7,0
+two-space + LF flow,0.702,0
+two-space + unpaired GW,0.18,0
+LF hub (A3),0.751,0
+direct map,0.747,0

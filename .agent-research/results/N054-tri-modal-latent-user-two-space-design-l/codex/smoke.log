@@ -1,0 +1,359 @@
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py lf_spaces --out /tmp/codex_n054/final_smoke/A1_s0_w0_batch1 --arm A1 --holdout batch1 --sigma-bridge 0 --w-sig 0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "lf_spaces", "arm": "A1", "holdout": "batch1", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"job": "lf_spaces", "step": 10, "loss": 6.263193130493164, "val_loss": 61.519256591796875}
+{"job": "lf_spaces", "step": 20, "loss": 5.076610565185547, "val_loss": 44.40100860595703}
+fixed ridge saved: /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "lf_spaces", "status": "done", "seconds": 1.25}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py gs_encoder --out /tmp/codex_n054/final_smoke/A1_s0_w0_batch1 --arm A1 --holdout batch1 --sigma-bridge 0 --w-sig 0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "gs_encoder", "arm": "A1", "holdout": "batch1", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"job": "gs_encoder", "step": 10, "loss": 5.693236351013184, "val_loss": 4.739777317047119}
+{"job": "gs_encoder", "step": 20, "loss": 2.9835848808288574, "val_loss": 3.615548362731934}
+{"stage": "gs_encoder", "status": "done", "seconds": 2.17}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py flow --out /tmp/codex_n054/final_smoke/A1_s0_w0_batch1 --arm A1 --holdout batch1 --sigma-bridge 0 --w-sig 0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "flow", "arm": "A1", "holdout": "batch1", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"job": "flow", "step": 10, "loss": 0.06383349001407623, "val_loss": 0.05277833715081215}
+{"job": "flow", "step": 20, "loss": 0.03446340933442116, "val_loss": 0.03466237336397171}
+{"stage": "flow", "status": "done", "seconds": 1.08}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py eval --out /tmp/codex_n054/final_smoke/A1_s0_w0_batch1 --arm A1 --holdout batch1 --sigma-bridge 0 --w-sig 0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz --validation-only
+{"stage": "eval", "arm": "A1", "holdout": "batch1", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"output": "validation", "arm": "A1", "M1": -0.10360356253690534, "M3": {"n": 50, "R_at_1": 0.02, "R_at_10": 0.2, "median_rank": 25.0, "chance_R_at_1": 0.02, "chance_R_at_10": 0.2}}
+{"stage": "eval", "status": "done", "seconds": 1.16}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py eval --out /tmp/codex_n054/final_smoke/A1_s0_w0_batch1 --arm A1 --holdout batch1 --sigma-bridge 0 --w-sig 0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "eval", "arm": "A1", "holdout": "batch1", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"output": "eval", "arm": "A1", "M1": 0.07686336991793714, "M3": {"n": 150, "R_at_1": 0.006666666666666667, "R_at_10": 0.06666666666666667, "median_rank": 75.0, "chance_R_at_1": 0.006666666666666667, "chance_R_at_10": 0.06666666666666667}}
+{"stage": "eval", "status": "done", "seconds": 1.69}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py lf_spaces --out /tmp/codex_n054/final_smoke/A1_s0.1_w0_batch1 --arm A1 --holdout batch1 --sigma-bridge 0.1 --w-sig 0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "lf_spaces", "arm": "A1", "holdout": "batch1", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"job": "lf_spaces", "step": 10, "loss": 6.263193130493164, "val_loss": 61.519256591796875}
+{"job": "lf_spaces", "step": 20, "loss": 5.076610565185547, "val_loss": 44.40100860595703}
+{"stage": "lf_spaces", "status": "done", "seconds": 1.08}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py gs_encoder --out /tmp/codex_n054/final_smoke/A1_s0.1_w0_batch1 --arm A1 --holdout batch1 --sigma-bridge 0.1 --w-sig 0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "gs_encoder", "arm": "A1", "holdout": "batch1", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"job": "gs_encoder", "step": 10, "loss": 5.693236351013184, "val_loss": 4.739777317047119}
+{"job": "gs_encoder", "step": 20, "loss": 2.9835848808288574, "val_loss": 3.615548362731934}
+{"stage": "gs_encoder", "status": "done", "seconds": 2.18}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py flow --out /tmp/codex_n054/final_smoke/A1_s0.1_w0_batch1 --arm A1 --holdout batch1 --sigma-bridge 0.1 --w-sig 0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "flow", "arm": "A1", "holdout": "batch1", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"job": "flow", "step": 10, "loss": 0.06873249262571335, "val_loss": 0.0590486004948616}
+{"job": "flow", "step": 20, "loss": 0.03876259922981262, "val_loss": 0.0394136980175972}
+{"stage": "flow", "status": "done", "seconds": 1.07}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py eval --out /tmp/codex_n054/final_smoke/A1_s0.1_w0_batch1 --arm A1 --holdout batch1 --sigma-bridge 0.1 --w-sig 0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz --validation-only
+{"stage": "eval", "arm": "A1", "holdout": "batch1", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"output": "validation", "arm": "A1", "M1": -0.15745355003390044, "M3": {"n": 50, "R_at_1": 0.02, "R_at_10": 0.2, "median_rank": 25.0, "chance_R_at_1": 0.02, "chance_R_at_10": 0.2}}
+{"stage": "eval", "status": "done", "seconds": 1.16}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py eval --out /tmp/codex_n054/final_smoke/A1_s0.1_w0_batch1 --arm A1 --holdout batch1 --sigma-bridge 0.1 --w-sig 0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "eval", "arm": "A1", "holdout": "batch1", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"output": "eval", "arm": "A1", "M1": 0.05019953859585275, "M3": {"n": 150, "R_at_1": 0.006666666666666667, "R_at_10": 0.06666666666666667, "median_rank": 75.0, "chance_R_at_1": 0.006666666666666667, "chance_R_at_10": 0.06666666666666667}}
+{"stage": "eval", "status": "done", "seconds": 1.67}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py lf_spaces --out /tmp/codex_n054/final_smoke/A2_s0_w0_batch1 --arm A2 --holdout batch1 --sigma-bridge 0 --w-sig 0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "lf_spaces", "arm": "A2", "holdout": "batch1", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"job": "lf_spaces", "step": 10, "loss": 6.263193130493164, "val_loss": 61.519256591796875}
+{"job": "lf_spaces", "step": 20, "loss": 5.076610565185547, "val_loss": 44.40100860595703}
+{"stage": "lf_spaces", "status": "done", "seconds": 1.06}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py gs_encoder --out /tmp/codex_n054/final_smoke/A2_s0_w0_batch1 --arm A2 --holdout batch1 --sigma-bridge 0 --w-sig 0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "gs_encoder", "arm": "A2", "holdout": "batch1", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"job": "gs_encoder", "step": 10, "loss": 5.693236351013184, "val_loss": 4.739777317047119}
+{"job": "gs_encoder", "step": 20, "loss": 2.9835848808288574, "val_loss": 3.615548362731934}
+{"stage": "gs_encoder", "status": "done", "seconds": 2.11}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py flow --out /tmp/codex_n054/final_smoke/A2_s0_w0_batch1 --arm A2 --holdout batch1 --sigma-bridge 0 --w-sig 0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "flow", "arm": "A2", "holdout": "batch1", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"job": "flow", "step": 10, "loss": 0.06342297047376633, "val_loss": 0.05168470740318298}
+{"job": "flow", "step": 20, "loss": 0.03377293795347214, "val_loss": 0.03434307128190994}
+{"stage": "flow", "status": "done", "seconds": 1.18}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py eval --out /tmp/codex_n054/final_smoke/A2_s0_w0_batch1 --arm A2 --holdout batch1 --sigma-bridge 0 --w-sig 0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz --validation-only
+{"stage": "eval", "arm": "A2", "holdout": "batch1", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"output": "validation", "arm": "A2", "M1": -0.154667206770632, "M3": {"n": 50, "R_at_1": 0.02, "R_at_10": 0.2, "median_rank": 25.0, "chance_R_at_1": 0.02, "chance_R_at_10": 0.2}}
+{"stage": "eval", "status": "done", "seconds": 1.16}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py eval --out /tmp/codex_n054/final_smoke/A2_s0_w0_batch1 --arm A2 --holdout batch1 --sigma-bridge 0 --w-sig 0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "eval", "arm": "A2", "holdout": "batch1", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"output": "eval", "arm": "A2", "M1": 0.07422051258447677, "M3": {"n": 150, "R_at_1": 0.006666666666666667, "R_at_10": 0.06666666666666667, "median_rank": 75.0, "chance_R_at_1": 0.006666666666666667, "chance_R_at_10": 0.06666666666666667}}
+{"stage": "eval", "status": "done", "seconds": 1.66}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py lf_spaces --out /tmp/codex_n054/final_smoke/A2_s0.1_w0_batch1 --arm A2 --holdout batch1 --sigma-bridge 0.1 --w-sig 0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "lf_spaces", "arm": "A2", "holdout": "batch1", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"job": "lf_spaces", "step": 10, "loss": 6.263193130493164, "val_loss": 61.519256591796875}
+{"job": "lf_spaces", "step": 20, "loss": 5.076610565185547, "val_loss": 44.40100860595703}
+{"stage": "lf_spaces", "status": "done", "seconds": 1.08}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py gs_encoder --out /tmp/codex_n054/final_smoke/A2_s0.1_w0_batch1 --arm A2 --holdout batch1 --sigma-bridge 0.1 --w-sig 0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "gs_encoder", "arm": "A2", "holdout": "batch1", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"job": "gs_encoder", "step": 10, "loss": 5.693236351013184, "val_loss": 4.739777317047119}
+{"job": "gs_encoder", "step": 20, "loss": 2.9835848808288574, "val_loss": 3.615548362731934}
+{"stage": "gs_encoder", "status": "done", "seconds": 2.14}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py flow --out /tmp/codex_n054/final_smoke/A2_s0.1_w0_batch1 --arm A2 --holdout batch1 --sigma-bridge 0.1 --w-sig 0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "flow", "arm": "A2", "holdout": "batch1", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"job": "flow", "step": 10, "loss": 0.06828663498163223, "val_loss": 0.058034759014844894}
+{"job": "flow", "step": 20, "loss": 0.037953898310661316, "val_loss": 0.039165012538433075}
+{"stage": "flow", "status": "done", "seconds": 1.2}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py eval --out /tmp/codex_n054/final_smoke/A2_s0.1_w0_batch1 --arm A2 --holdout batch1 --sigma-bridge 0.1 --w-sig 0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz --validation-only
+{"stage": "eval", "arm": "A2", "holdout": "batch1", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"output": "validation", "arm": "A2", "M1": -0.1948973882363691, "M3": {"n": 50, "R_at_1": 0.02, "R_at_10": 0.2, "median_rank": 25.0, "chance_R_at_1": 0.02, "chance_R_at_10": 0.2}}
+{"stage": "eval", "status": "done", "seconds": 1.15}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py eval --out /tmp/codex_n054/final_smoke/A2_s0.1_w0_batch1 --arm A2 --holdout batch1 --sigma-bridge 0.1 --w-sig 0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "eval", "arm": "A2", "holdout": "batch1", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"output": "eval", "arm": "A2", "M1": 0.05849866935283798, "M3": {"n": 150, "R_at_1": 0.006666666666666667, "R_at_10": 0.06666666666666667, "median_rank": 75.0, "chance_R_at_1": 0.006666666666666667, "chance_R_at_10": 0.06666666666666667}}
+{"stage": "eval", "status": "done", "seconds": 1.67}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py lf_spaces --out /tmp/codex_n054/final_smoke/A3_s0_w0_batch1 --arm A3 --holdout batch1 --sigma-bridge 0 --w-sig 0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "lf_spaces", "arm": "A3", "holdout": "batch1", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"job": "lf_spaces", "step": 10, "loss": 5.2435736656188965, "val_loss": 65.47684478759766}
+{"job": "lf_spaces", "step": 20, "loss": 4.570104598999023, "val_loss": 43.15991973876953}
+{"stage": "lf_spaces", "status": "done", "seconds": 0.77}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py gs_encoder --out /tmp/codex_n054/final_smoke/A3_s0_w0_batch1 --arm A3 --holdout batch1 --sigma-bridge 0 --w-sig 0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "gs_encoder", "arm": "A3", "holdout": "batch1", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"job": "gs_encoder", "step": 10, "loss": 0.0019136767368763685, "val_loss": 0.001858028038404882}
+signal 10: checkpoint and exit at next optimizer boundary
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py gs_encoder --out /tmp/codex_n054/final_smoke/A3_s0_w0_batch1 --arm A3 --holdout batch1 --sigma-bridge 0 --w-sig 0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "gs_encoder", "arm": "A3", "holdout": "batch1", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+resume gs_encoder at 10/20
+{"job": "gs_encoder", "step": 20, "loss": 0.0015205643139779568, "val_loss": 0.0015282128914259373}
+{"stage": "gs_encoder", "status": "done", "seconds": 1.58}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py flow --out /tmp/codex_n054/final_smoke/A3_s0_w0_batch1 --arm A3 --holdout batch1 --sigma-bridge 0 --w-sig 0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "flow", "arm": "A3", "holdout": "batch1", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"stage": "flow", "status": "done", "seconds": 0.5}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py eval --out /tmp/codex_n054/final_smoke/A3_s0_w0_batch1 --arm A3 --holdout batch1 --sigma-bridge 0 --w-sig 0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz --validation-only
+{"stage": "eval", "arm": "A3", "holdout": "batch1", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"output": "validation", "arm": "A3", "M1": -0.04729067460223934, "M3": {"n": 50, "R_at_1": 0.02, "R_at_10": 0.2, "median_rank": 25.5, "chance_R_at_1": 0.02, "chance_R_at_10": 0.2}}
+{"stage": "eval", "status": "done", "seconds": 1.05}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py eval --out /tmp/codex_n054/final_smoke/A3_s0_w0_batch1 --arm A3 --holdout batch1 --sigma-bridge 0 --w-sig 0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "eval", "arm": "A3", "holdout": "batch1", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"output": "eval", "arm": "A3", "M1": -0.1666294625476822, "M3": {"n": 150, "R_at_1": 0.006666666666666667, "R_at_10": 0.06666666666666667, "median_rank": 75.0, "chance_R_at_1": 0.006666666666666667, "chance_R_at_10": 0.06666666666666667}}
+{"stage": "eval", "status": "done", "seconds": 1.36}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py completion --out /tmp/codex_n054/final_smoke/A3_s0_w0_batch1 --arm A3 --holdout batch1 --sigma-bridge 0 --w-sig 0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "completion", "arm": "A3", "holdout": "batch1", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"job": "completion_fov", "step": 10, "loss": 4.690318584442139, "val_loss": 41.70197296142578}
+{"job": "completion_fov", "step": 20, "loss": 7.047260284423828, "val_loss": 52.459407806396484}
+completion fov: trained=680, tested=660
+{"job": "completion_draw0_to_1", "step": 10, "loss": 4.749266624450684, "val_loss": 30.501651763916016}
+{"job": "completion_draw0_to_1", "step": 20, "loss": 4.3684844970703125, "val_loss": 24.906841278076172}
+completion draw0_to_1: trained=340, tested=330
+{"job": "completion_draw1_to_0", "step": 10, "loss": 5.484106540679932, "val_loss": 24.451522827148438}
+{"job": "completion_draw1_to_0", "step": 20, "loss": 11.920652389526367, "val_loss": 29.12263298034668}
+completion draw1_to_0: trained=340, tested=330
+{"stage": "completion", "status": "done", "seconds": 2.28}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py gs_encoder --out /tmp/codex_n054/final_smoke/A3_s0_w0_batch1 --arm A3 --holdout batch1 --sigma-bridge 0 --w-sig 0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "gs_encoder", "arm": "A3", "holdout": "batch1", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+resume gs_encoder at 20/20
+{"stage": "gs_encoder", "status": "done", "seconds": 1.06}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py lf_spaces --out /tmp/codex_n054/final_smoke/A3_s0_w0.5_batch1 --arm A3 --holdout batch1 --sigma-bridge 0 --w-sig 0.5 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "lf_spaces", "arm": "A3", "holdout": "batch1", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"job": "lf_spaces", "step": 10, "loss": 5.2435736656188965, "val_loss": 65.47684478759766}
+{"job": "lf_spaces", "step": 20, "loss": 4.570104598999023, "val_loss": 43.15991973876953}
+{"stage": "lf_spaces", "status": "done", "seconds": 0.79}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py gs_encoder --out /tmp/codex_n054/final_smoke/A3_s0_w0.5_batch1 --arm A3 --holdout batch1 --sigma-bridge 0 --w-sig 0.5 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "gs_encoder", "arm": "A3", "holdout": "batch1", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"job": "gs_encoder", "step": 10, "loss": 1.3985860347747803, "val_loss": 1.3902281880378724}
+{"job": "gs_encoder", "step": 20, "loss": 1.204070806503296, "val_loss": 1.2323078441619872}
+{"stage": "gs_encoder", "status": "done", "seconds": 2.1}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py flow --out /tmp/codex_n054/final_smoke/A3_s0_w0.5_batch1 --arm A3 --holdout batch1 --sigma-bridge 0 --w-sig 0.5 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "flow", "arm": "A3", "holdout": "batch1", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"stage": "flow", "status": "done", "seconds": 0.51}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py eval --out /tmp/codex_n054/final_smoke/A3_s0_w0.5_batch1 --arm A3 --holdout batch1 --sigma-bridge 0 --w-sig 0.5 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz --validation-only
+{"stage": "eval", "arm": "A3", "holdout": "batch1", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"output": "validation", "arm": "A3", "M1": 0.10115067845466567, "M3": {"n": 50, "R_at_1": 0.02, "R_at_10": 0.2, "median_rank": 25.5, "chance_R_at_1": 0.02, "chance_R_at_10": 0.2}}
+{"stage": "eval", "status": "done", "seconds": 1.04}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py eval --out /tmp/codex_n054/final_smoke/A3_s0_w0.5_batch1 --arm A3 --holdout batch1 --sigma-bridge 0 --w-sig 0.5 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "eval", "arm": "A3", "holdout": "batch1", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"output": "eval", "arm": "A3", "M1": -0.13032984306124953, "M3": {"n": 150, "R_at_1": 0.006666666666666667, "R_at_10": 0.06666666666666667, "median_rank": 74.5, "chance_R_at_1": 0.006666666666666667, "chance_R_at_10": 0.06666666666666667}}
+{"stage": "eval", "status": "done", "seconds": 1.34}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py eval --out /tmp/codex_n054/final_smoke/A0_batch1 --arm A0 --holdout batch1 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "eval", "arm": "A0", "holdout": "batch1", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"output": "eval", "arm": "A0", "M1": 0.2802649507630704, "M3": {"n": 150, "R_at_1": 0.10666666666666667, "R_at_10": 0.36666666666666664, "median_rank": 16.5, "chance_R_at_1": 0.006666666666666667, "chance_R_at_10": 0.06666666666666667}}
+{"stage": "eval", "status": "done", "seconds": 34.95}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py lf_spaces --out /tmp/codex_n054/final_smoke/A1_s0_w0_batch0 --arm A1 --holdout batch0 --sigma-bridge 0 --w-sig 0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "lf_spaces", "arm": "A1", "holdout": "batch0", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"job": "lf_spaces", "step": 10, "loss": 6.263193130493164, "val_loss": 61.519256591796875}
+{"job": "lf_spaces", "step": 20, "loss": 5.076610565185547, "val_loss": 44.40100860595703}
+{"stage": "lf_spaces", "status": "done", "seconds": 1.07}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py gs_encoder --out /tmp/codex_n054/final_smoke/A1_s0_w0_batch0 --arm A1 --holdout batch0 --sigma-bridge 0 --w-sig 0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "gs_encoder", "arm": "A1", "holdout": "batch0", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"job": "gs_encoder", "step": 10, "loss": 3.2227232456207275, "val_loss": 4.962503242492676}
+{"job": "gs_encoder", "step": 20, "loss": 2.3863906860351562, "val_loss": 4.202348041534424}
+{"stage": "gs_encoder", "status": "done", "seconds": 2.14}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py flow --out /tmp/codex_n054/final_smoke/A1_s0_w0_batch0 --arm A1 --holdout batch0 --sigma-bridge 0 --w-sig 0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "flow", "arm": "A1", "holdout": "batch0", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"job": "flow", "step": 10, "loss": 0.06626912206411362, "val_loss": 0.053799618035554886}
+{"job": "flow", "step": 20, "loss": 0.03845936805009842, "val_loss": 0.03457266837358475}
+{"stage": "flow", "status": "done", "seconds": 1.07}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py eval --out /tmp/codex_n054/final_smoke/A1_s0_w0_batch0 --arm A1 --holdout batch0 --sigma-bridge 0 --w-sig 0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz --validation-only
+{"stage": "eval", "arm": "A1", "holdout": "batch0", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"output": "validation", "arm": "A1", "M1": 0.22376336254395998, "M3": {"n": 50, "R_at_1": 0.02, "R_at_10": 0.22, "median_rank": 25.5, "chance_R_at_1": 0.02, "chance_R_at_10": 0.2}}
+{"stage": "eval", "status": "done", "seconds": 1.15}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py eval --out /tmp/codex_n054/final_smoke/A1_s0_w0_batch0 --arm A1 --holdout batch0 --sigma-bridge 0 --w-sig 0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "eval", "arm": "A1", "holdout": "batch0", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"output": "eval", "arm": "A1", "M1": 0.31278485194353145, "M3": {"n": 150, "R_at_1": 0.006666666666666667, "R_at_10": 0.06666666666666667, "median_rank": 75.5, "chance_R_at_1": 0.006666666666666667, "chance_R_at_10": 0.06666666666666667}}
+{"stage": "eval", "status": "done", "seconds": 1.69}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py lf_spaces --out /tmp/codex_n054/final_smoke/A1_s0.1_w0_batch0 --arm A1 --holdout batch0 --sigma-bridge 0.1 --w-sig 0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "lf_spaces", "arm": "A1", "holdout": "batch0", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"job": "lf_spaces", "step": 10, "loss": 6.263193130493164, "val_loss": 61.519256591796875}
+{"job": "lf_spaces", "step": 20, "loss": 5.076610565185547, "val_loss": 44.40100860595703}
+{"stage": "lf_spaces", "status": "done", "seconds": 1.07}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py gs_encoder --out /tmp/codex_n054/final_smoke/A1_s0.1_w0_batch0 --arm A1 --holdout batch0 --sigma-bridge 0.1 --w-sig 0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "gs_encoder", "arm": "A1", "holdout": "batch0", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"job": "gs_encoder", "step": 10, "loss": 3.2227232456207275, "val_loss": 4.962503242492676}
+{"job": "gs_encoder", "step": 20, "loss": 2.3863906860351562, "val_loss": 4.202348041534424}
+{"stage": "gs_encoder", "status": "done", "seconds": 2.08}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py flow --out /tmp/codex_n054/final_smoke/A1_s0.1_w0_batch0 --arm A1 --holdout batch0 --sigma-bridge 0.1 --w-sig 0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "flow", "arm": "A1", "holdout": "batch0", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"job": "flow", "step": 10, "loss": 0.07090277969837189, "val_loss": 0.059988319873809814}
+{"job": "flow", "step": 20, "loss": 0.042647507041692734, "val_loss": 0.039506711065769196}
+{"stage": "flow", "status": "done", "seconds": 1.07}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py eval --out /tmp/codex_n054/final_smoke/A1_s0.1_w0_batch0 --arm A1 --holdout batch0 --sigma-bridge 0.1 --w-sig 0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz --validation-only
+{"stage": "eval", "arm": "A1", "holdout": "batch0", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"output": "validation", "arm": "A1", "M1": 0.2270186096657984, "M3": {"n": 50, "R_at_1": 0.02, "R_at_10": 0.22, "median_rank": 25.5, "chance_R_at_1": 0.02, "chance_R_at_10": 0.2}}
+{"stage": "eval", "status": "done", "seconds": 1.16}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py eval --out /tmp/codex_n054/final_smoke/A1_s0.1_w0_batch0 --arm A1 --holdout batch0 --sigma-bridge 0.1 --w-sig 0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "eval", "arm": "A1", "holdout": "batch0", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"output": "eval", "arm": "A1", "M1": 0.3006899068772739, "M3": {"n": 150, "R_at_1": 0.006666666666666667, "R_at_10": 0.06666666666666667, "median_rank": 75.5, "chance_R_at_1": 0.006666666666666667, "chance_R_at_10": 0.06666666666666667}}
+{"stage": "eval", "status": "done", "seconds": 1.69}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py lf_spaces --out /tmp/codex_n054/final_smoke/A2_s0_w0_batch0 --arm A2 --holdout batch0 --sigma-bridge 0 --w-sig 0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "lf_spaces", "arm": "A2", "holdout": "batch0", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"job": "lf_spaces", "step": 10, "loss": 6.263193130493164, "val_loss": 61.519256591796875}
+{"job": "lf_spaces", "step": 20, "loss": 5.076610565185547, "val_loss": 44.40100860595703}
+{"stage": "lf_spaces", "status": "done", "seconds": 1.05}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py gs_encoder --out /tmp/codex_n054/final_smoke/A2_s0_w0_batch0 --arm A2 --holdout batch0 --sigma-bridge 0 --w-sig 0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "gs_encoder", "arm": "A2", "holdout": "batch0", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"job": "gs_encoder", "step": 10, "loss": 3.2227232456207275, "val_loss": 4.962503242492676}
+{"job": "gs_encoder", "step": 20, "loss": 2.3863906860351562, "val_loss": 4.202348041534424}
+{"stage": "gs_encoder", "status": "done", "seconds": 2.14}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py flow --out /tmp/codex_n054/final_smoke/A2_s0_w0_batch0 --arm A2 --holdout batch0 --sigma-bridge 0 --w-sig 0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "flow", "arm": "A2", "holdout": "batch0", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"job": "flow", "step": 10, "loss": 0.06486548483371735, "val_loss": 0.052404507994651794}
+{"job": "flow", "step": 20, "loss": 0.03716142848134041, "val_loss": 0.03407248109579086}
+{"stage": "flow", "status": "done", "seconds": 1.2}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py eval --out /tmp/codex_n054/final_smoke/A2_s0_w0_batch0 --arm A2 --holdout batch0 --sigma-bridge 0 --w-sig 0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz --validation-only
+{"stage": "eval", "arm": "A2", "holdout": "batch0", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"output": "validation", "arm": "A2", "M1": 0.19274256724981398, "M3": {"n": 50, "R_at_1": 0.02, "R_at_10": 0.22, "median_rank": 25.5, "chance_R_at_1": 0.02, "chance_R_at_10": 0.2}}
+{"stage": "eval", "status": "done", "seconds": 1.17}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py eval --out /tmp/codex_n054/final_smoke/A2_s0_w0_batch0 --arm A2 --holdout batch0 --sigma-bridge 0 --w-sig 0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "eval", "arm": "A2", "holdout": "batch0", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"output": "eval", "arm": "A2", "M1": 0.25644266883687217, "M3": {"n": 150, "R_at_1": 0.006666666666666667, "R_at_10": 0.06666666666666667, "median_rank": 75.5, "chance_R_at_1": 0.006666666666666667, "chance_R_at_10": 0.06666666666666667}}
+{"stage": "eval", "status": "done", "seconds": 1.68}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py lf_spaces --out /tmp/codex_n054/final_smoke/A2_s0.1_w0_batch0 --arm A2 --holdout batch0 --sigma-bridge 0.1 --w-sig 0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "lf_spaces", "arm": "A2", "holdout": "batch0", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"job": "lf_spaces", "step": 10, "loss": 6.263193130493164, "val_loss": 61.519256591796875}
+{"job": "lf_spaces", "step": 20, "loss": 5.076610565185547, "val_loss": 44.40100860595703}
+{"stage": "lf_spaces", "status": "done", "seconds": 1.07}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py gs_encoder --out /tmp/codex_n054/final_smoke/A2_s0.1_w0_batch0 --arm A2 --holdout batch0 --sigma-bridge 0.1 --w-sig 0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "gs_encoder", "arm": "A2", "holdout": "batch0", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"job": "gs_encoder", "step": 10, "loss": 3.2227232456207275, "val_loss": 4.962503242492676}
+{"job": "gs_encoder", "step": 20, "loss": 2.3863906860351562, "val_loss": 4.202348041534424}
+{"stage": "gs_encoder", "status": "done", "seconds": 2.16}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py flow --out /tmp/codex_n054/final_smoke/A2_s0.1_w0_batch0 --arm A2 --holdout batch0 --sigma-bridge 0.1 --w-sig 0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "flow", "arm": "A2", "holdout": "batch0", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"job": "flow", "step": 10, "loss": 0.06917055696249008, "val_loss": 0.05833856016397476}
+{"job": "flow", "step": 20, "loss": 0.041340332478284836, "val_loss": 0.03886835649609566}
+{"stage": "flow", "status": "done", "seconds": 1.19}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py eval --out /tmp/codex_n054/final_smoke/A2_s0.1_w0_batch0 --arm A2 --holdout batch0 --sigma-bridge 0.1 --w-sig 0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz --validation-only
+{"stage": "eval", "arm": "A2", "holdout": "batch0", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"output": "validation", "arm": "A2", "M1": 0.19070384785756436, "M3": {"n": 50, "R_at_1": 0.02, "R_at_10": 0.22, "median_rank": 25.5, "chance_R_at_1": 0.02, "chance_R_at_10": 0.2}}
+{"stage": "eval", "status": "done", "seconds": 1.16}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py eval --out /tmp/codex_n054/final_smoke/A2_s0.1_w0_batch0 --arm A2 --holdout batch0 --sigma-bridge 0.1 --w-sig 0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "eval", "arm": "A2", "holdout": "batch0", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"output": "eval", "arm": "A2", "M1": 0.23213335098789595, "M3": {"n": 150, "R_at_1": 0.006666666666666667, "R_at_10": 0.06666666666666667, "median_rank": 75.5, "chance_R_at_1": 0.006666666666666667, "chance_R_at_10": 0.06666666666666667}}
+{"stage": "eval", "status": "done", "seconds": 1.69}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py lf_spaces --out /tmp/codex_n054/final_smoke/A3_s0_w0_batch0 --arm A3 --holdout batch0 --sigma-bridge 0 --w-sig 0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "lf_spaces", "arm": "A3", "holdout": "batch0", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"job": "lf_spaces", "step": 10, "loss": 5.2435736656188965, "val_loss": 65.47684478759766}
+{"job": "lf_spaces", "step": 20, "loss": 4.570104598999023, "val_loss": 43.15991973876953}
+{"stage": "lf_spaces", "status": "done", "seconds": 0.77}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py gs_encoder --out /tmp/codex_n054/final_smoke/A3_s0_w0_batch0 --arm A3 --holdout batch0 --sigma-bridge 0 --w-sig 0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "gs_encoder", "arm": "A3", "holdout": "batch0", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"job": "gs_encoder", "step": 10, "loss": 0.0015749934827908874, "val_loss": 0.002219550060108304}
+{"job": "gs_encoder", "step": 20, "loss": 0.0013123644748702645, "val_loss": 0.0018911965750157834}
+{"stage": "gs_encoder", "status": "done", "seconds": 2.09}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py flow --out /tmp/codex_n054/final_smoke/A3_s0_w0_batch0 --arm A3 --holdout batch0 --sigma-bridge 0 --w-sig 0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "flow", "arm": "A3", "holdout": "batch0", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"stage": "flow", "status": "done", "seconds": 0.51}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py eval --out /tmp/codex_n054/final_smoke/A3_s0_w0_batch0 --arm A3 --holdout batch0 --sigma-bridge 0 --w-sig 0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz --validation-only
+{"stage": "eval", "arm": "A3", "holdout": "batch0", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"output": "validation", "arm": "A3", "M1": -0.13487402699520445, "M3": {"n": 50, "R_at_1": 0.02, "R_at_10": 0.2, "median_rank": 25.5, "chance_R_at_1": 0.02, "chance_R_at_10": 0.2}}
+{"stage": "eval", "status": "done", "seconds": 1.04}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py eval --out /tmp/codex_n054/final_smoke/A3_s0_w0_batch0 --arm A3 --holdout batch0 --sigma-bridge 0 --w-sig 0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "eval", "arm": "A3", "holdout": "batch0", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"output": "eval", "arm": "A3", "M1": -0.3077461314030141, "M3": {"n": 150, "R_at_1": 0.006666666666666667, "R_at_10": 0.06666666666666667, "median_rank": 75.5, "chance_R_at_1": 0.006666666666666667, "chance_R_at_10": 0.06666666666666667}}
+{"stage": "eval", "status": "done", "seconds": 1.34}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py lf_spaces --out /tmp/codex_n054/final_smoke/A3_s0_w0.5_batch0 --arm A3 --holdout batch0 --sigma-bridge 0 --w-sig 0.5 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "lf_spaces", "arm": "A3", "holdout": "batch0", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"job": "lf_spaces", "step": 10, "loss": 5.2435736656188965, "val_loss": 65.47684478759766}
+{"job": "lf_spaces", "step": 20, "loss": 4.570104598999023, "val_loss": 43.15991973876953}
+{"stage": "lf_spaces", "status": "done", "seconds": 0.77}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py gs_encoder --out /tmp/codex_n054/final_smoke/A3_s0_w0.5_batch0 --arm A3 --holdout batch0 --sigma-bridge 0 --w-sig 0.5 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "gs_encoder", "arm": "A3", "holdout": "batch0", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"job": "gs_encoder", "step": 10, "loss": 1.2240076065063477, "val_loss": 1.5636463022232057}
+{"job": "gs_encoder", "step": 20, "loss": 1.2400521039962769, "val_loss": 1.3814460563659667}
+{"stage": "gs_encoder", "status": "done", "seconds": 2.01}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py flow --out /tmp/codex_n054/final_smoke/A3_s0_w0.5_batch0 --arm A3 --holdout batch0 --sigma-bridge 0 --w-sig 0.5 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "flow", "arm": "A3", "holdout": "batch0", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"stage": "flow", "status": "done", "seconds": 0.51}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py eval --out /tmp/codex_n054/final_smoke/A3_s0_w0.5_batch0 --arm A3 --holdout batch0 --sigma-bridge 0 --w-sig 0.5 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz --validation-only
+{"stage": "eval", "arm": "A3", "holdout": "batch0", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"output": "validation", "arm": "A3", "M1": -0.17339089281860956, "M3": {"n": 50, "R_at_1": 0.02, "R_at_10": 0.2, "median_rank": 25.5, "chance_R_at_1": 0.02, "chance_R_at_10": 0.2}}
+{"stage": "eval", "status": "done", "seconds": 1.04}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py eval --out /tmp/codex_n054/final_smoke/A3_s0_w0.5_batch0 --arm A3 --holdout batch0 --sigma-bridge 0 --w-sig 0.5 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "eval", "arm": "A3", "holdout": "batch0", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"output": "eval", "arm": "A3", "M1": -0.3426289016158691, "M3": {"n": 150, "R_at_1": 0.013333333333333334, "R_at_10": 0.06666666666666667, "median_rank": 75.0, "chance_R_at_1": 0.006666666666666667, "chance_R_at_10": 0.06666666666666667}}
+{"stage": "eval", "status": "done", "seconds": 1.34}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py eval --out /tmp/codex_n054/final_smoke/A0_batch0 --arm A0 --holdout batch0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "eval", "arm": "A0", "holdout": "batch0", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"output": "eval", "arm": "A0", "M1": 0.7655425944175985, "M3": {"n": 150, "R_at_1": 0.06666666666666667, "R_at_10": 0.41333333333333333, "median_rank": 16.0, "chance_R_at_1": 0.006666666666666667, "chance_R_at_10": 0.06666666666666667}}
+{"stage": "eval", "status": "done", "seconds": 34.94}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_clinical.py --run /tmp/codex_n054/final_smoke/A0_batch1 --out /tmp/codex_n054/final_smoke/A0_batch1_clinical --arm A0 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --batch-size 4 --tta 0
+MLL23 basophil 2
+MLL23 eosinophil 2
+MLL23 hairy_cell 2
+MLL23 lymphocyte 2
+MLL23 lymphocyte_large_granular 2
+MLL23 metamyelocyte 2
+MLL23 monocyte 2
+MLL23 myelocyte 2
+MLL23 neutrophil_band 2
+MLL23 neutrophil_segmented 2
+MLL23 normoblast 2
+MLL23 plasma_cell 2
+{"status": "done", "pbc_n": 16, "mll_n": 24, "contrasts": 25, "smoke": true}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_clinical.py --run /tmp/codex_n054/final_smoke/A1_s0_w0_batch1 --out /tmp/codex_n054/final_smoke/A1_s0_w0_batch1_clinical --arm A1 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --batch-size 4 --tta 1
+MLL23 basophil 2
+MLL23 eosinophil 2
+MLL23 hairy_cell 2
+MLL23 lymphocyte 2
+MLL23 lymphocyte_large_granular 2
+MLL23 metamyelocyte 2
+MLL23 monocyte 2
+MLL23 myelocyte 2
+MLL23 neutrophil_band 2
+MLL23 neutrophil_segmented 2
+MLL23 normoblast 2
+MLL23 plasma_cell 2
+{"status": "done", "pbc_n": 16, "mll_n": 24, "contrasts": 25, "smoke": true}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_clinical.py --run /tmp/codex_n054/final_smoke/A2_s0.1_w0_batch1 --out /tmp/codex_n054/final_smoke/A2_s0.1_w0_batch1_clinical --arm A2 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --batch-size 4 --tta 1
+MLL23 basophil 2
+MLL23 eosinophil 2
+MLL23 hairy_cell 2
+MLL23 lymphocyte 2
+MLL23 lymphocyte_large_granular 2
+MLL23 metamyelocyte 2
+MLL23 monocyte 2
+MLL23 myelocyte 2
+MLL23 neutrophil_band 2
+MLL23 neutrophil_segmented 2
+MLL23 normoblast 2
+MLL23 plasma_cell 2
+{"status": "done", "pbc_n": 16, "mll_n": 24, "contrasts": 25, "smoke": true}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_clinical.py --run /tmp/codex_n054/final_smoke/A3_s0_w0.5_batch1 --out /tmp/codex_n054/final_smoke/A3_s0_w0.5_batch1_clinical --arm A3 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --batch-size 4 --tta 1
+MLL23 basophil 2
+MLL23 eosinophil 2
+MLL23 hairy_cell 2
+MLL23 lymphocyte 2
+MLL23 lymphocyte_large_granular 2
+MLL23 metamyelocyte 2
+MLL23 monocyte 2
+MLL23 myelocyte 2
+MLL23 neutrophil_band 2
+MLL23 neutrophil_segmented 2
+MLL23 normoblast 2
+MLL23 plasma_cell 2
+{"status": "done", "pbc_n": 16, "mll_n": 24, "contrasts": 25, "smoke": true}
+COMMAND /tmp/codex_n054/venv/bin/python -I /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/codex/n054_trimodal.py gs_encoder --out /tmp/codex_n054/final_smoke/resume_reference --arm A3 --holdout batch1 --data /hnvme/workspace/v181bb10-bsccm --smoke --threads 2 --ridge-cache /tmp/codex_n054/final_smoke/ridge.npz
+{"stage": "gs_encoder", "arm": "A3", "holdout": "batch1", "device": "cpu", "audit": {"n_lf_train": 680, "n_lf_val": 660, "n_lf_test": 660, "n_gs_train": 50, "n_gs_val": 50, "n_gs_test": 150, "qc_mask_removed": 27074, "raw_single_autofl_pairs": 0, "smoke": true, "gs_in_lf_training": 0, "test_slide_in_gs_training": 0}}
+{"job": "gs_encoder", "step": 10, "loss": 0.0019136767368763685, "val_loss": 0.001858028038404882}
+{"job": "gs_encoder", "step": 20, "loss": 0.0015205643139779568, "val_loss": 0.0015282128914259373}
+{"stage": "gs_encoder", "status": "done", "seconds": 2.0}
+SMOKE PASSED {"status": "passed", "seconds": 302.85, "signal_restart": "SIGUSR1 exit 99 then resume; bitwise equal to uninterrupted CPU GS training", "clinical": "4 arms, 16 PBC images and 24 MLL23 images per arm; 25 contrasts each", "scratch": "/tmp/codex_n054/final_smoke"}

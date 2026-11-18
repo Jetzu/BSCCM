@@ -1,0 +1,37 @@
+{
+  "n_cells": 412941,
+  "n_gs": 15712,
+  "n_single": 312590,
+  "n_pooled": 37284,
+  "single_with_autofl_label": 0,
+  "qc_removed_draw2_group": 27074,
+  "source_counts": [
+    {
+      "batch": 0,
+      "gs_train_split0": 8007,
+      "gs_validation_split1": 994,
+      "gs_full_slide": 10015
+    },
+    {
+      "batch": 1,
+      "gs_train_split0": 4495,
+      "gs_validation_split1": 593,
+      "gs_full_slide": 5697
+    }
+  ],
+  "names": [
+    "single:CD45",
+    "single:CD123",
+    "single:CD19",
+    "single:CD56",
+    "single:CD14",
+    "single:CD16",
+    "single:HLA-DR",
+    "single:CD3",
+    "grp:CD123/HLA-DR/CD14",
+    "grp:CD3/CD19/CD56",
+    "grp:CD45",
+    "grp:CD16",
+    "autofl"
+  ]
+}

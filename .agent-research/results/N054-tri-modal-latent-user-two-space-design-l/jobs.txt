@@ -1,0 +1,5 @@
+1377051 n054v2_lf unit (codex/v2 n054_unit.sbatch, --mem line removed by integrator; sha 05183097e503)
+1377162 n054v3_lf unit (codex/v3; sha 811ffe1c23e7)
+1379287 n054v3_lf unit resubmit after NODE_FAIL of 1377162
+1379327 n054v3_batch1 unit (codex/v3)
+1379328 n054v3_batch0 unit (codex/v3)
