@@ -1,0 +1,137 @@
+{
+ "png": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/plots/goal-v10-n055_2026-11-18_1355.png",
+ "svg": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/plots/goal-v10-n055_2026-11-18_1355.svg",
+ "created": "2026-11-18T13:55:50",
+ "command": [
+  "/home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python",
+  "/home/hpc/v181bb/v181bb10/.claude/skills/work-log/bin/plot_compare.py",
+  "--metric",
+  "goal_v10_n055",
+  "--csv",
+  ".agent-research/results/N055-ensemble-diversification-with-microscopy/plot_n055.csv",
+  "--item",
+  "N055",
+  "--baseline",
+  "N053 best (N048+Cyto)",
+  "--noise",
+  "0.0027"
+ ],
+ "cwd": "/home/hpc/v181bb/v181bb10/BSCCM",
+ "source": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N055-ensemble-diversification-with-microscopy/plot_n055.csv",
+ "notes": {
+  "item": "N055",
+  "metric": "goal_v10_n055",
+  "direction": "higher",
+  "noise_sd": 0.0027,
+  "stats": null
+ },
+ "width_in": 8.5,
+ "height_in": 2.5591,
+ "png_px": [
+  3840,
+  1156
+ ],
+ "significance": "two-sided; Holm-corrected over all comparisons of a panel (one family per panel); * <0.05 ** <0.01 *** <0.001 **** <0.0001",
+ "panels": [
+  {
+   "panel": "a",
+   "kind": "bar",
+   "groups": [
+    "N053 best (N048+Cyto)",
+    "5-member post hoc",
+    "E4 pre-registered (+Cyto zoom2)",
+    "same-size control (+Cyto s1)",
+    "+Cyto cf150 (3-member)"
+   ],
+   "colors": [
+    "#767E86",
+    "#3A6C9E",
+    "#55BDB2",
+    "#A1CA8A",
+    "#CF832F"
+   ],
+   "n": [
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "mean": [
+    0.6862,
+    0.6912,
+    0.6902,
+    0.688,
+    0.6864
+   ],
+   "sd": [
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "median": [
+    0.6862,
+    0.6912,
+    0.6902,
+    0.688,
+    0.6864
+   ],
+   "whisker": "sd",
+   "stats": [
+    {
+     "test": null,
+     "p": null,
+     "n_i": 1,
+     "n_j": 1,
+     "p_holm": null,
+     "stars": "",
+     "note": "test undefined (n < 2 or zero variance)",
+     "a": "N053 best (N048+Cyto)",
+     "b": "5-member post hoc",
+     "reference": "N053 best (N048+Cyto)"
+    },
+    {
+     "test": null,
+     "p": null,
+     "n_i": 1,
+     "n_j": 1,
+     "p_holm": null,
+     "stars": "",
+     "note": "test undefined (n < 2 or zero variance)",
+     "a": "N053 best (N048+Cyto)",
+     "b": "E4 pre-registered (+Cyto zoom2)",
+     "reference": "N053 best (N048+Cyto)"
+    },
+    {
+     "test": null,
+     "p": null,
+     "n_i": 1,
+     "n_j": 1,
+     "p_holm": null,
+     "stars": "",
+     "note": "test undefined (n < 2 or zero variance)",
+     "a": "N053 best (N048+Cyto)",
+     "b": "same-size control (+Cyto s1)",
+     "reference": "N053 best (N048+Cyto)"
+    },
+    {
+     "test": null,
+     "p": null,
+     "n_i": 1,
+     "n_j": 1,
+     "p_holm": null,
+     "stars": "",
+     "note": "test undefined (n < 2 or zero variance)",
+     "a": "N053 best (N048+Cyto)",
+     "b": "+Cyto cf150 (3-member)",
+     "reference": "N053 best (N048+Cyto)"
+    }
+   ],
+   "no_stats_reason": "no testable comparison (n < 2 per group)",
+   "ylabel": "goal_v10_n055"
+  }
+ ],
+ "matplotlib": "3.11.0"
+}

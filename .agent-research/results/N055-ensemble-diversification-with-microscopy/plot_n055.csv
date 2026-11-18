@@ -1,6 +1,6 @@
-arm,value
-N053 best (N048 + Cytoland),0.6862
-E4 + Cytoland zoom2 (primary),0.6902
-same-size control (+ Cytoland s1),0.688
-5 members,0.6912
-6 members,0.6906
+arm,value,seed
+N053 best (N048+Cyto),0.6862,0
+E4 pre-registered (+Cyto zoom2),0.6902,0
+same-size control (+Cyto s1),0.6880,0
++Cyto cf150 (3-member),0.6864,0
+5-member post hoc,0.6912,0

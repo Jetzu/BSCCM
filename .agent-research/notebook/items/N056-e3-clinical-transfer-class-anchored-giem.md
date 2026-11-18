@@ -57,7 +57,25 @@ Not a GOAL attempt -> effect void. Budget target <= 6 GPU-h.
   matched weight w = share/(1-share) x g_latent/g_anchor (correct), noise-floor decision enforced in n056_eval.py:320-326.
 - Training 1381736-44 (9 units, 8-10 min each; runs/n056v2_main/t*/): measured anchor-CE GRADIENT share on the trainable ViT
   blocks: T recipe .159-.173 (loss-magnitude share was only ~3 %); H at weight .5: .70 at start -> .28 at end; H_matched frozen
-  weight .093-.115 (share matched over 200 calibration steps; .04-.07 later). Evals 1381797-812 (16 units).
+  weight .093-.115 (share matched over 200 calibration steps; .04-.07 later). Evals 1381797-812 (16 units; first links preempted,
+  4 intermediate links crashed on a sqlite UNIQUE insert during resume (concurrent successor), final links 1381849-64 completed;
+  all 16 eval.done.json; aggregation validated cache hashes). Tables: results/N056-*/tables/ (contrasts_all, macro_means,
+  paired_macros = registered decisions).
+RESULTS (mean over 3 teacher runs; AUROC; primary16 = non-anchor contrasts, the pre-registered H-vs-T endpoint):
+| arm | primary16 | PBC10 | MLL23_15 | all25 | MLL23 robust |
+| T (TT6c anchored, 7 seeds) | .540 | .841 | .568 | .677 | .764 |
+| H (hub anchored, 6 seeds) | .632 | .846 | .704 | .761 | .891 |
+| H_matched (anchor share = T's, 3) | .563 | .822 | .640 | .713 | .848 |
+| T + unbalanced OT tau .91 | .534 | .859 | .562 | .680 | .765 |
+| H + unbalanced OT tau .91 | .621 | .868 | .675 | .752 | .850 |
+| T + mean-shift / CORAL / kNN | .536 / .543 / .514 | .834 / .801 / .844 | .571 / .571 / .542 | .676 / .663 / .663 | |
+Registered decision (paired by teacher, threshold = max within-teacher seed range): H - T primary16 +.092 (floor .141), all25
++.083 (floor .091), MLL23_15 +.136 (floor .150) -> "no difference" by the pre-registered rule, though H is higher on every
+summary. H_matched - T: +.023 primary16, +.035 all25, +.072 MLL23 (1 seed, sensitivity only) -> most of H's advantage tracks the
+STRONGER ANCHORING, not the latent target. Alignment (OT at both tau, mean-shift, CORAL, kNN) changes nothing beyond noise
+(|delta| <= .03; CORAL hurts robust contrasts). BSCCM same-cell autofl sanity unchanged (.57 / .85 all arms).
+RQ3 fractions: literal per-class single-marker calibration impossible (no single markers on gated BSCCM classes) -> NA; proxy
+exploratory only. Plots: plots/n056-clinical-auroc-primary16_2026-11-18_1355.png, n056-clinical-auroc-all25_2026-11-18_1355.png.
 
 ## Outcome
 Hub (latent-distillation) students transfer fine markers to MLL23 better than TT6c in every teacher and every seed (+.14 AUROC),

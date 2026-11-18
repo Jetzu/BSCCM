@@ -1,0 +1,150 @@
+{
+ "png": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/plots/n056-clinical-auroc-all25_2026-11-18_1355.png",
+ "svg": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/plots/n056-clinical-auroc-all25_2026-11-18_1355.svg",
+ "created": "2026-11-18T13:55:49",
+ "command": [
+  "/home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python",
+  "/home/hpc/v181bb/v181bb10/.claude/skills/work-log/bin/plot_compare.py",
+  "--metric",
+  "n056_clinical_auroc_all25",
+  "--csv",
+  ".agent-research/results/N056-e3-clinical-transfer-class-anchored-giem/plot_all25_main.csv",
+  "--item",
+  "N056",
+  "--baseline",
+  "T",
+  "--direction",
+  "higher"
+ ],
+ "cwd": "/home/hpc/v181bb/v181bb10/BSCCM",
+ "source": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N056-e3-clinical-transfer-class-anchored-giem/plot_all25_main.csv",
+ "notes": {
+  "item": "N056",
+  "metric": "n056_clinical_auroc_all25",
+  "direction": "higher",
+  "noise_sd": 0.0027,
+  "stats": null
+ },
+ "width_in": 8.5,
+ "height_in": 2.5591,
+ "png_px": [
+  3840,
+  1156
+ ],
+ "significance": "two-sided; Holm-corrected over all comparisons of a panel (one family per panel); * <0.05 ** <0.01 *** <0.001 **** <0.0001",
+ "panels": [
+  {
+   "panel": "a",
+   "kind": "bar",
+   "groups": [
+    "T",
+    "H",
+    "H+OT_tau0.91",
+    "H_matched",
+    "T+OT_tau0.91",
+    "T+mean"
+   ],
+   "colors": [
+    "#767E86",
+    "#3A6C9E",
+    "#55BDB2",
+    "#A1CA8A",
+    "#CF832F",
+    "#B94A58"
+   ],
+   "n": [
+    7,
+    6,
+    6,
+    3,
+    7,
+    7
+   ],
+   "mean": [
+    0.680974096904999,
+    0.760904523681453,
+    0.7518970718234931,
+    0.7127837687704964,
+    0.6810806378467256,
+    0.6794128099447355
+   ],
+   "sd": [
+    0.03473875486706135,
+    0.029830236644863586,
+    0.027032374275648526,
+    0.0075760277881250625,
+    0.019311296157015562,
+    0.03726856665339833
+   ],
+   "median": [
+    0.6818030139863018,
+    0.7569692186494834,
+    0.7475077551897721,
+    0.7102953845765159,
+    0.6773882112009884,
+    0.6932180204963513
+   ],
+   "whisker": "sd",
+   "stats": [
+    {
+     "test": "Welch t-test",
+     "p": 0.0009579563974886668,
+     "n_i": 7,
+     "n_j": 6,
+     "p_holm": 0.004789781987443334,
+     "stars": "**",
+     "a": "T",
+     "b": "H",
+     "reference": "T"
+    },
+    {
+     "test": "Welch t-test",
+     "p": 0.0016812400963662829,
+     "n_i": 7,
+     "n_j": 6,
+     "p_holm": 0.0067249603854651315,
+     "stars": "**",
+     "a": "T",
+     "b": "H+OT_tau0.91",
+     "reference": "T"
+    },
+    {
+     "test": "Welch t-test",
+     "p": 0.0543919502822945,
+     "n_i": 7,
+     "n_j": 3,
+     "p_holm": 0.16317585084688352,
+     "stars": "ns",
+     "a": "T",
+     "b": "H_matched",
+     "reference": "T"
+    },
+    {
+     "test": "Welch t-test",
+     "p": 0.9944898161342486,
+     "n_i": 7,
+     "n_j": 7,
+     "p_holm": 1.0,
+     "stars": "ns",
+     "a": "T",
+     "b": "T+OT_tau0.91",
+     "reference": "T"
+    },
+    {
+     "test": "Welch t-test",
+     "p": 0.9367231078728344,
+     "n_i": 7,
+     "n_j": 7,
+     "p_holm": 1.0,
+     "stars": "ns",
+     "a": "T",
+     "b": "T+mean",
+     "reference": "T"
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "n056_clinical_auroc_all25"
+  }
+ ],
+ "matplotlib": "3.11.0"
+}
