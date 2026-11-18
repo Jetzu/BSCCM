@@ -47,3 +47,5 @@ tail/imbalance reweighting and rank regularisers NO (STS-B reproduction: vanilla
 heteroscedastic Gaussian heads no, self-distillation no gain at ensemble level, local neighbour context yes in spatial transcriptomics
 (+.016). Folded in: N060 gets a 3rd arm (MSE + .5 x per-target batch Pearson). Added to TODO: noise-ceiling bracket (unstained floor +
 pixel split-half + FOV residual variance; decides reachability) and neighbour-bleed residual test (CPU).
+Neighbour-bleed falsifier run (n059_neighbour.py -> n059_neighbour.csv, CPU): nearest neighbour median 262-380 px (crop 128 px);
+partial r of ensemble residual with proximity x neighbour prediction mean |.023|, max |.066| (CD19 b10) -> KILLED (< .05 bar).
