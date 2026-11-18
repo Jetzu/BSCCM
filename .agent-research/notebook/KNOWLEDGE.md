@@ -80,23 +80,17 @@ K ids assigned at lint 2026-11-09; results paths are under `.agent-research/resu
   labels-only by +.00-.07 within a draw, <= 0 across draws (draw-specific); large autofl gains for CD3/CD19/CD56 are shared-dye
   artefact. Unanchored cross-slide students are at chance on PBC/MLL23 (anchoring needed, K016) [verified 1 seed] (N054;
   .agent-research/results/N054-tri-modal-latent-user-two-space-design-l/n054_arm_summary.csv) {cites:0}
-- K039: ENSEMBLE SATURATION (N055): adding Cytoland zoom2 to N048 + Cytoland gives .6902 (pre-registered bar .6916 missed); 5-6
-  member variants .6906-.6912; Cytoland on cf150 labels single .6704 but same ensemble value as the v10 member. Ensembling saturates
-  near .69 on the v10 GOAL [verified] (N055; .agent-research/results/N055-ensemble-diversification-with-microscopy/n055_scores.csv) {cites:0}
-- K040: HUB STUDENTS TRANSFER BETTER TO MLL23 (N056, class-anchored, 3 teachers): hub latent-distillation student MLL23 15-contrast
-  AUROC .704 vs TT6c .568 (every H seed > every T seed; per teacher +.10..+.155), non-anchor contrasts .632 vs .540, PBC equal
-  (.85); registered seed-floor rule not passed (floor .15); anchoring-share-matched hub .640 (part of the gain = anchoring). Unbalanced
-  OT / CORAL / kNN / mean-shift alignment of clinical embeddings do not help (mean-shift = OT on PBC). Eosinophils predicted CD16+
-  in every arm [partial: post-hoc rank evidence] (N056; .agent-research/results/N056-e3-clinical-transfer-class-anchored-giem/n056_per_run.csv) {cites:0}
-- K039: ENSEMBLE SATURATION (N055): further Cytoland members (zoom-2 view .6646 single, cofactor-150 labels .6704 single) add ~.002
-  each: pre-registered 4-member .6902 (bar .6916) FLAT, 5-member post hoc .6912; GOAL best stays .6862 (N053). Ensembling has
-  diminishing returns -> the remaining gap to .70 needs a new signal, not more members [verified] (N055;
+- K039: ENSEMBLE SATURATION (N055): further Cytoland members (zoom-2 view .6646 single, cofactor-150 labels .6704 single) add
+  ~.002 each: pre-registered 4-member N048 + Cytoland + Cytoland zoom2 = .6902 (bar .6916) FLAT; 5-6 member variants .6906-.6912
+  (post hoc); cf150 Cytoland gives the same ensemble value as the v10 member. GOAL best stays .6862 (N053); ensembling saturates
+  near .69 -> the remaining gap to .70 needs a new signal, not more members [verified] (N055;
   .agent-research/results/N055-ensemble-diversification-with-microscopy/n055_scores.csv) {cites:0}
-- K040: CLINICAL TRANSFER LEVER = ANCHORING STRENGTH, NOT DOMAIN ALIGNMENT (N056, 3 teacher runs): unsupervised alignment of
-  clinical-smear embeddings to BSCCM (unbalanced OT tau .91/.30, CORAL, mean-shift, kNN) changes anchored students by <= .03
-  (CORAL hurts). Hub student (latent distillation) with 4x larger anchor-CE gradient share: non-anchor contrasts .632 vs TT6c .540,
-  MLL23 .704 vs .568, all25 .761 vs .677 -- higher on every summary but within the pre-registered seed-range floor (.09-.15);
-  share-matched hub (1 seed) .563/.640/.713 -> most of the advantage tracks anchoring strength. RQ3 per-class single-marker
-  fractions not calibratable on BSCCM (gated classes lack single markers) [partial: seed noise] (N056;
-  .agent-research/results/N056-e3-clinical-transfer-class-anchored-giem/tables/macro_means.csv) {cites:0}
+- K040: CLINICAL TRANSFER (N056, class-anchored students, 3 teacher runs): unsupervised alignment of clinical-smear embeddings to
+  BSCCM (unbalanced OT tau .91/.30, CORAL, mean-shift, kNN) changes anchored students by <= .03 (CORAL hurts; mean-shift = OT on
+  PBC) -> domain alignment is not the lever. Hub student (latent distillation, ~4x larger anchor-CE gradient share): non-anchor
+  contrasts .632 vs TT6c .540, MLL23 15 .704 vs .568 (every H seed > every T seed; per teacher +.10..+.155), all25 .761 vs .677,
+  PBC equal (.85) -- within the pre-registered seed-range floor (.09-.15) -> registered "no difference". Share-matched hub (1 seed)
+  .563/.640/.713 -> a large part of the advantage tracks anchoring strength (tests: N057 TT6c anchor sweep, N058 matched hub 3
+  seeds). Eosinophils predicted CD16+ in every arm; RQ3 per-class single-marker fractions not calibratable on BSCCM (gated classes
+  lack single markers) [partial: seed noise] (N056; .agent-research/results/N056-e3-clinical-transfer-class-anchored-giem/n056_per_run.csv) {cites:0}
 
