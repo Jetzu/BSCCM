@@ -12,7 +12,7 @@ GOAL recipe otherwise unchanged (SSL r50, base view, v10 labels, 10 epochs). 2 s
 to .124 on CD123, N059 AB s8). PRE-REGISTERED bar: arm single-model GOAL (mean of 2 seeds) > r50 base .6730 + .0054, OR the arm as a
 3rd member of N048 (base+zoom2) > .6862 + .0054 (= .6916). Report CD123-excluded GOAL alongside (CD123 carried 59 % of N053's gain).
 Placement GPU 1 x H100 (r50 fine-tune).
-Arms: --head hlgauss (HL-Gauss histogram head, all targets, expectation readout + .1 MSE); --head twopart (gate x amplitude for
+Arms: (+ --pearson-w .5: MSE + per-target batch Pearson loss, lit_noisy_ceiling; added by Claude at integration) --head hlgauss (HL-Gauss histogram head, all targets, expectation readout + .1 MSE); --head twopart (gate x amplitude for
 CD123 / HLA-DR / CD19 / CD56, gate threshold = training-label q.98). Expected +.003-.008 (outsider, Codex). Kill: both arms <= base.
 
 ## Changes

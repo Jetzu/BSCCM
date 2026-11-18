@@ -41,3 +41,9 @@ data from the new batch (controls or the batch's own marker data); label-free ->
 antibody; authors call the CD123/CD14/HLA-DR channel "too noisy". Verified first-hand earlier (N038: DeepIFC numbers, 35 % CD19).
 Folded in: crowd-layer mixed-effects training -> N061 arm (i); measurement-model pooled heads -> N062. Simulated readout randomisation
 (lit idea 3) parked: CPU hedge test on saved predictions first (TODO).
+lit_noisy_ceiling.md (landed after close): Pearson-optimal predictor under label noise = conditional mean (MSE already); controlled
+evidence on noisy held-out labels: MSE + Pearson loss weak yes (Visium HD PCC .293 -> .325, overlapping spreads), HL-Gauss yes for RMSE,
+tail/imbalance reweighting and rank regularisers NO (STS-B reproduction: vanilla .766 > LDS .762 / FDS .751 / RankSim .756 / ConR .735),
+heteroscedastic Gaussian heads no, self-distillation no gain at ensemble level, local neighbour context yes in spatial transcriptomics
+(+.016). Folded in: N060 gets a 3rd arm (MSE + .5 x per-target batch Pearson). Added to TODO: noise-ceiling bracket (unstained floor +
+pixel split-half + FOV residual variance; decides reachability) and neighbour-bleed residual test (CPU).

@@ -23,3 +23,5 @@
 - Simulated readout randomisation hedge: CPU test on saved predictions first; GPU only if >= +.0054 (lit_crossbatch idea 3).
 - Per-target ensemble weights / cross-target stacker fitted on source OOF predictions (outsider 4; cross-target part may be a declined lineage prior).
 - USER DECISION: few-shot new-draw readout protocol (.7042 with >= 200-500 labelled new-draw cells per target; AB s3).
+- Noise-ceiling bracket on GOAL cells (lit_noisy_ceiling idea 1): unstained-cell noise floor + pixel split-half (Spearman-Brown) + FOV residual variance; pre-registered: optimistic ceiling <= .72 -> report .70 as near-ceiling; CD19/CD56 ceilings >= .75 -> "label-limited" refuted.
+- Neighbour-bleed test (lit_noisy_ceiling idea 3): partial r of ensemble residuals with neighbour overlap x neighbour predicted marker; kill < .05.
