@@ -1,0 +1,116 @@
+{
+ "png": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/plots/goal-v10-n063-composite_2026-11-18_1718.png",
+ "svg": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/plots/goal-v10-n063-composite_2026-11-18_1718.svg",
+ "created": "2026-11-18T17:18:41",
+ "command": [
+  "/home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python",
+  "/home/hpc/v181bb/v181bb10/.claude/skills/work-log/bin/plot_compare.py",
+  "--metric",
+  "goal_v10_n063_composite",
+  "--csv",
+  ".agent-research/results/N063-composite-of-the-n060-n062-partial-wins/plot_n063.csv",
+  "--item",
+  "N063",
+  "--baseline",
+  "r50 control",
+  "--noise",
+  "0.0027"
+ ],
+ "cwd": "/home/hpc/v181bb/v181bb10/BSCCM",
+ "source": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N063-composite-of-the-n060-n062-partial-wins/plot_n063.csv",
+ "notes": {
+  "item": "N063",
+  "metric": "goal_v10_n063_composite",
+  "direction": "higher",
+  "noise_sd": 0.0027,
+  "stats": null
+ },
+ "width_in": 8.5,
+ "height_in": 2.5591,
+ "png_px": [
+  3840,
+  1156
+ ],
+ "significance": "two-sided; Holm-corrected over all comparisons of a panel (one family per panel); * <0.05 ** <0.01 *** <0.001 **** <0.0001",
+ "panels": [
+  {
+   "panel": "a",
+   "kind": "bar",
+   "groups": [
+    "r50 control",
+    "composite (pre-reg)",
+    "twopart+fov-re",
+    "panel head"
+   ],
+   "colors": [
+    "#767E86",
+    "#3A6C9E",
+    "#55BDB2",
+    "#A1CA8A"
+   ],
+   "n": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "mean": [
+    0.667767161663132,
+    0.6783837112200354,
+    0.6766267440741298,
+    0.671246418925389
+   ],
+   "sd": [
+    0.0017423422854912622,
+    0.0014160643343975796,
+    0.0013609864768389386,
+    0.001249640588132596
+   ],
+   "median": [
+    0.667767161663132,
+    0.6783837112200354,
+    0.6766267440741298,
+    0.671246418925389
+   ],
+   "whisker": "sd",
+   "stats": [
+    {
+     "test": "paired t-test",
+     "p": 0.01383251366683817,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 0.041497541000514504,
+     "stars": "*",
+     "a": "r50 control",
+     "b": "composite (pre-reg)",
+     "reference": "r50 control"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.019370827806467355,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 0.041497541000514504,
+     "stars": "*",
+     "a": "r50 control",
+     "b": "twopart+fov-re",
+     "reference": "r50 control"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.34780847675423643,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 0.34780847675423643,
+     "stars": "ns",
+     "a": "r50 control",
+     "b": "panel head",
+     "reference": "r50 control"
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "goal_v10_n063_composite"
+  }
+ ],
+ "matplotlib": "3.11.0"
+}
