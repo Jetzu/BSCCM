@@ -88,3 +88,15 @@ K ids assigned at lint 2026-11-09; results paths are under `.agent-research/resu
   (.85); registered seed-floor rule not passed (floor .15); anchoring-share-matched hub .640 (part of the gain = anchoring). Unbalanced
   OT / CORAL / kNN / mean-shift alignment of clinical embeddings do not help (mean-shift = OT on PBC). Eosinophils predicted CD16+
   in every arm [partial: post-hoc rank evidence] (N056; .agent-research/results/N056-e3-clinical-transfer-class-anchored-giem/n056_per_run.csv) {cites:0}
+- K039: ENSEMBLE SATURATION (N055): further Cytoland members (zoom-2 view .6646 single, cofactor-150 labels .6704 single) add ~.002
+  each: pre-registered 4-member .6902 (bar .6916) FLAT, 5-member post hoc .6912; GOAL best stays .6862 (N053). Ensembling has
+  diminishing returns -> the remaining gap to .70 needs a new signal, not more members [verified] (N055;
+  .agent-research/results/N055-ensemble-diversification-with-microscopy/n055_scores.csv) {cites:0}
+- K040: CLINICAL TRANSFER LEVER = ANCHORING STRENGTH, NOT DOMAIN ALIGNMENT (N056, 3 teacher runs): unsupervised alignment of
+  clinical-smear embeddings to BSCCM (unbalanced OT tau .91/.30, CORAL, mean-shift, kNN) changes anchored students by <= .03
+  (CORAL hurts). Hub student (latent distillation) with 4x larger anchor-CE gradient share: non-anchor contrasts .632 vs TT6c .540,
+  MLL23 .704 vs .568, all25 .761 vs .677 -- higher on every summary but within the pre-registered seed-range floor (.09-.15);
+  share-matched hub (1 seed) .563/.640/.713 -> most of the advantage tracks anchoring strength. RQ3 per-class single-marker
+  fractions not calibratable on BSCCM (gated classes lack single markers) [partial: seed noise] (N056;
+  .agent-research/results/N056-e3-clinical-transfer-class-anchored-giem/tables/macro_means.csv) {cites:0}
+
