@@ -1,0 +1,63 @@
+{
+  "script_sha256": "0180f1478c873a8f685b51e933ced92c12069256bd6a2abfa14221f7346553e8",
+  "seed": 64,
+  "max_cells": 2000,
+  "chunk_size": 128,
+  "inputs": [
+    {
+      "path": "/hnvme/workspace/v181bb10-bsccm/targets_v5cx_v10.npz",
+      "size": 113982888,
+      "mtime_ns": 1794944652000000000
+    },
+    {
+      "path": "/hnvme/workspace/v181bb10-bsccm/bsccm_sm.parquet",
+      "size": 111332599,
+      "mtime_ns": 1794152348000000000
+    },
+    {
+      "path": "/hnvme/workspace/v181bb10-bsccm/bsccm_index.parquet",
+      "size": 4826840,
+      "mtime_ns": 1794152348000000000
+    },
+    {
+      "path": "/hnvme/workspace/v181bb10-bsccm/pack/fluor.npy",
+      "size": 81187504256,
+      "mtime_ns": 1794152864000000000
+    },
+    {
+      "path": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N039-label-v8-re-derive-single-antibody-marke/codex/unmixing_maps.json",
+      "size": 5417,
+      "mtime_ns": 1794503648750779649
+    },
+    {
+      "path": "/hnvme/workspace/v181bb10-bsccm/runs/n048_v9_base_b10/eval_preds.npz",
+      "size": 892410,
+      "mtime_ns": 1794943145000000000
+    },
+    {
+      "path": "/hnvme/workspace/v181bb10-bsccm/runs/n048_v9_zoom2_b10/eval_preds.npz",
+      "size": 892410,
+      "mtime_ns": 1794943183000000000
+    },
+    {
+      "path": "/hnvme/workspace/v181bb10-bsccm/runs/n053_cytoland_b10/eval_preds.npz",
+      "size": 892410,
+      "mtime_ns": 1794961956000000000
+    },
+    {
+      "path": "/hnvme/workspace/v181bb10-bsccm/runs/n048_v9_base_b01/eval_preds.npz",
+      "size": 1790622,
+      "mtime_ns": 1794942343000000000
+    },
+    {
+      "path": "/hnvme/workspace/v181bb10-bsccm/runs/n048_v9_zoom2_b01/eval_preds.npz",
+      "size": 1790622,
+      "mtime_ns": 1794942359000000000
+    },
+    {
+      "path": "/hnvme/workspace/v181bb10-bsccm/runs/n053_cytoland_b01/eval_preds.npz",
+      "size": 1790622,
+      "mtime_ns": 1794959922000000000
+    }
+  ]
+}

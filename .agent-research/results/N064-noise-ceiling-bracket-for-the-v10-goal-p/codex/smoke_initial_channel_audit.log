@@ -1,0 +1,9 @@
+Pixel rows=2000, missing chunks=16/16, workers=4
+Checkpoint chunk 0
+Traceback (most recent call last):
+  File "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N064-noise-ceiling-bracket-for-the-v10-goal-p/codex/n064_ceiling.py", line 530, in <module>
+    main()
+    ~~~~^^
+  File "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N064-noise-ceiling-bracket-for-the-v10-goal-p/codex/n064_ceiling.py", line 382, in main
+    raise ValueError('Pixel mask or channel order does not reproduce released aggregates within .01 count')
+ValueError: Pixel mask or channel order does not reproduce released aggregates within .01 count

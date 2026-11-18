@@ -1,0 +1,11 @@
+{
+  "full_run": false,
+  "unmixing_fidelity_ok": true,
+  "goal_mean_r_max": 0.9998654521684125,
+  "registered_read_valid": false,
+  "registered_read_scope": "pixel-noise of local-background reconstruction; not total v10 label reliability",
+  "reconstructed_v10_r_min": 0.36088761458463764,
+  "actual_v10_reachability_established": false,
+  "near_ceiling": null,
+  "pixel_label_limited_refuted_CD19_CD56": null
+}

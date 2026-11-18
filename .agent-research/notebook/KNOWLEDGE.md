@@ -94,4 +94,10 @@ K ids assigned at lint 2026-11-09; results paths are under `.agent-research/resu
   seeds). N058 CONFIRMED at matched anchoring (3 seeds x 3 teachers): MLL23 hub .681 vs TT6c .568, +.113 > registered floor .074,
   every hub seed > every TT6c seed; N057: stronger TT6c anchoring alone +.04-.06 -> the hub target is the main lever. Eosinophils predicted CD16+ in every arm; RQ3 per-class single-marker fractions not calibratable on BSCCM (gated classes
   lack single markers) [partial: seed noise] (N056; .agent-research/results/N056-e3-clinical-transfer-class-anchored-giem/n056_per_run.csv) {cites:0}
+- K041: LABEL ERROR IS BACKGROUND-MODEL ERROR, NOT PIXEL NOISE (N064, full data 69,576 cells): pixel checkerboard split-half through
+  the exact v10 pipeline gives r_max .9999 on every target. Re-deriving labels with local corner backgrounds instead of the authors'
+  smoothed background agrees with v10 only weakly on dim markers (CD19 .24-.40, CD56 .67-.76) and on the draw-shifted targets in
+  draw 1 (HLA-DR .76, grp:CD45 .68 vs .95-.98 in draw 0); strong markers >= .87-.999. The binding label limit is the background
+  estimate, not counting noise; no numeric ceiling for v10 is identifiable without a reference measurement [verified] (N064;
+  .agent-research/results/N064-noise-ceiling-bracket-for-the-v10-goal-p/full/reconstruction_fidelity.csv) {cites:0}
 

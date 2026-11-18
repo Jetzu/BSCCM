@@ -1,0 +1,18 @@
+{
+  "unique_pixel_cells": 2000,
+  "workers": 4,
+  "pixel_wall_seconds": 0.290839035063982,
+  "total_wall_seconds": 1.3370858570560813,
+  "allocated_cpu_hours_at_48": 0.01782781142741442,
+  "foreground_counts": [
+    6433,
+    6416
+  ],
+  "background_counts": [
+    1759,
+    1776
+  ],
+  "cells_with_zero_pixels": 0,
+  "cells_with_ge4095_pixels": 35,
+  "calibration_scope": "all clean split-0 aggregates; smoke caps only pixel rows; FOV and unstained aggregate diagnostics use all GOAL/control rows"
+}

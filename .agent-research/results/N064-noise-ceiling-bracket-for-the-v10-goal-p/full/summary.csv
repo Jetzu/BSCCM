@@ -1,0 +1,5 @@
+direction,role,n_targets,mean_r_max,all_targets_defined
+b01,eval,11,0.9998503852856057,True
+b01,train_matched,11,0.9998716678226944,True
+b10,eval,11,0.9998840334467218,True
+b10,train_matched,11,0.9998148751576018,True

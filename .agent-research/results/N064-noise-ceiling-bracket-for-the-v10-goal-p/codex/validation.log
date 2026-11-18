@@ -1,0 +1,51 @@
+Pixel rows=2000, missing chunks=16/16, workers=4
+Signal 15: checkpointing completed pixel chunks, then exit 143
+
+Interrupted return code: 143
+Completed pixel chunks: 1
+Pixel rows=2000, missing chunks=15/16, workers=4
+Checkpoint chunk 0
+| direction | role | n_targets | mean_r_max | all_targets_defined |
+| --- | --- | --- | --- | --- |
+| b01 | eval | 11 | 0.99985 | True |
+| b01 | train_matched | 11 | 0.99989 | True |
+| b10 | eval | 11 | 0.99988 | True |
+| b10 | train_matched | 11 | 0.99983 | True |
+
+{
+  "decision": {
+    "full_run": false,
+    "unmixing_fidelity_ok": true,
+    "goal_mean_r_max": 0.9998654521684125,
+    "registered_read_valid": false,
+    "registered_read_scope": "pixel-noise of local-background reconstruction; not total v10 label reliability",
+    "reconstructed_v10_r_min": 0.36088761458463764,
+    "actual_v10_reachability_established": false,
+    "near_ceiling": null,
+    "pixel_label_limited_refuted_CD19_CD56": null
+  },
+  "runtime": {
+    "unique_pixel_cells": 2000,
+    "workers": 4,
+    "pixel_wall_seconds": 0.28133086301386356,
+    "total_wall_seconds": 1.3326274561695755,
+    "allocated_cpu_hours_at_48": 0.017768366082261008,
+    "foreground_counts": [
+      6433,
+      6416
+    ],
+    "background_counts": [
+      1759,
+      1776
+    ],
+    "cells_with_zero_pixels": 0,
+    "cells_with_ge4095_pixels": 35,
+    "calibration_scope": "all clean split-0 aggregates; smoke caps only pixel rows; FOV and unstained aggregate diagnostics use all GOAL/control rows"
+  }
+}
+
+
+PASS: interrupted chunks resume to identical reliability table.
+Already complete with identical manifest; no work needed
+
+PASS: completed run exits immediately; changed seed refuses stale cache.
