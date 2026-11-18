@@ -25,15 +25,39 @@ ap.add_argument('--dual-zoom', type=int, default=1)   # N026: shared encoder see
 ap.add_argument('--adabn', type=int, default=0)   # N026: after training, recompute BN stats on N unlabelled target-batch images (split 0), evaluate again
 ap.add_argument('--enc-lr-mult', type=float, default=1.0)   # N053: encoder lr = lr x this (pretrained ViTs: 0.1); heads keep lr
 ap.add_argument('--drop-path', type=float, default=0.1)   # N053: stochastic depth of the pretrained ViT backbones (bsccm.encoders only)
+# N060--N062: all new recipe options are inert/omitted from cfg at default.
+ap.add_argument('--head', choices=['mse', 'hlgauss', 'twopart'], default='mse')
+ap.add_argument('--hl-mse', type=float, default=0.1)
+ap.add_argument('--gate-w', type=float, default=0.5)
+ap.add_argument('--pos-q', type=float, default=0.98)
+ap.add_argument('--fov-re', type=float, default=0.0)
+ap.add_argument('--re-shrink', type=float, default=1.0)
+ap.add_argument('--pair-loss', type=float, default=0.0)
+ap.add_argument('--fov-batch', type=int, default=0)
+ap.add_argument('--w-autofl', type=float, default=1.0)
+ap.add_argument('--pearson-w', type=float, default=0.0)   # N060 (lit_noisy_ceiling): + w * mean over present targets of (1 - batch Pearson r)
+ap.add_argument('--panel-head', action='store_true')
+ap.add_argument('--device', choices=['cuda', 'cpu'], default='cuda')
 a = ap.parse_args(); os.makedirs(a.out, exist_ok=True); torch.manual_seed(a.seed); np.random.seed(a.seed)
 if not np.isfinite(a.phys_aug) or not 0 <= a.phys_aug <= 1: ap.error('--phys-aug must be in [0,1]')
 if not np.isfinite(a.consist) or a.consist < 0: ap.error('--consist must be nonnegative')
 if a.consist > 0 and a.phys_aug == 0: ap.error('--consist requires --phys-aug > 0')
+for _key in ('hl_mse', 'gate_w', 'fov_re', 're_shrink', 'pair_loss', 'w_autofl'):
+    if not np.isfinite(getattr(a, _key)) or getattr(a, _key) < 0: ap.error(f'--{_key.replace("_", "-")} must be finite and nonnegative')
+if not np.isfinite(a.pos_q) or not 0 < a.pos_q < 1: ap.error('--pos-q must be in (0,1)')
+if a.fov_batch < 0: ap.error('--fov-batch must be nonnegative')
+if a.panel_head and a.head != 'mse': ap.error('--panel-head requires --head mse')
+if a.head == 'hlgauss' and a.fov_re: ap.error('HL-Gauss and FOV readout adapters are separate arms; combine with pair loss instead')
+NNEW = a.head != 'mse' or a.panel_head or a.fov_re > 0 or a.pair_loss > 0 or a.fov_batch > 0 or a.w_autofl != 1 or a.pearson_w > 0
+if NNEW:
+    if a.protocol not in ('b1to0', 'b0to1'): ap.error('N060--N062 require a single training draw')
+    if a.include_gs or a.dann > 0 or a.adabn: ap.error('N060--N062 source-only requires --include-gs 0 --dann 0 --adabn 0')
+DEVICE = a.device
 PHYS = a.phys_aug > 0
 if PHYS:
     if a.protocol not in ('b1to0', 'b0to1'): ap.error('N041 requires a single source draw: --protocol b1to0 or b0to1')
     if a.include_gs or a.dann > 0 or a.adabn: ap.error('N041 source-only requires --include-gs 0 --dann 0 --adabn 0')
-T = np.load(W + '/' + a.targets); names = list(T['names']); K = len(names)
+T = np.load(os.path.join(W, a.targets)); names = list(T['names']); K = len(names)
 Y, Mk, c3, c10, sp, b = T['Y'], T['mask'], T['cls3'], T['cls10'], T['split'], T['batch']
 has = Mk.any(1) | (c3 >= 0)
 if not a.include_gs: has &= T['hist_row'] < 0   # keep the 15,712 GS cells (label: autofl only) out of LF training -> clean GS autofl test
@@ -44,6 +68,22 @@ else: raise SystemExit('protocol?')
 tr, ev = np.where(tr)[0], np.where(ev)[0]
 if a.max_train: tr = np.random.default_rng(0).permutation(tr)[:a.max_train]
 print(f'train {len(tr)} eval {len(ev)} protocol {a.protocol}', flush=True)
+if len(tr) < a.bs: ap.error('--max-train / source rows must supply at least one full batch')
+from bsccm.heads import HLGauss, TwoPart, PanelHead, TrainAdapters, FOVBatchSampler, masked_mean, pair_difference_loss
+SETUP = None
+if NNEW:
+    import hashlib
+    if K != 13: ap.error('N060--N062 require 13 targets')
+    # Only tr enters statistics, fingerprints, adapter tables, or FOV sampling.
+    _source = hashlib.sha256()
+    for _arr in (tr, Y[tr], Mk[tr], T['slide'][tr], T['fov'][tr]):
+        _source.update(np.ascontiguousarray(_arr).tobytes())
+    SETUP = {'version': 1, 'source_sha256': _source.hexdigest(),
+             'counts': Mk[tr].sum(0).tolist(), 'names': [str(n) for n in names]}
+    _, _fi = np.unique(np.stack([T['slide'][tr], T['fov'][tr]], 1), axis=0, return_inverse=True)
+    FOV_INDEX = torch.full((len(Y),), -1, dtype=torch.long, device=DEVICE)
+    FOV_INDEX[torch.as_tensor(tr, device=DEVICE)] = torch.as_tensor(_fi, device=DEVICE)
+    TARGET_WEIGHT = torch.ones(K, device=DEVICE); TARGET_WEIGHT[names.index('autofl')] = a.w_autofl
 nin = len(chan_list(a.channels)) + a.phase
 Wt_ = np.ones(Y.shape, np.float32)
 if a.tail_weight > 0:   # fine-grained: up-weight rare marker values (density^-alpha in 60 bins over [-4, 4], per batch x target, clipped [.2, 10], mean 1)
@@ -73,8 +113,13 @@ if a.pseudo:   # N040 noisy student: teacher predictions as extra targets ONLY w
     PSEUDO_ID = dict(w=float(a.pseudo_w), cols=[names[k] for k in np.flatnonzero(_cols)],   # F3: pin teacher CONTENT, not paths
                      sha256=[hashlib.sha256(np.ascontiguousarray(q['P']).tobytes() + np.ascontiguousarray(q['G']).tobytes()).hexdigest() for q in _Ps])
     LAB['PY'] = PY; LAB['PM'] = PM; print(f'N040 pseudo labels: {len(_Ps)} teachers, cols {PSEUDO_ID["cols"]}, {int(PM[tr].sum())} cell x target entries on {len(tr)} training cells', flush=True)
-mk = lambda rows, train: torch.utils.data.DataLoader(RawSet(rows, LAB), batch_size=a.bs, shuffle=train, drop_last=train,
-                                                      num_workers=a.workers, pin_memory=True, persistent_workers=True, prefetch_factor=8)
+def mk(rows, train):
+    kw = dict(num_workers=a.workers, pin_memory=DEVICE == 'cuda')
+    if a.workers: kw.update(persistent_workers=True, prefetch_factor=8)
+    if train and a.fov_batch:
+        sampler = FOVBatchSampler(T['fov'][rows], T['slide'][rows], a.bs, a.fov_batch, a.seed)
+        return torch.utils.data.DataLoader(RawSet(rows, LAB), batch_sampler=sampler, **kw)
+    return torch.utils.data.DataLoader(RawSet(rows, LAB), batch_size=a.bs, shuffle=train, drop_last=train, **kw)
 phys_aug = None; phys_calibration = None
 if PHYS:
     from bsccm.phys_aug import PhysAug, calibrate_source_borders
@@ -93,15 +138,15 @@ if PHYS:
                      torch.from_numpy(_ch), 'all', False); _dc.append(_x[:, :, torch.from_numpy(_bm)].mean(-1).numpy())
         phys_calibration['gain_log_sd'] = family_gain_log_sd(np.concatenate(_dc), _gn.s_c.numpy(), mult=2.)
         phys_calibration['gain_log_sd_method'] = 'family MIN of 2 x robust sd of normalised 8-px border mean x s_c (source split-0 calibration rows)'
-    phys_aug = PhysAug(a.phys_aug, phys_calibration['gain_adu_per_e'], phys_calibration['offset_sd_adu'], device='cuda',
+    phys_aug = PhysAug(a.phys_aug, phys_calibration['gain_adu_per_e'], phys_calibration['offset_sd_adu'], device=DEVICE,
                        gain_log_sd=phys_calibration['gain_log_sd'])
     print('N041 source-border calibration:', {k: phys_calibration[k] for k in ('source_draw', 'gain_adu_per_e', 'offset_sd_adu', 'gain_log_sd', 'rows_sha256')}, flush=True)
-gnorm = GPUNorm('cuda'); CH = chan_list(a.channels)
-_cnt = np.bincount(c10[tr][c10[tr] >= 0], minlength=10).astype(np.float32); C10W = torch.tensor(1 / np.sqrt(np.maximum(_cnt, 1)), device='cuda'); C10W = C10W / C10W[_cnt > 0].mean()
+gnorm = GPUNorm(DEVICE); CH = chan_list(a.channels)
+_cnt = np.bincount(c10[tr][c10[tr] >= 0], minlength=10).astype(np.float32); C10W = torch.tensor(1 / np.sqrt(np.maximum(_cnt, 1)), device=DEVICE); C10W = C10W / C10W[_cnt > 0].mean()
 def prep(raw, ph, g, train):   # raw int16 records -> normalised LF on GPU (+-4 px translation when training)
-    raw = raw.cuda(non_blocking=True)
+    raw = raw.to(DEVICE, non_blocking=True)
     if train and phys_aug is not None: raw = phys_aug(raw)   # raw counts BEFORE flat-field/slide/log normalisation; phase untouched
-    x = gnorm(raw, ph.cuda(non_blocking=True), g.cuda(non_blocking=True), CH, bool(a.phase), shift=4 if train else 0)
+    x = gnorm(raw, ph.to(DEVICE, non_blocking=True), g.to(DEVICE, non_blocking=True), CH, bool(a.phase), shift=4 if train else 0)
     if a.lowpass > 0:   # depthwise separable Gaussian, reflect padding; applied before zoom
         r_ = int(np.ceil(3 * a.lowpass)); k_ = torch.exp(-0.5 * (torch.arange(-r_, r_ + 1, device=x.device, dtype=x.dtype) / a.lowpass) ** 2); k_ = k_ / k_.sum()
         c_ = x.shape[1]; x = F.pad(x, (r_, r_, r_, r_), mode='reflect')
@@ -129,7 +174,19 @@ if SSL:
 if a.stem == 'nomaxpool': net.maxpool = nn.Identity()   # stride 2 instead of 4 before layer1 (weights unchanged)
 NF = net.num_features * (2 if a.dual_zoom > 1 else 1)
 model = nn.ModuleDict({'enc': net, 'reg': nn.Linear(NF, K), 'c3': nn.Linear(NF, 3), 'c10': nn.Linear(NF, 10),
-                      'dom': nn.Sequential(nn.Linear(NF, 256), nn.ReLU(), nn.Linear(256, 1))}).cuda()
+                      'dom': nn.Sequential(nn.Linear(NF, 256), nn.ReLU(), nn.Linear(256, 1))}).to(DEVICE)
+if a.head == 'hlgauss': model['reg'] = HLGauss(NF, Y[tr], Mk[tr]).to(DEVICE)
+elif a.head == 'twopart': model['reg'] = TwoPart(NF, names, Y[tr], Mk[tr], a.pos_q).to(DEVICE)
+elif a.panel_head: model['reg'] = PanelHead(NF, names).to(DEVICE)
+if a.fov_re or a.panel_head:
+    model['readout'] = TrainAdapters(T['fov'][tr], T['slide'][tr], K, bool(a.fov_re), a.panel_head).to(DEVICE)
+    SLIDE_INDEX = torch.full((len(Y),), -1, dtype=torch.long, device=DEVICE)
+    SLIDE_INDEX[torch.as_tensor(tr, device=DEVICE)] = torch.as_tensor(model['readout'].si, device=DEVICE)
+    assert np.array_equal(model['readout'].fi, _fi)
+if SETUP is not None:
+    for _key in ('edges', 'thresholds', 'class_weight', 'gate_active', 'design'):
+        if hasattr(model['reg'], _key): SETUP[_key] = getattr(model['reg'], _key).detach().cpu().tolist()
+    print('N060--N062 source setup:', json.dumps({k: v for k, v in SETUP.items() if k != 'edges'}), flush=True)
 steps = a.epochs * len(dtr)
 if a.enc_lr_mult == 1.0:   # legacy single param group (older checkpoints resume / dump unchanged)
     opt = torch.optim.AdamW(model.parameters(), lr=a.lr, weight_decay=0.05); sched = torch.optim.lr_scheduler.OneCycleLR(opt, a.lr, total_steps=steps, pct_start=0.1)
@@ -144,7 +201,7 @@ class _GRL(torch.autograd.Function):
     def backward(ctx, g): return -ctx.l * g, None
 def fwd(x):
     if SSL: x = torch.cat([x, torch.ones_like(x)], 1)
-    with torch.autocast('cuda', torch.bfloat16):
+    with torch.autocast(DEVICE, torch.bfloat16, enabled=DEVICE == 'cuda'):
         h = model['enc'](x.contiguous(memory_format=torch.channels_last))
         if a.dual_zoom > 1:   # second view through the SAME encoder: centre crop 128/dual_zoom upsampled to 128
             s_ = 128 // a.dual_zoom; o = (128 - s_) // 2; xz = F.interpolate(x[..., o:o + s_, o:o + s_], size=(128, 128), mode='bilinear', align_corners=False)
@@ -194,18 +251,23 @@ try:
     import wandb; run = wandb.init(project=os.environ.get('WANDB_PROJECT', 'BSCCM'), name=os.path.basename(a.out.rstrip('/')), id=os.path.basename(a.out.rstrip('/')), resume='allow', config=vars(a))
 except Exception as e: print('wandb off:', e); run = None
 _NEW_DEFAULTS = {'stem': 'std', 'zoom': 1, 'dual_zoom': 1, 'lowpass': 0.0, 'phys_aug': 0.0, 'consist': 0.0, 'pseudo': '', 'pseudo_w': 0.3, 'enc_lr_mult': 1.0, 'drop_path': 0.1}   # options added after older checkpoints were written: omitted at default so they still resume
+_NEW_DEFAULTS.update(head='mse', hl_mse=0.1, gate_w=0.5, pos_q=0.98, fov_re=0.0,
+                     re_shrink=1.0, pair_loss=0.0, fov_batch=0, w_autofl=1.0, panel_head=False, device='cuda', pearson_w=0.0)
 def _cfg():
     cfg = {k: v for k, v in vars(a).items() if k not in ('workers', 'out', 'adabn', 'dump_train_preds') and not (k in _NEW_DEFAULTS and v == _NEW_DEFAULTS[k])}
     if PHYS: cfg['phys_calibration'] = phys_calibration   # pin source row IDs, fitted gain/offsets and method on resume
     if PSEUDO_ID is not None: cfg['pseudo_id'] = PSEUDO_ID   # N040 F3
+    if SETUP is not None: cfg['n060_062_setup'] = SETUP
     return cfg
 ck = a.out + '/ckpt.pt'; ep0 = 0; log = []
 if os.path.exists(ck):
-    s = torch.load(ck, map_location='cuda', weights_only=False)
+    s = torch.load(ck, map_location=DEVICE, weights_only=False)
     cfg = _cfg()
     if s.get('cfg') != cfg or not np.array_equal(s.get('tr'), tr) or not np.array_equal(s.get('ev'), ev):
         raise SystemExit(f'refusing to resume {ck}: config/rows differ from the checkpoint (red-team F3)')
     model.load_state_dict(s['m']); opt.load_state_dict(s['o']); sched.load_state_dict(s['s']); ep0, log = s['ep'], s['log']; print('resumed', ep0, flush=True)
+if SETUP is not None and not a.dump_train_preds:
+    with open(a.out + '/head_setup.json', 'w') as f: json.dump(SETUP, f, indent=2)
 if PHYS and not a.dump_train_preds:
     with open(a.out + '/phys_aug_calibration.json', 'w') as f: json.dump(phys_calibration, f, indent=2)
 if a.dump_train_preds:   # N040 teacher pass: needs the finished checkpoint (resumed above); writes P,G for every training row, then exits
@@ -217,11 +279,27 @@ if a.dump_train_preds:   # N040 teacher pass: needs the finished checkpoint (res
 t0 = time.time(); step = ep0 * len(dtr)
 for ep in range(ep0, a.epochs):
     tl = n = 0
+    if a.fov_batch: dtr.batch_sampler.epoch = ep
     for raw, ph, g, y, m, k3, k10, wt, *pz in dtr:
         if a.consist > 0:   # transfer once; both prep calls independently sample raw-count nuisances and the existing translation
-            raw, ph, g = raw.cuda(non_blocking=True), ph.cuda(non_blocking=True), g.cuda(non_blocking=True)
-        y, m, k3, k10, wt = y.cuda(), m.cuda(), k3.cuda(), k10.cuda(), wt.cuda(); _last_h = fwd(prep(raw, ph, g, True)); p, l3, l10, _ = _last_h
-        reg = (((p - y) ** 2) * m * wt).sum(0) / (m * wt).sum(0).clamp(min=1e-6); reg = reg[m.any(0)].mean()
+            raw, ph, g = raw.to(DEVICE, non_blocking=True), ph.to(DEVICE, non_blocking=True), g.to(DEVICE, non_blocking=True)
+        y, m, k3, k10, wt = y.to(DEVICE), m.to(DEVICE), k3.to(DEVICE), k10.to(DEVICE), wt.to(DEVICE); _last_h = fwd(prep(raw, ph, g, True)); p, l3, l10, _ = _last_h
+        if not NNEW:  # legacy arithmetic and model state layout remain unchanged at defaults
+            reg = (((p - y) ** 2) * m * wt).sum(0) / (m * wt).sum(0).clamp(min=1e-6); reg = reg[m.any(0)].mean()
+        else:
+            gg = g.to(DEVICE); fit_p = p
+            if 'readout' in model: fit_p = model['readout'](p, l3, FOV_INDEX[gg], SLIDE_INDEX[gg])
+            mse = (fit_p - y).square()
+            value = model['reg'].cell_loss(_last_h[3], y) + a.hl_mse * mse if a.head == 'hlgauss' else mse
+            reg = masked_mean(value, m, wt, TARGET_WEIGHT)
+            if a.head == 'twopart': reg = reg + a.gate_w * model['reg'].gate_loss(_last_h[3], y, m, wt, TARGET_WEIGHT)
+            if 'readout' in model: reg = reg + model['readout'].penalty(a.fov_re, a.re_shrink, TARGET_WEIGHT)
+            if a.pair_loss: reg = reg + a.pair_loss * pair_difference_loss(p, y, m, FOV_INDEX[gg], TARGET_WEIGHT, gg)
+            if a.pearson_w > 0:   # per-target masked batch Pearson on the shared prediction (label units), targets weighted like the MSE
+                mm = m.float() * wt; nn_ = mm.sum(0); ok = (nn_ >= 8) & (TARGET_WEIGHT > 0)
+                pc = p - (p * mm).sum(0) / nn_.clamp(min=1); yc = y - (y * mm).sum(0) / nn_.clamp(min=1)
+                rr = (pc * yc * mm).sum(0) / torch.sqrt((pc.square() * mm).sum(0) * (yc.square() * mm).sum(0) + 1e-6)   # eps inside sqrt: finite grad at zero variance
+                if ok.any(): reg = reg + a.pearson_w * (1 - rr[ok]).mean()
         if (k3 >= 0).any():
             ce3 = F.cross_entropy(l3, k3, ignore_index=-1)
             if a.focal_c10 > 0:   # class-balanced focal loss on the 10 fine gates
@@ -232,7 +310,7 @@ for ep in range(ep0, a.epochs):
         else: ce = p.sum() * 0
         if a.dann > 0:
             rt, pt_, gt, *_ = next(it_tgt); _, _, _, ht = fwd(prep(rt, pt_, gt, True)); _, _, _, hs = _last_h
-            hh = torch.cat([hs, ht]); dl_ = torch.cat([torch.zeros(len(hs)), torch.ones(len(ht))]).cuda()
+            hh = torch.cat([hs, ht]); dl_ = torch.cat([torch.zeros(len(hs)), torch.ones(len(ht))]).to(DEVICE)
             ce = ce + a.dann * F.binary_cross_entropy_with_logits(model['dom'](_GRL.apply(hh, 1.0))[:, 0], dl_)
         consistency = p.new_zeros(())
         if a.consist > 0:
@@ -240,7 +318,7 @@ for ep in range(ep0, a.epochs):
             consistency = F.mse_loss(p, p2)   # all K regression predictions; symmetric gradients, no labels or target-draw images
         loss = reg + a.w_cls * ce
         if a.pseudo:
-            py, pm = pz[0].cuda(), pz[1].cuda().float()
+            py, pm = pz[0].to(DEVICE), pz[1].to(DEVICE).float()
             preg = (((p.float() - py) ** 2) * pm).sum(0) / pm.sum(0).clamp(min=1e-6); loss = loss + a.pseudo_w * (preg[pm.any(0)].mean() if pm.any() else p.sum() * 0)
         if a.consist > 0: loss = loss + a.consist * consistency
         opt.zero_grad(set_to_none=True); loss.backward(); nn.utils.clip_grad_norm_(model.parameters(), 2.0); opt.step(); sched.step()

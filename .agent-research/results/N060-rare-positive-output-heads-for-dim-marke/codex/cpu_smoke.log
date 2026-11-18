@@ -1,0 +1,247 @@
+PASS masked regression equals legacy; missing/drop-autofl gradients zero
+PASS Gaussian bin integrals normalize, correct quantiles/expectation, extreme tails, gradients
+PASS two-part strict source thresholds, class balance, gate/amplitude equation, backward
+PASS pair loss matches explicit unordered pairs, cancels FOV offsets, excludes duplicates; FOV sampler
+PASS identity/shrunk training adapters, predicted-class detach, non-source rejection
+PASS panel nonnegative design initialization, positive links, pooled-to-single factor gradients
+PASS evaluate() byte-identical; fwd() has no training adapters
+ALL MATHEMATICAL / INVARIANCE CHECKS PASSED
+COMMAND /tmp/codex_n060/venv/bin/python /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N060-rare-positive-output-heads-for-dim-marke/codex/smoke_cpu.py --root /tmp/codex_n060/fixture -- --out /tmp/codex_n060/runs/hlgauss_b1to0 --protocol b1to0 --arch resnet18 --epochs 1 --bs 8 --max-train 64 --workers 0 --targets targets_v5cx_v10.npz --seed 0 --device cpu --head hlgauss
+train 64 eval 80 protocol b1to0
+N060--N062 source setup: {"version": 1, "source_sha256": "a728ab3ecb0fb9d99498b7c6767a7e84de9a57a21f5e88f0ff2e5e8da64a927a", "counts": [6, 9, 5, 3, 6, 6, 5, 6, 0, 10, 10, 10, 54], "names": ["single:CD45", "single:CD123", "single:CD19", "single:CD56", "single:CD14", "single:CD16", "single:HLA-DR", "single:CD3", "grp:CD123/HLA-DR/CD14", "grp:CD3/CD19/CD56", "grp:CD45", "grp:CD16", "autofl"]}
+/tmp/codex_n060/venv/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:3824: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/tmp/codex_n060/venv/lib/python3.11/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+{"r/autofl": -0.07036318629980087, "n/autofl": 72, "cls3_acc": 0.2857142857142857, "r_mean_markers": NaN, "r_mean_markers_valid": NaN, "n_markers_valid": 0, "epoch": 1, "train_loss": 4.188879370689392, "secs": 2.11540150642395}
+
+PASS hlgauss_b1to0 finite loss/state/P, 13 targets, disjoint source/eval rows
+COMMAND /tmp/codex_n060/venv/bin/python /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N060-rare-positive-output-heads-for-dim-marke/codex/smoke_cpu.py --root /tmp/codex_n060/fixture -- --out /tmp/codex_n060/runs/hlgauss_b1to0 --protocol b1to0 --arch resnet18 --epochs 1 --bs 8 --max-train 64 --workers 0 --targets targets_v5cx_v10.npz --seed 0 --device cpu --head hlgauss
+train 64 eval 80 protocol b1to0
+N060--N062 source setup: {"version": 1, "source_sha256": "a728ab3ecb0fb9d99498b7c6767a7e84de9a57a21f5e88f0ff2e5e8da64a927a", "counts": [6, 9, 5, 3, 6, 6, 5, 6, 0, 10, 10, 10, 54], "names": ["single:CD45", "single:CD123", "single:CD19", "single:CD56", "single:CD14", "single:CD16", "single:HLA-DR", "single:CD3", "grp:CD123/HLA-DR/CD14", "grp:CD3/CD19/CD56", "grp:CD45", "grp:CD16", "autofl"]}
+resumed 1
+
+PASS hlgauss_b1to0 finite loss/state/P, 13 targets, disjoint source/eval rows
+PASS hlgauss_b1to0 finished-checkpoint resume preserves state
+COMMAND /tmp/codex_n060/venv/bin/python /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N060-rare-positive-output-heads-for-dim-marke/codex/smoke_cpu.py --root /tmp/codex_n060/fixture -- --out /tmp/codex_n060/runs/twopart_b1to0 --protocol b1to0 --arch resnet18 --epochs 1 --bs 8 --max-train 64 --workers 0 --targets targets_v5cx_v10.npz --seed 0 --device cpu --head twopart
+train 64 eval 80 protocol b1to0
+N060--N062 source setup: {"version": 1, "source_sha256": "a728ab3ecb0fb9d99498b7c6767a7e84de9a57a21f5e88f0ff2e5e8da64a927a", "counts": [6, 9, 5, 3, 6, 6, 5, 6, 0, 10, 10, 10, 54], "names": ["single:CD45", "single:CD123", "single:CD19", "single:CD56", "single:CD14", "single:CD16", "single:HLA-DR", "single:CD3", "grp:CD123/HLA-DR/CD14", "grp:CD3/CD19/CD56", "grp:CD45", "grp:CD16", "autofl"], "thresholds": [2.4384045600891113, 0.2317841798067093, 1.606972575187683, 0.312822163105011], "class_weight": [[0.5625, 4.5], [0.625, 2.5], [0.625, 2.5], [0.75, 1.5]], "gate_active": [true, true, true, true]}
+/tmp/codex_n060/venv/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:3824: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/tmp/codex_n060/venv/lib/python3.11/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+{"r/autofl": 0.032706405967473984, "n/autofl": 72, "cls3_acc": 0.42857142857142855, "r_mean_markers": NaN, "r_mean_markers_valid": NaN, "n_markers_valid": 0, "epoch": 1, "train_loss": 1.4186538830399513, "secs": 2.212554454803467}
+
+PASS twopart_b1to0 finite loss/state/P, 13 targets, disjoint source/eval rows
+COMMAND /tmp/codex_n060/venv/bin/python /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N060-rare-positive-output-heads-for-dim-marke/codex/smoke_cpu.py --root /tmp/codex_n060/fixture -- --out /tmp/codex_n060/runs/twopart_b1to0 --protocol b1to0 --arch resnet18 --epochs 1 --bs 8 --max-train 64 --workers 0 --targets targets_v5cx_v10.npz --seed 0 --device cpu --head twopart
+train 64 eval 80 protocol b1to0
+N060--N062 source setup: {"version": 1, "source_sha256": "a728ab3ecb0fb9d99498b7c6767a7e84de9a57a21f5e88f0ff2e5e8da64a927a", "counts": [6, 9, 5, 3, 6, 6, 5, 6, 0, 10, 10, 10, 54], "names": ["single:CD45", "single:CD123", "single:CD19", "single:CD56", "single:CD14", "single:CD16", "single:HLA-DR", "single:CD3", "grp:CD123/HLA-DR/CD14", "grp:CD3/CD19/CD56", "grp:CD45", "grp:CD16", "autofl"], "thresholds": [2.4384045600891113, 0.2317841798067093, 1.606972575187683, 0.312822163105011], "class_weight": [[0.5625, 4.5], [0.625, 2.5], [0.625, 2.5], [0.75, 1.5]], "gate_active": [true, true, true, true]}
+resumed 1
+
+PASS twopart_b1to0 finite loss/state/P, 13 targets, disjoint source/eval rows
+PASS twopart_b1to0 finished-checkpoint resume preserves state
+COMMAND /tmp/codex_n060/venv/bin/python /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N060-rare-positive-output-heads-for-dim-marke/codex/smoke_cpu.py --root /tmp/codex_n060/fixture -- --out /tmp/codex_n060/runs/fov_re_b1to0 --protocol b1to0 --arch resnet18 --epochs 1 --bs 8 --max-train 64 --workers 0 --targets targets_v5cx_v10.npz --seed 0 --device cpu --fov-re .01 --w-autofl 0
+train 64 eval 80 protocol b1to0
+N060--N062 source setup: {"version": 1, "source_sha256": "a728ab3ecb0fb9d99498b7c6767a7e84de9a57a21f5e88f0ff2e5e8da64a927a", "counts": [6, 9, 5, 3, 6, 6, 5, 6, 0, 10, 10, 10, 54], "names": ["single:CD45", "single:CD123", "single:CD19", "single:CD56", "single:CD14", "single:CD16", "single:HLA-DR", "single:CD3", "grp:CD123/HLA-DR/CD14", "grp:CD3/CD19/CD56", "grp:CD45", "grp:CD16", "autofl"]}
+/tmp/codex_n060/venv/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:3824: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/tmp/codex_n060/venv/lib/python3.11/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+{"r/autofl": -0.11315883696079254, "n/autofl": 72, "cls3_acc": 0.2857142857142857, "r_mean_markers": NaN, "r_mean_markers_valid": NaN, "n_markers_valid": 0, "epoch": 1, "train_loss": 0.9886133149266243, "secs": 2.1800591945648193}
+
+PASS fov_re_b1to0 finite loss/state/P, 13 targets, disjoint source/eval rows
+COMMAND /tmp/codex_n060/venv/bin/python /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N060-rare-positive-output-heads-for-dim-marke/codex/smoke_cpu.py --root /tmp/codex_n060/fixture -- --out /tmp/codex_n060/runs/fov_re_b1to0 --protocol b1to0 --arch resnet18 --epochs 1 --bs 8 --max-train 64 --workers 0 --targets targets_v5cx_v10.npz --seed 0 --device cpu --fov-re .01 --w-autofl 0
+train 64 eval 80 protocol b1to0
+N060--N062 source setup: {"version": 1, "source_sha256": "a728ab3ecb0fb9d99498b7c6767a7e84de9a57a21f5e88f0ff2e5e8da64a927a", "counts": [6, 9, 5, 3, 6, 6, 5, 6, 0, 10, 10, 10, 54], "names": ["single:CD45", "single:CD123", "single:CD19", "single:CD56", "single:CD14", "single:CD16", "single:HLA-DR", "single:CD3", "grp:CD123/HLA-DR/CD14", "grp:CD3/CD19/CD56", "grp:CD45", "grp:CD16", "autofl"]}
+resumed 1
+
+PASS fov_re_b1to0 finite loss/state/P, 13 targets, disjoint source/eval rows
+PASS fov_re_b1to0 finished-checkpoint resume preserves state
+COMMAND /tmp/codex_n060/venv/bin/python /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N060-rare-positive-output-heads-for-dim-marke/codex/smoke_cpu.py --root /tmp/codex_n060/fixture -- --out /tmp/codex_n060/runs/pair_b1to0 --protocol b1to0 --arch resnet18 --epochs 1 --bs 8 --max-train 64 --workers 0 --targets targets_v5cx_v10.npz --seed 0 --device cpu --pair-loss .5 --fov-batch 2 --w-autofl 0
+train 64 eval 80 protocol b1to0
+N060--N062 source setup: {"version": 1, "source_sha256": "a728ab3ecb0fb9d99498b7c6767a7e84de9a57a21f5e88f0ff2e5e8da64a927a", "counts": [6, 9, 5, 3, 6, 6, 5, 6, 0, 10, 10, 10, 54], "names": ["single:CD45", "single:CD123", "single:CD19", "single:CD56", "single:CD14", "single:CD16", "single:HLA-DR", "single:CD3", "grp:CD123/HLA-DR/CD14", "grp:CD3/CD19/CD56", "grp:CD45", "grp:CD16", "autofl"]}
+/tmp/codex_n060/venv/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:3824: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/tmp/codex_n060/venv/lib/python3.11/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+{"r/autofl": -0.19086118042469025, "n/autofl": 72, "cls3_acc": 0.42857142857142855, "r_mean_markers": NaN, "r_mean_markers_valid": NaN, "n_markers_valid": 0, "epoch": 1, "train_loss": 1.210739349015057, "secs": 2.152582883834839}
+
+PASS pair_b1to0 finite loss/state/P, 13 targets, disjoint source/eval rows
+COMMAND /tmp/codex_n060/venv/bin/python /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N060-rare-positive-output-heads-for-dim-marke/codex/smoke_cpu.py --root /tmp/codex_n060/fixture -- --out /tmp/codex_n060/runs/autofl0_b1to0 --protocol b1to0 --arch resnet18 --epochs 1 --bs 8 --max-train 64 --workers 0 --targets targets_v5cx_v10.npz --seed 0 --device cpu --w-autofl 0
+train 64 eval 80 protocol b1to0
+N060--N062 source setup: {"version": 1, "source_sha256": "a728ab3ecb0fb9d99498b7c6767a7e84de9a57a21f5e88f0ff2e5e8da64a927a", "counts": [6, 9, 5, 3, 6, 6, 5, 6, 0, 10, 10, 10, 54], "names": ["single:CD45", "single:CD123", "single:CD19", "single:CD56", "single:CD14", "single:CD16", "single:HLA-DR", "single:CD3", "grp:CD123/HLA-DR/CD14", "grp:CD3/CD19/CD56", "grp:CD45", "grp:CD16", "autofl"]}
+/tmp/codex_n060/venv/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:3824: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/tmp/codex_n060/venv/lib/python3.11/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+{"r/autofl": -0.11674188822507858, "n/autofl": 72, "cls3_acc": 0.2857142857142857, "r_mean_markers": NaN, "r_mean_markers_valid": NaN, "n_markers_valid": 0, "epoch": 1, "train_loss": 0.9881134815514088, "secs": 2.1847007274627686}
+
+PASS autofl0_b1to0 finite loss/state/P, 13 targets, disjoint source/eval rows
+COMMAND /tmp/codex_n060/venv/bin/python /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N060-rare-positive-output-heads-for-dim-marke/codex/smoke_cpu.py --root /tmp/codex_n060/fixture -- --out /tmp/codex_n060/runs/panel_b1to0 --protocol b1to0 --arch resnet18 --epochs 1 --bs 8 --max-train 64 --workers 0 --targets targets_v5cx_v10.npz --seed 0 --device cpu --panel-head
+train 64 eval 80 protocol b1to0
+N060--N062 source setup: {"version": 1, "source_sha256": "a728ab3ecb0fb9d99498b7c6767a7e84de9a57a21f5e88f0ff2e5e8da64a927a", "counts": [6, 9, 5, 3, 6, 6, 5, 6, 0, 10, 10, 10, 54], "names": ["single:CD45", "single:CD123", "single:CD19", "single:CD56", "single:CD14", "single:CD16", "single:HLA-DR", "single:CD3", "grp:CD123/HLA-DR/CD14", "grp:CD3/CD19/CD56", "grp:CD45", "grp:CD16", "autofl"], "design": [[0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0], [0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 1.0], [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0]]}
+/tmp/codex_n060/venv/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:3824: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/tmp/codex_n060/venv/lib/python3.11/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+{"r/autofl": 0.02019190788269043, "n/autofl": 72, "cls3_acc": 0.5714285714285714, "r_mean_markers": NaN, "r_mean_markers_valid": NaN, "n_markers_valid": 0, "epoch": 1, "train_loss": 0.6443289238959551, "secs": 2.188359498977661}
+
+PASS panel_b1to0 finite loss/state/P, 13 targets, disjoint source/eval rows
+COMMAND /tmp/codex_n060/venv/bin/python /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N060-rare-positive-output-heads-for-dim-marke/codex/smoke_cpu.py --root /tmp/codex_n060/fixture -- --out /tmp/codex_n060/runs/panel_b1to0 --protocol b1to0 --arch resnet18 --epochs 1 --bs 8 --max-train 64 --workers 0 --targets targets_v5cx_v10.npz --seed 0 --device cpu --panel-head
+train 64 eval 80 protocol b1to0
+N060--N062 source setup: {"version": 1, "source_sha256": "a728ab3ecb0fb9d99498b7c6767a7e84de9a57a21f5e88f0ff2e5e8da64a927a", "counts": [6, 9, 5, 3, 6, 6, 5, 6, 0, 10, 10, 10, 54], "names": ["single:CD45", "single:CD123", "single:CD19", "single:CD56", "single:CD14", "single:CD16", "single:HLA-DR", "single:CD3", "grp:CD123/HLA-DR/CD14", "grp:CD3/CD19/CD56", "grp:CD45", "grp:CD16", "autofl"], "design": [[0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0], [0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 1.0], [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0]]}
+resumed 1
+
+PASS panel_b1to0 finite loss/state/P, 13 targets, disjoint source/eval rows
+PASS panel_b1to0 finished-checkpoint resume preserves state
+COMMAND /tmp/codex_n060/venv/bin/python /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N060-rare-positive-output-heads-for-dim-marke/codex/smoke_cpu.py --root /tmp/codex_n060/fixture -- --out /tmp/codex_n060/runs/hlgauss_b0to1 --protocol b0to1 --arch resnet18 --epochs 1 --bs 8 --max-train 64 --workers 0 --targets targets_v5cx_v10.npz --seed 0 --device cpu --head hlgauss
+train 64 eval 96 protocol b0to1
+N060--N062 source setup: {"version": 1, "source_sha256": "18e677c9070671cc4c4d86032f2b4b22cd3d9b8b1126f450f3b1dbed366efe46", "counts": [6, 8, 4, 6, 7, 9, 2, 11, 6, 6, 6, 6, 58], "names": ["single:CD45", "single:CD123", "single:CD19", "single:CD56", "single:CD14", "single:CD16", "single:HLA-DR", "single:CD3", "grp:CD123/HLA-DR/CD14", "grp:CD3/CD19/CD56", "grp:CD45", "grp:CD16", "autofl"]}
+/tmp/codex_n060/venv/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:3824: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/tmp/codex_n060/venv/lib/python3.11/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+{"r/autofl": -0.09077902883291245, "n/autofl": 80, "r_mean_markers": NaN, "r_mean_markers_valid": NaN, "n_markers_valid": 0, "epoch": 1, "train_loss": 5.0344226360321045, "secs": 2.322732448577881}
+
+PASS hlgauss_b0to1 finite loss/state/P, 13 targets, disjoint source/eval rows
+COMMAND /tmp/codex_n060/venv/bin/python /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N060-rare-positive-output-heads-for-dim-marke/codex/smoke_cpu.py --root /tmp/codex_n060/fixture -- --out /tmp/codex_n060/runs/hlgauss_b0to1 --protocol b0to1 --arch resnet18 --epochs 1 --bs 8 --max-train 64 --workers 0 --targets targets_v5cx_v10.npz --seed 0 --device cpu --head hlgauss
+train 64 eval 96 protocol b0to1
+N060--N062 source setup: {"version": 1, "source_sha256": "18e677c9070671cc4c4d86032f2b4b22cd3d9b8b1126f450f3b1dbed366efe46", "counts": [6, 8, 4, 6, 7, 9, 2, 11, 6, 6, 6, 6, 58], "names": ["single:CD45", "single:CD123", "single:CD19", "single:CD56", "single:CD14", "single:CD16", "single:HLA-DR", "single:CD3", "grp:CD123/HLA-DR/CD14", "grp:CD3/CD19/CD56", "grp:CD45", "grp:CD16", "autofl"]}
+resumed 1
+
+PASS hlgauss_b0to1 finite loss/state/P, 13 targets, disjoint source/eval rows
+PASS hlgauss_b0to1 finished-checkpoint resume preserves state
+COMMAND /tmp/codex_n060/venv/bin/python /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N060-rare-positive-output-heads-for-dim-marke/codex/smoke_cpu.py --root /tmp/codex_n060/fixture -- --out /tmp/codex_n060/runs/twopart_b0to1 --protocol b0to1 --arch resnet18 --epochs 1 --bs 8 --max-train 64 --workers 0 --targets targets_v5cx_v10.npz --seed 0 --device cpu --head twopart
+train 64 eval 96 protocol b0to1
+N060--N062 source setup: {"version": 1, "source_sha256": "18e677c9070671cc4c4d86032f2b4b22cd3d9b8b1126f450f3b1dbed366efe46", "counts": [6, 8, 4, 6, 7, 9, 2, 11, 6, 6, 6, 6, 58], "names": ["single:CD45", "single:CD123", "single:CD19", "single:CD56", "single:CD14", "single:CD16", "single:HLA-DR", "single:CD3", "grp:CD123/HLA-DR/CD14", "grp:CD3/CD19/CD56", "grp:CD45", "grp:CD16", "autofl"], "thresholds": [0.021624650806188583, 1.689768671989441, 0.06973656266927719, 0.5497267842292786], "class_weight": [[0.5714285969734192, 4.0], [1.0, 1.0], [0.6666666865348816, 2.0], [0.6000000238418579, 3.0]], "gate_active": [true, true, true, true]}
+/tmp/codex_n060/venv/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:3824: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/tmp/codex_n060/venv/lib/python3.11/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+{"r/autofl": -0.3251659870147705, "n/autofl": 80, "r_mean_markers": NaN, "r_mean_markers_valid": NaN, "n_markers_valid": 0, "epoch": 1, "train_loss": 2.433695748448372, "secs": 2.5312857627868652}
+
+PASS twopart_b0to1 finite loss/state/P, 13 targets, disjoint source/eval rows
+COMMAND /tmp/codex_n060/venv/bin/python /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N060-rare-positive-output-heads-for-dim-marke/codex/smoke_cpu.py --root /tmp/codex_n060/fixture -- --out /tmp/codex_n060/runs/twopart_b0to1 --protocol b0to1 --arch resnet18 --epochs 1 --bs 8 --max-train 64 --workers 0 --targets targets_v5cx_v10.npz --seed 0 --device cpu --head twopart
+train 64 eval 96 protocol b0to1
+N060--N062 source setup: {"version": 1, "source_sha256": "18e677c9070671cc4c4d86032f2b4b22cd3d9b8b1126f450f3b1dbed366efe46", "counts": [6, 8, 4, 6, 7, 9, 2, 11, 6, 6, 6, 6, 58], "names": ["single:CD45", "single:CD123", "single:CD19", "single:CD56", "single:CD14", "single:CD16", "single:HLA-DR", "single:CD3", "grp:CD123/HLA-DR/CD14", "grp:CD3/CD19/CD56", "grp:CD45", "grp:CD16", "autofl"], "thresholds": [0.021624650806188583, 1.689768671989441, 0.06973656266927719, 0.5497267842292786], "class_weight": [[0.5714285969734192, 4.0], [1.0, 1.0], [0.6666666865348816, 2.0], [0.6000000238418579, 3.0]], "gate_active": [true, true, true, true]}
+resumed 1
+
+PASS twopart_b0to1 finite loss/state/P, 13 targets, disjoint source/eval rows
+PASS twopart_b0to1 finished-checkpoint resume preserves state
+COMMAND /tmp/codex_n060/venv/bin/python /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N060-rare-positive-output-heads-for-dim-marke/codex/smoke_cpu.py --root /tmp/codex_n060/fixture -- --out /tmp/codex_n060/runs/fov_re_b0to1 --protocol b0to1 --arch resnet18 --epochs 1 --bs 8 --max-train 64 --workers 0 --targets targets_v5cx_v10.npz --seed 0 --device cpu --fov-re .01 --w-autofl 0
+train 64 eval 96 protocol b0to1
+N060--N062 source setup: {"version": 1, "source_sha256": "18e677c9070671cc4c4d86032f2b4b22cd3d9b8b1126f450f3b1dbed366efe46", "counts": [6, 8, 4, 6, 7, 9, 2, 11, 6, 6, 6, 6, 58], "names": ["single:CD45", "single:CD123", "single:CD19", "single:CD56", "single:CD14", "single:CD16", "single:HLA-DR", "single:CD3", "grp:CD123/HLA-DR/CD14", "grp:CD3/CD19/CD56", "grp:CD45", "grp:CD16", "autofl"]}
+/tmp/codex_n060/venv/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:3824: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/tmp/codex_n060/venv/lib/python3.11/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+{"r/autofl": -0.2819001376628876, "n/autofl": 80, "r_mean_markers": NaN, "r_mean_markers_valid": NaN, "n_markers_valid": 0, "epoch": 1, "train_loss": 2.307967427186668, "secs": 2.253674030303955}
+
+PASS fov_re_b0to1 finite loss/state/P, 13 targets, disjoint source/eval rows
+COMMAND /tmp/codex_n060/venv/bin/python /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N060-rare-positive-output-heads-for-dim-marke/codex/smoke_cpu.py --root /tmp/codex_n060/fixture -- --out /tmp/codex_n060/runs/fov_re_b0to1 --protocol b0to1 --arch resnet18 --epochs 1 --bs 8 --max-train 64 --workers 0 --targets targets_v5cx_v10.npz --seed 0 --device cpu --fov-re .01 --w-autofl 0
+train 64 eval 96 protocol b0to1
+N060--N062 source setup: {"version": 1, "source_sha256": "18e677c9070671cc4c4d86032f2b4b22cd3d9b8b1126f450f3b1dbed366efe46", "counts": [6, 8, 4, 6, 7, 9, 2, 11, 6, 6, 6, 6, 58], "names": ["single:CD45", "single:CD123", "single:CD19", "single:CD56", "single:CD14", "single:CD16", "single:HLA-DR", "single:CD3", "grp:CD123/HLA-DR/CD14", "grp:CD3/CD19/CD56", "grp:CD45", "grp:CD16", "autofl"]}
+resumed 1
+
+PASS fov_re_b0to1 finite loss/state/P, 13 targets, disjoint source/eval rows
+PASS fov_re_b0to1 finished-checkpoint resume preserves state
+COMMAND /tmp/codex_n060/venv/bin/python /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N060-rare-positive-output-heads-for-dim-marke/codex/smoke_cpu.py --root /tmp/codex_n060/fixture -- --out /tmp/codex_n060/runs/pair_b0to1 --protocol b0to1 --arch resnet18 --epochs 1 --bs 8 --max-train 64 --workers 0 --targets targets_v5cx_v10.npz --seed 0 --device cpu --pair-loss .5 --fov-batch 2 --w-autofl 0
+train 64 eval 96 protocol b0to1
+N060--N062 source setup: {"version": 1, "source_sha256": "18e677c9070671cc4c4d86032f2b4b22cd3d9b8b1126f450f3b1dbed366efe46", "counts": [6, 8, 4, 6, 7, 9, 2, 11, 6, 6, 6, 6, 58], "names": ["single:CD45", "single:CD123", "single:CD19", "single:CD56", "single:CD14", "single:CD16", "single:HLA-DR", "single:CD3", "grp:CD123/HLA-DR/CD14", "grp:CD3/CD19/CD56", "grp:CD45", "grp:CD16", "autofl"]}
+/tmp/codex_n060/venv/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:3824: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/tmp/codex_n060/venv/lib/python3.11/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+{"r/autofl": -0.1691633015871048, "n/autofl": 80, "r_mean_markers": NaN, "r_mean_markers_valid": NaN, "n_markers_valid": 0, "epoch": 1, "train_loss": 1.4278530720621347, "secs": 2.3464863300323486}
+
+PASS pair_b0to1 finite loss/state/P, 13 targets, disjoint source/eval rows
+COMMAND /tmp/codex_n060/venv/bin/python /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N060-rare-positive-output-heads-for-dim-marke/codex/smoke_cpu.py --root /tmp/codex_n060/fixture -- --out /tmp/codex_n060/runs/autofl0_b0to1 --protocol b0to1 --arch resnet18 --epochs 1 --bs 8 --max-train 64 --workers 0 --targets targets_v5cx_v10.npz --seed 0 --device cpu --w-autofl 0
+train 64 eval 96 protocol b0to1
+N060--N062 source setup: {"version": 1, "source_sha256": "18e677c9070671cc4c4d86032f2b4b22cd3d9b8b1126f450f3b1dbed366efe46", "counts": [6, 8, 4, 6, 7, 9, 2, 11, 6, 6, 6, 6, 58], "names": ["single:CD45", "single:CD123", "single:CD19", "single:CD56", "single:CD14", "single:CD16", "single:HLA-DR", "single:CD3", "grp:CD123/HLA-DR/CD14", "grp:CD3/CD19/CD56", "grp:CD45", "grp:CD16", "autofl"]}
+/tmp/codex_n060/venv/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:3824: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/tmp/codex_n060/venv/lib/python3.11/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+{"r/autofl": -0.2783881425857544, "n/autofl": 80, "r_mean_markers": NaN, "r_mean_markers_valid": NaN, "n_markers_valid": 0, "epoch": 1, "train_loss": 2.307120695710182, "secs": 2.287346124649048}
+
+PASS autofl0_b0to1 finite loss/state/P, 13 targets, disjoint source/eval rows
+COMMAND /tmp/codex_n060/venv/bin/python /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N060-rare-positive-output-heads-for-dim-marke/codex/smoke_cpu.py --root /tmp/codex_n060/fixture -- --out /tmp/codex_n060/runs/panel_b0to1 --protocol b0to1 --arch resnet18 --epochs 1 --bs 8 --max-train 64 --workers 0 --targets targets_v5cx_v10.npz --seed 0 --device cpu --panel-head
+train 64 eval 96 protocol b0to1
+N060--N062 source setup: {"version": 1, "source_sha256": "18e677c9070671cc4c4d86032f2b4b22cd3d9b8b1126f450f3b1dbed366efe46", "counts": [6, 8, 4, 6, 7, 9, 2, 11, 6, 6, 6, 6, 58], "names": ["single:CD45", "single:CD123", "single:CD19", "single:CD56", "single:CD14", "single:CD16", "single:HLA-DR", "single:CD3", "grp:CD123/HLA-DR/CD14", "grp:CD3/CD19/CD56", "grp:CD45", "grp:CD16", "autofl"], "design": [[0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0], [0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 1.0], [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0]]}
+/tmp/codex_n060/venv/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:3824: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/tmp/codex_n060/venv/lib/python3.11/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+{"r/autofl": -0.4292461574077606, "n/autofl": 80, "r_mean_markers": NaN, "r_mean_markers_valid": NaN, "n_markers_valid": 0, "epoch": 1, "train_loss": 1.9639885015785694, "secs": 2.3439972400665283}
+
+PASS panel_b0to1 finite loss/state/P, 13 targets, disjoint source/eval rows
+COMMAND /tmp/codex_n060/venv/bin/python /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N060-rare-positive-output-heads-for-dim-marke/codex/smoke_cpu.py --root /tmp/codex_n060/fixture -- --out /tmp/codex_n060/runs/panel_b0to1 --protocol b0to1 --arch resnet18 --epochs 1 --bs 8 --max-train 64 --workers 0 --targets targets_v5cx_v10.npz --seed 0 --device cpu --panel-head
+train 64 eval 96 protocol b0to1
+N060--N062 source setup: {"version": 1, "source_sha256": "18e677c9070671cc4c4d86032f2b4b22cd3d9b8b1126f450f3b1dbed366efe46", "counts": [6, 8, 4, 6, 7, 9, 2, 11, 6, 6, 6, 6, 58], "names": ["single:CD45", "single:CD123", "single:CD19", "single:CD56", "single:CD14", "single:CD16", "single:HLA-DR", "single:CD3", "grp:CD123/HLA-DR/CD14", "grp:CD3/CD19/CD56", "grp:CD45", "grp:CD16", "autofl"], "design": [[0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0], [0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 1.0], [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0]]}
+resumed 1
+
+PASS panel_b0to1 finite loss/state/P, 13 targets, disjoint source/eval rows
+PASS panel_b0to1 finished-checkpoint resume preserves state
+COMMAND /tmp/codex_n060/venv/bin/python /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N060-rare-positive-output-heads-for-dim-marke/codex/smoke_cpu.py --root /tmp/codex_n060/fixture --script /tmp/codex_n060/legacy_cpu.py -- --out /tmp/codex_n060/runs/legacy --protocol b0to1 --arch resnet18 --epochs 1 --bs 8 --max-train 64 --workers 0 --targets targets_v5cx_v10.npz --seed 0
+train 64 eval 96 protocol b0to1
+/tmp/codex_n060/venv/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:3824: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/tmp/codex_n060/venv/lib/python3.11/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+{"r/autofl": -0.31299901008605957, "n/autofl": 80, "r_mean_markers": NaN, "r_mean_markers_valid": NaN, "n_markers_valid": 0, "epoch": 1, "train_loss": 2.2643258422613144, "secs": 2.4047482013702393}
+
+PASS legacy finite loss/state/P, 13 targets, disjoint source/eval rows
+COMMAND /tmp/codex_n060/venv/bin/python /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N060-rare-positive-output-heads-for-dim-marke/codex/smoke_cpu.py --root /tmp/codex_n060/fixture -- --out /tmp/codex_n060/runs/new_default --protocol b0to1 --arch resnet18 --epochs 1 --bs 8 --max-train 64 --workers 0 --targets targets_v5cx_v10.npz --seed 0 --device cpu
+train 64 eval 96 protocol b0to1
+/tmp/codex_n060/venv/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:3824: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/tmp/codex_n060/venv/lib/python3.11/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+{"r/autofl": -0.31299901008605957, "n/autofl": 80, "r_mean_markers": NaN, "r_mean_markers_valid": NaN, "n_markers_valid": 0, "epoch": 1, "train_loss": 2.2643258422613144, "secs": 2.3528761863708496}
+
+PASS new_default finite loss/state/P, 13 targets, disjoint source/eval rows
+PASS default model tensors, loss, eval P byte-equal to CPU-adapted original; cfg equal except explicit device cpu
+COMMAND /tmp/codex_n060/venv/bin/python /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N060-rare-positive-output-heads-for-dim-marke/codex/smoke_cpu.py --root /tmp/codex_n060/fixture --script /tmp/codex_n060/new_cpu_default.py -- --out /tmp/codex_n060/runs/legacy --protocol b0to1 --arch resnet18 --epochs 1 --bs 8 --max-train 64 --workers 0 --targets targets_v5cx_v10.npz --seed 0
+train 64 eval 96 protocol b0to1
+resumed 1
+
+PASS legacy finite loss/state/P, 13 targets, disjoint source/eval rows
+PASS original checkpoint resumes under new default config and state layout (CPU placement shim)
+ALL 12 ARM/DIRECTION SMOKES + RESUMES + DEFAULT PARITY PASSED
+PASS masked regression equals legacy; missing/drop-autofl gradients zero
+PASS Gaussian bin integrals normalize, correct quantiles/expectation, extreme tails, gradients
+PASS two-part strict source thresholds, class balance, gate/amplitude equation, backward
+PASS pair loss matches explicit unordered pairs, cancels FOV offsets, excludes duplicates; FOV sampler
+PASS identity/shrunk training adapters, predicted-class detach, non-source rejection
+PASS panel nonnegative design initialization, positive links, pooled-to-single factor gradients
+PASS evaluate() byte-identical; fwd() has no training adapters
+ALL MATHEMATICAL / INVARIANCE CHECKS PASSED
+FINAL TWO-PART OBJECTIVE: BCE has the same present-target denominator as MSE
+COMMAND /tmp/codex_n060/venv/bin/python /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N060-rare-positive-output-heads-for-dim-marke/codex/smoke_cpu.py --root /tmp/codex_n060/fixture -- --out /tmp/codex_n060/runs/twopart_b1to0 --protocol b1to0 --arch resnet18 --epochs 1 --bs 8 --max-train 64 --workers 0 --targets targets_v5cx_v10.npz --seed 0 --device cpu --head twopart
+train 64 eval 80 protocol b1to0
+N060--N062 source setup: {"version": 1, "source_sha256": "a728ab3ecb0fb9d99498b7c6767a7e84de9a57a21f5e88f0ff2e5e8da64a927a", "counts": [6, 9, 5, 3, 6, 6, 5, 6, 0, 10, 10, 10, 54], "names": ["single:CD45", "single:CD123", "single:CD19", "single:CD56", "single:CD14", "single:CD16", "single:HLA-DR", "single:CD3", "grp:CD123/HLA-DR/CD14", "grp:CD3/CD19/CD56", "grp:CD45", "grp:CD16", "autofl"], "thresholds": [2.4384045600891113, 0.2317841798067093, 1.606972575187683, 0.312822163105011], "class_weight": [[0.5625, 4.5], [0.625, 2.5], [0.625, 2.5], [0.75, 1.5]], "gate_active": [true, true, true, true]}
+/tmp/codex_n060/venv/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:3824: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/tmp/codex_n060/venv/lib/python3.11/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+{"r/autofl": 0.019596943631768227, "n/autofl": 72, "cls3_acc": 0.42857142857142855, "r_mean_markers": NaN, "r_mean_markers_valid": NaN, "n_markers_valid": 0, "epoch": 1, "train_loss": 1.1269904896616936, "secs": 2.2164087295532227}
+train 64 eval 80 protocol b1to0
+N060--N062 source setup: {"version": 1, "source_sha256": "a728ab3ecb0fb9d99498b7c6767a7e84de9a57a21f5e88f0ff2e5e8da64a927a", "counts": [6, 9, 5, 3, 6, 6, 5, 6, 0, 10, 10, 10, 54], "names": ["single:CD45", "single:CD123", "single:CD19", "single:CD56", "single:CD14", "single:CD16", "single:HLA-DR", "single:CD3", "grp:CD123/HLA-DR/CD14", "grp:CD3/CD19/CD56", "grp:CD45", "grp:CD16", "autofl"], "thresholds": [2.4384045600891113, 0.2317841798067093, 1.606972575187683, 0.312822163105011], "class_weight": [[0.5625, 4.5], [0.625, 2.5], [0.625, 2.5], [0.75, 1.5]], "gate_active": [true, true, true, true]}
+resumed 1
+PASS final two-part b1to0 training, 13 finite predictions, resume
+FINAL TWO-PART OBJECTIVE: BCE has the same present-target denominator as MSE
+COMMAND /tmp/codex_n060/venv/bin/python /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N060-rare-positive-output-heads-for-dim-marke/codex/smoke_cpu.py --root /tmp/codex_n060/fixture -- --out /tmp/codex_n060/runs/twopart_b0to1 --protocol b0to1 --arch resnet18 --epochs 1 --bs 8 --max-train 64 --workers 0 --targets targets_v5cx_v10.npz --seed 0 --device cpu --head twopart
+train 64 eval 96 protocol b0to1
+N060--N062 source setup: {"version": 1, "source_sha256": "18e677c9070671cc4c4d86032f2b4b22cd3d9b8b1126f450f3b1dbed366efe46", "counts": [6, 8, 4, 6, 7, 9, 2, 11, 6, 6, 6, 6, 58], "names": ["single:CD45", "single:CD123", "single:CD19", "single:CD56", "single:CD14", "single:CD16", "single:HLA-DR", "single:CD3", "grp:CD123/HLA-DR/CD14", "grp:CD3/CD19/CD56", "grp:CD45", "grp:CD16", "autofl"], "thresholds": [0.021624650806188583, 1.689768671989441, 0.06973656266927719, 0.5497267842292786], "class_weight": [[0.5714285969734192, 4.0], [1.0, 1.0], [0.6666666865348816, 2.0], [0.6000000238418579, 3.0]], "gate_active": [true, true, true, true]}
+/tmp/codex_n060/venv/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:3824: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/tmp/codex_n060/venv/lib/python3.11/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+{"r/autofl": -0.2545301914215088, "n/autofl": 80, "r_mean_markers": NaN, "r_mean_markers_valid": NaN, "n_markers_valid": 0, "epoch": 1, "train_loss": 2.156878851354122, "secs": 2.363295316696167}
+train 64 eval 96 protocol b0to1
+N060--N062 source setup: {"version": 1, "source_sha256": "18e677c9070671cc4c4d86032f2b4b22cd3d9b8b1126f450f3b1dbed366efe46", "counts": [6, 8, 4, 6, 7, 9, 2, 11, 6, 6, 6, 6, 58], "names": ["single:CD45", "single:CD123", "single:CD19", "single:CD56", "single:CD14", "single:CD16", "single:HLA-DR", "single:CD3", "grp:CD123/HLA-DR/CD14", "grp:CD3/CD19/CD56", "grp:CD45", "grp:CD16", "autofl"], "thresholds": [0.021624650806188583, 1.689768671989441, 0.06973656266927719, 0.5497267842292786], "class_weight": [[0.5714285969734192, 4.0], [1.0, 1.0], [0.6666666865348816, 2.0], [0.6000000238418579, 3.0]], "gate_active": [true, true, true, true]}
+resumed 1
+PASS final two-part b0to1 training, 13 finite predictions, resume
+FINAL OBJECTIVE CHECKS PASSED
+
+PASS patch dry-run against read-only original; evaluate() source unchanged.

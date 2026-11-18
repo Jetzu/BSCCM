@@ -31,3 +31,9 @@ idea · mechanism · cheapest test · status open|testing|promising|dead(why)
 - 2026-11-12 (N039 QC fail): label v8b -- per-cell background ONLY for the dim dye channel targets (CD3/CD19/CD56), v5 elsewhere; a NEW
   pre-registration needed (criterion (a) as "<= .05 or <= v5's own value", draw-1 CD19 bimodality dropped as unattainable in any
   version) -- this is a post-hoc candidate after seeing N039's QC, so it needs the user's go and its own frozen criteria. · open
+
+## 2026-11-18 (N060-N062 interim, per-target gains vs 2-seed r50 control; n060_per_target.csv)
+- Gains are COMPLEMENTARY and match each design: twopart -> CD123 +.037, grp:CD45 +.019; panel head -> pooled groups +.014/+.015/+.031
+  (singles -.01..-.02); fov-re (1 seed) -> CD19 +.029; pair loss -> CD56 +.019, grp:CD45 +.017 (but its FOV sampler costs -.007).
+  Idea: a composite predictor fixed a priori by design (pooled targets <- panel head, dim singles CD123/HLA-DR/CD19/CD56 <- twopart
+  (+ fov-re), other singles <- control) evaluated on FRESH seeds (s2) to avoid per-target selection bias; then as Cytoland-ensemble member.

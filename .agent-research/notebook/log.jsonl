@@ -70,3 +70,6 @@
 {"ts":"2026-11-18T14:26:17+01:00","event":"goal_effect","item":"N058","effect":"flat","value":"void","scale":"module","why":""}
 {"ts":"2026-11-18T14:38:20+01:00","event":"review_closed","item":"N059"}
 {"ts":"2026-11-18T16:57:24+01:00","event":"goal_effect","item":"N064","effect":"n/a","value":"-","scale":"?","why":"measurement"}
+{"ts":"2026-11-18T17:05:10+01:00","event":"goal_effect","item":"N060","effect":"flat","value":"0.6756","scale":"module","why":""}
+{"ts":"2026-11-18T17:05:15+01:00","event":"goal_effect","item":"N061","effect":"flat","value":"0.6742","scale":"module","why":""}
+{"ts":"2026-11-18T17:05:16+01:00","event":"goal_effect","item":"N062","effect":"flat","value":"0.6704","scale":"paradigm","why":""}

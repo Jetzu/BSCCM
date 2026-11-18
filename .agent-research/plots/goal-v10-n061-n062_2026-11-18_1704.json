@@ -1,0 +1,150 @@
+{
+ "png": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/plots/goal-v10-n061-n062_2026-11-18_1704.png",
+ "svg": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/plots/goal-v10-n061-n062_2026-11-18_1704.svg",
+ "created": "2026-11-18T17:04:56",
+ "command": [
+  "/home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python",
+  "/home/hpc/v181bb/v181bb10/.claude/skills/work-log/bin/plot_compare.py",
+  "--metric",
+  "goal_v10_n061_n062",
+  "--csv",
+  ".agent-research/results/N060-rare-positive-output-heads-for-dim-marke/plot_n061_n062_single.csv",
+  "--item",
+  "N061",
+  "--baseline",
+  "r50 control",
+  "--noise",
+  "0.0027"
+ ],
+ "cwd": "/home/hpc/v181bb/v181bb10/BSCCM",
+ "source": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N060-rare-positive-output-heads-for-dim-marke/plot_n061_n062_single.csv",
+ "notes": {
+  "item": "N061",
+  "metric": "goal_v10_n061_n062",
+  "direction": "higher",
+  "noise_sd": 0.0027,
+  "stats": null
+ },
+ "width_in": 8.5,
+ "height_in": 2.5591,
+ "png_px": [
+  3840,
+  1156
+ ],
+ "significance": "two-sided; Holm-corrected over all comparisons of a panel (one family per panel); * <0.05 ** <0.01 *** <0.001 **** <0.0001",
+ "panels": [
+  {
+   "panel": "a",
+   "kind": "bar",
+   "groups": [
+    "r50 control",
+    "pair",
+    "fovre",
+    "autofl0",
+    "panel",
+    "sampler"
+   ],
+   "colors": [
+    "#767E86",
+    "#3A6C9E",
+    "#55BDB2",
+    "#A1CA8A",
+    "#CF832F",
+    "#B94A58"
+   ],
+   "n": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "mean": [
+    0.6706138554618835,
+    0.6741815893082249,
+    0.674010209811493,
+    0.671335708498253,
+    0.6704345492883081,
+    0.6640087507205752
+   ],
+   "sd": [
+    0.003329033883025967,
+    0.00023890267450249562,
+    0.001598866584198653,
+    0.0018602625647050842,
+    0.0005219391322792802,
+    0.0020910850803788337
+   ],
+   "median": [
+    0.6706138554618835,
+    0.6741815893082249,
+    0.674010209811493,
+    0.671335708498253,
+    0.6704345492883081,
+    0.6640087507205752
+   ],
+   "whisker": "sd",
+   "stats": [
+    {
+     "test": "paired t-test",
+     "p": 0.3918436030720112,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 1.0,
+     "stars": "ns",
+     "a": "r50 control",
+     "b": "pair",
+     "reference": "r50 control"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.22010788791040234,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 1.0,
+     "stars": "ns",
+     "a": "r50 control",
+     "b": "fovre",
+     "reference": "r50 control"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.6133240702406343,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 1.0,
+     "stars": "ns",
+     "a": "r50 control",
+     "b": "autofl0",
+     "reference": "r50 control"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.9426470022099063,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 1.0,
+     "stars": "ns",
+     "a": "r50 control",
+     "b": "panel",
+     "reference": "r50 control"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.3347154544521047,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 1.0,
+     "stars": "ns",
+     "a": "r50 control",
+     "b": "sampler",
+     "reference": "r50 control"
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "goal_v10_n061_n062"
+  }
+ ],
+ "matplotlib": "3.11.0"
+}

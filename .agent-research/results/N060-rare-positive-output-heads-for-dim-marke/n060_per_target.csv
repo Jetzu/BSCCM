@@ -1,0 +1,397 @@
+arm,member,direction,target,r
+r50 control,n051_v10_base,b10,single:CD45,0.7218647994156839
+r50 control,n051_v10_base,b10,single:CD123,0.6248427802061454
+r50 control,n051_v10_base,b10,single:CD19,0.3525227765797605
+r50 control,n051_v10_base,b10,single:CD56,0.4712089908535067
+r50 control,n051_v10_base,b10,single:CD14,0.8353989386261367
+r50 control,n051_v10_base,b10,single:CD16,0.9003248948783037
+r50 control,n051_v10_base,b10,single:HLA-DR,0.525163117871424
+r50 control,n051_v10_base,b10,single:CD3,0.792222305871125
+r50 control,n051_v10_base,b10,grp:CD3/CD19/CD56,0.777343670312257
+r50 control,n051_v10_base,b10,grp:CD45,0.7293477542653102
+r50 control,n051_v10_base,b10,grp:CD16,0.8239656015606623
+r50 control,n051_v10_base,b01,single:CD45,0.8182939595261406
+r50 control,n051_v10_base,b01,single:CD123,0.46031214490208994
+r50 control,n051_v10_base,b01,single:CD19,0.3351526817700559
+r50 control,n051_v10_base,b01,single:CD56,0.5400224209475364
+r50 control,n051_v10_base,b01,single:CD14,0.8276871747823203
+r50 control,n051_v10_base,b01,single:CD16,0.8870496329661178
+r50 control,n051_v10_base,b01,single:HLA-DR,0.43266825381337976
+r50 control,n051_v10_base,b01,single:CD3,0.7429314863831374
+r50 control,n051_v10_base,b01,grp:CD3/CD19/CD56,0.7818711440772201
+r50 control,n051_v10_base,b01,grp:CD45,0.6479718292481236
+r50 control,n051_v10_base,b01,grp:CD16,0.7771260748417214
+r50 control,n051_v10_base_s1,b10,single:CD45,0.715640050817753
+r50 control,n051_v10_base_s1,b10,single:CD123,0.56907354798105
+r50 control,n051_v10_base_s1,b10,single:CD19,0.31481513045332277
+r50 control,n051_v10_base_s1,b10,single:CD56,0.44761604964276575
+r50 control,n051_v10_base_s1,b10,single:CD14,0.8259320640804821
+r50 control,n051_v10_base_s1,b10,single:CD16,0.9012452644104479
+r50 control,n051_v10_base_s1,b10,single:HLA-DR,0.5184260894588218
+r50 control,n051_v10_base_s1,b10,single:CD3,0.7870021863743981
+r50 control,n051_v10_base_s1,b10,grp:CD3/CD19/CD56,0.7781735045254428
+r50 control,n051_v10_base_s1,b10,grp:CD45,0.7403208654363564
+r50 control,n051_v10_base_s1,b10,grp:CD16,0.8289213528998818
+r50 control,n051_v10_base_s1,b01,single:CD45,0.8184532128835504
+r50 control,n051_v10_base_s1,b01,single:CD123,0.5005858235240914
+r50 control,n051_v10_base_s1,b01,single:CD19,0.27909035928348214
+r50 control,n051_v10_base_s1,b01,single:CD56,0.5573695676651018
+r50 control,n051_v10_base_s1,b01,single:CD14,0.8278652554450542
+r50 control,n051_v10_base_s1,b01,single:CD16,0.8896339087046072
+r50 control,n051_v10_base_s1,b01,single:HLA-DR,0.44652989687135664
+r50 control,n051_v10_base_s1,b01,single:CD3,0.7484586280439891
+r50 control,n051_v10_base_s1,b01,grp:CD3/CD19/CD56,0.7824414601721225
+r50 control,n051_v10_base_s1,b01,grp:CD45,0.6434176155778089
+r50 control,n051_v10_base_s1,b01,grp:CD16,0.7807053723728272
+hlgauss,n060_hlgauss_s0,b10,single:CD45,0.7218534863363136
+hlgauss,n060_hlgauss_s0,b10,single:CD123,0.657202304252236
+hlgauss,n060_hlgauss_s0,b10,single:CD19,0.3492289852847769
+hlgauss,n060_hlgauss_s0,b10,single:CD56,0.48241409361755916
+hlgauss,n060_hlgauss_s0,b10,single:CD14,0.8455021134485732
+hlgauss,n060_hlgauss_s0,b10,single:CD16,0.9033004540256054
+hlgauss,n060_hlgauss_s0,b10,single:HLA-DR,0.5368214832112255
+hlgauss,n060_hlgauss_s0,b10,single:CD3,0.8060155272875303
+hlgauss,n060_hlgauss_s0,b10,grp:CD3/CD19/CD56,0.7693069401658704
+hlgauss,n060_hlgauss_s0,b10,grp:CD45,0.7215322933169686
+hlgauss,n060_hlgauss_s0,b10,grp:CD16,0.7942025512028544
+hlgauss,n060_hlgauss_s0,b01,single:CD45,0.8140851700331461
+hlgauss,n060_hlgauss_s0,b01,single:CD123,0.39821494830915805
+hlgauss,n060_hlgauss_s0,b01,single:CD19,0.1709344377137661
+hlgauss,n060_hlgauss_s0,b01,single:CD56,0.5462434339813224
+hlgauss,n060_hlgauss_s0,b01,single:CD14,0.8212504992145316
+hlgauss,n060_hlgauss_s0,b01,single:CD16,0.8910260643466409
+hlgauss,n060_hlgauss_s0,b01,single:HLA-DR,0.4391758517402124
+hlgauss,n060_hlgauss_s0,b01,single:CD3,0.7437203111731021
+hlgauss,n060_hlgauss_s0,b01,grp:CD3/CD19/CD56,0.7738537162790727
+hlgauss,n060_hlgauss_s0,b01,grp:CD45,0.6434203178809474
+hlgauss,n060_hlgauss_s0,b01,grp:CD16,0.7744711831840512
+hlgauss,n060_hlgauss_s1,b10,single:CD45,0.7241762602971421
+hlgauss,n060_hlgauss_s1,b10,single:CD123,0.5970746237110531
+hlgauss,n060_hlgauss_s1,b10,single:CD19,0.33619691558153547
+hlgauss,n060_hlgauss_s1,b10,single:CD56,0.47557706127893845
+hlgauss,n060_hlgauss_s1,b10,single:CD14,0.8387153691450057
+hlgauss,n060_hlgauss_s1,b10,single:CD16,0.9021899757016414
+hlgauss,n060_hlgauss_s1,b10,single:HLA-DR,0.5245018261847427
+hlgauss,n060_hlgauss_s1,b10,single:CD3,0.8099796409245277
+hlgauss,n060_hlgauss_s1,b10,grp:CD3/CD19/CD56,0.7648481626557072
+hlgauss,n060_hlgauss_s1,b10,grp:CD45,0.7164864148995862
+hlgauss,n060_hlgauss_s1,b10,grp:CD16,0.7966464527671512
+hlgauss,n060_hlgauss_s1,b01,single:CD45,0.8141731936098487
+hlgauss,n060_hlgauss_s1,b01,single:CD123,0.2879037333139425
+hlgauss,n060_hlgauss_s1,b01,single:CD19,0.17150599019180574
+hlgauss,n060_hlgauss_s1,b01,single:CD56,0.5591970331466014
+hlgauss,n060_hlgauss_s1,b01,single:CD14,0.8237058678326482
+hlgauss,n060_hlgauss_s1,b01,single:CD16,0.8919249176041519
+hlgauss,n060_hlgauss_s1,b01,single:HLA-DR,0.4321251766163281
+hlgauss,n060_hlgauss_s1,b01,single:CD3,0.743692163254564
+hlgauss,n060_hlgauss_s1,b01,grp:CD3/CD19/CD56,0.7757374867544865
+hlgauss,n060_hlgauss_s1,b01,grp:CD45,0.6359299004309398
+hlgauss,n060_hlgauss_s1,b01,grp:CD16,0.7744623836707897
+twopart,n060_twopart_s0,b10,single:CD45,0.7103591294676646
+twopart,n060_twopart_s0,b10,single:CD123,0.5956180260637142
+twopart,n060_twopart_s0,b10,single:CD19,0.3430707953372334
+twopart,n060_twopart_s0,b10,single:CD56,0.47223193355288295
+twopart,n060_twopart_s0,b10,single:CD14,0.8395073753783938
+twopart,n060_twopart_s0,b10,single:CD16,0.9004041498233816
+twopart,n060_twopart_s0,b10,single:HLA-DR,0.4898770861703021
+twopart,n060_twopart_s0,b10,single:CD3,0.7854543299375113
+twopart,n060_twopart_s0,b10,grp:CD3/CD19/CD56,0.7907696147688709
+twopart,n060_twopart_s0,b10,grp:CD45,0.7691398334429337
+twopart,n060_twopart_s0,b10,grp:CD16,0.8355318637379557
+twopart,n060_twopart_s0,b01,single:CD45,0.8246114423423649
+twopart,n060_twopart_s0,b01,single:CD123,0.5045224968185416
+twopart,n060_twopart_s0,b01,single:CD19,0.3284337238868763
+twopart,n060_twopart_s0,b01,single:CD56,0.5466566896111059
+twopart,n060_twopart_s0,b01,single:CD14,0.8270600202114474
+twopart,n060_twopart_s0,b01,single:CD16,0.8879074426924287
+twopart,n060_twopart_s0,b01,single:HLA-DR,0.4369711298622241
+twopart,n060_twopart_s0,b01,single:CD3,0.7564996323167942
+twopart,n060_twopart_s0,b01,grp:CD3/CD19/CD56,0.7872455448469259
+twopart,n060_twopart_s0,b01,grp:CD45,0.6483926105150034
+twopart,n060_twopart_s0,b01,grp:CD16,0.7774744855624119
+twopart,n060_twopart_s1,b10,single:CD45,0.7160010216604636
+twopart,n060_twopart_s1,b10,single:CD123,0.6305726300628117
+twopart,n060_twopart_s1,b10,single:CD19,0.31808377529555143
+twopart,n060_twopart_s1,b10,single:CD56,0.47325912382479784
+twopart,n060_twopart_s1,b10,single:CD14,0.8401827607765008
+twopart,n060_twopart_s1,b10,single:CD16,0.9001384037087963
+twopart,n060_twopart_s1,b10,single:HLA-DR,0.4954741200341245
+twopart,n060_twopart_s1,b10,single:CD3,0.777815195134536
+twopart,n060_twopart_s1,b10,grp:CD3/CD19/CD56,0.7868061352220759
+twopart,n060_twopart_s1,b10,grp:CD45,0.7716049230770935
+twopart,n060_twopart_s1,b10,grp:CD16,0.8292104249911006
+twopart,n060_twopart_s1,b01,single:CD45,0.8197523177142346
+twopart,n060_twopart_s1,b01,single:CD123,0.5719880903070802
+twopart,n060_twopart_s1,b01,single:CD19,0.27477052372543465
+twopart,n060_twopart_s1,b01,single:CD56,0.5278538749121001
+twopart,n060_twopart_s1,b01,single:CD14,0.8301956162677786
+twopart,n060_twopart_s1,b01,single:CD16,0.8895471270087676
+twopart,n060_twopart_s1,b01,single:HLA-DR,0.45087689717048895
+twopart,n060_twopart_s1,b01,single:CD3,0.7543000065095404
+twopart,n060_twopart_s1,b01,grp:CD3/CD19/CD56,0.7843469377985942
+twopart,n060_twopart_s1,b01,grp:CD45,0.646207915707377
+twopart,n060_twopart_s1,b01,grp:CD16,0.7812604603567291
+pearson,n060_pearson_s0,b10,single:CD45,0.724096414069177
+pearson,n060_pearson_s0,b10,single:CD123,0.6038134867130633
+pearson,n060_pearson_s0,b10,single:CD19,0.3552031217774994
+pearson,n060_pearson_s0,b10,single:CD56,0.4631644456848901
+pearson,n060_pearson_s0,b10,single:CD14,0.8389062940763097
+pearson,n060_pearson_s0,b10,single:CD16,0.9027843079369742
+pearson,n060_pearson_s0,b10,single:HLA-DR,0.5109661084502263
+pearson,n060_pearson_s0,b10,single:CD3,0.8037880664253291
+pearson,n060_pearson_s0,b10,grp:CD3/CD19/CD56,0.7753942602331533
+pearson,n060_pearson_s0,b10,grp:CD45,0.7335134060446609
+pearson,n060_pearson_s0,b10,grp:CD16,0.8210549805887599
+pearson,n060_pearson_s0,b01,single:CD45,0.8252633740288644
+pearson,n060_pearson_s0,b01,single:CD123,0.4516244140378965
+pearson,n060_pearson_s0,b01,single:CD19,0.35137774230051144
+pearson,n060_pearson_s0,b01,single:CD56,0.5491283324681961
+pearson,n060_pearson_s0,b01,single:CD14,0.8308554707232118
+pearson,n060_pearson_s0,b01,single:CD16,0.8904370643160295
+pearson,n060_pearson_s0,b01,single:HLA-DR,0.43661433007954753
+pearson,n060_pearson_s0,b01,single:CD3,0.7435099400227152
+pearson,n060_pearson_s0,b01,grp:CD3/CD19/CD56,0.7843531547511521
+pearson,n060_pearson_s0,b01,grp:CD45,0.6471906912931217
+pearson,n060_pearson_s0,b01,grp:CD16,0.7749351467321363
+pearson,n060_pearson_s1,b10,single:CD45,0.7175132205778852
+pearson,n060_pearson_s1,b10,single:CD123,0.5875320054435229
+pearson,n060_pearson_s1,b10,single:CD19,0.3127206934831208
+pearson,n060_pearson_s1,b10,single:CD56,0.450050829117245
+pearson,n060_pearson_s1,b10,single:CD14,0.8337700815977345
+pearson,n060_pearson_s1,b10,single:CD16,0.9026993517399379
+pearson,n060_pearson_s1,b10,single:HLA-DR,0.4980177619455624
+pearson,n060_pearson_s1,b10,single:CD3,0.8044285258728436
+pearson,n060_pearson_s1,b10,grp:CD3/CD19/CD56,0.7849501443447036
+pearson,n060_pearson_s1,b10,grp:CD45,0.7387524076999142
+pearson,n060_pearson_s1,b10,grp:CD16,0.8308256726448653
+pearson,n060_pearson_s1,b01,single:CD45,0.8244160253080639
+pearson,n060_pearson_s1,b01,single:CD123,0.5300735607083966
+pearson,n060_pearson_s1,b01,single:CD19,0.29720377275352483
+pearson,n060_pearson_s1,b01,single:CD56,0.548258095329186
+pearson,n060_pearson_s1,b01,single:CD14,0.828644016211922
+pearson,n060_pearson_s1,b01,single:CD16,0.8906003110278616
+pearson,n060_pearson_s1,b01,single:HLA-DR,0.4438921613468325
+pearson,n060_pearson_s1,b01,single:CD3,0.7448849783137039
+pearson,n060_pearson_s1,b01,grp:CD3/CD19/CD56,0.7823088114003159
+pearson,n060_pearson_s1,b01,grp:CD45,0.6475189014356313
+pearson,n060_pearson_s1,b01,grp:CD16,0.7782814518300335
+fovre,n061_fovre_s0,b10,single:CD45,0.7138654969871567
+fovre,n061_fovre_s0,b10,single:CD123,0.6175426468940209
+fovre,n061_fovre_s0,b10,single:CD19,0.356267293685063
+fovre,n061_fovre_s0,b10,single:CD56,0.46878302971790586
+fovre,n061_fovre_s0,b10,single:CD14,0.8414048013003838
+fovre,n061_fovre_s0,b10,single:CD16,0.9029164599080396
+fovre,n061_fovre_s0,b10,single:HLA-DR,0.5211421287891718
+fovre,n061_fovre_s0,b10,single:CD3,0.799217957067405
+fovre,n061_fovre_s0,b10,grp:CD3/CD19/CD56,0.7784143450985248
+fovre,n061_fovre_s0,b10,grp:CD45,0.742162504695209
+fovre,n061_fovre_s0,b10,grp:CD16,0.8215456016972258
+fovre,n061_fovre_s0,b01,single:CD45,0.8192982368257764
+fovre,n061_fovre_s0,b01,single:CD123,0.4800484302363958
+fovre,n061_fovre_s0,b01,single:CD19,0.34169743234954825
+fovre,n061_fovre_s0,b01,single:CD56,0.5462353244761834
+fovre,n061_fovre_s0,b01,single:CD14,0.8268091336319195
+fovre,n061_fovre_s0,b01,single:CD16,0.8872201939977717
+fovre,n061_fovre_s0,b01,single:HLA-DR,0.4361917075810397
+fovre,n061_fovre_s0,b01,single:CD3,0.7444683771521082
+fovre,n061_fovre_s0,b01,grp:CD3/CD19/CD56,0.7810557594305496
+fovre,n061_fovre_s0,b01,grp:CD45,0.648152728996603
+fovre,n061_fovre_s0,b01,grp:CD16,0.7786575522206303
+fovre,n061_fovre_s1,b10,single:CD45,0.712456193252847
+fovre,n061_fovre_s1,b10,single:CD123,0.6162100072406379
+fovre,n061_fovre_s1,b10,single:CD19,0.3377443912197774
+fovre,n061_fovre_s1,b10,single:CD56,0.44337883445976545
+fovre,n061_fovre_s1,b10,single:CD14,0.8399045805141125
+fovre,n061_fovre_s1,b10,single:CD16,0.9044666374587261
+fovre,n061_fovre_s1,b10,single:HLA-DR,0.5065297343926516
+fovre,n061_fovre_s1,b10,single:CD3,0.7958523492225403
+fovre,n061_fovre_s1,b10,grp:CD3/CD19/CD56,0.7829289088389574
+fovre,n061_fovre_s1,b10,grp:CD45,0.7447148843443671
+fovre,n061_fovre_s1,b10,grp:CD16,0.8405032460861093
+fovre,n061_fovre_s1,b01,single:CD45,0.8209701859152222
+fovre,n061_fovre_s1,b01,single:CD123,0.49417814919372444
+fovre,n061_fovre_s1,b01,single:CD19,0.2831856037037096
+fovre,n061_fovre_s1,b01,single:CD56,0.5617443785300652
+fovre,n061_fovre_s1,b01,single:CD14,0.8262250351919154
+fovre,n061_fovre_s1,b01,single:CD16,0.8880388968485774
+fovre,n061_fovre_s1,b01,single:HLA-DR,0.4457939697841952
+fovre,n061_fovre_s1,b01,single:CD3,0.7528790044973683
+fovre,n061_fovre_s1,b01,grp:CD3/CD19/CD56,0.7825648443279088
+fovre,n061_fovre_s1,b01,grp:CD45,0.6434065411521465
+fovre,n061_fovre_s1,b01,grp:CD16,0.7796757127917332
+pair,n061_pair_s0,b10,single:CD45,0.7063416978561273
+pair,n061_pair_s0,b10,single:CD123,0.5408734069894703
+pair,n061_pair_s0,b10,single:CD19,0.3584627707186529
+pair,n061_pair_s0,b10,single:CD56,0.4809834105854606
+pair,n061_pair_s0,b10,single:CD14,0.8456095438226154
+pair,n061_pair_s0,b10,single:CD16,0.9033965196460195
+pair,n061_pair_s0,b10,single:HLA-DR,0.49601206715049867
+pair,n061_pair_s0,b10,single:CD3,0.8018571030058608
+pair,n061_pair_s0,b10,grp:CD3/CD19/CD56,0.7899649199331047
+pair,n061_pair_s0,b10,grp:CD45,0.7623921139080199
+pair,n061_pair_s0,b10,grp:CD16,0.8390486145147569
+pair,n061_pair_s0,b01,single:CD45,0.811887476220611
+pair,n061_pair_s0,b01,single:CD123,0.465693354842034
+pair,n061_pair_s0,b01,single:CD19,0.3233004601626278
+pair,n061_pair_s0,b01,single:CD56,0.5728854300711352
+pair,n061_pair_s0,b01,single:CD14,0.8289683728612215
+pair,n061_pair_s0,b01,single:CD16,0.8900506575147562
+pair,n061_pair_s0,b01,single:HLA-DR,0.4408214614302192
+pair,n061_pair_s0,b01,single:CD3,0.7584695634059402
+pair,n061_pair_s0,b01,grp:CD3/CD19/CD56,0.7837963115283108
+pair,n061_pair_s0,b01,grp:CD45,0.6497583526435612
+pair,n061_pair_s0,b01,grp:CD16,0.7777049025438917
+pair,n061_pair_s1,b10,single:CD45,0.7081475116391608
+pair,n061_pair_s1,b10,single:CD123,0.5969227938151745
+pair,n061_pair_s1,b10,single:CD19,0.3180794226111168
+pair,n061_pair_s1,b10,single:CD56,0.4694538191799472
+pair,n061_pair_s1,b10,single:CD14,0.8401507971761102
+pair,n061_pair_s1,b10,single:CD16,0.9011033292082457
+pair,n061_pair_s1,b10,single:HLA-DR,0.4992555458597043
+pair,n061_pair_s1,b10,single:CD3,0.7926124628809538
+pair,n061_pair_s1,b10,grp:CD3/CD19/CD56,0.7878477131528678
+pair,n061_pair_s1,b10,grp:CD45,0.7651310867032307
+pair,n061_pair_s1,b10,grp:CD16,0.8441536409165192
+pair,n061_pair_s1,b01,single:CD45,0.8216053143797007
+pair,n061_pair_s1,b01,single:CD123,0.513341402366046
+pair,n061_pair_s1,b01,single:CD19,0.28137043566136327
+pair,n061_pair_s1,b01,single:CD56,0.5682295701647094
+pair,n061_pair_s1,b01,single:CD14,0.8286652058575062
+pair,n061_pair_s1,b01,single:CD16,0.8911206161589882
+pair,n061_pair_s1,b01,single:HLA-DR,0.4341302235276694
+pair,n061_pair_s1,b01,single:CD3,0.7608276829614732
+pair,n061_pair_s1,b01,grp:CD3/CD19/CD56,0.7822151423145405
+pair,n061_pair_s1,b01,grp:CD45,0.6502073282790597
+pair,n061_pair_s1,b01,grp:CD16,0.7811403733929136
+sampler,n061_sampler_s0,b10,single:CD45,0.7070466942628403
+sampler,n061_sampler_s0,b10,single:CD123,0.5350309055352501
+sampler,n061_sampler_s0,b10,single:CD19,0.33647272270486644
+sampler,n061_sampler_s0,b10,single:CD56,0.46206044032192933
+sampler,n061_sampler_s0,b10,single:CD14,0.8450242664489593
+sampler,n061_sampler_s0,b10,single:CD16,0.9046010293855674
+sampler,n061_sampler_s0,b10,single:HLA-DR,0.4985529463940457
+sampler,n061_sampler_s0,b10,single:CD3,0.7867528253308695
+sampler,n061_sampler_s0,b10,grp:CD3/CD19/CD56,0.7834743671630017
+sampler,n061_sampler_s0,b10,grp:CD45,0.743969448672216
+sampler,n061_sampler_s0,b10,grp:CD16,0.8320456163388243
+sampler,n061_sampler_s0,b01,single:CD45,0.8071135391884622
+sampler,n061_sampler_s0,b01,single:CD123,0.4113014063035684
+sampler,n061_sampler_s0,b01,single:CD19,0.27223138876014485
+sampler,n061_sampler_s0,b01,single:CD56,0.5580667590633945
+sampler,n061_sampler_s0,b01,single:CD14,0.8224026525958984
+sampler,n061_sampler_s0,b01,single:CD16,0.8847270896786323
+sampler,n061_sampler_s0,b01,single:HLA-DR,0.4299706387298073
+sampler,n061_sampler_s0,b01,single:CD3,0.7497331981577209
+sampler,n061_sampler_s0,b01,grp:CD3/CD19/CD56,0.7820598494081019
+sampler,n061_sampler_s0,b01,grp:CD45,0.6468137702539795
+sampler,n061_sampler_s0,b01,grp:CD16,0.7762113114663494
+sampler,n061_sampler_s1,b10,single:CD45,0.7076518000278982
+sampler,n061_sampler_s1,b10,single:CD123,0.6046590106649001
+sampler,n061_sampler_s1,b10,single:CD19,0.299759672223025
+sampler,n061_sampler_s1,b10,single:CD56,0.4535983104305026
+sampler,n061_sampler_s1,b10,single:CD14,0.8428202310799187
+sampler,n061_sampler_s1,b10,single:CD16,0.9010479708784069
+sampler,n061_sampler_s1,b10,single:HLA-DR,0.5019252471337876
+sampler,n061_sampler_s1,b10,single:CD3,0.7976569539323553
+sampler,n061_sampler_s1,b10,grp:CD3/CD19/CD56,0.7764833914328636
+sampler,n061_sampler_s1,b10,grp:CD45,0.7408065291752446
+sampler,n061_sampler_s1,b10,grp:CD16,0.837764166089032
+sampler,n061_sampler_s1,b01,single:CD45,0.8157808474069237
+sampler,n061_sampler_s1,b01,single:CD123,0.41505130758532427
+sampler,n061_sampler_s1,b01,single:CD19,0.26461877709341314
+sampler,n061_sampler_s1,b01,single:CD56,0.5632550419297332
+sampler,n061_sampler_s1,b01,single:CD14,0.829585847100732
+sampler,n061_sampler_s1,b01,single:CD16,0.8887271592885465
+sampler,n061_sampler_s1,b01,single:HLA-DR,0.44624970383994883
+sampler,n061_sampler_s1,b01,single:CD3,0.7496169947107464
+sampler,n061_sampler_s1,b01,grp:CD3/CD19/CD56,0.7783317350035378
+sampler,n061_sampler_s1,b01,grp:CD45,0.6455204661283417
+sampler,n061_sampler_s1,b01,grp:CD16,0.7798110023856971
+autofl0,n061_autofl0_s0,b10,single:CD45,0.7128271258436415
+autofl0,n061_autofl0_s0,b10,single:CD123,0.6075701427010795
+autofl0,n061_autofl0_s0,b10,single:CD19,0.3471318402016533
+autofl0,n061_autofl0_s0,b10,single:CD56,0.4671350665023632
+autofl0,n061_autofl0_s0,b10,single:CD14,0.8380370409806155
+autofl0,n061_autofl0_s0,b10,single:CD16,0.9015766941147946
+autofl0,n061_autofl0_s0,b10,single:HLA-DR,0.5170530046069545
+autofl0,n061_autofl0_s0,b10,single:CD3,0.7919787009274828
+autofl0,n061_autofl0_s0,b10,grp:CD3/CD19/CD56,0.7807055625621871
+autofl0,n061_autofl0_s0,b10,grp:CD45,0.7469236851805132
+autofl0,n061_autofl0_s0,b10,grp:CD16,0.8213167455543147
+autofl0,n061_autofl0_s0,b01,single:CD45,0.8189108142106726
+autofl0,n061_autofl0_s0,b01,single:CD123,0.4658144769252328
+autofl0,n061_autofl0_s0,b01,single:CD19,0.334100402573247
+autofl0,n061_autofl0_s0,b01,single:CD56,0.5480434778226052
+autofl0,n061_autofl0_s0,b01,single:CD14,0.8263464197221776
+autofl0,n061_autofl0_s0,b01,single:CD16,0.8875918609812451
+autofl0,n061_autofl0_s0,b01,single:HLA-DR,0.4352854951608431
+autofl0,n061_autofl0_s0,b01,single:CD3,0.742669839063814
+autofl0,n061_autofl0_s0,b01,grp:CD3/CD19/CD56,0.781374625205939
+autofl0,n061_autofl0_s0,b01,grp:CD45,0.6478022890379264
+autofl0,n061_autofl0_s0,b01,grp:CD16,0.7781291711166545
+autofl0,n061_autofl0_s1,b10,single:CD45,0.7105261899222126
+autofl0,n061_autofl0_s1,b10,single:CD123,0.5843455571714798
+autofl0,n061_autofl0_s1,b10,single:CD19,0.3344075041061146
+autofl0,n061_autofl0_s1,b10,single:CD56,0.4408911288431957
+autofl0,n061_autofl0_s1,b10,single:CD14,0.8327794667977895
+autofl0,n061_autofl0_s1,b10,single:CD16,0.9028606874128652
+autofl0,n061_autofl0_s1,b10,single:HLA-DR,0.5033399145700607
+autofl0,n061_autofl0_s1,b10,single:CD3,0.7958031254611689
+autofl0,n061_autofl0_s1,b10,grp:CD3/CD19/CD56,0.7827637260551943
+autofl0,n061_autofl0_s1,b10,grp:CD45,0.7431011077321484
+autofl0,n061_autofl0_s1,b10,grp:CD16,0.8438454953204343
+autofl0,n061_autofl0_s1,b01,single:CD45,0.8200959566468905
+autofl0,n061_autofl0_s1,b01,single:CD123,0.5120299815967864
+autofl0,n061_autofl0_s1,b01,single:CD19,0.2571879963804162
+autofl0,n061_autofl0_s1,b01,single:CD56,0.5636363988329738
+autofl0,n061_autofl0_s1,b01,single:CD14,0.8263549648687887
+autofl0,n061_autofl0_s1,b01,single:CD16,0.8894188333763157
+autofl0,n061_autofl0_s1,b01,single:HLA-DR,0.4399112814565124
+autofl0,n061_autofl0_s1,b01,single:CD3,0.7486461906534801
+autofl0,n061_autofl0_s1,b01,grp:CD3/CD19/CD56,0.7839193472025434
+autofl0,n061_autofl0_s1,b01,grp:CD45,0.6439202195595569
+autofl0,n061_autofl0_s1,b01,grp:CD16,0.7806616189602494
+panel,n062_panel_s0,b10,single:CD45,0.7138494110462283
+panel,n062_panel_s0,b10,single:CD123,0.6471505797523146
+panel,n062_panel_s0,b10,single:CD19,0.2890606697190375
+panel,n062_panel_s0,b10,single:CD56,0.4831942632768045
+panel,n062_panel_s0,b10,single:CD14,0.8397923833144221
+panel,n062_panel_s0,b10,single:CD16,0.8869461606919229
+panel,n062_panel_s0,b10,single:HLA-DR,0.4888854136364563
+panel,n062_panel_s0,b10,single:CD3,0.7973699973923316
+panel,n062_panel_s0,b10,grp:CD3/CD19/CD56,0.7972749887290618
+panel,n062_panel_s0,b10,grp:CD45,0.7778575020210197
+panel,n062_panel_s0,b10,grp:CD16,0.8654870437001256
+panel,n062_panel_s0,b01,single:CD45,0.8062957092022421
+panel,n062_panel_s0,b01,single:CD123,0.407045452254841
+panel,n062_panel_s0,b01,single:CD19,0.326465682984539
+panel,n062_panel_s0,b01,single:CD56,0.5410718721452462
+panel,n062_panel_s0,b01,single:CD14,0.8252691313264647
+panel,n062_panel_s0,b01,single:CD16,0.8754458960223208
+panel,n062_panel_s0,b01,single:HLA-DR,0.4172191832139195
+panel,n062_panel_s0,b01,single:CD3,0.748183006463501
+panel,n062_panel_s0,b01,grp:CD3/CD19/CD56,0.7932608446352134
+panel,n062_panel_s0,b01,grp:CD45,0.659588952125975
+panel,n062_panel_s0,b01,grp:CD16,0.7709654080844223
+panel,n062_panel_s1,b10,single:CD45,0.7113342505892439
+panel,n062_panel_s1,b10,single:CD123,0.632075856289624
+panel,n062_panel_s1,b10,single:CD19,0.30892965825958046
+panel,n062_panel_s1,b10,single:CD56,0.47361544702954356
+panel,n062_panel_s1,b10,single:CD14,0.8411957985046075
+panel,n062_panel_s1,b10,single:CD16,0.8871240064653946
+panel,n062_panel_s1,b10,single:HLA-DR,0.5085916556649548
+panel,n062_panel_s1,b10,single:CD3,0.7892201730736164
+panel,n062_panel_s1,b10,grp:CD3/CD19/CD56,0.7973820853189496
+panel,n062_panel_s1,b10,grp:CD45,0.7879559883832536
+panel,n062_panel_s1,b10,grp:CD16,0.8593545021931946
+panel,n062_panel_s1,b01,single:CD45,0.804898487935845
+panel,n062_panel_s1,b01,single:CD123,0.4019826483358735
+panel,n062_panel_s1,b01,single:CD19,0.3011422855700554
+panel,n062_panel_s1,b01,single:CD56,0.5454087797075738
+panel,n062_panel_s1,b01,single:CD14,0.8266866313431178
+panel,n062_panel_s1,b01,single:CD16,0.8773428871514386
+panel,n062_panel_s1,b01,single:HLA-DR,0.41824123646975264
+panel,n062_panel_s1,b01,single:CD3,0.7477858354879734
+panel,n062_panel_s1,b01,grp:CD3/CD19/CD56,0.7917270242552633
+panel,n062_panel_s1,b01,grp:CD45,0.6604129492716239
+panel,n062_panel_s1,b01,grp:CD16,0.7690324296466698
