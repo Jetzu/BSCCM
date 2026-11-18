@@ -15,3 +15,11 @@
 - H reconstructive SSL (masked LF detail / held-out LED prediction), 2-3.5 GPU-h; SSL encoders: check the hist_row<0 filter in train_ssl_lf.py row selection before reuse (Codex).
 - I synthetic-aperture probe on the 4,304 batch-1 single-LED cells (hardware ceiling).
 - K down-weight the dim batch-1 'all' replicate-0 slide for grp targets.
+
+## Parked from review N059 (2026-11-18)
+- Fluorescence spatial descriptors (membrane ring/core, within-cell quantiles) as privileged auxiliary targets (Codex idea 5; 2-3 d build).
+- Split-half (pixel checkerboard) reliability of raw fluorescence through the v10 pipeline -> per-marker r_max ceiling (outsider M2; CPU hours).
+- Learning curve 1/8..1 of the source draw, in-dist + cross-draw (outsider M3; 6-10 GPU-h) -- run if N062 suggests label starvation.
+- Simulated readout randomisation hedge: CPU test on saved predictions first; GPU only if >= +.0054 (lit_crossbatch idea 3).
+- Per-target ensemble weights / cross-target stacker fitted on source OOF predictions (outsider 4; cross-target part may be a declined lineage prior).
+- USER DECISION: few-shot new-draw readout protocol (.7042 with >= 200-500 labelled new-draw cells per target; AB s3).

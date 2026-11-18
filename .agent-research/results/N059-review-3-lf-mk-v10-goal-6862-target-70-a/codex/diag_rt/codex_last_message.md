@@ -1,0 +1,1 @@
+Wrote [diag_redteam.md](diag_redteam.md) with five ranked findings, including the confounded reference comparison and limits of the affine oracle. No repository changes.

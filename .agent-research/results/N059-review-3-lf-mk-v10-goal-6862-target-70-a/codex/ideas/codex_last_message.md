@@ -1,0 +1,1 @@
+Wrote [ideas_codex.md](ideas_codex.md) with five ideas, including changes to the loss, decomposition, and training signal. Each includes cited evidence, expected gain, a GPU-hour falsifier, and build cost. Repository code remains unchanged.
