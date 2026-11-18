@@ -91,6 +91,7 @@ K ids assigned at lint 2026-11-09; results paths are under `.agent-research/resu
   contrasts .632 vs TT6c .540, MLL23 15 .704 vs .568 (every H seed > every T seed; per teacher +.10..+.155), all25 .761 vs .677,
   PBC equal (.85) -- within the pre-registered seed-range floor (.09-.15) -> registered "no difference". Share-matched hub (1 seed)
   .563/.640/.713 -> a large part of the advantage tracks anchoring strength (tests: N057 TT6c anchor sweep, N058 matched hub 3
-  seeds). Eosinophils predicted CD16+ in every arm; RQ3 per-class single-marker fractions not calibratable on BSCCM (gated classes
+  seeds). N058 CONFIRMED at matched anchoring (3 seeds x 3 teachers): MLL23 hub .681 vs TT6c .568, +.113 > registered floor .074,
+  every hub seed > every TT6c seed; N057: stronger TT6c anchoring alone +.04-.06 -> the hub target is the main lever. Eosinophils predicted CD16+ in every arm; RQ3 per-class single-marker fractions not calibratable on BSCCM (gated classes
   lack single markers) [partial: seed noise] (N056; .agent-research/results/N056-e3-clinical-transfer-class-anchored-giem/n056_per_run.csv) {cites:0}
 

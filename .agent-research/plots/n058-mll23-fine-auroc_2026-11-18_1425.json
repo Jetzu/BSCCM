@@ -1,0 +1,82 @@
+{
+ "png": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/plots/n058-mll23-fine-auroc_2026-11-18_1425.png",
+ "svg": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/plots/n058-mll23-fine-auroc_2026-11-18_1425.svg",
+ "created": "2026-11-18T14:25:58",
+ "command": [
+  "/home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python",
+  "/home/hpc/v181bb/v181bb10/.claude/skills/work-log/bin/plot_compare.py",
+  "--metric",
+  "n058_mll23_fine_auroc",
+  "--csv",
+  "plot_mll23.csv",
+  "--item",
+  "N058",
+  "--baseline",
+  "TT6c student (T)",
+  "--direction",
+  "higher"
+ ],
+ "cwd": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N058-confirm-hub-tt6c-on-mll23-fine-contrasts",
+ "source": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N058-confirm-hub-tt6c-on-mll23-fine-contrasts/plot_mll23.csv",
+ "notes": {
+  "item": "N058",
+  "metric": "n058_mll23_fine_auroc",
+  "direction": "higher",
+  "noise_sd": 0.0027,
+  "stats": null
+ },
+ "width_in": 8.5,
+ "height_in": 2.5591,
+ "png_px": [
+  3840,
+  1156
+ ],
+ "significance": "two-sided; Holm-corrected over all comparisons of a panel (one family per panel); * <0.05 ** <0.01 *** <0.001 **** <0.0001",
+ "panels": [
+  {
+   "panel": "a",
+   "kind": "bar",
+   "groups": [
+    "TT6c student (T)",
+    "hub, matched anchoring"
+   ],
+   "colors": [
+    "#767E86",
+    "#3A6C9E"
+   ],
+   "n": [
+    7,
+    9
+   ],
+   "mean": [
+    0.5743633774787974,
+    0.6811885750546628
+   ],
+   "sd": [
+    0.04217956792721651,
+    0.0287332730251922
+   ],
+   "median": [
+    0.5733825698110374,
+    0.6733546605087352
+   ],
+   "whisker": "sd",
+   "stats": [
+    {
+     "test": "Welch t-test",
+     "p": 0.00017816805312554024,
+     "n_i": 7,
+     "n_j": 9,
+     "p_holm": 0.00017816805312554024,
+     "stars": "***",
+     "a": "TT6c student (T)",
+     "b": "hub, matched anchoring",
+     "reference": "TT6c student (T)"
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "n058_mll23_fine_auroc"
+  }
+ ],
+ "matplotlib": "3.11.0"
+}

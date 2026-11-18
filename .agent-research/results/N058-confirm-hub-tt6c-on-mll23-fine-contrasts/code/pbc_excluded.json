@@ -1,0 +1,164 @@
+{
+  "archive": "/hnvme/workspace/v181bb10-bsccm/external/pbc/PBC_dataset_normal_DIB.zip",
+  "archive_directory_sha256": "44a5d53422169a96426c8760f8fc884895f2b060e9b849e37c87d0fa164820a0",
+  "threshold": 0.995,
+  "thumbnail": "RGB24x24 bilinear; row centered; L2 cosine",
+  "exact": [
+    {
+      "crc32": "ab722229",
+      "size": 18630,
+      "names": [
+        "PBC_dataset_normal_DIB/basophil/BA_251042.jpg",
+        "PBC_dataset_normal_DIB/basophil/BA_988506.jpg"
+      ]
+    },
+    {
+      "crc32": "7df4488f",
+      "size": 19095,
+      "names": [
+        "PBC_dataset_normal_DIB/basophil/BA_435917.jpg",
+        "PBC_dataset_normal_DIB/basophil/BA_858229.jpg"
+      ]
+    },
+    {
+      "crc32": "47f7901b",
+      "size": 18291,
+      "names": [
+        "PBC_dataset_normal_DIB/basophil/BA_546746.jpg",
+        "PBC_dataset_normal_DIB/basophil/BA_685720.jpg"
+      ]
+    },
+    {
+      "crc32": "571767f2",
+      "size": 15892,
+      "names": [
+        "PBC_dataset_normal_DIB/eosinophil/EO_220125.jpg",
+        "PBC_dataset_normal_DIB/eosinophil/EO_433229.jpg"
+      ]
+    },
+    {
+      "crc32": "8aa383a4",
+      "size": 15885,
+      "names": [
+        "PBC_dataset_normal_DIB/eosinophil/EO_225902.jpg",
+        "PBC_dataset_normal_DIB/neutrophil/BNE_191112.jpg"
+      ]
+    },
+    {
+      "crc32": "d95c3c54",
+      "size": 18474,
+      "names": [
+        "PBC_dataset_normal_DIB/eosinophil/EO_941266.jpg",
+        "PBC_dataset_normal_DIB/eosinophil/EO_994040.jpg"
+      ]
+    },
+    {
+      "crc32": "de37179b",
+      "size": 19261,
+      "names": [
+        "PBC_dataset_normal_DIB/monocyte/MO_145357.jpg",
+        "PBC_dataset_normal_DIB/monocyte/MO_997225.jpg"
+      ]
+    }
+  ],
+  "near": [
+    {
+      "a": "PBC_dataset_normal_DIB/basophil/BA_988506.jpg",
+      "b": "PBC_dataset_normal_DIB/basophil/BA_251042.jpg",
+      "cosine": 0.999999463558197,
+      "a_crc32": "ab722229",
+      "a_size": 18630,
+      "b_crc32": "ab722229",
+      "b_size": 18630
+    },
+    {
+      "a": "PBC_dataset_normal_DIB/basophil/BA_546746.jpg",
+      "b": "PBC_dataset_normal_DIB/basophil/BA_685720.jpg",
+      "cosine": 0.9999999403953552,
+      "a_crc32": "47f7901b",
+      "a_size": 18291,
+      "b_crc32": "47f7901b",
+      "b_size": 18291
+    },
+    {
+      "a": "PBC_dataset_normal_DIB/basophil/BA_435917.jpg",
+      "b": "PBC_dataset_normal_DIB/basophil/BA_858229.jpg",
+      "cosine": 0.9999999403953552,
+      "a_crc32": "7df4488f",
+      "a_size": 19095,
+      "b_crc32": "7df4488f",
+      "b_size": 19095
+    },
+    {
+      "a": "PBC_dataset_normal_DIB/eosinophil/EO_220125.jpg",
+      "b": "PBC_dataset_normal_DIB/eosinophil/EO_433229.jpg",
+      "cosine": 1.0,
+      "a_crc32": "571767f2",
+      "a_size": 15892,
+      "b_crc32": "571767f2",
+      "b_size": 15892
+    },
+    {
+      "a": "PBC_dataset_normal_DIB/eosinophil/EO_994040.jpg",
+      "b": "PBC_dataset_normal_DIB/eosinophil/EO_941266.jpg",
+      "cosine": 1.0,
+      "a_crc32": "d95c3c54",
+      "a_size": 18474,
+      "b_crc32": "d95c3c54",
+      "b_size": 18474
+    },
+    {
+      "a": "PBC_dataset_normal_DIB/monocyte/MO_997225.jpg",
+      "b": "PBC_dataset_normal_DIB/monocyte/MO_145357.jpg",
+      "cosine": 0.9999997019767761,
+      "a_crc32": "de37179b",
+      "a_size": 19261,
+      "b_crc32": "de37179b",
+      "b_size": 19261
+    },
+    {
+      "a": "PBC_dataset_normal_DIB/monocyte/MO_415531.jpg",
+      "b": "PBC_dataset_normal_DIB/monocyte/MO_231316.jpg",
+      "cosine": 0.995794951915741,
+      "a_crc32": "69162b14",
+      "a_size": 14482,
+      "b_crc32": "aa6be732",
+      "b_size": 14797
+    },
+    {
+      "a": "PBC_dataset_normal_DIB/eosinophil/EO_225902.jpg",
+      "b": "PBC_dataset_normal_DIB/neutrophil/BNE_191112.jpg",
+      "cosine": 0.999999463558197,
+      "a_crc32": "8aa383a4",
+      "a_size": 15885,
+      "b_crc32": "8aa383a4",
+      "b_size": 15885
+    }
+  ],
+  "excluded": [
+    "PBC_dataset_normal_DIB/basophil/BA_251042.jpg",
+    "PBC_dataset_normal_DIB/basophil/BA_435917.jpg",
+    "PBC_dataset_normal_DIB/basophil/BA_546746.jpg",
+    "PBC_dataset_normal_DIB/basophil/BA_685720.jpg",
+    "PBC_dataset_normal_DIB/basophil/BA_858229.jpg",
+    "PBC_dataset_normal_DIB/basophil/BA_988506.jpg",
+    "PBC_dataset_normal_DIB/eosinophil/EO_220125.jpg",
+    "PBC_dataset_normal_DIB/eosinophil/EO_225902.jpg",
+    "PBC_dataset_normal_DIB/eosinophil/EO_433229.jpg",
+    "PBC_dataset_normal_DIB/eosinophil/EO_941266.jpg",
+    "PBC_dataset_normal_DIB/eosinophil/EO_994040.jpg",
+    "PBC_dataset_normal_DIB/monocyte/MO_145357.jpg",
+    "PBC_dataset_normal_DIB/monocyte/MO_231316.jpg",
+    "PBC_dataset_normal_DIB/monocyte/MO_415531.jpg",
+    "PBC_dataset_normal_DIB/monocyte/MO_997225.jpg",
+    "PBC_dataset_normal_DIB/neutrophil/BNE_191112.jpg"
+  ],
+  "original_counts": {
+    "A": 8546,
+    "B": 8546
+  },
+  "remaining_counts": {
+    "A": 8538,
+    "B": 8538
+  }
+}
