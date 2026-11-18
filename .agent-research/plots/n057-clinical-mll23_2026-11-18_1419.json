@@ -1,0 +1,99 @@
+{
+ "png": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/plots/n057-clinical-mll23_2026-11-18_1419.png",
+ "svg": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/plots/n057-clinical-mll23_2026-11-18_1419.svg",
+ "created": "2026-11-18T14:19:54",
+ "command": [
+  "/home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python",
+  "/home/hpc/v181bb/v181bb10/.claude/skills/work-log/bin/plot_compare.py",
+  "--metric",
+  "n057_clinical_mll23",
+  "--csv",
+  ".agent-research/results/N057-anchor-strength-sweep-for-the-tt6c-giems/plot_n057_mll23.csv",
+  "--item",
+  "N057",
+  "--baseline",
+  "anchor .5 (TT6c)",
+  "--direction",
+  "higher"
+ ],
+ "cwd": "/home/hpc/v181bb/v181bb10/BSCCM",
+ "source": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N057-anchor-strength-sweep-for-the-tt6c-giems/plot_n057_mll23.csv",
+ "notes": {
+  "item": "N057",
+  "metric": "n057_clinical_mll23",
+  "direction": "higher",
+  "noise_sd": 0.0027,
+  "stats": null
+ },
+ "width_in": 8.5,
+ "height_in": 2.5591,
+ "png_px": [
+  3840,
+  1156
+ ],
+ "significance": "two-sided; Holm-corrected over all comparisons of a panel (one family per panel); * <0.05 ** <0.01 *** <0.001 **** <0.0001",
+ "panels": [
+  {
+   "panel": "a",
+   "kind": "bar",
+   "groups": [
+    "anchor .5 (TT6c)",
+    "anchor 8",
+    "anchor 2"
+   ],
+   "colors": [
+    "#767E86",
+    "#3A6C9E",
+    "#55BDB2"
+   ],
+   "n": [
+    7,
+    7,
+    7
+   ],
+   "mean": [
+    0.5743633774787974,
+    0.6309599358351233,
+    0.6089683218032347
+   ],
+   "sd": [
+    0.04217956792721651,
+    0.03967666093886031,
+    0.048762873458715314
+   ],
+   "median": [
+    0.5733825698110374,
+    0.6389441985356201,
+    0.5967586773369924
+   ],
+   "whisker": "sd",
+   "stats": [
+    {
+     "test": "paired t-test",
+     "p": 0.012780811956866032,
+     "n_i": 7,
+     "n_j": 7,
+     "p_holm": 0.025561623913732064,
+     "stars": "*",
+     "a": "anchor .5 (TT6c)",
+     "b": "anchor 8",
+     "reference": "anchor .5 (TT6c)"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.021748179737809903,
+     "n_i": 7,
+     "n_j": 7,
+     "p_holm": 0.025561623913732064,
+     "stars": "*",
+     "a": "anchor .5 (TT6c)",
+     "b": "anchor 2",
+     "reference": "anchor .5 (TT6c)"
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "n057_clinical_mll23"
+  }
+ ],
+ "matplotlib": "3.11.0"
+}
