@@ -1,0 +1,82 @@
+{
+ "png": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/plots/n044-newdraw-crps_2026-11-18_0913.png",
+ "svg": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/plots/n044-newdraw-crps_2026-11-18_0913.svg",
+ "created": "2026-11-18T09:13:51",
+ "command": [
+  "/home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python",
+  "/home/hpc/v181bb/v181bb10/.claude/skills/work-log/bin/plot_compare.py",
+  "--metric",
+  "n044_newdraw_crps",
+  "--csv",
+  "plot_newdraw_crps.csv",
+  "--item",
+  "N044",
+  "--baseline",
+  "plain flow g2",
+  "--direction",
+  "lower"
+ ],
+ "cwd": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N044-residual-flow-matching-corrdiff-style-fo",
+ "source": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N044-residual-flow-matching-corrdiff-style-fo/plot_newdraw_crps.csv",
+ "notes": {
+  "item": "N044",
+  "metric": "n044_newdraw_crps",
+  "direction": "lower",
+  "noise_sd": 0.0027,
+  "stats": null
+ },
+ "width_in": 8.5,
+ "height_in": 2.5591,
+ "png_px": [
+  3840,
+  1156
+ ],
+ "significance": "two-sided; Holm-corrected over all comparisons of a panel (one family per panel); * <0.05 ** <0.01 *** <0.001 **** <0.0001",
+ "panels": [
+  {
+   "panel": "a",
+   "kind": "bar",
+   "groups": [
+    "plain flow g2",
+    "residual flow g1"
+   ],
+   "colors": [
+    "#767E86",
+    "#3A6C9E"
+   ],
+   "n": [
+    12,
+    12
+   ],
+   "mean": [
+    0.5686889941518254,
+    0.5914300326097539
+   ],
+   "sd": [
+    0.17790903958846735,
+    0.20131469916042602
+   ],
+   "median": [
+    0.5427662787458154,
+    0.5483615196629406
+   ],
+   "whisker": "sd",
+   "stats": [
+    {
+     "test": "Welch t-test",
+     "p": 0.7721427418452591,
+     "n_i": 12,
+     "n_j": 12,
+     "p_holm": 0.7721427418452591,
+     "stars": "ns",
+     "a": "plain flow g2",
+     "b": "residual flow g1",
+     "reference": "plain flow g2"
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "n044_newdraw_crps"
+  }
+ ],
+ "matplotlib": "3.11.0"
+}

@@ -1,0 +1,7 @@
+arm,set,r_reg,r_avgread,crps_reg,crps_sample,frac_outside,sd_ratio_sample,condW1_sample,condW1_reg
+plain flow g2,inbatch,0.6948,0.6121,0.3838,0.307,0.3523,1.0166,,
+plain flow g2,newdraw,0.5994,0.5496,0.7783,0.5687,0.6985,0.7853,,
+residual flow g1,inbatch,0.6948,0.6921,0.3838,0.2541,0.2983,0.9612,,
+residual flow g1,newdraw,0.5994,0.5941,0.7783,0.5914,0.7296,0.7178,,
+residual flow g2,inbatch,0.6948,0.6873,0.3838,0.2604,0.2742,1.0068,,
+residual flow g2,newdraw,0.5994,0.5896,0.7783,0.5716,0.6956,0.752,,

@@ -10,11 +10,12 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import numpy as np, torch
 from torch import nn
 from torch.nn import functional as F
-from fm_common import (W, FluorSet, Prep, GPUNorm, CondUNet, EpochBatches, make_loader, make_cond, batch_to_device, amp,
+from fm_common import (W, FluorSet, Prep, GPUNorm, CondUNet, EpochBatches, make_loader, make_cond, batch_to_device, amp, regress,
                        atomic_torch, rng_state, restore_rng, digest)
 
 p = argparse.ArgumentParser(description=__doc__)
-p.add_argument('--out', required=True); p.add_argument('--mode', choices=['cfm', 'reg'], default='cfm')
+p.add_argument('--out', required=True); p.add_argument('--mode', choices=['cfm', 'reg', 'rcfm'], default='cfm')
+p.add_argument('--mean-ckpt', default='', help='rcfm (N044): frozen reg-mode checkpoint whose EMA mean image the flow corrects')
 p.add_argument('--targets', default=W + '/targets_v5c.npz'); p.add_argument('--train-batch', type=int, default=1)   # red-team F3: clean lineage
 p.add_argument('--epochs', type=int, default=30); p.add_argument('--bs', type=int, default=128); p.add_argument('--lr', type=float, default=2e-4)
 p.add_argument('--width', type=int, default=64); p.add_argument('--patch', type=int, default=2); p.add_argument('--cfg-drop', type=float, default=0.1); p.add_argument('--translate', type=int, default=4)
@@ -33,14 +34,23 @@ base = (T['hist_row'] < 0) & (T['batch'] == a.train_batch)
 tr = np.flatnonzero(base & (T['split'] == 0)); va = np.flatnonzero(base & (T['split'] == 1))
 va = np.sort(np.random.default_rng(1).choice(va, min(2048, len(va)), replace=False))
 if a.max_train: tr = np.sort(np.random.default_rng(2).choice(tr, a.max_train, replace=False))
-cfg = {k: v for k, v in vars(a).items() if k not in ('out', 'workers', 'save_minutes')}
+cfg = {k: v for k, v in vars(a).items() if k not in ('out', 'workers', 'save_minutes') and not (k == 'mean_ckpt' and a.mode != 'rcfm')}   # N044 red-team 2: legacy cfm/reg configs keep resuming
 cfg.update(prep_sha256=digest(W + '/fm_prep.npz'), targets_sha256=digest(a.targets), n_train=int(len(tr)),
            lf_norm_sha256={n: digest(W + '/' + n) for n in ('cellmeta.npz', 'led_norm.npz', 'backgrounds_p50.npy')})   # red-team F8
+if a.mode == 'rcfm': cfg['mean_ckpt_sha256'] = digest(a.mean_ckpt)   # pinned before the resume check
 ck = out / 'ckpt.pt'; saved = torch.load(ck, map_location='cpu', weights_only=False) if ck.exists() else None
 if saved is not None and saved['config'] != cfg:
     raise ValueError(f"resume config mismatch: {[k for k in cfg.keys() | saved['config'].keys() if cfg.get(k) != saved['config'].get(k)]}")
 prep = Prep(dev); norm = GPUNorm(dev)
-w = a.width; net = CondUNet(ch=(w, 2 * w, 4 * w, 4 * w), n_stain=len(prep.stain_names), patch=a.patch).to(dev, memory_format=torch.channels_last)
+w = a.width; net = CondUNet(ch=(w, 2 * w, 4 * w, 4 * w), n_stain=len(prep.stain_names), patch=a.patch, ccond=25 + (6 if a.mode == 'rcfm' else 0)).to(dev, memory_format=torch.channels_last)
+mean_net = res_scale = None
+if a.mode == 'rcfm':   # N044 residual flow (CorrDiff-style): frozen regressor gives the per-cell mean, the flow learns the residual
+    _m = torch.load(a.mean_ckpt, map_location='cpu', weights_only=False); _c = _m['config']
+    if (_c['mode'] != 'reg' or _c['train_batch'] != a.train_batch or _c['prep_sha256'] != cfg['prep_sha256']   # N044 red-team 1: content lineage
+            or _c.get('targets_sha256') != cfg['targets_sha256'] or _c.get('lf_norm_sha256') != cfg['lf_norm_sha256'] or _m.get('stain_names') != prep.stain_names):
+        raise SystemExit('rcfm needs a reg checkpoint trained on the same draw, fm_prep, targets content, LF normalisation and stain order')
+    mean_net = CondUNet(ch=(_c['width'], 2 * _c['width'], 4 * _c['width'], 4 * _c['width']), n_stain=len(prep.stain_names), patch=_c.get('patch', 1)).to(dev)
+    mean_net.load_state_dict(_m['ema']); mean_net.eval().requires_grad_(False)
 ema = copy.deepcopy(net).requires_grad_(False)
 opt = torch.optim.AdamW(net.parameters(), lr=a.lr, weight_decay=0.0, betas=(0.9, 0.99))
 sampler = EpochBatches(len(tr), a.bs, a.seed); total = a.epochs * sampler.total
@@ -52,10 +62,20 @@ if saved is not None:
 print(json.dumps(dict(event='start', n_train=len(tr), n_val=len(va), params_M=sum(q.numel() for q in net.parameters()) / 1e6,
                       stains=prep.stain_names, resumed=saved is not None, step=step)), flush=True)
 tl = make_loader(FluorSet(tr), a.bs, a.workers, sampler); vl = make_loader(FluorSet(va), 256, 4)
+if a.mode == 'rcfm':
+    if saved is not None: res_scale = torch.tensor(saved['res_scale'], dtype=torch.float32)
+    else:
+        _ss, _n = torch.zeros(6, device=dev), 0
+        with torch.no_grad():
+            for _b in make_loader(FluorSet(np.sort(np.random.default_rng(3).choice(tr, min(4096, len(tr)), replace=False))), 256, 4):
+                _x, _y, _st, _ = batch_to_device(_b, norm, prep, dev); _r = _y - regress(mean_net, _x, _st)
+                _ss += (_r ** 2).mean((2, 3)).sum(0); _n += len(_r)
+        res_scale = (_ss / _n).sqrt().cpu()
+    print(json.dumps(dict(event='residual_scale', res_scale=[round(float(v), 4) for v in res_scale])), flush=True)
 run_id = saved['wandb_id'] if saved is not None else hashlib.sha256(str(out.resolve()).encode()).hexdigest()[:12]
 import wandb
 wb = wandb.init(project=os.environ.get('WANDB_PROJECT', 'BSCCM'), id=run_id, name=f'N034-{a.mode}-b{a.train_batch}-s{a.seed}',
-                mode='offline', config=cfg)
+                mode='offline', config=cfg)   # rcfm runs are named N034-rcfm-* (N044)
 with open(out / 'sync_lineage.jsonl', 'a') as f:
     f.write(json.dumps(dict(wandb_id=run_id, job_id=os.environ.get('SLURM_JOB_ID'), resumed=saved is not None, time=time.time())) + '\n')
 if saved is not None: restore_rng(saved['rng'])
@@ -63,10 +83,14 @@ last = time.monotonic()
 def save():
     global last
     atomic_torch(dict(config=cfg, model=net.state_dict(), ema=ema.state_dict(), opt=opt.state_dict(), epoch=epoch, next_batch=nb,
+                      res_scale=None if res_scale is None else [float(v) for v in res_scale],
                       step=step, rng=rng_state(), wandb_id=run_id, stain_names=prep.stain_names), ck)
     last = time.monotonic()
 
 def loss_fn(model, x, y, st, gen=None):
+    mu = None
+    if a.mode == 'rcfm':   # target = scaled residual of the frozen mean; the mean also conditions the flow
+        mu = regress(mean_net, x, st); y = (y - mu) / res_scale.to(dev).view(1, -1, 1, 1)
     if a.mode == 'reg':
         with amp(dev):
             pred = model(torch.zeros_like(y), torch.zeros(len(y), device=dev), st, make_cond(x)).float()
@@ -75,7 +99,7 @@ def loss_fn(model, x, y, st, gen=None):
     t = torch.sigmoid(torch.randn(len(y), device=dev, generator=gen))
     xt = (1 - t)[:, None, None, None] * z + t[:, None, None, None] * y
     with amp(dev):
-        v = model(xt, t, st, make_cond(x, a.cfg_drop if model.training else 0.)).float()
+        v = model(xt, t, st, make_cond(x, a.cfg_drop if model.training else 0., mu=mu)).float()
     return F.mse_loss(v, y - z)
 
 @torch.no_grad()

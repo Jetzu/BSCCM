@@ -18,7 +18,7 @@ import sys, os, json, argparse
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import numpy as np, torch
-from fm_common import W, FluorSet, Prep, GPUNorm, CondUNet, make_loader, batch_to_device, sample, regress, digest
+from fm_common import W, FluorSet, Prep, GPUNorm, CondUNet, make_loader, batch_to_device, sample, regress, digest, Generator
 
 ap = argparse.ArgumentParser(); ap.add_argument('--cfm', default=''); ap.add_argument('--reg', default=''); ap.add_argument('--out', required=True)
 ap.add_argument('--targets', default=W + '/targets_v5c.npz'); ap.add_argument('--per-stain', type=int, default=400); ap.add_argument('--K', type=int, default=8)
@@ -31,11 +31,15 @@ prep = Prep(dev); norm = GPUNorm(dev); SN = prep.stain_names; stain = np.load(W 
 prep_sha = digest(W + '/fm_prep.npz')
 def load(path, mode):
     s = torch.load(path, map_location='cpu', weights_only=False); c = s['config']; w = c['width']
-    assert c['mode'] == mode, f'{path}: checkpoint mode {c["mode"]} != {mode}'
+    assert c['mode'] == mode or (mode == 'cfm' and c['mode'] == 'rcfm'), f'{path}: checkpoint mode {c["mode"]} != {mode}'
     assert c['prep_sha256'] == prep_sha, f'{path}: trained on a different fm_prep.npz'
     for n_, h_ in c.get('lf_norm_sha256', {}).items(): assert digest(W + '/' + n_) == h_, f'{path}: LF normalisation file {n_} changed'   # rereview F8
-    net = CondUNet(ch=(w, 2 * w, 4 * w, 4 * w), n_stain=len(SN), patch=c.get('patch', 1)).to(dev); net.load_state_dict(s['ema']); net.eval()
-    assert s['stain_names'] == SN; return net, c
+    net = CondUNet(ch=(w, 2 * w, 4 * w, 4 * w), n_stain=len(SN), patch=c.get('patch', 1), ccond=25 + (6 if c['mode'] == 'rcfm' else 0)).to(dev)
+    net.load_state_dict(s['ema']); net.eval(); assert s['stain_names'] == SN
+    if c['mode'] == 'rcfm':   # N044: wrap with the frozen mean regressor recorded in the checkpoint (hash-checked)
+        assert digest(c['mean_ckpt']) == c['mean_ckpt_sha256'], 'rcfm mean checkpoint changed since training'
+        mnet, _ = load(c['mean_ckpt'], 'reg'); return Generator(net, mnet, s['res_scale']), c
+    return (Generator(net) if mode == 'cfm' else net), c
 nets, cfgs, tb = {}, {}, None
 for k in ('cfm', 'reg'):
     if getattr(a, k):
@@ -103,7 +107,7 @@ for set_name, base in (('inbatch', clean & (T['batch'] == tb) & (T['split'] == 2
                 if 'reg' in nets:
                     yr = regress(nets['reg'], x, st); out['reg'].append(feats(yr)); out['px_reg'].append(pix_r(yr, y))
                 if 'cfm' in nets:
-                    S = torch.stack([sample(nets['cfm'], x, st, a.steps, a.cfg, g) for _ in range(a.K)], 1)
+                    S = torch.stack([nets['cfm'](x, st, a.steps, a.cfg, g) for _ in range(a.K)], 1)
                     out['samp'].append(np.stack([feats(S[:, k]) for k in range(a.K)], 1)); ym = S.mean(1); out['mean'].append(feats(ym))
                     out['px_samp'].append(pix_r(S[:, 0], y)); out['px_mean'].append(pix_r(ym, y))
                     if bi == 0:
@@ -114,7 +118,7 @@ for set_name, base in (('inbatch', clean & (T['batch'] == tb) & (T['split'] == 2
                 X = torch.cat(xs_all)[perm.cpu()]; Fsh, Psh = [], []
                 for bi, batch in enumerate(make_loader(FluorSet(rows), a.bs, 8)):
                     _, y, st, _ = batch_to_device(batch, norm, prep, dev); xb = X[bi * a.bs: bi * a.bs + len(y)].to(dev)
-                    ys = sample(nets['cfm'], xb, st, a.steps, a.cfg, g); Fsh.append(feats(ys)); Psh.append(pix_r(ys, y))
+                    ys = nets['cfm'](xb, st, a.steps, a.cfg, g); Fsh.append(feats(ys)); Psh.append(pix_r(ys, y))
                 out['shuf'], out['px_shuf'] = Fsh, Psh
         cat = lambda k: np.concatenate(out[k]) if out[k] else None
         Fr, Fg, Fs, Fm, Fsh = cat('real'), cat('reg'), cat('samp'), cat('mean'), cat('shuf'); r = dict(n=int(len(rows)))

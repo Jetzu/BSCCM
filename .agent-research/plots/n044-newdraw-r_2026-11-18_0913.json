@@ -1,0 +1,99 @@
+{
+ "png": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/plots/n044-newdraw-r_2026-11-18_0913.png",
+ "svg": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/plots/n044-newdraw-r_2026-11-18_0913.svg",
+ "created": "2026-11-18T09:13:50",
+ "command": [
+  "/home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python",
+  "/home/hpc/v181bb/v181bb10/.claude/skills/work-log/bin/plot_compare.py",
+  "--metric",
+  "n044_newdraw_r",
+  "--csv",
+  "plot_newdraw_r.csv",
+  "--item",
+  "N044",
+  "--baseline",
+  "regressor",
+  "--direction",
+  "higher"
+ ],
+ "cwd": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N044-residual-flow-matching-corrdiff-style-fo",
+ "source": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N044-residual-flow-matching-corrdiff-style-fo/plot_newdraw_r.csv",
+ "notes": {
+  "item": "N044",
+  "metric": "n044_newdraw_r",
+  "direction": "higher",
+  "noise_sd": 0.0027,
+  "stats": null
+ },
+ "width_in": 8.5,
+ "height_in": 2.5591,
+ "png_px": [
+  3840,
+  1156
+ ],
+ "significance": "two-sided; Holm-corrected over all comparisons of a panel (one family per panel); * <0.05 ** <0.01 *** <0.001 **** <0.0001",
+ "panels": [
+  {
+   "panel": "a",
+   "kind": "bar",
+   "groups": [
+    "regressor",
+    "residual flow g1",
+    "plain flow g2"
+   ],
+   "colors": [
+    "#767E86",
+    "#3A6C9E",
+    "#55BDB2"
+   ],
+   "n": [
+    12,
+    12,
+    12
+   ],
+   "mean": [
+    0.5993710124031484,
+    0.594057543029657,
+    0.5495965882638529
+   ],
+   "sd": [
+    0.22069591137611452,
+    0.218573062282508,
+    0.23930256653196688
+   ],
+   "median": [
+    0.6340742658847038,
+    0.6296380464009308,
+    0.6127945824584176
+   ],
+   "whisker": "sd",
+   "stats": [
+    {
+     "test": "Welch t-test",
+     "p": 0.9532815222276922,
+     "n_i": 12,
+     "n_j": 12,
+     "p_holm": 1.0,
+     "stars": "ns",
+     "a": "regressor",
+     "b": "residual flow g1",
+     "reference": "regressor"
+    },
+    {
+     "test": "Welch t-test",
+     "p": 0.6016840785196199,
+     "n_i": 12,
+     "n_j": 12,
+     "p_holm": 1.0,
+     "stars": "ns",
+     "a": "regressor",
+     "b": "plain flow g2",
+     "reference": "regressor"
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "n044_newdraw_r"
+  }
+ ],
+ "matplotlib": "3.11.0"
+}

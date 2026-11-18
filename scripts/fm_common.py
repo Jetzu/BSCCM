@@ -143,18 +143,22 @@ class CondUNet(nn.Module):
         return F.pixel_shuffle(h, self.patch) if self.patch > 1 else h
 
 
-def make_cond(x, drop_p=0.):
-    """LF condition with a presence flag; drop_p>0 zeroes the LF for a random subset (classifier-free guidance training)."""
+def make_cond(x, drop_p=0., mu=None):
+    """LF condition with a presence flag; drop_p>0 zeroes the LF for a random subset (classifier-free guidance training).
+    N044 residual flow: mu (B,6,H,W) = the frozen regressor's mean image, appended as 6 more condition channels and dropped together
+    with the LF."""
     keep = torch.ones(len(x), 1, 1, 1, device=x.device)
     if drop_p > 0:
         keep = (torch.rand(len(x), 1, 1, 1, device=x.device) >= drop_p).float()
-    return torch.cat([x * keep, keep.expand(-1, 1, *x.shape[-2:])], 1)
+    parts = [x * keep, keep.expand(-1, 1, *x.shape[-2:])] + ([mu * keep] if mu is not None else [])
+    return torch.cat(parts, 1)
 
 
 @torch.no_grad()
-def sample(net, x, stain, steps=16, cfg=1.0, generator=None):
-    """Heun (2nd order) integration of dx/dt = v(x, t) from t=0 (noise) to t=1 (data); cfg>1 = classifier-free guidance on the LF."""
-    cond = make_cond(x); null = torch.zeros_like(cond)          # null = LF zeroed AND presence flag 0 (as in CFG dropout)
+def sample(net, x, stain, steps=16, cfg=1.0, generator=None, mu=None):
+    """Heun (2nd order) integration of dx/dt = v(x, t) from t=0 (noise) to t=1 (data); cfg>1 = classifier-free guidance on the LF
+    (and on mu for the N044 residual flow)."""
+    cond = make_cond(x, mu=mu); null = torch.zeros_like(cond)          # null = LF zeroed AND presence flag 0 (as in CFG dropout)
     z = torch.randn(len(x), 6, *x.shape[-2:], device=x.device, generator=generator)
     def v(z, t):
         tt = torch.full((len(z),), float(t), device=z.device)
@@ -168,6 +172,19 @@ def sample(net, x, stain, steps=16, cfg=1.0, generator=None):
         h = ts[i + 1] - ts[i]; d0 = v(z, ts[i]); zp = z + h * d0
         z = z + h * .5 * (d0 + v(zp, ts[i + 1]))
     return z
+
+
+class Generator:
+    """One interface for both image generators: plain flow ('cfm') samples the image; residual flow ('rcfm', N044) samples
+    mu + res_scale * residual, mu = frozen regressor's mean image for the SAME (possibly shuffled) LF."""
+    def __init__(self, net, mean_net=None, res_scale=None):
+        self.net, self.mean = net, mean_net
+        self.scale = None if res_scale is None else torch.as_tensor(res_scale, dtype=torch.float32).view(1, -1, 1, 1)
+    @torch.no_grad()
+    def __call__(self, x, stain, steps=16, cfg=1.0, generator=None):
+        if self.mean is None: return sample(self.net, x, stain, steps, cfg, generator)
+        mu = regress(self.mean, x, stain)
+        return mu + self.scale.to(x.device) * sample(self.net, x, stain, steps, cfg, generator, mu=mu)
 
 
 @torch.no_grad()
