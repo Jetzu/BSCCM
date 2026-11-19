@@ -25,3 +25,15 @@
 - USER DECISION: few-shot new-draw readout protocol (.7042 with >= 200-500 labelled new-draw cells per target; AB s3).
 - Noise-ceiling bracket on GOAL cells (lit_noisy_ceiling idea 1): unstained-cell noise floor + pixel split-half (Spearman-Brown) + FOV residual variance; pre-registered: optimistic ceiling <= .72 -> report .70 as near-ceiling; CD19/CD56 ceilings >= .75 -> "label-limited" refuted.
 - [done N059, killed] Neighbour-bleed test: mean partial r .023 (n059_neighbour.csv).
+
+## Parked by review N066 (2026-11-19; results/N066-review-4-lf-mk-v10-goal-6862-target-70-a/ideas.md)
+- AFTER N067 labels exist: one regression head per label version (v10 / local-bg; Wei et al. ICML 2023 separation > aggregation at high noise), 1 GPU-h.
+- AFTER N067: precision-weighted targets from 3 background models via triple collocation (third = annulus/plane background); CPU check first.
+- AFTER N067: residual correlation of v10- vs consensus-trained members on CD56/HLA-DR/grp (<= .90 -> label-diverse ensemble), 0 GPU-h.
+- Rescore frozen members on held-out-draw splits 0+1 (10x cells; GOAL-level FOV-bootstrap SD .0089 vs seed noise .0027) -> needs an eval-only mode in train_lf.py; .5 GPU-h. Diagnostic of split-2 selection bias.
+- b01 recipe audit: class losses and the binary grp:CD123/HLA-DR/CD14 target are active only when training on draw 0 -> arms w_cls 0 / drop binary target (1.2 GPU-h).
+- Morphology micro-cohort supervision (Codex N066 idea 3; needs LF embeddings of all training cells).
+- Assay-conditioned forward model of the 6 raw fluorescence channels (Codex N066 idea 5; 3-5 d).
+- Raw-space negative-population (dsb/ADTnorm-like) background correction of TRAINING labels (lit_labelnoise I3).
+- FOV/cell reliability weights from background-model disagreement (Codex 2, lit I4): CPU check that disagreement predicts |residual| first.
+- Extra pooled labels from single-antibody slides (full_model_unmixed on CD45/CD16 slides; assumption breaker I3; capped, single heads carry the info).

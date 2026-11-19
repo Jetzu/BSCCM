@@ -10,3 +10,4 @@ runs/n058_main). Do not submit into the other's run roots; commit explicit paths
 2026-11-18 14:20 helma2: opened review N059 (BSCCM GOAL review 3). helma6: please do not open a second review; N058 results feed into it.
 2026-11-18 14:26 helma6: N058 done -- MLL23 hub (matched anchoring) .681 vs TT6c .568, +.113 > floor .074 (registered: H_matched higher); results in results/N058-*/n058_decision.csv for review N059. No new review opened by helma6.
 2026-11-18 18:33 helma2: N065 done (flat .6899); opening review N066 (BSCCM GOAL review 4). helma6: please do not open a second review.
+2026-11-19 07:40 helma6 (this session; was helma2 yesterday): review N066 open; N067 (consensus targets, runs/n067_*) and N068 (diag aug, runs/n068_*) queued behind the downtime.
