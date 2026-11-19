@@ -29,7 +29,7 @@ Budget: smoke timing first (1376765/6, 30k cells, 1 epoch), then <= 4 arms x 2 d
   models/DinoBloom-B.pth; VSCyto2D (BSD-3) converted to timm convnextv2_tiny by an agent (stem 2x2/s2, no dw bias, eps 1e-5; numerically
   matched to a re-implementation, max rel err 1.3e-6) -> models/cytoland/converted/. DynaCLR 2D only as ONNX, conversion unverified -> not used.
 - Smoke 1376787/8 (30k cells, 1 epoch, b1to0): dinov3_b 61 s, dinobloom_b 49 s per epoch-pass incl. eval; r_mean_valid .61 after 1 epoch.
-- Codex red-team of the encoder code (results/N053-*/codex_rt/report.md; probe.py, evidence.txt): no P0/P1; pretrained weights load
+- Codex red-team of the encoder code (results/N053-lf-encoder-swap-on-the-v10-goal-dinov3-v/codex_rt/report.md; probe.py, evidence.txt): no P0/P1; pretrained weights load
   (DINOv3 S/B 162/162 tensors, DinoBloom 174/174, Cytoland all source tensors), train/eval rows identical to the r50 baselines, eval
   unchanged, OneCycle keeps the 0.1 ratio. Dispositions:
   F1 normalisation stats (led_norm_stats.py) sample every slide incl. held-out-draw cells: REPRODUCED first-hand (per-slide

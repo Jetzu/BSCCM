@@ -9,3 +9,4 @@ runs/n058_main). Do not submit into the other's run roots; commit explicit paths
 2026-11-18 14:14 helma2: N057 eval units 1382119-132 cancelled by me (missing pbc_excluded.json/report.md in code_a2/code_a8); resubmitted once as job name n057ev into runs/n057_a2, runs/n057_a8 only.
 2026-11-18 14:20 helma2: opened review N059 (BSCCM GOAL review 3). helma6: please do not open a second review; N058 results feed into it.
 2026-11-18 14:26 helma6: N058 done -- MLL23 hub (matched anchoring) .681 vs TT6c .568, +.113 > floor .074 (registered: H_matched higher); results in results/N058-*/n058_decision.csv for review N059. No new review opened by helma6.
+2026-11-18 18:33 helma2: N065 done (flat .6899); opening review N066 (BSCCM GOAL review 4). helma6: please do not open a second review.

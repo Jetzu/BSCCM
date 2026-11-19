@@ -7,7 +7,7 @@ goal_effect: flat · scale: module · value: 0.6742
 N059 review: FOV-level label error still costs ~.04 (within-FOV .726) and slide-specific pooled-panel readouts (grp:CD45 dim rep0 slide) are averaged into the shared head; co-stained autofl supervision may steer marker features (draw-dependent autofl slope, K029).
 
 ## Plan
-Writer Codex (results/N060-*/codex/brief.md, one brief for N060-N062), Claude red-team + integration into scripts/train_lf.py.
+Writer Codex (results/N060-rare-positive-output-heads-for-dim-marke/codex/brief.md, one brief for N060-N062), Claude red-team + integration into scripts/train_lf.py.
 GOAL recipe otherwise unchanged (SSL r50, base view, v10 labels, 10 epochs). 2 seeds x 2 directions per arm (per-item seed noise up
 to .124 on CD123, N059 AB s8). PRE-REGISTERED bar: arm single-model GOAL (mean of 2 seeds) > r50 base .6730 + .0054, OR the arm as a
 3rd member of N048 (base+zoom2) > .6862 + .0054 (= .6916). Report CD123-excluded GOAL alongside (CD123 carried 59 % of N053's gain).
@@ -19,7 +19,7 @@ only; lit_crossbatch idea 1); (ii) --pair-loss + --w-autofl 0 (within-FOV pair d
 ## Changes
 
 ## Evidence
-- Code: Codex (results/N060-*/codex/: PATCH.diff, bsccm_heads.py, CPU smoke 12/12). Claude red-team (scratchpad/n060rt/): P0 import
+- Code: Codex (results/N060-rare-positive-output-heads-for-dim-marke/codex/: PATCH.diff, bsccm_heads.py, CPU smoke 12/12). Claude red-team (scratchpad/n060rt/): P0 import
   fails under python3 -I (REPRODUCED: ModuleNotFoundError) -> module moved to bsccm/heads.py; P1-1 fov-re prior averaged over ~38k-FOV
   table = no shrinkage + slide x class affine can absorb class means (confirmed by reading) -> FOV offsets only, MAP prior
   lambda * sum b^2 / N_train (lambda = --fov-re 1.0); P2 two-part gate init logit(.02), gate loss over the 4 dim markers only;
@@ -27,7 +27,7 @@ only; lit_crossbatch idea 1); (ii) --pair-loss + --w-autofl 0 (within-FOV pair d
 - Runs 1382631-64 (jobs.txt in N060 results): 9 arms x 2 seeds x 2 directions (hlgauss, twopart, pearson | fovre, pair, sampler,
   autofl0 | panel | r50 control seed 1), runs/<item>_<arm>_s<seed>_<b10|b01>. ~10 GPU-h.
 
-- RESULTS (n060_score.py -> results/N060-*/n060_scores.csv, n060_per_target.csv; 2 seeds x 2 directions each; control = r50 SSL
+- RESULTS (n060_score.py -> results/N060-rare-positive-output-heads-for-dim-marke/n060_scores.csv, n060_per_target.csv; 2 seeds x 2 directions each; control = r50 SSL
   seed 0/1 .6730/.6683, mean .6706). Single-model mean GOAL: twopart .6756, pair .6742, fovre .6740, pearson .6726, autofl0 .6713,
   panel .6704, sampler .6640, hlgauss .6591. As 3rd member with N048 base+zoom2: .6797-.6851 (all < .6862 best, bar .6916).
   Per target vs control (mean over seeds/directions): twopart CD123 +.037, grp:CD45 +.019; panel pooled groups +.014/+.015/+.031,

@@ -1,0 +1,3 @@
+/bin/false exit propagation PASS 1
+/bin/true exit propagation PASS 0
+SIGUSR1 forwarded to child and checkpoint exit 75 propagated PASS

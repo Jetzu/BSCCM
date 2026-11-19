@@ -23,3 +23,9 @@
 - KNOWLEDGE: added K031 (N036/N037/N039 label-side fixes, flat/QC-fail), K032 (N041/N042/N050 model-side nulls), K033 (N040/N046 noisy student), K034 (N049 noise model not identifiable + N051 correction), K035 (N045 SOTAlign negative); K031-K035 numbers re-read from results CSVs. Headline rewritten from 13 to 10 bullets (K030 K029 K028 K033 K019 K025 K023 K011 K001 K007); K008/K012/K016/K020 moved to Topics. K023 annotated: v5-metric best, GOAL since re-based (K030).
 - merged 0, superseded 0, verified 0 (no [unverified] bullets), stale 0, promoted 2 rules (re-base is not progress; <2 x noise = flat; total 4 lines, none dropped).
 - Not covered: N044 (open). K035 [partial] 1-seed screen. N043 figures item has no knowledge bullet (infra).
+
+## 2026-11-19 (through N065; N066 review open and parallel-session edits left as they were)
+- fixed 6: check.sh cited-path false positives (results/N053-*, N054-*, N060-* globs in items N053/N054/N060/N061/N062 expanded to real dirs; all four files exist); INDEX had 66 rows -> N001-N006 moved to new INDEX_ARCHIVE.md (60 remain).
+- KNOWLEDGE: added K042 (N060-N063/N065 head/loss family + composite flat; numbers re-read from item text, n060_scores.csv present). Headline rewritten to 10 (K030 K041 K042 K028 K029 K039 K036 K033 K001 K007); K019/K023/K011/K025 moved to Topics, K036/K039/K041/K042 moved up out of Topics.
+- merged 0, superseded 0, verified 1 (K042, new), stale 0 (K006 stale already), promoted 1 rule (extra-member-of-saturated-ensemble bar); RULES now 5 lines, none dropped.
+- Not covered: N066 (open); N052/N059 are decision/review items with no own bullet (covered by K038/K041 context).

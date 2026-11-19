@@ -1,0 +1,12 @@
+test_cca_affinity_equals_original_injected_layer (__main__.Contracts.test_cca_affinity_equals_original_injected_layer) ... ok
+test_exact_resume_after_checkpointed_interrupt (__main__.Contracts.test_exact_resume_after_checkpointed_interrupt) ... ok
+test_klot_gradient_matches_finite_difference (__main__.Contracts.test_klot_gradient_matches_finite_difference) ... ok
+test_real_partition_and_eval_separation (__main__.Contracts.test_real_partition_and_eval_separation) ... ok
+test_retrieval_identity_permutation_and_collapse (__main__.Contracts.test_retrieval_identity_permutation_and_collapse) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 2.157s
+
+OK
+Fitting CCA on 100 samples...
+Finished fitting cca. Model updated.

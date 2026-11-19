@@ -37,7 +37,7 @@ Not a GOAL attempt (GOAL = LF->MK); effect void unless an LF-side result changes
   marker for dye crosstalk); 3 preempt-run driver units; scripted aggregation from the frozen selection; versioned runs/n054v2_*.
 - Codex v2 delivered (false CODEX-UNAVAILABLE gate; handback + smoke OK, 156 s CPU, SIGTERM resume bitwise). Integrator: removed
   `#SBATCH --mem` (cluster rejects --mem for GPU jobs). Claude re-review of v2 launched before the GS units.
-- LF unit 1377051 (3 min, H100): completion C1-C3 on v10 labels (results/N054-*/completion.csv, coherence.csv), seed 0, 1 run:
+- LF unit 1377051 (3 min, H100): completion C1-C3 on v10 labels (results/N054-tri-modal-latent-user-two-space-design-l/completion.csv, coherence.csv), seed 0, 1 run:
   C1 autofl, held-out FOVs: fused .689 vs LF .526 / labels-MLP .524 / ridge[f+labels] .556. Per observed marker the big gains sit
   where the observed value alone predicts autofl (CD56 .200 -> .659, labels-MLP .537; CD3 .249 -> .655, .525; CD19 .417 -> .608,
   .580) = the dim dye channel shared by CD3/CD19/CD56 (K028 background) -> crosstalk/shared measurement error, not biology. Markers
@@ -67,7 +67,7 @@ Not a GOAL attempt (GOAL = LF->MK); effect void unless an LF-side result changes
 
 ## Outcome
 RESULTS (v3, seed 0, units 1379287 LF / 1379327 batch1 / 1379328 batch0, ~3.2 GPU-h; aggregation from the frozen selection ->
-results/N054-*/tables/, n054_summary.py -> n054_arm_summary.csv; plots plots/n054-gs-autofl-truth-r_2026-11-18_1237.png,
+results/N054-tri-modal-latent-user-two-space-design-l/tables/, n054_summary.py -> n054_arm_summary.csv; plots plots/n054-gs-autofl-truth-r_2026-11-18_1237.png,
 n054-gs-marker-r-est_2026-11-18_1237.png). Held-out Giemsa slide, mean of the two holdouts (batch1 / batch0):
 | arm | M1 same-cell autofl r | M2 marker r_est (CIA, 12 markers) |
 | A0 TT6c output-distilled student | .658 (.715 / .601) | .497 |
