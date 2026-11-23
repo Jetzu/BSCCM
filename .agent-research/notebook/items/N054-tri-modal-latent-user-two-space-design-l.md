@@ -92,3 +92,5 @@ spaces; truly unpaired alignment (A2) fails. Not a GOAL attempt (GOAL = LF->MK) 
 <!-- files in .agent-research/results/N054-slug/ + external absolute paths -->
 
 ## Next
+
+2026-11-23: run dirs packed (inode cap) -> /hnvme/workspace/v181bb10-bsccm/runs/archive_n054v3_n057_runs.tar (tar -xf to restore).

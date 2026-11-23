@@ -1,0 +1,3 @@
+arm,b10,b01,GOAL,n_seeds,delta_vs_control_paired
+control,0.681,0.6603,0.6706,2,0.0
+ftall,0.6819,0.6544,0.6681,2,-0.0025

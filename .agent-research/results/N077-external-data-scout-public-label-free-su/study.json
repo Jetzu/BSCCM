@@ -1,0 +1,356 @@
+{
+  "accno" : "S-BIAD452",
+  "attributes" : [ {
+    "name" : "Template",
+    "value" : "BioImages.v3"
+  }, {
+    "name" : "Title",
+    "value" : "Single-cell imaging dataset of healthy human white blood cells"
+  }, {
+    "name" : "ReleaseDate",
+    "value" : "2022-05-17"
+  }, {
+    "name" : "AttachTo",
+    "value" : "BioImages"
+  } ],
+  "section" : {
+    "type" : "Study",
+    "attributes" : [ {
+      "name" : "Title",
+      "value" : "Imaging flow cytometry dataset of healthy human white blood cells"
+    }, {
+      "name" : "Description",
+      "value" : "Imaging flow cytometry (IFC) produces up to 12 spectrally distinct, information-rich images of single cells at a throughput of 5000 cells per second. Yet often, cell populations are still studied using manual gating, a technique that has several drawbacks, hence it would be advantageous to replace manual gating with an automated process. Ideally, this automated process would be based on stain-free measurements, as the currently used staining techniques are expensive and potentially confounding. These stain-free measurements originate from the brightfield and darkfield image channels, which capture transmitted and scattered light, respectively. To realise this automated, stain-free approach, advanced machine learning methods are required. Previous works have successfully tested this approach on cell cycle phase classification with both a classical machine learning approach based on manually engineered features, and a deep learning approach. In this work, we compare both approaches extensively on the  problem of white blood cell classification. Four human whole blood samples were assayed on an ImageStream-X MK II imaging flow cytometer. Two samples were stained for the identification of 8 white blood cell types. Four machine learning classifiers were evaluated on stain-free imagery with stratified 5-fold cross-validation. On the white blood cell dataset the best obtained results were 0.778 and 0.703 balanced accuracy for classical machine learning and deep learning, respectively. We conclude that classifying cell types based on only stain-free images is possible with all four classifiers. Noteworthy, we also find that the deep learning approaches tested in this work do not outperform the approaches based on manually engineered features."
+    }, {
+      "name" : "Study Type",
+      "value" : "image cytometry"
+    }, {
+      "name" : "Organism",
+      "value" : "Homo sapiens (human)"
+    }, {
+      "name" : "Keywords",
+      "value" : "white blood cell"
+    }, {
+      "name" : "Keywords",
+      "value" : "immunology"
+    }, {
+      "name" : "Keywords",
+      "value" : "granulocyte"
+    }, {
+      "name" : "Keywords",
+      "value" : "eosinophil"
+    }, {
+      "name" : "Keywords",
+      "value" : "neutrophil"
+    }, {
+      "name" : "Keywords",
+      "value" : "lymphocyte"
+    }, {
+      "name" : "Keywords",
+      "value" : "imaging"
+    }, {
+      "name" : "Keywords",
+      "value" : "single-cell"
+    } ],
+    "links" : [ {
+      "url" : "https://vib.be/labs/saeys-lab",
+      "attributes" : [ {
+        "name" : "Description",
+        "value" : "Saeys lab"
+      } ]
+    }, {
+      "url" : "https://www.ncl.ac.uk/fccf/",
+      "attributes" : [ {
+        "name" : "Description",
+        "value" : "Flow Cytometry Core Facility"
+      } ]
+    } ],
+    "subsections" : [ {
+      "type" : "author",
+      "attributes" : [ {
+        "name" : "Name",
+        "value" : "Maxim Lippeveld"
+      }, {
+        "name" : "E-mail",
+        "value" : "maxim.lippeveld@ugent.be"
+      }, {
+        "name" : "ORCID",
+        "value" : "0000-0002-9527-7162"
+      }, {
+        "name" : "Role",
+        "value" : "first author"
+      }, {
+        "name" : "Address",
+        "value" : "Technologiepark-Zwijnaarde 71, 9052 Ghent, Belgium"
+      }, {
+        "name" : "Department",
+        "value" : "Data Mining and Modeling for Biomedicine"
+      }, {
+        "name" : "Funding",
+        "value" : "Flanders Research Foundation"
+      }, {
+        "name" : "affiliation",
+        "value" : "o1",
+        "reference" : true
+      } ]
+    }, {
+      "type" : "author",
+      "attributes" : [ {
+        "name" : "Name",
+        "value" : "Carly Knill"
+      }, {
+        "name" : "E-mail",
+        "value" : "Carly.Knill@newcastle.ac.uk "
+      }, {
+        "name" : "Role",
+        "value" : "data acquisition"
+      }, {
+        "name" : "Address",
+        "value" : "Newcastle upon Tyne NE1 7RU, United Kingdom"
+      }, {
+        "name" : "Department",
+        "value" : "Institute of Cellular Medicine"
+      }, {
+        "name" : "Funding",
+        "value" : "N/A"
+      }, {
+        "name" : "affiliation",
+        "value" : "o2",
+        "reference" : true
+      } ]
+    }, {
+      "type" : "author",
+      "attributes" : [ {
+        "name" : "Name",
+        "value" : "Emma Ladlow"
+      }, {
+        "name" : "E-mail",
+        "value" : "emma.ladlow@ncl.ac.uk"
+      }, {
+        "name" : "Role",
+        "value" : "data acquisition"
+      }, {
+        "name" : "Address",
+        "value" : "Newcastle upon Tyne NE1 7RU, United Kingdom"
+      }, {
+        "name" : "Department",
+        "value" : "Institute of Cellular Medicine"
+      }, {
+        "name" : "Funding",
+        "value" : "N/A"
+      }, {
+        "name" : "affiliation",
+        "value" : "o2",
+        "reference" : true
+      } ]
+    }, {
+      "type" : "author",
+      "attributes" : [ {
+        "name" : "Name",
+        "value" : "Louise J Michaelis"
+      }, {
+        "name" : "E-mail",
+        "value" : "louise.michaelis@ncl.ac.uk"
+      }, {
+        "name" : "Role",
+        "value" : "principal investigator"
+      }, {
+        "name" : "Address",
+        "value" : "Newcastle upon Tyne NE1 7RU, United Kingdom"
+      }, {
+        "name" : "Department",
+        "value" : "Institute of Cellular Medicine"
+      }, {
+        "name" : "Funding",
+        "value" : "N/A"
+      }, {
+        "name" : "affiliation",
+        "value" : "o3",
+        "reference" : true
+      } ]
+    }, {
+      "type" : "author",
+      "attributes" : [ {
+        "name" : "Name",
+        "value" : "Yvan Saeys"
+      }, {
+        "name" : "E-mail",
+        "value" : "yvan.saeys@ugent.be"
+      }, {
+        "name" : "Role",
+        "value" : "principal investigator"
+      }, {
+        "name" : "Address",
+        "value" : "Technologiepark-Zwijnaarde 71, 9052 Ghent, Belgium"
+      }, {
+        "name" : "Department",
+        "value" : "Data Mining and Modeling for Biomedicine"
+      }, {
+        "name" : "Funding",
+        "value" : "N/A"
+      }, {
+        "name" : "affiliation",
+        "value" : "o1",
+        "reference" : true
+      } ]
+    }, {
+      "type" : "author",
+      "attributes" : [ {
+        "name" : "Name",
+        "value" : "Andrew Filby"
+      }, {
+        "name" : "E-mail",
+        "value" : "Andrew.Filby@newcastle.ac.uk "
+      }, {
+        "name" : "Role",
+        "value" : "data acquisition"
+      }, {
+        "name" : "Address",
+        "value" : "Newcastle upon Tyne NE1 7RU, United Kingdom"
+      }, {
+        "name" : "Department",
+        "value" : "Institute of Cellular Medicine"
+      }, {
+        "name" : "Funding",
+        "value" : "N/A"
+      }, {
+        "name" : "affiliation",
+        "value" : "o2",
+        "reference" : true
+      } ]
+    }, {
+      "type" : "author",
+      "attributes" : [ {
+        "name" : "Name",
+        "value" : "Daniel Peralta"
+      }, {
+        "name" : "E-mail",
+        "value" : "daniel.peralta@irc.vib-ugent.be"
+      }, {
+        "name" : "Role",
+        "value" : "corresponding author"
+      }, {
+        "name" : "Address",
+        "value" : "Technologiepark-Zwijnaarde 71, 9052 Ghent, Belgium"
+      }, {
+        "name" : "Department",
+        "value" : "Data Mining and Modeling for Biomedicine"
+      }, {
+        "name" : "Funding",
+        "value" : "N/A"
+      }, {
+        "name" : "affiliation",
+        "value" : "o1",
+        "reference" : true
+      } ]
+    }, {
+      "accno" : "o1",
+      "type" : "organisation",
+      "attributes" : [ {
+        "name" : "Name",
+        "value" : "VIB-UGent Center for Inflammation Research"
+      } ]
+    }, {
+      "accno" : "o2",
+      "type" : "organisation",
+      "attributes" : [ {
+        "name" : "Name",
+        "value" : "Newcastle University"
+      } ]
+    }, {
+      "accno" : "o3",
+      "type" : "organisation",
+      "attributes" : [ {
+        "name" : "Name",
+        "value" : "Newcastle upon Tyne Hospitals NHS Foundation Trust"
+      } ]
+    }, {
+      "type" : "Study Protocols",
+      "attributes" : [ {
+        "name" : "Name",
+        "value" : "Imaging flow cytometry"
+      }, {
+        "name" : "Type",
+        "value" : "Image acquisition"
+      } ]
+    }, {
+      "type" : "Study Protocols",
+      "attributes" : [ {
+        "name" : "Name",
+        "value" : "Feature extraction"
+      }, {
+        "name" : "Type",
+        "value" : "Feature extraction"
+      } ]
+    }, {
+      "type" : "Study Protocols",
+      "attributes" : [ {
+        "name" : "Name",
+        "value" : "Manual gating"
+      }, {
+        "name" : "Type",
+        "value" : "Data analysis"
+      } ]
+    }, {
+      "type" : "Publication",
+      "attributes" : [ {
+        "name" : "PMID",
+        "value" : "31688997"
+      }, {
+        "name" : "Authors",
+        "value" : "Lippeveld M, Knill C, Ladlow E, Fuller A, Michaelis LJ, Saeys Y, Filby A, Peralta D."
+      }, {
+        "name" : "Title",
+        "value" : "Classification of Human White Blood Cells Using Machine Learning for Stain-Free Imaging Flow Cytometry."
+      }, {
+        "name" : "Year",
+        "value" : "2020"
+      }, {
+        "name" : "Volume",
+        "value" : "97"
+      }, {
+        "name" : "Issue",
+        "value" : "3"
+      } ]
+    }, {
+      "accno" : "Study Component-1",
+      "type" : "Study Component",
+      "attributes" : [ {
+        "name" : "Name",
+        "value" : "Acquisition of single-cell human white blood cell images"
+      }, {
+        "name" : "Description",
+        "value" : "This dataset contains the measurement results from white blood cells from 3 whole blood samples collected into citrate buffer. For phenotyping experiments, 500 micro litre of whole blood was placed in a 15 milli litre falcon tube, so that approximately 2,000,000 WBCs were stained with the following antibody cocktail: CD15 FITC (BD, cat no:  332778, clone MMA, 5 micro litre per test), Siglec8 Pe (Biolegend, cat no: 347104, clone 7C9), CD14 PeCF594 (BD, cat no: 562334, clone M phi $9, 5 micro litre per test), CD19 PerCP-CY5.5 (BD, cat no 340951, clone SJ25C1, 20 micro litre per test), CD3 BV421 (BD, cat no: 562426, clone UCHT1, 5 micro litre per test), CD45 V500 (BD, cat no: 647450, clone 2D1, 5 micro litre per test), CD4 BV605 (BD, cat no: 562658, clone RPA-T4, 5 micro litre per test), CD56 APC (BD, cat no: 341025, clone NCAM16.2, 5 micro litre per test) and CD8 APC-CY7 (BD, cat no: 557834, clone SK1, 5 micro litre test). Whole blood was incubated with the staining cocktail for 1 hour on ice after which red blood cell (RBC) lysis was performed by the addition of 4.5 milli litre of 1x BD FACS lysis solution (cat no: 349202) prepared from a 10x stock in reagent grade water (SIGMA, cat no: W4502).  Lysis was carried out for 10 minutes at room temperature in the dark.  Samples were then spun down at 500 gran for 5 minutes and washed twice in 50 milli litre of wash buffer (PBS + 2% FBS).  Samples were re-suspended in a final volume of 60 micro litre of wash buffer and transferred to 1.5 milli litre Eppendorf tubes for acquisition.\n\nEight different white blood cell types were phenotyped with this panel: CD4+/CD8+ T-cells, neutrophils, monocytes, B-cells, CD56+ NKT-cells, other NKT-cells and eosinophils. See Figure~\\ref{fig:gating} for an overview of the gating process."
+      }, {
+        "name" : "Imaging Method",
+        "value" : "imaging flow cytometry"
+      }, {
+        "name" : "Comment",
+        "value" : "The file list contains feature dataframes extracted with IDEAS and SCIP. IDEAS is a proprietary software package developed by Amnis for analyzing imaging flow cytometry data. SCIP (version 0.1.8) is an open-source package developed by Maxim Lippeveld for analyzing large-scale bioimaging datasets (https://github.com/ScalableCytometryImageProcessing/SCIP)."
+      }, {
+        "name" : "File List",
+        "value" : "human_wbc_ifc/filelist.json"
+      } ],
+      "subsections" : [ {
+        "type" : "Protocols",
+        "attributes" : [ {
+          "name" : "Protocol",
+          "value" : "Imaging flow cytometry"
+        } ]
+      }, {
+        "type" : "Protocols",
+        "attributes" : [ {
+          "name" : "Protocol",
+          "value" : "Feature extraction"
+        } ]
+      }, {
+        "type" : "Protocols",
+        "attributes" : [ {
+          "name" : "Protocol",
+          "value" : "Manual gating"
+        } ]
+      } ]
+    } ]
+  },
+  "type" : "submission"
+}

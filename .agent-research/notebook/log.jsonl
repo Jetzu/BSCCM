@@ -80,3 +80,6 @@
 {"ts":"2026-11-23T14:55:57+01:00","event":"goal_effect","item":"N068","effect":"flat","value":"0.6694","scale":"module","why":""}
 {"ts":"2026-11-23T14:55:57+01:00","event":"goal_effect","item":"N073","effect":"flat","value":"0.6658","scale":"module","why":""}
 {"ts":"2026-11-23T14:55:57+01:00","event":"goal_effect","item":"N075","effect":"flat","value":"0.6708","scale":"module","why":""}
+{"ts":"2026-11-23T15:21:24+01:00","event":"goal_effect","item":"N077","effect":"n/a","value":"-","scale":"?","why":"measurement"}
+{"ts":"2026-11-23T15:36:43+01:00","event":"goal_effect","item":"N076","effect":"flat","value":"0.6681","scale":"module","why":""}
+{"ts":"2026-11-23T15:50:15+01:00","event":"review_closed","item":"N079"}

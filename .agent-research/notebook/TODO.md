@@ -37,3 +37,12 @@
 - Raw-space negative-population (dsb/ADTnorm-like) background correction of TRAINING labels (lit_labelnoise I3).
 - FOV/cell reliability weights from background-model disagreement (Codex 2, lit I4): CPU check that disagreement predicts |residual| first.
 - Extra pooled labels from single-antibody slides (full_model_unmixed on CD45/CD16 slides; assumption breaker I3; capped, single heads carry the info).
+
+## Parked by review N079 (2026-11-23; results/N079-review-5-lf-mk-v10-goal-6862-target-70-a/ideas.md)
+- Latent cell-state mixture model (outsider 2) -- only if N080 shows single-marker training loses joint structure.
+- Marker-adapted ViT with physical 3-channel rendering + adapter (Codex 3 / outsider 1); N053 ViTs were worse.
+- BSCCM-coherent 566-angle teacher distillation (Codex 5; draw 1 only -> b1to0 only); CPU ridge gate first.
+- Hybrid handcrafted morphology bridge IFC<->BSCCM (Codex 6); CPU gate first.
+- Leave-one-marker-out transfer test of the shared representation (lit D).
+- Joint-correctness card on BSCCM 'all' cells (lit A): 4x4 pooled correlation matrix, within-gate r, gating F-score.
+- OMIP-069 40-colour PBMC flow panel as a joint-distribution reference (N077 scout).

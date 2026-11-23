@@ -42,3 +42,5 @@ explains only part of the hub's MLL23 advantage; the latent target may contribut
 <!-- files in .agent-research/results/N057-slug/ + external absolute paths -->
 
 ## Next
+
+2026-11-23: run dirs packed (inode cap) -> /hnvme/workspace/v181bb10-bsccm/runs/archive_n054v3_n057_runs.tar (tar -xf to restore).

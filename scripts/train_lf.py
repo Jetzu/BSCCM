@@ -46,6 +46,8 @@ ap.add_argument('--dense-w', type=float, default=0.5)
 ap.add_argument('--dense-width', type=int, default=64)
 ap.add_argument('--aux-label', default='')   # N075: targets npz (same rows/columns) of an ALTERNATIVE label version -> separate auxiliary head; eval uses the main head
 ap.add_argument('--aux-w', type=float, default=1.0)
+ap.add_argument('--init-full', default='')   # N076: ckpt.pt of a trained run -> load the FULL model state (encoder + heads) before training
+ap.add_argument('--train-panel', default='')   # N076: comma-separated antibody conditions (bsccm_index 'antibodies'), e.g. all -> train only on those slides' cells
 ap.add_argument('--panel-head', action='store_true')
 ap.add_argument('--device', choices=['cuda', 'cpu'], default='cuda')
 a = ap.parse_args(); os.makedirs(a.out, exist_ok=True); torch.manual_seed(a.seed); np.random.seed(a.seed)
@@ -86,6 +88,9 @@ elif a.protocol == 'b1to0': tr = (b == 1) & has; ev = (b == 0) & (sp == 2) & has
 elif a.protocol == 'b0to1': tr = (b == 0) & has; ev = (b == 1) & (sp == 2) & has
 else: raise SystemExit('protocol?')
 tr, ev = np.where(tr)[0], np.where(ev)[0]
+if a.train_panel:   # N076: multi-marker fine-tune = training-draw cells of the given antibody conditions only (evaluation rows unchanged)
+    import pandas as _pd; _ab = _pd.read_parquet(os.path.join(W, 'bsccm_index.parquet'), columns=['antibodies']).antibodies.to_numpy()
+    tr = tr[np.isin(_ab[tr], a.train_panel.split(','))]; print(f'N076 train panel {a.train_panel}: {len(tr)} training rows', flush=True)
 if a.max_train: tr = np.random.default_rng(0).permutation(tr)[:a.max_train]
 if DENSE:
     dense_targets = DenseTargets(a.dense_aux, tr, b, sp, os.path.join(W, 'bsccm_index.parquet'))
@@ -237,6 +242,8 @@ model = nn.ModuleDict({'enc': net, 'reg': nn.Linear(NF, K), 'c3': nn.Linear(NF, 
                       'dom': nn.Sequential(nn.Linear(NF, 256), nn.ReLU(), nn.Linear(256, 1))}).to(DEVICE)
 if DENSE: model['dense'] = DenseDecoder(net.num_features, a.dense_width).to(DEVICE)
 if AUX: model['reg2'] = nn.Linear(NF, K).to(DEVICE)   # N075: alternative-label head (training only)
+if a.init_full:   # N076: continue a trained model (same architecture/heads); strict so a recipe mismatch fails loudly
+    model.load_state_dict(torch.load(a.init_full, map_location='cpu', weights_only=False)['m'], strict=True); print('init FULL from', a.init_full, flush=True)
 if a.head == 'hlgauss': model['reg'] = HLGauss(NF, Y[tr], Mk[tr]).to(DEVICE)
 elif a.head == 'twopart': model['reg'] = TwoPart(NF, names, Y[tr], Mk[tr], a.pos_q).to(DEVICE)
 elif a.panel_head: model['reg'] = PanelHead(NF, names).to(DEVICE)
@@ -322,6 +329,8 @@ def _run_args():
         for key in ('dense_aux', 'dense_w', 'dense_width'): args.pop(key)
     if not AUX:
         for key in ('aux_label', 'aux_w'): args.pop(key)
+    for key in ('init_full', 'train_panel'):
+        if not getattr(a, key): args.pop(key)
     return args
 try:
     if a.dump_train_preds: raise RuntimeError('no wandb for a teacher dump (would append to the teacher run)')
@@ -332,6 +341,7 @@ _NEW_DEFAULTS.update(head='mse', hl_mse=0.1, gate_w=0.5, pos_q=0.98, fov_re=0.0,
                      re_shrink=1.0, pair_loss=0.0, fov_batch=0, w_autofl=1.0, panel_head=False, device='cuda', pearson_w=0.0, diag_aug=0.0, diag_tta=0, drop_led='', censor_loss=0)
 _NEW_DEFAULTS.update(dense_aux='', dense_w=0.5, dense_width=64)
 _NEW_DEFAULTS.update(aux_label='', aux_w=1.0)
+_NEW_DEFAULTS.update(init_full='', train_panel='')
 def _cfg():
     cfg = {k: v for k, v in _run_args().items() if k not in ('workers', 'out', 'adabn', 'dump_train_preds') and not (k in _NEW_DEFAULTS and v == _NEW_DEFAULTS[k])}
     if DENSE: cfg['dense_setup'] = dense_targets.identity
