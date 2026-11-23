@@ -1,0 +1,96 @@
+test_a_legacy_exact (__main__.DenseTests.test_a_legacy_exact) ... committed 7/64
+committed 14/64
+committed 21/64
+committed 28/64
+committed 35/64
+committed 42/64
+committed 49/64
+committed 56/64
+committed 63/64
+committed 64/64
+complete /tmp/n074_codex/test/fluor_aux64.npy (64, 6, 64, 64) float16
+fixture: 64 unique real cells, actual native fluorescence/LF/phase; synthetic scalar labels/calibration and SSL weights
+train 4 eval 4 protocol b1to0
+wandb off: import of wandb halted; None in sys.modules
+train 4 eval 4 protocol b1to0
+wandb off: import of wandb halted; None in sys.modules
+legacy exact: SSL=False N068/N073=False outputs/loss/grads/config/checkpoint bytes
+train 4 eval 4 protocol b1to0
+wandb off: import of wandb halted; None in sys.modules
+train 4 eval 4 protocol b1to0
+wandb off: import of wandb halted; None in sys.modules
+legacy exact: SSL=False N068/N073=True outputs/loss/grads/config/checkpoint bytes
+train 4 eval 4 protocol b1to0
+init from SSL /tmp/n074_codex/test/fixture_ssl.pt
+wandb off: import of wandb halted; None in sys.modules
+train 4 eval 4 protocol b1to0
+init from SSL /tmp/n074_codex/test/fixture_ssl.pt
+wandb off: import of wandb halted; None in sys.modules
+legacy exact: SSL=True N068/N073=False outputs/loss/grads/config/checkpoint bytes
+train 4 eval 4 protocol b1to0
+init from SSL /tmp/n074_codex/test/fixture_ssl.pt
+wandb off: import of wandb halted; None in sys.modules
+train 4 eval 4 protocol b1to0
+init from SSL /tmp/n074_codex/test/fixture_ssl.pt
+ok
+test_b_dense_backward_and_eval_isolation (__main__.DenseTests.test_b_dense_backward_and_eval_isolation) ... wandb off: import of wandb halted; None in sys.modules
+legacy exact: SSL=True N068/N073=True outputs/loss/grads/config/checkpoint bytes
+train 4 eval 4 protocol b1to0
+init from SSL /hnvme/workspace/v181bb10-bsccm/runs/n031_ssl_aug_ex0/encoder_final.pt
+/tmp/n074_codex/venv/lib/python3.13/site-packages/numpy/_core/fromnumeric.py:3862: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/tmp/n074_codex/venv/lib/python3.13/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+ok
+test_c_pack_hand_computation_and_resume (__main__.DenseTests.test_c_pack_hand_computation_and_resume) ... ok
+test_d_registration (__main__.DenseTests.test_d_registration) ... ok
+test_e_architecture_support (__main__.DenseTests.test_e_architecture_support) ... ok
+test_f_signal_restart (__main__.DenseTests.test_f_signal_restart) ... ok
+test_g_full_loop_checkpoint_resume (__main__.DenseTests.test_g_full_loop_checkpoint_resume) ... wandb off: import of wandb halted; None in sys.modules
+dense: real n031 source-only SSL resnet50 48-channel forward/backward finite; aux-only encoder gradient; (2,6,64,64); pooled output exact; eval isolated; leakage rejected
+packer: all 64 real crops byte-identical to independent hand transform; durable-row restart byte-identical; completed restart no-op; no chunk files
+registration: actual prep tested at all 81 integer shifts, with/without reflection, zoom 1/2; spectral channels unswapped
+archs: dinov3/dinobloom fail clearly before loading weights; actual pretrained Cytoland LFBackbone gate/resize/pooling preserved
+SIGTERM: partial pack exited 143 after a durable chunk; real CLI restart exactly reproduced all 64 rows
+train 4 eval 4 protocol b1to0
+/tmp/n074_codex/venv/lib/python3.13/site-packages/numpy/_core/fromnumeric.py:3862: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/tmp/n074_codex/venv/lib/python3.13/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+wandb off: import of wandb halted; None in sys.modules
+{"cls3_acc": 0.25, "r_mean_markers": NaN, "r_mean_markers_valid": NaN, "n_markers_valid": 0, "epoch": 1, "train_loss": 2.4468694925308228, "secs": 0.22926878929138184}
+{"cls3_acc": 0.25, "r_mean_markers": NaN, "r_mean_markers_valid": NaN, "n_markers_valid": 0, "epoch": 2, "train_loss": 2.005788505077362, "secs": 0.5196983814239502}
+/home/hpc/v181bb/v181bb10/BSCCM/scripts/train_lf.py:375: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/n074_codex/test/legacy_full/result.json' mode='w' encoding='UTF-8'>
+  json.dump({'args': vars(a), 'final': log[-1], 'log': log, 'n_train': len(tr), 'n_eval': len(ev), 'targets': names, **_extra}, open(a.out + '/result.json', 'w'), indent=1, default=float)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+train 4 eval 4 protocol b1to0
+wandb off: import of wandb halted; None in sys.modules
+{"cls3_acc": 0.25, "r_mean_markers": NaN, "r_mean_markers_valid": NaN, "n_markers_valid": 0, "epoch": 1, "train_loss": 2.4468694925308228, "secs": 0.28424501419067383}
+{"cls3_acc": 0.25, "r_mean_markers": NaN, "r_mean_markers_valid": NaN, "n_markers_valid": 0, "epoch": 2, "train_loss": 2.005788505077362, "secs": 0.564603328704834}
+/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N074-dense-privileged-supervision-auxiliary-d/codex/train_lf.py:424: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/n074_codex/test/patched_full/result.json' mode='w' encoding='UTF-8'>
+  json.dump({'args': _run_args(), 'final': log[-1], 'log': log, 'n_train': len(tr), 'n_eval': len(ev), 'targets': names, **_extra}, open(a.out + '/result.json', 'w'), indent=1, default=float)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+train 4 eval 4 protocol b1to0
+/tmp/n074_codex/venv/lib/python3.13/site-packages/numpy/_core/fromnumeric.py:3862: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/tmp/n074_codex/venv/lib/python3.13/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+wandb off: import of wandb halted; None in sys.modules
+{"cls3_acc": 0.25, "r_mean_markers": NaN, "r_mean_markers_valid": NaN, "n_markers_valid": 0, "epoch": 1, "train_loss": 3.0273890495300293, "secs": 0.2920534610748291}
+{"cls3_acc": 0.25, "r_mean_markers": NaN, "r_mean_markers_valid": NaN, "n_markers_valid": 0, "epoch": 2, "train_loss": 2.6891967058181763, "secs": 0.604212760925293}
+/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N074-dense-privileged-supervision-auxiliary-d/codex/train_lf.py:424: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/n074_codex/test/dense_full/result.json' mode='w' encoding='UTF-8'>
+  json.dump({'args': _run_args(), 'final': log[-1], 'log': log, 'n_train': len(tr), 'n_eval': len(ev), 'targets': names, **_extra}, open(a.out + '/result.json', 'w'), indent=1, default=float)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+train 4 eval 4 protocol b1to0
+wandb off: import of wandb halted; None in sys.modules
+resumed 2
+/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N074-dense-privileged-supervision-auxiliary-d/codex/train_lf.py:424: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/n074_codex/test/dense_full/result.json' mode='w' encoding='UTF-8'>
+  json.dump({'args': _run_args(), 'final': log[-1], 'log': log, 'n_train': len(tr), 'n_eval': len(ev), 'targets': names, **_extra}, open(a.out + '/result.json', 'w'), indent=1, default=float)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 16.137s
+
+OK
+full loop: flag-off final weights/eval predictions exactly match legacy; flag-on completes 4 steps, writes checkpoint and resumes strictly

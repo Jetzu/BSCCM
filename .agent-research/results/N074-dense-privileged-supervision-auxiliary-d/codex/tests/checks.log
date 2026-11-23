@@ -1,0 +1,20 @@
+Requested environment probe:
+apptainer exec --bind /hnvme/workspace/v181bb10-bsccm /hnvme/workspace/v181bb10-bsccm/env/bsccm.sif python3 -I -c 'import torch,timm,numpy,pandas; print(torch.__version__,timm.__version__)'
+Exit: 255
+FATAL: container creation failed: image driver mount failure: image driver squashfuse_ll instance exited with error: squashfuse_ll exited: fuse: device not found, try 'modprobe fuse' first
+Fallback: /tmp/n074_codex/venv (versions and command in provenance.json).
+
+bash -n pack_fluor_aux.sbatch
+PASS
+
+python -I -B tests/run_staged.py --help
+PASS; parser exposes --dense-aux, --dense-w, --dense-width.
+
+Apply train_lf.diff to /tmp/n074_codex/review/scripts/train_lf.py (copy of current repository file), then cmp with delivered train_lf.py:
+PASS
+
+AST parse of every delivered Python file:
+PASS
+
+CPU tests:
+7 tests passed; details in cpu_tests.log. No GPU, production pack or SLURM submission.

@@ -36,6 +36,16 @@ ap.add_argument('--pair-loss', type=float, default=0.0)
 ap.add_argument('--fov-batch', type=int, default=0)
 ap.add_argument('--w-autofl', type=float, default=1.0)
 ap.add_argument('--pearson-w', type=float, default=0.0)   # N060 (lit_noisy_ceiling): + w * mean over present targets of (1 - batch Pearson r)
+ap.add_argument('--diag-aug', type=float, default=0.0)   # N068: p of the anti-diagonal reflection + LED swap (DF_xx_Bottom<->Right, DPC B<->R, T<->L; n066_d4_aniso)
+ap.add_argument('--diag-tta', type=int, default=0)   # N068: eval prediction = mean over identity + anti-diagonal view
+ap.add_argument('--drop-led', default='')   # N068: comma-separated LED names marked ABSENT (data 0, SSL presence plane 0) in every sample, e.g. LED119
+ap.add_argument('--censor-loss', type=int, default=0)   # N073: clip-floor labels (targets 'censored') are upper bounds: no loss when prediction < label
+# N074: optional training-only fluorescence decoder; defaults omitted from legacy cfg.
+ap.add_argument('--dense-aux', default='')
+ap.add_argument('--dense-w', type=float, default=0.5)
+ap.add_argument('--dense-width', type=int, default=64)
+ap.add_argument('--aux-label', default='')   # N075: targets npz (same rows/columns) of an ALTERNATIVE label version -> separate auxiliary head; eval uses the main head
+ap.add_argument('--aux-w', type=float, default=1.0)
 ap.add_argument('--panel-head', action='store_true')
 ap.add_argument('--device', choices=['cuda', 'cpu'], default='cuda')
 a = ap.parse_args(); os.makedirs(a.out, exist_ok=True); torch.manual_seed(a.seed); np.random.seed(a.seed)
@@ -52,6 +62,16 @@ NNEW = a.head != 'mse' or a.panel_head or a.fov_re > 0 or a.pair_loss > 0 or a.f
 if NNEW:
     if a.protocol not in ('b1to0', 'b0to1'): ap.error('N060--N062 require a single training draw')
     if a.include_gs or a.dann > 0 or a.adabn: ap.error('N060--N062 source-only requires --include-gs 0 --dann 0 --adabn 0')
+DENSE = bool(a.dense_aux)
+if DENSE:
+    if a.protocol not in ('b1to0', 'b0to1'): ap.error('--dense-aux requires a single training draw: b1to0 or b0to1')
+    if a.include_gs or a.dann > 0 or a.adabn: ap.error('--dense-aux source-only requires --include-gs 0 --dann 0 --adabn 0')
+    if not np.isfinite(a.dense_w) or a.dense_w < 0: ap.error('--dense-w must be finite and nonnegative')
+    if a.dense_width < 1: ap.error('--dense-width must be positive')
+    if a.diag_aug > 0: ap.error('--dense-aux with --diag-aug: fluorescence crops are offset from LF by a per-channel instrument shift (N074 red-team MAJOR-1, reproduced) -> reflected views would get contradictory targets')
+    if not (a.arch.startswith('resnet') or a.arch == 'cytoland'):
+        ap.error('--dense-aux requires a supported NCHW pre-pool spatial map (resnet family or cytoland); token-only dinov3/dinobloom unsupported')
+    from bsccm.dense_aux import DenseDecoder, DenseTargets, pooled_with_spatial, roll_batch, align_target, dense_mse
 DEVICE = a.device
 PHYS = a.phys_aug > 0
 if PHYS:
@@ -67,6 +87,8 @@ elif a.protocol == 'b0to1': tr = (b == 0) & has; ev = (b == 1) & (sp == 2) & has
 else: raise SystemExit('protocol?')
 tr, ev = np.where(tr)[0], np.where(ev)[0]
 if a.max_train: tr = np.random.default_rng(0).permutation(tr)[:a.max_train]
+if DENSE:
+    dense_targets = DenseTargets(a.dense_aux, tr, b, sp, os.path.join(W, 'bsccm_index.parquet'))
 print(f'train {len(tr)} eval {len(ev)} protocol {a.protocol}', flush=True)
 if len(tr) < a.bs: ap.error('--max-train / source rows must supply at least one full batch')
 from bsccm.heads import HLGauss, TwoPart, PanelHead, TrainAdapters, FOVBatchSampler, masked_mean, pair_difference_loss
@@ -96,6 +118,15 @@ if a.tail_weight > 0:   # fine-grained: up-weight rare marker values (density^-a
             allsel = Mk[:, j] & (b == bb); idx = np.clip(np.digitize(np.clip(Y[allsel, j], -4, 4), edges) - 1, 0, 59)
             w = np.clip(dens[idx] ** (-a.tail_weight), 0.2, 10.0); w = w / w[m_tr[allsel]].mean(); Wt_[allsel, j] = w
 LAB = {'Y': Y, 'M': Mk, 'c3': c3.astype(np.int64), 'c10': c10.astype(np.int64), 'W': Wt_}
+if a.censor_loss:   # N073: carried as the first extra batch element (pz[0]); --pseudo also uses pz -> not combinable
+    if a.pseudo: ap.error('--censor-loss is not combinable with --pseudo')
+    LAB['C'] = T['censored'].astype(bool)
+AUX = bool(a.aux_label)
+if AUX:   # N075 label separation (Wei et al. 2023): appended after 'C' -> read as pz[-2], pz[-1]
+    if a.pseudo: ap.error('--aux-label is not combinable with --pseudo')
+    _T2 = np.load(os.path.join(W, a.aux_label)); assert [str(n) for n in _T2['names']] == [str(n) for n in names] and len(_T2['Y']) == len(Y), 'aux label layout'
+    _Y2 = _T2['Y'].astype(np.float32); _M2 = _T2['mask'].astype(bool) & np.isfinite(_Y2) & Mk; _Y2 = np.where(_M2, _Y2, 0).astype(np.float32)
+    LAB['Y2'] = _Y2; LAB['M2'] = _M2; print(f'N075 aux label {a.aux_label}: {int(_M2[tr].sum())} training cell x target entries', flush=True)
 PSEUDO_ID = None
 if a.pseudo:   # N040 noisy student: teacher predictions as extra targets ONLY where the cell has no real label; training draw only
     import hashlib
@@ -142,17 +173,46 @@ if PHYS:
                        gain_log_sd=phys_calibration['gain_log_sd'])
     print('N041 source-border calibration:', {k: phys_calibration[k] for k in ('source_draw', 'gain_adu_per_e', 'offset_sd_adu', 'gain_log_sd', 'rows_sha256')}, flush=True)
 gnorm = GPUNorm(DEVICE); CH = chan_list(a.channels)
+DIAG = None
+if a.diag_aug > 0 or a.diag_tta:   # N068: the only exact symmetry of the acquired LED set (full rings are not sums of halves; no Top/Left halves)
+    from bsccm.data import LED as _LED
+    _sw = {f'DF_{k}_Bottom': f'DF_{k}_Right' for k in (50, 60, 70, 80)}; _sw.update({'DPC_Bottom': 'DPC_Right', 'DPC_Top': 'DPC_Left'}); _sw.update({v: k for k, v in list(_sw.items())})
+    _nm = [_LED[c] for c in CH]
+    if 'LED119' in _nm and 'LED119' not in a.drop_led.split(','): ap.error('--diag-aug/--diag-tta: LED119 has no anti-diagonal partner; drop it (--drop-led LED119 or --channels no119)')
+    if any(_sw.get(n, n) not in _nm for n in _nm): ap.error('--diag-aug/--diag-tta: channel set not closed under the Bottom<->Right swap')
+    DIAG = torch.tensor([_nm.index(_sw.get(n, n)) for n in _nm] + ([len(_nm)] if a.phase else []), device=DEVICE)
+DROP = None
+if a.drop_led:   # N068: absent channels = zero data + zero presence (the SSL encoders were pretrained with random channel dropout this way)
+    from bsccm.data import LED as _LED2
+    DROP = torch.tensor([CH.index(_LED2.index(n)) for n in a.drop_led.split(',')], device=DEVICE)
+def diag(x):   # anti-diagonal reflection x'[i,j] = x[W-1-j, H-1-i] (= np.rot90(x, 2).T), then channel k <- partner(k)
+    return x.flip(-1).flip(-2).transpose(-1, -2)[:, DIAG]
 _cnt = np.bincount(c10[tr][c10[tr] >= 0], minlength=10).astype(np.float32); C10W = torch.tensor(1 / np.sqrt(np.maximum(_cnt, 1)), device=DEVICE); C10W = C10W / C10W[_cnt > 0].mean()
-def prep(raw, ph, g, train):   # raw int16 records -> normalised LF on GPU (+-4 px translation when training)
+def prep(raw, ph, g, train, dense_target=None):   # raw int16 records -> normalised LF on GPU (+-4 px translation when training)
     raw = raw.to(DEVICE, non_blocking=True)
     if train and phys_aug is not None: raw = phys_aug(raw)   # raw counts BEFORE flat-field/slide/log normalisation; phase untouched
-    x = gnorm(raw, ph.to(DEVICE, non_blocking=True), g.to(DEVICE, non_blocking=True), CH, bool(a.phase), shift=4 if train else 0)
+    if dense_target is None:
+        x = gnorm(raw, ph.to(DEVICE, non_blocking=True), g.to(DEVICE, non_blocking=True), CH, bool(a.phase), shift=4 if train else 0)
+    else:
+        if not train or not DENSE: raise AssertionError('dense target only permitted in source training prep')
+        x = gnorm(raw, ph.to(DEVICE, non_blocking=True), g.to(DEVICE, non_blocking=True), CH, bool(a.phase), shift=0)
+        # GPUNorm samples dy/dx on CPU and torch.roll AFTER normalisation. Reproduce exactly.
+        shifts = torch.randint(-4, 5, (2, len(x))).T
+        x = roll_batch(x, shifts)
+        dense_sel = torch.zeros(len(x), dtype=torch.bool, device=x.device)
     if a.lowpass > 0:   # depthwise separable Gaussian, reflect padding; applied before zoom
         r_ = int(np.ceil(3 * a.lowpass)); k_ = torch.exp(-0.5 * (torch.arange(-r_, r_ + 1, device=x.device, dtype=x.dtype) / a.lowpass) ** 2); k_ = k_ / k_.sum()
         c_ = x.shape[1]; x = F.pad(x, (r_, r_, r_, r_), mode='reflect')
         x = F.conv2d(x, k_.view(1, 1, 1, -1).repeat(c_, 1, 1, 1), groups=c_); x = F.conv2d(x, k_.view(1, 1, -1, 1).repeat(c_, 1, 1, 1), groups=c_)
     if a.zoom > 1:
         s_ = 128 // a.zoom; o = (128 - s_) // 2; x = F.interpolate(x[..., o:o + s_, o:o + s_], size=(128, 128), mode='bilinear', align_corners=False)
+    if train and a.diag_aug > 0:
+        sel = torch.rand(len(x), device=x.device) < a.diag_aug
+        if sel.any(): x[sel] = diag(x[sel])
+        if dense_target is not None: dense_sel = sel
+    if dense_target is not None:
+        target, weights = align_target(dense_target, shifts, dense_sel, a.zoom)
+        return x, target, weights
     return x
 dtr, dev = mk(tr, True), mk(ev, False)
 if a.dann > 0:
@@ -175,6 +235,8 @@ if a.stem == 'nomaxpool': net.maxpool = nn.Identity()   # stride 2 instead of 4 
 NF = net.num_features * (2 if a.dual_zoom > 1 else 1)
 model = nn.ModuleDict({'enc': net, 'reg': nn.Linear(NF, K), 'c3': nn.Linear(NF, 3), 'c10': nn.Linear(NF, 10),
                       'dom': nn.Sequential(nn.Linear(NF, 256), nn.ReLU(), nn.Linear(256, 1))}).to(DEVICE)
+if DENSE: model['dense'] = DenseDecoder(net.num_features, a.dense_width).to(DEVICE)
+if AUX: model['reg2'] = nn.Linear(NF, K).to(DEVICE)   # N075: alternative-label head (training only)
 if a.head == 'hlgauss': model['reg'] = HLGauss(NF, Y[tr], Mk[tr]).to(DEVICE)
 elif a.head == 'twopart': model['reg'] = TwoPart(NF, names, Y[tr], Mk[tr], a.pos_q).to(DEVICE)
 elif a.panel_head: model['reg'] = PanelHead(NF, names).to(DEVICE)
@@ -199,10 +261,16 @@ class _GRL(torch.autograd.Function):
     def forward(ctx, x, l): ctx.l = l; return x.view_as(x)
     @staticmethod
     def backward(ctx, g): return -ctx.l * g, None
-def fwd(x):
-    if SSL: x = torch.cat([x, torch.ones_like(x)], 1)
+def fwd(x, dense_features=None):
+    pres = torch.ones_like(x)
+    if DROP is not None: x = x.index_fill(1, DROP, 0.0); pres = pres.index_fill(1, DROP, 0.0)
+    if SSL: x = torch.cat([x, pres], 1)
     with torch.autocast(DEVICE, torch.bfloat16, enabled=DEVICE == 'cuda'):
-        h = model['enc'](x.contiguous(memory_format=torch.channels_last))
+        if dense_features is None:
+            h = model['enc'](x.contiguous(memory_format=torch.channels_last))
+        else:
+            h, spatial = pooled_with_spatial(model['enc'], x.contiguous(memory_format=torch.channels_last))
+            dense_features.append(spatial)   # original full/zoomed input view only; never an evaluation call
         if a.dual_zoom > 1:   # second view through the SAME encoder: centre crop 128/dual_zoom upsampled to 128
             s_ = 128 // a.dual_zoom; o = (128 - s_) // 2; xz = F.interpolate(x[..., o:o + s_, o:o + s_], size=(128, 128), mode='bilinear', align_corners=False)
             h = torch.cat([h, model['enc'](xz.contiguous(memory_format=torch.channels_last))], 1)
@@ -214,7 +282,9 @@ def evaluate(save=False, tag=''):
     model.eval(); P, C3, G = [], [], []
     C10 = []
     for raw, ph, g, y, m, k3, k10, _w, *_ in dev:
-        p, l3, l10, h = fwd(prep(raw, ph, g, False)); P.append(p.cpu().numpy()); C3.append(l3.argmax(1).cpu().numpy()); C10.append(l10.argmax(1).cpu().numpy()); G.append(g.numpy())
+        xx = prep(raw, ph, g, False); p, l3, l10, h = fwd(xx)
+        if a.diag_tta: p2, l32, l102, _ = fwd(diag(xx)); p = (p + p2) / 2; l3 = (l3 + l32) / 2; l10 = (l10 + l102) / 2
+        P.append(p.cpu().numpy()); C3.append(l3.argmax(1).cpu().numpy()); C10.append(l10.argmax(1).cpu().numpy()); G.append(g.numpy())
     P, C3, G = np.concatenate(P), np.concatenate(C3), np.concatenate(G); Yt, Mt, k3 = Y[G], Mk[G], c3[G]; r = {}
     for j, n in enumerate(names):
         v = Mt[:, j]
@@ -246,15 +316,25 @@ def evaluate(save=False, tag=''):
             r['fine/eos_gate_auroc_from_predCD16'] = float(roc_auc_score(k10[gran] == 5, -P[gran, jc]))
     if save: np.savez(a.out + f'/eval_preds{tag}.npz', P=P, G=G, C3=C3)
     model.train(); return r
+def _run_args():
+    args = vars(a).copy()
+    if not DENSE:
+        for key in ('dense_aux', 'dense_w', 'dense_width'): args.pop(key)
+    if not AUX:
+        for key in ('aux_label', 'aux_w'): args.pop(key)
+    return args
 try:
     if a.dump_train_preds: raise RuntimeError('no wandb for a teacher dump (would append to the teacher run)')
-    import wandb; run = wandb.init(project=os.environ.get('WANDB_PROJECT', 'BSCCM'), name=os.path.basename(a.out.rstrip('/')), id=os.path.basename(a.out.rstrip('/')), resume='allow', config=vars(a))
+    import wandb; run = wandb.init(project=os.environ.get('WANDB_PROJECT', 'BSCCM'), name=os.path.basename(a.out.rstrip('/')), id=os.path.basename(a.out.rstrip('/')), resume='allow', config=_run_args())
 except Exception as e: print('wandb off:', e); run = None
 _NEW_DEFAULTS = {'stem': 'std', 'zoom': 1, 'dual_zoom': 1, 'lowpass': 0.0, 'phys_aug': 0.0, 'consist': 0.0, 'pseudo': '', 'pseudo_w': 0.3, 'enc_lr_mult': 1.0, 'drop_path': 0.1}   # options added after older checkpoints were written: omitted at default so they still resume
 _NEW_DEFAULTS.update(head='mse', hl_mse=0.1, gate_w=0.5, pos_q=0.98, fov_re=0.0,
-                     re_shrink=1.0, pair_loss=0.0, fov_batch=0, w_autofl=1.0, panel_head=False, device='cuda', pearson_w=0.0)
+                     re_shrink=1.0, pair_loss=0.0, fov_batch=0, w_autofl=1.0, panel_head=False, device='cuda', pearson_w=0.0, diag_aug=0.0, diag_tta=0, drop_led='', censor_loss=0)
+_NEW_DEFAULTS.update(dense_aux='', dense_w=0.5, dense_width=64)
+_NEW_DEFAULTS.update(aux_label='', aux_w=1.0)
 def _cfg():
-    cfg = {k: v for k, v in vars(a).items() if k not in ('workers', 'out', 'adabn', 'dump_train_preds') and not (k in _NEW_DEFAULTS and v == _NEW_DEFAULTS[k])}
+    cfg = {k: v for k, v in _run_args().items() if k not in ('workers', 'out', 'adabn', 'dump_train_preds') and not (k in _NEW_DEFAULTS and v == _NEW_DEFAULTS[k])}
+    if DENSE: cfg['dense_setup'] = dense_targets.identity
     if PHYS: cfg['phys_calibration'] = phys_calibration   # pin source row IDs, fitted gain/offsets and method on resume
     if PSEUDO_ID is not None: cfg['pseudo_id'] = PSEUDO_ID   # N040 F3
     if SETUP is not None: cfg['n060_062_setup'] = SETUP
@@ -278,12 +358,23 @@ if a.dump_train_preds:   # N040 teacher pass: needs the finished checkpoint (res
     np.savez(a.out + '/train_preds.npz', P=np.concatenate(_PP), G=np.concatenate(_GG), names=np.array([str(n) for n in names])); print('N040: wrote', a.out + '/train_preds.npz', len(tr), flush=True); sys.exit(0)
 t0 = time.time(); step = ep0 * len(dtr)
 for ep in range(ep0, a.epochs):
-    tl = n = 0
+    tl = n = 0; dl = 0.0
     if a.fov_batch: dtr.batch_sampler.epoch = ep
     for raw, ph, g, y, m, k3, k10, wt, *pz in dtr:
         if a.consist > 0:   # transfer once; both prep calls independently sample raw-count nuisances and the existing translation
             raw, ph, g = raw.to(DEVICE, non_blocking=True), ph.to(DEVICE, non_blocking=True), g.to(DEVICE, non_blocking=True)
-        y, m, k3, k10, wt = y.to(DEVICE), m.to(DEVICE), k3.to(DEVICE), k10.to(DEVICE), wt.to(DEVICE); _last_h = fwd(prep(raw, ph, g, True)); p, l3, l10, _ = _last_h
+        if DENSE:
+            dense_target, dense_panel = dense_targets.get(g, DEVICE)   # asserts tr membership AND source draw before reading pixels
+            xx, dense_target, dense_weights = prep(raw, ph, g, True, dense_target)
+            dense_features = []
+            _last_h = fwd(xx, dense_features)
+            dense_loss = dense_mse(model['dense'](dense_features[0], dense_panel), dense_target, dense_weights)
+            del dense_features
+            y, m, k3, k10, wt = y.to(DEVICE), m.to(DEVICE), k3.to(DEVICE), k10.to(DEVICE), wt.to(DEVICE); p, l3, l10, _ = _last_h
+        else:
+            y, m, k3, k10, wt = y.to(DEVICE), m.to(DEVICE), k3.to(DEVICE), k10.to(DEVICE), wt.to(DEVICE); _last_h = fwd(prep(raw, ph, g, True)); p, l3, l10, _ = _last_h
+        if a.censor_loss:   # true value <= label on censored cells: replace the target by the (detached) prediction where it is already below
+            cz = pz[0].to(DEVICE); y = torch.where(cz & (p.detach() < y), p.detach().to(y.dtype), y)
         if not NNEW:  # legacy arithmetic and model state layout remain unchanged at defaults
             reg = (((p - y) ** 2) * m * wt).sum(0) / (m * wt).sum(0).clamp(min=1e-6); reg = reg[m.any(0)].mean()
         else:
@@ -317,16 +408,27 @@ for ep in range(ep0, a.epochs):
             p2, _, _, _ = fwd(prep(raw, ph, g, True))
             consistency = F.mse_loss(p, p2)   # all K regression predictions; symmetric gradients, no labels or target-draw images
         loss = reg + a.w_cls * ce
+        if DENSE: loss = loss + a.dense_w * dense_loss
+        if AUX:   # N075: masked MSE of the alternative-label head on the shared features
+            y2, m2 = pz[-2].to(DEVICE), pz[-1].to(DEVICE).float(); p2a = model['reg2'](_last_h[3])
+            r2 = ((p2a - y2) ** 2 * m2).sum(0) / m2.sum(0).clamp(min=1e-6); loss = loss + a.aux_w * (r2[m2.any(0)].mean() if m2.any() else p2a.sum() * 0)
         if a.pseudo:
             py, pm = pz[0].to(DEVICE), pz[1].to(DEVICE).float()
             preg = (((p.float() - py) ** 2) * pm).sum(0) / pm.sum(0).clamp(min=1e-6); loss = loss + a.pseudo_w * (preg[pm.any(0)].mean() if pm.any() else p.sum() * 0)
         if a.consist > 0: loss = loss + a.consist * consistency
-        opt.zero_grad(set_to_none=True); loss.backward(); nn.utils.clip_grad_norm_(model.parameters(), 2.0); opt.step(); sched.step()
+        opt.zero_grad(set_to_none=True); loss.backward()
+        if DENSE:   # N074 red-team MINOR-2: clip decoder separately so the scalar path keeps the control's effective step size
+            nn.utils.clip_grad_norm_([q for k_, q in model.named_parameters() if not k_.startswith('dense.')], 2.0); nn.utils.clip_grad_norm_(model['dense'].parameters(), 2.0)
+            dl += float(dense_loss.detach())
+        else: nn.utils.clip_grad_norm_(model.parameters(), 2.0)
+        opt.step(); sched.step()
         tl += loss.item(); n += 1; step += 1
         if step % 200 == 0:
             print(f'ep {ep} step {step}/{steps} loss {tl/n:.4f} {time.time()-t0:.0f}s', flush=True)
             if run: run.log({'train/loss': tl / n}, step=step)
-    r = evaluate(save=(ep + 1 == a.epochs)); r.update(epoch=ep + 1, train_loss=tl / n, secs=time.time() - t0); log.append(r); print(json.dumps(r, default=float), flush=True)
+    r = evaluate(save=(ep + 1 == a.epochs)); r.update(epoch=ep + 1, train_loss=tl / n, secs=time.time() - t0)
+    if DENSE: r['dense_loss'] = dl / max(n, 1)
+    log.append(r); print(json.dumps(r, default=float), flush=True)
     if run: run.log({f'eval/{k}': v for k, v in r.items() if not isinstance(v, dict)}, step=step)
     torch.save({'m': model.state_dict(), 'o': opt.state_dict(), 's': sched.state_dict(), 'ep': ep + 1, 'log': log, 'tr': tr, 'ev': ev,
                 'cfg': _cfg()}, ck + '.tmp'); os.replace(ck + '.tmp', ck)
@@ -339,7 +441,7 @@ if a.adabn:   # unsupervised test-time BN recalibration on target-batch images f
     with torch.no_grad():
         for raw, ph, g, *_ in mk(tgt, False): fwd(prep(raw, ph, g, False))
     ra = evaluate(save=True, tag='_adabn'); print('ADABN', json.dumps(ra, default=float), flush=True)
-    json.dump({'args': vars(a), 'n_adabn': len(tgt), 'final': ra}, open(a.out + '/result_adabn.json', 'w'), indent=1, default=float)
+    json.dump({'args': _run_args(), 'n_adabn': len(tgt), 'final': ra}, open(a.out + '/result_adabn.json', 'w'), indent=1, default=float)
 if run: run.finish()
 _extra = {'led_weights': model['enc'].led_weights(), 'led_channels': CH + (['phase'] if a.phase else [])} if a.arch in _N053 else {}   # N053
-json.dump({'args': vars(a), 'final': log[-1], 'log': log, 'n_train': len(tr), 'n_eval': len(ev), 'targets': names, **_extra}, open(a.out + '/result.json', 'w'), indent=1, default=float)
+json.dump({'args': _run_args(), 'final': log[-1], 'log': log, 'n_train': len(tr), 'n_eval': len(ev), 'targets': names, **_extra}, open(a.out + '/result.json', 'w'), indent=1, default=float)

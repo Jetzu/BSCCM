@@ -1,0 +1,101 @@
+{
+ "png": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/plots/goal-r-n068_2026-11-23_1455.png",
+ "svg": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/plots/goal-r-n068_2026-11-23_1455.svg",
+ "created": "2026-11-23T14:55:23",
+ "command": [
+  "/home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python",
+  "/home/hpc/v181bb/v181bb10/.claude/skills/work-log/bin/plot_compare.py",
+  "--metric",
+  "goal_r_N068",
+  "--csv",
+  ".agent-research/results/N068-exact-symmetry-augmentation-anti-diagona/plot_goal.csv",
+  "--item",
+  "N068",
+  "--baseline",
+  "control",
+  "--direction",
+  "higher",
+  "--noise",
+  ".0027"
+ ],
+ "cwd": "/home/hpc/v181bb/v181bb10/BSCCM",
+ "source": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N068-exact-symmetry-augmentation-anti-diagona/plot_goal.csv",
+ "notes": {
+  "item": "N068",
+  "metric": "goal_r_N068",
+  "direction": "higher",
+  "noise_sd": 0.0027,
+  "stats": null
+ },
+ "width_in": 8.5,
+ "height_in": 2.5591,
+ "png_px": [
+  3840,
+  1156
+ ],
+ "significance": "two-sided; Holm-corrected over all comparisons of a panel (one family per panel); * <0.05 ** <0.01 *** <0.001 **** <0.0001",
+ "panels": [
+  {
+   "panel": "a",
+   "kind": "bar",
+   "groups": [
+    "control",
+    "drop119_N068",
+    "diag_N068"
+   ],
+   "colors": [
+    "#767E86",
+    "#3A6C9E",
+    "#55BDB2"
+   ],
+   "n": [
+    2,
+    2,
+    2
+   ],
+   "mean": [
+    0.6706138554618835,
+    0.6717535376930218,
+    0.6693983830977527
+   ],
+   "sd": [
+    0.0033290338830258095,
+    0.0029363708979975025,
+    0.002643077514009113
+   ],
+   "median": [
+    0.6706138554618835,
+    0.6717535376930218,
+    0.6693983830977527
+   ],
+   "whisker": "sd",
+   "stats": [
+    {
+     "test": "paired t-test",
+     "p": 0.8397072413615336,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 1.0,
+     "stars": "ns",
+     "a": "control",
+     "b": "drop119_N068",
+     "reference": "control"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.8215858875487858,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 1.0,
+     "stars": "ns",
+     "a": "control",
+     "b": "diag_N068",
+     "reference": "control"
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "goal_r_N068"
+  }
+ ],
+ "matplotlib": "3.11.0"
+}
