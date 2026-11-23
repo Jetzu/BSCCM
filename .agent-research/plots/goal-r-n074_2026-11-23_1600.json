@@ -1,0 +1,84 @@
+{
+ "png": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/plots/goal-r-n074_2026-11-23_1600.png",
+ "svg": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/plots/goal-r-n074_2026-11-23_1600.svg",
+ "created": "2026-11-23T16:00:08",
+ "command": [
+  "/home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python",
+  "/home/hpc/v181bb/v181bb10/.claude/skills/work-log/bin/plot_compare.py",
+  "--metric",
+  "goal_r_n074",
+  "--csv",
+  ".agent-research/results/N074-dense-privileged-supervision-auxiliary-d/plot_goal.csv",
+  "--item",
+  "N074",
+  "--baseline",
+  "control",
+  "--direction",
+  "higher",
+  "--noise",
+  ".0027"
+ ],
+ "cwd": "/home/hpc/v181bb/v181bb10/BSCCM",
+ "source": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N074-dense-privileged-supervision-auxiliary-d/plot_goal.csv",
+ "notes": {
+  "item": "N074",
+  "metric": "goal_r_n074",
+  "direction": "higher",
+  "noise_sd": 0.0027,
+  "stats": null
+ },
+ "width_in": 8.5,
+ "height_in": 2.5591,
+ "png_px": [
+  3840,
+  1156
+ ],
+ "significance": "two-sided; Holm-corrected over all comparisons of a panel (one family per panel); * <0.05 ** <0.01 *** <0.001 **** <0.0001",
+ "panels": [
+  {
+   "panel": "a",
+   "kind": "bar",
+   "groups": [
+    "control",
+    "dense"
+   ],
+   "colors": [
+    "#767E86",
+    "#3A6C9E"
+   ],
+   "n": [
+    2,
+    2
+   ],
+   "mean": [
+    0.6706138554618835,
+    0.6682862926652258
+   ],
+   "sd": [
+    0.0033290338830258095,
+    0.001040712339082248
+   ],
+   "median": [
+    0.6706138554618835,
+    0.6682862926652258
+   ],
+   "whisker": "sd",
+   "stats": [
+    {
+     "test": "paired t-test",
+     "p": 0.5889975376214274,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 0.5889975376214274,
+     "stars": "ns",
+     "a": "control",
+     "b": "dense",
+     "reference": "control"
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "goal_r_n074"
+  }
+ ],
+ "matplotlib": "3.11.0"
+}

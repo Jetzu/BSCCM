@@ -1,7 +1,7 @@
 # N074 · Dense privileged supervision: auxiliary decoder predicts each training cell's 6-channel fluorescence crop (local background, antibody-panel conditioned) from the LF encoder; scalar v10 heads unchanged
 
-type: exp · date: 2026-11-19 · status: running
-goal_effect: pending · scale: paradigm
+type: exp · date: 2026-11-19 · status: done
+goal_effect: flat · scale: paradigm · value: 0.6683
 
 ## Goal
 Review N066 paradigm bet (lit_labelfree idea 2, Codex N066 idea 4, N059 parked "privileged supervision"): change what the loss sees.
@@ -31,7 +31,15 @@ files against the reconstructed pre-N074 harness (sha 88f70936): 7/7 OK (verify/
 because the combination is now refused). I/O throughput of the main-loop target read is unmeasured (GPU).
 
 ## Evidence
-<!-- exp: each run = job id, config, seed, output dir · results vs baseline -->
+Packer v1 1391847 failed (self-hash path after moving to scripts/; fixed, smoke-tested on the Codex fixture); v2 1429986 COMPLETED
+(1:48 min; fluor_aux64.npy 20.3 GB float16 + json; per-draw cofactors 1.5-6.7 ADU). Dense runs 1429987-990 exit 0 (b10 ~55-60 min vs
+control ~31 min: the main-loop target read costs ~2x on the large draw; b01 16 min).
+Auxiliary loss falls (b10 .356 -> .207, b01 .447 -> .241 per standardised pixel) -> the decoder learns the fluorescence images.
+RESULT (scripts/score_goal_arms.py, v10): dense GOAL .6683 (b10 .6850, b01 .6516) vs control .6706 -> -.0023 = FLAT
+(b10 +.0040, b01 -.0087). Per target within +-.02 (CD123 .539 -> .522, CD3 .768 -> .775, grp:CD45 .690 -> .695); MM3 ~flat.
+Dense pixel supervision of the same cells' fluorescence does not improve the scalar marker readout (consistent with lit: in-silico
+labelling helps new-label learning, not readout accuracy on labels the head already sees).
+Plot: plots/goal-r-n074_2026-11-23_1600.png
 
 ## Outcome
 <!-- on close: bin/effect.sh N074 improved|flat|worse --value V | --void  (n/a --why infra|measurement) [--scale knob|module|paradigm] -->
@@ -40,3 +48,4 @@ because the combination is now refused). I/O throughput of the main-loop target 
 <!-- files in .agent-research/results/N074-slug/ + external absolute paths -->
 
 ## Next
+Dead on BSCCM as an auxiliary loss. Keep the code (flag off = legacy). The 9-image IFC variant (Codex N079 idea 2) only if N080/N081 show IFC transfer.

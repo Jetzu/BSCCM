@@ -83,3 +83,4 @@
 {"ts":"2026-11-23T15:21:24+01:00","event":"goal_effect","item":"N077","effect":"n/a","value":"-","scale":"?","why":"measurement"}
 {"ts":"2026-11-23T15:36:43+01:00","event":"goal_effect","item":"N076","effect":"flat","value":"0.6681","scale":"module","why":""}
 {"ts":"2026-11-23T15:50:15+01:00","event":"review_closed","item":"N079"}
+{"ts":"2026-11-23T16:00:08+01:00","event":"goal_effect","item":"N074","effect":"flat","value":"0.6683","scale":"paradigm","why":""}
