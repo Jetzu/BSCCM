@@ -94,3 +94,4 @@
 {"ts":"2026-11-24T18:39:17+01:00","event":"goal_effect","item":"N088","effect":"n/a","value":"void","scale":"?","why":"measurement"}
 {"ts":"2026-11-24T18:45:29+01:00","event":"goal_effect","item":"N089","effect":"n/a","value":"void","scale":"?","why":"infra"}
 {"ts":"2026-11-24T19:20:55+01:00","event":"goal_effect","item":"N085","effect":"improved","value":"0.6967","scale":"module","why":""}
+{"ts":"2026-11-24T19:42:19+01:00","event":"goal_effect","item":"N090","effect":"worse","value":"0.6617","scale":"knob","why":""}
