@@ -1,0 +1,11 @@
+**Verdict — NOTHING BREAKS the registered numerical claim.** Canonical masked Pearson scoring over 11 targets per direction gives b10 .706573, b01 .686887, GOAL **.696730**. N053 reproduces at .686184. The registered bar is .6862 + 2 × .0027 = .6916. (`scripts/score_goal_arms.py:6–20`, `notebook/GOAL.md:7–11`, `/tmp/n085_rt/goal_summary.csv:2–4`.)
+
+**MAJOR limitation — prior test-draw selection.** All six older members entered E8 after their scores were known. Their exact union already scored .692940 on these draws. N065 called it descriptive and requested fresh-seed confirmation. Adding both ConvNeXt members gains .003790 over E6, below .0054. N053 selected Cytoland post hoc among four candidates and replicated with seed 1. Both reused plain b01 seeds had recorded scores (N083 finished 10:54 CET, N084 11:11 CET), and the 120-epoch choice followed inspection of the 60-epoch result. A third, untouched draw would test whether the gain generalizes. (`N053-*.md:46–58`, `N065-*.md:25–38`, `N083-*.md:25–28`, `N084-*.md:18–25`, `logs/{n083_cnxs120_s0_b01_1440134,n084_cnxs120_s1_b01_1440201}.out:109`.)
+
+Commit `499bca4` fixed the exact runs, seeds, head assignments and equal weights at 11:39:04 CET on November 24. The first new fine-tune started at 11:54 and ended at 12:13. All six new fine-tunes match the registration. The new composite could only have been screened at the recipe level beforehand. (`n085_score.py:1–9,16–30`, `logs/n085_cnxs120_tpfov_s0_b01_1440485.out:110`.)
+
+All 15 prediction files per direction had identical ordered evaluation IDs (13,113 b10, 26,322 b01), finite predictions and identical common-11 mask counts. All 30 fine-tunes used the correct source draw. All four SSL checkpoints excluded every held-out row (ex0 b10, ex1 b01). Cytoland used external weights. **MINOR** — shared LED calibration sampled both draws. (`/tmp/n085_rt/replay.log:4–9`, `/tmp/n085_rt/provenance.log:1–35`, `scripts/led_norm_stats.py:15–27`.)
+
+**Leave-one-out GOAL**, by omitted member, all above .6916. Base .695768, zoom2 .697640, Cytoland .696266, comp_base .695994, comp_z2 .695753, comp_cyto .696887, cnxs_plain .695395, cnxs_comp .695362. (`/tmp/n085_rt/plot_goal.csv:5–12`.)
+
+CPU replay used the unpacked BSCCM SIF because FUSE was unavailable. The audit covered saved predictions and training provenance.

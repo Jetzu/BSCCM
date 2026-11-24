@@ -25,7 +25,7 @@ C = [('N023', .6404, 'single model'), ('N025', .6390, 'single model'),
      ('N065', .6899, 'multi-network'), ('N067', .6624, 'single model'),
      ('N068', .6718, 'single model'), ('N073', .6658, 'single model'), ('N074', .6683, 'single model'), ('N075', .6708, 'single model'),
      ('N076', .6681, 'single model'), ('N078', .6707, 'single model'), ('N081', .6673, 'single model'), ('N083', .6681, 'single model'),
-     ('N084', .6744, 'single model'), ('N084', .6911, 'multi-network')]
+     ('N084', .6744, 'single model'), ('N084', .6911, 'multi-network'), ('N085', .6751, 'single model'), ('N085', .6967, 'multi-network')]
 prog = []
 for k, v, kind in C:
     n = int(k[1:]); era = 'v10 labels' if n >= 51 else 'v5 labels'

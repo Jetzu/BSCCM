@@ -25,7 +25,8 @@
 
 **b. Multi-network results.** Each ring is an item's primary (planned) ensemble or composite.
 - On v10 the GOAL record is .6862 (N053: ResNet-50 base + 2× zoom + Cytoland encoder; replicated with a fresh seed at .6864).
-- Later combinations reached .690–.691, including the pre-registered N084 at .6911. All stayed below the improvement threshold of .6916 (record + 2 × noise).
+- Later combinations reached .690–.691, including the pre-registered N084 at .6911, all below the improvement threshold of .6916 (record + 2 × noise).
+- **N085 set the new record, .6967:** a pre-registered equal-weight ensemble of 8 members. Caveat: 6 of the 8 were chosen after their scores on these two draws were known (together .6929); the 2 new ConvNeXt-S members add +.0038, below 2 × noise.
 - Descriptive secondary combinations reached up to .6929 (N065); they are not counted.
 - The dashed line is the .70 target.
 
@@ -184,7 +185,7 @@ Students that read Giemsa-stained blood images are trained from the label-free m
 - Auxiliary 3- and 10-class cell-type heads (cross-entropy, weight 0.5). Their labels exist only for pooled-panel cells of draw 0, and they are not used at test time.
 - Fine-tuning: 10 epochs, AdamW, lr 5e-4, batch 256, ±4 px random shift. No rotations or flips, because the illumination channels are direction-dependent.
 
-**Score.** GOAL .6911 (pre-registered, N084), just below the .6916 improvement threshold.
+**Score.** This 4-member model scores GOAL .6911 (pre-registered, N084), just below the .6916 improvement threshold. The current record, N085 (.6967), averages these members' architecture family more widely: the 3 N053 members, three composite models (separate heads for pooled and single targets) and two ConvNeXt-S models.
 - The GOAL record, N053, is the first three members (.6862; .6864 with the Cytoland member re-trained on a fresh seed).
 - A 6-member combination registered in N065 as a descriptive secondary analysis reached .6929; it is not counted toward the GOAL.
 
@@ -212,6 +213,7 @@ The arms also differ in fine-tuning learning rate, input resolution (ViTs at 224
   - a ViT: .680–.682;
   - Cytoland: .686, the registered record.
 - Adding ConvNeXt-S as a fourth member: .691.
+- All 8 members of the N085 record: .697 (6 of them chosen with knowledge of their test-draw scores).
 
 Seed noise SD is .0027.
 

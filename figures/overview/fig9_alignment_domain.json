@@ -1,7 +1,7 @@
 {
  "png": "/home/hpc/v181bb/v181bb10/BSCCM/figures/overview/fig9_alignment_domain.png",
  "svg": "/home/hpc/v181bb/v181bb10/BSCCM/figures/overview/fig9_alignment_domain.svg",
- "created": "2026-11-24T15:14:46",
+ "created": "2026-11-24T18:22:29",
  "command": [
   "/home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python",
   "figures/overview/make_alignment.py"

@@ -1,0 +1,11 @@
+arm,value,seed
+E8 (PRIMARY),0.7066,b10
+E8 (PRIMARY),0.6869,b01
+E6 (no ConvNeXt-S),0.7036,b10
+E6 (no ConvNeXt-S),0.6822,b01
+N053 ensemble,0.7001,b10
+N053 ensemble,0.6723,b01
+cnxs_plain,0.6838,b10
+cnxs_plain,0.6664,b01
+cnxs_comp,0.6754,b10
+cnxs_comp,0.6626,b01

@@ -62,6 +62,7 @@ single = [('ResNet-50\nSSL', v(n083, 'control'), SKY),
           ('ViT-S\nDINOv3', v(n053, 'DINOv3-S'), ROSE)]
 e = pd.concat([pd.read_csv(res('N053', f)).set_index('model').goal for f in ('n053_scores.csv', 'n053_baseline.csv')])
 e84 = pd.read_csv(res('N084', 'n084_scores.csv')).set_index('set').GOAL
+e85 = pd.read_csv(res('N085', 'n085_scores.csv')).set_index('set').GOAL
 B3 = 'n048_v9_base+n048_v9_zoom2'
 ens = [('ResNet-50\nalone', e['n048_v9_base'], GREY),
        ('ResNet-50\nfull + zoom', e[B3], SKY),
@@ -69,7 +70,8 @@ ens = [('ResNet-50\nalone', e['n048_v9_base'], GREY),
        ('+ ViT-B\nDINOv3', e[B3 + '+n053_dinov3_b'], ROSE),
        ('+ ViT-B\nDinoBloom', e[B3 + '+n053_dinobloom_b'], ROSE),
        ('+ ConvNeXtV2-T\nCytoland', e[B3 + '+n053_cytoland'], APR),
-       ('+ Cytoland\n+ ConvNeXt-S', e84['E (PRIMARY): N053 ensemble + ConvNeXt-S seed 1'], SKY)]
+       ('+ Cytoland\n+ ConvNeXt-S', e84['E (PRIMARY): N053 ensemble + ConvNeXt-S seed 1'], SKY),
+       ('8 members\n(N085 record)', e85['E8 (PRIMARY)'], SKY)]
 fig, ax = pfig.figure(1, 2, height_mm=78, width_ratios=[1.15, 1])
 names = [s[0] for s in single]
 pfig.bar(ax[0], [s[1] for s in single], [s[2] for s in single], names=names)
@@ -94,5 +96,5 @@ pfig.save(fig, name='fig7_architectures', sub='overview', root=R,
                 '(seed 0 members; ResNet-50 alone = the N048 full-view member .6742 and the full + 2x-zoom pair .6804, both trained on the cf150 '
                 'label variant (v10-trained: alone .6730, pair .6788); third member chosen among 4 encoders = N053 record .6862, '
                 '.6864 with the Cytoland member re-trained on a fresh seed; 4th member ConvNeXt-S seed 1 pre-registered in N084 = .6911, below the .6916 '
-                'improvement threshold). Seed noise sd .0027.')
+                'improvement threshold); N085 E8 = N053 members + N063/N065 composites + ConvNeXt-S plain and composite = .6967, the record (6 of 8 members chosen with test-draw knowledge; the 2 new members add +.0038). Seed noise sd .0027.')
 print('done')

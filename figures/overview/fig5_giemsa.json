@@ -1,7 +1,7 @@
 {
  "png": "/home/hpc/v181bb/v181bb10/BSCCM/figures/overview/fig5_giemsa.png",
  "svg": "/home/hpc/v181bb/v181bb10/BSCCM/figures/overview/fig5_giemsa.svg",
- "created": "2026-11-24T12:08:31",
+ "created": "2026-11-24T19:22:38",
  "command": [
   "/home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python",
   "figures/overview/make_figures.py"

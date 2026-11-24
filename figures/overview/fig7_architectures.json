@@ -1,7 +1,7 @@
 {
  "png": "/home/hpc/v181bb/v181bb10/BSCCM/figures/overview/fig7_architectures.png",
  "svg": "/home/hpc/v181bb/v181bb10/BSCCM/figures/overview/fig7_architectures.svg",
- "created": "2026-11-24T15:14:52",
+ "created": "2026-11-24T19:22:41",
  "command": [
   "/home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python",
   "figures/overview/make_architecture.py"
@@ -14,7 +14,7 @@
   "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N053-lf-encoder-swap-on-the-v10-goal-dinov3-v/n053_scores.csv",
   "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N084-pre-registered-ensemble-confirmation-n05/n084_scores.csv"
  ],
- "notes": "Same task, data split, labels (v10) and fine-tuning recipe for every encoder (10 epochs, linear heads, masked MSE). a single encoders (rings = seeds; paired t vs ResNet-50 SSL where 2 seeds, Holm): blue = initialised by our own self-supervised pretraining on unlabelled cells of the training split; orange = initialised from a published microscopy image-to-image model (Cytoland, encoder lr x 0.1; full lr = x 1); red = ViTs pretrained on natural images (DINOv3) or blood-smear photos (DinoBloom), 24-channel patch embedding adapted, 128 -> 256/224 px. Arms also differ in fine-tuning lr, input resolution and pooling, so a does not isolate the pretraining source. Params: ResNet-50 23.6 M, ConvNeXt-S 49.5 M, ConvNeXtV2-T 27.9 M, ViT-S 23.7 M, ViT-B 85.7-89.8 M. b ensembles = mean of member predictions (seed 0 members; ResNet-50 alone = the N048 full-view member .6742 and the full + 2x-zoom pair .6804, both trained on the cf150 label variant (v10-trained: alone .6730, pair .6788); third member chosen among 4 encoders = N053 record .6862, .6864 with the Cytoland member re-trained on a fresh seed; 4th member ConvNeXt-S seed 1 pre-registered in N084 = .6911, below the .6916 improvement threshold). Seed noise sd .0027.",
+ "notes": "Same task, data split, labels (v10) and fine-tuning recipe for every encoder (10 epochs, linear heads, masked MSE). a single encoders (rings = seeds; paired t vs ResNet-50 SSL where 2 seeds, Holm): blue = initialised by our own self-supervised pretraining on unlabelled cells of the training split; orange = initialised from a published microscopy image-to-image model (Cytoland, encoder lr x 0.1; full lr = x 1); red = ViTs pretrained on natural images (DINOv3) or blood-smear photos (DinoBloom), 24-channel patch embedding adapted, 128 -> 256/224 px. Arms also differ in fine-tuning lr, input resolution and pooling, so a does not isolate the pretraining source. Params: ResNet-50 23.6 M, ConvNeXt-S 49.5 M, ConvNeXtV2-T 27.9 M, ViT-S 23.7 M, ViT-B 85.7-89.8 M. b ensembles = mean of member predictions (seed 0 members; ResNet-50 alone = the N048 full-view member .6742 and the full + 2x-zoom pair .6804, both trained on the cf150 label variant (v10-trained: alone .6730, pair .6788); third member chosen among 4 encoders = N053 record .6862, .6864 with the Cytoland member re-trained on a fresh seed; 4th member ConvNeXt-S seed 1 pre-registered in N084 = .6911, below the .6916 improvement threshold); N085 E8 = N053 members + N063/N065 composites + ConvNeXt-S plain and composite = .6967, the record (6 of 8 members chosen with test-draw knowledge; the 2 new members add +.0038). Seed noise sd .0027.",
  "width_in": 8.5,
  "height_in": 3.0709,
  "png_px": [
@@ -184,7 +184,8 @@
     "+ ViT-B\nDINOv3",
     "+ ViT-B\nDinoBloom",
     "+ ConvNeXtV2-T\nCytoland",
-    "+ Cytoland\n+ ConvNeXt-S"
+    "+ Cytoland\n+ ConvNeXt-S",
+    "8 members\n(N085 record)"
    ],
    "colors": [
     "#767E86",
@@ -193,9 +194,11 @@
     "#B94A58",
     "#B94A58",
     "#CF832F",
+    "#3A6C9E",
     "#3A6C9E"
    ],
    "n": [
+    1,
     1,
     1,
     1,
@@ -211,9 +214,11 @@
     0.6811484150902835,
     0.6815713862114214,
     0.6861838259839266,
-    0.6911
+    0.6911,
+    0.6967
    ],
    "sd": [
+    null,
     null,
     null,
     null,
@@ -229,7 +234,8 @@
     0.6811484150902835,
     0.6815713862114214,
     0.6861838259839266,
-    0.6911
+    0.6911,
+    0.6967
    ],
    "whisker": "sd",
    "stats": [],

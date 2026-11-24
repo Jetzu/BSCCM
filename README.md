@@ -3,8 +3,7 @@
 Can a microscope image tell us how much of a protein a white blood cell carries, even in a fresh blood sample?
 We train an image encoder to predict fluorescence-derived marker levels and use it as a teacher for a second model that reads stained blood smears.
 Our primary score, **GOAL**, averages prediction–measurement correlations for 11 targets when we train on one blood draw and test on the other.
-Through N090 (24 November 2026), the target is **.700**. The official record is **.6862** (N053, three members). Cytoland was selected after testing four candidates on the evaluation draws. Retraining that member alone gave .6864.
-The strongest primary ensemble result so far was **.6911** (N084, four members) against an improvement threshold of **.6916**.
+Through N090 (24 November 2026), the target is **.700**. The official record is **.6967** (N085, a pre-registered equal-weight ensemble of eight members), which cleared the improvement threshold of **.6916** (previous record .6862 + 2 x noise). Caveat: six of the eight members were chosen after their scores on these same two draws were known (together they scored .6929); the two new ConvNeXt-S members add +.0038, below 2 x noise. Only a third, untouched blood draw could test how much of the gain generalises, and BSCCM has two. The previous record was **.6862** (N053, three members; Cytoland was selected among four candidates on the evaluation draws).
 Bright markers associated with cell type transfer well. For dim markers such as CD19 and CD56, changing the fluorescence background estimate changes the target values.
 Across three ImageStream donors, training on one marker per cell weakened predicted CD4–CD8 exclusivity. The differences between training regimes were statistically inconclusive.
 On MLL23, a reused clinical development benchmark, distilling LF features gave the Giemsa student a higher mean class-ranking AUROC than distilling marker outputs. The AUROC gain of .113 passed the registered .074 effect-size rule, but the paired test across three teachers gave p = .07. [GOAL register](.agent-research/notebook/GOAL.md) · [Overview figures](figures/overview/CAPTIONS.md)
@@ -201,6 +200,7 @@ Use the N053 scorer's **plus-separated** syntax for an ensemble. The fine-tuner'
 | N053, three members | .7001 | .6723 | .6862 | .7734 |
 | N053, retrain only Cytoland with seed 1 | .7043 | .6685 | .6864 | — |
 | N084, add ConvNeXt-S to seed-0 N053 | .7030 | .6793 | .6911 | .7764 |
+| N085, eight-member union E8 (current record) | .7066 | .6869 | .6967 | .7856 |
 
 These numbers can be reproduced from the archived predictions without retraining. Both ResNets were trained on cofactor-150 labels and scored on v10 labels.
 Replacing the cofactor-150 ResNets with the v10-trained controls changes the ensemble. [N048 jobs](.agent-research/results/N048-label-v9-asinh-cofactor-from-a-pre-regis/jobs.txt) · [N053 seed replication](.agent-research/results/N053-lf-encoder-swap-on-the-v10-goal-dinov3-v/n053_followup.csv) · [N084 score table](.agent-research/results/N084-pre-registered-ensemble-confirmation-n05/n084_scores.csv)
@@ -405,7 +405,7 @@ In the round-one code check, 16 of 19 discovered tests passed. Three augmentatio
 
 The links lead to experiment records or their rows in the notebook index. Early scores use the label version and split in force at the time. Scores are rounded to three decimals except where extra precision identifies a record, re-base or small effect.
 “Flat” refers to an item's registered comparison. A positive result for the GS student or MM3 can coexist with a flat GOAL result.
-As of 24 November 2026, the N088 literature review is complete. N085 and N087 are open, N089 records the private release, and N090 has launched.
+As of 24 November 2026, the N088 literature review is complete, N085 set the record (.6967), N087 is open, N089 records the private release, and N090 has launched.
 The index jumps from N068 to N073. [Archive](.agent-research/notebook/INDEX_ARCHIVE.md) · [Current index](.agent-research/notebook/INDEX.md)
 
 ### Establish the dataset and the two measurable links
@@ -670,7 +670,7 @@ Longer SSL on the smaller draw improved its GOAL direction. Selecting 60/120 epo
 **[N084] · Confirm the fourth member.** The registered comparison added seed-1 ConvNeXt-S to the three N053 members.
 GOAL was .6911, missing .6916 by .0005, with MM3 .7764. The fourth member helped reproducibly but did not advance the official GOAL record.
 
-**[N085] · Running, combine stronger encoders and specialized heads.** Registered a union of eight equal-weight members, including 120-epoch ConvNeXt-S and composite heads, with success defined as GOAL above .6916.
+**[N085] · Record: combine stronger encoders and specialized heads.** Registered a union of eight equal-weight members, including 120-epoch ConvNeXt-S and composite heads, with success defined as GOAL above .6916. The eight-member average scored **.6967** (b10 .7066, b01 .6869, MM3 .7856); every leave-one-out subset stayed above .6916 (.6954-.6976). An independent recomputation confirmed the number, row alignment and source-only training. Caveat: the six older members were selected with knowledge of their test-draw scores (six-member subset .6929); the two new ConvNeXt-S members add +.0038.
 The item has a plan and submitted work. Its primary result was still pending at this snapshot.
 
 **[N086] · Publish the overview figures.** Five initial figures summarized progress, experiments, errors, joint decoding and GS transfer.
@@ -756,7 +756,7 @@ Clinical adaptation and test-draw normalization are compared with unadapted pred
 ## Current work and open questions
 
 **Can the ensemble clear .6916 on the frozen v10 protocol?** N085 combines 120-epoch source-only ConvNeXt-S pretraining on both draws with panel heads for pooled targets and two-part/FOV-offset heads for singles.
-Its primary comparison is the pre-specified eight-member average. MM3, the six-member subset and standalone members are secondary. The item records the work as running. [N085] · [Registered scorer](.agent-research/results/N085-stronger-members-convnext-s-with-120-ep/n085_score.py)
+Its primary comparison is the pre-specified eight-member average. MM3, the six-member subset and standalone members are secondary. The primary comparison cleared the bar (.6967 > .6916); see the caveat in the summary. [N085] · [Registered scorer](.agent-research/results/N085-stronger-members-convnext-s-with-120-ep/n085_score.py)
 
 **Can the decoder recover more from a fixed image?** N087 starts with the same ResNet features and compares the original head, ridge regression, reduced-rank readouts, a multilayer perceptron and nearest neighbours.
 The original head reproduced .6730 in the completed flow comparison. The proposed nonlinear follow-up requires gains above .0054 in both directions. [N087]

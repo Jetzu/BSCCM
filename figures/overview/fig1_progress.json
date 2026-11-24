@@ -1,7 +1,7 @@
 {
  "png": "/home/hpc/v181bb/v181bb10/BSCCM/figures/overview/fig1_progress.png",
  "svg": "/home/hpc/v181bb/v181bb10/BSCCM/figures/overview/fig1_progress.svg",
- "created": "2026-11-24T12:08:27",
+ "created": "2026-11-24T19:22:34",
  "command": [
   "/home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python",
   "figures/overview/make_figures.py"
@@ -29,7 +29,7 @@
     {
      "label": "v10 labels",
      "color": "#3A6C9E",
-     "points": 17
+     "points": 18
     }
    ],
    "xlabel": "Notebook item",
@@ -47,7 +47,7 @@
     {
      "label": null,
      "color": "#3A6C9E",
-     "points": 7
+     "points": 8
     }
    ],
    "xlabel": "Notebook item",
