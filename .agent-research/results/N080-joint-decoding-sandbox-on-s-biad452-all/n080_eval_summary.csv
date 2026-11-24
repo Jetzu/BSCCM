@@ -1,0 +1,7 @@
+arm,macro_r_B,macro_r_A,type_oracle,model_minus_oracle,within_type_r,within_lymph_types_r,pair_corr_abs_err
+full:knn,0.5556,0.5475,0.8137,-0.2581,0.1861,0.1545,0.3525
+full:model,0.5959,0.5884,0.8137,-0.2178,0.196,0.1587,0.3892
+single:knn,0.5068,0.5002,0.8137,-0.3069,0.153,0.1289,0.3344
+single:model,0.5257,0.519,0.8137,-0.288,0.1757,0.1493,0.3081
+single_pooled:knn,0.496,0.4871,0.8137,-0.3177,0.1514,0.1278,0.3313
+single_pooled:model,0.5416,0.5368,0.8137,-0.2721,0.1491,0.1323,0.3912

@@ -1,7 +1,7 @@
 # N081 · Two-stem joint-source training: BSCCM LED stem + S-BIAD452 BF/SSC stem, shared trunk + shared marker heads with per-dataset adapters; BSCCM GOAL/MM3 + IFC held-out-donor joint metrics
 
-type: exp · date: 2026-11-23 · status: running
-goal_effect: pending · scale: module
+type: exp · date: 2026-11-23 · status: done
+goal_effect: worse · scale: module · value: 0.6673
 
 ## Goal
 Review N079 idea #2 (Codex 1, lit B): add NEW joint observations to BSCCM training -- S-BIAD452 cells with all 9 markers (5 overlap with
@@ -30,6 +30,13 @@ eval predictions identical to the IFC-skipped control over 3 optimizer steps), t
 (diffs applied, cmp-identical to staged copies). Pack rebuilt with --stat-donors sample0,sample1 (test donor sample2) -- job in jobs.txt.
 
 ## Evidence
+RUNS 1439889/890 (exit 0, ~35 min). vs control n051_v10_base seed 0:
+GOAL .6673 (b10 .6832, b01 .6513) vs .6730 -> -.0057 (beyond 2 x noise) = WORSE; MM3 .7530 vs .7563 (flat); overlap markers:
+CD19 .301 vs .344, CD14 .829/.832, CD3 .765/.768, CD45 .771/.770, CD56 .513/.506. IFC held-out donor sample2 (b10 model): macro r .608,
+overlap-5 .609, CD19 .067 (collapsed through the shared BSCCM row), CD15 .95, CD45 .94.
+-> adding all-marker ImageStream cells through a shared trunk + shared marker rows does NOT transfer to BSCCM (modality gap: 60x flow
+BF/SSC vs 20x LED array); it slightly hurts BSCCM and the shared rows conflict (CD19).
+Plot: plots/goal-r-n081_2026-11-24_1034.png
 
 2026-11-24 data recovery: S-BIAD452 sample2 (donor 2) zarr.zip files lack .zarray/.zattrs on the archive (chunk files only) -> packer
 rebuilds the array metadata from a metadata-bearing part (chunks 100, blosc-lz4, vlen <u2) and infers each cell's (H, W) from its
@@ -46,3 +53,4 @@ failures: truncated FCS download (4 KB, re-fetched); all 11 zips CRC ok, uncompr
 <!-- files in .agent-research/results/N081-slug/ + external absolute paths -->
 
 ## Next
+Dead as a shared-trunk/shared-row design. If revisited: separate heads + feature-level alignment only, or IFC as pretraining only.
