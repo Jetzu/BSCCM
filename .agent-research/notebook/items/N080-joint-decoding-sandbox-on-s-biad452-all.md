@@ -23,7 +23,18 @@ Codex build (codex/: train_ifc_sandbox.py, 31 CPU tests). Integrated as scripts/
 preprocessing: label cofactor and per-run z from the TRAINING donor's REVEALED entries (validation runs revealed-only too: they select the
 checkpoint; test-donor runs use their own truth for metrics only), input chan_scale from training cells. First version leaked hidden labels
 into the cofactor -- Codex's leakage test caught it (3 failures); fixed; 31/31 pass (venv /tmp/n080_codex). Design kept: train 1 donor,
-validate 1 (checkpoint selection), test 1, cyclic. Claude red-team interrupted by a usage limit (resume pending).
+validate 1 (checkpoint selection), test 1, cyclic.
+Claude red-team (agents_redteam.md; resumed after a usage limit, reviewed the integrated script): NO leakage into the trained model
+(34/34 tests incl. 3 new: hidden CD3/CD19/CD8 of pooled cells changed -> identical weights in both pooled modes; test-donor images x7 ->
+bit-identical); my fold-statistics block correct; masks/kNN bank/donor split/metric formulas correct. MAJOR (evaluation side only):
+(1) test truth z-scored with its own run statistics (deliberate, fair between arms; absolute RMSE/gates shift) -> report both target
+standardisations; (2) gates are fixed training quantiles (75th pct -> every marker 25 % positive; eos 15.5 % vs neutrophils 1.5 % on
+donor 0) -- confirmed in code -> gate F1 / double positives / coarse populations NOT interpretable as written; (3) a fine-cell-type-mean
+predictor reaches lymphocyte within-population r .67-.86 -> within-population r alone cannot show decoding beyond cell type.
+Decision: trainer unchanged (training is clean); evaluation redone post-hoc from eval_preds: valley (bimodal) thresholds fitted on the
+training donor + true population fractions, a fine-type-mean baseline arm with model-minus-baseline within fine types, both
+standardisations. Minors noted (pooled weight ~4.5x per entry; single_pooled replaces 10 % of single labels; validation pooled scale;
+rotation padding geometry).
 
 ## Evidence
 <!-- exp: each run = job id, config, seed, output dir · results vs baseline -->
