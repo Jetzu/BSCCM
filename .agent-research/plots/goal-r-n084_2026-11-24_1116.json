@@ -1,0 +1,121 @@
+{
+ "png": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/plots/goal-r-n084_2026-11-24_1116.png",
+ "svg": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/plots/goal-r-n084_2026-11-24_1116.svg",
+ "created": "2026-11-24T11:16:38",
+ "command": [
+  "/home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python",
+  "/home/hpc/v181bb/v181bb10/.claude/skills/work-log/bin/plot_compare.py",
+  "--metric",
+  "goal_r_n084",
+  "--csv",
+  ".agent-research/results/N084-pre-registered-ensemble-confirmation-n05/plot_goal.csv",
+  "--item",
+  "N084",
+  "--baseline",
+  "N053 ensemble",
+  "--direction",
+  "higher",
+  "--noise",
+  ".0027"
+ ],
+ "cwd": "/home/hpc/v181bb/v181bb10/BSCCM",
+ "source": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N084-pre-registered-ensemble-confirmation-n05/plot_goal.csv",
+ "notes": {
+  "item": "N084",
+  "metric": "goal_r_n084",
+  "direction": "higher",
+  "noise_sd": 0.0027,
+  "stats": null
+ },
+ "width_in": 8.5,
+ "height_in": 2.5591,
+ "png_px": [
+  3840,
+  1156
+ ],
+ "significance": "two-sided; Holm-corrected over all comparisons of a panel (one family per panel); * <0.05 ** <0.01 *** <0.001 **** <0.0001",
+ "panels": [
+  {
+   "panel": "a",
+   "kind": "bar",
+   "groups": [
+    "N053 ensemble",
+    "N053 ensemble + ConvNeXt-S seed 1",
+    "ConvNeXt-S seed 1",
+    "control r50"
+   ],
+   "colors": [
+    "#767E86",
+    "#3A6C9E",
+    "#55BDB2",
+    "#A1CA8A"
+   ],
+   "n": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "mean": [
+    0.6862,
+    0.6911,
+    0.6744,
+    0.673
+   ],
+   "sd": [
+    null,
+    null,
+    null,
+    null
+   ],
+   "median": [
+    0.6862,
+    0.6911,
+    0.6744,
+    0.673
+   ],
+   "whisker": "sd",
+   "stats": [
+    {
+     "test": null,
+     "p": null,
+     "n_i": 1,
+     "n_j": 1,
+     "p_holm": null,
+     "stars": "",
+     "note": "test undefined (n < 2 or zero variance)",
+     "a": "N053 ensemble",
+     "b": "N053 ensemble + ConvNeXt-S seed 1",
+     "reference": "N053 ensemble"
+    },
+    {
+     "test": null,
+     "p": null,
+     "n_i": 1,
+     "n_j": 1,
+     "p_holm": null,
+     "stars": "",
+     "note": "test undefined (n < 2 or zero variance)",
+     "a": "N053 ensemble",
+     "b": "ConvNeXt-S seed 1",
+     "reference": "N053 ensemble"
+    },
+    {
+     "test": null,
+     "p": null,
+     "n_i": 1,
+     "n_j": 1,
+     "p_holm": null,
+     "stars": "",
+     "note": "test undefined (n < 2 or zero variance)",
+     "a": "N053 ensemble",
+     "b": "control r50",
+     "reference": "N053 ensemble"
+    }
+   ],
+   "no_stats_reason": "no testable comparison (n < 2 per group)",
+   "ylabel": "goal_r_n084"
+  }
+ ],
+ "matplotlib": "3.11.0"
+}

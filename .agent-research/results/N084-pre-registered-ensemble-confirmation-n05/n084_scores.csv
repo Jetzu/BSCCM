@@ -1,0 +1,5 @@
+set,b10,b01,GOAL,MM3
+control r50,0.6867,0.6592,0.673,0.7563
+ConvNeXt-S seed 1,0.6862,0.6627,0.6744,0.7677
+N053 ensemble,0.7001,0.6723,0.6862,0.7734
+E (PRIMARY): N053 ensemble + ConvNeXt-S seed 1,0.703,0.6793,0.6911,0.7764

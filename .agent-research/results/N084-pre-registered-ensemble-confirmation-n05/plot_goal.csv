@@ -1,0 +1,5 @@
+arm,value,seed
+control r50,0.673,1
+ConvNeXt-S seed 1,0.6744,1
+N053 ensemble,0.6862,1
+N053 ensemble + ConvNeXt-S seed 1,0.6911,1
