@@ -1,0 +1,10 @@
+[README.md](/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N088-literature-review-user-11-24-label-free/readme/README.md) is ready for integration at the repository root. It covers all 88 timeline IDs and embeds all nine figures. I ran the documented scoring commands against archived predictions and reproduced **N053 at .6862**, its fresh-seed replicate at **.6864**, and **N084 at .6911**. Training was not rerun. [Reproduction guide](/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N088-literature-review-user-11-24-label-free/readme/README.md:115)
+
+Source discrepancies resolved in the README:
+
+- The index skips **N069–N072**. Each is marked undocumented. [INDEX.md:50](/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/notebook/INDEX.md:50)
+- The N086 index row counts five figures. Its extension documents figures six through nine. [INDEX.md:64](/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/notebook/INDEX.md:64) · [N086:57](/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/notebook/items/N086-project-overview-figures-progress-per-la.md:57)
+- Figure 6 calls the **.6929** ensemble post hoc. N065 explicitly registered it as a descriptive secondary comparison. [CAPTIONS.md:189](/home/hpc/v181bb/v181bb10/BSCCM/figures/overview/CAPTIONS.md:189) · [N065:14](/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/notebook/items/N065-composite-recipe-ensemble-rebuild-every.md:14)
+- The MLL23 “fine” endpoint includes **12 fine and three lineage contrasts**. [N086:73](/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/notebook/items/N086-project-overview-figures-progress-per-la.md:73)
+
+All links resolve locally. The N087/N088 item files and N088 context file are still untracked, which affects their GitHub links. The CPU suite passed 16 of 19 tests. Three existing fixtures raised missing-name errors. [Test details](/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N088-literature-review-user-11-24-label-free/readme/README.md:349)
