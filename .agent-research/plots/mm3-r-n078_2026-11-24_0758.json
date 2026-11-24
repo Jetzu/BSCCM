@@ -1,0 +1,103 @@
+{
+ "png": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/plots/mm3-r-n078_2026-11-24_0758.png",
+ "svg": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/plots/mm3-r-n078_2026-11-24_0758.svg",
+ "created": "2026-11-24T07:58:33",
+ "command": [
+  "/home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python",
+  "/home/hpc/v181bb/v181bb10/.claude/skills/work-log/bin/plot_compare.py",
+  "--metric",
+  "mm3_r_n078",
+  "--csv",
+  ".agent-research/results/N078-in-domain-ssl-scaling-sigreg-lf-pretrain/plot_mm3.csv",
+  "--item",
+  "N078",
+  "--baseline",
+  "control",
+  "--direction",
+  "higher",
+  "--noise",
+  ".0035"
+ ],
+ "cwd": "/home/hpc/v181bb/v181bb10/BSCCM",
+ "source": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N078-in-domain-ssl-scaling-sigreg-lf-pretrain/plot_mm3.csv",
+ "notes": {
+  "item": "N078",
+  "metric": "mm3_r_n078",
+  "direction": "higher",
+  "noise_sd": 0.0035,
+  "stats": null
+ },
+ "width_in": 8.5,
+ "height_in": 2.5591,
+ "png_px": [
+  3840,
+  1156
+ ],
+ "significance": "two-sided; Holm-corrected over all comparisons of a panel (one family per panel); * <0.05 ** <0.01 *** <0.001 **** <0.0001",
+ "panels": [
+  {
+   "panel": "a",
+   "kind": "bar",
+   "groups": [
+    "control",
+    "cnxs_60",
+    "r50_160"
+   ],
+   "colors": [
+    "#767E86",
+    "#3A6C9E",
+    "#55BDB2"
+   ],
+   "n": [
+    1,
+    1,
+    1
+   ],
+   "mean": [
+    0.7563,
+    0.7735,
+    0.7563
+   ],
+   "sd": [
+    null,
+    null,
+    null
+   ],
+   "median": [
+    0.7563,
+    0.7735,
+    0.7563
+   ],
+   "whisker": "sd",
+   "stats": [
+    {
+     "test": null,
+     "p": null,
+     "n_i": 1,
+     "n_j": 1,
+     "p_holm": null,
+     "stars": "",
+     "note": "test undefined (n < 2 or zero variance)",
+     "a": "control",
+     "b": "cnxs_60",
+     "reference": "control"
+    },
+    {
+     "test": null,
+     "p": null,
+     "n_i": 1,
+     "n_j": 1,
+     "p_holm": null,
+     "stars": "",
+     "note": "test undefined (n < 2 or zero variance)",
+     "a": "control",
+     "b": "r50_160",
+     "reference": "control"
+    }
+   ],
+   "no_stats_reason": "no testable comparison (n < 2 per group)",
+   "ylabel": "mm3_r_n078"
+  }
+ ],
+ "matplotlib": "3.11.0"
+}

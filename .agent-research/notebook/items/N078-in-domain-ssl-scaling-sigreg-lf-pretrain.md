@@ -1,7 +1,7 @@
 # N078 · In-domain SSL scaling: SIGReg LF pretraining 4x longer (r50, 160 ep) and a larger encoder (ConvNeXt-S, 60 ep), then the GOAL fine-tune; under-trained SSL (loss still falling at ep 40)
 
-type: exp · date: 2026-11-23 · status: running
-goal_effect: pending · scale: module
+type: exp · date: 2026-11-23 · status: done
+goal_effect: flat · scale: module · value: 0.6707
 
 ## Goal
 User 2026-11-23: maximise marker recovery from the LF images; other encoders may be fully fine-tuned. N053: external pretrained encoders
@@ -21,7 +21,19 @@ then ensemble + N076 final multi-marker stage.
 ## Changes
 
 ## Evidence
-<!-- exp: each run = job id, config, seed, output dir · results vs baseline -->
+SSL: ex1 (draw 0) r50 160 ep 1:49 h, ConvNeXt-S 60 ep 1:11 h; ex0 (draw 1) jobs preempted and resumed by preempt-run (encoders complete:
+160/160, 60/60 epochs). b10 fine-tunes stuck on afterok of the preempted first links -> cancelled, resubmitted 1438937/938.
+RESULT (seed 0, v10, score_goal_arms + n078_mm3_ens.csv):
+| arm | b10 | b01 | GOAL | MM3 |
+| control n051_v10_base | .6867 | .6592 | .6730 | .7563 |
+| r50 SSL 160 ep | .6817 | .6597 | .6707 (-.0022) | .7563 |
+| ConvNeXt-S SSL 60 ep | .6941 | .6444 | .6693 (-.0037) | .7735 (+.0172) |
+| N053 ensemble (GOAL best) | .7001 | .6723 | .6862 | .7734 |
+| N053 ens + ConvNeXt-S | .7045 | .6728 | .6886 | .7773 |
+PRIMARY (GOAL > +.0054): both arms FLAT. 4x longer r50 SSL changes nothing (SSL length is not the lever). ConvNeXt-S: b10 +.0074 (SSL on
+the 275k-cell draw) but b01 -.0148 (138k-cell draw; CD123 .499, HLA-DR .440, CD19 .311); pooled panels up on both (grp:CD45 .716 vs .689,
+grp:CD16 .816 vs .801, grp:CD3/19/56 .789 vs .780) -> MM3 +.017 single model (= the 3-member ensemble's MM3), secondary metric, 1 seed.
+Plots: plots/goal-r-n078_2026-11-24_0758.png, plots/mm3-r-n078_2026-11-24_0758.png
 
 ## Outcome
 <!-- on close: bin/effect.sh N078 improved|flat|worse --value V | --void  (n/a --why infra|measurement) [--scale knob|module|paradigm] -->
@@ -30,3 +42,4 @@ then ensemble + N076 final multi-marker stage.
 <!-- files in .agent-research/results/N078-slug/ + external absolute paths -->
 
 ## Next
+Follow-up (pre-register MM3 as primary): ConvNeXt-S replication seed 1 + longer draw-0 SSL (the small draw is where it loses); as ensemble member.
