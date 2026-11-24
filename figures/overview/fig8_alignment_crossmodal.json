@@ -1,0 +1,166 @@
+{
+ "png": "/home/hpc/v181bb/v181bb10/BSCCM/figures/overview/fig8_alignment_crossmodal.png",
+ "svg": "/home/hpc/v181bb/v181bb10/BSCCM/figures/overview/fig8_alignment_crossmodal.svg",
+ "created": "2026-11-24T15:14:45",
+ "command": [
+  "/home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python",
+  "figures/overview/make_alignment.py"
+ ],
+ "cwd": "/home/hpc/v181bb/v181bb10/BSCCM",
+ "source": [
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N045-sotalign-semi-supervised-ot-alignment-gi/v2_summary.csv",
+  "/home/hpc/v181bb/v181bb10/BSCCM/figures/overview/data/alignment_metrics.csv"
+ ],
+ "notes": "Two image modalities of the same blood cells: label-free multi-illumination microscope stacks (LF) and photos of the same cells after Giemsa staining (GS, the clinical standard); 15.7k registered cell pairs on 2 slides. Goal: make LF-trained predictors usable on GS images. a exact-cell retrieval GS -> LF on a held-out slide (rings: slide b1, 5,697 cells / slide b0, 10,015 cells; dashed = chance .00176 (b1); b0 chance .00100), N045 v2 (4,500 steps, seed 0). linear map = ridge regression GS -> LF features fitted on the pairs; SOTAlign = SigLIP pairs + KL-OT on unpaired clinical GS and LF cells. Cross-slide R@10 .01-.04, while the same SigLIP/SOTAlign models reach .40/.38 and .38/.37 within a slide (held-out fields of view; chance .010-.016): the failure is the slide-to-slide shift, not missing shared information. b per-cell signal carried through each complete recipe and compared with its measured value on the same held-out cells (autofluorescence; N045 v5c and N054 truths correlate 1.000): N045 arms = embedding + ridge readout fitted on the source draw; N054 arms (seed 0) = GS students trained to regress the LF model's outputs (output distillation, TT6c) or its latent (LF hub), and a two-space model whose final alignment step is unpaired entropic Gromov-Wasserstein (its GS encoder was trained with pairs); N054 LF training also used unstained cells of the held-out slide. Recipes differ in more than the alignment, so b compares complete pipelines. c learning from set-level supervision with the pairs hidden (N034-B, user idea, one draw, LF features from an encoder that saw the test draw): the LF -> label map is learned only from matched SETS of cells (bag means / 1-D OT); per-cell r on a new blood draw vs set size (mean of 7 targets; 6 at n = 2048, CD19 missing; dashed = fully paired readout .561). Sets of the same cells recover most of the signal at 4-16 cells and decay with set size; sets of different cells carry no per-cell information (r ~ 0).",
+ "width_in": 8.5,
+ "height_in": 2.9921,
+ "png_px": [
+  3840,
+  1351
+ ],
+ "significance": "two-sided; Holm-corrected over all comparisons of a panel (one family per panel); * <0.05 ** <0.01 *** <0.001 **** <0.0001",
+ "panels": [
+  {
+   "panel": "a",
+   "kind": "bar",
+   "groups": [
+    "linear map\n(ridge on pairs)",
+    "CCA",
+    "Procrustes",
+    "SigLIP\n(contrastive)",
+    "SOTAlign\n(contrastive + OT)"
+   ],
+   "colors": [
+    "#767E86",
+    "#B94A58",
+    "#B94A58",
+    "#B94A58",
+    "#B94A58"
+   ],
+   "n": [
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "mean": [
+    0.012519346309656051,
+    0.01748353422122385,
+    0.015583207600395051,
+    0.03007856128743515,
+    0.028252329247045647
+   ],
+   "sd": [
+    0.006125846905358539,
+    0.004814905802525378,
+    0.005516467128596759,
+    0.011330200544063695,
+    0.011430499721068603
+   ],
+   "median": [
+    0.012519346309656051,
+    0.01748353422122385,
+    0.015583207600395051,
+    0.03007856128743515,
+    0.028252329247045647
+   ],
+   "whisker": "sd",
+   "stats": [],
+   "no_stats_reason": "two held-out slides (rings), one seed each",
+   "ylabel": "Exact-cell retrieval, held-out slide (R@10)"
+  },
+  {
+   "panel": "b",
+   "kind": "bar",
+   "groups": [
+    "linear map\n(ridge on pairs)",
+    "CCA",
+    "Procrustes",
+    "SigLIP\n(contrastive)",
+    "SOTAlign\n(contrastive + OT)",
+    "distill outputs",
+    "distill latent",
+    "GW alignment\n(unpaired step)"
+   ],
+   "colors": [
+    "#767E86",
+    "#B94A58",
+    "#B94A58",
+    "#B94A58",
+    "#B94A58",
+    "#3A6C9E",
+    "#3A6C9E",
+    "#CF832F"
+   ],
+   "n": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "mean": [
+    0.5677073013646388,
+    0.2121659801523363,
+    0.39906256181251826,
+    0.2799518672740467,
+    0.3329851082126324,
+    0.6579999999999999,
+    0.65,
+    0.3215
+   ],
+   "sd": [
+    0.12641367009276325,
+    0.06289614489916165,
+    0.180026407367499,
+    0.1444676786167156,
+    0.16076459177198904,
+    0.08061017305526641,
+    0.14283556979968257,
+    0.200111219075793
+   ],
+   "median": [
+    0.5677073013646388,
+    0.2121659801523363,
+    0.39906256181251826,
+    0.2799518672740467,
+    0.3329851082126324,
+    0.6579999999999999,
+    0.65,
+    0.3215
+   ],
+   "whisker": "sd",
+   "stats": [],
+   "no_stats_reason": "two held-out slides (rings), one seed each",
+   "ylabel": "Transferred per-cell signal (r)"
+  },
+  {
+   "panel": "c",
+   "kind": "lines",
+   "series": [
+    {
+     "label": "sets of the same cells",
+     "color": "#3A6C9E",
+     "points": 5
+    },
+    {
+     "label": "same cells, 1-D OT",
+     "color": "#55BDB2",
+     "points": 5
+    },
+    {
+     "label": "sets of different cells",
+     "color": "#B94A58",
+     "points": 5
+    }
+   ],
+   "xlabel": "Set size (cells per supervised set)",
+   "ylabel": "Per-cell r, new blood draw"
+  }
+ ],
+ "matplotlib": "3.11.0"
+}

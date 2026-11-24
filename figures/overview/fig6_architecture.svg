@@ -250,7 +250,7 @@ z
     <text style="font-size: 6px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle" x="65.19685" y="89.143661" transform="rotate(-0 65.19685 89.143661)">[B, 24, 128, 128]</text>
    </g>
    <g id="diagram">
-    <text style="font-size: 6px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle" x="65.19685" y="96.608505" transform="rotate(-0 65.19685 96.608505)">23 illumination angles</text>
+    <text style="font-size: 6px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle" x="65.19685" y="96.643661" transform="rotate(-0 65.19685 96.643661)">23 illumination patterns</text>
    </g>
    <g id="diagram">
     <text style="font-size: 6px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle" x="65.19685" y="104.108505" transform="rotate(-0 65.19685 104.108505)">+ 1 phase image</text>
@@ -259,7 +259,7 @@ z
     <text style="font-size: 7px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle" x="65.19685" y="151.591428" transform="rotate(-0 65.19685 151.591428)">Augment</text>
    </g>
    <g id="diagram">
-    <text style="font-size: 6px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle" x="65.19685" y="159.707053" transform="rotate(-0 65.19685 159.707053)">shift, scale</text>
+    <text style="font-size: 6px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle" x="65.19685" y="159.535491" transform="rotate(-0 65.19685 159.535491)">+-4 px shift</text>
    </g>
    <g id="diagram">
     <text style="font-size: 6px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle" x="65.19685" y="167.035491" transform="rotate(-0 65.19685 167.035491)">no rotation / flip</text>
@@ -319,7 +319,7 @@ z
     <text style="font-size: 7px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle" x="428.031496" y="148.799439" transform="rotate(-0 428.031496 148.799439)">Linear (aux)</text>
    </g>
    <g id="diagram">
-    <text style="font-size: 6px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle" x="428.031496" y="157.259126" transform="rotate(-0 428.031496 157.259126)">3 / 10 classes</text>
+    <text style="font-size: 6px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle" x="428.031496" y="157.259126" transform="rotate(-0 428.031496 157.259126)">3 / 10 cell classes</text>
    </g>
    <g id="diagram">
     <text style="font-size: 6px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle" x="428.031496" y="164.165689" transform="rotate(-0 428.031496 164.165689)">CE x 0.5, train only</text>

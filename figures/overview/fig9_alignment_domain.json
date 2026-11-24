@@ -1,0 +1,283 @@
+{
+ "png": "/home/hpc/v181bb/v181bb10/BSCCM/figures/overview/fig9_alignment_domain.png",
+ "svg": "/home/hpc/v181bb/v181bb10/BSCCM/figures/overview/fig9_alignment_domain.svg",
+ "created": "2026-11-24T15:14:46",
+ "command": [
+  "/home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python",
+  "figures/overview/make_alignment.py"
+ ],
+ "cwd": "/home/hpc/v181bb/v181bb10/BSCCM",
+ "source": [
+  "/home/hpc/v181bb/v181bb10/BSCCM/figures/overview/data/alignment_metrics.csv",
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N056-e3-clinical-transfer-class-anchored-giem/n056_per_run.csv",
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N057-anchor-strength-sweep-for-the-tt6c-giems/plot_n057_mll23.csv",
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N058-confirm-hub-tt6c-on-mll23-fine-contrasts/n058_per_run.csv"
+ ],
+ "notes": "Domain shift. a-b a network that reads Giemsa photos (GS student, trained on BSCCM Giemsa cells) applied to public clinical smear datasets (other labs, stains, cameras); quality = AUROC of pre-registered cell-class contrasts (0.5 = chance). a PBC (N020, seed 0, pbc_transfer_auroc.csv; rings = the 8 contrasts, paired t vs no adaptation, Holm): means .406 / .438 / .462 / .555; unsupervised domain-adversarial training (DANN, unlabelled PBC half A) and test-time whitening do not transfer reliably (contrasts .11-.90). b MLL23, 15 contrasts (N056-N058 harness; rings = 3 LF teacher models, each the mean of its 2-3 student seeds; paired t by teacher vs output distillation, Holm). All arms use class anchoring (cross-entropy on 3 common classes of labelled PBC half A; anchor x 4 / x 16 = loss weight .5 -> 2 / 8). Post-hoc alignment of the clinical features to BSCCM (N056 tables/contrasts_all.csv; unbalanced OT tau .91, mean shift, CORAL) moves the 3-teacher mean by <= .007 but single teachers by up to -.038 (OT, teacher 0); the aligned arms decode a normalised 8-view mean embedding while the raw arm averages 8 decoded predictions. Distilling the LF latent instead of the outputs: .681 (matched anchoring, N058) / .704 (N056 anchoring). Registered rules: latent vs output distillation = higher (N058, mean gain .113 > seed floor .074); anchor sweep = no difference. c LF model applied to a new blood draw, change vs the seed-matched unadapted model: DANN batch-adversarial training (N014, ResNet-18, v4 labels, 12-target mean; 2 directions +.0025 / -.0015 vs the full-precision seed-0 baseline in n013_v4_noise.csv); AdaBN (re-estimated BatchNorm statistics on 20k unlabelled new-draw images, N026, 4 runs) -.005 to -.011.",
+ "width_in": 8.5,
+ "height_in": 2.8346,
+ "png_px": [
+  3840,
+  1280
+ ],
+ "significance": "two-sided; Holm-corrected over all comparisons of a panel (one family per panel); * <0.05 ** <0.01 *** <0.001 **** <0.0001",
+ "panels": [
+  {
+   "panel": "a",
+   "kind": "bar",
+   "groups": [
+    "no adaptation",
+    "test-time\nwhitening",
+    "DANN, lambda .1",
+    "DANN, lambda .3"
+   ],
+   "colors": [
+    "#767E86",
+    "#CF832F",
+    "#B94A58",
+    "#B94A58"
+   ],
+   "n": [
+    8,
+    8,
+    8,
+    8
+   ],
+   "mean": [
+    0.406125,
+    0.4375,
+    0.46175,
+    0.554625
+   ],
+   "sd": [
+    0.1737703225525003,
+    0.24622115494582741,
+    0.20392908431258996,
+    0.18884153409671295
+   ],
+   "median": [
+    0.4155,
+    0.4115,
+    0.40549999999999997,
+    0.5805
+   ],
+   "whisker": "sd",
+   "stats": [
+    {
+     "test": "paired t-test",
+     "p": 0.6635116757152194,
+     "n_i": 8,
+     "n_j": 8,
+     "p_holm": 1.0,
+     "stars": "ns",
+     "a": "no adaptation",
+     "b": "test-time\nwhitening",
+     "reference": "no adaptation"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.5267098530150202,
+     "n_i": 8,
+     "n_j": 8,
+     "p_holm": 1.0,
+     "stars": "ns",
+     "a": "no adaptation",
+     "b": "DANN, lambda .1",
+     "reference": "no adaptation"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.1423447379168637,
+     "n_i": 8,
+     "n_j": 8,
+     "p_holm": 0.4270342137505911,
+     "stars": "ns",
+     "a": "no adaptation",
+     "b": "DANN, lambda .3",
+     "reference": "no adaptation"
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "PBC smears, 8 contrasts (AUROC)"
+  },
+  {
+   "panel": "b",
+   "kind": "bar",
+   "groups": [
+    "distill outputs",
+    "+ unbalanced OT",
+    "+ mean shift",
+    "+ CORAL",
+    "anchor x 4",
+    "anchor x 16",
+    "distill latent",
+    "distill latent,\nstronger anchor"
+   ],
+   "colors": [
+    "#767E86",
+    "#CF832F",
+    "#CF832F",
+    "#CF832F",
+    "#55BDB2",
+    "#55BDB2",
+    "#3A6C9E",
+    "#3A6C9E"
+   ],
+   "n": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3
+   ],
+   "mean": [
+    0.5681773323051279,
+    0.5616652032122623,
+    0.5706274886669843,
+    0.5713597671820215,
+    0.6038946945819227,
+    0.6268841656240539,
+    0.6811885750546628,
+    0.7041666666666666
+   ],
+   "sd": [
+    0.03885264347011073,
+    0.012570011522626436,
+    0.0276331819285143,
+    0.018187615623197477,
+    0.04007849907512856,
+    0.03979485306721141,
+    0.021616094065397183,
+    0.014002975874196641
+   ],
+   "median": [
+    0.5566854046003764,
+    0.5635419713249308,
+    0.5674276407805401,
+    0.5789552261137951,
+    0.6118328912692641,
+    0.6438142083400329,
+    0.672432925156191,
+    0.712
+   ],
+   "whisker": "sd",
+   "stats": [
+    {
+     "test": "paired t-test",
+     "p": 0.7227005739566887,
+     "n_i": 3,
+     "n_j": 3,
+     "p_holm": 1.0,
+     "stars": "ns",
+     "a": "distill outputs",
+     "b": "+ unbalanced OT",
+     "reference": "distill outputs"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.7641077345565829,
+     "n_i": 3,
+     "n_j": 3,
+     "p_holm": 1.0,
+     "stars": "ns",
+     "a": "distill outputs",
+     "b": "+ mean shift",
+     "reference": "distill outputs"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.8540100068565278,
+     "n_i": 3,
+     "n_j": 3,
+     "p_holm": 1.0,
+     "stars": "ns",
+     "a": "distill outputs",
+     "b": "+ CORAL",
+     "reference": "distill outputs"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.06745827473376644,
+     "n_i": 3,
+     "n_j": 3,
+     "p_holm": 0.33729137366883216,
+     "stars": "ns",
+     "a": "distill outputs",
+     "b": "anchor x 4",
+     "reference": "distill outputs"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.053928195996021305,
+     "n_i": 3,
+     "n_j": 3,
+     "p_holm": 0.32356917597612783,
+     "stars": "ns",
+     "a": "distill outputs",
+     "b": "anchor x 16",
+     "reference": "distill outputs"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.06925088843860641,
+     "n_i": 3,
+     "n_j": 3,
+     "p_holm": 0.33729137366883216,
+     "stars": "ns",
+     "a": "distill outputs",
+     "b": "distill latent",
+     "reference": "distill outputs"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.016190125640510786,
+     "n_i": 3,
+     "n_j": 3,
+     "p_holm": 0.11333087948357551,
+     "stars": "ns",
+     "a": "distill outputs",
+     "b": "distill latent,\nstronger anchor",
+     "reference": "distill outputs"
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "MLL23 smears, 15 contrasts (AUROC)"
+  },
+  {
+   "panel": "c",
+   "kind": "bar",
+   "groups": [
+    "DANN",
+    "AdaBN"
+   ],
+   "colors": [
+    "#B94A58",
+    "#CF832F"
+   ],
+   "n": [
+    2,
+    4
+   ],
+   "mean": [
+    0.0005042895985146179,
+    -0.007625000000000021
+   ],
+   "sd": [
+    0.002837557429905334,
+    0.0027741365022891933
+   ],
+   "median": [
+    0.0005042895985146179,
+    -0.007250000000000034
+   ],
+   "whisker": "sd",
+   "stats": [],
+   "no_stats_reason": "differences vs the seed-matched unadapted model per direction / run; 2 (DANN) and 4 (AdaBN) values",
+   "ylabel": "Change in new-draw r"
+  }
+ ],
+ "matplotlib": "3.11.0"
+}

@@ -12,8 +12,8 @@ SKY, SEA, SAGE, APR, ROSE, LIL = pfig.PALETTE; GREY = pfig.BASELINE
 # ---------------------------------------------------------------- Figure 6: architecture of the best model
 d = Diagram(height_mm=80)
 g_in = d.group('Input: one cell', 4, 14, 38, 56, id='in')
-d.box('Image stack', 7, 22, 32, 20, sub=['[B, 24, 128, 128]', '23 illumination angles', '+ 1 phase image'], parent=g_in, id='x')
-d.box('Augment', 7, 48, 32, 15, sub=['shift, scale', 'no rotation / flip'], parent=g_in, id='aug')
+d.box('Image stack', 7, 22, 32, 20, sub=['[B, 24, 128, 128]', '23 illumination patterns', '+ 1 phase image'], parent=g_in, id='x')
+d.box('Augment', 7, 48, 32, 15, sub=['+-4 px shift', 'no rotation / flip'], parent=g_in, id='aug')
 g_m = d.group('4 ensemble members (trained separately)', 50, 6, 74, 70, id='mem')
 M = [('ResNet-50, full view', ['self-supervised init', '23.6 M, 2048-d']),
      ('ResNet-50, 2x centre zoom', ['self-supervised init', '23.6 M, 2048-d']),
@@ -23,7 +23,7 @@ for i, (lab, sub) in enumerate(M):
     d.box(lab, 53, 13 + i * 15.5, 68, 13, sub=sub, parent=g_m, id=f'm{i}', color='apricot' if i == 2 else None)
 g_h = d.group('Heads (each member)', 131, 14, 40, 56, id='heads')
 reg = d.box('Linear', 134, 22, 34, 18, sub=['13 regression targets', 'masked MSE'], parent=g_h, id='reg')
-d.box('Linear (aux)', 134, 46, 34, 17, sub=['3 / 10 classes', 'CE x 0.5, train only'], parent=g_h, id='cls')
+d.box('Linear (aux)', 134, 46, 34, 17, sub=['3 / 10 cell classes', 'CE x 0.5, train only'], parent=g_h, id='cls')
 avg = d.box('Mean', 177, 28, 14, 14, sub=['over 4'], fill='solid', id='avg')
 out = d.box('Output', 195, 22, 18, 26, sub=['11 scored', 'targets', 'per cell'], fill='solid', id='out')
 d.arrow(g_in, g_m, route='h', ta=0.5, tb=0.5)
@@ -31,18 +31,22 @@ d.arrow(g_m, g_h, route='h', ta=0.5, tb=0.5)
 d.arrow(reg, avg, route='h', ta=0.5, tb=0.5)
 d.arrow(avg, out, route='h')
 print(d.save(name='fig6_architecture', sub='overview', root=R,
-             notes='Best measured model (N084, GOAL .6911; registered best N053 = first three members, .6862). Each member is an image '
-                   'encoder + linear heads, trained separately (10 epochs, AdamW lr 5e-4, batch 256); test predictions of the members are '
-                   'averaged. Input: one cell, 24 channels (the same cell imaged under 23 LED illumination angles + a computed phase image), '
-                   '128 x 128 px; 2x zoom = centre 64 px upsampled to 128. Self-supervised init: 2 augmented views, invariance + SIGReg '
-                   'Gaussian regulariser, 40 epochs (ResNet-50) / 60 (draw 1) and 120 (draw 0) epochs (ConvNeXt-S) on unlabelled cells of the training split only '
-                   '(held-out split excluded); the SSL stem has 48 inputs (24 channels + 24 channel-present masks). Cytoland = ConvNeXtV2-T '
+             notes='Best pre-registered measured model (N084, GOAL .6911, below the .6916 improvement threshold); the GOAL record N053 = '
+                   'first three members (.6862; the Cytoland member re-trained with a fresh seed gives .6864). A post-hoc descriptive '
+                   '6-member combination (N065) reached .6929 and is not counted. Each member = image encoder + linear heads, trained '
+                   'separately (10 epochs, AdamW lr 5e-4, batch 256, +-4 px random shift); test predictions are averaged. Input: one cell, '
+                   '24 channels = 23 illumination patterns of an LED-array microscope (brightfield, darkfield rings at increasing angle, '
+                   'half-circle differential phase contrast, single LEDs) + a computed phase image, 128 x 128 px; 2x zoom = centre 64 px '
+                   'upsampled to 128. Self-supervised init: 2 augmented views (random scale + shift), invariance + SIGReg Gaussian '
+                   'regulariser, 40 epochs (ResNet-50) / 60 (draw 1) and 120 (draw 0) epochs (ConvNeXt-S) on unlabelled cells of the '
+                   'training split only; the SSL stem has 48 inputs (24 channels + 24 channel-present masks). Cytoland = ConvNeXtV2-T '
                    'encoder of a published microscopy image-to-image model (label-free -> fluorescence), 1-channel stem repeated to 24, '
-                   'learned per-channel gate, encoder lr x 0.1. Targets: 13 per-cell regression targets (8 single proteins, 4 pooled, 1 '
-                   'background signal), but each training cell has only the target of its own slide measured -> masked MSE over observed '
-                   'targets; 11 are scored (GOAL = Pearson r, train on one blood draw, test on the other, mean of both directions). '
-                   'Aux heads: 3- and 10-class cell-type cross-entropy (weight 0.5), not used at test time. ResNet-50 members were trained '
-                   'on a label variant (cf150), the others on v10 labels; all scored on v10.'))
+                   'learned per-channel gate, encoder lr x 0.1. Targets (13 regression outputs, masked MSE over the observed ones): cells '
+                   'from single-stain slides have 1 protein target + 1 background (autofluorescence) target; cells from pooled-panel slides '
+                   'have 4 (draw 0) or 3 (draw 1) pooled targets and no background target. 11 targets are scored (GOAL = Pearson r, train on '
+                   'one blood draw, test on the other, mean of both directions). Aux heads: 3- and 10-class cell-type cross-entropy (weight '
+                   '0.5), labels exist only for pooled-panel cells of draw 0; not used at test time. ResNet-50 members were trained on a '
+                   'label variant (cf150), the others on v10 labels; all scored on v10.'))
 
 # ---------------------------------------------------------------- Figure 7: architectures compared
 n053 = pd.read_csv(res('N053', 'plot_n053_single.csv')); n083 = pd.read_csv(res('N083', 'plot_goal.csv'))
@@ -56,10 +60,10 @@ single = [('ResNet-50\nSSL', v(n083, 'control'), SKY),
           ('ViT-B\nDinoBloom', v(n053, 'DinoBloom-B'), ROSE),
           ('ViT-B\nDINOv3', v(n053, 'DINOv3-B'), ROSE),
           ('ViT-S\nDINOv3', v(n053, 'DINOv3-S'), ROSE)]
-e = pd.read_csv(res('N053', 'n053_scores.csv')).set_index('model').goal
+e = pd.concat([pd.read_csv(res('N053', f)).set_index('model').goal for f in ('n053_scores.csv', 'n053_baseline.csv')])
 e84 = pd.read_csv(res('N084', 'n084_scores.csv')).set_index('set').GOAL
 B3 = 'n048_v9_base+n048_v9_zoom2'
-ens = [('ResNet-50\nalone', e['n051_v10_base'], GREY),
+ens = [('ResNet-50\nalone', e['n048_v9_base'], GREY),
        ('ResNet-50\nfull + zoom', e[B3], SKY),
        ('+ ViT-S\nDINOv3', e[B3 + '+n053_dinov3_s'], ROSE),
        ('+ ViT-B\nDINOv3', e[B3 + '+n053_dinov3_b'], ROSE),
@@ -84,9 +88,11 @@ pfig.save(fig, name='fig7_architectures', sub='overview', root=R,
                 'a single encoders (rings = seeds; paired t vs ResNet-50 SSL where 2 seeds, Holm): blue = initialised by our own '
                 'self-supervised pretraining on unlabelled cells of the training split; orange = initialised from a published microscopy '
                 'image-to-image model (Cytoland, encoder lr x 0.1; full lr = x 1); red = ViTs pretrained on natural images (DINOv3) or '
-                'blood-smear photos (DinoBloom), 24-channel patch embedding adapted, 128 -> 256/224 px. Params: ResNet-50 23.6 M, '
+                'blood-smear photos (DinoBloom), 24-channel patch embedding adapted, 128 -> 256/224 px. Arms also differ in fine-tuning lr, '
+                'input resolution and pooling, so a does not isolate the pretraining source. Params: ResNet-50 23.6 M, '
                 'ConvNeXt-S 49.5 M, ConvNeXtV2-T 27.9 M, ViT-S 23.7 M, ViT-B 85.7-89.8 M. b ensembles = mean of member predictions '
-                '(seed 0 members; ResNet-50 full + 2x-zoom pair from N048; third member chosen among 4 encoders = N053 record .6862, '
-                'replicated .6864 with a fresh seed; 4th member ConvNeXt-S seed 1 pre-registered in N084 = .6911, below the .6916 '
+                '(seed 0 members; ResNet-50 alone = the N048 full-view member .6742 and the full + 2x-zoom pair .6804, both trained on the cf150 '
+                'label variant (v10-trained: alone .6730, pair .6788); third member chosen among 4 encoders = N053 record .6862, '
+                '.6864 with the Cytoland member re-trained on a fresh seed; 4th member ConvNeXt-S seed 1 pre-registered in N084 = .6911, below the .6916 '
                 'improvement threshold). Seed noise sd .0027.')
 print('done')

@@ -158,52 +158,130 @@ Students that read Giemsa-stained blood images are trained from the label-free m
 
 ## Figure 6: Architecture of the best model (`fig6_architecture`), written for ML readers
 
-**Task.** This is per-cell multi-output regression. The input is one cell imaged with a programmable LED-array microscope: 23 images of the same cell under different illumination angles plus one computed phase image, stacked into a 24 × 128 × 128 tensor. The output is the cell's level of 13 measured quantities (8 single proteins, 4 pooled protein panels and 1 background signal); 11 of them are scored.
+**Task.** Per-cell multi-output regression.
+- Input: one cell imaged with a programmable LED-array microscope. There are 23 illumination patterns (brightfield, darkfield rings at increasing angles, half-circle phase-contrast patterns and single LEDs) plus one computed phase image, stacked into a 24 × 128 × 128 tensor.
+- Output: 13 regression targets (protein levels); 11 of them are scored.
 
-**Main difficulty: sparse labels.** Each cell has only one target measured: the protein its microscope slide was stained for, plus the background signal. Training therefore uses a masked MSE over the observed targets only.
+**Main difficulty: sparse labels.** Training uses a masked MSE over the observed targets only.
+- Cells from single-stain slides have 1 protein target plus 1 background (autofluorescence) target.
+- Cells from pooled-panel slides have 4 (draw 0) or 3 (draw 1) pooled targets and no background target.
 
-**Evaluation.** Train on one blood draw, test on the other (a domain shift). Score = Pearson r per target, averaged over the 11 targets and both directions.
+**Evaluation.** Train on one blood draw, test on the other (a domain shift). Score = Pearson r, averaged over 11 targets and both directions.
 
-**Model.** The best model is an ensemble of 4 members trained separately. Each member is an image encoder → global pooling → linear heads. Test predictions are averaged.
+**Model: an ensemble of 4 separately trained members.** Each member is an image encoder → global pooling → linear heads; test predictions are averaged.
 1. ResNet-50 (23.6 M parameters, 2048-d features), full 128 px view.
-2. The same ResNet-50 on a 2× centre zoom (central 64 px upsampled to 128).
-3. ConvNeXtV2-T (27.9 M, 768-d), initialised from the encoder of a published microscopy image-to-image model (Cytoland, which predicts fluorescence images from label-free images). Its single-channel stem is repeated to 24 channels, a learned per-channel gain is added, and the encoder is fine-tuned at 0.1× the learning rate.
+2. ResNet-50, 2× centre zoom.
+3. ConvNeXtV2-T (27.9 M, 768-d), initialised from the encoder of a published microscopy image-to-image model (Cytoland). Its 1-channel stem is repeated to 24, it has a learned per-channel gain, and it is fine-tuned at 0.1× the learning rate.
 4. ConvNeXt-S (49.5 M, 768-d).
 
-**Self-supervised init (members 1, 2, 4).** Pretraining on all unlabelled cells of the training split only (the test split is excluded): 2 augmented views, an invariance loss plus the SIGReg isotropic-Gaussian regulariser, 40 epochs (ConvNeXt-S 60–120). The pretraining stem takes 48 inputs: 24 channels plus 24 binary channel-present masks, so it can handle random channel dropout.
+**Self-supervised init (members 1, 2, 4).**
+- 2 augmented views (random scale and shift), invariance loss plus the SIGReg Gaussian regulariser.
+- Runs on unlabelled cells of the training split only.
+- 40 epochs for ResNet-50; 60–120 epochs for ConvNeXt-S.
 
-**Heads.** A linear regression head (13 outputs, masked MSE) and auxiliary linear 3- and 10-class cell-type heads (cross-entropy, weight 0.5, training only). Fine-tuning: 10 epochs, AdamW, lr 5e-4, batch 256, shift/scale augmentation. There are no rotations or flips, because the illumination channels are direction-dependent.
+**Heads and fine-tuning.**
+- Linear regression head (13 outputs).
+- Auxiliary 3- and 10-class cell-type heads (cross-entropy, weight 0.5). Their labels exist only for pooled-panel cells of draw 0, and they are not used at test time.
+- Fine-tuning: 10 epochs, AdamW, lr 5e-4, batch 256, ±4 px random shift. No rotations or flips, because the illumination channels are direction-dependent.
 
-**Score.** GOAL .6911. The registered best, N053, is the first three members (.6862, replicated .6864).
+**Score.** GOAL .6911 (pre-registered, N084), just below the .6916 improvement threshold.
+- The GOAL record, N053, is the first three members (.6862; .6864 with the Cytoland member re-trained on a fresh seed).
+- A post-hoc 6-member combination reached .6929 and is not counted.
 
 ## Figure 7: Architectures compared (`fig7_architectures`)
 
-Every encoder was trained with the same task, data split, labels and fine-tuning recipe.
+**a. Single encoders.** Same data, labels and heads for every encoder; rings are seeds; paired t-tests against ResNet-50 for the arms with 2 seeds.
 
-**a. Single encoders.** Rings are seeds; paired t-tests against ResNet-50 SSL use the arms with 2 seeds.
-- **Blue: our own self-supervised init.**
-  - ResNet-50: .671.
-  - ResNet-50 with 4× longer pretraining: .671.
-  - ConvNeXt-S: .668 (ns).
-- **Orange: published microscopy image-to-image encoder (Cytoland ConvNeXtV2-T).**
-  - .666 (ns).
-  - .646 when fine-tuned at the full learning rate, which destroys the pretrained features.
-- **Red: Vision Transformers pretrained on other image domains.** The patch embedding is adapted to 24 channels and the input upsampled to 224–256 px.
-  - DinoBloom ViT-B (blood-smear photos): .655.
-  - DINOv3 ViT-B (natural images): .652.
-  - DINOv3 ViT-S: .650.
+| Encoder | Initialisation | GOAL |
+|---|---|---|
+| ResNet-50 | our self-supervised pretraining | .671 |
+| ResNet-50, 4× longer pretraining | our self-supervised pretraining | .671 |
+| ConvNeXt-S | our self-supervised pretraining | .668 (ns) |
+| ConvNeXtV2-T | published microscopy model (Cytoland) | .666 (ns) |
+| ConvNeXtV2-T, full learning rate | published microscopy model (Cytoland) | .646 |
+| ViT-B | blood-smear photos (DinoBloom) | .655 |
+| ViT-B | natural images (DINOv3) | .651 |
+| ViT-S | natural images (DINOv3) | .649 |
+
+The arms also differ in fine-tuning learning rate, input resolution (ViTs at 224–256 px) and pooling. This panel compares complete recipes; it does not isolate the pretraining source.
 
 **b. Ensembles** (mean of member predictions):
-- ResNet-50 alone .673.
-- Full view + 2× zoom pair .680.
+- ResNet-50 alone: .674.
+- Full view + 2× zoom pair: .680. Both ResNet-50 arms were trained on the cf150 label variant; trained on v10 labels they score .673 and .679.
 - Adding a third member:
-  - a ViT: .680–.682, almost no gain;
+  - a ViT: .680–.682;
   - Cytoland: .686, the registered record.
 - Adding ConvNeXt-S as a fourth member: .691.
 
 Seed noise SD is .0027.
 
 **Says:**
-- Domain-specific pretraining matters more than model size. Self-supervised pretraining on our own unlabelled cells beats ImageNet-style and blood-smear ViTs (up to 3.8× more parameters) by .015–.021.
-- Within the in-domain-pretrained CNNs, architecture hardly matters (ResNet-50 ≈ ConvNeXt-S).
-- Ensembles gain most from members that make different errors: a different pretraining source (Cytoland) or a different architecture (ConvNeXt-S). More ResNet-50 variants or generic ViTs add little.
+- In this comparison, CNNs initialised by self-supervised pretraining on our own unlabelled cells are the best single encoders. Generic ViTs, even with nearly 4× more parameters, are .015–.021 lower, with the recipe caveats above.
+- Among our self-supervised CNNs the architecture hardly matters.
+- Ensembles gain most from members with a different pretraining source (Cytoland) or architecture (ConvNeXt-S). ViT members add almost nothing.
+
+---
+
+## Figure 8: Aligning two image modalities of the same cells (`fig8_alignment_crossmodal`), written for ML readers
+
+**Setup.** The same blood cells exist in two image modalities:
+- label-free microscope stacks (LF), on which the marker predictor is trained;
+- photos of the same cells after Giemsa staining (GS), the format hospitals use.
+
+There are 15.7k registered cell pairs on 2 slides. The aim is to make LF-trained predictions available from GS images. Every test is on a held-out slide; rings are the two slides (b1: 5,697 cells; b0: 10,015 cells), one seed each.
+
+**a. Exact-cell retrieval GS → LF on the held-out slide (R@10).** Chance is .0018 / .0010; dashed line .0018.
+- Linear map (ridge regression GS → LF features fitted on the pairs): .013.
+- CCA: .017. Procrustes: .016.
+- SigLIP contrastive: .030.
+- SOTAlign (SigLIP plus optimal transport on unpaired clinical GS and LF cells): .028.
+- Across slides, every method stays at .01–.04.
+- Within a slide (held-out fields of view, chance .010–.016), the same SigLIP and SOTAlign models reach R@10 .38–.40.
+- So the shared embedding does carry cell identity. It breaks under the shift from one slide to another.
+
+**b. Transferring a per-cell signal.** The signal is a scalar measured on both slides (autofluorescence); the score is r against its measured value on the held-out cells. Each bar is a complete pipeline.
+- Embedding plus ridge readout: .21–.40 (CCA .21, SigLIP .28, SOTAlign .33, Procrustes .40). The linear map gives .57.
+- GS students trained to regress the LF model's outputs (output distillation) or its latent: .66 (.715 / .601) and .65 (.751 / .549).
+- A two-space model whose final alignment step is unpaired Gromov–Wasserstein: .32 (.18 / .46). Its GS encoder was itself trained with pairs.
+- The pipelines differ in more than the alignment step. For example, the student pipelines' LF training also saw unstained cells of the held-out slide.
+
+**c. Learning from set-level supervision with the pairs hidden.** The LF → label map is learned only from matched sets of cells. Per-cell r on a new blood draw is plotted against set size; the dashed line is the fully paired readout (.561).
+- This is one draw, with features from an encoder that also saw the test draw.
+- Sets of the same cells recover most of the signal at 4–16 cells (.55 / .50) and decay towards .10 at 2,048.
+- 1-D OT collapses beyond 64 cells.
+- Sets of different cells carry no per-cell information (r ≈ 0).
+
+**Says:**
+- Joint embeddings learn cell identity within a slide but do not survive a new slide.
+- For carrying a per-cell signal from LF to GS, directly distilling the LF model into a GS network beat every embedding-plus-readout pipeline we ran.
+- Without paired cells, only small sets of the same cells give useful supervision.
+
+## Figure 9: Domain-shift methods (`fig9_alignment_domain`)
+
+**a–b. Clinical smears.** A Giemsa-reading network trained on our cells is applied to public clinical smear datasets from other labs, stains and cameras. The score is the AUROC of pre-registered cell-class contrasts; 0.5 is chance.
+
+**a. PBC dataset.** Rings are the 8 contrasts; paired t-tests against no adaptation.
+- No adaptation: .41.
+- Test-time whitening: .44.
+- Domain-adversarial training (DANN on unlabelled PBC images): .46 at λ = .1, .55 at λ = .3.
+
+All are ns, and individual contrasts range from .11 to .90.
+
+**b. MLL23 dataset.** Rings are 3 teacher models; paired t-tests by teacher. All arms use class anchoring: a cross-entropy on 3 common classes from labelled PBC images.
+- Output distillation: .568.
+- Post-hoc alignment of the clinical features:
+  - unbalanced OT .562, mean shift .571, CORAL .571 (ns);
+  - single teachers move by up to −.038;
+  - these arms decode an aligned mean embedding rather than averaging decoded predictions.
+- Stronger anchor loss (× 4 / × 16): .604 / .627.
+- Distilling the LF latent instead of the outputs: .681, and .704 with stronger anchoring.
+
+All are ns at n = 3 teachers. By the pre-registered rule, latent distillation counts as better (mean gain .113 > seed floor .074) and anchor strength makes no difference.
+
+**c. LF model on a new blood draw.** Change in per-cell r against the same unadapted model.
+- DANN: +.0025 / −.0015 for the two directions.
+- AdaBN (BatchNorm statistics re-estimated on 20k unlabelled images of the new draw): −.005 to −.011 on all 4 runs.
+
+**Says:**
+- Unsupervised distribution-level alignment (DANN, whitening, OT, mean shift, CORAL, AdaBN) gave no consistent gain on any of the three shifts. One exception: a mean shift on the latent-distillation student passed its noise floor on 4 PBC contrasts (+.053 vs .048) but lost .031 on MLL23.
+- The largest gains came from distilling the teacher's latent and from stronger class anchors, and even those are ns at 3 teachers.

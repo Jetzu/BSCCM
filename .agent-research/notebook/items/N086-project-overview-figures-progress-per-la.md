@@ -54,6 +54,24 @@ explicit rule: panel b = each item's PRIMARY multi-network result; all secondary
 record threshold .6916 and N084 .6911. No further data errors found in round 3; no round 4 (remaining fix narrowed a caption claim).
 
 
+### Extension (user 11-24): architecture + alignment figures for ML readers
+- fig6_architecture / fig7_architectures (make_architecture.py): best model diagram (N084 4-member ensemble; dims/params measured
+  from timm/bsccm code) and every encoder on the same protocol + ensemble build-up.
+- fig8_alignment_crossmodal / fig9_alignment_domain (make_alignment.py): all alignment experiments. A Claude subagent extracted 939
+  metric rows with file:line sources -> figures/overview/data/alignment_metrics.csv + alignment_notes.md.
+- Codex round 4 (results/N086-*/codex_round4/): all four figures broke; reproduced first-hand and fixed: targets per slide type and
+  aux-label availability (make_targets_v3.py:6-11, v5:18-19), illumination = 23 patterns not angles, fine-tune aug = +-4 px shift only;
+  fig7 b build-up now starts from the cf150 full-view member .6742 (was the v10 model .6730); DINOv3 rounding .651/.649; fig7 a caveat
+  (lr/resolution/pooling confounded). fig8: within-slide SigLIP R@10 .40/.38 vs cross-slide .02-.04 -> the failure is slide shift, NOT
+  missing shared information (caption claim reversed); b = complete pipelines (N054 transductive LF training, GW step on a paired
+  encoder); c one draw, transductive features, 6 targets at n=2048. fig9: full-precision PBC AUROCs (pbc_transfer_auroc.csv; DANN .3 =
+  .5546), per-teacher post-hoc alignment values from N056 tables/contrasts_all.csv (OT teacher 0 -.038), readout difference noted,
+  DANN deltas vs full-precision n013 baseline (+.0025 / -.0015), 'never helped' softened (hub + mean shift PBC4 +.053 > floor .048).
+- Inconsistencies found by the extraction agent: CONFIRMED N045 text averages two autofl truths (figures use v5c from v2_summary.csv);
+  CONFIRMED N014 baseline .5545 = 4-run mean vs seed-0 .5536 used for pairing. [unverified]: N020:19 / N021:17 in-domain DANN cost
+  (.48-.49 vs .54) may compare against N010 cross-slide runs instead of the matched N019 FOV run (.485); N056 vs N058 H_matched
+  seed 0 MLL23_15 differ (.632/.653/.634 vs .675/.642/.673); N058 title says 'fine contrasts' but scores MLL23_15 (12 fine + 3 lineage).
+
 ## Outcome
 DONE: five overview figures (fig1-fig5) after three Codex red-team rounds; every objection reproduced first-hand and fixed. Writing item, no GOAL effect.
 <!-- on close: bin/effect.sh N086 improved|flat|worse --value V | --void  (n/a --why infra|measurement) [--scale knob|module|paradigm] -->
@@ -62,7 +80,7 @@ DONE: five overview figures (fig1-fig5) after three Codex red-team rounds; every
 - /home/hpc/v181bb/v181bb10/BSCCM/figures/overview/{make_data.py,make_figures.py,data/,fig1..fig5.{png,svg,json}}
 - architecture figures (user 11-24, ML audience): make_architecture.py -> fig6_architecture (best model diagram, dims/params measured from code), fig7_architectures (all encoders on the same protocol + ensemble build-up); CAPTIONS.md per-panel descriptions
 - copy for the user: /home/hpc/v181bb/v181bb10/bsccm_deliverables/figures/overview/
-- red-team: results/N086-*/codex_round1/, codex_round2/, codex_round3/ (briefs + findings); codex/ = round-3 run files
+- red-team: results/N086-*/codex_round1/ .. codex_round4/ (briefs + findings)
 <!-- files in .agent-research/results/N086-slug/ + external absolute paths -->
 
 ## Next
