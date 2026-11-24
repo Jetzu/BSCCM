@@ -29,3 +29,8 @@
 - KNOWLEDGE: added K042 (N060-N063/N065 head/loss family + composite flat; numbers re-read from item text, n060_scores.csv present). Headline rewritten to 10 (K030 K041 K042 K028 K029 K039 K036 K033 K001 K007); K019/K023/K011/K025 moved to Topics, K036/K039/K041/K042 moved up out of Topics.
 - merged 0, superseded 0, verified 1 (K042, new), stale 0 (K006 stale already), promoted 1 rule (extra-member-of-saturated-ensemble bar); RULES now 5 lines, none dropped.
 - Not covered: N066 (open); N052/N059 are decision/review items with no own bullet (covered by K038/K041 context).
+
+## 2026-11-24 (through N086; N085 open and N086 open, both parallel-session work, left untouched)
+- fixed 1: INDEX had 76 rows -> N007-N022 moved to INDEX_ARCHIVE.md (60 remain). NOT fixed: check.sh flags 18 untracked files in figures/overview/ (N086 overview figures, scripts make_data.py/make_figures.py hard-code those paths and the N086 item is still open); left in place, they stop being "stray" once N086 commits them like figures/paper.
+- KNOWLEDGE: no [unverified] bullets (0 verified). Headline cut from 14 to 10 (K030 K028 K043 K041 K042 K046 K045 K033 K036 K001); K007/K029 moved to Topics "Data and labels", K039/K044 to "LF teacher". No merges, no supersessions, no new stale bullets, no K added.
+- promoted 0 rules (RULES stays 5 lines, none dropped). Parallel uncommitted edits to INDEX.md rows N085/N086 and IDEAS.md are included only where they sat in INDEX.md; IDEAS.md not staged.
