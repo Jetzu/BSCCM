@@ -32,7 +32,7 @@ d.arrow(reg, avg, route='h', ta=0.5, tb=0.5)
 d.arrow(avg, out, route='h')
 print(d.save(name='fig6_architecture', sub='overview', root=R,
              notes='Best pre-registered measured model (N084, GOAL .6911, below the .6916 improvement threshold); the GOAL record N053 = '
-                   'first three members (.6862; the Cytoland member re-trained with a fresh seed gives .6864). A post-hoc descriptive '
+                   'first three members (.6862; the Cytoland member re-trained with a fresh seed gives .6864). A descriptive secondary (registered in N065) '
                    '6-member combination (N065) reached .6929 and is not counted. Each member = image encoder + linear heads, trained '
                    'separately (10 epochs, AdamW lr 5e-4, batch 256, +-4 px random shift); test predictions are averaged. Input: one cell, '
                    '24 channels = 23 illumination patterns of an LED-array microscope (brightfield, darkfield rings at increasing angle, '

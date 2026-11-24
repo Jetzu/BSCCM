@@ -51,7 +51,7 @@ pfig.save(fig, name='fig8_alignment_crossmodal', sub='overview', root=R, source=
                 '10,015 cells; dashed = chance .00176 (b1); b0 chance .00100), N045 v2 (4,500 steps, seed 0). linear map = ridge regression '
                 'GS -> LF features fitted on the pairs; SOTAlign = SigLIP pairs + KL-OT on unpaired clinical GS and LF cells. Cross-slide '
                 'R@10 .01-.04, while the same SigLIP/SOTAlign models reach .40/.38 and .38/.37 within a slide (held-out fields of view; '
-                'chance .010-.016): the failure is the slide-to-slide shift, not missing shared information. b per-cell signal carried '
+                'chance .010-.016), but paired images share their field of view (~3 paired cells per field), so part of the within-slide score may be a field-of-view shortcut (N088 audit pending); the cross-slide value is the trustworthy one. b per-cell signal carried '
                 'through each complete recipe and compared with its measured value on the same held-out cells (autofluorescence; N045 v5c '
                 'and N054 truths correlate 1.000): N045 arms = embedding + ridge readout fitted on the source draw; N054 arms (seed 0) = GS '
                 'students trained to regress the LF model\'s outputs (output distillation, TT6c) or its latent (LF hub), and a two-space '

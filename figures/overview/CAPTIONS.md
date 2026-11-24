@@ -186,7 +186,7 @@ Students that read Giemsa-stained blood images are trained from the label-free m
 
 **Score.** GOAL .6911 (pre-registered, N084), just below the .6916 improvement threshold.
 - The GOAL record, N053, is the first three members (.6862; .6864 with the Cytoland member re-trained on a fresh seed).
-- A post-hoc 6-member combination reached .6929 and is not counted.
+- A 6-member combination registered in N065 as a descriptive secondary analysis reached .6929; it is not counted toward the GOAL.
 
 ## Figure 7: Architectures compared (`fig7_architectures`)
 
@@ -237,7 +237,7 @@ There are 15.7k registered cell pairs on 2 slides. The aim is to make LF-trained
 - SOTAlign (SigLIP plus optimal transport on unpaired clinical GS and LF cells): .028.
 - Across slides, every method stays at .01–.04.
 - Within a slide (held-out fields of view, chance .010–.016), the same SigLIP and SOTAlign models reach R@10 .38–.40.
-- So the shared embedding does carry cell identity. It breaks under the shift from one slide to another.
+- Caveat (literature review N088, check pending): paired images share their field of view (background, focus) and there are only ~3 paired cells per field, so part of the within-slide score may come from recognising the field rather than the cell. The cross-slide number is the trustworthy one.
 
 **b. Transferring a per-cell signal.** The signal is a scalar measured on both slides (autofluorescence); the score is r against its measured value on the held-out cells. Each bar is a complete pipeline.
 - Embedding plus ridge readout: .21–.40 (CCA .21, SigLIP .28, SOTAlign .33, Procrustes .40). The linear map gives .57.
@@ -252,7 +252,7 @@ There are 15.7k registered cell pairs on 2 slides. The aim is to make LF-trained
 - Sets of different cells carry no per-cell information (r ≈ 0).
 
 **Says:**
-- Joint embeddings learn cell identity within a slide but do not survive a new slide.
+- Joint embeddings retrieve cells within a slide (possibly helped by a field-of-view shortcut, check pending) but not on a new slide.
 - For carrying a per-cell signal from LF to GS, directly distilling the LF model into a GS network beat every embedding-plus-readout pipeline we ran.
 - Without paired cells, only small sets of the same cells give useful supervision.
 
