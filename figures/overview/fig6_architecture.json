@@ -1,0 +1,21 @@
+{
+ "png": "/home/hpc/v181bb/v181bb10/BSCCM/figures/overview/fig6_architecture.png",
+ "svg": "/home/hpc/v181bb/v181bb10/BSCCM/figures/overview/fig6_architecture.svg",
+ "created": "2026-11-24T12:45:33",
+ "command": [
+  "/home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python",
+  "figures/overview/make_architecture.py"
+ ],
+ "cwd": "/home/hpc/v181bb/v181bb10/BSCCM",
+ "source": "diagram",
+ "notes": "Best measured model (N084, GOAL .6911; registered best N053 = first three members, .6862). Each member is an image encoder + linear heads, trained separately (10 epochs, AdamW lr 5e-4, batch 256); test predictions of the members are averaged. Input: one cell, 24 channels (the same cell imaged under 23 LED illumination angles + a computed phase image), 128 x 128 px; 2x zoom = centre 64 px upsampled to 128. Self-supervised init: 2 augmented views, invariance + SIGReg Gaussian regulariser, 40 epochs (ResNet-50) / 60 (draw 1) and 120 (draw 0) epochs (ConvNeXt-S) on unlabelled cells of the training split only (held-out split excluded); the SSL stem has 48 inputs (24 channels + 24 channel-present masks). Cytoland = ConvNeXtV2-T encoder of a published microscopy image-to-image model (label-free -> fluorescence), 1-channel stem repeated to 24, learned per-channel gate, encoder lr x 0.1. Targets: 13 per-cell regression targets (8 single proteins, 4 pooled, 1 background signal), but each training cell has only the target of its own slide measured -> masked MSE over observed targets; 11 are scored (GOAL = Pearson r, train on one blood draw, test on the other, mean of both directions). Aux heads: 3- and 10-class cell-type cross-entropy (weight 0.5), not used at test time. ResNet-50 members were trained on a label variant (cf150), the others on v10 labels; all scored on v10.",
+ "width_in": 8.5,
+ "height_in": 3.1496,
+ "png_px": [
+  3840,
+  1422
+ ],
+ "significance": "two-sided; Holm-corrected over all comparisons of a panel (one family per panel); * <0.05 ** <0.01 *** <0.001 **** <0.0001",
+ "panels": [],
+ "matplotlib": "3.11.0"
+}

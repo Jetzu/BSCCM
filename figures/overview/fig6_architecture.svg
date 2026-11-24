@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="612pt" height="226.771654pt" viewBox="0 0 612 226.771654" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.0, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 226.771654 
+L 612 226.771654 
+L 612 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 17.574803 39.685039 
+L 112.818898 39.685039 
+Q 119.055118 39.685039 119.055118 45.92126 
+L 119.055118 192.188976 
+Q 119.055118 198.425197 112.818898 198.425197 
+L 17.574803 198.425197 
+Q 11.338583 198.425197 11.338583 192.188976 
+L 11.338583 45.92126 
+Q 11.338583 39.685039 17.574803 39.685039 
+z
+" clip-path="url(#p5c9ef01b18)" style="fill: #3a6c9e; stroke: #203b57; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 147.968504 17.007874 
+L 345.259843 17.007874 
+Q 351.496063 17.007874 351.496063 23.244094 
+L 351.496063 209.19685 
+Q 351.496063 215.433071 345.259843 215.433071 
+L 147.968504 215.433071 
+Q 141.732283 215.433071 141.732283 209.19685 
+L 141.732283 23.244094 
+Q 141.732283 17.007874 147.968504 17.007874 
+z
+" clip-path="url(#p5c9ef01b18)" style="fill: #3a6c9e; stroke: #203b57; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 377.574803 39.685039 
+L 478.488189 39.685039 
+Q 484.724409 39.685039 484.724409 45.92126 
+L 484.724409 192.188976 
+Q 484.724409 198.425197 478.488189 198.425197 
+L 377.574803 198.425197 
+Q 371.338583 198.425197 371.338583 192.188976 
+L 371.338583 45.92126 
+Q 371.338583 39.685039 377.574803 39.685039 
+z
+" clip-path="url(#p5c9ef01b18)" style="fill: #3a6c9e; stroke: #203b57; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 119.055118 119.055118 
+L 140.992023 116.313005 
+" clip-path="url(#p5c9ef01b18)" style="fill: none; stroke: #000000; stroke-width: 0.7; stroke-linejoin: miter"/>
+    <path d="M 137.605874 115.023044 
+L 140.992023 116.313005 
+L 138.027592 118.396789 
+z
+" clip-path="url(#p5c9ef01b18)" style="stroke: #000000; stroke-width: 0.7; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 351.496063 116.220472 
+L 370.600059 118.949615 
+" clip-path="url(#p5c9ef01b18)" style="fill: none; stroke: #000000; stroke-width: 0.7; stroke-linejoin: miter"/>
+    <path d="M 367.672637 116.814152 
+L 370.600059 118.949615 
+L 367.191804 120.179981 
+z
+" clip-path="url(#p5c9ef01b18)" style="stroke: #000000; stroke-width: 0.7; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 476.220472 87.874016 
+L 501.05056 98.90961 
+" clip-path="url(#p5c9ef01b18)" style="fill: none; stroke: #000000; stroke-width: 0.7; stroke-linejoin: miter"/>
+    <path d="M 498.816799 96.056488 
+L 501.05056 98.90961 
+L 497.435928 99.163447 
+z
+" clip-path="url(#p5c9ef01b18)" style="stroke: #000000; stroke-width: 0.7; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 541.417323 99.212598 
+L 552.009884 99.212598 
+" clip-path="url(#p5c9ef01b18)" style="fill: none; stroke: #000000; stroke-width: 0.7; stroke-linejoin: miter"/>
+    <path d="M 548.809884 97.512598 
+L 552.009884 99.212598 
+L 548.809884 100.912598 
+z
+" clip-path="url(#p5c9ef01b18)" style="stroke: #000000; stroke-width: 0.7; stroke-linejoin: miter"/>
+   </g>
+   <g id="panel-label">
+    <text style="font-weight: 700; font-size: 8px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start" x="4.251969" y="12.489635" transform="rotate(-0 4.251969 12.489635)">a</text>
+   </g>
+   <g id="patch_9">
+    <path d="M 23.811024 62.362205 
+L 106.582677 62.362205 
+Q 110.551181 62.362205 110.551181 66.330709 
+L 110.551181 115.086614 
+Q 110.551181 119.055118 106.582677 119.055118 
+L 23.811024 119.055118 
+Q 19.84252 119.055118 19.84252 115.086614 
+L 19.84252 66.330709 
+Q 19.84252 62.362205 23.811024 62.362205 
+z
+" clip-path="url(#p5c9ef01b18)" style="fill: #ffffff; stroke: #203b57; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 23.811024 136.062992 
+L 106.582677 136.062992 
+Q 110.551181 136.062992 110.551181 140.031496 
+L 110.551181 174.614173 
+Q 110.551181 178.582677 106.582677 178.582677 
+L 23.811024 178.582677 
+Q 19.84252 178.582677 19.84252 174.614173 
+L 19.84252 140.031496 
+Q 19.84252 136.062992 23.811024 136.062992 
+z
+" clip-path="url(#p5c9ef01b18)" style="fill: #ffffff; stroke: #203b57; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 154.204724 36.850394 
+L 339.023622 36.850394 
+Q 342.992126 36.850394 342.992126 40.818898 
+L 342.992126 69.732283 
+Q 342.992126 73.700787 339.023622 73.700787 
+L 154.204724 73.700787 
+Q 150.23622 73.700787 150.23622 69.732283 
+L 150.23622 40.818898 
+Q 150.23622 36.850394 154.204724 36.850394 
+z
+" clip-path="url(#p5c9ef01b18)" style="fill: #ffffff; stroke: #203b57; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 154.204724 80.787402 
+L 339.023622 80.787402 
+Q 342.992126 80.787402 342.992126 84.755906 
+L 342.992126 113.669291 
+Q 342.992126 117.637795 339.023622 117.637795 
+L 154.204724 117.637795 
+Q 150.23622 117.637795 150.23622 113.669291 
+L 150.23622 84.755906 
+Q 150.23622 80.787402 154.204724 80.787402 
+z
+" clip-path="url(#p5c9ef01b18)" style="fill: #ffffff; stroke: #203b57; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 154.204724 124.724409 
+L 339.023622 124.724409 
+Q 342.992126 124.724409 342.992126 128.692913 
+L 342.992126 157.606299 
+Q 342.992126 161.574803 339.023622 161.574803 
+L 154.204724 161.574803 
+Q 150.23622 161.574803 150.23622 157.606299 
+L 150.23622 128.692913 
+Q 150.23622 124.724409 154.204724 124.724409 
+z
+" clip-path="url(#p5c9ef01b18)" style="fill: #ffffff; stroke: #72481a; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 154.204724 168.661417 
+L 339.023622 168.661417 
+Q 342.992126 168.661417 342.992126 172.629921 
+L 342.992126 201.543307 
+Q 342.992126 205.511811 339.023622 205.511811 
+L 154.204724 205.511811 
+Q 150.23622 205.511811 150.23622 201.543307 
+L 150.23622 172.629921 
+Q 150.23622 168.661417 154.204724 168.661417 
+z
+" clip-path="url(#p5c9ef01b18)" style="fill: #ffffff; stroke: #203b57; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 383.811024 62.362205 
+L 472.251969 62.362205 
+Q 476.220472 62.362205 476.220472 66.330709 
+L 476.220472 109.417323 
+Q 476.220472 113.385827 472.251969 113.385827 
+L 383.811024 113.385827 
+Q 379.84252 113.385827 379.84252 109.417323 
+L 379.84252 66.330709 
+Q 379.84252 62.362205 383.811024 62.362205 
+z
+" clip-path="url(#p5c9ef01b18)" style="fill: #ffffff; stroke: #203b57; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 383.811024 130.393701 
+L 472.251969 130.393701 
+Q 476.220472 130.393701 476.220472 134.362205 
+L 476.220472 174.614173 
+Q 476.220472 178.582677 472.251969 178.582677 
+L 383.811024 178.582677 
+Q 379.84252 178.582677 379.84252 174.614173 
+L 379.84252 134.362205 
+Q 379.84252 130.393701 383.811024 130.393701 
+z
+" clip-path="url(#p5c9ef01b18)" style="fill: #ffffff; stroke: #203b57; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_17">
+    <path d="M 505.700787 79.370079 
+L 537.448819 79.370079 
+Q 541.417323 79.370079 541.417323 83.338583 
+L 541.417323 115.086614 
+Q 541.417323 119.055118 537.448819 119.055118 
+L 505.700787 119.055118 
+Q 501.732283 119.055118 501.732283 115.086614 
+L 501.732283 83.338583 
+Q 501.732283 79.370079 505.700787 79.370079 
+z
+" clip-path="url(#p5c9ef01b18)" style="fill: #3a6c9e; stroke: #203b57; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_18">
+    <path d="M 556.724409 62.362205 
+L 599.811024 62.362205 
+Q 603.779528 62.362205 603.779528 66.330709 
+L 603.779528 132.094488 
+Q 603.779528 136.062992 599.811024 136.062992 
+L 556.724409 136.062992 
+Q 552.755906 136.062992 552.755906 132.094488 
+L 552.755906 66.330709 
+Q 552.755906 62.362205 556.724409 62.362205 
+z
+" clip-path="url(#p5c9ef01b18)" style="fill: #3a6c9e; stroke: #203b57; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="diagram">
+    <text style="font-size: 7.5px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle" x="65.19685" y="51.340378" transform="rotate(-0 65.19685 51.340378)">Input: one cell</text>
+   </g>
+   <g id="diagram">
+    <text style="font-size: 7px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle" x="65.19685" y="81.227255" transform="rotate(-0 65.19685 81.227255)">Image stack</text>
+   </g>
+   <g id="diagram">
+    <text style="font-size: 6px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle" x="65.19685" y="89.143661" transform="rotate(-0 65.19685 89.143661)">[B, 24, 128, 128]</text>
+   </g>
+   <g id="diagram">
+    <text style="font-size: 6px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle" x="65.19685" y="96.608505" transform="rotate(-0 65.19685 96.608505)">23 illumination angles</text>
+   </g>
+   <g id="diagram">
+    <text style="font-size: 6px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle" x="65.19685" y="104.108505" transform="rotate(-0 65.19685 104.108505)">+ 1 phase image</text>
+   </g>
+   <g id="diagram">
+    <text style="font-size: 7px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle" x="65.19685" y="151.591428" transform="rotate(-0 65.19685 151.591428)">Augment</text>
+   </g>
+   <g id="diagram">
+    <text style="font-size: 6px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle" x="65.19685" y="159.707053" transform="rotate(-0 65.19685 159.707053)">shift, scale</text>
+   </g>
+   <g id="diagram">
+    <text style="font-size: 6px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle" x="65.19685" y="167.035491" transform="rotate(-0 65.19685 167.035491)">no rotation / flip</text>
+   </g>
+   <g id="diagram">
+    <text style="font-size: 7.5px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle" x="246.614173" y="28.664971" transform="rotate(-0 246.614173 28.664971)">4 ensemble members (trained separately)</text>
+   </g>
+   <g id="diagram">
+    <text style="font-size: 7px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle" x="246.614173" y="49.828012" transform="rotate(-0 246.614173 49.828012)">ResNet-50, full view</text>
+   </g>
+   <g id="diagram">
+    <text style="font-size: 6px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle" x="246.614173" y="57.488247" transform="rotate(-0 246.614173 57.488247)">self-supervised init</text>
+   </g>
+   <g id="diagram">
+    <text style="font-size: 6px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle" x="246.614173" y="65.132153" transform="rotate(-0 246.614173 65.132153)">23.6 M, 2048-d</text>
+   </g>
+   <g id="diagram">
+    <text style="font-size: 7px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle" x="246.614173" y="93.732755" transform="rotate(-0 246.614173 93.732755)">ResNet-50, 2x centre zoom</text>
+   </g>
+   <g id="diagram">
+    <text style="font-size: 6px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle" x="246.614173" y="101.425255" transform="rotate(-0 246.614173 101.425255)">self-supervised init</text>
+   </g>
+   <g id="diagram">
+    <text style="font-size: 6px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle" x="246.614173" y="109.069161" transform="rotate(-0 246.614173 109.069161)">23.6 M, 2048-d</text>
+   </g>
+   <g id="diagram">
+    <text style="font-size: 7px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle" x="246.614173" y="137.460856" transform="rotate(-0 246.614173 137.460856)">ConvNeXtV2-T (Cytoland)</text>
+   </g>
+   <g id="diagram">
+    <text style="font-size: 6px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle" x="246.614173" y="145.290544" transform="rotate(-0 246.614173 145.290544)">init: image-to-image model</text>
+   </g>
+   <g id="diagram">
+    <text style="font-size: 6px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle" x="246.614173" y="153.006169" transform="rotate(-0 246.614173 153.006169)">27.9 M, 768-d</text>
+   </g>
+   <g id="diagram">
+    <text style="font-size: 7px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle" x="246.614173" y="182.091849" transform="rotate(-0 246.614173 182.091849)">ConvNeXt-S</text>
+   </g>
+   <g id="diagram">
+    <text style="font-size: 6px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle" x="246.614173" y="189.29927" transform="rotate(-0 246.614173 189.29927)">self-supervised init</text>
+   </g>
+   <g id="diagram">
+    <text style="font-size: 6px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle" x="246.614173" y="196.943177" transform="rotate(-0 246.614173 196.943177)">49.5 M, 768-d</text>
+   </g>
+   <g id="diagram">
+    <text style="font-size: 7.5px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle" x="428.031496" y="51.342136" transform="rotate(-0 428.031496 51.342136)">Heads (each member)</text>
+   </g>
+   <g id="diagram">
+    <text style="font-size: 7px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle" x="428.031496" y="82.838234" transform="rotate(-0 428.031496 82.838234)">Linear</text>
+   </g>
+   <g id="diagram">
+    <text style="font-size: 6px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle" x="428.031496" y="90.023859" transform="rotate(-0 428.031496 90.023859)">13 regression targets</text>
+   </g>
+   <g id="diagram">
+    <text style="font-size: 6px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle" x="428.031496" y="98.146359" transform="rotate(-0 428.031496 98.146359)">masked MSE</text>
+   </g>
+   <g id="diagram">
+    <text style="font-size: 7px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle" x="428.031496" y="148.799439" transform="rotate(-0 428.031496 148.799439)">Linear (aux)</text>
+   </g>
+   <g id="diagram">
+    <text style="font-size: 6px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle" x="428.031496" y="157.259126" transform="rotate(-0 428.031496 157.259126)">3 / 10 classes</text>
+   </g>
+   <g id="diagram">
+    <text style="font-size: 6px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle" x="428.031496" y="164.165689" transform="rotate(-0 428.031496 164.165689)">CE x 0.5, train only</text>
+   </g>
+   <g id="diagram">
+    <text style="font-size: 7px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle" x="521.574803" y="97.926817" transform="rotate(-0 521.574803 97.926817)">Mean</text>
+   </g>
+   <g id="diagram">
+    <text style="font-size: 6px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle" x="521.574803" y="105.699786" transform="rotate(-0 521.574803 105.699786)">over 4</text>
+   </g>
+   <g id="diagram">
+    <text style="font-size: 7px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle" x="578.267717" y="89.817052" transform="rotate(-0 578.267717 89.817052)">Output</text>
+   </g>
+   <g id="diagram">
+    <text style="font-size: 6px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle" x="578.267717" y="98.208692" transform="rotate(-0 578.267717 98.208692)">11 scored</text>
+   </g>
+   <g id="diagram">
+    <text style="font-size: 6px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle" x="578.267717" y="105.055255" transform="rotate(-0 578.267717 105.055255)">targets</text>
+   </g>
+   <g id="diagram">
+    <text style="font-size: 6px; font-family: 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle" x="578.267717" y="112.638692" transform="rotate(-0 578.267717 112.638692)">per cell</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p5c9ef01b18">
+   <rect x="0" y="0" width="612" height="226.771654"/>
+  </clipPath>
+ </defs>
+</svg>

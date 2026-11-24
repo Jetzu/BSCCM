@@ -1,0 +1,241 @@
+{
+ "png": "/home/hpc/v181bb/v181bb10/BSCCM/figures/overview/fig7_architectures.png",
+ "svg": "/home/hpc/v181bb/v181bb10/BSCCM/figures/overview/fig7_architectures.svg",
+ "created": "2026-11-24T12:45:34",
+ "command": [
+  "/home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python",
+  "figures/overview/make_architecture.py"
+ ],
+ "cwd": "/home/hpc/v181bb/v181bb10/BSCCM",
+ "source": [
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N083-convnext-s-in-domain-ssl-encoder-for-mul/plot_goal.csv",
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N078-in-domain-ssl-scaling-sigreg-lf-pretrain/plot_goal.csv",
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N053-lf-encoder-swap-on-the-v10-goal-dinov3-v/plot_n053_single.csv",
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N053-lf-encoder-swap-on-the-v10-goal-dinov3-v/n053_scores.csv",
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N084-pre-registered-ensemble-confirmation-n05/n084_scores.csv"
+ ],
+ "notes": "Same task, data split, labels (v10) and fine-tuning recipe for every encoder (10 epochs, linear heads, masked MSE). a single encoders (rings = seeds; paired t vs ResNet-50 SSL where 2 seeds, Holm): blue = initialised by our own self-supervised pretraining on unlabelled cells of the training split; orange = initialised from a published microscopy image-to-image model (Cytoland, encoder lr x 0.1; full lr = x 1); red = ViTs pretrained on natural images (DINOv3) or blood-smear photos (DinoBloom), 24-channel patch embedding adapted, 128 -> 256/224 px. Params: ResNet-50 23.6 M, ConvNeXt-S 49.5 M, ConvNeXtV2-T 27.9 M, ViT-S 23.7 M, ViT-B 85.7-89.8 M. b ensembles = mean of member predictions (seed 0 members; ResNet-50 full + 2x-zoom pair from N048; third member chosen among 4 encoders = N053 record .6862, replicated .6864 with a fresh seed; 4th member ConvNeXt-S seed 1 pre-registered in N084 = .6911, below the .6916 improvement threshold). Seed noise sd .0027.",
+ "width_in": 8.5,
+ "height_in": 3.0709,
+ "png_px": [
+  3840,
+  1387
+ ],
+ "significance": "two-sided; Holm-corrected over all comparisons of a panel (one family per panel); * <0.05 ** <0.01 *** <0.001 **** <0.0001",
+ "panels": [
+  {
+   "panel": "a",
+   "kind": "bar",
+   "groups": [
+    "ResNet-50\nSSL",
+    "ResNet-50\nSSL 4x longer",
+    "ConvNeXt-S\nSSL",
+    "ConvNeXtV2-T\nCytoland",
+    "ConvNeXtV2-T\nCytoland, full lr",
+    "ViT-B\nDinoBloom",
+    "ViT-B\nDINOv3",
+    "ViT-S\nDINOv3"
+   ],
+   "colors": [
+    "#3A6C9E",
+    "#3A6C9E",
+    "#3A6C9E",
+    "#CF832F",
+    "#CF832F",
+    "#B94A58",
+    "#B94A58",
+    "#B94A58"
+   ],
+   "n": [
+    2,
+    1,
+    2,
+    2,
+    1,
+    1,
+    1,
+    1
+   ],
+   "mean": [
+    0.6706138554618835,
+    0.670725673692669,
+    0.6680738776419198,
+    0.666,
+    0.6464,
+    0.6552,
+    0.6515,
+    0.6495
+   ],
+   "sd": [
+    0.0033290338830258095,
+    null,
+    0.0016742712302866545,
+    0.0015556349186103902,
+    null,
+    null,
+    null,
+    null
+   ],
+   "median": [
+    0.6706138554618835,
+    0.670725673692669,
+    0.6680738776419198,
+    0.666,
+    0.6464,
+    0.6552,
+    0.6515,
+    0.6495
+   ],
+   "whisker": "sd",
+   "stats": [
+    {
+     "test": null,
+     "p": null,
+     "n_i": 1,
+     "n_j": 1,
+     "p_holm": null,
+     "stars": "",
+     "note": "test undefined (n < 2 or zero variance)",
+     "a": "ResNet-50\nSSL",
+     "b": "ResNet-50\nSSL 4x longer",
+     "reference": "ResNet-50\nSSL"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.2748238781295278,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 0.33788716257026014,
+     "stars": "ns",
+     "a": "ResNet-50\nSSL",
+     "b": "ConvNeXt-S\nSSL",
+     "reference": "ResNet-50\nSSL"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.16894358128513007,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 0.33788716257026014,
+     "stars": "ns",
+     "a": "ResNet-50\nSSL",
+     "b": "ConvNeXtV2-T\nCytoland",
+     "reference": "ResNet-50\nSSL"
+    },
+    {
+     "test": null,
+     "p": null,
+     "n_i": 1,
+     "n_j": 1,
+     "p_holm": null,
+     "stars": "",
+     "note": "test undefined (n < 2 or zero variance)",
+     "a": "ResNet-50\nSSL",
+     "b": "ConvNeXtV2-T\nCytoland, full lr",
+     "reference": "ResNet-50\nSSL"
+    },
+    {
+     "test": null,
+     "p": null,
+     "n_i": 1,
+     "n_j": 1,
+     "p_holm": null,
+     "stars": "",
+     "note": "test undefined (n < 2 or zero variance)",
+     "a": "ResNet-50\nSSL",
+     "b": "ViT-B\nDinoBloom",
+     "reference": "ResNet-50\nSSL"
+    },
+    {
+     "test": null,
+     "p": null,
+     "n_i": 1,
+     "n_j": 1,
+     "p_holm": null,
+     "stars": "",
+     "note": "test undefined (n < 2 or zero variance)",
+     "a": "ResNet-50\nSSL",
+     "b": "ViT-B\nDINOv3",
+     "reference": "ResNet-50\nSSL"
+    },
+    {
+     "test": null,
+     "p": null,
+     "n_i": 1,
+     "n_j": 1,
+     "p_holm": null,
+     "stars": "",
+     "note": "test undefined (n < 2 or zero variance)",
+     "a": "ResNet-50\nSSL",
+     "b": "ViT-S\nDINOv3",
+     "reference": "ResNet-50\nSSL"
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "GOAL (mean Pearson r)"
+  },
+  {
+   "panel": "b",
+   "kind": "bar",
+   "groups": [
+    "ResNet-50\nalone",
+    "ResNet-50\nfull + zoom",
+    "+ ViT-S\nDINOv3",
+    "+ ViT-B\nDINOv3",
+    "+ ViT-B\nDinoBloom",
+    "+ ConvNeXtV2-T\nCytoland",
+    "+ Cytoland\n+ ConvNeXt-S"
+   ],
+   "colors": [
+    "#767E86",
+    "#3A6C9E",
+    "#B94A58",
+    "#B94A58",
+    "#B94A58",
+    "#CF832F",
+    "#3A6C9E"
+   ],
+   "n": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "mean": [
+    0.6729678378953708,
+    0.6804190377388956,
+    0.68029069431584,
+    0.6811484150902835,
+    0.6815713862114214,
+    0.6861838259839266,
+    0.6911
+   ],
+   "sd": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "median": [
+    0.6729678378953708,
+    0.6804190377388956,
+    0.68029069431584,
+    0.6811484150902835,
+    0.6815713862114214,
+    0.6861838259839266,
+    0.6911
+   ],
+   "whisker": "sd",
+   "stats": [],
+   "no_stats_reason": "one value per ensemble (fixed member seeds); noise sd .0027 from seed pairs",
+   "ylabel": "GOAL (mean Pearson r)"
+  }
+ ],
+ "matplotlib": "3.11.0"
+}

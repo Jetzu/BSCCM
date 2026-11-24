@@ -153,3 +153,57 @@ Students that read Giemsa-stained blood images are trained from the label-free m
 - Unpaired Gromov–Wasserstein alignment .32.
 
 **Says:** distilling a shared latent representation transfers better to clinical Giemsa smears than distilling marker outputs. The two-space design does as well as the hub. Alignment without paired cells fails.
+
+---
+
+## Figure 6: Architecture of the best model (`fig6_architecture`), written for ML readers
+
+**Task.** This is per-cell multi-output regression. The input is one cell imaged with a programmable LED-array microscope: 23 images of the same cell under different illumination angles plus one computed phase image, stacked into a 24 × 128 × 128 tensor. The output is the cell's level of 13 measured quantities (8 single proteins, 4 pooled protein panels and 1 background signal); 11 of them are scored.
+
+**Main difficulty: sparse labels.** Each cell has only one target measured: the protein its microscope slide was stained for, plus the background signal. Training therefore uses a masked MSE over the observed targets only.
+
+**Evaluation.** Train on one blood draw, test on the other (a domain shift). Score = Pearson r per target, averaged over the 11 targets and both directions.
+
+**Model.** The best model is an ensemble of 4 members trained separately. Each member is an image encoder → global pooling → linear heads. Test predictions are averaged.
+1. ResNet-50 (23.6 M parameters, 2048-d features), full 128 px view.
+2. The same ResNet-50 on a 2× centre zoom (central 64 px upsampled to 128).
+3. ConvNeXtV2-T (27.9 M, 768-d), initialised from the encoder of a published microscopy image-to-image model (Cytoland, which predicts fluorescence images from label-free images). Its single-channel stem is repeated to 24 channels, a learned per-channel gain is added, and the encoder is fine-tuned at 0.1× the learning rate.
+4. ConvNeXt-S (49.5 M, 768-d).
+
+**Self-supervised init (members 1, 2, 4).** Pretraining on all unlabelled cells of the training split only (the test split is excluded): 2 augmented views, an invariance loss plus the SIGReg isotropic-Gaussian regulariser, 40 epochs (ConvNeXt-S 60–120). The pretraining stem takes 48 inputs: 24 channels plus 24 binary channel-present masks, so it can handle random channel dropout.
+
+**Heads.** A linear regression head (13 outputs, masked MSE) and auxiliary linear 3- and 10-class cell-type heads (cross-entropy, weight 0.5, training only). Fine-tuning: 10 epochs, AdamW, lr 5e-4, batch 256, shift/scale augmentation. There are no rotations or flips, because the illumination channels are direction-dependent.
+
+**Score.** GOAL .6911. The registered best, N053, is the first three members (.6862, replicated .6864).
+
+## Figure 7: Architectures compared (`fig7_architectures`)
+
+Every encoder was trained with the same task, data split, labels and fine-tuning recipe.
+
+**a. Single encoders.** Rings are seeds; paired t-tests against ResNet-50 SSL use the arms with 2 seeds.
+- **Blue: our own self-supervised init.**
+  - ResNet-50: .671.
+  - ResNet-50 with 4× longer pretraining: .671.
+  - ConvNeXt-S: .668 (ns).
+- **Orange: published microscopy image-to-image encoder (Cytoland ConvNeXtV2-T).**
+  - .666 (ns).
+  - .646 when fine-tuned at the full learning rate, which destroys the pretrained features.
+- **Red: Vision Transformers pretrained on other image domains.** The patch embedding is adapted to 24 channels and the input upsampled to 224–256 px.
+  - DinoBloom ViT-B (blood-smear photos): .655.
+  - DINOv3 ViT-B (natural images): .652.
+  - DINOv3 ViT-S: .650.
+
+**b. Ensembles** (mean of member predictions):
+- ResNet-50 alone .673.
+- Full view + 2× zoom pair .680.
+- Adding a third member:
+  - a ViT: .680–.682, almost no gain;
+  - Cytoland: .686, the registered record.
+- Adding ConvNeXt-S as a fourth member: .691.
+
+Seed noise SD is .0027.
+
+**Says:**
+- Domain-specific pretraining matters more than model size. Self-supervised pretraining on our own unlabelled cells beats ImageNet-style and blood-smear ViTs (up to 3.8× more parameters) by .015–.021.
+- Within the in-domain-pretrained CNNs, architecture hardly matters (ResNet-50 ≈ ConvNeXt-S).
+- Ensembles gain most from members that make different errors: a different pretraining source (Cytoland) or a different architecture (ConvNeXt-S). More ResNet-50 variants or generic ViTs add little.

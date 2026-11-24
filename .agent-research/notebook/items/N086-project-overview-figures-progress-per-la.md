@@ -60,6 +60,7 @@ DONE: five overview figures (fig1-fig5) after three Codex red-team rounds; every
 
 ## Outputs
 - /home/hpc/v181bb/v181bb10/BSCCM/figures/overview/{make_data.py,make_figures.py,data/,fig1..fig5.{png,svg,json}}
+- architecture figures (user 11-24, ML audience): make_architecture.py -> fig6_architecture (best model diagram, dims/params measured from code), fig7_architectures (all encoders on the same protocol + ensemble build-up); CAPTIONS.md per-panel descriptions
 - copy for the user: /home/hpc/v181bb/v181bb10/bsccm_deliverables/figures/overview/
 - red-team: results/N086-*/codex_round1/, codex_round2/, codex_round3/ (briefs + findings); codex/ = round-3 run files
 <!-- files in .agent-research/results/N086-slug/ + external absolute paths -->
