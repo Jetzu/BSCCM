@@ -15,6 +15,19 @@ both directions vs control n051_v10_base seed 0. PRIMARY (pre-registered): GOAL 
 .02 with GOAL >= -.0027; MM3 reported. ~2 GPU-h.
 
 ## Changes
+Codex build (codex/, 13 CPU tests, flag-off byte-equal vs the live harness 4cf89b09; red-team re-ran the N074 suite 7/7).
+Claude red-team (agents_redteam.md): BLOCKER shared BN running statistics across sources (README states BN params AND running stats are
+shared -> eval normalises with a ~.47/.53 BSCCM/IFC mix; red-team CPU repro: BSCCM eval features cosine .88 vs BSCCM-only stats) --
+confirmed by the design statement; MAJOR donor naming (packer runs sample1_early/late; exact-name exclusion fails or leaks) -- confirmed
+(my packer); MAJOR label-scale mismatch on shared rows -- PARTLY reproduced: v10 SDs CD14 .98/1.00, CD19 .36/.52, CD3 1.00/1.01,
+CD45 .98/1.00, CD56 .92/.84 (only CD19 mismatched; red-team's .26/.20/.49 not reproduced) -> fix kept as data-driven init; minors:
+packer stats on all donors, shared clip, global RNG, enc-lr group, adabn, augmentation loop.
+Fix round: Codex (codex_fix/brief.md): per-source BN buffers, donor-prefix mapping, data-driven affine init + no weight decay, separate
+IFC RNG, enc-lr group, reject adabn, vectorised D4, per-source grad-norm logging, packer --stat-donors.
+Fix round delivered (codex_fix/: 22/22 CPU tests). Claude verification: read the BN buffer swap (reference swap around the IFC forward,
+restored on exceptions, affine weights shared); re-ran all suites locally: test_fix 9/9 (incl. ext_w=0 -> BSCCM BN buffers, RNG, rows and
+eval predictions identical to the IFC-skipped control over 3 optimizer steps), test_ifc 6/6, N074 flag-off regression 7/7. Integrated
+(diffs applied, cmp-identical to staged copies). Pack rebuilt with --stat-donors sample0,sample1 (test donor sample2) -- job in jobs.txt.
 
 ## Evidence
 <!-- exp: each run = job id, config, seed, output dir · results vs baseline -->

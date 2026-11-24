@@ -1,7 +1,7 @@
 # N082 · Step-matched learning curve: 50% training labels at 10 vs 20 epochs vs 100% at 10 (separates label quantity from optimisation steps; K033 confound)
 
-type: exp · date: 2026-11-23 · status: running
-goal_effect: pending · scale: knob
+type: exp · date: 2026-11-23 · status: done
+goal_effect: n/a · scale: knob · value: - · why: measurement
 
 ## Goal
 Review N079 red-team (reproduced): the K033 learning curve doubled gradient steps together with labels (train_lf.py steps = epochs x
@@ -19,7 +19,17 @@ Expected (K033): D_data + D_steps ~ .015-.02.
 ## Changes
 
 ## Evidence
-<!-- exp: each run = job id, config, seed, output dir · results vs baseline -->
+Jobs 1430385-388 (exit 0). Scored with scripts/score_goal_arms.py (v10), seed 0 vs control n051_v10_base seed 0 (.6730).
+| arm | b10 | b01 | GOAL |
+| 100 % @ 10 ep (control) | .6867 | .6592 | .6730 |
+| 50 % @ 20 ep (step-matched) | .6736 | .6414 | .6575 |
+| 50 % @ 10 ep | .6541 | .6380 | .6460 |
+D_data = .0155 (labels at equal steps), D_steps = .0115 -> PRE-REGISTERED reading: LABEL-LIMITED (D_data >= .010 and > D_steps), with
+a real optimisation component. Per target: CD123 is step-sensitive (.391 @10 -> .530 @20 vs .543 full); CD19 is label-sensitive
+(.312 step-matched vs .344 full); CD56/HLA-DR/grp:CD16 label-sensitive (.480/.460/.777 vs .506/.479/.801).
+-> one doubling of labelled cells is worth ~+.015 GOAL at fixed steps: new labelled cells (external data, N081) are the lever; longer
+training alone is not (N073 20 ep at full data was flat/worse).
+Plot: plots/goal-r-n082_2026-11-23_1744.png
 
 ## Outcome
 <!-- on close: bin/effect.sh N082 improved|flat|worse --value V | --void  (n/a --why infra|measurement) [--scale knob|module|paradigm] -->

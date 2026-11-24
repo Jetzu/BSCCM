@@ -8,10 +8,10 @@ Label-free input = BF1 (ch0, 420-480 nm), BF2 (ch8, 570-595 nm), SSC (ch5, side-
   BF: log(img / border median) (cf. BSCCM flat-field log ratio); SSC: asinh((img - border median) / max(1.4826 MAD_border, 1)).
   Resized by --scale (default 1.75 = BSCCM/IFC median brightfield cell diameter, same method on both: 73.2 px vs 42.0 px (N080 bfsize); IFC 0.1 um^2/px) and centre-padded/cropped
   to 128 x 128 with 0 (= background after normalisation).
-Labels: asinh(I / c_m), c_m = max(1.4826 MAD of the marker over all cells, 1), then z-scored per sample (donor run). Raw I kept.
+Labels: asinh(I / c_m), c_m = max(1.4826 MAD of the marker over --stat-donors cells, 1), then z-scored per sample (donor run). Raw I kept.
 Outputs (2 files + json, inode-light): <out>/lf.npy float16 (N, 3, 128, 128); <out>/labels.npz (Y float32 (N, 9), I_raw, names, sample,
 part, object_number, area_um2, scale, chan_scale = per-channel std of the cell region for input scaling)."""
-import argparse, glob, os, struct, sys, json
+import argparse, glob, os, struct, sys, json, re
 import numpy as np
 
 MARKERS = ['CD15', 'Siglec8', 'CD14', 'CD19', 'CD3', 'CD45', 'CD4', 'CD56', 'CD8']
@@ -65,11 +65,45 @@ def lf_image(stack, scale):
     return res.numpy().astype(np.float16)
 
 
+def donor_name(run):
+    match = re.match(r'^sample\d+', str(run))
+    if match is None: raise ValueError(f'invalid IFC run name: {run!r}')
+    return match.group(0)
+
+
+def statistic_rows(sample, stat_donors):
+    donors = np.array([donor_name(run) for run in sample])
+    requested = sorted({d.strip() for d in stat_donors.split(',') if d.strip()})
+    if not requested or any(re.fullmatch(r'sample\d+', d) is None for d in requested):
+        raise ValueError('--stat-donors must contain DONOR names, e.g. sample0,sample1')
+    if set(requested) - set(donors): raise ValueError('--stat-donors contains donors missing from the pack')
+    rows = np.flatnonzero(np.isin(donors, requested))
+    if not len(rows): raise ValueError('--stat-donors has no cells')
+    return requested, rows
+
+
+def fit_statistics(lf, intensity, stat_rows):
+    # Only eligible donors enter either fit, including the deterministic input subsample.
+    rs = np.random.default_rng(0).choice(stat_rows, min(len(stat_rows), 5000), replace=False)
+    cen = np.asarray(lf[np.sort(rs), :, 32:96, 32:96], dtype=np.float32)
+    scales = []
+    for channel in range(3):
+        values = cen[:, channel][cen[:, channel] != 0]
+        sd = float(np.std(values)) if len(values) else 0.0
+        if not np.isfinite(sd): raise ValueError('nonfinite channel statistic')
+        scales.append(max(sd, 1e-3))
+    train_i = intensity[stat_rows]
+    cofactor = np.maximum(1.4826 * np.median(np.abs(train_i - np.median(train_i, 0)), 0), 1.0)
+    if not np.isfinite(cofactor).all(): raise ValueError('nonfinite marker cofactor')
+    return np.array(scales, np.float32), cofactor, np.sort(rs)
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--src', default='/hnvme/workspace/v181bb10-bsccm/external/sbiad452')
     ap.add_argument('--out', default='/hnvme/workspace/v181bb10-bsccm/external/sbiad452_pack')
     ap.add_argument('--scale', type=float, default=1.75)
+    ap.add_argument('--stat-donors', default='sample0,sample1', help='DONOR names used to fit cofactors and chan_scale')
     ap.add_argument('--max-cells', type=int, default=0, help='smoke: cells per part')
     ap.add_argument('--allow-partial', action='store_true', help='smoke only: accept fewer than 11 parts')
     a = ap.parse_args()
@@ -88,24 +122,29 @@ def main():
         rr = [row[int(obj[i])] for i in keep]
         Is.append(np.stack([data[rr, col(names, 'intensitymc' + FCS_KEY[m])] for m in MARKERS], 1)); areas.append(data[rr, col(names, 'aream01')])
         print(f'{stem}: {len(keep)}/{n} cells matched to IDEAS rows', flush=True)
-    N = sum(len(m[4]) for m in meta); os.makedirs(a.out, exist_ok=True)
+    N = sum(len(m[4]) for m in meta)
+    sample = np.concatenate([[m[1]] * len(m[4]) for m in meta])
+    stat_donors, stat_rows = statistic_rows(sample, a.stat_donors)
+    os.makedirs(a.out, exist_ok=True)
     lf = np.lib.format.open_memmap(f'{a.out}/lf.npy.part', mode='w+', dtype=np.float16, shape=(N, 3, 128, 128)); k = 0
-    for pi, sample, stem, zp, keep, objs, shps in meta:
+    for pi, run, stem, zp, keep, objs, shps in meta:
         g = zarr.open(zarr.storage.ZipStore(zp, mode='r'), mode='r')
         for i, s in zip(keep, shps):
             lf[k] = lf_image(np.asarray(g[i]).reshape(s), a.scale); k += 1
         lf.flush(); print(f'packed {stem} -> {k}/{N}', flush=True)
-    rs = np.random.default_rng(0).choice(N, min(N, 5000), replace=False)   # per-channel robust scale of the cell region (harness divides by it)
-    cen = np.asarray(lf[np.sort(rs), :, 32:96, 32:96], dtype=np.float32); chan_scale = np.array([max(float(np.std(cen[:, c][cen[:, c] != 0])), 1e-3) for c in range(3)], np.float32)
+    I = np.concatenate(Is).astype(np.float32)
+    chan_scale, c, scale_rows = fit_statistics(lf, I, stat_rows)
     del lf; os.replace(f'{a.out}/lf.npy.part', f'{a.out}/lf.npy')
-    I = np.concatenate(Is).astype(np.float32); c = np.maximum(1.4826 * np.median(np.abs(I - np.median(I, 0)), 0), 1.0)
-    Yt = np.arcsinh(I / c); sample = np.concatenate([[m[1]] * len(m[4]) for m in meta]); Y = np.zeros_like(Yt)
+    Yt = np.arcsinh(I / c); Y = np.zeros_like(Yt)
     for sv in np.unique(sample):
         s = sample == sv; Y[s] = (Yt[s] - Yt[s].mean(0)) / (Yt[s].std(0) + 1e-6)
     np.savez(f'{a.out}/labels.npz', Y=Y, I_raw=I, cofactor=c, names=np.array(MARKERS), sample=sample,
              part=np.concatenate([[m[2]] * len(m[4]) for m in meta]), object_number=np.concatenate([m[5] for m in meta]),
              area_um2=np.concatenate(areas).astype(np.float32), scale=a.scale, chan_scale=chan_scale)
     json.dump(dict(N=int(N), scale=a.scale, chan_scale=chan_scale.tolist(), cofactor=dict(zip(MARKERS, c.tolist())), parts=[m[2] for m in meta],
+                   stat_donors=stat_donors, n_stat_cells=len(stat_rows), n_chan_scale_cells=len(scale_rows),
+                   stat_runs=sorted(set(sample[stat_rows])),
+                   label_standardization='per run; cofactors fitted on stat_donors only',
                    lf_channels=['BF1 log-ratio', 'BF2 log-ratio', 'SSC asinh'], max_cells=a.max_cells), open(f'{a.out}/pack.json', 'w'), indent=1)
     print('done', N, flush=True)
 

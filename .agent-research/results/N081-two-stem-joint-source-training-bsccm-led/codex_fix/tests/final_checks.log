@@ -1,0 +1,5 @@
+patching file scripts/train_lf.py
+patching file scripts/pack_sbiad452.py
+Both diffs reproduce staged copies; Python and README bash syntax valid.
+BSCCM prep/fwd/evaluate AST-identical; live baseline SHA256: 4cf89b093fc7dd44aa13ce6a2a82f743eeec2bea03c0b536b298c755362ce8c8
+22/22 CPU tests pass; source/artifact hashes and real v10 affine records written to tests/provenance.json.

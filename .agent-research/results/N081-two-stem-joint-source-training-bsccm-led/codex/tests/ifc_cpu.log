@@ -1,0 +1,220 @@
+test_a_split_normalization_mask_and_stem (__main__.IFCTests.test_a_split_normalization_mask_and_stem) ... train 4 eval 4 protocol b1to0
+N081 IFC train 16 donors ['sample0', 'sample1']; test 8 donor sample2
+init from SSL /tmp/n081_codex/ifc/ssl48.pt
+ok
+test_b_shared_gradients_and_shared_rows (__main__.IFCTests.test_b_shared_gradients_and_shared_rows) ... wandb off: import of wandb halted; None in sys.modules
+IFC split, per-read boundary, chan_scale, masked NaNs, stem initialization and cycling checked
+train 4 eval 4 protocol b1to0
+N081 IFC train 16 donors ['sample0', 'sample1']; test 8 donor sample2
+init from SSL /hnvme/workspace/v181bb10-bsccm/runs/n031_ssl_aug_ex0/encoder_final.pt
+ok
+test_c_augmentation_and_masked_loss (__main__.IFCTests.test_c_augmentation_and_masked_loss) ... wandb off: import of wandb halted; None in sys.modules
+BSCCM and IFC independently give nonzero gradients to the same layer1; IFC touches exactly five original reg rows
+train 4 eval 4 protocol b1to0
+N081 IFC train 16 donors ['sample0', 'sample1']; test 8 donor sample2
+init from SSL /tmp/n081_codex/ifc/ssl48.pt
+ok
+test_d_two_step_full_run_resume_and_eval (__main__.IFCTests.test_d_two_step_full_run_resume_and_eval) ... wandb off: import of wandb halted; None in sys.modules
+train 4 eval 4 protocol b1to0
+N081 IFC train 16 donors ['sample0', 'sample1']; test 8 donor sample2
+init from SSL /tmp/n081_codex/ifc/ssl48.pt
+/tmp/n074_codex/venv/lib/python3.13/site-packages/numpy/_core/fromnumeric.py:3862: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/tmp/n074_codex/venv/lib/python3.13/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+wandb off: import of wandb halted; None in sys.modules
+{"cls3_acc": 0.25, "r_mean_markers": NaN, "r_mean_markers_valid": NaN, "n_markers_valid": 0, "epoch": 1, "train_loss": 3.2042089700698853, "secs": 0.7527389526367188, "ifc": {"n_eval": 8, "test_donor": "sample2", "n/CD15": 8, "mse/CD15": 0.8715549111366272, "r/CD15": -0.07922143489122391, "n/Siglec8": 8, "mse/Siglec8": 1.4348669052124023, "r/Siglec8": -0.2621481716632843, "n/CD14": 8, "mse/CD14": 0.8335272073745728, "r/CD14": -0.4146721363067627, "n/CD19": 8, "mse/CD19": 0.37289103865623474, "r/CD19": 0.3374560475349426, "n/CD3": 8, "mse/CD3": 0.9022752046585083, "r/CD3": 0.09615403413772583, "n/CD45": 8, "mse/CD45": 0.7113848924636841, "r/CD45": 0.020318137481808662, "n/CD4": 8, "mse/CD4": 1.2760425806045532, "r/CD4": 0.27007389068603516, "n/CD56": 8, "mse/CD56": 0.6314157247543335, "r/CD56": 0.8975121378898621, "n/CD8": 8, "mse/CD8": 1.1239993572235107, "r/CD8": -0.4431953728199005, "r_mean": 0.046919681338800326, "r_overlap": 0.1873536441475153, "masked_mse": 0.9064397580093808}, "ifc_train_loss": 1.2426153421401978}
+/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N081-two-stem-joint-source-training-bsccm-led/codex/train_lf.py:637: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/n081_codex/ifc/b1to0/result.json' mode='w' encoding='UTF-8'>
+  json.dump({'args': _run_args(), 'final': log[-1], 'log': log, 'n_train': len(tr), 'n_eval': len(ev), 'targets': names, **_extra}, open(a.out + '/result.json', 'w'), indent=1, default=float)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+train 4 eval 4 protocol b1to0
+N081 IFC train 16 donors ['sample0', 'sample1']; test 8 donor sample2
+init from SSL /tmp/n081_codex/ifc/ssl48.pt
+wandb off: import of wandb halted; None in sys.modules
+resumed 1
+/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N081-two-stem-joint-source-training-bsccm-led/codex/train_lf.py:637: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/n081_codex/ifc/b1to0/result.json' mode='w' encoding='UTF-8'>
+  json.dump({'args': _run_args(), 'final': log[-1], 'log': log, 'n_train': len(tr), 'n_eval': len(ev), 'targets': names, **_extra}, open(a.out + '/result.json', 'w'), indent=1, default=float)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+train 4 eval 4 protocol b1to0
+N081 IFC train 16 donors ['sample0', 'sample2']; test 8 donor sample1
+init from SSL /tmp/n081_codex/ifc/ssl48.pt
+wandb off: import of wandb halted; None in sys.modules
+b1to0: two optimizer steps, donor-2 eval, unchanged BSCCM eval isolation, strict resume and split-change rejection
+train 4 eval 4 protocol b0to1
+N081 IFC train 16 donors ['sample0', 'sample1']; test 8 donor sample2
+init from SSL /tmp/n081_codex/ifc/ssl48.pt
+wandb off: import of wandb halted; None in sys.modules
+{"cls3_acc": 0.25, "r_mean_markers": NaN, "r_mean_markers_valid": NaN, "n_markers_valid": 0, "epoch": 1, "train_loss": 3.4757992029190063, "secs": 0.6925792694091797, "ifc": {"n_eval": 8, "test_donor": "sample2", "n/CD15": 8, "mse/CD15": 0.8654370307922363, "r/CD15": -0.06279705464839935, "n/Siglec8": 8, "mse/Siglec8": 1.427921175956726, "r/Siglec8": -0.22933512926101685, "n/CD14": 8, "mse/CD14": 0.8003627061843872, "r/CD14": -0.3033985495567322, "n/CD19": 8, "mse/CD19": 0.376747190952301, "r/CD19": -0.20597419142723083, "n/CD3": 8, "mse/CD3": 0.9035402536392212, "r/CD3": -0.30377042293548584, "n/CD45": 8, "mse/CD45": 0.7121568918228149, "r/CD45": 0.011378897354006767, "n/CD4": 8, "mse/CD4": 1.2803406715393066, "r/CD4": 0.0805291011929512, "n/CD56": 8, "mse/CD56": 0.6615008115768433, "r/CD56": 0.5093801021575928, "n/CD8": 8, "mse/CD8": 1.1208791732788086, "r/CD8": -0.7671817541122437, "r_mean": -0.14124100013739532, "r_overlap": -0.058476832881569865, "masked_mse": 0.9054317673047384}, "ifc_train_loss": 1.2433245182037354}
+/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N081-two-stem-joint-source-training-bsccm-led/codex/train_lf.py:637: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/n081_codex/ifc/b0to1/result.json' mode='w' encoding='UTF-8'>
+  json.dump({'args': _run_args(), 'final': log[-1], 'log': log, 'n_train': len(tr), 'n_eval': len(ev), 'targets': names, **_extra}, open(a.out + '/result.json', 'w'), indent=1, default=float)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+train 4 eval 4 protocol b0to1
+N081 IFC train 16 donors ['sample0', 'sample1']; test 8 donor sample2
+init from SSL /tmp/n081_codex/ifc/ssl48.pt
+wandb off: import of wandb halted; None in sys.modules
+resumed 1
+/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N081-two-stem-joint-source-training-bsccm-led/codex/train_lf.py:637: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/n081_codex/ifc/b0to1/result.json' mode='w' encoding='UTF-8'>
+  json.dump({'args': _run_args(), 'final': log[-1], 'log': log, 'n_train': len(tr), 'n_eval': len(ev), 'targets': names, **_extra}, open(a.out + '/result.json', 'w'), indent=1, default=float)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+train 4 eval 4 protocol b0to1
+N081 IFC train 16 donors ['sample0', 'sample2']; test 8 donor sample1
+init from SSL /tmp/n081_codex/ifc/ssl48.pt
+ok
+test_e_validation_reordered_markers_and_off_options (__main__.IFCTests.test_e_validation_reordered_markers_and_off_options) ... usage: train_lf.py [-h] --out OUT [--protocol PROTOCOL] [--channels CHANNELS]
+                   [--phase PHASE] [--arch ARCH] [--epochs EPOCHS] [--bs BS]
+                   [--lr LR] [--workers WORKERS] [--max-train MAX_TRAIN]
+                   [--seed SEED] [--w-cls W_CLS] [--include-gs INCLUDE_GS]
+                   [--init-ssl INIT_SSL] [--tail-weight TAIL_WEIGHT]
+                   [--focal-c10 FOCAL_C10] [--targets TARGETS] [--dann DANN]
+                   [--stem {std,nomaxpool}] [--zoom ZOOM]
+                   [--phys-aug PHYS_AUG] [--consist CONSIST] [--pseudo PSEUDO]
+                   [--pseudo-w PSEUDO_W] [--dump-train-preds DUMP_TRAIN_PREDS]
+                   [--lowpass LOWPASS] [--dual-zoom DUAL_ZOOM] [--adabn ADABN]
+                   [--enc-lr-mult ENC_LR_MULT] [--drop-path DROP_PATH]
+                   [--head {mse,hlgauss,twopart}] [--hl-mse HL_MSE]
+                   [--gate-w GATE_W] [--pos-q POS_Q] [--fov-re FOV_RE]
+                   [--re-shrink RE_SHRINK] [--pair-loss PAIR_LOSS]
+                   [--fov-batch FOV_BATCH] [--w-autofl W_AUTOFL]
+                   [--pearson-w PEARSON_W] [--diag-aug DIAG_AUG]
+                   [--diag-tta DIAG_TTA] [--drop-led DROP_LED]
+                   [--censor-loss CENSOR_LOSS] [--dense-aux DENSE_AUX]
+                   [--dense-w DENSE_W] [--dense-width DENSE_WIDTH]
+                   [--aux-label AUX_LABEL] [--aux-w AUX_W]
+                   [--init-full INIT_FULL] [--train-panel TRAIN_PANEL]
+                   [--ext-ifc EXT_IFC] [--ext-w EXT_W]
+                   [--ext-train-donors EXT_TRAIN_DONORS]
+                   [--ext-test-donor EXT_TEST_DONOR] [--panel-head]
+                   [--device {cuda,cpu}]
+train_lf.py: error: --ext-w must be finite and nonnegative
+usage: train_lf.py [-h] --out OUT [--protocol PROTOCOL] [--channels CHANNELS]
+                   [--phase PHASE] [--arch ARCH] [--epochs EPOCHS] [--bs BS]
+                   [--lr LR] [--workers WORKERS] [--max-train MAX_TRAIN]
+                   [--seed SEED] [--w-cls W_CLS] [--include-gs INCLUDE_GS]
+                   [--init-ssl INIT_SSL] [--tail-weight TAIL_WEIGHT]
+                   [--focal-c10 FOCAL_C10] [--targets TARGETS] [--dann DANN]
+                   [--stem {std,nomaxpool}] [--zoom ZOOM]
+                   [--phys-aug PHYS_AUG] [--consist CONSIST] [--pseudo PSEUDO]
+                   [--pseudo-w PSEUDO_W] [--dump-train-preds DUMP_TRAIN_PREDS]
+                   [--lowpass LOWPASS] [--dual-zoom DUAL_ZOOM] [--adabn ADABN]
+                   [--enc-lr-mult ENC_LR_MULT] [--drop-path DROP_PATH]
+                   [--head {mse,hlgauss,twopart}] [--hl-mse HL_MSE]
+                   [--gate-w GATE_W] [--pos-q POS_Q] [--fov-re FOV_RE]
+                   [--re-shrink RE_SHRINK] [--pair-loss PAIR_LOSS]
+                   [--fov-batch FOV_BATCH] [--w-autofl W_AUTOFL]
+                   [--pearson-w PEARSON_W] [--diag-aug DIAG_AUG]
+                   [--diag-tta DIAG_TTA] [--drop-led DROP_LED]
+                   [--censor-loss CENSOR_LOSS] [--dense-aux DENSE_AUX]
+                   [--dense-w DENSE_W] [--dense-width DENSE_WIDTH]
+                   [--aux-label AUX_LABEL] [--aux-w AUX_W]
+                   [--init-full INIT_FULL] [--train-panel TRAIN_PANEL]
+                   [--ext-ifc EXT_IFC] [--ext-w EXT_W]
+                   [--ext-train-donors EXT_TRAIN_DONORS]
+                   [--ext-test-donor EXT_TEST_DONOR] [--panel-head]
+                   [--device {cuda,cpu}]
+train_lf.py: error: --ext-ifc requires --arch resnet50 --init-ssl PATH --channels all --phase 1
+usage: train_lf.py [-h] --out OUT [--protocol PROTOCOL] [--channels CHANNELS]
+                   [--phase PHASE] [--arch ARCH] [--epochs EPOCHS] [--bs BS]
+                   [--lr LR] [--workers WORKERS] [--max-train MAX_TRAIN]
+                   [--seed SEED] [--w-cls W_CLS] [--include-gs INCLUDE_GS]
+                   [--init-ssl INIT_SSL] [--tail-weight TAIL_WEIGHT]
+                   [--focal-c10 FOCAL_C10] [--targets TARGETS] [--dann DANN]
+                   [--stem {std,nomaxpool}] [--zoom ZOOM]
+                   [--phys-aug PHYS_AUG] [--consist CONSIST] [--pseudo PSEUDO]
+                   [--pseudo-w PSEUDO_W] [--dump-train-preds DUMP_TRAIN_PREDS]
+                   [--lowpass LOWPASS] [--dual-zoom DUAL_ZOOM] [--adabn ADABN]
+                   [--enc-lr-mult ENC_LR_MULT] [--drop-path DROP_PATH]
+                   [--head {mse,hlgauss,twopart}] [--hl-mse HL_MSE]
+                   [--gate-w GATE_W] [--pos-q POS_Q] [--fov-re FOV_RE]
+                   [--re-shrink RE_SHRINK] [--pair-loss PAIR_LOSS]
+                   [--fov-batch FOV_BATCH] [--w-autofl W_AUTOFL]
+                   [--pearson-w PEARSON_W] [--diag-aug DIAG_AUG]
+                   [--diag-tta DIAG_TTA] [--drop-led DROP_LED]
+                   [--censor-loss CENSOR_LOSS] [--dense-aux DENSE_AUX]
+                   [--dense-w DENSE_W] [--dense-width DENSE_WIDTH]
+                   [--aux-label AUX_LABEL] [--aux-w AUX_W]
+                   [--init-full INIT_FULL] [--train-panel TRAIN_PANEL]
+                   [--ext-ifc EXT_IFC] [--ext-w EXT_W]
+                   [--ext-train-donors EXT_TRAIN_DONORS]
+                   [--ext-test-donor EXT_TEST_DONOR] [--panel-head]
+                   [--device {cuda,cpu}]
+train_lf.py: error: --ext-ifc requires --arch resnet50 --init-ssl PATH --channels all --phase 1
+usage: train_lf.py [-h] --out OUT [--protocol PROTOCOL] [--channels CHANNELS]
+                   [--phase PHASE] [--arch ARCH] [--epochs EPOCHS] [--bs BS]
+                   [--lr LR] [--workers WORKERS] [--max-train MAX_TRAIN]
+                   [--seed SEED] [--w-cls W_CLS] [--include-gs INCLUDE_GS]
+                   [--init-ssl INIT_SSL] [--tail-weight TAIL_WEIGHT]
+                   [--focal-c10 FOCAL_C10] [--targets TARGETS] [--dann DANN]
+                   [--stem {std,nomaxpool}] [--zoom ZOOM]
+                   [--phys-aug PHYS_AUG] [--consist CONSIST] [--pseudo PSEUDO]
+                   [--pseudo-w PSEUDO_W] [--dump-train-preds DUMP_TRAIN_PREDS]
+                   [--lowpass LOWPASS] [--dual-zoom DUAL_ZOOM] [--adabn ADABN]
+                   [--enc-lr-mult ENC_LR_MULT] [--drop-path DROP_PATH]
+                   [--head {mse,hlgauss,twopart}] [--hl-mse HL_MSE]
+                   [--gate-w GATE_W] [--pos-q POS_Q] [--fov-re FOV_RE]
+                   [--re-shrink RE_SHRINK] [--pair-loss PAIR_LOSS]
+                   [--fov-batch FOV_BATCH] [--w-autofl W_AUTOFL]
+                   [--pearson-w PEARSON_W] [--diag-aug DIAG_AUG]
+                   [--diag-tta DIAG_TTA] [--drop-led DROP_LED]
+                   [--censor-loss CENSOR_LOSS] [--dense-aux DENSE_AUX]
+                   [--dense-w DENSE_W] [--dense-width DENSE_WIDTH]
+                   [--aux-label AUX_LABEL] [--aux-w AUX_W]
+                   [--init-full INIT_FULL] [--train-panel TRAIN_PANEL]
+                   [--ext-ifc EXT_IFC] [--ext-w EXT_W]
+                   [--ext-train-donors EXT_TRAIN_DONORS]
+                   [--ext-test-donor EXT_TEST_DONOR] [--panel-head]
+                   [--device {cuda,cpu}]
+train_lf.py: error: --ext-ifc requires the unchanged linear --head mse without --panel-head
+usage: train_lf.py [-h] --out OUT [--protocol PROTOCOL] [--channels CHANNELS]
+                   [--phase PHASE] [--arch ARCH] [--epochs EPOCHS] [--bs BS]
+                   [--lr LR] [--workers WORKERS] [--max-train MAX_TRAIN]
+                   [--seed SEED] [--w-cls W_CLS] [--include-gs INCLUDE_GS]
+                   [--init-ssl INIT_SSL] [--tail-weight TAIL_WEIGHT]
+                   [--focal-c10 FOCAL_C10] [--targets TARGETS] [--dann DANN]
+                   [--stem {std,nomaxpool}] [--zoom ZOOM]
+                   [--phys-aug PHYS_AUG] [--consist CONSIST] [--pseudo PSEUDO]
+                   [--pseudo-w PSEUDO_W] [--dump-train-preds DUMP_TRAIN_PREDS]
+                   [--lowpass LOWPASS] [--dual-zoom DUAL_ZOOM] [--adabn ADABN]
+                   [--enc-lr-mult ENC_LR_MULT] [--drop-path DROP_PATH]
+                   [--head {mse,hlgauss,twopart}] [--hl-mse HL_MSE]
+                   [--gate-w GATE_W] [--pos-q POS_Q] [--fov-re FOV_RE]
+                   [--re-shrink RE_SHRINK] [--pair-loss PAIR_LOSS]
+                   [--fov-batch FOV_BATCH] [--w-autofl W_AUTOFL]
+                   [--pearson-w PEARSON_W] [--diag-aug DIAG_AUG]
+                   [--diag-tta DIAG_TTA] [--drop-led DROP_LED]
+                   [--censor-loss CENSOR_LOSS] [--dense-aux DENSE_AUX]
+                   [--dense-w DENSE_W] [--dense-width DENSE_WIDTH]
+                   [--aux-label AUX_LABEL] [--aux-w AUX_W]
+                   [--init-full INIT_FULL] [--train-panel TRAIN_PANEL]
+                   [--ext-ifc EXT_IFC] [--ext-w EXT_W]
+                   [--ext-train-donors EXT_TRAIN_DONORS]
+                   [--ext-test-donor EXT_TEST_DONOR] [--panel-head]
+                   [--device {cuda,cpu}]
+train_lf.py: error: --ext-ifc requires the unchanged linear --head mse without --panel-head
+wandb off: import of wandb halted; None in sys.modules
+b0to1: two optimizer steps, donor-2 eval, unchanged BSCCM eval isolation, strict resume and split-change rejection
+train 4 eval 4 protocol b1to0
+N081 IFC train 16 donors ['sample0', 'sample1']; test 8 donor sample2
+init from SSL /tmp/n081_codex/ifc/ssl48.pt
+wandb off: import of wandb halted; None in sys.modules
+train 4 eval 4 protocol b1to0
+init from SSL /tmp/n081_codex/ifc/ssl48.pt
+wandb off: import of wandb halted; None in sys.modules
+train 4 eval 4 protocol b1to0
+init from SSL /tmp/n081_codex/ifc/ssl48.pt
+ok
+test_f_test_donor_poison_cannot_affect_training (__main__.IFCTests.test_f_test_donor_poison_cannot_affect_training) ... wandb off: import of wandb halted; None in sys.modules
+train 4 eval 4 protocol b1to0
+N081 IFC train 16 donors ['sample0', 'sample1']; test 8 donor sample2
+init from SSL /tmp/n081_codex/ifc/ssl48.pt
+wandb off: import of wandb halted; None in sys.modules
+train 4 eval 4 protocol b1to0
+N081 IFC train 16 donors ['sample0', 'sample1']; test 8 donor sample2
+init from SSL /tmp/n081_codex/ifc/ssl48.pt
+ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 8.161s
+
+OK
+wandb off: import of wandb halted; None in sys.modules
+NaN test-donor images and extreme test labels leave the training loss/predictions exactly equal

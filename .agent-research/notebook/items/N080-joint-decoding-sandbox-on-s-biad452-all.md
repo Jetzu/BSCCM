@@ -19,6 +19,11 @@ macro within-population r (full) - (single); a gap >= .05 means single-stain tra
 needed; < .02 means per-marker training already decodes joint profiles in this modality. Cost ~1-2 GPU-h.
 
 ## Changes
+Codex build (codex/: train_ifc_sandbox.py, 31 CPU tests). Integrated as scripts/train_ifc_sandbox.py with Claude's fold-specific
+preprocessing: label cofactor and per-run z from the TRAINING donor's REVEALED entries (validation runs revealed-only too: they select the
+checkpoint; test-donor runs use their own truth for metrics only), input chan_scale from training cells. First version leaked hidden labels
+into the cofactor -- Codex's leakage test caught it (3 failures); fixed; 31/31 pass (venv /tmp/n080_codex). Design kept: train 1 donor,
+validate 1 (checkpoint selection), test 1, cyclic. Claude red-team interrupted by a usage limit (resume pending).
 
 ## Evidence
 <!-- exp: each run = job id, config, seed, output dir · results vs baseline -->

@@ -1,0 +1,114 @@
+test_a2_nonzero_ifc_bn_matches_weight_replay_control (__main__.FixTests.test_a2_nonzero_ifc_bn_matches_weight_replay_control) ... train 4 eval 4 protocol b1to0
+N081 IFC train 16 donors ['sample0', 'sample1']; test 8 donor sample2
+init from SSL /tmp/n081_fix/ifc/ssl48.pt
+N081 IFC affine init (masked training rows): [{"marker": "CD14", "n_bsccm": 4, "n_ifc": 16, "mean_bsccm": 0.09632461331784725, "sd_bsccm": 0.8243355156616056, "mean_ifc": 0.6805176569614559, "sd_ifc": 0.8648421290580967, "scale": 1.0491385032270273, "offset": 0.5794597963212476}, {"marker": "CD19", "n_bsccm": 4, "n_ifc": 16, "mean_bsccm": -0.5407377034425735, "sd_bsccm": 0.5831026301635784, "mean_ifc": 0.3675692677497864, "sd_ifc": 0.9500525842921622, "scale": 1.6293059491527981, "offset": 1.248596424899993}, {"marker": "CD3", "n_bsccm": 4, "n_ifc": 16, "mean_bsccm": 0.17719471082091331, "sd_bsccm": 1.1635659144244872, "mean_ifc": -0.08141668932512403, "sd_ifc": 0.803253551782577, "scale": 0.6903378156963933, "offset": -0.20374089894618738}, {"marker": "CD45", "n_bsccm": 4, "n_ifc": 16, "mean_bsccm": 0.11404541879892349, "sd_bsccm": 0.6680296748168321, "mean_ifc": -0.2179982100497, "sd_ifc": 0.8980172671858253, "scale": 1.3442775089775074, "offset": -0.3713069015430135}, {"marker": "CD56", "n_bsccm": 4, "n_ifc": 16, "mean_bsccm": 0.13562355935573578, "sd_bsccm": 0.9632053788742492, "mean_ifc": 0.23573444737121463, "sd_ifc": 1.1400058047572725, "scale": 1.1835542343935617, "offset": 0.07521660941220701}]
+wandb off: import of wandb halted; None in sys.modules
+train 4 eval 4 protocol b1to0
+init from SSL /tmp/n081_fix/ifc/ssl48.pt
+ok
+test_a_bn_three_optimizer_steps_rng_matched_control (__main__.FixTests.test_a_bn_three_optimizer_steps_rng_matched_control) ... wandb off: import of wandb halted; None in sys.modules
+3 joint optimizer steps, ext_w=.5, dual zoom: every BSCCM BN buffer equals IFC-skipped weight-replay control; IFC gradients nonzero
+train 4 eval 4 protocol b1to0
+init from SSL /tmp/n081_fix/ifc/ssl48.pt
+wandb off: import of wandb halted; None in sys.modules
+train 4 eval 4 protocol b1to0
+N081 IFC train 16 donors ['sample0', 'sample1']; test 8 donor sample2
+init from SSL /tmp/n081_fix/ifc/ssl48.pt
+N081 IFC affine init (masked training rows): [{"marker": "CD14", "n_bsccm": 4, "n_ifc": 16, "mean_bsccm": 0.09632461331784725, "sd_bsccm": 0.8243355156616056, "mean_ifc": 0.6805176569614559, "sd_ifc": 0.8648421290580967, "scale": 1.0491385032270273, "offset": 0.5794597963212476}, {"marker": "CD19", "n_bsccm": 4, "n_ifc": 16, "mean_bsccm": -0.5407377034425735, "sd_bsccm": 0.5831026301635784, "mean_ifc": 0.3675692677497864, "sd_ifc": 0.9500525842921622, "scale": 1.6293059491527981, "offset": 1.248596424899993}, {"marker": "CD3", "n_bsccm": 4, "n_ifc": 16, "mean_bsccm": 0.17719471082091331, "sd_bsccm": 1.1635659144244872, "mean_ifc": -0.08141668932512403, "sd_ifc": 0.803253551782577, "scale": 0.6903378156963933, "offset": -0.20374089894618738}, {"marker": "CD45", "n_bsccm": 4, "n_ifc": 16, "mean_bsccm": 0.11404541879892349, "sd_bsccm": 0.6680296748168321, "mean_ifc": -0.2179982100497, "sd_ifc": 0.8980172671858253, "scale": 1.3442775089775074, "offset": -0.3713069015430135}, {"marker": "CD56", "n_bsccm": 4, "n_ifc": 16, "mean_bsccm": 0.13562355935573578, "sd_bsccm": 0.9632053788742492, "mean_ifc": 0.23573444737121463, "sd_ifc": 1.1400058047572725, "scale": 1.1835542343935617, "offset": 0.07521660941220701}]
+ok
+test_b_ifc_bn_eval_exception_and_strict_state (__main__.FixTests.test_b_ifc_bn_eval_exception_and_strict_state) ... wandb off: import of wandb halted; None in sys.modules
+3 optimizer steps, ext_w=0: ALL 53 BN buffer triples, BSCCM rows/augmented inputs/eval predictions/global RNG equal to IFC-skipped control
+train 4 eval 4 protocol b1to0
+N081 IFC train 16 donors ['sample0', 'sample1']; test 8 donor sample2
+init from SSL /tmp/n081_fix/ifc/ssl48.pt
+N081 IFC affine init (masked training rows): [{"marker": "CD14", "n_bsccm": 4, "n_ifc": 16, "mean_bsccm": 0.09632461331784725, "sd_bsccm": 0.8243355156616056, "mean_ifc": 0.6805176569614559, "sd_ifc": 0.8648421290580967, "scale": 1.0491385032270273, "offset": 0.5794597963212476}, {"marker": "CD19", "n_bsccm": 4, "n_ifc": 16, "mean_bsccm": -0.5407377034425735, "sd_bsccm": 0.5831026301635784, "mean_ifc": 0.3675692677497864, "sd_ifc": 0.9500525842921622, "scale": 1.6293059491527981, "offset": 1.248596424899993}, {"marker": "CD3", "n_bsccm": 4, "n_ifc": 16, "mean_bsccm": 0.17719471082091331, "sd_bsccm": 1.1635659144244872, "mean_ifc": -0.08141668932512403, "sd_ifc": 0.803253551782577, "scale": 0.6903378156963933, "offset": -0.20374089894618738}, {"marker": "CD45", "n_bsccm": 4, "n_ifc": 16, "mean_bsccm": 0.11404541879892349, "sd_bsccm": 0.6680296748168321, "mean_ifc": -0.2179982100497, "sd_ifc": 0.8980172671858253, "scale": 1.3442775089775074, "offset": -0.3713069015430135}, {"marker": "CD56", "n_bsccm": 4, "n_ifc": 16, "mean_bsccm": 0.13562355935573578, "sd_bsccm": 0.9632053788742492, "mean_ifc": 0.23573444737121463, "sd_ifc": 1.1400058047572725, "scale": 1.1835542343935617, "offset": 0.07521660941220701}]
+ok
+test_c_real_run_donors_and_per_access_boundary (__main__.FixTests.test_c_real_run_donors_and_per_access_boundary) ... wandb off: import of wandb halted; None in sys.modules
+IFC eval uses private buffers; eval/exception restore BSCCM; both sets serialize; missing IFC buffer rejected
+train 4 eval 4 protocol b1to0
+N081 IFC train 16 donors ['sample0', 'sample1']; test 8 donor sample2
+init from SSL /tmp/n081_fix/ifc/ssl48.pt
+N081 IFC affine init (masked training rows): [{"marker": "CD14", "n_bsccm": 4, "n_ifc": 16, "mean_bsccm": 0.09632461331784725, "sd_bsccm": 0.8243355156616056, "mean_ifc": 0.6805176569614559, "sd_ifc": 0.8648421290580967, "scale": 1.0491385032270273, "offset": 0.5794597963212476}, {"marker": "CD19", "n_bsccm": 4, "n_ifc": 16, "mean_bsccm": -0.5407377034425735, "sd_bsccm": 0.5831026301635784, "mean_ifc": 0.3675692677497864, "sd_ifc": 0.9500525842921622, "scale": 1.6293059491527981, "offset": 1.248596424899993}, {"marker": "CD3", "n_bsccm": 4, "n_ifc": 16, "mean_bsccm": 0.17719471082091331, "sd_bsccm": 1.1635659144244872, "mean_ifc": -0.08141668932512403, "sd_ifc": 0.803253551782577, "scale": 0.6903378156963933, "offset": -0.20374089894618738}, {"marker": "CD45", "n_bsccm": 4, "n_ifc": 16, "mean_bsccm": 0.11404541879892349, "sd_bsccm": 0.6680296748168321, "mean_ifc": -0.2179982100497, "sd_ifc": 0.8980172671858253, "scale": 1.3442775089775074, "offset": -0.3713069015430135}, {"marker": "CD56", "n_bsccm": 4, "n_ifc": 16, "mean_bsccm": 0.13562355935573578, "sd_bsccm": 0.9632053788742492, "mean_ifc": 0.23573444737121463, "sd_ifc": 1.1400058047572725, "scale": 1.1835542343935617, "offset": 0.07521660941220701}]
+ok
+test_d_affine_masked_rows_and_optimizer_groups (__main__.FixTests.test_d_affine_masked_rows_and_optimizer_groups) ... wandb off: import of wandb halted; None in sys.modules
+Real naming: early/late runs collapse to donors; sample2 early AND late excluded; run-name arguments rejected
+train 4 eval 4 protocol b1to0
+N081 IFC train 16 donors ['sample0', 'sample1']; test 8 donor sample2
+init from SSL /tmp/n081_fix/ifc/ssl48.pt
+N081 IFC affine init (masked training rows): [{"marker": "CD14", "n_bsccm": 4, "n_ifc": 15, "mean_bsccm": 0.09632461331784725, "sd_bsccm": 0.8243355156616056, "mean_ifc": 0.6300266248484453, "sd_ifc": 0.8700723300729646, "scale": 1.0554832511063788, "offset": 0.5283576088221591}, {"marker": "CD19", "n_bsccm": 4, "n_ifc": 16, "mean_bsccm": -0.5407377034425735, "sd_bsccm": 0.5831026301635784, "mean_ifc": 0.3675692677497864, "sd_ifc": 0.9500525842921622, "scale": 1.6293059491527981, "offset": 1.248596424899993}, {"marker": "CD3", "n_bsccm": 4, "n_ifc": 16, "mean_bsccm": 0.17719471082091331, "sd_bsccm": 1.1635659144244872, "mean_ifc": -0.08141668932512403, "sd_ifc": 0.803253551782577, "scale": 0.6903378156963933, "offset": -0.20374089894618738}, {"marker": "CD45", "n_bsccm": 4, "n_ifc": 16, "mean_bsccm": 0.11404541879892349, "sd_bsccm": 0.6680296748168321, "mean_ifc": -0.2179982100497, "sd_ifc": 0.8980172671858253, "scale": 1.3442775089775074, "offset": -0.3713069015430135}, {"marker": "CD56", "n_bsccm": 4, "n_ifc": 16, "mean_bsccm": 0.13562355935573578, "sd_bsccm": 0.9632053788742492, "mean_ifc": 0.23573444737121463, "sd_ifc": 1.1400058047572725, "scale": 1.1835542343935617, "offset": 0.07521660941220701}]
+ok
+test_e_source_gradient_norms_and_joint_gradients (__main__.FixTests.test_e_source_gradient_norms_and_joint_gradients) ... wandb off: import of wandb halted; None in sys.modules
+Masked train-only affine mean/SD ratios correct; held-out/hidden poison inert; stem encoder LR; affine no decay; baseline BN/bias decay policy retained
+train 4 eval 4 protocol b1to0
+N081 IFC train 16 donors ['sample0', 'sample1']; test 8 donor sample2
+init from SSL /tmp/n081_fix/ifc/ssl48.pt
+N081 IFC affine init (masked training rows): [{"marker": "CD14", "n_bsccm": 4, "n_ifc": 16, "mean_bsccm": 0.09632461331784725, "sd_bsccm": 0.8243355156616056, "mean_ifc": 0.6805176569614559, "sd_ifc": 0.8648421290580967, "scale": 1.0491385032270273, "offset": 0.5794597963212476}, {"marker": "CD19", "n_bsccm": 4, "n_ifc": 16, "mean_bsccm": -0.5407377034425735, "sd_bsccm": 0.5831026301635784, "mean_ifc": 0.3675692677497864, "sd_ifc": 0.9500525842921622, "scale": 1.6293059491527981, "offset": 1.248596424899993}, {"marker": "CD3", "n_bsccm": 4, "n_ifc": 16, "mean_bsccm": 0.17719471082091331, "sd_bsccm": 1.1635659144244872, "mean_ifc": -0.08141668932512403, "sd_ifc": 0.803253551782577, "scale": 0.6903378156963933, "offset": -0.20374089894618738}, {"marker": "CD45", "n_bsccm": 4, "n_ifc": 16, "mean_bsccm": 0.11404541879892349, "sd_bsccm": 0.6680296748168321, "mean_ifc": -0.2179982100497, "sd_ifc": 0.8980172671858253, "scale": 1.3442775089775074, "offset": -0.3713069015430135}, {"marker": "CD56", "n_bsccm": 4, "n_ifc": 16, "mean_bsccm": 0.13562355935573578, "sd_bsccm": 0.9632053788742492, "mean_ifc": 0.23573444737121463, "sd_ifc": 1.1400058047572725, "scale": 1.1835542343935617, "offset": 0.07521660941220701}]
+ok
+test_f_vectorized_mixed_d4_rng_isolation_adabn_rejection (__main__.FixTests.test_f_vectorized_mixed_d4_rng_isolation_adabn_rejection) ... wandb off: import of wandb halted; None in sys.modules
+Per-source norms match independent autograd, accumulated joint gradients agree; preclip norm=14.6244
+train 4 eval 4 protocol b1to0
+N081 IFC train 16 donors ['sample0', 'sample1']; test 8 donor sample2
+init from SSL /tmp/n081_fix/ifc/ssl48.pt
+N081 IFC affine init (masked training rows): [{"marker": "CD14", "n_bsccm": 4, "n_ifc": 16, "mean_bsccm": 0.09632461331784725, "sd_bsccm": 0.8243355156616056, "mean_ifc": 0.6805176569614559, "sd_ifc": 0.8648421290580967, "scale": 1.0491385032270273, "offset": 0.5794597963212476}, {"marker": "CD19", "n_bsccm": 4, "n_ifc": 16, "mean_bsccm": -0.5407377034425735, "sd_bsccm": 0.5831026301635784, "mean_ifc": 0.3675692677497864, "sd_ifc": 0.9500525842921622, "scale": 1.6293059491527981, "offset": 1.248596424899993}, {"marker": "CD3", "n_bsccm": 4, "n_ifc": 16, "mean_bsccm": 0.17719471082091331, "sd_bsccm": 1.1635659144244872, "mean_ifc": -0.08141668932512403, "sd_ifc": 0.803253551782577, "scale": 0.6903378156963933, "offset": -0.20374089894618738}, {"marker": "CD45", "n_bsccm": 4, "n_ifc": 16, "mean_bsccm": 0.11404541879892349, "sd_bsccm": 0.6680296748168321, "mean_ifc": -0.2179982100497, "sd_ifc": 0.8980172671858253, "scale": 1.3442775089775074, "offset": -0.3713069015430135}, {"marker": "CD56", "n_bsccm": 4, "n_ifc": 16, "mean_bsccm": 0.13562355935573578, "sd_bsccm": 0.9632053788742492, "mean_ifc": 0.23573444737121463, "sd_ifc": 1.1400058047572725, "scale": 1.1835542343935617, "offset": 0.07521660941220701}]
+usage: train_lf.py [-h] --out OUT [--protocol PROTOCOL] [--channels CHANNELS]
+                   [--phase PHASE] [--arch ARCH] [--epochs EPOCHS] [--bs BS]
+                   [--lr LR] [--workers WORKERS] [--max-train MAX_TRAIN]
+                   [--seed SEED] [--w-cls W_CLS] [--include-gs INCLUDE_GS]
+                   [--init-ssl INIT_SSL] [--tail-weight TAIL_WEIGHT]
+                   [--focal-c10 FOCAL_C10] [--targets TARGETS] [--dann DANN]
+                   [--stem {std,nomaxpool}] [--zoom ZOOM]
+                   [--phys-aug PHYS_AUG] [--consist CONSIST] [--pseudo PSEUDO]
+                   [--pseudo-w PSEUDO_W] [--dump-train-preds DUMP_TRAIN_PREDS]
+                   [--lowpass LOWPASS] [--dual-zoom DUAL_ZOOM] [--adabn ADABN]
+                   [--enc-lr-mult ENC_LR_MULT] [--drop-path DROP_PATH]
+                   [--head {mse,hlgauss,twopart}] [--hl-mse HL_MSE]
+                   [--gate-w GATE_W] [--pos-q POS_Q] [--fov-re FOV_RE]
+                   [--re-shrink RE_SHRINK] [--pair-loss PAIR_LOSS]
+                   [--fov-batch FOV_BATCH] [--w-autofl W_AUTOFL]
+                   [--pearson-w PEARSON_W] [--diag-aug DIAG_AUG]
+                   [--diag-tta DIAG_TTA] [--drop-led DROP_LED]
+                   [--censor-loss CENSOR_LOSS] [--dense-aux DENSE_AUX]
+                   [--dense-w DENSE_W] [--dense-width DENSE_WIDTH]
+                   [--aux-label AUX_LABEL] [--aux-w AUX_W]
+                   [--init-full INIT_FULL] [--train-panel TRAIN_PANEL]
+                   [--ext-ifc EXT_IFC] [--ext-w EXT_W]
+                   [--ext-train-donors EXT_TRAIN_DONORS]
+                   [--ext-test-donor EXT_TEST_DONOR] [--panel-head]
+                   [--device {cuda,cpu}]
+train_lf.py: error: --ext-ifc is incompatible with --adabn (source-specific BN statistics)
+ok
+test_g_packer_training_donor_statistics_and_main_metadata (__main__.FixTests.test_g_packer_training_donor_statistics_and_main_metadata) ... wandb off: import of wandb halted; None in sys.modules
+part0: 2/2 cells matched to IDEAS rows
+part1: 2/2 cells matched to IDEAS rows
+part2: 2/2 cells matched to IDEAS rows
+part3: 2/2 cells matched to IDEAS rows
+part4: 2/2 cells matched to IDEAS rows
+packed part0 -> 2/10
+packed part1 -> 4/10
+packed part2 -> 6/10
+packed part3 -> 8/10
+packed part4 -> 10/10
+/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N081-two-stem-joint-source-training-bsccm-led/codex_fix/pack_sbiad452.py:144: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/n081_fix/fix_tests/packed/pack.json' mode='w' encoding='UTF-8'>
+  json.dump(dict(N=int(N), scale=a.scale, chan_scale=chan_scale.tolist(), cofactor=dict(zip(MARKERS, c.tolist())), parts=[m[2] for m in meta],
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+done 10
+ok
+test_h_real_v10_training_draw_affine_statistics (__main__.FixTests.test_h_real_v10_training_draw_affine_statistics) ... Packer main writes donor-fit provenance; test-donor NaN inputs/extreme labels cannot change fitted cofactor/channel scale
+train 269283 eval 13113 protocol b1to0
+N081 IFC train 16 donors ['sample0', 'sample1']; test 8 donor sample2
+init from SSL /tmp/n081_fix/ifc/ssl48.pt
+N081 IFC affine init (masked training rows): [{"marker": "CD14", "n_bsccm": 25223, "n_ifc": 16, "mean_bsccm": 0.007313813762013344, "sd_bsccm": 0.9793103548526549, "mean_ifc": 0.6805176569614559, "sd_ifc": 0.8648421290580967, "scale": 0.8831134326035173, "offset": 0.6740587297846615}, {"marker": "CD19", "n_bsccm": 7736, "n_ifc": 16, "mean_bsccm": -0.002386549788563463, "sd_bsccm": 0.36208367836574884, "mean_ifc": 0.3675692677497864, "sd_ifc": 0.9500525842921622, "scale": 2.6238481352713525, "offset": 0.37383121196224084}, {"marker": "CD3", "n_bsccm": 31332, "n_ifc": 16, "mean_bsccm": 0.0036560189399283474, "sd_bsccm": 1.0048659733039829, "mean_ifc": -0.08141668932512403, "sd_ifc": 0.803253551782577, "scale": 0.799363868538102, "offset": -0.08433917876839372}, {"marker": "CD45", "n_bsccm": 22033, "n_ifc": 16, "mean_bsccm": 0.005840420733355745, "sd_bsccm": 0.9809668198488563, "mean_ifc": -0.2179982100497, "sd_ifc": 0.8980172671858253, "scale": 0.9154410210573569, "offset": -0.22334477076924772}, {"marker": "CD56", "n_bsccm": 23141, "n_ifc": 16, "mean_bsccm": -0.0029272810942426435, "sd_bsccm": 0.9169830787899195, "mean_ifc": 0.23573444737121463, "sd_ifc": 1.1400058047572725, "scale": 1.2432135675411384, "offset": 0.23937368294358374}]
+wandb off: import of wandb halted; None in sys.modules
+REAL V10 b1to0 [{"marker": "CD14", "n_bsccm": 25223, "n_ifc": 16, "mean_bsccm": 0.007313813762013344, "sd_bsccm": 0.9793103548526549, "mean_ifc": 0.6805176569614559, "sd_ifc": 0.8648421290580967, "scale": 0.8831134326035173, "offset": 0.6740587297846615}, {"marker": "CD19", "n_bsccm": 7736, "n_ifc": 16, "mean_bsccm": -0.002386549788563463, "sd_bsccm": 0.36208367836574884, "mean_ifc": 0.3675692677497864, "sd_ifc": 0.9500525842921622, "scale": 2.6238481352713525, "offset": 0.37383121196224084}, {"marker": "CD3", "n_bsccm": 31332, "n_ifc": 16, "mean_bsccm": 0.0036560189399283474, "sd_bsccm": 1.0048659733039829, "mean_ifc": -0.08141668932512403, "sd_ifc": 0.803253551782577, "scale": 0.799363868538102, "offset": -0.08433917876839372}, {"marker": "CD45", "n_bsccm": 22033, "n_ifc": 16, "mean_bsccm": 0.005840420733355745, "sd_bsccm": 0.9809668198488563, "mean_ifc": -0.2179982100497, "sd_ifc": 0.8980172671858253, "scale": 0.9154410210573569, "offset": -0.22334477076924772}, {"marker": "CD56", "n_bsccm": 23141, "n_ifc": 16, "mean_bsccm": -0.0029272810942426435, "sd_bsccm": 0.9169830787899195, "mean_ifc": 0.23573444737121463, "sd_ifc": 1.1400058047572725, "scale": 1.2432135675411384, "offset": 0.23937368294358374}]
+train 127946 eval 26322 protocol b0to1
+N081 IFC train 16 donors ['sample0', 'sample1']; test 8 donor sample2
+init from SSL /tmp/n081_fix/ifc/ssl48.pt
+N081 IFC affine init (masked training rows): [{"marker": "CD14", "n_bsccm": 18442, "n_ifc": 16, "mean_bsccm": 0.0021809388953430253, "sd_bsccm": 1.0035989249491333, "mean_ifc": 0.6805176569614559, "sd_ifc": 0.8648421290580967, "scale": 0.8617407886341952, "offset": 0.6786382529578201}, {"marker": "CD19", "n_bsccm": 12768, "n_ifc": 16, "mean_bsccm": -0.0005847558849841345, "sd_bsccm": 0.5208632489302983, "mean_ifc": 0.3675692677497864, "sd_ifc": 0.9500525842921622, "scale": 1.8239961952456696, "offset": 0.36863586025914497}, {"marker": "CD3", "n_bsccm": 6538, "n_ifc": 16, "mean_bsccm": 0.012068712199359769, "sd_bsccm": 1.0146879573263432, "mean_ifc": -0.08141668932512403, "sd_ifc": 0.803253551782577, "scale": 0.7916261802289579, "offset": -0.09097059786378582}, {"marker": "CD45", "n_bsccm": 10951, "n_ifc": 16, "mean_bsccm": 5.075873373754847e-05, "sd_bsccm": 1.0008274943309268, "mean_ifc": -0.2179982100497, "sd_ifc": 0.8980172671858253, "scale": 0.897274777394248, "offset": -0.21804375458121517}, {"marker": "CD56", "n_bsccm": 14212, "n_ifc": 16, "mean_bsccm": -0.00017511848506236976, "sd_bsccm": 0.8375749437261465, "mean_ifc": 0.23573444737121463, "sd_ifc": 1.1400058047572725, "scale": 1.3610791646723481, "offset": 0.23597279749258201}]
+ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 9.623s
+
+OK
+wandb off: import of wandb halted; None in sys.modules
+REAL V10 b0to1 [{"marker": "CD14", "n_bsccm": 18442, "n_ifc": 16, "mean_bsccm": 0.0021809388953430253, "sd_bsccm": 1.0035989249491333, "mean_ifc": 0.6805176569614559, "sd_ifc": 0.8648421290580967, "scale": 0.8617407886341952, "offset": 0.6786382529578201}, {"marker": "CD19", "n_bsccm": 12768, "n_ifc": 16, "mean_bsccm": -0.0005847558849841345, "sd_bsccm": 0.5208632489302983, "mean_ifc": 0.3675692677497864, "sd_ifc": 0.9500525842921622, "scale": 1.8239961952456696, "offset": 0.36863586025914497}, {"marker": "CD3", "n_bsccm": 6538, "n_ifc": 16, "mean_bsccm": 0.012068712199359769, "sd_bsccm": 1.0146879573263432, "mean_ifc": -0.08141668932512403, "sd_ifc": 0.803253551782577, "scale": 0.7916261802289579, "offset": -0.09097059786378582}, {"marker": "CD45", "n_bsccm": 10951, "n_ifc": 16, "mean_bsccm": 5.075873373754847e-05, "sd_bsccm": 1.0008274943309268, "mean_ifc": -0.2179982100497, "sd_ifc": 0.8980172671858253, "scale": 0.897274777394248, "offset": -0.21804375458121517}, {"marker": "CD56", "n_bsccm": 14212, "n_ifc": 16, "mean_bsccm": -0.00017511848506236976, "sd_bsccm": 0.8375749437261465, "mean_ifc": 0.23573444737121463, "sd_ifc": 1.1400058047572725, "scale": 1.3610791646723481, "offset": 0.23597279749258201}]

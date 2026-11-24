@@ -1,0 +1,84 @@
+test_a_legacy_exact (n074_reused.DenseTests.test_a_legacy_exact) ... committed 7/64
+committed 14/64
+committed 21/64
+committed 28/64
+committed 35/64
+committed 42/64
+committed 49/64
+committed 56/64
+committed 63/64
+committed 64/64
+complete /tmp/n081_codex/n074/fluor_aux64.npy (64, 6, 64, 64) float16
+fixture: 64 unique real cells, actual native fluorescence/LF/phase; synthetic scalar labels/calibration and SSL weights
+train 4 eval 4 protocol b1to0
+wandb off: import of wandb halted; None in sys.modules
+train 4 eval 4 protocol b1to0
+wandb off: import of wandb halted; None in sys.modules
+legacy exact: SSL=False N068/N073=False outputs/loss/grads/config/checkpoint bytes
+train 4 eval 4 protocol b1to0
+wandb off: import of wandb halted; None in sys.modules
+train 4 eval 4 protocol b1to0
+wandb off: import of wandb halted; None in sys.modules
+legacy exact: SSL=False N068/N073=True outputs/loss/grads/config/checkpoint bytes
+train 4 eval 4 protocol b1to0
+init from SSL /tmp/n081_codex/n074/fixture_ssl.pt
+wandb off: import of wandb halted; None in sys.modules
+train 4 eval 4 protocol b1to0
+init from SSL /tmp/n081_codex/n074/fixture_ssl.pt
+wandb off: import of wandb halted; None in sys.modules
+legacy exact: SSL=True N068/N073=False outputs/loss/grads/config/checkpoint bytes
+train 4 eval 4 protocol b1to0
+init from SSL /tmp/n081_codex/n074/fixture_ssl.pt
+wandb off: import of wandb halted; None in sys.modules
+train 4 eval 4 protocol b1to0
+init from SSL /tmp/n081_codex/n074/fixture_ssl.pt
+ok
+test_b_dense_backward_and_eval_isolation (n074_reused.DenseTests.test_b_dense_backward_and_eval_isolation) ... wandb off: import of wandb halted; None in sys.modules
+legacy exact: SSL=True N068/N073=True outputs/loss/grads/config/checkpoint bytes
+train 4 eval 4 protocol b1to0
+init from SSL /hnvme/workspace/v181bb10-bsccm/runs/n031_ssl_aug_ex0/encoder_final.pt
+/tmp/n074_codex/venv/lib/python3.13/site-packages/numpy/_core/fromnumeric.py:3862: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/tmp/n074_codex/venv/lib/python3.13/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+ok
+test_c_pack_hand_computation_and_resume (n074_reused.DenseTests.test_c_pack_hand_computation_and_resume) ... ok
+test_d_registration (n074_reused.DenseTests.test_d_registration) ... ok
+test_e_architecture_support (n074_reused.DenseTests.test_e_architecture_support) ... ok
+test_f_signal_restart (n074_reused.DenseTests.test_f_signal_restart) ... ok
+test_g_full_loop_checkpoint_resume (n074_reused.DenseTests.test_g_full_loop_checkpoint_resume) ... wandb off: import of wandb halted; None in sys.modules
+dense: real n031 source-only SSL resnet50 48-channel forward/backward finite; aux-only encoder gradient; (2,6,64,64); pooled output exact; eval isolated; leakage rejected
+packer: all 64 real crops byte-identical to independent hand transform; durable-row restart byte-identical; completed restart no-op; no chunk files
+registration: actual prep tested at all 81 integer shifts, with/without reflection, zoom 1/2; spectral channels unswapped
+archs: dinov3/dinobloom fail clearly before loading weights; actual pretrained Cytoland LFBackbone gate/resize/pooling preserved
+SIGTERM: partial pack exited 143 after a durable chunk; real CLI restart exactly reproduced all 64 rows
+train 4 eval 4 protocol b1to0
+/tmp/n074_codex/venv/lib/python3.13/site-packages/numpy/_core/fromnumeric.py:3862: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/tmp/n074_codex/venv/lib/python3.13/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+wandb off: import of wandb halted; None in sys.modules
+{"cls3_acc": 0.25, "r_mean_markers": NaN, "r_mean_markers_valid": NaN, "n_markers_valid": 0, "epoch": 1, "train_loss": 2.4922176599502563, "secs": 0.24681472778320312}
+{"cls3_acc": 0.25, "r_mean_markers": NaN, "r_mean_markers_valid": NaN, "n_markers_valid": 0, "epoch": 2, "train_loss": 2.023425042629242, "secs": 0.543238639831543}
+train 4 eval 4 protocol b1to0
+wandb off: import of wandb halted; None in sys.modules
+{"cls3_acc": 0.25, "r_mean_markers": NaN, "r_mean_markers_valid": NaN, "n_markers_valid": 0, "epoch": 1, "train_loss": 2.4922176599502563, "secs": 0.257735013961792}
+{"cls3_acc": 0.25, "r_mean_markers": NaN, "r_mean_markers_valid": NaN, "n_markers_valid": 0, "epoch": 2, "train_loss": 2.023425042629242, "secs": 0.5739388465881348}
+train 4 eval 4 protocol b1to0
+/tmp/n074_codex/venv/lib/python3.13/site-packages/numpy/_core/fromnumeric.py:3862: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/tmp/n074_codex/venv/lib/python3.13/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+wandb off: import of wandb halted; None in sys.modules
+{"cls3_acc": 0.25, "r_mean_markers": NaN, "r_mean_markers_valid": NaN, "n_markers_valid": 0, "epoch": 1, "train_loss": 3.0531827211380005, "secs": 0.30486440658569336, "dense_loss": 0.9905676543712616}
+{"cls3_acc": 0.25, "r_mean_markers": NaN, "r_mean_markers_valid": NaN, "n_markers_valid": 0, "epoch": 2, "train_loss": 2.658501148223877, "secs": 0.6317999362945557, "dense_loss": 0.9659856259822845}
+train 4 eval 4 protocol b1to0
+wandb off: import of wandb halted; None in sys.modules
+resumed 2
+ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 16.451s
+
+OK
+full loop: flag-off final weights/eval predictions exactly match legacy; flag-on completes 4 steps, writes checkpoint and resumes strictly

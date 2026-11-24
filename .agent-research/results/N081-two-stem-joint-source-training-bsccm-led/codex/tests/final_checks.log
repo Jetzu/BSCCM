@@ -1,0 +1,4 @@
+patching file scripts/train_lf.py
+Full copy == applied diff; BSCCM prep/fwd/evaluate AST unchanged; Python and documented bash syntax valid.
+Baseline SHA256: 4cf89b093fc7dd44aa13ce6a2a82f743eeec2bea03c0b536b298c755362ce8c8
+Patched SHA256: 863c86667da4bbafbb03e49e83fa86b26ead6de28727eb0d6959c2314557438d
