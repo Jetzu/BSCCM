@@ -1,0 +1,150 @@
+{
+ "png": "/home/hpc/v181bb/v181bb10/BSCCM/figures/overview/fig3_gap.png",
+ "svg": "/home/hpc/v181bb/v181bb10/BSCCM/figures/overview/fig3_gap.svg",
+ "created": "2026-11-24T12:08:29",
+ "command": [
+  "/home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python",
+  "figures/overview/make_figures.py"
+ ],
+ "cwd": "/home/hpc/v181bb/v181bb10/BSCCM",
+ "source": [
+  "/home/hpc/v181bb/v181bb10/BSCCM/figures/overview/data/per_target.csv",
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N082-step-matched-learning-curve-50-training/plot_goal.csv",
+  "N064 full/reconstruction_fidelity.csv"
+ ],
+ "notes": "a per-target r (mean of both draw directions; single models = mean r over the same seeds 0 and 1: n051_v10_base(_s1), n078_ft_cnxs_60_s0 / n083_cnxs60_s1; N053 = base + zoom2 + Cytoland; N084 = N053 + ConvNeXt-S seed 1); b N084 ensemble per direction (draw 0 -> 1 is the weak direction); c step-matched learning curve (N082, seed 0): labels .0155 > steps .0115; d agreement of v10 labels with an independent local-background label version on the held-out cells (N064, rings = directions). Low agreement flags unstable labels (CD19); high agreement does not show the labels are correct (CD123 agrees .87-.92 yet N084 predicts it at .54 on draw 0 -> 1), so absolute label error is not identified.",
+ "width_in": 8.5,
+ "height_in": 5.1969,
+ "png_px": [
+  3840,
+  2347
+ ],
+ "significance": "two-sided; Holm-corrected over all comparisons of a panel (one family per panel); * <0.05 ** <0.01 *** <0.001 **** <0.0001",
+ "panels": [
+  {
+   "panel": "c",
+   "kind": "bar",
+   "groups": [
+    "50 % labels, 10 ep",
+    "50 % labels, 20 ep",
+    "100 % labels, 10 ep"
+   ],
+   "colors": [
+    "#A1CA8A",
+    "#55BDB2",
+    "#767E86"
+   ],
+   "n": [
+    1,
+    1,
+    1
+   ],
+   "mean": [
+    0.646042402080783,
+    0.6575038270138169,
+    0.6729678378953708
+   ],
+   "sd": [
+    null,
+    null,
+    null
+   ],
+   "median": [
+    0.646042402080783,
+    0.6575038270138169,
+    0.6729678378953708
+   ],
+   "whisker": "sd",
+   "stats": [],
+   "no_stats_reason": "one seed per arm (N082 pre-registered single-seed reading)",
+   "ylabel": "GOAL (mean Pearson r)"
+  },
+  {
+   "panel": "d",
+   "kind": "bar",
+   "groups": [
+    "CD16",
+    "CD14",
+    "pool CD16",
+    "pool CD3/CD19/CD56",
+    "CD45",
+    "CD3",
+    "pool CD45",
+    "CD123",
+    "CD56",
+    "HLA-DR",
+    "CD19"
+   ],
+   "colors": [
+    "#3A6C9E",
+    "#3A6C9E",
+    "#3A6C9E",
+    "#3A6C9E",
+    "#3A6C9E",
+    "#3A6C9E",
+    "#3A6C9E",
+    "#3A6C9E",
+    "#3A6C9E",
+    "#3A6C9E",
+    "#3A6C9E"
+   ],
+   "n": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "mean": [
+    0.997603905314211,
+    0.9349600249638501,
+    0.939740135048653,
+    0.8609442948315027,
+    0.9858187597117007,
+    0.983311984014568,
+    0.8156455771527498,
+    0.8918739575972381,
+    0.7112325877390424,
+    0.8728869263496857,
+    0.3191733102052972
+   ],
+   "sd": [
+    0.001827512235903186,
+    0.06286946963569971,
+    0.034064880357559474,
+    0.10075330149946736,
+    0.0159552664825869,
+    0.005329443838866209,
+    0.18815239092225935,
+    0.03377902020619537,
+    0.06459726792283552,
+    0.1569544240722835,
+    0.10782385001955458
+   ],
+   "median": [
+    0.997603905314211,
+    0.9349600249638501,
+    0.939740135048653,
+    0.8609442948315027,
+    0.9858187597117007,
+    0.983311984014568,
+    0.8156455771527498,
+    0.8918739575972381,
+    0.7112325877390424,
+    0.8728869263496857,
+    0.3191733102052972
+   ],
+   "whisker": "sd",
+   "stats": [],
+   "no_stats_reason": "descriptive per-target agreement (two directions as rings)",
+   "ylabel": "Label agreement (r)"
+  }
+ ],
+ "matplotlib": "3.11.0"
+}

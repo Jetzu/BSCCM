@@ -1,0 +1,45 @@
+item,n,value,era,kind
+N023,23,0.6404,v5 labels,single model
+N025,25,0.639,v5 labels,single model
+N026,26,0.6422,v5 labels,single model
+N026,26,0.6515,v5 labels,multi-network
+N031,31,0.6442,v5 labels,single model
+N031,31,0.6527,v5 labels,multi-network
+N037,37,0.6445,v5 labels,single model
+N037,37,0.6537,v5 labels,multi-network
+N040,40,0.6529,v5 labels,single model
+N040,40,0.6564,v5 labels,multi-network
+N041,41,0.645,v5 labels,single model
+N041,41,0.6531,v5 labels,multi-network
+N042,42,0.6411,v5 labels,single model
+N046,46,0.651,v5 labels,single model
+N046,46,0.6546,v5 labels,multi-network
+N047,47,0.6571,v5 labels,multi-network
+N048,48,0.6456,v5 labels,single model
+N048,48,0.6522,v5 labels,multi-network
+N050,50,0.6135,v5 labels,single model
+N050,50,0.6533,v5 labels,multi-network
+N051,51,0.673,v10 labels,single model
+N051,51,0.6804,v10 labels,multi-network
+N051,51,0.6788,v10 labels,multi-network
+N053,53,0.666,v10 labels,single model
+N053,53,0.6862,v10 labels,multi-network
+N055,55,0.6704,v10 labels,single model
+N055,55,0.6902,v10 labels,multi-network
+N060,60,0.6756,v10 labels,single model
+N061,61,0.6742,v10 labels,single model
+N062,62,0.6704,v10 labels,single model
+N063,63,0.6766,v10 labels,single model
+N063,63,0.6784,v10 labels,multi-network
+N065,65,0.6899,v10 labels,multi-network
+N067,67,0.6624,v10 labels,single model
+N068,68,0.6718,v10 labels,single model
+N073,73,0.6658,v10 labels,single model
+N074,74,0.6683,v10 labels,single model
+N075,75,0.6708,v10 labels,single model
+N076,76,0.6681,v10 labels,single model
+N078,78,0.6707,v10 labels,single model
+N081,81,0.6673,v10 labels,single model
+N083,83,0.6681,v10 labels,single model
+N084,84,0.6744,v10 labels,single model
+N084,84,0.6911,v10 labels,multi-network

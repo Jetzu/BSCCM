@@ -1,0 +1,271 @@
+{
+ "png": "/home/hpc/v181bb/v181bb10/BSCCM/figures/overview/fig4_multimarker.png",
+ "svg": "/home/hpc/v181bb/v181bb10/BSCCM/figures/overview/fig4_multimarker.svg",
+ "created": "2026-11-24T12:08:30",
+ "command": [
+  "/home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python",
+  "figures/overview/make_figures.py"
+ ],
+ "cwd": "/home/hpc/v181bb/v181bb10/BSCCM",
+ "source": [
+  "/home/hpc/v181bb/v181bb10/BSCCM/figures/overview/data/mm3.csv",
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N080-joint-decoding-sandbox-on-s-biad452-all/n080_eval_marker.csv",
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N080-joint-decoding-sandbox-on-s-biad452-all/n080_eval_pairs.csv",
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N080-joint-decoding-sandbox-on-s-biad452-all/n080_eval_withintype.csv"
+ ],
+ "notes": "a BSCCM pooled multi-marker panels (MM3 = mean r of grp:CD3/CD19/CD56, grp:CD45, grp:CD16), ConvNeXt-S in-domain SSL vs ResNet-50 (seeds 0, 1, N083; pre-registered gain +.0135 > bar .007 on both seeds; paired t at n = 2 has little power). b-f S-BIAD452 joint-decoding sandbox (ImageStream BF/SSC -> 9 markers, each of 3 donors held out once = rings, N080): b mean r over markers per training regime and a cell-type oracle (training-donor mean profile of each cell's true gated type); c per-marker r (mean over donors); d correlation of marker pairs within T cells (CD4-CD8) or lymphocytes, measured vs predicted (mean over donors; the 4-pair mean |error| computed per donor is .389 full / .308 single / .391 pooled, e.g. CD3-CD56 donor means favour full but per-donor errors favour single); e PRE-REGISTERED pair metric: mean |predicted - measured| correlation over all 36 marker pairs on whole held-out donors (runs/n080_*/metrics.json, per-run scoring; pairs registered, aggregation = mean |bias| chosen here): full .189, single .229, pooled .237. Joint training is closer on the registered 36-pair metric and keeps CD4-CD8 exclusivity best; within lymphoid populations single-marker training is as close; no regime differs significantly at 3 donors.",
+ "width_in": 8.5,
+ "height_in": 4.9213,
+ "png_px": [
+  3840,
+  2223
+ ],
+ "significance": "two-sided; Holm-corrected over all comparisons of a panel (one family per panel); * <0.05 ** <0.01 *** <0.001 **** <0.0001",
+ "panels": [
+  {
+   "panel": "a",
+   "kind": "bar",
+   "groups": [
+    "ResNet-50",
+    "ConvNeXt-S"
+   ],
+   "colors": [
+    "#767E86",
+    "#A584D9"
+   ],
+   "n": [
+    2,
+    2
+   ],
+   "mean": [
+    0.7576338537741445,
+    0.7711448950714805
+   ],
+   "sd": [
+    0.0019273487770005728,
+    0.003350604102035356
+   ],
+   "median": [
+    0.7576338537741445,
+    0.7711448950714805
+   ],
+   "whisker": "sd",
+   "stats": [
+    {
+     "test": "paired t-test",
+     "p": 0.17157155128283066,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 0.17157155128283066,
+     "stars": "ns",
+     "a": "ResNet-50",
+     "b": "ConvNeXt-S",
+     "reference": "ResNet-50"
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "Pooled-panel decoding (MM3, r)"
+  },
+  {
+   "panel": "b",
+   "kind": "bar",
+   "groups": [
+    "all 9 markers",
+    "one marker/cell",
+    "+ pooled",
+    "cell-type oracle"
+   ],
+   "colors": [
+    "#3A6C9E",
+    "#CF832F",
+    "#B94A58",
+    "#767E86"
+   ],
+   "n": [
+    3,
+    3,
+    3,
+    3
+   ],
+   "mean": [
+    0.5958880442537674,
+    0.5257181264388994,
+    0.5415680515695055,
+    0.8136955612238862
+   ],
+   "sd": [
+    0.06602770024013832,
+    0.16405062943128504,
+    0.15822648719451107,
+    0.04169001994305851
+   ],
+   "median": [
+    0.5822291262091224,
+    0.6187336690578792,
+    0.6326206391488584,
+    0.829683855024462
+   ],
+   "whisker": "sd",
+   "stats": [
+    {
+     "test": "paired t-test",
+     "p": 0.4205491215902184,
+     "n_i": 3,
+     "n_j": 3,
+     "p_holm": 0.4205491215902184,
+     "stars": "ns",
+     "a": "one marker/cell",
+     "b": "all 9 markers",
+     "reference": "one marker/cell"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.0443265692711707,
+     "n_i": 3,
+     "n_j": 3,
+     "p_holm": 0.1329797078135121,
+     "stars": "ns",
+     "a": "one marker/cell",
+     "b": "+ pooled",
+     "reference": "one marker/cell"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.05612058994282428,
+     "n_i": 3,
+     "n_j": 3,
+     "p_holm": 0.1329797078135121,
+     "stars": "ns",
+     "a": "one marker/cell",
+     "b": "cell-type oracle",
+     "reference": "one marker/cell"
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "Marker decoding, held-out donor (r)"
+  },
+  {
+   "panel": "e",
+   "kind": "bar",
+   "groups": [
+    "all 9 markers",
+    "one marker/cell",
+    "+ pooled"
+   ],
+   "colors": [
+    "#3A6C9E",
+    "#CF832F",
+    "#B94A58"
+   ],
+   "n": [
+    3,
+    3,
+    3
+   ],
+   "mean": [
+    0.18907518211726185,
+    0.22948573023296226,
+    0.23681245625643185
+   ],
+   "sd": [
+    0.01699511363838937,
+    0.03562762500829116,
+    0.032019894957263824
+   ],
+   "median": [
+    0.19796890893092645,
+    0.2104983622340387,
+    0.2478287101491439
+   ],
+   "whisker": "sd",
+   "stats": [
+    {
+     "test": "paired t-test",
+     "p": 0.15270823776487674,
+     "n_i": 3,
+     "n_j": 3,
+     "p_holm": 0.3054164755297535,
+     "stars": "ns",
+     "a": "one marker/cell",
+     "b": "all 9 markers",
+     "reference": "one marker/cell"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.775698075639619,
+     "n_i": 3,
+     "n_j": 3,
+     "p_holm": 0.775698075639619,
+     "stars": "ns",
+     "a": "one marker/cell",
+     "b": "+ pooled",
+     "reference": "one marker/cell"
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "Pair-correlation error, 36 pairs (|r|)"
+  },
+  {
+   "panel": "f",
+   "kind": "bar",
+   "groups": [
+    "all 9 markers",
+    "one marker/cell",
+    "+ pooled"
+   ],
+   "colors": [
+    "#3A6C9E",
+    "#CF832F",
+    "#B94A58"
+   ],
+   "n": [
+    3,
+    3,
+    3
+   ],
+   "mean": [
+    0.195988614144163,
+    0.1756653075983988,
+    0.14912392932007523
+   ],
+   "sd": [
+    0.05241400922046452,
+    0.034500929656167245,
+    0.06516836558302105
+   ],
+   "median": [
+    0.20822109058986635,
+    0.181262731571834,
+    0.14647399367431913
+   ],
+   "whisker": "sd",
+   "stats": [
+    {
+     "test": "paired t-test",
+     "p": 0.41286740743204703,
+     "n_i": 3,
+     "n_j": 3,
+     "p_holm": 0.8257348148640941,
+     "stars": "ns",
+     "a": "one marker/cell",
+     "b": "all 9 markers",
+     "reference": "one marker/cell"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.5242804813078319,
+     "n_i": 3,
+     "n_j": 3,
+     "p_holm": 0.8257348148640941,
+     "stars": "ns",
+     "a": "one marker/cell",
+     "b": "+ pooled",
+     "reference": "one marker/cell"
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "Within-cell-type r"
+  }
+ ],
+ "matplotlib": "3.11.0"
+}

@@ -1,0 +1,58 @@
+{
+ "png": "/home/hpc/v181bb/v181bb10/BSCCM/figures/overview/fig1_progress.png",
+ "svg": "/home/hpc/v181bb/v181bb10/BSCCM/figures/overview/fig1_progress.svg",
+ "created": "2026-11-24T12:08:27",
+ "command": [
+  "/home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python",
+  "figures/overview/make_figures.py"
+ ],
+ "cwd": "/home/hpc/v181bb/v181bb10/BSCCM",
+ "source": "/home/hpc/v181bb/v181bb10/BSCCM/figures/overview/data/progress.csv",
+ "notes": "Hand-checked list C in make_data.py (every attempt that measured the common-11 GOAL itself). a best single-network arm per item (seed mean where several seeds; per-direction encoder choice only where pre-registered, N084 .6744; N083's post-hoc best-per-direction .6753 not shown, its fixed recipe .6681 is); b each item's PRIMARY multi-network result (averaged ensemble; N063 .6784 = composite of two networks). Secondary / descriptive combinations not shown: N065 planned 6-way .6929 (descriptive secondary), N055 .6912, N083 .6907, N063 .6902, N065 composites .6644-.6830. GOAL record = N053 .6862 (third member picked among 4, replicated with a fresh seed .6864); improvement threshold .6916 (+2 x noise); N084, the pre-registered confirmation, .6911 below it. Colour = label version the value was scored on (v5 N023-N050; v10 N051+). N048 was measured on frozen v5 (.6522 / .6456); its v10 re-score .6804 sits at N051 next to N051's v10 retrain (.6788). Re-bases are not progress. Omitted: v4 era (12-marker metric on v4 labels) and the N082 half-label diagnostics. Step line = best so far within a label version; dashed line = target .70.",
+ "width_in": 8.5,
+ "height_in": 2.4409,
+ "png_px": [
+  3840,
+  1102
+ ],
+ "significance": "two-sided; Holm-corrected over all comparisons of a panel (one family per panel); * <0.05 ** <0.01 *** <0.001 **** <0.0001",
+ "panels": [
+  {
+   "panel": "a",
+   "kind": "lines",
+   "series": [
+    {
+     "label": "v5 labels",
+     "color": "#55BDB2",
+     "points": 11
+    },
+    {
+     "label": "v10 labels",
+     "color": "#3A6C9E",
+     "points": 17
+    }
+   ],
+   "xlabel": "Notebook item",
+   "ylabel": "GOAL (mean Pearson r)"
+  },
+  {
+   "panel": "b",
+   "kind": "lines",
+   "series": [
+    {
+     "label": null,
+     "color": "#55BDB2",
+     "points": 9
+    },
+    {
+     "label": null,
+     "color": "#3A6C9E",
+     "points": 7
+    }
+   ],
+   "xlabel": "Notebook item",
+   "ylabel": "GOAL (mean Pearson r)"
+  }
+ ],
+ "matplotlib": "3.11.0"
+}

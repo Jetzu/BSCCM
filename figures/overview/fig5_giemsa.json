@@ -1,0 +1,243 @@
+{
+ "png": "/home/hpc/v181bb/v181bb10/BSCCM/figures/overview/fig5_giemsa.png",
+ "svg": "/home/hpc/v181bb/v181bb10/BSCCM/figures/overview/fig5_giemsa.svg",
+ "created": "2026-11-24T12:08:31",
+ "command": [
+  "/home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python",
+  "figures/overview/make_figures.py"
+ ],
+ "cwd": "/home/hpc/v181bb/v181bb10/BSCCM",
+ "source": [
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N058-confirm-hub-tt6c-on-mll23-fine-contrasts/n058_per_run.csv",
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N057-anchor-strength-sweep-for-the-tt6c-giems/plot_n057_mll23.csv",
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N054-tri-modal-latent-user-two-space-design-l/plot_m1.csv"
+ ],
+ "notes": "Giemsa -> marker students via the label-free bridge. Rings = teachers (a, b: mean over each teacher's 2-3 student seeds) or held-out slides (c); tests paired by teacher / slide. a hub latent distillation vs output distillation (TT6c) at matched class anchoring, MLL23 fine contrasts (N058; registered rule: mean gain over teachers .113 > seed floor .074 = higher; per teacher +.061, +.109, +.169); b TT6c anchor-strength sweep (N057; registered: anchor 8 gain .059 < floor .074 = no difference); c tri-modal latent designs incl. the user two-space plan (N054): same-cell autofluorescence r on the 2 held-out slides; unpaired GW alignment fails.",
+ "width_in": 8.5,
+ "height_in": 2.7559,
+ "png_px": [
+  3840,
+  1245
+ ],
+ "significance": "two-sided; Holm-corrected over all comparisons of a panel (one family per panel); * <0.05 ** <0.01 *** <0.001 **** <0.0001",
+ "panels": [
+  {
+   "panel": "a",
+   "kind": "bar",
+   "groups": [
+    "output distillation",
+    "hub latent"
+   ],
+   "colors": [
+    "#767E86",
+    "#3A6C9E"
+   ],
+   "n": [
+    3,
+    3
+   ],
+   "mean": [
+    0.5681773323051279,
+    0.6811885750546628
+   ],
+   "sd": [
+    0.03885264347011073,
+    0.021616094065397183
+   ],
+   "median": [
+    0.5566854046003764,
+    0.672432925156191
+   ],
+   "whisker": "sd",
+   "stats": [
+    {
+     "test": "paired t-test",
+     "p": 0.06925088843860641,
+     "n_i": 3,
+     "n_j": 3,
+     "p_holm": 0.06925088843860641,
+     "stars": "ns",
+     "a": "output distillation",
+     "b": "hub latent",
+     "reference": "output distillation"
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "MLL23 fine contrasts (AUROC)"
+  },
+  {
+   "panel": "b",
+   "kind": "bar",
+   "groups": [
+    "anchor .5",
+    "anchor 2",
+    "anchor 8"
+   ],
+   "colors": [
+    "#767E86",
+    "#55BDB2",
+    "#55BDB2"
+   ],
+   "n": [
+    3,
+    3,
+    3
+   ],
+   "mean": [
+    0.5681773323051279,
+    0.6038946945819227,
+    0.6268841656240539
+   ],
+   "sd": [
+    0.03885264347011073,
+    0.04007849907512856,
+    0.03979485306721141
+   ],
+   "median": [
+    0.5566854046003764,
+    0.6118328912692641,
+    0.6438142083400329
+   ],
+   "whisker": "sd",
+   "stats": [
+    {
+     "test": "paired t-test",
+     "p": 0.06745827473376644,
+     "n_i": 3,
+     "n_j": 3,
+     "p_holm": 0.10785639199204261,
+     "stars": "ns",
+     "a": "anchor .5",
+     "b": "anchor 2",
+     "reference": "anchor .5"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.053928195996021305,
+     "n_i": 3,
+     "n_j": 3,
+     "p_holm": 0.10785639199204261,
+     "stars": "ns",
+     "a": "anchor .5",
+     "b": "anchor 8",
+     "reference": "anchor .5"
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "MLL23 fine contrasts (AUROC)"
+  },
+  {
+   "panel": "c",
+   "kind": "bar",
+   "groups": [
+    "output distill.",
+    "LF hub",
+    "direct map",
+    "2-space + LF flow",
+    "2-space + GS flow",
+    "unpaired GW"
+   ],
+   "colors": [
+    "#767E86",
+    "#3A6C9E",
+    "#A1CA8A",
+    "#CF832F",
+    "#CF832F",
+    "#B94A58"
+   ],
+   "n": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "mean": [
+    0.6579999999999999,
+    0.65,
+    0.6465000000000001,
+    0.6415,
+    0.625,
+    0.3215
+   ],
+   "sd": [
+    0.08061017305526641,
+    0.14283556979968257,
+    0.14212846301849602,
+    0.08555992052357225,
+    0.10606601717798207,
+    0.200111219075793
+   ],
+   "median": [
+    0.6579999999999999,
+    0.65,
+    0.6465000000000001,
+    0.6415,
+    0.625,
+    0.3215
+   ],
+   "whisker": "sd",
+   "stats": [
+    {
+     "test": "paired t-test",
+     "p": 0.8855017059026004,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 1.0,
+     "stars": "ns",
+     "a": "output distill.",
+     "b": "LF hub",
+     "reference": "output distill."
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.8354624773439739,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 1.0,
+     "stars": "ns",
+     "a": "output distill.",
+     "b": "direct map",
+     "reference": "output distill."
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.13306813826892616,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 0.6653406913446308,
+     "stars": "ns",
+     "a": "output distill.",
+     "b": "2-space + LF flow",
+     "reference": "output distill."
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.317893996288502,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 1.0,
+     "stars": "ns",
+     "a": "output distill.",
+     "b": "2-space + GS flow",
+     "reference": "output distill."
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.33929093361377904,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 1.0,
+     "stars": "ns",
+     "a": "output distill.",
+     "b": "unpaired GW",
+     "reference": "output distill."
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "Same-cell autofluorescence (r)"
+  }
+ ],
+ "matplotlib": "3.11.0"
+}

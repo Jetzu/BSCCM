@@ -1,0 +1,7 @@
+**The claim breaks in Fig. 1. Fig. 4e reproduces, with one caption rounding error.**
+
+- Fig. 1’s running best is understated at N055. Its five-member ensemble reached .6912, above the plotted .6902. Fig. 1 also omits N065’s .6830/.6734/.6644 composites and N083’s best single (.6753) and ensemble (.6907). Add these points or narrow the selection claim. See `make_figures.py:57–63`, `progress.csv:27–28,35–36,45–47`, `plot_n055.csv:3–6`, `n065_scores.csv:4,7,10`, `n083_combined.csv:3–5`.
+- Fig. 1 calls N065’s .6929 post hoc, although the plan specified that exact six-way combination as a descriptive secondary. N053’s official .6862 was selected post hoc and replicated at .6864. N084’s registered .6911 fell below the .6916 improvement threshold. The caption should distinguish registration, replication and the record threshold. See `make_figures.py:60–62`, `N065-composite-recipe-ensemble-rebuild-every.md:13–14,31–38`, `N053-lf-encoder-swap-on-the-v10-goal-dinov3-v.md:48–57,63`, `n084_scores.csv:5`, `N084-pre-registered-ensemble-confirmation-n05.md:23–24`.
+- Recomputing all 36 pair errors per donor gave .189075 full, .229486 single and .236812 pooled. Round single to **.229**. N080’s notebook registers the pairwise biases and leaves their aggregation unspecified. See `fig4_multimarker.json:165–168`, `make_figures.py:156–159,172–173`, `N080-joint-decoding-sandbox-on-s-biad452-all.md:16–18`.
+
+Fig. 5a’s corrected mean gain and teacher gains match `n058_decision.csv:2`. Training and rendering were outside this check.

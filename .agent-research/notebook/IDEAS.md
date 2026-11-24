@@ -37,3 +37,13 @@ idea · mechanism · cheapest test · status open|testing|promising|dead(why)
   (singles -.01..-.02); fov-re (1 seed) -> CD19 +.029; pair loss -> CD56 +.019, grp:CD45 +.017 (but its FOV sampler costs -.007).
   Idea: a composite predictor fixed a priori by design (pooled targets <- panel head, dim singles CD123/HLA-DR/CD19/CD56 <- twopart
   (+ fov-re), other singles <- control) evaluated on FRESH seeds (s2) to avoid per-target selection bias; then as Cytoland-ensemble member.
+
+## 2026-11-24 (while N085 runs)
+- ConvNeXt-S zoom2 member (in-domain SSL encoder, --zoom 2): the r50 zoom2 view was a useful ensemble diversifier (N048/N055); combine
+  architecture x view diversity. ~1.2 GPU-h for both directions. open
+- ConvNeXt-B (88 M) with 120-ep in-domain SSL: larger encoders help when SSL data are larger (N078/N083: ConvNeXt-S b10 +.007 with 275k
+  cells, b01 needed 2x epochs). ~2.5x ConvNeXt-S cost (~12 GPU-h per draw) -> only if N085 shows ConvNeXt members carry the ensemble. open
+- ImageStream (S-BIAD452) as PRETRAINING only (IFC stem SSL or 9-marker supervised pretraining, then drop the stem and fine-tune on
+  BSCCM with separate heads): N081 shared trunk + shared rows hurt (CD19 conflict); pretraining-only avoids head conflicts. open
+- Joint decoding: single-stain training loses CD4-CD8 exclusivity (N080). Any joint-structure transfer to BSCCM needs either joint labels
+  or a learned joint prior; a prior from external all-marker data is close to the declined exclusivity prior (user 11-17) -> ask first.

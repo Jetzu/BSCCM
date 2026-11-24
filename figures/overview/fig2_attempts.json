@@ -1,0 +1,522 @@
+{
+ "png": "/home/hpc/v181bb/v181bb10/BSCCM/figures/overview/fig2_attempts.png",
+ "svg": "/home/hpc/v181bb/v181bb10/BSCCM/figures/overview/fig2_attempts.svg",
+ "created": "2026-11-24T12:08:28",
+ "command": [
+  "/home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python",
+  "figures/overview/make_figures.py"
+ ],
+ "cwd": "/home/hpc/v181bb/v181bb10/BSCCM",
+ "source": [
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N060-rare-positive-output-heads-for-dim-marke/plot_n060_single.csv",
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N053-lf-encoder-swap-on-the-v10-goal-dinov3-v/plot_n053_single.csv",
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N067-consensus-background-training-targets-tr/plot_goal.csv",
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N075-label-separation-v10-head-auxiliary-head/plot_goal.csv",
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N073-measurement-aware-supervision-censored-c/plot_goal.csv",
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N074-dense-privileged-supervision-auxiliary-d/plot_goal.csv",
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N076-multi-marker-final-fine-tune-continue-tr/plot_goal.csv",
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N068-exact-symmetry-augmentation-anti-diagona/plot_goal.csv",
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N083-convnext-s-in-domain-ssl-encoder-for-mul/plot_goal.csv",
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N078-in-domain-ssl-scaling-sigreg-lf-pretrain/plot_goal.csv",
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N081-two-stem-joint-source-training-bsccm-led/plot_goal.csv"
+ ],
+ "notes": "Single-model GOAL change vs the seed-matched ResNet-50 SSL control (rings = seeds). a output heads/losses (N060-N062), b loss/sampling variants, c label and supervision changes (N067-N076), d encoders, pretraining and external data (N053 all five arms, N078, N081, N083; single-seed arms vs the seed-0 control, no test). Control = n051_v10_base seeds 0/1 (.6730/.6683) in every panel (asserted). Paired t-tests on GOAL per seed (= test of the plotted differences), Holm within panel.",
+ "width_in": 8.5,
+ "height_in": 5.0394,
+ "png_px": [
+  3840,
+  2276
+ ],
+ "significance": "two-sided; Holm-corrected over all comparisons of a panel (one family per panel); * <0.05 ** <0.01 *** <0.001 **** <0.0001",
+ "panels": [
+  {
+   "panel": "a",
+   "kind": "bar",
+   "groups": [
+    "control",
+    "HL-Gauss head",
+    "two-part head",
+    "panel head",
+    "Pearson loss"
+   ],
+   "colors": [
+    "#767E86",
+    "#3A6C9E",
+    "#3A6C9E",
+    "#3A6C9E",
+    "#3A6C9E"
+   ],
+   "n": [
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "mean": [
+    0.0,
+    -0.011510975562369685,
+    0.005022227211138153,
+    -0.00017930617357525547,
+    0.0020069930128036595
+   ],
+   "sd": [
+    0.0,
+    0.0033250214469113817,
+    0.0037310859573707346,
+    0.0028070947507466866,
+    0.0020230792488591417
+   ],
+   "median": [
+    0.0,
+    -0.011510975562369685,
+    0.005022227211138153,
+    -0.00017930617357525547,
+    0.0020069930128036595
+   ],
+   "whisker": "sd",
+   "stats": [
+    {
+     "test": "paired t-test",
+     "p": 0.1282668592135429,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 0.5130674368541716,
+     "stars": "ns",
+     "a": "control",
+     "b": "HL-Gauss head",
+     "reference": "control"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.307931578302947,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 0.9237947349088409,
+     "stars": "ns",
+     "a": "control",
+     "b": "two-part head",
+     "reference": "control"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.9426470022099063,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 0.9426470022099063,
+     "stars": "ns",
+     "a": "control",
+     "b": "panel head",
+     "reference": "control"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.3942255044316828,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 0.9237947349088409,
+     "stars": "ns",
+     "a": "control",
+     "b": "Pearson loss",
+     "reference": "control"
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "GOAL change vs control"
+  },
+  {
+   "panel": "b",
+   "kind": "bar",
+   "groups": [
+    "control",
+    "FOV offsets",
+    "pair loss",
+    "no autofl",
+    "FOV sampler"
+   ],
+   "colors": [
+    "#767E86",
+    "#55BDB2",
+    "#55BDB2",
+    "#55BDB2",
+    "#55BDB2"
+   ],
+   "n": [
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "mean": [
+    0.0,
+    0.003396354349609554,
+    0.0035677338463415142,
+    0.0007218530363695685,
+    -0.006605104741308154
+   ],
+   "sd": [
+    0.0,
+    0.0017301672988273135,
+    0.0035679365575284625,
+    0.0014687713183208825,
+    0.0054201189634048
+   ],
+   "median": [
+    0.0,
+    0.003396354349609554,
+    0.0035677338463415142,
+    0.0007218530363695685,
+    -0.006605104741308154
+   ],
+   "whisker": "sd",
+   "stats": [
+    {
+     "test": "paired t-test",
+     "p": 0.22010788791040234,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 0.8804315516416094,
+     "stars": "ns",
+     "a": "control",
+     "b": "FOV offsets",
+     "reference": "control"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.3918436030720112,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 1.0,
+     "stars": "ns",
+     "a": "control",
+     "b": "pair loss",
+     "reference": "control"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.6133240702406343,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 1.0,
+     "stars": "ns",
+     "a": "control",
+     "b": "no autofl",
+     "reference": "control"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.3347154544521047,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 1.0,
+     "stars": "ns",
+     "a": "control",
+     "b": "FOV sampler",
+     "reference": "control"
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "GOAL change vs control"
+  },
+  {
+   "panel": "c",
+   "kind": "bar",
+   "groups": [
+    "control",
+    "consensus labels",
+    "label separation",
+    "censored + 20 ep",
+    "fluor. image aux",
+    "multi-marker FT",
+    "symmetry aug"
+   ],
+   "colors": [
+    "#767E86",
+    "#CF832F",
+    "#CF832F",
+    "#CF832F",
+    "#CF832F",
+    "#CF832F",
+    "#CF832F"
+   ],
+   "n": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "mean": [
+    0.0,
+    -0.008256438422830359,
+    0.00020953575502480337,
+    -0.004832320123365819,
+    -0.002327562796657745,
+    -0.002489892058298415,
+    -0.0012154723641308318
+   ],
+   "sd": [
+    0.0,
+    0.002932426946786861,
+    0.002345870567783424,
+    0.0007649703463652948,
+    0.0043697462221080575,
+    0.0011026081058595123,
+    0.005972111397034922
+   ],
+   "median": [
+    0.0,
+    -0.008256438422830359,
+    0.00020953575502480337,
+    -0.004832320123365819,
+    -0.002327562796657745,
+    -0.002489892058298415,
+    -0.0012154723641308318
+   ],
+   "whisker": "sd",
+   "stats": [
+    {
+     "test": "paired t-test",
+     "p": 0.1566423683786579,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 0.7832118418932894,
+     "stars": "ns",
+     "a": "control",
+     "b": "consensus labels",
+     "reference": "control"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.9200064279361954,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 1.0,
+     "stars": "ns",
+     "a": "control",
+     "b": "label separation",
+     "reference": "control"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.07096593229560207,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 0.4257955937736124,
+     "stars": "ns",
+     "a": "control",
+     "b": "censored + 20 ep",
+     "reference": "control"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.5889975376214274,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 1.0,
+     "stars": "ns",
+     "a": "control",
+     "b": "fluor. image aux",
+     "reference": "control"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.19318823020571424,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 0.7832118418932894,
+     "stars": "ns",
+     "a": "control",
+     "b": "multi-marker FT",
+     "reference": "control"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.8215858875487858,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 1.0,
+     "stars": "ns",
+     "a": "control",
+     "b": "symmetry aug",
+     "reference": "control"
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "GOAL change vs control"
+  },
+  {
+   "panel": "d",
+   "kind": "bar",
+   "groups": [
+    "control",
+    "ConvNeXt-S",
+    "Cytoland",
+    "Cytoland, full lr",
+    "DINOv3-B",
+    "DINOv3-S",
+    "DinoBloom-B",
+    "r50, 4x SSL",
+    "+ ImageStream"
+   ],
+   "colors": [
+    "#767E86",
+    "#A584D9",
+    "#A584D9",
+    "#A584D9",
+    "#A584D9",
+    "#A584D9",
+    "#A584D9",
+    "#A584D9",
+    "#A584D9"
+   ],
+   "n": [
+    2,
+    2,
+    2,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "mean": [
+    0.0,
+    -0.002539977819963679,
+    -0.004613855461883476,
+    -0.02656783789537087,
+    -0.021467837895370878,
+    -0.02346783789537088,
+    -0.01776783789537084,
+    -0.0022421642027018462,
+    -0.00569739270243641
+   ],
+   "sd": [
+    0.0,
+    0.001654762652739155,
+    0.0017733989644154195,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "median": [
+    0.0,
+    -0.002539977819963679,
+    -0.004613855461883476,
+    -0.02656783789537087,
+    -0.021467837895370878,
+    -0.02346783789537088,
+    -0.01776783789537084,
+    -0.0022421642027018462,
+    -0.00569739270243641
+   ],
+   "whisker": "sd",
+   "stats": [
+    {
+     "test": "paired t-test",
+     "p": 0.2748238781295278,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 0.33788716257026014,
+     "stars": "ns",
+     "a": "control",
+     "b": "ConvNeXt-S",
+     "reference": "control"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.16894358128513007,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 0.33788716257026014,
+     "stars": "ns",
+     "a": "control",
+     "b": "Cytoland",
+     "reference": "control"
+    },
+    {
+     "test": null,
+     "p": null,
+     "n_i": 0,
+     "n_j": 0,
+     "p_holm": null,
+     "stars": "",
+     "note": "test undefined (n < 2 or zero variance)",
+     "a": "control",
+     "b": "Cytoland, full lr",
+     "reference": "control"
+    },
+    {
+     "test": null,
+     "p": null,
+     "n_i": 0,
+     "n_j": 0,
+     "p_holm": null,
+     "stars": "",
+     "note": "test undefined (n < 2 or zero variance)",
+     "a": "control",
+     "b": "DINOv3-B",
+     "reference": "control"
+    },
+    {
+     "test": null,
+     "p": null,
+     "n_i": 0,
+     "n_j": 0,
+     "p_holm": null,
+     "stars": "",
+     "note": "test undefined (n < 2 or zero variance)",
+     "a": "control",
+     "b": "DINOv3-S",
+     "reference": "control"
+    },
+    {
+     "test": null,
+     "p": null,
+     "n_i": 0,
+     "n_j": 0,
+     "p_holm": null,
+     "stars": "",
+     "note": "test undefined (n < 2 or zero variance)",
+     "a": "control",
+     "b": "DinoBloom-B",
+     "reference": "control"
+    },
+    {
+     "test": null,
+     "p": null,
+     "n_i": 0,
+     "n_j": 0,
+     "p_holm": null,
+     "stars": "",
+     "note": "test undefined (n < 2 or zero variance)",
+     "a": "control",
+     "b": "r50, 4x SSL",
+     "reference": "control"
+    },
+    {
+     "test": null,
+     "p": null,
+     "n_i": 0,
+     "n_j": 0,
+     "p_holm": null,
+     "stars": "",
+     "note": "test undefined (n < 2 or zero variance)",
+     "a": "control",
+     "b": "+ ImageStream",
+     "reference": "control"
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "GOAL change vs control"
+  }
+ ],
+ "matplotlib": "3.11.0"
+}
