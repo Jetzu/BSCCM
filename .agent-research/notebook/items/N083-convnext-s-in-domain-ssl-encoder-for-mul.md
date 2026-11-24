@@ -18,7 +18,10 @@ Cost ~4 GPU-h.
 ## Changes
 
 ## Evidence
-<!-- exp: each run = job id, config, seed, output dir · results vs baseline -->
+Jobs: 1439071/072 seed-1 fine-tunes (exit 0); 1439073 draw-0 SSL 120 ep (running). Scored with scripts/score_goal_arms.py (v10).
+PRIMARY (pre-registered, MM3 over seeds 0+1, paired): ConvNeXt-S .7735 / .7688 vs control .7563 / .7590 -> +.0172 / +.0098, mean +.0135
+> bar +.007 = REPLICATED multi-marker gain (user priority). GOAL secondary: .6681 vs .6706 (-.0025; b10 .6901 vs .6810 +.009, b01 .6460
+vs .6603 -.014): the small-draw (b01) weakness also replicates -> the 120-ep draw-0 SSL arm tests it (pending).
 
 ## Outcome
 <!-- on close: bin/effect.sh N083 improved|flat|worse --value V | --void  (n/a --why infra|measurement) [--scale knob|module|paradigm] -->

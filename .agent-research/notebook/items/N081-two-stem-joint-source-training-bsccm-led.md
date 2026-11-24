@@ -30,6 +30,13 @@ eval predictions identical to the IFC-skipped control over 3 optimizer steps), t
 (diffs applied, cmp-identical to staged copies). Pack rebuilt with --stat-donors sample0,sample1 (test donor sample2) -- job in jobs.txt.
 
 ## Evidence
+
+2026-11-24 data recovery: S-BIAD452 sample2 (donor 2) zarr.zip files lack .zarray/.zattrs on the archive (chunk files only) -> packer
+rebuilds the array metadata from a metadata-bearing part (chunks 100, blosc-lz4, vlen <u2) and infers each cell's (H, W) from its
+flattened length by brightfield row smoothness (2084/2084 exact on sample0 cells with known shapes). Without object numbers donor 2
+cannot be linked to IDEAS -> labels are IMAGE-DERIVED for all donors (masked background-subtracted sums; asinh r vs IDEAS on sample0
+CD15 1.00, Siglec8 .977, CD14 .948, CD19 .762, CD3 .998, CD45 .997, CD4 .966, CD56 .937, CD8 .908; IDEAS kept as I_ideas). Earlier pack
+failures: truncated FCS download (4 KB, re-fetched); all 11 zips CRC ok, uncompressed sizes = archive sizes.
 <!-- exp: each run = job id, config, seed, output dir · results vs baseline -->
 
 ## Outcome

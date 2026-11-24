@@ -98,6 +98,54 @@ def fit_statistics(lf, intensity, stat_rows):
     return np.array(scales, np.float32), cofactor, np.sort(rs)
 
 
+# --- N080/N081 (2026-11-24): sample2 parts on the archive lack .zarray/.zattrs (chunk files only) -> rebuild the array metadata from a
+# metadata-bearing part (same writer: chunks 100, blosc-lz4, vlen-array <u2) and infer each cell's (H, W) from its flattened 12*H*W length
+# by brightfield row smoothness (validated 2084/2084 exact on sample0 cells with known shapes). Labels: image-derived intensities for ALL
+# donors (one definition): per fluorescence channel, sum of (pixel - border median) inside the brightfield cell mask (log-ratio |.|,
+# gaussian 1.5, > border median + 5 x 1.4826 MAD, holes filled, eroded 2 px); asinh agreement with IDEAS Intensity_MC on sample0:
+# CD15 1.00, Siglec8 .977, CD14 .948, CD19 .762, CD3 .998, CD45 .997, CD4 .966, CD56 .937, CD8 .908 (mean .943). IDEAS values are kept
+# (I_ideas; NaN where no object number) for a sensitivity check.
+FLUOR_CH = {'CD15': 1, 'Siglec8': 2, 'CD14': 3, 'CD19': 4, 'CD3': 6, 'CD45': 7, 'CD4': 9, 'CD56': 10, 'CD8': 11}
+
+
+def infer_hw(flat, wmin=30, wmax=120, hmin=30, hmax=160):
+    n = flat.size // 12; bf = flat[:n].astype(np.float64); best = None
+    for w in range(wmin, wmax + 1):
+        if n % w: continue
+        h = n // w
+        if not (hmin <= h <= hmax): continue
+        sc = np.abs(np.diff(bf.reshape(h, w), axis=0)).mean()
+        if best is None or sc < best[0]: best = (sc, h, w)
+    if best is None: raise ValueError(f'no plausible (H, W) for length {flat.size}')
+    return (12, best[1], best[2])
+
+
+def image_intensity(st):
+    from scipy import ndimage as ndi
+    bf = st[0].astype(np.float64); b = np.concatenate([bf[0], bf[-1], bf[:, 0], bf[:, -1]])
+    y = ndi.gaussian_filter(np.abs(np.log(np.clip(bf / max(np.median(b), 1.0), 1e-3, None))), 1.5)
+    yb = np.concatenate([y[0], y[-1], y[:, 0], y[:, -1]]); m = y > np.median(yb) + 5 * 1.4826 * np.median(np.abs(yb - np.median(yb)))
+    m = ndi.binary_erosion(ndi.binary_fill_holes(m), iterations=2)
+    out = []
+    for k in MARKERS:
+        x = st[FLUOR_CH[k]].astype(np.float64); bb = np.concatenate([x[0], x[-1], x[:, 0], x[:, -1]]); x = x - np.median(bb)
+        out.append(x[m].sum() if m.any() else x.sum())
+    return out
+
+
+def open_part(zp, ref_meta):
+    import zarr, zipfile, json as _j
+    zf = zipfile.ZipFile(zp); names = zf.namelist()
+    if '.zarray' in names:
+        g = zarr.open(zarr.storage.ZipStore(zp, mode='r'), mode='r')   # materialise once: per-cell indexing would decode a 100-cell chunk per access
+        return g[:], list(g.attrs['object_number']), [tuple(x) for x in g.attrs['shape']]
+    keys = sorted(int(k) for k in names); meta = dict(ref_meta); meta['shape'] = [(max(keys) + 1) * meta['chunks'][0]]
+    store = {'.zarray': _j.dumps(meta).encode()}; store.update({str(k): zf.read(str(k)) for k in keys})
+    arr = zarr.open(store, mode='r')[:]; n = 0   # object fill value is 0 -> stop at the first non-array / too-short element
+    while n < len(arr) and isinstance(arr[n], np.ndarray) and arr[n].size >= 12 and arr[n].size % 12 == 0: n += 1
+    return arr[:n], [-1] * n, None
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--src', default='/hnvme/workspace/v181bb10-bsccm/external/sbiad452')
@@ -110,41 +158,48 @@ def main():
     import zarr
     parts = sorted(p for p in glob.glob(f'{a.src}/zarr/*/*.zarr.zip') if not p.endswith('.part'))
     if len(parts) != 11 and not a.allow_partial: raise SystemExit(f'expected 11 zarr.zip parts, found {len(parts)}')
-    meta, Is, areas = [], [], []
+    meta, Is, Iid, areas = [], [], [], []
+    import zipfile
+    ref = next(json.loads(zipfile.ZipFile(p).read('.zarray')) for p in parts if '.zarray' in zipfile.ZipFile(p).namelist())
     for pi, zp in enumerate(parts):
         sample = os.path.basename(os.path.dirname(zp)); stem = os.path.basename(zp)[:-len('.zarr.zip')]
         fcs = f'{a.src}/original/{sample}/{stem}_IDEAS.fcs'; names, data = read_fcs(fcs)
         row = {int(o): i for i, o in enumerate(data[:, col(names, 'objectnumber')])}
-        g = zarr.open(zarr.storage.ZipStore(zp, mode='r'), mode='r'); obj = g.attrs['object_number']; shp = g.attrs['shape']
+        g, obj, shp = open_part(zp, ref)
         n = len(obj) if not a.max_cells else min(a.max_cells, len(obj))
-        keep = [i for i in range(n) if int(obj[i]) in row]
-        meta.append((pi, sample, stem, zp, keep, [int(obj[i]) for i in keep], [tuple(shp[i]) for i in keep]))
-        rr = [row[int(obj[i])] for i in keep]
-        Is.append(np.stack([data[rr, col(names, 'intensitymc' + FCS_KEY[m])] for m in MARKERS], 1)); areas.append(data[rr, col(names, 'aream01')])
-        print(f'{stem}: {len(keep)}/{n} cells matched to IDEAS rows', flush=True)
+        keep = list(range(n)) if shp is None else [i for i in range(n) if int(obj[i]) in row]
+        shapes = [infer_hw(np.asarray(g[i])) if shp is None else shp[i] for i in keep]
+        meta.append((pi, sample, stem, zp, keep, [int(obj[i]) for i in keep], shapes, g))
+        Is.append(np.array([image_intensity(np.asarray(g[i]).reshape(sh)) for i, sh in zip(keep, shapes)], np.float64))
+        if shp is None:
+            Iid.append(np.full((len(keep), 9), np.nan)); areas.append(np.full(len(keep), np.nan))
+        else:
+            rr = [row[int(obj[i])] for i in keep]
+            Iid.append(np.stack([data[rr, col(names, 'intensitymc' + FCS_KEY[m])] for m in MARKERS], 1)); areas.append(data[rr, col(names, 'aream01')])
+        print(f"{stem}: {len(keep)}/{n} cells ({'metadata rebuilt, shapes inferred, no IDEAS link' if shp is None else 'matched to IDEAS rows'})", flush=True)
     N = sum(len(m[4]) for m in meta)
     sample = np.concatenate([[m[1]] * len(m[4]) for m in meta])
     stat_donors, stat_rows = statistic_rows(sample, a.stat_donors)
     os.makedirs(a.out, exist_ok=True)
     lf = np.lib.format.open_memmap(f'{a.out}/lf.npy.part', mode='w+', dtype=np.float16, shape=(N, 3, 128, 128)); k = 0
-    for pi, run, stem, zp, keep, objs, shps in meta:
-        g = zarr.open(zarr.storage.ZipStore(zp, mode='r'), mode='r')
+    for pi, run, stem, zp, keep, objs, shps, g in meta:
         for i, s in zip(keep, shps):
             lf[k] = lf_image(np.asarray(g[i]).reshape(s), a.scale); k += 1
         lf.flush(); print(f'packed {stem} -> {k}/{N}', flush=True)
-    I = np.concatenate(Is).astype(np.float32)
+    I = np.concatenate(Is).astype(np.float32); I_ideas = np.concatenate(Iid).astype(np.float32)
     chan_scale, c, scale_rows = fit_statistics(lf, I, stat_rows)
     del lf; os.replace(f'{a.out}/lf.npy.part', f'{a.out}/lf.npy')
     Yt = np.arcsinh(I / c); Y = np.zeros_like(Yt)
     for sv in np.unique(sample):
         s = sample == sv; Y[s] = (Yt[s] - Yt[s].mean(0)) / (Yt[s].std(0) + 1e-6)
-    np.savez(f'{a.out}/labels.npz', Y=Y, I_raw=I, cofactor=c, names=np.array(MARKERS), sample=sample,
+    np.savez(f'{a.out}/labels.npz', Y=Y, I_raw=I, I_ideas=I_ideas, cofactor=c, names=np.array(MARKERS), sample=sample,
              part=np.concatenate([[m[2]] * len(m[4]) for m in meta]), object_number=np.concatenate([m[5] for m in meta]),
              area_um2=np.concatenate(areas).astype(np.float32), scale=a.scale, chan_scale=chan_scale)
     json.dump(dict(N=int(N), scale=a.scale, chan_scale=chan_scale.tolist(), cofactor=dict(zip(MARKERS, c.tolist())), parts=[m[2] for m in meta],
                    stat_donors=stat_donors, n_stat_cells=len(stat_rows), n_chan_scale_cells=len(scale_rows),
                    stat_runs=sorted(set(sample[stat_rows])),
                    label_standardization='per run; cofactors fitted on stat_donors only',
+                   label_source='image-derived masked intensities for all donors (IDEAS kept as I_ideas)',
                    lf_channels=['BF1 log-ratio', 'BF2 log-ratio', 'SSC asinh'], max_cells=a.max_cells), open(f'{a.out}/pack.json', 'w'), indent=1)
     print('done', N, flush=True)
 
