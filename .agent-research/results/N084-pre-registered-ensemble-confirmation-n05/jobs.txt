@@ -1,0 +1,2 @@
+1440201 n084_cnxs120_s1_b01 scripts/train_lf.py --out /hnvme/workspace/v181bb10-bsccm/runs/n084_cnxs120_s1_b01 --protocol b0to1 --channels all --phase 1 --epochs 10 --bs 256 --lr 0.0005 --workers 15 --w-cls 0.5 --include-gs 0 --targets targets_v5cx_v10.npz --arch convnext_small --init-ssl /hnvme/workspace/v181bb10-bsccm/runs/n083_ssl_cnxs_120_ex1/encoder_final.pt --seed 1
+(b10 member = existing n083_cnxs60_s1_b10, seed 1, trained before this pre-registration but never scored inside an ensemble)

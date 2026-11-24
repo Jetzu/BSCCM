@@ -1,0 +1,5 @@
+set,b10,b01,GOAL,MM3
+control r50,0.6867,0.6592,0.673,0.7563
+ConvNeXt-S best-per-direction,0.6941,0.6566,0.6753,0.7699
+N053 ensemble,0.7001,0.6723,0.6862,0.7734
+N053 ensemble + ConvNeXt-S,0.7045,0.6769,0.6907,0.7769
