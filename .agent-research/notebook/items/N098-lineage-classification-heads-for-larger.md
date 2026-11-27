@@ -14,6 +14,7 @@ slide sharpen the positives. Frozen n051_v10_base features, both directions, CPU
 Baseline = the same model's regression outputs, score z(out a) - z(out b) (fig14 method). PRIMARY: T vs B AUROC on the test draw, b10
 (39 B vs 89 T; b01 has only 10 B cells -> descriptive). Success = heads beat regression by >= .05 on b10 T vs B AND the mean over all
 15 lineage pairs (both directions) rises by >= .02, with slide control |AUROC - .5| <= .1 for every pair. Kill: T vs B gain < .02.
+AMENDMENT (user 11-27 "train a classifier head on this", before any N098 result was read): third arm "multiclass" = one 6-lineage multinomial head (n098_multiclass.py), same metric + slide control; descriptive unless its slide control stays within .5 +- .1.
 If it succeeds: add the heads to fine-tuning (GPU, needs its own item) and re-score E8-style ensembles.
 
 ## Changes
