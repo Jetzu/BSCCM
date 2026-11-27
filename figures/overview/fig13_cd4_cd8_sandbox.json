@@ -1,0 +1,197 @@
+{
+ "png": "/home/hpc/v181bb/v181bb10/BSCCM/figures/overview/fig13_cd4_cd8_sandbox.png",
+ "svg": "/home/hpc/v181bb/v181bb10/BSCCM/figures/overview/fig13_cd4_cd8_sandbox.svg",
+ "created": "2026-11-27T17:00:30",
+ "command": [
+  "/home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python",
+  "figures/overview/make_lineage.py"
+ ],
+ "cwd": "/home/hpc/v181bb/v181bb10/BSCCM",
+ "source": [
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N097-lineage-separation-of-decoded-markers-us/sandbox_cd4_cd8.csv",
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N097-lineage-separation-of-decoded-markers-us/sandbox_t_cells.csv",
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N097-lineage-separation-of-decoded-markers-us/n097_lineage.py"
+ ],
+ "notes": "N097. CD4 and CD8 exist ONLY in the external ImageStream sandbox (S-BIAD452: brightfield/side-scatter, 9 markers on every cell, 3 donors each held out once; N080 ResNet-50 models); BSCCM has no CD4/CD8 stain. T cells and the CD4 T / CD8 T subsets = hierarchical gates on the held-out donor's own measured labels. a-c T cells of held-out donor 0: measured CD4 vs CD8 (two exclusive populations) vs predictions. d r(CD4, CD8) within T cells, rings = donors: measured -.75/-.81/-.86; all-marker training -.85/-.43/+.20; one-marker training -.05/-.50/+.33 (exclusivity is lost in 2 of 3 donors). e CD4 T vs CD8 T AUROC .62/.75/.54 (all-marker), .50/.68/.62 (one-marker): the subsets are barely distinguishable from these images. f per-marker accuracy over all held-out cells: CD4 r .60/.71/.23 vs CD8 .28/.16/.40 (all-marker). Paired t, Holm (3 donors: low power).",
+ "page": "letter",
+ "width_in": 8.5,
+ "height_in": 5.315,
+ "png_px": [
+  3840,
+  2401
+ ],
+ "significance": "two-sided; Holm-corrected over all comparisons of a panel (one family per panel); * <0.05 ** <0.01 *** <0.001 **** <0.0001",
+ "panels": [
+  {
+   "panel": "d",
+   "kind": "bar",
+   "groups": [
+    "measured",
+    "all-marker\ntraining",
+    "one-marker\ntraining"
+   ],
+   "colors": [
+    "#767E86",
+    "#3A6C9E",
+    "#CF832F"
+   ],
+   "n": [
+    3,
+    3,
+    3
+   ],
+   "mean": [
+    -0.8035395476789305,
+    -0.35993907008023457,
+    -0.07089539885967867
+   ],
+   "sd": [
+    0.05605428782210883,
+    0.5306886132669808,
+    0.41435328827203294
+   ],
+   "median": [
+    -0.806838310685505,
+    -0.4287754708713053,
+    -0.0490411154552662
+   ],
+   "whisker": "sd",
+   "stats": [
+    {
+     "test": "paired t-test",
+     "p": 0.32015833933192284,
+     "n_i": 3,
+     "n_j": 3,
+     "p_holm": 0.32015833933192284,
+     "stars": "ns",
+     "a": "measured",
+     "b": "all-marker\ntraining",
+     "reference": "measured"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.10234607868146753,
+     "n_i": 3,
+     "n_j": 3,
+     "p_holm": 0.20469215736293506,
+     "stars": "ns",
+     "a": "measured",
+     "b": "one-marker\ntraining",
+     "reference": "measured"
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "r(CD4, CD8) in T cells"
+  },
+  {
+   "panel": "e",
+   "kind": "bar",
+   "groups": [
+    "all-marker\ntraining",
+    "one-marker\ntraining"
+   ],
+   "colors": [
+    "#3A6C9E",
+    "#CF832F"
+   ],
+   "n": [
+    3,
+    3
+   ],
+   "mean": [
+    0.6375560763994056,
+    0.5990738281648379
+   ],
+   "sd": [
+    0.10634914840071358,
+    0.08839556384535713
+   ],
+   "median": [
+    0.6174625938946692,
+    0.6205151918133441
+   ],
+   "whisker": "sd",
+   "stats": [
+    {
+     "test": "paired t-test",
+     "p": 0.5821824767105579,
+     "n_i": 3,
+     "n_j": 3,
+     "p_holm": 0.5821824767105579,
+     "stars": "ns",
+     "a": "all-marker\ntraining",
+     "b": "one-marker\ntraining",
+     "reference": "all-marker\ntraining"
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "AUROC CD4 vs CD8 T (pred. CD4 - CD8)"
+  },
+  {
+   "panel": "f",
+   "kind": "bar",
+   "groups": [
+    "CD4, all-marker",
+    "CD4, one-marker",
+    "CD8, all-marker",
+    "CD8, one-marker"
+   ],
+   "colors": [
+    "#3A6C9E",
+    "#CF832F",
+    "#3A6C9E",
+    "#CF832F"
+   ],
+   "n": [
+    3,
+    3,
+    3,
+    3
+   ],
+   "mean": [
+    0.5135633527004373,
+    0.35967968507615905,
+    0.2811273120312864,
+    0.24362802109607817
+   ],
+   "sd": [
+    0.2506537050846616,
+    0.2387274973455647,
+    0.11877090248887893,
+    0.1990262449164469
+   ],
+   "median": [
+    0.5988234760447037,
+    0.3354931715422622,
+    0.2840141299958595,
+    0.1933288771815471
+   ],
+   "whisker": "sd",
+   "stats": [
+    {
+     "test": "paired t-test",
+     "p": 0.4526278733303866,
+     "n_i": 3,
+     "n_j": 3,
+     "p_holm": 0.9052557466607732,
+     "stars": "ns",
+     "a": "CD4, all-marker",
+     "b": "CD4, one-marker"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.5389855521154048,
+     "n_i": 3,
+     "n_j": 3,
+     "p_holm": 0.9052557466607732,
+     "stars": "ns",
+     "a": "CD8, all-marker",
+     "b": "CD8, one-marker"
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "Pearson r, predicted vs measured"
+  }
+ ],
+ "matplotlib": "3.11.0"
+}

@@ -66,12 +66,12 @@ SB = '/hnvme/workspace/v181bb10-bsccm'
 
 def sandbox():
     lab = np.load(SB + '/external/sbiad452_pack/labels.npz', allow_pickle=False); raw = lab['I_raw'].astype(np.float64)
-    MK = list(SE.M); i3, i19 = MK.index('CD3'), MK.index('CD19')
+    MK = list(SE.M); i3, i19 = MK.index('CD3'), MK.index('CD19'); i4, i8 = MK.index('CD4'), MK.index('CD8')
     runs = {'all markers per cell': 'n080_full', 'one marker per cell': 'n080_single'}
     for lam in (1, 10, 100):
         runs[f'one marker + corr loss {lam}'] = f'n096/sb_single_corr{lam}'
     runs['all markers + corr loss 10'] = 'n096/sb_full_corr10'
-    rows, prof, cells = [], [], []
+    rows, prof, cells, trows, tcells = [], [], [], [], []
     for d in (0, 1, 2):
         truth_done = False
         for arm, r in runs.items():
@@ -86,6 +86,12 @@ def sandbox():
                                  auroc_B_vs_T=roc_auc_score(np.r_[np.ones(Bm.sum()), np.zeros(Tm.sum())], np.r_[Q[Bm, i19] - Q[Bm, i3], Q[Tm, i19] - Q[Tm, i3]]),
                                  n_T=int(Tm.sum()), n_B=int(Bm.sum()), r_CD3_vs_measured=B.pr(Q[:, i3], Yt[:, i3]), r_CD19_vs_measured=B.pr(Q[:, i19], Yt[:, i19])))
                 Zq = (Q - Q.mean(0)) / Q.std(0)
+                Tall = np.isin(t, ('T4', 'T8', 'Tother')); T4, T8 = t == 'T4', t == 'T8'   # CD4 vs CD8 T cells (user 11-27 follow-up)
+                trows.append(dict(donor=d, arm=a, r_CD4_CD8_T=B.pr(Q[Tall, i4], Q[Tall, i8]), n_T=int(Tall.sum()), n_T4=int(T4.sum()), n_T8=int(T8.sum()),
+                                  auroc_T4_vs_T8=roc_auc_score(np.r_[np.ones(T4.sum()), np.zeros(T8.sum())], np.r_[Q[T4, i4] - Q[T4, i8], Q[T8, i4] - Q[T8, i8]]),
+                                  r_CD4_vs_measured=B.pr(Q[:, i4], Yt[:, i4]), r_CD8_vs_measured=B.pr(Q[:, i8], Yt[:, i8])))
+                if d == 0 and a in ('truth', 'all markers per cell', 'one marker per cell'):
+                    tcells.append(pd.DataFrame(dict(donor=d, arm=a, type=t[Tall], CD4=Zq[Tall, i4], CD8=Zq[Tall, i8])))
                 for ty in ('Tother', 'T4', 'T8', 'B', 'NK', 'mono', 'neut', 'eos'):
                     k = t == ty
                     if k.sum() >= 20:
@@ -93,6 +99,8 @@ def sandbox():
                 if d == 0 and a in ('truth', 'all markers per cell', 'one marker per cell'):
                     cells.append(pd.DataFrame(dict(donor=d, arm=a, type=t[lym], CD3=Zq[lym, i3], CD19=Zq[lym, i19])))
             truth_done = True
+    pd.DataFrame(trows).to_csv(f'{HERE}/sandbox_cd4_cd8.csv', index=False); pd.concat(tcells).to_csv(f'{HERE}/sandbox_t_cells.csv', index=False)
+    print(pd.DataFrame(trows).round(3).to_string(index=False))
     return pd.DataFrame(rows), pd.DataFrame(prof), pd.concat(cells)
 
 

@@ -15,12 +15,12 @@ COLS = ['CD3', 'CD19', 'CD56', 'CD14', 'CD16', 'CD123', 'HLA-DR', 'CD45']
 e8 = prof[(prof.model == 'E8 record')]
 H = np.array([[e8[(e8.lineage == x) & (e8.marker == y)].mean_pred_z.mean() for y in COLS] for x, _ in ROWS])
 fig, ax = pfig.figure(2, 3, height_mm=150)
-pfig.heatmap(ax[0, 0], H, [n for _, n in ROWS], ['pred. ' + c for c in COLS], cmap=DIV, vmin=-2, vmax=2, label='Mean predicted z-score')
+pfig.heatmap(ax[0, 0], H, [n for _, n in ROWS], ['pred. ' + c for c in COLS], cmap=DIV, vmin=-2, vmax=2, label='Mean predicted intensity (z-score)')
 for k, d in enumerate(('b10', 'b01')):
     for grp, c in (('T (CD3+ slide)', SKY), ('B (CD19+ slide)', ROSE)):
         s_ = cells[(cells.group == grp) & (cells.direction == d)]
         pfig.scatter(ax[0, 1 + k], s_.pred_CD3.values, s_.pred_CD19.values, c, label=grp.split(' ')[0] + ' cells', s=4)
-    ax[0, 1 + k].set_xlabel('Predicted CD3 (z)'); ax[0, 1 + k].set_ylabel('Predicted CD19 (z)'); ax[0, 1 + k].legend(frameon=False, fontsize=6, loc='upper right')
+    ax[0, 1 + k].set_xlabel('Predicted CD3 intensity (z-score)'); ax[0, 1 + k].set_ylabel('Predicted CD19 intensity (z-score)'); ax[0, 1 + k].legend(frameon=False, fontsize=6, loc='upper right')
 TESTS = [('CD3+ vs CD3- (own slide)', 'CD3+ vs -'), ('CD19+ vs CD19- (own slide)', 'CD19+ vs -'), ('CD56+ vs CD56- (own slide)', 'CD56+ vs -'),
          ('CD14+ vs CD14- (own slide)', 'CD14+ vs -'), ('CD16+ vs CD16- (own slide)', 'CD16+ vs -'), ('CD123+ vs CD123- (own slide)', 'CD123+ vs -'),
          ('B vs T by predicted CD19 - CD3', 'B vs T')]
@@ -64,7 +64,7 @@ fig, ax = pfig.figure(3, 3, height_mm=200)
 for k, (arm, lab) in enumerate((('truth', 'measured'), ('all markers per cell', 'predicted, all-marker training'),
                                 ('one marker per cell', 'predicted, one-marker training'))):
     s = sc[sc.arm == arm]; pfig.density(ax[0, k], s.CD3.values, s.CD19.values, gridsize=40)
-    ax[0, k].set_xlabel(f'CD3 z ({lab})', fontsize=6); ax[0, k].set_ylabel(f'CD19 z ({lab})', fontsize=6)
+    ax[0, k].set_xlabel(f'CD3 intensity, z-score ({lab})', fontsize=6); ax[0, k].set_ylabel(f'CD19 intensity, z-score ({lab})', fontsize=6)
     ax[0, k].set_xlim(-2.5, 3); ax[0, k].set_ylim(-1.5, 4)
 ARMS = [('truth', 'measured', GREY), ('all markers per cell', 'all-marker\ntraining', SKY), ('one marker per cell', 'one-marker\ntraining', APR)]
 ARMS += [(a, a.replace('one marker + corr loss ', 'one-marker +\ncorr. loss ').replace('all markers + corr loss ', 'all-marker +\ncorr. loss '),
@@ -86,7 +86,7 @@ TY = ['T4', 'T8', 'B', 'NK', 'mono', 'neut', 'eos']; MK = ['CD3', 'CD4', 'CD8', 
 for k, (arm, lab) in enumerate((('truth', 'measured'), ('all markers per cell', 'all-marker'), ('one marker per cell', 'one-marker'))):
     s = sp[sp.arm == arm]
     Hm = np.array([[s[(s.type == t) & (s.marker == m)].mean_z.mean() for m in MK] for t in TY])
-    pfig.heatmap(ax[2, k], Hm, TY, MK, cmap=DIV, vmin=-2, vmax=2, label=f'Mean z ({lab})')
+    pfig.heatmap(ax[2, k], Hm, TY, MK, cmap=DIV, vmin=-2, vmax=2, label=f'Mean intensity z-score ({lab})')
 pfig.save(fig, name='fig12_lineages_sandbox', sub='overview', root=R,
           source=[N + '/sandbox_cd3_cd19.csv', N + '/sandbox_type_profiles.csv', N + '/sandbox_lymph_cells.csv', N + '/n097_lineage.py'],
           notes='N097. ImageStream sandbox (S-BIAD452: brightfield/side-scatter images, 9 markers measured on EVERY cell, 3 donors, each held '
@@ -99,4 +99,35 @@ pfig.save(fig, name='fig12_lineages_sandbox', sub='overview', root=R,
                 'f Pearson r of predicted vs measured CD3 and CD19 over all held-out cells (rings = donors; paired t, Holm). g-i mean z of every marker per gated type: measured vs predicted; predictions reproduce the granulocyte/monocyte/lymphocyte '
                 'split but compress the lymphocyte subtypes (T4/T8/B/NK) toward each other. Paired t vs measured (d) / all-marker (e), Holm (3 donors: low power). '
                 'Corr-loss arms (N096) are added when present.')
+# ------------------------------------------------------------------ Figure 13: CD4 vs CD8 T cells (sandbox only; BSCCM has no CD4/CD8)
+t48 = pd.read_csv(N + '/sandbox_cd4_cd8.csv'); tc = pd.read_csv(N + '/sandbox_t_cells.csv')
+fig, ax = pfig.figure(2, 3, height_mm=135)
+for k, (arm, lab) in enumerate((('truth', 'measured'), ('all markers per cell', 'predicted, all-marker training'),
+                                ('one marker per cell', 'predicted, one-marker training'))):
+    s_ = tc[tc.arm == arm]; pfig.density(ax[0, k], s_.CD4.values, s_.CD8.values, gridsize=40)
+    ax[0, k].set_xlabel(f'CD4 intensity, z-score ({lab})', fontsize=6); ax[0, k].set_ylabel(f'CD8 intensity, z-score ({lab})', fontsize=6)
+    ax[0, k].set_xlim(-2.5, 5.5); ax[0, k].set_ylim(-2, 4)
+A3 = [('truth', 'measured', GREY), ('all markers per cell', 'all-marker\ntraining', SKY), ('one marker per cell', 'one-marker\ntraining', APR)]
+A3 += [(a_, a_.replace('one marker + corr loss ', 'one-marker +\ncorr. loss ').replace('all markers + corr loss ', 'all-marker +\ncorr. loss '),
+        ROSE if a_.startswith('one') else SEA) for a_ in t48.arm.unique() if 'corr loss' in a_]
+pfig.bar(ax[1, 0], [t48[t48.arm == a_].sort_values('donor').r_CD4_CD8_T.values for a_, _, _ in A3], [c for _, _, c in A3], names=[n for _, n, _ in A3])
+pfig.threshold(ax[1, 0], y=0); ax[1, 0].set_ylabel('r(CD4, CD8) in T cells'); pfig.stats_vs_ref(ax[1, 0], 'measured', paired=True)
+B3 = A3[1:]
+pfig.bar(ax[1, 1], [t48[t48.arm == a_].sort_values('donor').auroc_T4_vs_T8.values for a_, _, _ in B3], [c for _, _, c in B3], names=[n for _, n, _ in B3])
+pfig.threshold(ax[1, 1], y=.5); ax[1, 1].set_ylim(.3, 1.02); ax[1, 1].set_ylabel('AUROC CD4 vs CD8 T (pred. CD4 - CD8)')
+pfig.stats_vs_ref(ax[1, 1], 'all-marker\ntraining', paired=True)
+PM4 = [(m, a_, f'{m}, {n}', c) for m in ('CD4', 'CD8') for a_, n, c in (('all markers per cell', 'all-marker', SKY), ('one marker per cell', 'one-marker', APR))]
+pfig.bar(ax[1, 2], [t48[t48.arm == a_].sort_values('donor')[f'r_{m}_vs_measured'].values for m, a_, _, _ in PM4], [c for *_, c in PM4], names=[n for _, _, n, _ in PM4])
+ax[1, 2].set_ylabel('Pearson r, predicted vs measured'); pfig.stats_pairs(ax[1, 2], [('CD4, all-marker', 'CD4, one-marker'), ('CD8, all-marker', 'CD8, one-marker')], paired=True)
+for a_ in ax[1]:
+    for t in a_.get_xticklabels(): t.set_rotation(30); t.set_ha('right'); t.set_rotation_mode('anchor'); t.set_fontsize(6)
+pfig.save(fig, name='fig13_cd4_cd8_sandbox', sub='overview', root=R,
+          source=[N + '/sandbox_cd4_cd8.csv', N + '/sandbox_t_cells.csv', N + '/n097_lineage.py'],
+          notes='N097. CD4 and CD8 exist ONLY in the external ImageStream sandbox (S-BIAD452: brightfield/side-scatter, 9 markers on every cell, '
+                '3 donors each held out once; N080 ResNet-50 models); BSCCM has no CD4/CD8 stain. T cells and the CD4 T / CD8 T subsets = '
+                'hierarchical gates on the held-out donor\'s own measured labels. a-c T cells of held-out donor 0: measured CD4 vs CD8 (two '
+                'exclusive populations) vs predictions. d r(CD4, CD8) within T cells, rings = donors: measured -.75/-.81/-.86; all-marker '
+                'training -.85/-.43/+.20; one-marker training -.05/-.50/+.33 (exclusivity is lost in 2 of 3 donors). e CD4 T vs CD8 T AUROC '
+                '.62/.75/.54 (all-marker), .50/.68/.62 (one-marker): the subsets are barely distinguishable from these images. f per-marker '
+                'accuracy over all held-out cells: CD4 r .60/.71/.23 vs CD8 .28/.16/.40 (all-marker). Paired t, Holm (3 donors: low power).')
 print('done')

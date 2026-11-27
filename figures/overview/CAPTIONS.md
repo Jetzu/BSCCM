@@ -398,3 +398,29 @@ The ImageStream sandbox (S-BIAD452: brightfield and side-scatter images) measure
 All stars are paired t-tests, Holm-corrected; with 3 donors, power is low.
 
 **Says:** the exclusivity of CD3 and CD19 is learned as a direction in the output space, even too strongly. Assigning individual lymphocytes to T or B is limited by how well CD19 itself is predicted, and that is donor-dependent.
+
+## Figure 13: CD4 vs CD8 T cells in the ImageStream sandbox (`fig13_cd4_cd8_sandbox`), N097
+
+CD4 and CD8 exist **only in the external ImageStream sandbox** (S-BIAD452). BSCCM has no CD4 or CD8 stain. All 9 markers are measured on every sandbox cell, and each of the 3 donors is held out once (N080 ResNet-50 models). T cells and the CD4 T / CD8 T subsets come from gates on the held-out donor's own measured labels.
+
+**Axis units:** "intensity, z-score" = (x − mean) / SD of the marker's asinh-transformed intensity over all held-out cells, computed separately for measured and predicted values. 0 is an average cell; +2 is 2 SD above average. Correlations are always marked r.
+
+**a–c. T cells of held-out donor 0, CD4 vs CD8.** Measured (a): two mutually exclusive populations, CD4 T (CD4 high, CD8 low) and CD8 T (CD8 high, CD4 low). Predicted (b: all-marker training; c: one-marker training): one diffuse cloud.
+
+**d. r(CD4, CD8) within T cells** (rings are donors):
+
+| | Donor 0 | Donor 1 | Donor 2 |
+|---|---|---|---|
+| Measured | −.75 | −.81 | −.86 |
+| All-marker training | −.85 | −.43 | +.20 |
+| One-marker training | −.05 | −.50 | +.33 |
+
+The exclusivity is reproduced on one donor only; on donor 2 the predicted correlation even has the wrong sign.
+
+**e. CD4 T vs CD8 T AUROC** (predicted CD4 − CD8): .62 / .75 / .54 with all-marker training and .50 / .68 / .62 with one-marker training. Close to chance.
+
+**f. Accuracy over all held-out cells:** predicted CD4 r .60 / .71 / .23, CD8 r .28 / .16 / .40 (all-marker training).
+
+Paired t, Holm; with 3 donors, power is low.
+
+**Says:** CD4 and CD8 T cells look almost the same in these label-free images, so the models can tell T cells apart from other cells but not CD4 T from CD8 T cells. That is consistent with the literature (DeepIFC CD8 r .41).

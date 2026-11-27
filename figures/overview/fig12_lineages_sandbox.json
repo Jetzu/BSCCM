@@ -1,7 +1,7 @@
 {
  "png": "/home/hpc/v181bb/v181bb10/BSCCM/figures/overview/fig12_lineages_sandbox.png",
  "svg": "/home/hpc/v181bb/v181bb10/BSCCM/figures/overview/fig12_lineages_sandbox.svg",
- "created": "2026-11-27T16:54:20",
+ "created": "2026-11-27T17:00:28",
  "command": [
   "/home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python",
   "figures/overview/make_lineage.py"

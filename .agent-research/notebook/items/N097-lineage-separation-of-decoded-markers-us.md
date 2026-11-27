@@ -23,7 +23,8 @@ median 1.67 -> model error (B-like T cells), not an FOV label artefact.
 Sandbox (donors 0/1/2): measured r(CD3,CD19) in lymphocytes -.628/-.881/-.675; predicted all-marker -.931/-.894/-.836, one-marker
 -.860/-.934/-.829 (over-separated: one T<->B axis); AUROC B vs T all-marker .738/.940/.459, one-marker .807/.902/.512; predicted vs
 measured CD19 r .530/.657/.091 (all-marker) -> donor 2 CD19 not predicted, B vs T at chance there.
-Figures: figures/overview/fig11_lineages_bsccm.png, fig12_lineages_sandbox.png (captions in CAPTIONS.md + .json).
+CD4/CD8 (sandbox only): measured r(CD4,CD8) in T cells -.746/-.807/-.858; predicted all-marker -.853/-.429/+.202, one-marker -.049/-.496/+.332; AUROC CD4T vs CD8T .617/.753/.543 (all), .502/.675/.621 (one).
+Figures: figures/overview/fig11_lineages_bsccm.png, fig12_lineages_sandbox.png, fig13_cd4_cd8_sandbox.png (captions in CAPTIONS.md + .json).
 
 ## Outcome
 Models DO learn CD3-CD19 exclusivity as an output direction (within lymphocytes -.54 on BSCCM; sandbox even more anticorrelated than
