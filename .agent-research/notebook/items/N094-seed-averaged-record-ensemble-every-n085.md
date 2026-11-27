@@ -1,7 +1,7 @@
 # N094 · Seed-averaged record ensemble: every N085 E8 member averaged over 2 seeds (fresh seed 5 for the 8 single-seed members: N048 base/zoom2, N065 composites z2/cyto, N085 ConvNeXt-S composite); pre-registered E8x2 vs .7021
 
-type: exp · date: 2026-11-27 · status: open
-goal_effect: pending · scale: knob
+type: exp · date: 2026-11-27 · status: done
+goal_effect: flat · scale: knob · value: 0.6973
 
 ## Goal
 
@@ -18,12 +18,22 @@ versions (independent replicate of E8), MM3. Kill: E8x2 <= .6967.
 ## Changes
 
 ## Evidence
-<!-- exp: each run = job id, config, seed, output dir · results vs baseline -->
+16 seed-5 fine-tunes, jobs 1468131-1468146 (results/N094-*/jobs.txt), all COMPLETED exit 0 (11-30 to 52 min each, ~10 H100-h),
+outputs /hnvme/workspace/v181bb10-bsccm/runs/<member>_seed5_<b10|b01>. Pre-registered scorer n094_score.py (commit 5e98c51, before results):
+| set | b10 | b01 | GOAL | MM3 |
+|---|---|---|---|---|
+| E8x2 (PRIMARY) | .7091 | .6855 | **.6973** | .7853 |
+| E8 seed-5 replicate | .7101 | .6821 | .6961 | .7844 |
+| E8 (N085 record, recomputed) | .7066 | .6869 | .6967 | .7856 |
+The recomputed E8 row reproduces N085 exactly (scorer sanity). Plot: .agent-research/plots/goal_2026-11-27_1635.png
 
 ## Outcome
-<!-- on close: bin/effect.sh N094 improved|flat|worse --value V | --void  (n/a --why infra|measurement) [--scale knob|module|paradigm] -->
+FLAT: E8x2 .6973 < bar .7021 (+.0006 over the record, inside noise). Useful by-product: an independent seed-5 replicate of the
+whole record ensemble scores .6961 (-.0006), so the .6967 record replicates across a full re-draw of 8 member seeds; seed noise
+is not what limits the ensemble (averaging 2 seeds per member adds nothing).
 
 ## Outputs
-<!-- files in .agent-research/results/N094-slug/ + external absolute paths -->
+n094_score.py, n094_scores.csv, plot_goal.csv, jobs.txt; runs on /hnvme (seed-5 members, eval_preds.npz).
 
 ## Next
+Ensemble seed variance is exhausted; stall 5/5 -> review.

@@ -1,0 +1,100 @@
+{
+ "png": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/plots/goal_2026-11-27_1635.png",
+ "svg": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/plots/goal_2026-11-27_1635.svg",
+ "created": "2026-11-27T16:35:37",
+ "command": [
+  "/home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python",
+  "/home/hpc/v181bb/v181bb10/.claude/skills/work-log/bin/plot_compare.py",
+  "--metric",
+  "GOAL",
+  "--csv",
+  ".agent-research/results/N094-seed-averaged-record-ensemble-every-n085/plot_goal.csv",
+  "--item",
+  "N094",
+  "--baseline",
+  "E8 (N085 record)",
+  "--noise",
+  "0.0027"
+ ],
+ "cwd": "/home/hpc/v181bb/v181bb10/BSCCM",
+ "source": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N094-seed-averaged-record-ensemble-every-n085/plot_goal.csv",
+ "notes": {
+  "item": "N094",
+  "metric": "GOAL",
+  "direction": "higher",
+  "noise_sd": 0.0027,
+  "stats": null
+ },
+ "page": "letter",
+ "width_in": 8.5,
+ "height_in": 2.5591,
+ "png_px": [
+  3840,
+  1156
+ ],
+ "significance": "two-sided; Holm-corrected over all comparisons of a panel (one family per panel); * <0.05 ** <0.01 *** <0.001 **** <0.0001",
+ "panels": [
+  {
+   "panel": "a",
+   "kind": "bar",
+   "groups": [
+    "E8 (N085 record)",
+    "E8x2",
+    "E8 seed-5 replicate"
+   ],
+   "colors": [
+    "#767E86",
+    "#3A6C9E",
+    "#55BDB2"
+   ],
+   "n": [
+    2,
+    2,
+    2
+   ],
+   "mean": [
+    0.69675,
+    0.6973,
+    0.6960999999999999
+   ],
+   "sd": [
+    0.013930003589375023,
+    0.01668772003600249,
+    0.01979898987322327
+   ],
+   "median": [
+    0.69675,
+    0.6973,
+    0.6960999999999999
+   ],
+   "whisker": "sd",
+   "stats": [
+    {
+     "test": "paired t-test",
+     "p": 0.8249869592949638,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 1.0,
+     "stars": "ns",
+     "a": "E8 (N085 record)",
+     "b": "E8x2",
+     "reference": "E8 (N085 record)"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.9010920440789788,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 1.0,
+     "stars": "ns",
+     "a": "E8 (N085 record)",
+     "b": "E8 seed-5 replicate",
+     "reference": "E8 (N085 record)"
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "GOAL"
+  }
+ ],
+ "matplotlib": "3.11.0"
+}

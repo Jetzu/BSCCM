@@ -1,0 +1,7 @@
+arm,seed,value
+E8x2,b10,0.7091
+E8x2,b01,0.6855
+E8 seed-5 replicate,b10,0.7101
+E8 seed-5 replicate,b01,0.6821
+E8 (N085 record),b10,0.7066
+E8 (N085 record),b01,0.6869
