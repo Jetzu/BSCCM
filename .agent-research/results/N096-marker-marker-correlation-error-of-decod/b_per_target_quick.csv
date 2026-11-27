@@ -1,0 +1,111 @@
+arm,direction,target,r
+control (MSE),b10,single:CD45,0.7781252524410947
+control (MSE),b10,single:CD123,0.1360884399808631
+control (MSE),b10,single:CD19,0.20118603603684768
+control (MSE),b10,single:CD56,0.5969879322551807
+control (MSE),b10,single:CD14,0.8222211310538603
+control (MSE),b10,single:CD16,0.8620127738838903
+control (MSE),b10,single:HLA-DR,0.44271939833571045
+control (MSE),b10,single:CD3,0.7350319111313709
+control (MSE),b10,grp:CD3/CD19/CD56,0.7395293876734685
+control (MSE),b10,grp:CD45,0.658225499623913
+control (MSE),b10,grp:CD16,0.7061042885473857
+recolour (post hoc),b10,single:CD45,0.7595531834574918
+recolour (post hoc),b10,single:CD123,0.1406386008923478
+recolour (post hoc),b10,single:CD19,0.20257932601577822
+recolour (post hoc),b10,single:CD56,0.32446478731315576
+recolour (post hoc),b10,single:CD14,0.8017715883781669
+recolour (post hoc),b10,single:CD16,0.8556608857050124
+recolour (post hoc),b10,single:HLA-DR,0.47394855425083
+recolour (post hoc),b10,single:CD3,0.7152245888914688
+recolour (post hoc),b10,grp:CD3/CD19/CD56,0.7398364810904401
+recolour (post hoc),b10,grp:CD45,0.5980851735576458
+recolour (post hoc),b10,grp:CD16,0.6642509244599369
+corr lambda 1,b10,single:CD45,0.7748987682510039
+corr lambda 1,b10,single:CD123,0.1505212578372654
+corr lambda 1,b10,single:CD19,0.15709751711799175
+corr lambda 1,b10,single:CD56,0.4176268012133042
+corr lambda 1,b10,single:CD14,0.806027693617471
+corr lambda 1,b10,single:CD16,0.8590993134429493
+corr lambda 1,b10,single:HLA-DR,0.45236606797331746
+corr lambda 1,b10,single:CD3,0.7413034047581301
+corr lambda 1,b10,grp:CD3/CD19/CD56,0.7499822787028361
+corr lambda 1,b10,grp:CD45,0.6189397453475588
+corr lambda 1,b10,grp:CD16,0.6819808107035292
+corr lambda 10,b10,single:CD45,0.7489208309799401
+corr lambda 10,b10,single:CD123,0.17563091375753417
+corr lambda 10,b10,single:CD19,0.14708104253563484
+corr lambda 10,b10,single:CD56,0.32141072622818506
+corr lambda 10,b10,single:CD14,0.791111704865978
+corr lambda 10,b10,single:CD16,0.8555173342428065
+corr lambda 10,b10,single:HLA-DR,0.49456902385463575
+corr lambda 10,b10,single:CD3,0.7101797972254431
+corr lambda 10,b10,grp:CD3/CD19/CD56,0.6451418967064214
+corr lambda 10,b10,grp:CD45,0.5431416677509553
+corr lambda 10,b10,grp:CD16,0.6388344408685842
+corr lambda 100,b10,single:CD45,0.31164353640768166
+corr lambda 100,b10,single:CD123,-0.047399253500151124
+corr lambda 100,b10,single:CD19,0.13754057322330054
+corr lambda 100,b10,single:CD56,-0.15196508668371272
+corr lambda 100,b10,single:CD14,0.36621696581585805
+corr lambda 100,b10,single:CD16,0.49139594586850344
+corr lambda 100,b10,single:HLA-DR,-0.04135024295249259
+corr lambda 100,b10,single:CD3,0.1649183386481501
+corr lambda 100,b10,grp:CD3/CD19/CD56,0.20152409994176324
+corr lambda 100,b10,grp:CD45,-0.32594879608894795
+corr lambda 100,b10,grp:CD16,0.11063175567320477
+control (MSE),b01,single:CD45,0.7522708027775303
+control (MSE),b01,single:CD123,0.7217669583842643
+control (MSE),b01,single:CD19,0.1866056543560092
+control (MSE),b01,single:CD56,0.5623849423644338
+control (MSE),b01,single:CD14,0.7976102897943349
+control (MSE),b01,single:CD16,0.851090488195889
+control (MSE),b01,single:HLA-DR,0.48407688177041214
+control (MSE),b01,single:CD3,0.7740938488348161
+control (MSE),b01,grp:CD3/CD19/CD56,0.7815597604170247
+control (MSE),b01,grp:CD45,0.6668511105083714
+control (MSE),b01,grp:CD16,0.7547618179816442
+recolour (post hoc),b01,single:CD45,0.7100014482611573
+recolour (post hoc),b01,single:CD123,0.7036046115345624
+recolour (post hoc),b01,single:CD19,0.07623099774834864
+recolour (post hoc),b01,single:CD56,0.38406419876373404
+recolour (post hoc),b01,single:CD14,0.5518314499674736
+recolour (post hoc),b01,single:CD16,0.8035372307178518
+recolour (post hoc),b01,single:HLA-DR,0.47787313951449345
+recolour (post hoc),b01,single:CD3,0.6751513159616458
+recolour (post hoc),b01,grp:CD3/CD19/CD56,0.7355404423158334
+recolour (post hoc),b01,grp:CD45,0.6551358809714223
+recolour (post hoc),b01,grp:CD16,0.7424169552574036
+corr lambda 1,b01,single:CD45,0.7784210903848172
+corr lambda 1,b01,single:CD123,0.6551299604266341
+corr lambda 1,b01,single:CD19,0.3824206834802798
+corr lambda 1,b01,single:CD56,0.37433949271210665
+corr lambda 1,b01,single:CD14,0.7720883041896677
+corr lambda 1,b01,single:CD16,0.8480871404752556
+corr lambda 1,b01,single:HLA-DR,0.41128671855505294
+corr lambda 1,b01,single:CD3,0.7308305895112497
+corr lambda 1,b01,grp:CD3/CD19/CD56,0.6777367653737181
+corr lambda 1,b01,grp:CD45,0.6471249508268946
+corr lambda 1,b01,grp:CD16,0.7502040966929786
+corr lambda 10,b01,single:CD45,0.5070767323354175
+corr lambda 10,b01,single:CD123,0.3577938339452832
+corr lambda 10,b01,single:CD19,0.1218243698964551
+corr lambda 10,b01,single:CD56,0.22021118517016078
+corr lambda 10,b01,single:CD14,0.7081085396481615
+corr lambda 10,b01,single:CD16,0.7785839459298362
+corr lambda 10,b01,single:HLA-DR,0.14197436807215477
+corr lambda 10,b01,single:CD3,0.4541577228892875
+corr lambda 10,b01,grp:CD3/CD19/CD56,0.4726121215253109
+corr lambda 10,b01,grp:CD45,0.5289847152164293
+corr lambda 10,b01,grp:CD16,0.626264222200599
+corr lambda 100,b01,single:CD45,0.6331285067655459
+corr lambda 100,b01,single:CD123,0.06513943344503857
+corr lambda 100,b01,single:CD19,0.2546573741245718
+corr lambda 100,b01,single:CD56,-0.14220259387081516
+corr lambda 100,b01,single:CD14,-0.1623296908130372
+corr lambda 100,b01,single:CD16,0.7604181276363537
+corr lambda 100,b01,single:HLA-DR,-0.15237655239582343
+corr lambda 100,b01,single:CD3,-0.3161468225714031
+corr lambda 100,b01,grp:CD3/CD19/CD56,0.7659502569643651
+corr lambda 100,b01,grp:CD45,0.5731373263311529
+corr lambda 100,b01,grp:CD16,0.5900583086981116

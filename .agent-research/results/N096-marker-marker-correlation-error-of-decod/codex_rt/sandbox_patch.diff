@@ -1,0 +1,26 @@
+482a483,488
+>     if getattr(model, 'corr_target', None) is not None:
+>         z = mu.float() - mu.float().mean(0)
+>         z = z / (z.square().mean(0).sqrt() + 1e-6)
+>         r = (z.T @ z) / len(z)
+>         iu = torch.triu_indices(9, 9, 1, device=r.device)
+>         loss = loss + args.corr_match * (r[iu[0], iu[1]] - model.corr_target[iu[0], iu[1]]).square().mean()
+532a539,543
+>     # N096 (user 11-27, marker-marker correlation error): penalise the batch correlation matrix of the predicted means against a
+>     # FIXED target correlation matrix: 'val' = the validation donor's joint labels (the same external joint data the N087 marker prior
+>     # uses; allowed in every regime), 'train' = the training donor's labels (only in --regime full, where all are revealed).
+>     ap.add_argument('--corr-match', type=float, default=0., help='weight of the 36-pair correlation-matching loss (0 = off)')
+>     ap.add_argument('--corr-source', choices=['val', 'train'], default='val')
+551a563,566
+>     if a.corr_source == 'train' and a.regime != 'full':
+>         ap.error('--corr-source train needs --regime full (hidden training labels must not reach the loss)')
+>     if not np.isfinite(a.corr_match) or a.corr_match < 0:
+>         ap.error('--corr-match must be finite and nonnegative')
+640a656,662
+>     model.corr_target = None
+>     if args.corr_match > 0:
+>         src = va if args.corr_source == 'val' else tr   # 'train' only in --regime full (parse_args), where every label is revealed
+>         model.corr_target = torch.as_tensor(np.corrcoef(y[src].T), dtype=torch.float32, device=args.device)
+>         write_json(out / 'corr_target.json', dict(source=args.corr_source, n=int(len(src)), R=np.corrcoef(y[src].T).round(4).tolist()))
+>     else:
+>         del reported_args['corr_match'], reported_args['corr_source']   # archived configs unchanged

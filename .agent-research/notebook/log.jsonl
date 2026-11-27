@@ -99,3 +99,5 @@
 {"ts":"2026-11-27T09:26:56+01:00","event":"goal_effect","item":"N092","effect":"n/a","value":"void","scale":"?","why":"measurement"}
 {"ts":"2026-11-27T10:15:35+01:00","event":"goal_effect","item":"N091","effect":"flat","value":"0.6951","scale":"paradigm","why":""}
 {"ts":"2026-11-27T10:56:27+01:00","event":"goal_effect","item":"N093","effect":"worse","value":"void","scale":"paradigm","why":""}
+{"ts":"2026-11-27T16:35:52+01:00","event":"goal_effect","item":"N094","effect":"flat","value":"0.6973","scale":"knob","why":""}
+{"ts":"2026-11-27T16:36:15+01:00","event":"stall_override","type":"exp","title":"Marker-marker correlation error of decoded predictions (BSCCM co-measured pairs + ImageStream 36 pairs) and a correlation-matching decoder loss","block":"due","why":"user 11-27: On the decoding of the markers can we please look at the correlation error between the different markers try this out"}
