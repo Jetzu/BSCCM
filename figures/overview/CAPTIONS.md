@@ -510,7 +510,7 @@ Same score and AUROC scale as Figure 14, on the external ImageStream dataset; al
 
 ## Figure 18: AUROC matrix with values, BSCCM (`fig18_auroc_matrix_bsccm`), N097
 
-This is Figure 14 with the AUROC printed in every tile. The label under each matrix says what it shows:
+Figure 14 and Figure 17 now also show the values in every tile (user 11-27); Figure 18 is the same BSCCM matrices. The label under each matrix says what it shows:
 - **a.** BSCCM, train draw 1 → test draw 0.
 - **b.** BSCCM, train draw 0 → test draw 1.
 - **c.** Mean of a and b.

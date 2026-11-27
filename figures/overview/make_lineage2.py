@@ -21,7 +21,7 @@ def mat(df, labs):
 fig, ax = pfig.figure(1, 3, height_mm=82)
 for k, (dd, lab) in enumerate((('b10', 'train draw 1 \u2192 test draw 0'), ('b01', 'train draw 0 \u2192 test draw 1'), (None, 'mean of both directions'))):
     sub = b if dd is None else b[b.direction == dd]
-    pfig.heatmap(ax[k], mat(sub, BL), [BN[x] for x in BL], [BN[x] for x in BL], vmin=.5, vmax=1, label='AUROC (.5 = chance, 1 = perfect)')
+    pfig.heatmap(ax[k], mat(sub, BL), [BN[x] for x in BL], [BN[x] for x in BL], vmin=.5, vmax=1, label='AUROC (.5 = chance, 1 = perfect)', values='{:.2f}')
     ax[k].set_xlabel(f'BSCCM, {lab}', fontsize=7, labelpad=6)
 for a in ax:
     for t in a.get_xticklabels() + a.get_yticklabels(): t.set_fontsize(5.5)
@@ -54,9 +54,9 @@ pfig.save(fig, name='fig18_auroc_matrix_bsccm', sub='overview', root=R, source=[
 
 # ------------------------------------------------------------------ Figure 17: same separability in the ImageStream sandbox
 fig, ax = pfig.figure(1, 2, height_mm=82)
-pfig.heatmap(ax[0], mat(s_sb[s_sb.arm == 'all markers per cell'], SL), [SN[x] for x in SL], [SN[x] for x in SL], vmin=.5, vmax=1, label='AUROC (.5 = chance, 1 = perfect)')
+pfig.heatmap(ax[0], mat(s_sb[s_sb.arm == 'all markers per cell'], SL), [SN[x] for x in SL], [SN[x] for x in SL], vmin=.5, vmax=1, label='AUROC (.5 = chance, 1 = perfect)', values='{:.2f}')
 ax[0].set_xlabel('ImageStream sandbox, all-marker training (mean of 3 donors)', fontsize=7, labelpad=6)
-pfig.heatmap(ax[1], mat(s_sb[s_sb.arm == 'one marker per cell'], SL), [SN[x] for x in SL], [SN[x] for x in SL], vmin=.5, vmax=1, label='AUROC (.5 = chance, 1 = perfect)')
+pfig.heatmap(ax[1], mat(s_sb[s_sb.arm == 'one marker per cell'], SL), [SN[x] for x in SL], [SN[x] for x in SL], vmin=.5, vmax=1, label='AUROC (.5 = chance, 1 = perfect)', values='{:.2f}')
 ax[1].set_xlabel('ImageStream sandbox, one-marker training (mean of 3 donors)', fontsize=7, labelpad=6)
 for a in ax:
     for t in a.get_xticklabels() + a.get_yticklabels(): t.set_fontsize(5.5)
