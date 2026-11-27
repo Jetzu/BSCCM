@@ -1,0 +1,6 @@
+t0/holdout1 passed: paired-ID classifier replay, oracle profiles, 75 contrasts, 60 marker correlations, both autofl endpoints and router denominators.
+t0/holdout0 passed: paired-ID classifier replay, oracle profiles, 75 contrasts, 60 marker correlations, both autofl endpoints and router denominators.
+t1/holdout1 passed: paired-ID classifier replay, oracle profiles, 75 contrasts, 60 marker correlations, both autofl endpoints and router denominators.
+t1/holdout0 passed: paired-ID classifier replay, oracle profiles, 75 contrasts, 60 marker correlations, both autofl endpoints and router denominators.
+t2/holdout1 passed: paired-ID classifier replay, oracle profiles, 75 contrasts, 60 marker correlations, both autofl endpoints and router denominators.
+t2/holdout0 passed: paired-ID classifier replay, oracle profiles, 75 contrasts, 60 marker correlations, both autofl endpoints and router denominators.

@@ -1,0 +1,865 @@
+teacher,seed,holdout,slide,domain,population,arm,cls3,n,routed_n,routed_fraction,mean_route_weight,gate_source,n_gated,gated_fraction,routed_fraction_on_gated,lf_teacher_fraction,lf_teacher_mean_probability
+t0,0,0,2,PBC,all,F1,lymphocyte,16,5,0.3125,0.3313166,N058 clinical morphology mapping,8,0.25,0.25,,
+t0,0,0,2,PBC,all,F1,granulocyte,16,3,0.1875,0.2800417,N058 clinical morphology mapping,8,0.5,0.375,,
+t0,0,0,2,PBC,all,F1,monocyte,16,8,0.5,0.3886417,N058 clinical morphology mapping,8,0.25,0.375,,
+t0,0,0,2,PBC,all,F2,lymphocyte,16,5,0.3125,0.3125,N058 clinical morphology mapping,8,0.25,0.25,,
+t0,0,0,2,PBC,all,F2,granulocyte,16,3,0.1875,0.1875,N058 clinical morphology mapping,8,0.5,0.375,,
+t0,0,0,2,PBC,all,F2,monocyte,16,8,0.5,0.5,N058 clinical morphology mapping,8,0.25,0.375,,
+t0,0,0,2,PBC,all,F1-bsccm,lymphocyte,16,4,0.25,0.2856364070812578,N058 clinical morphology mapping,8,0.25,0.25,,
+t0,0,0,2,PBC,all,F1-bsccm,granulocyte,16,6,0.375,0.3398561982958745,N058 clinical morphology mapping,8,0.5,0.5,,
+t0,0,0,2,PBC,all,F1-bsccm,monocyte,16,6,0.375,0.37450739462286764,N058 clinical morphology mapping,8,0.25,0.25,,
+t0,0,0,2,PBC,basophil,F1,lymphocyte,2,0,0.0,0.19511329,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,PBC,basophil,F1,granulocyte,2,0,0.0,0.06941602,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,PBC,basophil,F1,monocyte,2,2,1.0,0.73547065,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,PBC,basophil,F2,lymphocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,PBC,basophil,F2,granulocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,PBC,basophil,F2,monocyte,2,2,1.0,1.0,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,PBC,basophil,F1-bsccm,lymphocyte,2,1,0.5,0.26789204642945996,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,PBC,basophil,F1-bsccm,granulocyte,2,0,0.0,0.06487893541901223,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,PBC,basophil,F1-bsccm,monocyte,2,1,0.5,0.6672290181515278,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,PBC,eosinophil,F1,lymphocyte,2,0,0.0,0.07533817,N058 clinical morphology mapping,2,0.0,0.0,,
+t0,0,0,2,PBC,eosinophil,F1,granulocyte,2,1,0.5,0.61114436,N058 clinical morphology mapping,2,1.0,0.5,,
+t0,0,0,2,PBC,eosinophil,F1,monocyte,2,1,0.5,0.31351748,N058 clinical morphology mapping,2,0.0,0.5,,
+t0,0,0,2,PBC,eosinophil,F2,lymphocyte,2,0,0.0,0.0,N058 clinical morphology mapping,2,0.0,0.0,,
+t0,0,0,2,PBC,eosinophil,F2,granulocyte,2,1,0.5,0.5,N058 clinical morphology mapping,2,1.0,0.5,,
+t0,0,0,2,PBC,eosinophil,F2,monocyte,2,1,0.5,0.5,N058 clinical morphology mapping,2,0.0,0.5,,
+t0,0,0,2,PBC,eosinophil,F1-bsccm,lymphocyte,2,0,0.0,0.06273078591845739,N058 clinical morphology mapping,2,0.0,0.0,,
+t0,0,0,2,PBC,eosinophil,F1-bsccm,granulocyte,2,2,1.0,0.6238537384742915,N058 clinical morphology mapping,2,1.0,1.0,,
+t0,0,0,2,PBC,eosinophil,F1-bsccm,monocyte,2,0,0.0,0.31341547560725114,N058 clinical morphology mapping,2,0.0,0.0,,
+t0,0,0,2,PBC,erythroblast,F1,lymphocyte,2,1,0.5,0.51917124,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,PBC,erythroblast,F1,granulocyte,2,0,0.0,0.12103407,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,PBC,erythroblast,F1,monocyte,2,1,0.5,0.35979474,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,PBC,erythroblast,F2,lymphocyte,2,1,0.5,0.5,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,PBC,erythroblast,F2,granulocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,PBC,erythroblast,F2,monocyte,2,1,0.5,0.5,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,PBC,erythroblast,F1-bsccm,lymphocyte,2,1,0.5,0.4863170845035758,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,PBC,erythroblast,F1-bsccm,granulocyte,2,0,0.0,0.16955436641737748,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,PBC,erythroblast,F1-bsccm,monocyte,2,1,0.5,0.3441285490790468,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,PBC,ig,F1,lymphocyte,2,0,0.0,0.28988132,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,PBC,ig,F1,granulocyte,2,0,0.0,0.043656886,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,PBC,ig,F1,monocyte,2,2,1.0,0.6664618,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,PBC,ig,F2,lymphocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,PBC,ig,F2,granulocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,PBC,ig,F2,monocyte,2,2,1.0,1.0,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,PBC,ig,F1-bsccm,lymphocyte,2,0,0.0,0.284329852441647,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,PBC,ig,F1-bsccm,granulocyte,2,0,0.0,0.058720020236651294,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,PBC,ig,F1-bsccm,monocyte,2,2,1.0,0.6569501273217018,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,PBC,lymphocyte,F1,lymphocyte,2,2,1.0,0.8577811,N058 clinical morphology mapping,2,1.0,1.0,,
+t0,0,0,2,PBC,lymphocyte,F1,granulocyte,2,0,0.0,0.08953399,N058 clinical morphology mapping,2,0.0,0.0,,
+t0,0,0,2,PBC,lymphocyte,F1,monocyte,2,0,0.0,0.052684885,N058 clinical morphology mapping,2,0.0,0.0,,
+t0,0,0,2,PBC,lymphocyte,F2,lymphocyte,2,2,1.0,1.0,N058 clinical morphology mapping,2,1.0,1.0,,
+t0,0,0,2,PBC,lymphocyte,F2,granulocyte,2,0,0.0,0.0,N058 clinical morphology mapping,2,0.0,0.0,,
+t0,0,0,2,PBC,lymphocyte,F2,monocyte,2,0,0.0,0.0,N058 clinical morphology mapping,2,0.0,0.0,,
+t0,0,0,2,PBC,lymphocyte,F1-bsccm,lymphocyte,2,2,1.0,0.8639562501387221,N058 clinical morphology mapping,2,1.0,1.0,,
+t0,0,0,2,PBC,lymphocyte,F1-bsccm,granulocyte,2,0,0.0,0.10211689429236787,N058 clinical morphology mapping,2,0.0,0.0,,
+t0,0,0,2,PBC,lymphocyte,F1-bsccm,monocyte,2,0,0.0,0.03392685556891015,N058 clinical morphology mapping,2,0.0,0.0,,
+t0,0,0,2,PBC,monocyte,F1,lymphocyte,2,0,0.0,0.014477131,N058 clinical morphology mapping,2,0.0,0.0,,
+t0,0,0,2,PBC,monocyte,F1,granulocyte,2,0,0.0,0.03831889,N058 clinical morphology mapping,2,0.0,0.0,,
+t0,0,0,2,PBC,monocyte,F1,monocyte,2,2,1.0,0.947204,N058 clinical morphology mapping,2,1.0,1.0,,
+t0,0,0,2,PBC,monocyte,F2,lymphocyte,2,0,0.0,0.0,N058 clinical morphology mapping,2,0.0,0.0,,
+t0,0,0,2,PBC,monocyte,F2,granulocyte,2,0,0.0,0.0,N058 clinical morphology mapping,2,0.0,0.0,,
+t0,0,0,2,PBC,monocyte,F2,monocyte,2,2,1.0,1.0,N058 clinical morphology mapping,2,1.0,1.0,,
+t0,0,0,2,PBC,monocyte,F1-bsccm,lymphocyte,2,0,0.0,0.004972414226091186,N058 clinical morphology mapping,2,0.0,0.0,,
+t0,0,0,2,PBC,monocyte,F1-bsccm,granulocyte,2,0,0.0,0.045164908894273104,N058 clinical morphology mapping,2,0.0,0.0,,
+t0,0,0,2,PBC,monocyte,F1-bsccm,monocyte,2,2,1.0,0.9498626768796357,N058 clinical morphology mapping,2,1.0,1.0,,
+t0,0,0,2,PBC,neutrophil,F1,lymphocyte,2,0,0.0,0.007844148,N058 clinical morphology mapping,2,0.0,0.0,,
+t0,0,0,2,PBC,neutrophil,F1,granulocyte,2,2,1.0,0.9867004,N058 clinical morphology mapping,2,1.0,1.0,,
+t0,0,0,2,PBC,neutrophil,F1,monocyte,2,0,0.0,0.0054554134,N058 clinical morphology mapping,2,0.0,0.0,,
+t0,0,0,2,PBC,neutrophil,F2,lymphocyte,2,0,0.0,0.0,N058 clinical morphology mapping,2,0.0,0.0,,
+t0,0,0,2,PBC,neutrophil,F2,granulocyte,2,2,1.0,1.0,N058 clinical morphology mapping,2,1.0,1.0,,
+t0,0,0,2,PBC,neutrophil,F2,monocyte,2,0,0.0,0.0,N058 clinical morphology mapping,2,0.0,0.0,,
+t0,0,0,2,PBC,neutrophil,F1-bsccm,lymphocyte,2,0,0.0,0.010899548808051378,N058 clinical morphology mapping,2,0.0,0.0,,
+t0,0,0,2,PBC,neutrophil,F1-bsccm,granulocyte,2,2,1.0,0.9844150448078361,N058 clinical morphology mapping,2,1.0,1.0,,
+t0,0,0,2,PBC,neutrophil,F1-bsccm,monocyte,2,0,0.0,0.004685406384112456,N058 clinical morphology mapping,2,0.0,0.0,,
+t0,0,0,2,PBC,platelet,F1,lymphocyte,2,2,1.0,0.69092643,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,PBC,platelet,F1,granulocyte,2,0,0.0,0.28052902,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,PBC,platelet,F1,monocyte,2,0,0.0,0.028544579,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,PBC,platelet,F2,lymphocyte,2,2,1.0,1.0,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,PBC,platelet,F2,granulocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,PBC,platelet,F2,monocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,PBC,platelet,F1-bsccm,lymphocyte,2,0,0.0,0.3039932741840581,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,PBC,platelet,F1-bsccm,granulocyte,2,2,1.0,0.6701456778251863,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,PBC,platelet,F1-bsccm,monocyte,2,0,0.0,0.025861047990755698,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,all,F1,lymphocyte,24,9,0.375,0.33968744,N058 clinical morphology mapping,8,0.25,0.375,,
+t0,0,0,2,MLL23,all,F1,granulocyte,24,10,0.4166666666666667,0.39377943,N058 clinical morphology mapping,8,0.5,0.375,,
+t0,0,0,2,MLL23,all,F1,monocyte,24,5,0.20833333333333334,0.26653317,N058 clinical morphology mapping,8,0.25,0.25,,
+t0,0,0,2,MLL23,all,F2,lymphocyte,24,9,0.375,0.375,N058 clinical morphology mapping,8,0.25,0.375,,
+t0,0,0,2,MLL23,all,F2,granulocyte,24,10,0.4166666666666667,0.4166666666666667,N058 clinical morphology mapping,8,0.5,0.375,,
+t0,0,0,2,MLL23,all,F2,monocyte,24,5,0.20833333333333334,0.20833333333333334,N058 clinical morphology mapping,8,0.25,0.25,,
+t0,0,0,2,MLL23,all,F1-bsccm,lymphocyte,24,10,0.4166666666666667,0.38303956568032566,N058 clinical morphology mapping,8,0.25,0.625,,
+t0,0,0,2,MLL23,all,F1-bsccm,granulocyte,24,9,0.375,0.3829693606134677,N058 clinical morphology mapping,8,0.5,0.25,,
+t0,0,0,2,MLL23,all,F1-bsccm,monocyte,24,5,0.20833333333333334,0.23399107370620664,N058 clinical morphology mapping,8,0.25,0.125,,
+t0,0,0,2,MLL23,basophil,F1,lymphocyte,2,1,0.5,0.35298026,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,basophil,F1,granulocyte,2,1,0.5,0.4382866,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,basophil,F1,monocyte,2,0,0.0,0.20873317,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,basophil,F2,lymphocyte,2,1,0.5,0.5,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,basophil,F2,granulocyte,2,1,0.5,0.5,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,basophil,F2,monocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,basophil,F1-bsccm,lymphocyte,2,0,0.0,0.36058887735463613,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,basophil,F1-bsccm,granulocyte,2,2,1.0,0.521022078936488,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,basophil,F1-bsccm,monocyte,2,0,0.0,0.11838904370887596,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,eosinophil,F1,lymphocyte,2,1,0.5,0.30088612,N058 clinical morphology mapping,2,0.0,0.5,,
+t0,0,0,2,MLL23,eosinophil,F1,granulocyte,2,0,0.0,0.23288012,N058 clinical morphology mapping,2,1.0,0.0,,
+t0,0,0,2,MLL23,eosinophil,F1,monocyte,2,1,0.5,0.4662338,N058 clinical morphology mapping,2,0.0,0.5,,
+t0,0,0,2,MLL23,eosinophil,F2,lymphocyte,2,1,0.5,0.5,N058 clinical morphology mapping,2,0.0,0.5,,
+t0,0,0,2,MLL23,eosinophil,F2,granulocyte,2,0,0.0,0.0,N058 clinical morphology mapping,2,1.0,0.0,,
+t0,0,0,2,MLL23,eosinophil,F2,monocyte,2,1,0.5,0.5,N058 clinical morphology mapping,2,0.0,0.5,,
+t0,0,0,2,MLL23,eosinophil,F1-bsccm,lymphocyte,2,1,0.5,0.3848991145229231,N058 clinical morphology mapping,2,0.0,0.5,,
+t0,0,0,2,MLL23,eosinophil,F1-bsccm,granulocyte,2,1,0.5,0.4139139024199933,N058 clinical morphology mapping,2,1.0,0.5,,
+t0,0,0,2,MLL23,eosinophil,F1-bsccm,monocyte,2,0,0.0,0.2011869830570836,N058 clinical morphology mapping,2,0.0,0.0,,
+t0,0,0,2,MLL23,hairy_cell,F1,lymphocyte,2,0,0.0,0.28363976,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,hairy_cell,F1,granulocyte,2,0,0.0,0.32367587,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,hairy_cell,F1,monocyte,2,2,1.0,0.39268437,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,hairy_cell,F2,lymphocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,hairy_cell,F2,granulocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,hairy_cell,F2,monocyte,2,2,1.0,1.0,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,hairy_cell,F1-bsccm,lymphocyte,2,0,0.0,0.158679741860343,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,hairy_cell,F1-bsccm,granulocyte,2,0,0.0,0.14160931908471153,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,hairy_cell,F1-bsccm,monocyte,2,2,1.0,0.6997109390549455,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,lymphocyte,F1,lymphocyte,2,0,0.0,0.26359734,N058 clinical morphology mapping,2,1.0,0.0,,
+t0,0,0,2,MLL23,lymphocyte,F1,granulocyte,2,2,1.0,0.52226675,N058 clinical morphology mapping,2,0.0,1.0,,
+t0,0,0,2,MLL23,lymphocyte,F1,monocyte,2,0,0.0,0.21413597,N058 clinical morphology mapping,2,0.0,0.0,,
+t0,0,0,2,MLL23,lymphocyte,F2,lymphocyte,2,0,0.0,0.0,N058 clinical morphology mapping,2,1.0,0.0,,
+t0,0,0,2,MLL23,lymphocyte,F2,granulocyte,2,2,1.0,1.0,N058 clinical morphology mapping,2,0.0,1.0,,
+t0,0,0,2,MLL23,lymphocyte,F2,monocyte,2,0,0.0,0.0,N058 clinical morphology mapping,2,0.0,0.0,,
+t0,0,0,2,MLL23,lymphocyte,F1-bsccm,lymphocyte,2,0,0.0,0.20061511822883624,N058 clinical morphology mapping,2,1.0,0.0,,
+t0,0,0,2,MLL23,lymphocyte,F1-bsccm,granulocyte,2,1,0.5,0.4835489952185249,N058 clinical morphology mapping,2,0.0,0.5,,
+t0,0,0,2,MLL23,lymphocyte,F1-bsccm,monocyte,2,1,0.5,0.3158358865526389,N058 clinical morphology mapping,2,0.0,0.5,,
+t0,0,0,2,MLL23,lymphocyte_large_granular,F1,lymphocyte,2,2,1.0,0.53315973,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,lymphocyte_large_granular,F1,granulocyte,2,0,0.0,0.2462633,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,lymphocyte_large_granular,F1,monocyte,2,0,0.0,0.22057699,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,lymphocyte_large_granular,F2,lymphocyte,2,2,1.0,1.0,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,lymphocyte_large_granular,F2,granulocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,lymphocyte_large_granular,F2,monocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,lymphocyte_large_granular,F1-bsccm,lymphocyte,2,2,1.0,0.6586934814876308,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,lymphocyte_large_granular,F1-bsccm,granulocyte,2,0,0.0,0.23055061100177793,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,lymphocyte_large_granular,F1-bsccm,monocyte,2,0,0.0,0.11075590751059114,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,metamyelocyte,F1,lymphocyte,2,1,0.5,0.3661855,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,metamyelocyte,F1,granulocyte,2,1,0.5,0.3818695,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,metamyelocyte,F1,monocyte,2,0,0.0,0.25194505,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,metamyelocyte,F2,lymphocyte,2,1,0.5,0.5,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,metamyelocyte,F2,granulocyte,2,1,0.5,0.5,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,metamyelocyte,F2,monocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,metamyelocyte,F1-bsccm,lymphocyte,2,1,0.5,0.3654114750466132,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,metamyelocyte,F1-bsccm,granulocyte,2,0,0.0,0.30887572590446866,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,metamyelocyte,F1-bsccm,monocyte,2,1,0.5,0.32571279904891826,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,monocyte,F1,lymphocyte,2,1,0.5,0.2801538,N058 clinical morphology mapping,2,0.0,0.5,,
+t0,0,0,2,MLL23,monocyte,F1,granulocyte,2,0,0.0,0.33720946,N058 clinical morphology mapping,2,0.0,0.0,,
+t0,0,0,2,MLL23,monocyte,F1,monocyte,2,1,0.5,0.38263673,N058 clinical morphology mapping,2,1.0,0.5,,
+t0,0,0,2,MLL23,monocyte,F2,lymphocyte,2,1,0.5,0.5,N058 clinical morphology mapping,2,0.0,0.5,,
+t0,0,0,2,MLL23,monocyte,F2,granulocyte,2,0,0.0,0.0,N058 clinical morphology mapping,2,0.0,0.0,,
+t0,0,0,2,MLL23,monocyte,F2,monocyte,2,1,0.5,0.5,N058 clinical morphology mapping,2,1.0,0.5,,
+t0,0,0,2,MLL23,monocyte,F1-bsccm,lymphocyte,2,2,1.0,0.4543405284615607,N058 clinical morphology mapping,2,0.0,1.0,,
+t0,0,0,2,MLL23,monocyte,F1-bsccm,granulocyte,2,0,0.0,0.3121302966933297,N058 clinical morphology mapping,2,0.0,0.0,,
+t0,0,0,2,MLL23,monocyte,F1-bsccm,monocyte,2,0,0.0,0.23352917484510957,N058 clinical morphology mapping,2,1.0,0.0,,
+t0,0,0,2,MLL23,myelocyte,F1,lymphocyte,2,2,1.0,0.6049392,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,myelocyte,F1,granulocyte,2,0,0.0,0.23935395,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,myelocyte,F1,monocyte,2,0,0.0,0.15570685,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,myelocyte,F2,lymphocyte,2,2,1.0,1.0,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,myelocyte,F2,granulocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,myelocyte,F2,monocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,myelocyte,F1-bsccm,lymphocyte,2,2,1.0,0.7023260181224564,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,myelocyte,F1-bsccm,granulocyte,2,0,0.0,0.20471419262401452,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,myelocyte,F1-bsccm,monocyte,2,0,0.0,0.09295978925352912,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,neutrophil_band,F1,lymphocyte,2,0,0.0,0.09353632,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,neutrophil_band,F1,granulocyte,2,2,1.0,0.67125964,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,neutrophil_band,F1,monocyte,2,0,0.0,0.23520404,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,neutrophil_band,F2,lymphocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,neutrophil_band,F2,granulocyte,2,2,1.0,1.0,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,neutrophil_band,F2,monocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,neutrophil_band,F1-bsccm,lymphocyte,2,0,0.0,0.1478833884341252,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,neutrophil_band,F1-bsccm,granulocyte,2,2,1.0,0.702315068923703,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,neutrophil_band,F1-bsccm,monocyte,2,0,0.0,0.14980154264217171,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,neutrophil_segmented,F1,lymphocyte,2,1,0.5,0.50585365,N058 clinical morphology mapping,2,0.0,0.5,,
+t0,0,0,2,MLL23,neutrophil_segmented,F1,granulocyte,2,1,0.5,0.38591766,N058 clinical morphology mapping,2,1.0,0.5,,
+t0,0,0,2,MLL23,neutrophil_segmented,F1,monocyte,2,0,0.0,0.10822873,N058 clinical morphology mapping,2,0.0,0.0,,
+t0,0,0,2,MLL23,neutrophil_segmented,F2,lymphocyte,2,1,0.5,0.5,N058 clinical morphology mapping,2,0.0,0.5,,
+t0,0,0,2,MLL23,neutrophil_segmented,F2,granulocyte,2,1,0.5,0.5,N058 clinical morphology mapping,2,1.0,0.5,,
+t0,0,0,2,MLL23,neutrophil_segmented,F2,monocyte,2,0,0.0,0.0,N058 clinical morphology mapping,2,0.0,0.0,,
+t0,0,0,2,MLL23,neutrophil_segmented,F1-bsccm,lymphocyte,2,2,1.0,0.7042338594398397,N058 clinical morphology mapping,2,0.0,1.0,,
+t0,0,0,2,MLL23,neutrophil_segmented,F1-bsccm,granulocyte,2,0,0.0,0.22408743564057548,N058 clinical morphology mapping,2,1.0,0.0,,
+t0,0,0,2,MLL23,neutrophil_segmented,F1-bsccm,monocyte,2,0,0.0,0.07167870491958486,N058 clinical morphology mapping,2,0.0,0.0,,
+t0,0,0,2,MLL23,normoblast,F1,lymphocyte,2,0,0.0,0.26241335,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,normoblast,F1,granulocyte,2,2,1.0,0.51967514,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,normoblast,F1,monocyte,2,0,0.0,0.2179115,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,normoblast,F2,lymphocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,normoblast,F2,granulocyte,2,2,1.0,1.0,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,normoblast,F2,monocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,normoblast,F1-bsccm,lymphocyte,2,0,0.0,0.2125095083331174,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,normoblast,F1-bsccm,granulocyte,2,2,1.0,0.6825081374705813,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,normoblast,F1-bsccm,monocyte,2,0,0.0,0.10498235419630134,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,plasma_cell,F1,lymphocyte,2,0,0.0,0.22890414,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,plasma_cell,F1,granulocyte,2,1,0.5,0.42669505,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,plasma_cell,F1,monocyte,2,1,0.5,0.34440082,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,plasma_cell,F2,lymphocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,plasma_cell,F2,granulocyte,2,1,0.5,0.5,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,plasma_cell,F2,monocyte,2,1,0.5,0.5,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,plasma_cell,F1-bsccm,lymphocyte,2,0,0.0,0.24629367687182568,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,plasma_cell,F1-bsccm,granulocyte,2,1,0.5,0.3703565634434445,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,MLL23,plasma_cell,F1-bsccm,monocyte,2,1,0.5,0.3833497596847299,N058 clinical morphology mapping,0,,,,
+t0,0,0,2,BSCCM,all,F1,lymphocyte,24,15,0.625,0.40578827,v4c measured cls3,0,,,0.08333333333333333,0.06389172666813993
+t0,0,0,2,BSCCM,all,F1,granulocyte,24,9,0.375,0.3890362,v4c measured cls3,0,,,0.875,0.8761295878905596
+t0,0,0,2,BSCCM,all,F1,monocyte,24,0,0.0,0.20517547,v4c measured cls3,0,,,0.041666666666666664,0.05997868544130038
+t0,0,0,2,BSCCM,all,F2,lymphocyte,24,15,0.625,0.625,v4c measured cls3,0,,,0.08333333333333333,0.06389172666813993
+t0,0,0,2,BSCCM,all,F2,granulocyte,24,9,0.375,0.375,v4c measured cls3,0,,,0.875,0.8761295878905596
+t0,0,0,2,BSCCM,all,F2,monocyte,24,0,0.0,0.0,v4c measured cls3,0,,,0.041666666666666664,0.05997868544130038
+t0,0,0,2,BSCCM,all,F1-bsccm,lymphocyte,24,1,0.041666666666666664,0.037908433788740224,v4c measured cls3,0,,,0.08333333333333333,0.06389172666813993
+t0,0,0,2,BSCCM,all,F1-bsccm,granulocyte,24,21,0.875,0.872509293186282,v4c measured cls3,0,,,0.875,0.8761295878905596
+t0,0,0,2,BSCCM,all,F1-bsccm,monocyte,24,2,0.08333333333333333,0.08958227302497764,v4c measured cls3,0,,,0.041666666666666664,0.05997868544130038
+t0,0,0,2,BSCCM,all,F1-oracle-hard_UPPER_BOUND,lymphocyte,24,2,0.08333333333333333,0.08333333333333333,v4c measured cls3,0,,,0.08333333333333333,0.06389172666813993
+t0,0,0,2,BSCCM,all,F1-oracle-hard_UPPER_BOUND,granulocyte,24,21,0.875,0.875,v4c measured cls3,0,,,0.875,0.8761295878905596
+t0,0,0,2,BSCCM,all,F1-oracle-hard_UPPER_BOUND,monocyte,24,1,0.041666666666666664,0.041666666666666664,v4c measured cls3,0,,,0.041666666666666664,0.05997868544130038
+t0,0,0,2,BSCCM,all,F1-oracle-soft_UPPER_BOUND,lymphocyte,24,2,0.08333333333333333,0.06389172666813993,v4c measured cls3,0,,,0.08333333333333333,0.06389172666813993
+t0,0,0,2,BSCCM,all,F1-oracle-soft_UPPER_BOUND,granulocyte,24,21,0.875,0.8761295878905596,v4c measured cls3,0,,,0.875,0.8761295878905596
+t0,0,0,2,BSCCM,all,F1-oracle-soft_UPPER_BOUND,monocyte,24,1,0.041666666666666664,0.05997868544130038,v4c measured cls3,0,,,0.041666666666666664,0.05997868544130038
+t0,0,0,2,BSCCM,autofl_observed,F1,lymphocyte,24,15,0.625,0.40578827,v4c measured cls3,0,,,0.08333333333333333,0.06389172666813993
+t0,0,0,2,BSCCM,autofl_observed,F1,granulocyte,24,9,0.375,0.3890362,v4c measured cls3,0,,,0.875,0.8761295878905596
+t0,0,0,2,BSCCM,autofl_observed,F1,monocyte,24,0,0.0,0.20517547,v4c measured cls3,0,,,0.041666666666666664,0.05997868544130038
+t0,0,0,2,BSCCM,autofl_observed,F2,lymphocyte,24,15,0.625,0.625,v4c measured cls3,0,,,0.08333333333333333,0.06389172666813993
+t0,0,0,2,BSCCM,autofl_observed,F2,granulocyte,24,9,0.375,0.375,v4c measured cls3,0,,,0.875,0.8761295878905596
+t0,0,0,2,BSCCM,autofl_observed,F2,monocyte,24,0,0.0,0.0,v4c measured cls3,0,,,0.041666666666666664,0.05997868544130038
+t0,0,0,2,BSCCM,autofl_observed,F1-bsccm,lymphocyte,24,1,0.041666666666666664,0.037908433788740224,v4c measured cls3,0,,,0.08333333333333333,0.06389172666813993
+t0,0,0,2,BSCCM,autofl_observed,F1-bsccm,granulocyte,24,21,0.875,0.872509293186282,v4c measured cls3,0,,,0.875,0.8761295878905596
+t0,0,0,2,BSCCM,autofl_observed,F1-bsccm,monocyte,24,2,0.08333333333333333,0.08958227302497764,v4c measured cls3,0,,,0.041666666666666664,0.05997868544130038
+t0,0,0,2,BSCCM,autofl_observed,F1-oracle-hard_UPPER_BOUND,lymphocyte,24,2,0.08333333333333333,0.08333333333333333,v4c measured cls3,0,,,0.08333333333333333,0.06389172666813993
+t0,0,0,2,BSCCM,autofl_observed,F1-oracle-hard_UPPER_BOUND,granulocyte,24,21,0.875,0.875,v4c measured cls3,0,,,0.875,0.8761295878905596
+t0,0,0,2,BSCCM,autofl_observed,F1-oracle-hard_UPPER_BOUND,monocyte,24,1,0.041666666666666664,0.041666666666666664,v4c measured cls3,0,,,0.041666666666666664,0.05997868544130038
+t0,0,0,2,BSCCM,autofl_observed,F1-oracle-soft_UPPER_BOUND,lymphocyte,24,2,0.08333333333333333,0.06389172666813993,v4c measured cls3,0,,,0.08333333333333333,0.06389172666813993
+t0,0,0,2,BSCCM,autofl_observed,F1-oracle-soft_UPPER_BOUND,granulocyte,24,21,0.875,0.8761295878905596,v4c measured cls3,0,,,0.875,0.8761295878905596
+t0,0,0,2,BSCCM,autofl_observed,F1-oracle-soft_UPPER_BOUND,monocyte,24,1,0.041666666666666664,0.05997868544130038,v4c measured cls3,0,,,0.041666666666666664,0.05997868544130038
+t0,0,0,2,BSCCM,n058_split2_observed,F1,lymphocyte,0,0,,,v4c measured cls3,0,,,,
+t0,0,0,2,BSCCM,n058_split2_observed,F1,granulocyte,0,0,,,v4c measured cls3,0,,,,
+t0,0,0,2,BSCCM,n058_split2_observed,F1,monocyte,0,0,,,v4c measured cls3,0,,,,
+t0,0,0,2,BSCCM,n058_split2_observed,F2,lymphocyte,0,0,,,v4c measured cls3,0,,,,
+t0,0,0,2,BSCCM,n058_split2_observed,F2,granulocyte,0,0,,,v4c measured cls3,0,,,,
+t0,0,0,2,BSCCM,n058_split2_observed,F2,monocyte,0,0,,,v4c measured cls3,0,,,,
+t0,0,0,2,BSCCM,n058_split2_observed,F1-bsccm,lymphocyte,0,0,,,v4c measured cls3,0,,,,
+t0,0,0,2,BSCCM,n058_split2_observed,F1-bsccm,granulocyte,0,0,,,v4c measured cls3,0,,,,
+t0,0,0,2,BSCCM,n058_split2_observed,F1-bsccm,monocyte,0,0,,,v4c measured cls3,0,,,,
+t0,0,0,2,BSCCM,n058_split2_observed,F1-oracle-hard_UPPER_BOUND,lymphocyte,0,0,,,v4c measured cls3,0,,,,
+t0,0,0,2,BSCCM,n058_split2_observed,F1-oracle-hard_UPPER_BOUND,granulocyte,0,0,,,v4c measured cls3,0,,,,
+t0,0,0,2,BSCCM,n058_split2_observed,F1-oracle-hard_UPPER_BOUND,monocyte,0,0,,,v4c measured cls3,0,,,,
+t0,0,0,2,BSCCM,n058_split2_observed,F1-oracle-soft_UPPER_BOUND,lymphocyte,0,0,,,v4c measured cls3,0,,,,
+t0,0,0,2,BSCCM,n058_split2_observed,F1-oracle-soft_UPPER_BOUND,granulocyte,0,0,,,v4c measured cls3,0,,,,
+t0,0,0,2,BSCCM,n058_split2_observed,F1-oracle-soft_UPPER_BOUND,monocyte,0,0,,,v4c measured cls3,0,,,,
+t0,0,0,2,BSCCM,lf_lymphocyte,F1,lymphocyte,2,2,1.0,0.4072066,v4c measured cls3,0,,,1.0,0.7641984882467985
+t0,0,0,2,BSCCM,lf_lymphocyte,F1,granulocyte,2,0,0.0,0.320641,v4c measured cls3,0,,,0.0,0.013977017466872039
+t0,0,0,2,BSCCM,lf_lymphocyte,F1,monocyte,2,0,0.0,0.27215236,v4c measured cls3,0,,,0.0,0.2218244942863294
+t0,0,0,2,BSCCM,lf_lymphocyte,F2,lymphocyte,2,2,1.0,1.0,v4c measured cls3,0,,,1.0,0.7641984882467985
+t0,0,0,2,BSCCM,lf_lymphocyte,F2,granulocyte,2,0,0.0,0.0,v4c measured cls3,0,,,0.0,0.013977017466872039
+t0,0,0,2,BSCCM,lf_lymphocyte,F2,monocyte,2,0,0.0,0.0,v4c measured cls3,0,,,0.0,0.2218244942863294
+t0,0,0,2,BSCCM,lf_lymphocyte,F1-bsccm,lymphocyte,2,1,0.5,0.41997318466088823,v4c measured cls3,0,,,1.0,0.7641984882467985
+t0,0,0,2,BSCCM,lf_lymphocyte,F1-bsccm,granulocyte,2,0,0.0,0.027468736267254774,v4c measured cls3,0,,,0.0,0.013977017466872039
+t0,0,0,2,BSCCM,lf_lymphocyte,F1-bsccm,monocyte,2,1,0.5,0.552558079071857,v4c measured cls3,0,,,0.0,0.2218244942863294
+t0,0,0,2,BSCCM,lf_lymphocyte,F1-oracle-hard_UPPER_BOUND,lymphocyte,2,2,1.0,1.0,v4c measured cls3,0,,,1.0,0.7641984882467985
+t0,0,0,2,BSCCM,lf_lymphocyte,F1-oracle-hard_UPPER_BOUND,granulocyte,2,0,0.0,0.0,v4c measured cls3,0,,,0.0,0.013977017466872039
+t0,0,0,2,BSCCM,lf_lymphocyte,F1-oracle-hard_UPPER_BOUND,monocyte,2,0,0.0,0.0,v4c measured cls3,0,,,0.0,0.2218244942863294
+t0,0,0,2,BSCCM,lf_lymphocyte,F1-oracle-soft_UPPER_BOUND,lymphocyte,2,2,1.0,0.7641984882467985,v4c measured cls3,0,,,1.0,0.7641984882467985
+t0,0,0,2,BSCCM,lf_lymphocyte,F1-oracle-soft_UPPER_BOUND,granulocyte,2,0,0.0,0.013977017466872039,v4c measured cls3,0,,,0.0,0.013977017466872039
+t0,0,0,2,BSCCM,lf_lymphocyte,F1-oracle-soft_UPPER_BOUND,monocyte,2,0,0.0,0.2218244942863294,v4c measured cls3,0,,,0.0,0.2218244942863294
+t0,0,0,2,BSCCM,lf_granulocyte,F1,lymphocyte,21,13,0.6190476190476191,0.41001955,v4c measured cls3,0,,,0.0,2.402428355590171e-05
+t0,0,0,2,BSCCM,lf_granulocyte,F1,granulocyte,21,8,0.38095238095238093,0.39558628,v4c measured cls3,0,,,1.0,0.9999482269436948
+t0,0,0,2,BSCCM,lf_granulocyte,F1,monocyte,21,0,0.0,0.19439411,v4c measured cls3,0,,,0.0,2.774877274937346e-05
+t0,0,0,2,BSCCM,lf_granulocyte,F2,lymphocyte,21,13,0.6190476190476191,0.6190476190476191,v4c measured cls3,0,,,0.0,2.402428355590171e-05
+t0,0,0,2,BSCCM,lf_granulocyte,F2,granulocyte,21,8,0.38095238095238093,0.38095238095238093,v4c measured cls3,0,,,1.0,0.9999482269436948
+t0,0,0,2,BSCCM,lf_granulocyte,F2,monocyte,21,0,0.0,0.0,v4c measured cls3,0,,,0.0,2.774877274937346e-05
+t0,0,0,2,BSCCM,lf_granulocyte,F1-bsccm,lymphocyte,21,0,0.0,0.002841827114965866,v4c measured cls3,0,,,0.0,2.402428355590171e-05
+t0,0,0,2,BSCCM,lf_granulocyte,F1-bsccm,granulocyte,21,21,1.0,0.9929924280140765,v4c measured cls3,0,,,1.0,0.9999482269436948
+t0,0,0,2,BSCCM,lf_granulocyte,F1-bsccm,monocyte,21,0,0.0,0.004165744870957523,v4c measured cls3,0,,,0.0,2.774877274937346e-05
+t0,0,0,2,BSCCM,lf_granulocyte,F1-oracle-hard_UPPER_BOUND,lymphocyte,21,0,0.0,0.0,v4c measured cls3,0,,,0.0,2.402428355590171e-05
+t0,0,0,2,BSCCM,lf_granulocyte,F1-oracle-hard_UPPER_BOUND,granulocyte,21,21,1.0,1.0,v4c measured cls3,0,,,1.0,0.9999482269436948
+t0,0,0,2,BSCCM,lf_granulocyte,F1-oracle-hard_UPPER_BOUND,monocyte,21,0,0.0,0.0,v4c measured cls3,0,,,0.0,2.774877274937346e-05
+t0,0,0,2,BSCCM,lf_granulocyte,F1-oracle-soft_UPPER_BOUND,lymphocyte,21,0,0.0,2.402428355590171e-05,v4c measured cls3,0,,,0.0,2.402428355590171e-05
+t0,0,0,2,BSCCM,lf_granulocyte,F1-oracle-soft_UPPER_BOUND,granulocyte,21,21,1.0,0.9999482269436948,v4c measured cls3,0,,,1.0,0.9999482269436948
+t0,0,0,2,BSCCM,lf_granulocyte,F1-oracle-soft_UPPER_BOUND,monocyte,21,0,0.0,2.774877274937346e-05,v4c measured cls3,0,,,0.0,2.774877274937346e-05
+t0,0,0,2,BSCCM,lf_monocyte,F1,lymphocyte,1,0,0.0,0.31409493,v4c measured cls3,0,,,0.0,0.00449995358708722
+t0,0,0,2,BSCCM,lf_monocyte,F1,granulocyte,1,1,1.0,0.38827497,v4c measured cls3,0,,,0.0,0.00024330862209941947
+t0,0,0,2,BSCCM,lf_monocyte,F1,monocyte,1,0,0.0,0.29763004,v4c measured cls3,0,,,1.0,0.9952567377908134
+t0,0,0,2,BSCCM,lf_monocyte,F2,lymphocyte,1,0,0.0,0.0,v4c measured cls3,0,,,0.0,0.00449995358708722
+t0,0,0,2,BSCCM,lf_monocyte,F2,granulocyte,1,1,1.0,1.0,v4c measured cls3,0,,,0.0,0.00024330862209941947
+t0,0,0,2,BSCCM,lf_monocyte,F2,monocyte,1,0,0.0,0.0,v4c measured cls3,0,,,1.0,0.9952567377908134
+t0,0,0,2,BSCCM,lf_monocyte,F1-bsccm,lymphocyte,1,0,0.0,0.010177672193705632,v4c measured cls3,0,,,0.0,0.00449995358708722
+t0,0,0,2,BSCCM,lf_monocyte,F1-bsccm,granulocyte,1,0,0.0,0.03244457564065283,v4c measured cls3,0,,,0.0,0.00024330862209941947
+t0,0,0,2,BSCCM,lf_monocyte,F1-bsccm,monocyte,1,1,1.0,0.9573777521656415,v4c measured cls3,0,,,1.0,0.9952567377908134
+t0,0,0,2,BSCCM,lf_monocyte,F1-oracle-hard_UPPER_BOUND,lymphocyte,1,0,0.0,0.0,v4c measured cls3,0,,,0.0,0.00449995358708722
+t0,0,0,2,BSCCM,lf_monocyte,F1-oracle-hard_UPPER_BOUND,granulocyte,1,0,0.0,0.0,v4c measured cls3,0,,,0.0,0.00024330862209941947
+t0,0,0,2,BSCCM,lf_monocyte,F1-oracle-hard_UPPER_BOUND,monocyte,1,1,1.0,1.0,v4c measured cls3,0,,,1.0,0.9952567377908134
+t0,0,0,2,BSCCM,lf_monocyte,F1-oracle-soft_UPPER_BOUND,lymphocyte,1,0,0.0,0.00449995358708722,v4c measured cls3,0,,,0.0,0.00449995358708722
+t0,0,0,2,BSCCM,lf_monocyte,F1-oracle-soft_UPPER_BOUND,granulocyte,1,0,0.0,0.00024330862209941947,v4c measured cls3,0,,,0.0,0.00024330862209941947
+t0,0,0,2,BSCCM,lf_monocyte,F1-oracle-soft_UPPER_BOUND,monocyte,1,1,1.0,0.9952567377908134,v4c measured cls3,0,,,1.0,0.9952567377908134
+t1,0,0,2,PBC,all,F1,lymphocyte,16,5,0.3125,0.3313166,N058 clinical morphology mapping,8,0.25,0.25,,
+t1,0,0,2,PBC,all,F1,granulocyte,16,3,0.1875,0.2800417,N058 clinical morphology mapping,8,0.5,0.375,,
+t1,0,0,2,PBC,all,F1,monocyte,16,8,0.5,0.3886417,N058 clinical morphology mapping,8,0.25,0.375,,
+t1,0,0,2,PBC,all,F2,lymphocyte,16,5,0.3125,0.3125,N058 clinical morphology mapping,8,0.25,0.25,,
+t1,0,0,2,PBC,all,F2,granulocyte,16,3,0.1875,0.1875,N058 clinical morphology mapping,8,0.5,0.375,,
+t1,0,0,2,PBC,all,F2,monocyte,16,8,0.5,0.5,N058 clinical morphology mapping,8,0.25,0.375,,
+t1,0,0,2,PBC,all,F1-bsccm,lymphocyte,16,4,0.25,0.2856364070812578,N058 clinical morphology mapping,8,0.25,0.25,,
+t1,0,0,2,PBC,all,F1-bsccm,granulocyte,16,6,0.375,0.3398561982958745,N058 clinical morphology mapping,8,0.5,0.5,,
+t1,0,0,2,PBC,all,F1-bsccm,monocyte,16,6,0.375,0.37450739462286764,N058 clinical morphology mapping,8,0.25,0.25,,
+t1,0,0,2,PBC,basophil,F1,lymphocyte,2,0,0.0,0.19511329,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,PBC,basophil,F1,granulocyte,2,0,0.0,0.06941602,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,PBC,basophil,F1,monocyte,2,2,1.0,0.73547065,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,PBC,basophil,F2,lymphocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,PBC,basophil,F2,granulocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,PBC,basophil,F2,monocyte,2,2,1.0,1.0,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,PBC,basophil,F1-bsccm,lymphocyte,2,1,0.5,0.26789204642945996,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,PBC,basophil,F1-bsccm,granulocyte,2,0,0.0,0.06487893541901223,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,PBC,basophil,F1-bsccm,monocyte,2,1,0.5,0.6672290181515278,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,PBC,eosinophil,F1,lymphocyte,2,0,0.0,0.07533817,N058 clinical morphology mapping,2,0.0,0.0,,
+t1,0,0,2,PBC,eosinophil,F1,granulocyte,2,1,0.5,0.61114436,N058 clinical morphology mapping,2,1.0,0.5,,
+t1,0,0,2,PBC,eosinophil,F1,monocyte,2,1,0.5,0.31351748,N058 clinical morphology mapping,2,0.0,0.5,,
+t1,0,0,2,PBC,eosinophil,F2,lymphocyte,2,0,0.0,0.0,N058 clinical morphology mapping,2,0.0,0.0,,
+t1,0,0,2,PBC,eosinophil,F2,granulocyte,2,1,0.5,0.5,N058 clinical morphology mapping,2,1.0,0.5,,
+t1,0,0,2,PBC,eosinophil,F2,monocyte,2,1,0.5,0.5,N058 clinical morphology mapping,2,0.0,0.5,,
+t1,0,0,2,PBC,eosinophil,F1-bsccm,lymphocyte,2,0,0.0,0.06273078591845739,N058 clinical morphology mapping,2,0.0,0.0,,
+t1,0,0,2,PBC,eosinophil,F1-bsccm,granulocyte,2,2,1.0,0.6238537384742915,N058 clinical morphology mapping,2,1.0,1.0,,
+t1,0,0,2,PBC,eosinophil,F1-bsccm,monocyte,2,0,0.0,0.31341547560725114,N058 clinical morphology mapping,2,0.0,0.0,,
+t1,0,0,2,PBC,erythroblast,F1,lymphocyte,2,1,0.5,0.51917124,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,PBC,erythroblast,F1,granulocyte,2,0,0.0,0.12103407,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,PBC,erythroblast,F1,monocyte,2,1,0.5,0.35979474,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,PBC,erythroblast,F2,lymphocyte,2,1,0.5,0.5,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,PBC,erythroblast,F2,granulocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,PBC,erythroblast,F2,monocyte,2,1,0.5,0.5,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,PBC,erythroblast,F1-bsccm,lymphocyte,2,1,0.5,0.4863170845035758,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,PBC,erythroblast,F1-bsccm,granulocyte,2,0,0.0,0.16955436641737748,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,PBC,erythroblast,F1-bsccm,monocyte,2,1,0.5,0.3441285490790468,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,PBC,ig,F1,lymphocyte,2,0,0.0,0.28988132,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,PBC,ig,F1,granulocyte,2,0,0.0,0.043656886,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,PBC,ig,F1,monocyte,2,2,1.0,0.6664618,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,PBC,ig,F2,lymphocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,PBC,ig,F2,granulocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,PBC,ig,F2,monocyte,2,2,1.0,1.0,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,PBC,ig,F1-bsccm,lymphocyte,2,0,0.0,0.284329852441647,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,PBC,ig,F1-bsccm,granulocyte,2,0,0.0,0.058720020236651294,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,PBC,ig,F1-bsccm,monocyte,2,2,1.0,0.6569501273217018,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,PBC,lymphocyte,F1,lymphocyte,2,2,1.0,0.8577811,N058 clinical morphology mapping,2,1.0,1.0,,
+t1,0,0,2,PBC,lymphocyte,F1,granulocyte,2,0,0.0,0.08953399,N058 clinical morphology mapping,2,0.0,0.0,,
+t1,0,0,2,PBC,lymphocyte,F1,monocyte,2,0,0.0,0.052684885,N058 clinical morphology mapping,2,0.0,0.0,,
+t1,0,0,2,PBC,lymphocyte,F2,lymphocyte,2,2,1.0,1.0,N058 clinical morphology mapping,2,1.0,1.0,,
+t1,0,0,2,PBC,lymphocyte,F2,granulocyte,2,0,0.0,0.0,N058 clinical morphology mapping,2,0.0,0.0,,
+t1,0,0,2,PBC,lymphocyte,F2,monocyte,2,0,0.0,0.0,N058 clinical morphology mapping,2,0.0,0.0,,
+t1,0,0,2,PBC,lymphocyte,F1-bsccm,lymphocyte,2,2,1.0,0.8639562501387221,N058 clinical morphology mapping,2,1.0,1.0,,
+t1,0,0,2,PBC,lymphocyte,F1-bsccm,granulocyte,2,0,0.0,0.10211689429236787,N058 clinical morphology mapping,2,0.0,0.0,,
+t1,0,0,2,PBC,lymphocyte,F1-bsccm,monocyte,2,0,0.0,0.03392685556891015,N058 clinical morphology mapping,2,0.0,0.0,,
+t1,0,0,2,PBC,monocyte,F1,lymphocyte,2,0,0.0,0.014477131,N058 clinical morphology mapping,2,0.0,0.0,,
+t1,0,0,2,PBC,monocyte,F1,granulocyte,2,0,0.0,0.03831889,N058 clinical morphology mapping,2,0.0,0.0,,
+t1,0,0,2,PBC,monocyte,F1,monocyte,2,2,1.0,0.947204,N058 clinical morphology mapping,2,1.0,1.0,,
+t1,0,0,2,PBC,monocyte,F2,lymphocyte,2,0,0.0,0.0,N058 clinical morphology mapping,2,0.0,0.0,,
+t1,0,0,2,PBC,monocyte,F2,granulocyte,2,0,0.0,0.0,N058 clinical morphology mapping,2,0.0,0.0,,
+t1,0,0,2,PBC,monocyte,F2,monocyte,2,2,1.0,1.0,N058 clinical morphology mapping,2,1.0,1.0,,
+t1,0,0,2,PBC,monocyte,F1-bsccm,lymphocyte,2,0,0.0,0.004972414226091186,N058 clinical morphology mapping,2,0.0,0.0,,
+t1,0,0,2,PBC,monocyte,F1-bsccm,granulocyte,2,0,0.0,0.045164908894273104,N058 clinical morphology mapping,2,0.0,0.0,,
+t1,0,0,2,PBC,monocyte,F1-bsccm,monocyte,2,2,1.0,0.9498626768796357,N058 clinical morphology mapping,2,1.0,1.0,,
+t1,0,0,2,PBC,neutrophil,F1,lymphocyte,2,0,0.0,0.007844148,N058 clinical morphology mapping,2,0.0,0.0,,
+t1,0,0,2,PBC,neutrophil,F1,granulocyte,2,2,1.0,0.9867004,N058 clinical morphology mapping,2,1.0,1.0,,
+t1,0,0,2,PBC,neutrophil,F1,monocyte,2,0,0.0,0.0054554134,N058 clinical morphology mapping,2,0.0,0.0,,
+t1,0,0,2,PBC,neutrophil,F2,lymphocyte,2,0,0.0,0.0,N058 clinical morphology mapping,2,0.0,0.0,,
+t1,0,0,2,PBC,neutrophil,F2,granulocyte,2,2,1.0,1.0,N058 clinical morphology mapping,2,1.0,1.0,,
+t1,0,0,2,PBC,neutrophil,F2,monocyte,2,0,0.0,0.0,N058 clinical morphology mapping,2,0.0,0.0,,
+t1,0,0,2,PBC,neutrophil,F1-bsccm,lymphocyte,2,0,0.0,0.010899548808051378,N058 clinical morphology mapping,2,0.0,0.0,,
+t1,0,0,2,PBC,neutrophil,F1-bsccm,granulocyte,2,2,1.0,0.9844150448078361,N058 clinical morphology mapping,2,1.0,1.0,,
+t1,0,0,2,PBC,neutrophil,F1-bsccm,monocyte,2,0,0.0,0.004685406384112456,N058 clinical morphology mapping,2,0.0,0.0,,
+t1,0,0,2,PBC,platelet,F1,lymphocyte,2,2,1.0,0.69092643,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,PBC,platelet,F1,granulocyte,2,0,0.0,0.28052902,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,PBC,platelet,F1,monocyte,2,0,0.0,0.028544579,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,PBC,platelet,F2,lymphocyte,2,2,1.0,1.0,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,PBC,platelet,F2,granulocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,PBC,platelet,F2,monocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,PBC,platelet,F1-bsccm,lymphocyte,2,0,0.0,0.3039932741840581,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,PBC,platelet,F1-bsccm,granulocyte,2,2,1.0,0.6701456778251863,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,PBC,platelet,F1-bsccm,monocyte,2,0,0.0,0.025861047990755698,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,all,F1,lymphocyte,24,9,0.375,0.33968744,N058 clinical morphology mapping,8,0.25,0.375,,
+t1,0,0,2,MLL23,all,F1,granulocyte,24,10,0.4166666666666667,0.39377943,N058 clinical morphology mapping,8,0.5,0.375,,
+t1,0,0,2,MLL23,all,F1,monocyte,24,5,0.20833333333333334,0.26653317,N058 clinical morphology mapping,8,0.25,0.25,,
+t1,0,0,2,MLL23,all,F2,lymphocyte,24,9,0.375,0.375,N058 clinical morphology mapping,8,0.25,0.375,,
+t1,0,0,2,MLL23,all,F2,granulocyte,24,10,0.4166666666666667,0.4166666666666667,N058 clinical morphology mapping,8,0.5,0.375,,
+t1,0,0,2,MLL23,all,F2,monocyte,24,5,0.20833333333333334,0.20833333333333334,N058 clinical morphology mapping,8,0.25,0.25,,
+t1,0,0,2,MLL23,all,F1-bsccm,lymphocyte,24,10,0.4166666666666667,0.38303956568032566,N058 clinical morphology mapping,8,0.25,0.625,,
+t1,0,0,2,MLL23,all,F1-bsccm,granulocyte,24,9,0.375,0.3829693606134677,N058 clinical morphology mapping,8,0.5,0.25,,
+t1,0,0,2,MLL23,all,F1-bsccm,monocyte,24,5,0.20833333333333334,0.23399107370620664,N058 clinical morphology mapping,8,0.25,0.125,,
+t1,0,0,2,MLL23,basophil,F1,lymphocyte,2,1,0.5,0.35298026,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,basophil,F1,granulocyte,2,1,0.5,0.4382866,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,basophil,F1,monocyte,2,0,0.0,0.20873317,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,basophil,F2,lymphocyte,2,1,0.5,0.5,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,basophil,F2,granulocyte,2,1,0.5,0.5,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,basophil,F2,monocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,basophil,F1-bsccm,lymphocyte,2,0,0.0,0.36058887735463613,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,basophil,F1-bsccm,granulocyte,2,2,1.0,0.521022078936488,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,basophil,F1-bsccm,monocyte,2,0,0.0,0.11838904370887596,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,eosinophil,F1,lymphocyte,2,1,0.5,0.30088612,N058 clinical morphology mapping,2,0.0,0.5,,
+t1,0,0,2,MLL23,eosinophil,F1,granulocyte,2,0,0.0,0.23288012,N058 clinical morphology mapping,2,1.0,0.0,,
+t1,0,0,2,MLL23,eosinophil,F1,monocyte,2,1,0.5,0.4662338,N058 clinical morphology mapping,2,0.0,0.5,,
+t1,0,0,2,MLL23,eosinophil,F2,lymphocyte,2,1,0.5,0.5,N058 clinical morphology mapping,2,0.0,0.5,,
+t1,0,0,2,MLL23,eosinophil,F2,granulocyte,2,0,0.0,0.0,N058 clinical morphology mapping,2,1.0,0.0,,
+t1,0,0,2,MLL23,eosinophil,F2,monocyte,2,1,0.5,0.5,N058 clinical morphology mapping,2,0.0,0.5,,
+t1,0,0,2,MLL23,eosinophil,F1-bsccm,lymphocyte,2,1,0.5,0.3848991145229231,N058 clinical morphology mapping,2,0.0,0.5,,
+t1,0,0,2,MLL23,eosinophil,F1-bsccm,granulocyte,2,1,0.5,0.4139139024199933,N058 clinical morphology mapping,2,1.0,0.5,,
+t1,0,0,2,MLL23,eosinophil,F1-bsccm,monocyte,2,0,0.0,0.2011869830570836,N058 clinical morphology mapping,2,0.0,0.0,,
+t1,0,0,2,MLL23,hairy_cell,F1,lymphocyte,2,0,0.0,0.28363976,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,hairy_cell,F1,granulocyte,2,0,0.0,0.32367587,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,hairy_cell,F1,monocyte,2,2,1.0,0.39268437,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,hairy_cell,F2,lymphocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,hairy_cell,F2,granulocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,hairy_cell,F2,monocyte,2,2,1.0,1.0,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,hairy_cell,F1-bsccm,lymphocyte,2,0,0.0,0.158679741860343,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,hairy_cell,F1-bsccm,granulocyte,2,0,0.0,0.14160931908471153,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,hairy_cell,F1-bsccm,monocyte,2,2,1.0,0.6997109390549455,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,lymphocyte,F1,lymphocyte,2,0,0.0,0.26359734,N058 clinical morphology mapping,2,1.0,0.0,,
+t1,0,0,2,MLL23,lymphocyte,F1,granulocyte,2,2,1.0,0.52226675,N058 clinical morphology mapping,2,0.0,1.0,,
+t1,0,0,2,MLL23,lymphocyte,F1,monocyte,2,0,0.0,0.21413597,N058 clinical morphology mapping,2,0.0,0.0,,
+t1,0,0,2,MLL23,lymphocyte,F2,lymphocyte,2,0,0.0,0.0,N058 clinical morphology mapping,2,1.0,0.0,,
+t1,0,0,2,MLL23,lymphocyte,F2,granulocyte,2,2,1.0,1.0,N058 clinical morphology mapping,2,0.0,1.0,,
+t1,0,0,2,MLL23,lymphocyte,F2,monocyte,2,0,0.0,0.0,N058 clinical morphology mapping,2,0.0,0.0,,
+t1,0,0,2,MLL23,lymphocyte,F1-bsccm,lymphocyte,2,0,0.0,0.20061511822883624,N058 clinical morphology mapping,2,1.0,0.0,,
+t1,0,0,2,MLL23,lymphocyte,F1-bsccm,granulocyte,2,1,0.5,0.4835489952185249,N058 clinical morphology mapping,2,0.0,0.5,,
+t1,0,0,2,MLL23,lymphocyte,F1-bsccm,monocyte,2,1,0.5,0.3158358865526389,N058 clinical morphology mapping,2,0.0,0.5,,
+t1,0,0,2,MLL23,lymphocyte_large_granular,F1,lymphocyte,2,2,1.0,0.53315973,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,lymphocyte_large_granular,F1,granulocyte,2,0,0.0,0.2462633,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,lymphocyte_large_granular,F1,monocyte,2,0,0.0,0.22057699,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,lymphocyte_large_granular,F2,lymphocyte,2,2,1.0,1.0,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,lymphocyte_large_granular,F2,granulocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,lymphocyte_large_granular,F2,monocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,lymphocyte_large_granular,F1-bsccm,lymphocyte,2,2,1.0,0.6586934814876308,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,lymphocyte_large_granular,F1-bsccm,granulocyte,2,0,0.0,0.23055061100177793,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,lymphocyte_large_granular,F1-bsccm,monocyte,2,0,0.0,0.11075590751059114,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,metamyelocyte,F1,lymphocyte,2,1,0.5,0.3661855,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,metamyelocyte,F1,granulocyte,2,1,0.5,0.3818695,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,metamyelocyte,F1,monocyte,2,0,0.0,0.25194505,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,metamyelocyte,F2,lymphocyte,2,1,0.5,0.5,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,metamyelocyte,F2,granulocyte,2,1,0.5,0.5,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,metamyelocyte,F2,monocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,metamyelocyte,F1-bsccm,lymphocyte,2,1,0.5,0.3654114750466132,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,metamyelocyte,F1-bsccm,granulocyte,2,0,0.0,0.30887572590446866,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,metamyelocyte,F1-bsccm,monocyte,2,1,0.5,0.32571279904891826,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,monocyte,F1,lymphocyte,2,1,0.5,0.2801538,N058 clinical morphology mapping,2,0.0,0.5,,
+t1,0,0,2,MLL23,monocyte,F1,granulocyte,2,0,0.0,0.33720946,N058 clinical morphology mapping,2,0.0,0.0,,
+t1,0,0,2,MLL23,monocyte,F1,monocyte,2,1,0.5,0.38263673,N058 clinical morphology mapping,2,1.0,0.5,,
+t1,0,0,2,MLL23,monocyte,F2,lymphocyte,2,1,0.5,0.5,N058 clinical morphology mapping,2,0.0,0.5,,
+t1,0,0,2,MLL23,monocyte,F2,granulocyte,2,0,0.0,0.0,N058 clinical morphology mapping,2,0.0,0.0,,
+t1,0,0,2,MLL23,monocyte,F2,monocyte,2,1,0.5,0.5,N058 clinical morphology mapping,2,1.0,0.5,,
+t1,0,0,2,MLL23,monocyte,F1-bsccm,lymphocyte,2,2,1.0,0.4543405284615607,N058 clinical morphology mapping,2,0.0,1.0,,
+t1,0,0,2,MLL23,monocyte,F1-bsccm,granulocyte,2,0,0.0,0.3121302966933297,N058 clinical morphology mapping,2,0.0,0.0,,
+t1,0,0,2,MLL23,monocyte,F1-bsccm,monocyte,2,0,0.0,0.23352917484510957,N058 clinical morphology mapping,2,1.0,0.0,,
+t1,0,0,2,MLL23,myelocyte,F1,lymphocyte,2,2,1.0,0.6049392,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,myelocyte,F1,granulocyte,2,0,0.0,0.23935395,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,myelocyte,F1,monocyte,2,0,0.0,0.15570685,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,myelocyte,F2,lymphocyte,2,2,1.0,1.0,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,myelocyte,F2,granulocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,myelocyte,F2,monocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,myelocyte,F1-bsccm,lymphocyte,2,2,1.0,0.7023260181224564,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,myelocyte,F1-bsccm,granulocyte,2,0,0.0,0.20471419262401452,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,myelocyte,F1-bsccm,monocyte,2,0,0.0,0.09295978925352912,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,neutrophil_band,F1,lymphocyte,2,0,0.0,0.09353632,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,neutrophil_band,F1,granulocyte,2,2,1.0,0.67125964,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,neutrophil_band,F1,monocyte,2,0,0.0,0.23520404,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,neutrophil_band,F2,lymphocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,neutrophil_band,F2,granulocyte,2,2,1.0,1.0,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,neutrophil_band,F2,monocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,neutrophil_band,F1-bsccm,lymphocyte,2,0,0.0,0.1478833884341252,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,neutrophil_band,F1-bsccm,granulocyte,2,2,1.0,0.702315068923703,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,neutrophil_band,F1-bsccm,monocyte,2,0,0.0,0.14980154264217171,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,neutrophil_segmented,F1,lymphocyte,2,1,0.5,0.50585365,N058 clinical morphology mapping,2,0.0,0.5,,
+t1,0,0,2,MLL23,neutrophil_segmented,F1,granulocyte,2,1,0.5,0.38591766,N058 clinical morphology mapping,2,1.0,0.5,,
+t1,0,0,2,MLL23,neutrophil_segmented,F1,monocyte,2,0,0.0,0.10822873,N058 clinical morphology mapping,2,0.0,0.0,,
+t1,0,0,2,MLL23,neutrophil_segmented,F2,lymphocyte,2,1,0.5,0.5,N058 clinical morphology mapping,2,0.0,0.5,,
+t1,0,0,2,MLL23,neutrophil_segmented,F2,granulocyte,2,1,0.5,0.5,N058 clinical morphology mapping,2,1.0,0.5,,
+t1,0,0,2,MLL23,neutrophil_segmented,F2,monocyte,2,0,0.0,0.0,N058 clinical morphology mapping,2,0.0,0.0,,
+t1,0,0,2,MLL23,neutrophil_segmented,F1-bsccm,lymphocyte,2,2,1.0,0.7042338594398397,N058 clinical morphology mapping,2,0.0,1.0,,
+t1,0,0,2,MLL23,neutrophil_segmented,F1-bsccm,granulocyte,2,0,0.0,0.22408743564057548,N058 clinical morphology mapping,2,1.0,0.0,,
+t1,0,0,2,MLL23,neutrophil_segmented,F1-bsccm,monocyte,2,0,0.0,0.07167870491958486,N058 clinical morphology mapping,2,0.0,0.0,,
+t1,0,0,2,MLL23,normoblast,F1,lymphocyte,2,0,0.0,0.26241335,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,normoblast,F1,granulocyte,2,2,1.0,0.51967514,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,normoblast,F1,monocyte,2,0,0.0,0.2179115,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,normoblast,F2,lymphocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,normoblast,F2,granulocyte,2,2,1.0,1.0,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,normoblast,F2,monocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,normoblast,F1-bsccm,lymphocyte,2,0,0.0,0.2125095083331174,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,normoblast,F1-bsccm,granulocyte,2,2,1.0,0.6825081374705813,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,normoblast,F1-bsccm,monocyte,2,0,0.0,0.10498235419630134,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,plasma_cell,F1,lymphocyte,2,0,0.0,0.22890414,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,plasma_cell,F1,granulocyte,2,1,0.5,0.42669505,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,plasma_cell,F1,monocyte,2,1,0.5,0.34440082,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,plasma_cell,F2,lymphocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,plasma_cell,F2,granulocyte,2,1,0.5,0.5,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,plasma_cell,F2,monocyte,2,1,0.5,0.5,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,plasma_cell,F1-bsccm,lymphocyte,2,0,0.0,0.24629367687182568,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,plasma_cell,F1-bsccm,granulocyte,2,1,0.5,0.3703565634434445,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,MLL23,plasma_cell,F1-bsccm,monocyte,2,1,0.5,0.3833497596847299,N058 clinical morphology mapping,0,,,,
+t1,0,0,2,BSCCM,all,F1,lymphocyte,24,15,0.625,0.40578827,v4c measured cls3,0,,,0.08333333333333333,0.061029460756152204
+t1,0,0,2,BSCCM,all,F1,granulocyte,24,9,0.375,0.3890362,v4c measured cls3,0,,,0.875,0.8763893818530152
+t1,0,0,2,BSCCM,all,F1,monocyte,24,0,0.0,0.20517547,v4c measured cls3,0,,,0.041666666666666664,0.06258115739083259
+t1,0,0,2,BSCCM,all,F2,lymphocyte,24,15,0.625,0.625,v4c measured cls3,0,,,0.08333333333333333,0.061029460756152204
+t1,0,0,2,BSCCM,all,F2,granulocyte,24,9,0.375,0.375,v4c measured cls3,0,,,0.875,0.8763893818530152
+t1,0,0,2,BSCCM,all,F2,monocyte,24,0,0.0,0.0,v4c measured cls3,0,,,0.041666666666666664,0.06258115739083259
+t1,0,0,2,BSCCM,all,F1-bsccm,lymphocyte,24,1,0.041666666666666664,0.037908433788740224,v4c measured cls3,0,,,0.08333333333333333,0.061029460756152204
+t1,0,0,2,BSCCM,all,F1-bsccm,granulocyte,24,21,0.875,0.872509293186282,v4c measured cls3,0,,,0.875,0.8763893818530152
+t1,0,0,2,BSCCM,all,F1-bsccm,monocyte,24,2,0.08333333333333333,0.08958227302497764,v4c measured cls3,0,,,0.041666666666666664,0.06258115739083259
+t1,0,0,2,BSCCM,all,F1-oracle-hard_UPPER_BOUND,lymphocyte,24,2,0.08333333333333333,0.08333333333333333,v4c measured cls3,0,,,0.08333333333333333,0.061029460756152204
+t1,0,0,2,BSCCM,all,F1-oracle-hard_UPPER_BOUND,granulocyte,24,21,0.875,0.875,v4c measured cls3,0,,,0.875,0.8763893818530152
+t1,0,0,2,BSCCM,all,F1-oracle-hard_UPPER_BOUND,monocyte,24,1,0.041666666666666664,0.041666666666666664,v4c measured cls3,0,,,0.041666666666666664,0.06258115739083259
+t1,0,0,2,BSCCM,all,F1-oracle-soft_UPPER_BOUND,lymphocyte,24,2,0.08333333333333333,0.061029460756152204,v4c measured cls3,0,,,0.08333333333333333,0.061029460756152204
+t1,0,0,2,BSCCM,all,F1-oracle-soft_UPPER_BOUND,granulocyte,24,21,0.875,0.8763893818530152,v4c measured cls3,0,,,0.875,0.8763893818530152
+t1,0,0,2,BSCCM,all,F1-oracle-soft_UPPER_BOUND,monocyte,24,1,0.041666666666666664,0.06258115739083259,v4c measured cls3,0,,,0.041666666666666664,0.06258115739083259
+t1,0,0,2,BSCCM,autofl_observed,F1,lymphocyte,24,15,0.625,0.40578827,v4c measured cls3,0,,,0.08333333333333333,0.061029460756152204
+t1,0,0,2,BSCCM,autofl_observed,F1,granulocyte,24,9,0.375,0.3890362,v4c measured cls3,0,,,0.875,0.8763893818530152
+t1,0,0,2,BSCCM,autofl_observed,F1,monocyte,24,0,0.0,0.20517547,v4c measured cls3,0,,,0.041666666666666664,0.06258115739083259
+t1,0,0,2,BSCCM,autofl_observed,F2,lymphocyte,24,15,0.625,0.625,v4c measured cls3,0,,,0.08333333333333333,0.061029460756152204
+t1,0,0,2,BSCCM,autofl_observed,F2,granulocyte,24,9,0.375,0.375,v4c measured cls3,0,,,0.875,0.8763893818530152
+t1,0,0,2,BSCCM,autofl_observed,F2,monocyte,24,0,0.0,0.0,v4c measured cls3,0,,,0.041666666666666664,0.06258115739083259
+t1,0,0,2,BSCCM,autofl_observed,F1-bsccm,lymphocyte,24,1,0.041666666666666664,0.037908433788740224,v4c measured cls3,0,,,0.08333333333333333,0.061029460756152204
+t1,0,0,2,BSCCM,autofl_observed,F1-bsccm,granulocyte,24,21,0.875,0.872509293186282,v4c measured cls3,0,,,0.875,0.8763893818530152
+t1,0,0,2,BSCCM,autofl_observed,F1-bsccm,monocyte,24,2,0.08333333333333333,0.08958227302497764,v4c measured cls3,0,,,0.041666666666666664,0.06258115739083259
+t1,0,0,2,BSCCM,autofl_observed,F1-oracle-hard_UPPER_BOUND,lymphocyte,24,2,0.08333333333333333,0.08333333333333333,v4c measured cls3,0,,,0.08333333333333333,0.061029460756152204
+t1,0,0,2,BSCCM,autofl_observed,F1-oracle-hard_UPPER_BOUND,granulocyte,24,21,0.875,0.875,v4c measured cls3,0,,,0.875,0.8763893818530152
+t1,0,0,2,BSCCM,autofl_observed,F1-oracle-hard_UPPER_BOUND,monocyte,24,1,0.041666666666666664,0.041666666666666664,v4c measured cls3,0,,,0.041666666666666664,0.06258115739083259
+t1,0,0,2,BSCCM,autofl_observed,F1-oracle-soft_UPPER_BOUND,lymphocyte,24,2,0.08333333333333333,0.061029460756152204,v4c measured cls3,0,,,0.08333333333333333,0.061029460756152204
+t1,0,0,2,BSCCM,autofl_observed,F1-oracle-soft_UPPER_BOUND,granulocyte,24,21,0.875,0.8763893818530152,v4c measured cls3,0,,,0.875,0.8763893818530152
+t1,0,0,2,BSCCM,autofl_observed,F1-oracle-soft_UPPER_BOUND,monocyte,24,1,0.041666666666666664,0.06258115739083259,v4c measured cls3,0,,,0.041666666666666664,0.06258115739083259
+t1,0,0,2,BSCCM,n058_split2_observed,F1,lymphocyte,0,0,,,v4c measured cls3,0,,,,
+t1,0,0,2,BSCCM,n058_split2_observed,F1,granulocyte,0,0,,,v4c measured cls3,0,,,,
+t1,0,0,2,BSCCM,n058_split2_observed,F1,monocyte,0,0,,,v4c measured cls3,0,,,,
+t1,0,0,2,BSCCM,n058_split2_observed,F2,lymphocyte,0,0,,,v4c measured cls3,0,,,,
+t1,0,0,2,BSCCM,n058_split2_observed,F2,granulocyte,0,0,,,v4c measured cls3,0,,,,
+t1,0,0,2,BSCCM,n058_split2_observed,F2,monocyte,0,0,,,v4c measured cls3,0,,,,
+t1,0,0,2,BSCCM,n058_split2_observed,F1-bsccm,lymphocyte,0,0,,,v4c measured cls3,0,,,,
+t1,0,0,2,BSCCM,n058_split2_observed,F1-bsccm,granulocyte,0,0,,,v4c measured cls3,0,,,,
+t1,0,0,2,BSCCM,n058_split2_observed,F1-bsccm,monocyte,0,0,,,v4c measured cls3,0,,,,
+t1,0,0,2,BSCCM,n058_split2_observed,F1-oracle-hard_UPPER_BOUND,lymphocyte,0,0,,,v4c measured cls3,0,,,,
+t1,0,0,2,BSCCM,n058_split2_observed,F1-oracle-hard_UPPER_BOUND,granulocyte,0,0,,,v4c measured cls3,0,,,,
+t1,0,0,2,BSCCM,n058_split2_observed,F1-oracle-hard_UPPER_BOUND,monocyte,0,0,,,v4c measured cls3,0,,,,
+t1,0,0,2,BSCCM,n058_split2_observed,F1-oracle-soft_UPPER_BOUND,lymphocyte,0,0,,,v4c measured cls3,0,,,,
+t1,0,0,2,BSCCM,n058_split2_observed,F1-oracle-soft_UPPER_BOUND,granulocyte,0,0,,,v4c measured cls3,0,,,,
+t1,0,0,2,BSCCM,n058_split2_observed,F1-oracle-soft_UPPER_BOUND,monocyte,0,0,,,v4c measured cls3,0,,,,
+t1,0,0,2,BSCCM,lf_lymphocyte,F1,lymphocyte,2,2,1.0,0.4072066,v4c measured cls3,0,,,1.0,0.7293217419285871
+t1,0,0,2,BSCCM,lf_lymphocyte,F1,granulocyte,2,0,0.0,0.320641,v4c measured cls3,0,,,0.0,0.017310059929973743
+t1,0,0,2,BSCCM,lf_lymphocyte,F1,monocyte,2,0,0.0,0.27215236,v4c measured cls3,0,,,0.0,0.25336819814143907
+t1,0,0,2,BSCCM,lf_lymphocyte,F2,lymphocyte,2,2,1.0,1.0,v4c measured cls3,0,,,1.0,0.7293217419285871
+t1,0,0,2,BSCCM,lf_lymphocyte,F2,granulocyte,2,0,0.0,0.0,v4c measured cls3,0,,,0.0,0.017310059929973743
+t1,0,0,2,BSCCM,lf_lymphocyte,F2,monocyte,2,0,0.0,0.0,v4c measured cls3,0,,,0.0,0.25336819814143907
+t1,0,0,2,BSCCM,lf_lymphocyte,F1-bsccm,lymphocyte,2,1,0.5,0.41997318466088823,v4c measured cls3,0,,,1.0,0.7293217419285871
+t1,0,0,2,BSCCM,lf_lymphocyte,F1-bsccm,granulocyte,2,0,0.0,0.027468736267254774,v4c measured cls3,0,,,0.0,0.017310059929973743
+t1,0,0,2,BSCCM,lf_lymphocyte,F1-bsccm,monocyte,2,1,0.5,0.552558079071857,v4c measured cls3,0,,,0.0,0.25336819814143907
+t1,0,0,2,BSCCM,lf_lymphocyte,F1-oracle-hard_UPPER_BOUND,lymphocyte,2,2,1.0,1.0,v4c measured cls3,0,,,1.0,0.7293217419285871
+t1,0,0,2,BSCCM,lf_lymphocyte,F1-oracle-hard_UPPER_BOUND,granulocyte,2,0,0.0,0.0,v4c measured cls3,0,,,0.0,0.017310059929973743
+t1,0,0,2,BSCCM,lf_lymphocyte,F1-oracle-hard_UPPER_BOUND,monocyte,2,0,0.0,0.0,v4c measured cls3,0,,,0.0,0.25336819814143907
+t1,0,0,2,BSCCM,lf_lymphocyte,F1-oracle-soft_UPPER_BOUND,lymphocyte,2,2,1.0,0.7293217419285871,v4c measured cls3,0,,,1.0,0.7293217419285871
+t1,0,0,2,BSCCM,lf_lymphocyte,F1-oracle-soft_UPPER_BOUND,granulocyte,2,0,0.0,0.017310059929973743,v4c measured cls3,0,,,0.0,0.017310059929973743
+t1,0,0,2,BSCCM,lf_lymphocyte,F1-oracle-soft_UPPER_BOUND,monocyte,2,0,0.0,0.25336819814143907,v4c measured cls3,0,,,0.0,0.25336819814143907
+t1,0,0,2,BSCCM,lf_granulocyte,F1,lymphocyte,21,13,0.6190476190476191,0.41001955,v4c measured cls3,0,,,0.0,3.3492804915913405e-05
+t1,0,0,2,BSCCM,lf_granulocyte,F1,granulocyte,21,8,0.38095238095238093,0.39558628,v4c measured cls3,0,,,1.0,0.9999220358571582
+t1,0,0,2,BSCCM,lf_granulocyte,F1,monocyte,21,0,0.0,0.19439411,v4c measured cls3,0,,,0.0,4.4471337925942825e-05
+t1,0,0,2,BSCCM,lf_granulocyte,F2,lymphocyte,21,13,0.6190476190476191,0.6190476190476191,v4c measured cls3,0,,,0.0,3.3492804915913405e-05
+t1,0,0,2,BSCCM,lf_granulocyte,F2,granulocyte,21,8,0.38095238095238093,0.38095238095238093,v4c measured cls3,0,,,1.0,0.9999220358571582
+t1,0,0,2,BSCCM,lf_granulocyte,F2,monocyte,21,0,0.0,0.0,v4c measured cls3,0,,,0.0,4.4471337925942825e-05
+t1,0,0,2,BSCCM,lf_granulocyte,F1-bsccm,lymphocyte,21,0,0.0,0.002841827114965866,v4c measured cls3,0,,,0.0,3.3492804915913405e-05
+t1,0,0,2,BSCCM,lf_granulocyte,F1-bsccm,granulocyte,21,21,1.0,0.9929924280140765,v4c measured cls3,0,,,1.0,0.9999220358571582
+t1,0,0,2,BSCCM,lf_granulocyte,F1-bsccm,monocyte,21,0,0.0,0.004165744870957523,v4c measured cls3,0,,,0.0,4.4471337925942825e-05
+t1,0,0,2,BSCCM,lf_granulocyte,F1-oracle-hard_UPPER_BOUND,lymphocyte,21,0,0.0,0.0,v4c measured cls3,0,,,0.0,3.3492804915913405e-05
+t1,0,0,2,BSCCM,lf_granulocyte,F1-oracle-hard_UPPER_BOUND,granulocyte,21,21,1.0,1.0,v4c measured cls3,0,,,1.0,0.9999220358571582
+t1,0,0,2,BSCCM,lf_granulocyte,F1-oracle-hard_UPPER_BOUND,monocyte,21,0,0.0,0.0,v4c measured cls3,0,,,0.0,4.4471337925942825e-05
+t1,0,0,2,BSCCM,lf_granulocyte,F1-oracle-soft_UPPER_BOUND,lymphocyte,21,0,0.0,3.3492804915913405e-05,v4c measured cls3,0,,,0.0,3.3492804915913405e-05
+t1,0,0,2,BSCCM,lf_granulocyte,F1-oracle-soft_UPPER_BOUND,granulocyte,21,21,1.0,0.9999220358571582,v4c measured cls3,0,,,1.0,0.9999220358571582
+t1,0,0,2,BSCCM,lf_granulocyte,F1-oracle-soft_UPPER_BOUND,monocyte,21,0,0.0,4.4471337925942825e-05,v4c measured cls3,0,,,0.0,4.4471337925942825e-05
+t1,0,0,2,BSCCM,lf_monocyte,F1,lymphocyte,1,0,0.0,0.31409493,v4c measured cls3,0,,,0.0,0.005360225387244172
+t1,0,0,2,BSCCM,lf_monocyte,F1,granulocyte,1,1,1.0,0.38827497,v4c measured cls3,0,,,0.0,0.00036229161209678406
+t1,0,0,2,BSCCM,lf_monocyte,F1,monocyte,1,0,0.0,0.29763004,v4c measured cls3,0,,,1.0,0.9942774830006591
+t1,0,0,2,BSCCM,lf_monocyte,F2,lymphocyte,1,0,0.0,0.0,v4c measured cls3,0,,,0.0,0.005360225387244172
+t1,0,0,2,BSCCM,lf_monocyte,F2,granulocyte,1,1,1.0,1.0,v4c measured cls3,0,,,0.0,0.00036229161209678406
+t1,0,0,2,BSCCM,lf_monocyte,F2,monocyte,1,0,0.0,0.0,v4c measured cls3,0,,,1.0,0.9942774830006591
+t1,0,0,2,BSCCM,lf_monocyte,F1-bsccm,lymphocyte,1,0,0.0,0.010177672193705632,v4c measured cls3,0,,,0.0,0.005360225387244172
+t1,0,0,2,BSCCM,lf_monocyte,F1-bsccm,granulocyte,1,0,0.0,0.03244457564065283,v4c measured cls3,0,,,0.0,0.00036229161209678406
+t1,0,0,2,BSCCM,lf_monocyte,F1-bsccm,monocyte,1,1,1.0,0.9573777521656415,v4c measured cls3,0,,,1.0,0.9942774830006591
+t1,0,0,2,BSCCM,lf_monocyte,F1-oracle-hard_UPPER_BOUND,lymphocyte,1,0,0.0,0.0,v4c measured cls3,0,,,0.0,0.005360225387244172
+t1,0,0,2,BSCCM,lf_monocyte,F1-oracle-hard_UPPER_BOUND,granulocyte,1,0,0.0,0.0,v4c measured cls3,0,,,0.0,0.00036229161209678406
+t1,0,0,2,BSCCM,lf_monocyte,F1-oracle-hard_UPPER_BOUND,monocyte,1,1,1.0,1.0,v4c measured cls3,0,,,1.0,0.9942774830006591
+t1,0,0,2,BSCCM,lf_monocyte,F1-oracle-soft_UPPER_BOUND,lymphocyte,1,0,0.0,0.005360225387244172,v4c measured cls3,0,,,0.0,0.005360225387244172
+t1,0,0,2,BSCCM,lf_monocyte,F1-oracle-soft_UPPER_BOUND,granulocyte,1,0,0.0,0.00036229161209678406,v4c measured cls3,0,,,0.0,0.00036229161209678406
+t1,0,0,2,BSCCM,lf_monocyte,F1-oracle-soft_UPPER_BOUND,monocyte,1,1,1.0,0.9942774830006591,v4c measured cls3,0,,,1.0,0.9942774830006591
+t2,0,0,2,PBC,all,F1,lymphocyte,16,5,0.3125,0.3313166,N058 clinical morphology mapping,8,0.25,0.25,,
+t2,0,0,2,PBC,all,F1,granulocyte,16,3,0.1875,0.2800417,N058 clinical morphology mapping,8,0.5,0.375,,
+t2,0,0,2,PBC,all,F1,monocyte,16,8,0.5,0.3886417,N058 clinical morphology mapping,8,0.25,0.375,,
+t2,0,0,2,PBC,all,F2,lymphocyte,16,5,0.3125,0.3125,N058 clinical morphology mapping,8,0.25,0.25,,
+t2,0,0,2,PBC,all,F2,granulocyte,16,3,0.1875,0.1875,N058 clinical morphology mapping,8,0.5,0.375,,
+t2,0,0,2,PBC,all,F2,monocyte,16,8,0.5,0.5,N058 clinical morphology mapping,8,0.25,0.375,,
+t2,0,0,2,PBC,all,F1-bsccm,lymphocyte,16,4,0.25,0.2856364070812578,N058 clinical morphology mapping,8,0.25,0.25,,
+t2,0,0,2,PBC,all,F1-bsccm,granulocyte,16,6,0.375,0.3398561982958745,N058 clinical morphology mapping,8,0.5,0.5,,
+t2,0,0,2,PBC,all,F1-bsccm,monocyte,16,6,0.375,0.37450739462286764,N058 clinical morphology mapping,8,0.25,0.25,,
+t2,0,0,2,PBC,basophil,F1,lymphocyte,2,0,0.0,0.19511329,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,PBC,basophil,F1,granulocyte,2,0,0.0,0.06941602,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,PBC,basophil,F1,monocyte,2,2,1.0,0.73547065,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,PBC,basophil,F2,lymphocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,PBC,basophil,F2,granulocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,PBC,basophil,F2,monocyte,2,2,1.0,1.0,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,PBC,basophil,F1-bsccm,lymphocyte,2,1,0.5,0.26789204642945996,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,PBC,basophil,F1-bsccm,granulocyte,2,0,0.0,0.06487893541901223,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,PBC,basophil,F1-bsccm,monocyte,2,1,0.5,0.6672290181515278,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,PBC,eosinophil,F1,lymphocyte,2,0,0.0,0.07533817,N058 clinical morphology mapping,2,0.0,0.0,,
+t2,0,0,2,PBC,eosinophil,F1,granulocyte,2,1,0.5,0.61114436,N058 clinical morphology mapping,2,1.0,0.5,,
+t2,0,0,2,PBC,eosinophil,F1,monocyte,2,1,0.5,0.31351748,N058 clinical morphology mapping,2,0.0,0.5,,
+t2,0,0,2,PBC,eosinophil,F2,lymphocyte,2,0,0.0,0.0,N058 clinical morphology mapping,2,0.0,0.0,,
+t2,0,0,2,PBC,eosinophil,F2,granulocyte,2,1,0.5,0.5,N058 clinical morphology mapping,2,1.0,0.5,,
+t2,0,0,2,PBC,eosinophil,F2,monocyte,2,1,0.5,0.5,N058 clinical morphology mapping,2,0.0,0.5,,
+t2,0,0,2,PBC,eosinophil,F1-bsccm,lymphocyte,2,0,0.0,0.06273078591845739,N058 clinical morphology mapping,2,0.0,0.0,,
+t2,0,0,2,PBC,eosinophil,F1-bsccm,granulocyte,2,2,1.0,0.6238537384742915,N058 clinical morphology mapping,2,1.0,1.0,,
+t2,0,0,2,PBC,eosinophil,F1-bsccm,monocyte,2,0,0.0,0.31341547560725114,N058 clinical morphology mapping,2,0.0,0.0,,
+t2,0,0,2,PBC,erythroblast,F1,lymphocyte,2,1,0.5,0.51917124,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,PBC,erythroblast,F1,granulocyte,2,0,0.0,0.12103407,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,PBC,erythroblast,F1,monocyte,2,1,0.5,0.35979474,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,PBC,erythroblast,F2,lymphocyte,2,1,0.5,0.5,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,PBC,erythroblast,F2,granulocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,PBC,erythroblast,F2,monocyte,2,1,0.5,0.5,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,PBC,erythroblast,F1-bsccm,lymphocyte,2,1,0.5,0.4863170845035758,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,PBC,erythroblast,F1-bsccm,granulocyte,2,0,0.0,0.16955436641737748,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,PBC,erythroblast,F1-bsccm,monocyte,2,1,0.5,0.3441285490790468,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,PBC,ig,F1,lymphocyte,2,0,0.0,0.28988132,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,PBC,ig,F1,granulocyte,2,0,0.0,0.043656886,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,PBC,ig,F1,monocyte,2,2,1.0,0.6664618,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,PBC,ig,F2,lymphocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,PBC,ig,F2,granulocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,PBC,ig,F2,monocyte,2,2,1.0,1.0,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,PBC,ig,F1-bsccm,lymphocyte,2,0,0.0,0.284329852441647,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,PBC,ig,F1-bsccm,granulocyte,2,0,0.0,0.058720020236651294,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,PBC,ig,F1-bsccm,monocyte,2,2,1.0,0.6569501273217018,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,PBC,lymphocyte,F1,lymphocyte,2,2,1.0,0.8577811,N058 clinical morphology mapping,2,1.0,1.0,,
+t2,0,0,2,PBC,lymphocyte,F1,granulocyte,2,0,0.0,0.08953399,N058 clinical morphology mapping,2,0.0,0.0,,
+t2,0,0,2,PBC,lymphocyte,F1,monocyte,2,0,0.0,0.052684885,N058 clinical morphology mapping,2,0.0,0.0,,
+t2,0,0,2,PBC,lymphocyte,F2,lymphocyte,2,2,1.0,1.0,N058 clinical morphology mapping,2,1.0,1.0,,
+t2,0,0,2,PBC,lymphocyte,F2,granulocyte,2,0,0.0,0.0,N058 clinical morphology mapping,2,0.0,0.0,,
+t2,0,0,2,PBC,lymphocyte,F2,monocyte,2,0,0.0,0.0,N058 clinical morphology mapping,2,0.0,0.0,,
+t2,0,0,2,PBC,lymphocyte,F1-bsccm,lymphocyte,2,2,1.0,0.8639562501387221,N058 clinical morphology mapping,2,1.0,1.0,,
+t2,0,0,2,PBC,lymphocyte,F1-bsccm,granulocyte,2,0,0.0,0.10211689429236787,N058 clinical morphology mapping,2,0.0,0.0,,
+t2,0,0,2,PBC,lymphocyte,F1-bsccm,monocyte,2,0,0.0,0.03392685556891015,N058 clinical morphology mapping,2,0.0,0.0,,
+t2,0,0,2,PBC,monocyte,F1,lymphocyte,2,0,0.0,0.014477131,N058 clinical morphology mapping,2,0.0,0.0,,
+t2,0,0,2,PBC,monocyte,F1,granulocyte,2,0,0.0,0.03831889,N058 clinical morphology mapping,2,0.0,0.0,,
+t2,0,0,2,PBC,monocyte,F1,monocyte,2,2,1.0,0.947204,N058 clinical morphology mapping,2,1.0,1.0,,
+t2,0,0,2,PBC,monocyte,F2,lymphocyte,2,0,0.0,0.0,N058 clinical morphology mapping,2,0.0,0.0,,
+t2,0,0,2,PBC,monocyte,F2,granulocyte,2,0,0.0,0.0,N058 clinical morphology mapping,2,0.0,0.0,,
+t2,0,0,2,PBC,monocyte,F2,monocyte,2,2,1.0,1.0,N058 clinical morphology mapping,2,1.0,1.0,,
+t2,0,0,2,PBC,monocyte,F1-bsccm,lymphocyte,2,0,0.0,0.004972414226091186,N058 clinical morphology mapping,2,0.0,0.0,,
+t2,0,0,2,PBC,monocyte,F1-bsccm,granulocyte,2,0,0.0,0.045164908894273104,N058 clinical morphology mapping,2,0.0,0.0,,
+t2,0,0,2,PBC,monocyte,F1-bsccm,monocyte,2,2,1.0,0.9498626768796357,N058 clinical morphology mapping,2,1.0,1.0,,
+t2,0,0,2,PBC,neutrophil,F1,lymphocyte,2,0,0.0,0.007844148,N058 clinical morphology mapping,2,0.0,0.0,,
+t2,0,0,2,PBC,neutrophil,F1,granulocyte,2,2,1.0,0.9867004,N058 clinical morphology mapping,2,1.0,1.0,,
+t2,0,0,2,PBC,neutrophil,F1,monocyte,2,0,0.0,0.0054554134,N058 clinical morphology mapping,2,0.0,0.0,,
+t2,0,0,2,PBC,neutrophil,F2,lymphocyte,2,0,0.0,0.0,N058 clinical morphology mapping,2,0.0,0.0,,
+t2,0,0,2,PBC,neutrophil,F2,granulocyte,2,2,1.0,1.0,N058 clinical morphology mapping,2,1.0,1.0,,
+t2,0,0,2,PBC,neutrophil,F2,monocyte,2,0,0.0,0.0,N058 clinical morphology mapping,2,0.0,0.0,,
+t2,0,0,2,PBC,neutrophil,F1-bsccm,lymphocyte,2,0,0.0,0.010899548808051378,N058 clinical morphology mapping,2,0.0,0.0,,
+t2,0,0,2,PBC,neutrophil,F1-bsccm,granulocyte,2,2,1.0,0.9844150448078361,N058 clinical morphology mapping,2,1.0,1.0,,
+t2,0,0,2,PBC,neutrophil,F1-bsccm,monocyte,2,0,0.0,0.004685406384112456,N058 clinical morphology mapping,2,0.0,0.0,,
+t2,0,0,2,PBC,platelet,F1,lymphocyte,2,2,1.0,0.69092643,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,PBC,platelet,F1,granulocyte,2,0,0.0,0.28052902,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,PBC,platelet,F1,monocyte,2,0,0.0,0.028544579,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,PBC,platelet,F2,lymphocyte,2,2,1.0,1.0,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,PBC,platelet,F2,granulocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,PBC,platelet,F2,monocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,PBC,platelet,F1-bsccm,lymphocyte,2,0,0.0,0.3039932741840581,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,PBC,platelet,F1-bsccm,granulocyte,2,2,1.0,0.6701456778251863,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,PBC,platelet,F1-bsccm,monocyte,2,0,0.0,0.025861047990755698,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,all,F1,lymphocyte,24,9,0.375,0.33968744,N058 clinical morphology mapping,8,0.25,0.375,,
+t2,0,0,2,MLL23,all,F1,granulocyte,24,10,0.4166666666666667,0.39377943,N058 clinical morphology mapping,8,0.5,0.375,,
+t2,0,0,2,MLL23,all,F1,monocyte,24,5,0.20833333333333334,0.26653317,N058 clinical morphology mapping,8,0.25,0.25,,
+t2,0,0,2,MLL23,all,F2,lymphocyte,24,9,0.375,0.375,N058 clinical morphology mapping,8,0.25,0.375,,
+t2,0,0,2,MLL23,all,F2,granulocyte,24,10,0.4166666666666667,0.4166666666666667,N058 clinical morphology mapping,8,0.5,0.375,,
+t2,0,0,2,MLL23,all,F2,monocyte,24,5,0.20833333333333334,0.20833333333333334,N058 clinical morphology mapping,8,0.25,0.25,,
+t2,0,0,2,MLL23,all,F1-bsccm,lymphocyte,24,10,0.4166666666666667,0.38303956568032566,N058 clinical morphology mapping,8,0.25,0.625,,
+t2,0,0,2,MLL23,all,F1-bsccm,granulocyte,24,9,0.375,0.3829693606134677,N058 clinical morphology mapping,8,0.5,0.25,,
+t2,0,0,2,MLL23,all,F1-bsccm,monocyte,24,5,0.20833333333333334,0.23399107370620664,N058 clinical morphology mapping,8,0.25,0.125,,
+t2,0,0,2,MLL23,basophil,F1,lymphocyte,2,1,0.5,0.35298026,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,basophil,F1,granulocyte,2,1,0.5,0.4382866,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,basophil,F1,monocyte,2,0,0.0,0.20873317,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,basophil,F2,lymphocyte,2,1,0.5,0.5,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,basophil,F2,granulocyte,2,1,0.5,0.5,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,basophil,F2,monocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,basophil,F1-bsccm,lymphocyte,2,0,0.0,0.36058887735463613,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,basophil,F1-bsccm,granulocyte,2,2,1.0,0.521022078936488,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,basophil,F1-bsccm,monocyte,2,0,0.0,0.11838904370887596,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,eosinophil,F1,lymphocyte,2,1,0.5,0.30088612,N058 clinical morphology mapping,2,0.0,0.5,,
+t2,0,0,2,MLL23,eosinophil,F1,granulocyte,2,0,0.0,0.23288012,N058 clinical morphology mapping,2,1.0,0.0,,
+t2,0,0,2,MLL23,eosinophil,F1,monocyte,2,1,0.5,0.4662338,N058 clinical morphology mapping,2,0.0,0.5,,
+t2,0,0,2,MLL23,eosinophil,F2,lymphocyte,2,1,0.5,0.5,N058 clinical morphology mapping,2,0.0,0.5,,
+t2,0,0,2,MLL23,eosinophil,F2,granulocyte,2,0,0.0,0.0,N058 clinical morphology mapping,2,1.0,0.0,,
+t2,0,0,2,MLL23,eosinophil,F2,monocyte,2,1,0.5,0.5,N058 clinical morphology mapping,2,0.0,0.5,,
+t2,0,0,2,MLL23,eosinophil,F1-bsccm,lymphocyte,2,1,0.5,0.3848991145229231,N058 clinical morphology mapping,2,0.0,0.5,,
+t2,0,0,2,MLL23,eosinophil,F1-bsccm,granulocyte,2,1,0.5,0.4139139024199933,N058 clinical morphology mapping,2,1.0,0.5,,
+t2,0,0,2,MLL23,eosinophil,F1-bsccm,monocyte,2,0,0.0,0.2011869830570836,N058 clinical morphology mapping,2,0.0,0.0,,
+t2,0,0,2,MLL23,hairy_cell,F1,lymphocyte,2,0,0.0,0.28363976,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,hairy_cell,F1,granulocyte,2,0,0.0,0.32367587,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,hairy_cell,F1,monocyte,2,2,1.0,0.39268437,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,hairy_cell,F2,lymphocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,hairy_cell,F2,granulocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,hairy_cell,F2,monocyte,2,2,1.0,1.0,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,hairy_cell,F1-bsccm,lymphocyte,2,0,0.0,0.158679741860343,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,hairy_cell,F1-bsccm,granulocyte,2,0,0.0,0.14160931908471153,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,hairy_cell,F1-bsccm,monocyte,2,2,1.0,0.6997109390549455,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,lymphocyte,F1,lymphocyte,2,0,0.0,0.26359734,N058 clinical morphology mapping,2,1.0,0.0,,
+t2,0,0,2,MLL23,lymphocyte,F1,granulocyte,2,2,1.0,0.52226675,N058 clinical morphology mapping,2,0.0,1.0,,
+t2,0,0,2,MLL23,lymphocyte,F1,monocyte,2,0,0.0,0.21413597,N058 clinical morphology mapping,2,0.0,0.0,,
+t2,0,0,2,MLL23,lymphocyte,F2,lymphocyte,2,0,0.0,0.0,N058 clinical morphology mapping,2,1.0,0.0,,
+t2,0,0,2,MLL23,lymphocyte,F2,granulocyte,2,2,1.0,1.0,N058 clinical morphology mapping,2,0.0,1.0,,
+t2,0,0,2,MLL23,lymphocyte,F2,monocyte,2,0,0.0,0.0,N058 clinical morphology mapping,2,0.0,0.0,,
+t2,0,0,2,MLL23,lymphocyte,F1-bsccm,lymphocyte,2,0,0.0,0.20061511822883624,N058 clinical morphology mapping,2,1.0,0.0,,
+t2,0,0,2,MLL23,lymphocyte,F1-bsccm,granulocyte,2,1,0.5,0.4835489952185249,N058 clinical morphology mapping,2,0.0,0.5,,
+t2,0,0,2,MLL23,lymphocyte,F1-bsccm,monocyte,2,1,0.5,0.3158358865526389,N058 clinical morphology mapping,2,0.0,0.5,,
+t2,0,0,2,MLL23,lymphocyte_large_granular,F1,lymphocyte,2,2,1.0,0.53315973,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,lymphocyte_large_granular,F1,granulocyte,2,0,0.0,0.2462633,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,lymphocyte_large_granular,F1,monocyte,2,0,0.0,0.22057699,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,lymphocyte_large_granular,F2,lymphocyte,2,2,1.0,1.0,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,lymphocyte_large_granular,F2,granulocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,lymphocyte_large_granular,F2,monocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,lymphocyte_large_granular,F1-bsccm,lymphocyte,2,2,1.0,0.6586934814876308,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,lymphocyte_large_granular,F1-bsccm,granulocyte,2,0,0.0,0.23055061100177793,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,lymphocyte_large_granular,F1-bsccm,monocyte,2,0,0.0,0.11075590751059114,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,metamyelocyte,F1,lymphocyte,2,1,0.5,0.3661855,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,metamyelocyte,F1,granulocyte,2,1,0.5,0.3818695,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,metamyelocyte,F1,monocyte,2,0,0.0,0.25194505,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,metamyelocyte,F2,lymphocyte,2,1,0.5,0.5,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,metamyelocyte,F2,granulocyte,2,1,0.5,0.5,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,metamyelocyte,F2,monocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,metamyelocyte,F1-bsccm,lymphocyte,2,1,0.5,0.3654114750466132,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,metamyelocyte,F1-bsccm,granulocyte,2,0,0.0,0.30887572590446866,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,metamyelocyte,F1-bsccm,monocyte,2,1,0.5,0.32571279904891826,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,monocyte,F1,lymphocyte,2,1,0.5,0.2801538,N058 clinical morphology mapping,2,0.0,0.5,,
+t2,0,0,2,MLL23,monocyte,F1,granulocyte,2,0,0.0,0.33720946,N058 clinical morphology mapping,2,0.0,0.0,,
+t2,0,0,2,MLL23,monocyte,F1,monocyte,2,1,0.5,0.38263673,N058 clinical morphology mapping,2,1.0,0.5,,
+t2,0,0,2,MLL23,monocyte,F2,lymphocyte,2,1,0.5,0.5,N058 clinical morphology mapping,2,0.0,0.5,,
+t2,0,0,2,MLL23,monocyte,F2,granulocyte,2,0,0.0,0.0,N058 clinical morphology mapping,2,0.0,0.0,,
+t2,0,0,2,MLL23,monocyte,F2,monocyte,2,1,0.5,0.5,N058 clinical morphology mapping,2,1.0,0.5,,
+t2,0,0,2,MLL23,monocyte,F1-bsccm,lymphocyte,2,2,1.0,0.4543405284615607,N058 clinical morphology mapping,2,0.0,1.0,,
+t2,0,0,2,MLL23,monocyte,F1-bsccm,granulocyte,2,0,0.0,0.3121302966933297,N058 clinical morphology mapping,2,0.0,0.0,,
+t2,0,0,2,MLL23,monocyte,F1-bsccm,monocyte,2,0,0.0,0.23352917484510957,N058 clinical morphology mapping,2,1.0,0.0,,
+t2,0,0,2,MLL23,myelocyte,F1,lymphocyte,2,2,1.0,0.6049392,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,myelocyte,F1,granulocyte,2,0,0.0,0.23935395,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,myelocyte,F1,monocyte,2,0,0.0,0.15570685,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,myelocyte,F2,lymphocyte,2,2,1.0,1.0,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,myelocyte,F2,granulocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,myelocyte,F2,monocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,myelocyte,F1-bsccm,lymphocyte,2,2,1.0,0.7023260181224564,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,myelocyte,F1-bsccm,granulocyte,2,0,0.0,0.20471419262401452,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,myelocyte,F1-bsccm,monocyte,2,0,0.0,0.09295978925352912,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,neutrophil_band,F1,lymphocyte,2,0,0.0,0.09353632,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,neutrophil_band,F1,granulocyte,2,2,1.0,0.67125964,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,neutrophil_band,F1,monocyte,2,0,0.0,0.23520404,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,neutrophil_band,F2,lymphocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,neutrophil_band,F2,granulocyte,2,2,1.0,1.0,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,neutrophil_band,F2,monocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,neutrophil_band,F1-bsccm,lymphocyte,2,0,0.0,0.1478833884341252,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,neutrophil_band,F1-bsccm,granulocyte,2,2,1.0,0.702315068923703,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,neutrophil_band,F1-bsccm,monocyte,2,0,0.0,0.14980154264217171,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,neutrophil_segmented,F1,lymphocyte,2,1,0.5,0.50585365,N058 clinical morphology mapping,2,0.0,0.5,,
+t2,0,0,2,MLL23,neutrophil_segmented,F1,granulocyte,2,1,0.5,0.38591766,N058 clinical morphology mapping,2,1.0,0.5,,
+t2,0,0,2,MLL23,neutrophil_segmented,F1,monocyte,2,0,0.0,0.10822873,N058 clinical morphology mapping,2,0.0,0.0,,
+t2,0,0,2,MLL23,neutrophil_segmented,F2,lymphocyte,2,1,0.5,0.5,N058 clinical morphology mapping,2,0.0,0.5,,
+t2,0,0,2,MLL23,neutrophil_segmented,F2,granulocyte,2,1,0.5,0.5,N058 clinical morphology mapping,2,1.0,0.5,,
+t2,0,0,2,MLL23,neutrophil_segmented,F2,monocyte,2,0,0.0,0.0,N058 clinical morphology mapping,2,0.0,0.0,,
+t2,0,0,2,MLL23,neutrophil_segmented,F1-bsccm,lymphocyte,2,2,1.0,0.7042338594398397,N058 clinical morphology mapping,2,0.0,1.0,,
+t2,0,0,2,MLL23,neutrophil_segmented,F1-bsccm,granulocyte,2,0,0.0,0.22408743564057548,N058 clinical morphology mapping,2,1.0,0.0,,
+t2,0,0,2,MLL23,neutrophil_segmented,F1-bsccm,monocyte,2,0,0.0,0.07167870491958486,N058 clinical morphology mapping,2,0.0,0.0,,
+t2,0,0,2,MLL23,normoblast,F1,lymphocyte,2,0,0.0,0.26241335,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,normoblast,F1,granulocyte,2,2,1.0,0.51967514,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,normoblast,F1,monocyte,2,0,0.0,0.2179115,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,normoblast,F2,lymphocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,normoblast,F2,granulocyte,2,2,1.0,1.0,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,normoblast,F2,monocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,normoblast,F1-bsccm,lymphocyte,2,0,0.0,0.2125095083331174,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,normoblast,F1-bsccm,granulocyte,2,2,1.0,0.6825081374705813,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,normoblast,F1-bsccm,monocyte,2,0,0.0,0.10498235419630134,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,plasma_cell,F1,lymphocyte,2,0,0.0,0.22890414,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,plasma_cell,F1,granulocyte,2,1,0.5,0.42669505,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,plasma_cell,F1,monocyte,2,1,0.5,0.34440082,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,plasma_cell,F2,lymphocyte,2,0,0.0,0.0,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,plasma_cell,F2,granulocyte,2,1,0.5,0.5,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,plasma_cell,F2,monocyte,2,1,0.5,0.5,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,plasma_cell,F1-bsccm,lymphocyte,2,0,0.0,0.24629367687182568,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,plasma_cell,F1-bsccm,granulocyte,2,1,0.5,0.3703565634434445,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,MLL23,plasma_cell,F1-bsccm,monocyte,2,1,0.5,0.3833497596847299,N058 clinical morphology mapping,0,,,,
+t2,0,0,2,BSCCM,all,F1,lymphocyte,24,15,0.625,0.40578827,v4c measured cls3,0,,,0.08333333333333333,0.06531439487260968
+t2,0,0,2,BSCCM,all,F1,granulocyte,24,9,0.375,0.3890362,v4c measured cls3,0,,,0.875,0.8760076104547713
+t2,0,0,2,BSCCM,all,F1,monocyte,24,0,0.0,0.20517547,v4c measured cls3,0,,,0.041666666666666664,0.05867799467261908
+t2,0,0,2,BSCCM,all,F2,lymphocyte,24,15,0.625,0.625,v4c measured cls3,0,,,0.08333333333333333,0.06531439487260968
+t2,0,0,2,BSCCM,all,F2,granulocyte,24,9,0.375,0.375,v4c measured cls3,0,,,0.875,0.8760076104547713
+t2,0,0,2,BSCCM,all,F2,monocyte,24,0,0.0,0.0,v4c measured cls3,0,,,0.041666666666666664,0.05867799467261908
+t2,0,0,2,BSCCM,all,F1-bsccm,lymphocyte,24,1,0.041666666666666664,0.037908433788740224,v4c measured cls3,0,,,0.08333333333333333,0.06531439487260968
+t2,0,0,2,BSCCM,all,F1-bsccm,granulocyte,24,21,0.875,0.872509293186282,v4c measured cls3,0,,,0.875,0.8760076104547713
+t2,0,0,2,BSCCM,all,F1-bsccm,monocyte,24,2,0.08333333333333333,0.08958227302497764,v4c measured cls3,0,,,0.041666666666666664,0.05867799467261908
+t2,0,0,2,BSCCM,all,F1-oracle-hard_UPPER_BOUND,lymphocyte,24,2,0.08333333333333333,0.08333333333333333,v4c measured cls3,0,,,0.08333333333333333,0.06531439487260968
+t2,0,0,2,BSCCM,all,F1-oracle-hard_UPPER_BOUND,granulocyte,24,21,0.875,0.875,v4c measured cls3,0,,,0.875,0.8760076104547713
+t2,0,0,2,BSCCM,all,F1-oracle-hard_UPPER_BOUND,monocyte,24,1,0.041666666666666664,0.041666666666666664,v4c measured cls3,0,,,0.041666666666666664,0.05867799467261908
+t2,0,0,2,BSCCM,all,F1-oracle-soft_UPPER_BOUND,lymphocyte,24,2,0.08333333333333333,0.06531439487260968,v4c measured cls3,0,,,0.08333333333333333,0.06531439487260968
+t2,0,0,2,BSCCM,all,F1-oracle-soft_UPPER_BOUND,granulocyte,24,21,0.875,0.8760076104547713,v4c measured cls3,0,,,0.875,0.8760076104547713
+t2,0,0,2,BSCCM,all,F1-oracle-soft_UPPER_BOUND,monocyte,24,1,0.041666666666666664,0.05867799467261908,v4c measured cls3,0,,,0.041666666666666664,0.05867799467261908
+t2,0,0,2,BSCCM,autofl_observed,F1,lymphocyte,24,15,0.625,0.40578827,v4c measured cls3,0,,,0.08333333333333333,0.06531439487260968
+t2,0,0,2,BSCCM,autofl_observed,F1,granulocyte,24,9,0.375,0.3890362,v4c measured cls3,0,,,0.875,0.8760076104547713
+t2,0,0,2,BSCCM,autofl_observed,F1,monocyte,24,0,0.0,0.20517547,v4c measured cls3,0,,,0.041666666666666664,0.05867799467261908
+t2,0,0,2,BSCCM,autofl_observed,F2,lymphocyte,24,15,0.625,0.625,v4c measured cls3,0,,,0.08333333333333333,0.06531439487260968
+t2,0,0,2,BSCCM,autofl_observed,F2,granulocyte,24,9,0.375,0.375,v4c measured cls3,0,,,0.875,0.8760076104547713
+t2,0,0,2,BSCCM,autofl_observed,F2,monocyte,24,0,0.0,0.0,v4c measured cls3,0,,,0.041666666666666664,0.05867799467261908
+t2,0,0,2,BSCCM,autofl_observed,F1-bsccm,lymphocyte,24,1,0.041666666666666664,0.037908433788740224,v4c measured cls3,0,,,0.08333333333333333,0.06531439487260968
+t2,0,0,2,BSCCM,autofl_observed,F1-bsccm,granulocyte,24,21,0.875,0.872509293186282,v4c measured cls3,0,,,0.875,0.8760076104547713
+t2,0,0,2,BSCCM,autofl_observed,F1-bsccm,monocyte,24,2,0.08333333333333333,0.08958227302497764,v4c measured cls3,0,,,0.041666666666666664,0.05867799467261908
+t2,0,0,2,BSCCM,autofl_observed,F1-oracle-hard_UPPER_BOUND,lymphocyte,24,2,0.08333333333333333,0.08333333333333333,v4c measured cls3,0,,,0.08333333333333333,0.06531439487260968
+t2,0,0,2,BSCCM,autofl_observed,F1-oracle-hard_UPPER_BOUND,granulocyte,24,21,0.875,0.875,v4c measured cls3,0,,,0.875,0.8760076104547713
+t2,0,0,2,BSCCM,autofl_observed,F1-oracle-hard_UPPER_BOUND,monocyte,24,1,0.041666666666666664,0.041666666666666664,v4c measured cls3,0,,,0.041666666666666664,0.05867799467261908
+t2,0,0,2,BSCCM,autofl_observed,F1-oracle-soft_UPPER_BOUND,lymphocyte,24,2,0.08333333333333333,0.06531439487260968,v4c measured cls3,0,,,0.08333333333333333,0.06531439487260968
+t2,0,0,2,BSCCM,autofl_observed,F1-oracle-soft_UPPER_BOUND,granulocyte,24,21,0.875,0.8760076104547713,v4c measured cls3,0,,,0.875,0.8760076104547713
+t2,0,0,2,BSCCM,autofl_observed,F1-oracle-soft_UPPER_BOUND,monocyte,24,1,0.041666666666666664,0.05867799467261908,v4c measured cls3,0,,,0.041666666666666664,0.05867799467261908
+t2,0,0,2,BSCCM,n058_split2_observed,F1,lymphocyte,0,0,,,v4c measured cls3,0,,,,
+t2,0,0,2,BSCCM,n058_split2_observed,F1,granulocyte,0,0,,,v4c measured cls3,0,,,,
+t2,0,0,2,BSCCM,n058_split2_observed,F1,monocyte,0,0,,,v4c measured cls3,0,,,,
+t2,0,0,2,BSCCM,n058_split2_observed,F2,lymphocyte,0,0,,,v4c measured cls3,0,,,,
+t2,0,0,2,BSCCM,n058_split2_observed,F2,granulocyte,0,0,,,v4c measured cls3,0,,,,
+t2,0,0,2,BSCCM,n058_split2_observed,F2,monocyte,0,0,,,v4c measured cls3,0,,,,
+t2,0,0,2,BSCCM,n058_split2_observed,F1-bsccm,lymphocyte,0,0,,,v4c measured cls3,0,,,,
+t2,0,0,2,BSCCM,n058_split2_observed,F1-bsccm,granulocyte,0,0,,,v4c measured cls3,0,,,,
+t2,0,0,2,BSCCM,n058_split2_observed,F1-bsccm,monocyte,0,0,,,v4c measured cls3,0,,,,
+t2,0,0,2,BSCCM,n058_split2_observed,F1-oracle-hard_UPPER_BOUND,lymphocyte,0,0,,,v4c measured cls3,0,,,,
+t2,0,0,2,BSCCM,n058_split2_observed,F1-oracle-hard_UPPER_BOUND,granulocyte,0,0,,,v4c measured cls3,0,,,,
+t2,0,0,2,BSCCM,n058_split2_observed,F1-oracle-hard_UPPER_BOUND,monocyte,0,0,,,v4c measured cls3,0,,,,
+t2,0,0,2,BSCCM,n058_split2_observed,F1-oracle-soft_UPPER_BOUND,lymphocyte,0,0,,,v4c measured cls3,0,,,,
+t2,0,0,2,BSCCM,n058_split2_observed,F1-oracle-soft_UPPER_BOUND,granulocyte,0,0,,,v4c measured cls3,0,,,,
+t2,0,0,2,BSCCM,n058_split2_observed,F1-oracle-soft_UPPER_BOUND,monocyte,0,0,,,v4c measured cls3,0,,,,
+t2,0,0,2,BSCCM,lf_lymphocyte,F1,lymphocyte,2,2,1.0,0.4072066,v4c measured cls3,0,,,1.0,0.7814013098980244
+t2,0,0,2,BSCCM,lf_lymphocyte,F1,granulocyte,2,0,0.0,0.320641,v4c measured cls3,0,,,0.0,0.012879993379831102
+t2,0,0,2,BSCCM,lf_lymphocyte,F1,monocyte,2,0,0.0,0.27215236,v4c measured cls3,0,,,0.0,0.2057186967221445
+t2,0,0,2,BSCCM,lf_lymphocyte,F2,lymphocyte,2,2,1.0,1.0,v4c measured cls3,0,,,1.0,0.7814013098980244
+t2,0,0,2,BSCCM,lf_lymphocyte,F2,granulocyte,2,0,0.0,0.0,v4c measured cls3,0,,,0.0,0.012879993379831102
+t2,0,0,2,BSCCM,lf_lymphocyte,F2,monocyte,2,0,0.0,0.0,v4c measured cls3,0,,,0.0,0.2057186967221445
+t2,0,0,2,BSCCM,lf_lymphocyte,F1-bsccm,lymphocyte,2,1,0.5,0.41997318466088823,v4c measured cls3,0,,,1.0,0.7814013098980244
+t2,0,0,2,BSCCM,lf_lymphocyte,F1-bsccm,granulocyte,2,0,0.0,0.027468736267254774,v4c measured cls3,0,,,0.0,0.012879993379831102
+t2,0,0,2,BSCCM,lf_lymphocyte,F1-bsccm,monocyte,2,1,0.5,0.552558079071857,v4c measured cls3,0,,,0.0,0.2057186967221445
+t2,0,0,2,BSCCM,lf_lymphocyte,F1-oracle-hard_UPPER_BOUND,lymphocyte,2,2,1.0,1.0,v4c measured cls3,0,,,1.0,0.7814013098980244
+t2,0,0,2,BSCCM,lf_lymphocyte,F1-oracle-hard_UPPER_BOUND,granulocyte,2,0,0.0,0.0,v4c measured cls3,0,,,0.0,0.012879993379831102
+t2,0,0,2,BSCCM,lf_lymphocyte,F1-oracle-hard_UPPER_BOUND,monocyte,2,0,0.0,0.0,v4c measured cls3,0,,,0.0,0.2057186967221445
+t2,0,0,2,BSCCM,lf_lymphocyte,F1-oracle-soft_UPPER_BOUND,lymphocyte,2,2,1.0,0.7814013098980244,v4c measured cls3,0,,,1.0,0.7814013098980244
+t2,0,0,2,BSCCM,lf_lymphocyte,F1-oracle-soft_UPPER_BOUND,granulocyte,2,0,0.0,0.012879993379831102,v4c measured cls3,0,,,0.0,0.012879993379831102
+t2,0,0,2,BSCCM,lf_lymphocyte,F1-oracle-soft_UPPER_BOUND,monocyte,2,0,0.0,0.2057186967221445,v4c measured cls3,0,,,0.0,0.2057186967221445
+t2,0,0,2,BSCCM,lf_granulocyte,F1,lymphocyte,21,13,0.6190476190476191,0.41001955,v4c measured cls3,0,,,0.0,2.955570635126946e-05
+t2,0,0,2,BSCCM,lf_granulocyte,F1,granulocyte,21,8,0.38095238095238093,0.39558628,v4c measured cls3,0,,,1.0,0.9999106571950739
+t2,0,0,2,BSCCM,lf_granulocyte,F1,monocyte,21,0,0.0,0.19439411,v4c measured cls3,0,,,0.0,5.978709857497172e-05
+t2,0,0,2,BSCCM,lf_granulocyte,F2,lymphocyte,21,13,0.6190476190476191,0.6190476190476191,v4c measured cls3,0,,,0.0,2.955570635126946e-05
+t2,0,0,2,BSCCM,lf_granulocyte,F2,granulocyte,21,8,0.38095238095238093,0.38095238095238093,v4c measured cls3,0,,,1.0,0.9999106571950739
+t2,0,0,2,BSCCM,lf_granulocyte,F2,monocyte,21,0,0.0,0.0,v4c measured cls3,0,,,0.0,5.978709857497172e-05
+t2,0,0,2,BSCCM,lf_granulocyte,F1-bsccm,lymphocyte,21,0,0.0,0.002841827114965866,v4c measured cls3,0,,,0.0,2.955570635126946e-05
+t2,0,0,2,BSCCM,lf_granulocyte,F1-bsccm,granulocyte,21,21,1.0,0.9929924280140765,v4c measured cls3,0,,,1.0,0.9999106571950739
+t2,0,0,2,BSCCM,lf_granulocyte,F1-bsccm,monocyte,21,0,0.0,0.004165744870957523,v4c measured cls3,0,,,0.0,5.978709857497172e-05
+t2,0,0,2,BSCCM,lf_granulocyte,F1-oracle-hard_UPPER_BOUND,lymphocyte,21,0,0.0,0.0,v4c measured cls3,0,,,0.0,2.955570635126946e-05
+t2,0,0,2,BSCCM,lf_granulocyte,F1-oracle-hard_UPPER_BOUND,granulocyte,21,21,1.0,1.0,v4c measured cls3,0,,,1.0,0.9999106571950739
+t2,0,0,2,BSCCM,lf_granulocyte,F1-oracle-hard_UPPER_BOUND,monocyte,21,0,0.0,0.0,v4c measured cls3,0,,,0.0,5.978709857497172e-05
+t2,0,0,2,BSCCM,lf_granulocyte,F1-oracle-soft_UPPER_BOUND,lymphocyte,21,0,0.0,2.955570635126946e-05,v4c measured cls3,0,,,0.0,2.955570635126946e-05
+t2,0,0,2,BSCCM,lf_granulocyte,F1-oracle-soft_UPPER_BOUND,granulocyte,21,21,1.0,0.9999106571950739,v4c measured cls3,0,,,1.0,0.9999106571950739
+t2,0,0,2,BSCCM,lf_granulocyte,F1-oracle-soft_UPPER_BOUND,monocyte,21,0,0.0,5.978709857497172e-05,v4c measured cls3,0,,,0.0,5.978709857497172e-05
+t2,0,0,2,BSCCM,lf_monocyte,F1,lymphocyte,1,0,0.0,0.31409493,v4c measured cls3,0,,,0.0,0.004122187313206835
+t2,0,0,2,BSCCM,lf_monocyte,F1,granulocyte,1,1,1.0,0.38827497,v4c measured cls3,0,,,0.0,0.00029886305829857014
+t2,0,0,2,BSCCM,lf_monocyte,F1,monocyte,1,0,0.0,0.29763004,v4c measured cls3,0,,,1.0,0.9955789496284946
+t2,0,0,2,BSCCM,lf_monocyte,F2,lymphocyte,1,0,0.0,0.0,v4c measured cls3,0,,,0.0,0.004122187313206835
+t2,0,0,2,BSCCM,lf_monocyte,F2,granulocyte,1,1,1.0,1.0,v4c measured cls3,0,,,0.0,0.00029886305829857014
+t2,0,0,2,BSCCM,lf_monocyte,F2,monocyte,1,0,0.0,0.0,v4c measured cls3,0,,,1.0,0.9955789496284946
+t2,0,0,2,BSCCM,lf_monocyte,F1-bsccm,lymphocyte,1,0,0.0,0.010177672193705632,v4c measured cls3,0,,,0.0,0.004122187313206835
+t2,0,0,2,BSCCM,lf_monocyte,F1-bsccm,granulocyte,1,0,0.0,0.03244457564065283,v4c measured cls3,0,,,0.0,0.00029886305829857014
+t2,0,0,2,BSCCM,lf_monocyte,F1-bsccm,monocyte,1,1,1.0,0.9573777521656415,v4c measured cls3,0,,,1.0,0.9955789496284946
+t2,0,0,2,BSCCM,lf_monocyte,F1-oracle-hard_UPPER_BOUND,lymphocyte,1,0,0.0,0.0,v4c measured cls3,0,,,0.0,0.004122187313206835
+t2,0,0,2,BSCCM,lf_monocyte,F1-oracle-hard_UPPER_BOUND,granulocyte,1,0,0.0,0.0,v4c measured cls3,0,,,0.0,0.00029886305829857014
+t2,0,0,2,BSCCM,lf_monocyte,F1-oracle-hard_UPPER_BOUND,monocyte,1,1,1.0,1.0,v4c measured cls3,0,,,1.0,0.9955789496284946
+t2,0,0,2,BSCCM,lf_monocyte,F1-oracle-soft_UPPER_BOUND,lymphocyte,1,0,0.0,0.004122187313206835,v4c measured cls3,0,,,0.0,0.004122187313206835
+t2,0,0,2,BSCCM,lf_monocyte,F1-oracle-soft_UPPER_BOUND,granulocyte,1,0,0.0,0.00029886305829857014,v4c measured cls3,0,,,0.0,0.00029886305829857014
+t2,0,0,2,BSCCM,lf_monocyte,F1-oracle-soft_UPPER_BOUND,monocyte,1,1,1.0,0.9955789496284946,v4c measured cls3,0,,,1.0,0.9955789496284946

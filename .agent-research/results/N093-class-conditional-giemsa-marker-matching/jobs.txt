@@ -1,0 +1,2 @@
+1467846 n093_class_match (CPU 48 cores: matrix products/ridge/OT, frozen embeddings; GPU < 2x)
+1467983 n093_router_fix (CPU 48 cores; F1/F2 + F1-oracle + F1-bsccm)

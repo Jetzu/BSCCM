@@ -1,0 +1,450 @@
+{
+  "mode": "FULL",
+  "seed": 0,
+  "anchor_n": 2979,
+  "anchor_ids_sha256": "fb078dd5605435bb87a9c3b1752855edf003965245bdb9674270fb12b4b0c61f",
+  "teachers": {
+    "t0": {
+      "teacher": "t0",
+      "lf_class": {
+        "source": "checkpoint c3"
+      },
+      "config_sha": "0947635219cab943a8ec310ff53c79474f98b7ce4d8548ad4a19c9fa288952bf",
+      "primary": "/hnvme/workspace/v181bb10-bsccm/runs/n029_r18_v4c_fov/probe",
+      "auxiliary": "/hnvme/workspace/v181bb10-bsccm/runs/n029_r18_v6c_fov/probe",
+      "archive_member_sha256": "b9ab00ad8de6f64e7cb67ca5fa0d1bb1a3d6cfcaa173eb525cb32b49e668ba40",
+      "parity_n": 16,
+      "max_absolute_error": [
+        0.000528872013092041,
+        0.0010420605540275574,
+        0.0001827329397201538,
+        0.00037798285484313965,
+        0.0012008845806121826,
+        0.0025711655616760254,
+        0.0012227781116962433,
+        0.0011638104915618896,
+        0.000812530517578125,
+        0.0010302066802978516,
+        0.0007361173629760742,
+        0.0007445812225341797,
+        0.001292794942855835
+      ]
+    },
+    "t1": {
+      "teacher": "t1",
+      "lf_class": {
+        "source": "checkpoint c3"
+      },
+      "config_sha": "93d0a9ac828cd6c93542976cd38960c074f80db1ddbefcb6b932f4ce1b8c1697",
+      "primary": "/hnvme/workspace/v181bb10-bsccm/runs/n032_r18_v4c_fov_t1/probe",
+      "auxiliary": "/hnvme/workspace/v181bb10-bsccm/runs/n029_r18_v6c_fov/probe",
+      "archive_member_sha256": "b9ab00ad8de6f64e7cb67ca5fa0d1bb1a3d6cfcaa173eb525cb32b49e668ba40",
+      "parity_n": 16,
+      "max_absolute_error": [
+        0.0005845037750268345,
+        0.001048633785378672,
+        0.00023852311015529204,
+        0.0007743801732916222,
+        0.0009358118306632551,
+        0.0007277392173028474,
+        0.0010170151238666492,
+        0.0021232931233842595,
+        0.0012549782873763626,
+        0.00172449822589682,
+        0.0007500323615852733,
+        0.0006601388993073831,
+        0.001292794942855835
+      ]
+    },
+    "t2": {
+      "teacher": "t2",
+      "lf_class": {
+        "source": "checkpoint c3"
+      },
+      "config_sha": "34833b5cb79fa090a41e5754e67fa18b903a8cf0330f821a61fbae10306717a7",
+      "primary": "/hnvme/workspace/v181bb10-bsccm/runs/n032_r18_v4c_fov_t2/probe",
+      "auxiliary": "/hnvme/workspace/v181bb10-bsccm/runs/n029_r18_v6c_fov/probe",
+      "archive_member_sha256": "b9ab00ad8de6f64e7cb67ca5fa0d1bb1a3d6cfcaa173eb525cb32b49e668ba40",
+      "parity_n": 16,
+      "max_absolute_error": [
+        0.0007109346494671431,
+        0.0012899065693118272,
+        0.00021071141611625488,
+        0.0006715406677811342,
+        0.0010045978063674688,
+        0.001175683163690544,
+        0.0011578788622384206,
+        0.0003700737925763087,
+        0.0010569470465640052,
+        0.0012856245743446126,
+        0.0009610929940482293,
+        0.0004716379346571542,
+        0.001292794942855835
+      ]
+    }
+  },
+  "folds": {
+    "t0/holdout1": {
+      "holdout_slide": 19,
+      "training_slide": 2,
+      "training_gs": 8007,
+      "bsccm_router": {
+        "bsccm_weight": 0.5,
+        "pbc_weight": 0.5,
+        "cls3": [
+          "lymphocyte",
+          "granulocyte",
+          "monocyte"
+        ],
+        "paired_class_counts": [
+          1449,
+          4609,
+          1949
+        ],
+        "anchor_class_counts": [
+          607,
+          1664,
+          708
+        ]
+      },
+      "training_lf": 102097,
+      "test_gs": 5697,
+      "gs_sha256": "cbf7901c65bc732ee67a89d6de9fb0ffccb16f0a88a256cdcd8e7711f9716783",
+      "bank_sha256": "0b2fe2f6bcd69a5ae8556aa6d6b8d21b8ea60dd72791d1fc928a727925681f77",
+      "test_sha256": "cbb82beb8dfd7445035e304089901541126d1a26e6f032f0b7c4e294b56e4e2a",
+      "classes": [
+        {
+          "cls": "lymphocyte",
+          "lf_n": 19961,
+          "gs_slide_n": 39,
+          "anchors": 607,
+          "gs_ot_n": 646,
+          "lf_ot_n": 1024,
+          "marginal_error": 1.193854693923302e-12
+        },
+        {
+          "cls": "neutrophil",
+          "lf_n": 59474,
+          "gs_slide_n": 7949,
+          "anchors": 1664,
+          "gs_ot_n": 1024,
+          "lf_ot_n": 1024,
+          "marginal_error": 5.191990500724719e-13
+        },
+        {
+          "cls": "monocyte",
+          "lf_n": 22662,
+          "gs_slide_n": 19,
+          "anchors": 708,
+          "gs_ot_n": 727,
+          "lf_ot_n": 1024,
+          "marginal_error": 1.114528174611662e-12
+        }
+      ]
+    },
+    "t0/holdout0": {
+      "holdout_slide": 2,
+      "training_slide": 19,
+      "training_gs": 4495,
+      "bsccm_router": {
+        "bsccm_weight": 0.5,
+        "pbc_weight": 0.5,
+        "cls3": [
+          "lymphocyte",
+          "granulocyte",
+          "monocyte"
+        ],
+        "paired_class_counts": [
+          872,
+          2796,
+          827
+        ],
+        "anchor_class_counts": [
+          607,
+          1664,
+          708
+        ]
+      },
+      "training_lf": 215838,
+      "test_gs": 10015,
+      "gs_sha256": "eec4060b6f8676a0d227fc4475b2fb354f2b4d44a80857531a37f712e25d41dc",
+      "bank_sha256": "ac1ffd7e5327ce48e6ce6f358cc1429c611e838e44e13b66967ca0152064f25b",
+      "test_sha256": "5b82a39590f1554d032301664a169c5f5bb6be0f4a9f66ae2883ea5c5e717f2a",
+      "classes": [
+        {
+          "cls": "lymphocyte",
+          "lf_n": 44550,
+          "gs_slide_n": 128,
+          "anchors": 607,
+          "gs_ot_n": 735,
+          "lf_ot_n": 1024,
+          "marginal_error": 8.568824903104622e-13
+        },
+        {
+          "cls": "neutrophil",
+          "lf_n": 125804,
+          "gs_slide_n": 4352,
+          "anchors": 1664,
+          "gs_ot_n": 1024,
+          "lf_ot_n": 1024,
+          "marginal_error": 5.46792862723966e-13
+        },
+        {
+          "cls": "monocyte",
+          "lf_n": 45484,
+          "gs_slide_n": 15,
+          "anchors": 708,
+          "gs_ot_n": 723,
+          "lf_ot_n": 1024,
+          "marginal_error": 6.35907992929674e-13
+        }
+      ]
+    },
+    "t1/holdout1": {
+      "holdout_slide": 19,
+      "training_slide": 2,
+      "training_gs": 8007,
+      "bsccm_router": {
+        "bsccm_weight": 0.5,
+        "pbc_weight": 0.5,
+        "cls3": [
+          "lymphocyte",
+          "granulocyte",
+          "monocyte"
+        ],
+        "paired_class_counts": [
+          1461,
+          4617,
+          1929
+        ],
+        "anchor_class_counts": [
+          607,
+          1664,
+          708
+        ]
+      },
+      "training_lf": 102097,
+      "test_gs": 5697,
+      "gs_sha256": "cbf7901c65bc732ee67a89d6de9fb0ffccb16f0a88a256cdcd8e7711f9716783",
+      "bank_sha256": "0b2fe2f6bcd69a5ae8556aa6d6b8d21b8ea60dd72791d1fc928a727925681f77",
+      "test_sha256": "cbb82beb8dfd7445035e304089901541126d1a26e6f032f0b7c4e294b56e4e2a",
+      "classes": [
+        {
+          "cls": "lymphocyte",
+          "lf_n": 20366,
+          "gs_slide_n": 39,
+          "anchors": 607,
+          "gs_ot_n": 646,
+          "lf_ot_n": 1024,
+          "marginal_error": 1.2455201800487536e-12
+        },
+        {
+          "cls": "neutrophil",
+          "lf_n": 59544,
+          "gs_slide_n": 7949,
+          "anchors": 1664,
+          "gs_ot_n": 1024,
+          "lf_ot_n": 1024,
+          "marginal_error": 4.554970116366075e-12
+        },
+        {
+          "cls": "monocyte",
+          "lf_n": 22187,
+          "gs_slide_n": 19,
+          "anchors": 708,
+          "gs_ot_n": 727,
+          "lf_ot_n": 1024,
+          "marginal_error": 6.677477581290558e-13
+        }
+      ]
+    },
+    "t1/holdout0": {
+      "holdout_slide": 2,
+      "training_slide": 19,
+      "training_gs": 4495,
+      "bsccm_router": {
+        "bsccm_weight": 0.5,
+        "pbc_weight": 0.5,
+        "cls3": [
+          "lymphocyte",
+          "granulocyte",
+          "monocyte"
+        ],
+        "paired_class_counts": [
+          932,
+          2794,
+          769
+        ],
+        "anchor_class_counts": [
+          607,
+          1664,
+          708
+        ]
+      },
+      "training_lf": 215838,
+      "test_gs": 10015,
+      "gs_sha256": "eec4060b6f8676a0d227fc4475b2fb354f2b4d44a80857531a37f712e25d41dc",
+      "bank_sha256": "ac1ffd7e5327ce48e6ce6f358cc1429c611e838e44e13b66967ca0152064f25b",
+      "test_sha256": "5b82a39590f1554d032301664a169c5f5bb6be0f4a9f66ae2883ea5c5e717f2a",
+      "classes": [
+        {
+          "cls": "lymphocyte",
+          "lf_n": 46352,
+          "gs_slide_n": 128,
+          "anchors": 607,
+          "gs_ot_n": 735,
+          "lf_ot_n": 1024,
+          "marginal_error": 4.77974452552099e-12
+        },
+        {
+          "cls": "neutrophil",
+          "lf_n": 126027,
+          "gs_slide_n": 4352,
+          "anchors": 1664,
+          "gs_ot_n": 1024,
+          "lf_ot_n": 1024,
+          "marginal_error": 7.823531319312016e-13
+        },
+        {
+          "cls": "monocyte",
+          "lf_n": 43459,
+          "gs_slide_n": 15,
+          "anchors": 708,
+          "gs_ot_n": 723,
+          "lf_ot_n": 1024,
+          "marginal_error": 6.398750886787985e-13
+        }
+      ]
+    },
+    "t2/holdout1": {
+      "holdout_slide": 19,
+      "training_slide": 2,
+      "training_gs": 8007,
+      "bsccm_router": {
+        "bsccm_weight": 0.5,
+        "pbc_weight": 0.5,
+        "cls3": [
+          "lymphocyte",
+          "granulocyte",
+          "monocyte"
+        ],
+        "paired_class_counts": [
+          1484,
+          4616,
+          1907
+        ],
+        "anchor_class_counts": [
+          607,
+          1664,
+          708
+        ]
+      },
+      "training_lf": 102097,
+      "test_gs": 5697,
+      "gs_sha256": "cbf7901c65bc732ee67a89d6de9fb0ffccb16f0a88a256cdcd8e7711f9716783",
+      "bank_sha256": "0b2fe2f6bcd69a5ae8556aa6d6b8d21b8ea60dd72791d1fc928a727925681f77",
+      "test_sha256": "cbb82beb8dfd7445035e304089901541126d1a26e6f032f0b7c4e294b56e4e2a",
+      "classes": [
+        {
+          "cls": "lymphocyte",
+          "lf_n": 20388,
+          "gs_slide_n": 39,
+          "anchors": 607,
+          "gs_ot_n": 646,
+          "lf_ot_n": 1024,
+          "marginal_error": 1.9557688801796758e-12
+        },
+        {
+          "cls": "neutrophil",
+          "lf_n": 59523,
+          "gs_slide_n": 7949,
+          "anchors": 1664,
+          "gs_ot_n": 1024,
+          "lf_ot_n": 1024,
+          "marginal_error": 4.989147333114841e-12
+        },
+        {
+          "cls": "monocyte",
+          "lf_n": 22186,
+          "gs_slide_n": 19,
+          "anchors": 708,
+          "gs_ot_n": 727,
+          "lf_ot_n": 1024,
+          "marginal_error": 1.5036726204453732e-12
+        }
+      ]
+    },
+    "t2/holdout0": {
+      "holdout_slide": 2,
+      "training_slide": 19,
+      "training_gs": 4495,
+      "bsccm_router": {
+        "bsccm_weight": 0.5,
+        "pbc_weight": 0.5,
+        "cls3": [
+          "lymphocyte",
+          "granulocyte",
+          "monocyte"
+        ],
+        "paired_class_counts": [
+          893,
+          2794,
+          808
+        ],
+        "anchor_class_counts": [
+          607,
+          1664,
+          708
+        ]
+      },
+      "training_lf": 215838,
+      "test_gs": 10015,
+      "gs_sha256": "eec4060b6f8676a0d227fc4475b2fb354f2b4d44a80857531a37f712e25d41dc",
+      "bank_sha256": "ac1ffd7e5327ce48e6ce6f358cc1429c611e838e44e13b66967ca0152064f25b",
+      "test_sha256": "5b82a39590f1554d032301664a169c5f5bb6be0f4a9f66ae2883ea5c5e717f2a",
+      "classes": [
+        {
+          "cls": "lymphocyte",
+          "lf_n": 46185,
+          "gs_slide_n": 128,
+          "anchors": 607,
+          "gs_ot_n": 735,
+          "lf_ot_n": 1024,
+          "marginal_error": 5.866509535101816e-13
+        },
+        {
+          "cls": "neutrophil",
+          "lf_n": 125875,
+          "gs_slide_n": 4352,
+          "anchors": 1664,
+          "gs_ot_n": 1024,
+          "lf_ot_n": 1024,
+          "marginal_error": 7.297101291270369e-13
+        },
+        {
+          "cls": "monocyte",
+          "lf_n": 43778,
+          "gs_slide_n": 15,
+          "anchors": 708,
+          "gs_ot_n": 723,
+          "lf_ot_n": 1024,
+          "marginal_error": 7.24656662801082e-13
+        }
+      ]
+    }
+  },
+  "clinical": {
+    "PBC": {
+      "registered_n": 8538,
+      "scored_n": 8538,
+      "registered_sha256": "55db430b63dfaaffde31b54e2614e9e1d55927dff5446aa03883a310a0aeb7df",
+      "scored_sha256": "55db430b63dfaaffde31b54e2614e9e1d55927dff5446aa03883a310a0aeb7df"
+    },
+    "MLL23": {
+      "registered_n": 7265,
+      "scored_n": 7265,
+      "registered_sha256": "5cf2994d2e0c04a37e48abf1a7185ded1f1dbd5c8692ac6dd73761868c5903ab",
+      "scored_sha256": "5cf2994d2e0c04a37e48abf1a7185ded1f1dbd5c8692ac6dd73761868c5903ab"
+    }
+  }
+}

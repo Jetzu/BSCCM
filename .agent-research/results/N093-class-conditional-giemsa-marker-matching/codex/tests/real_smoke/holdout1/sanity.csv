@@ -1,0 +1,3 @@
+arm,teacher,seed,holdout,slide,target,n,autofl_r
+F1,t0,0,1,19,autofl,24,-0.02571978582413829
+F2,t0,0,1,19,autofl,24,0.22571061476657184

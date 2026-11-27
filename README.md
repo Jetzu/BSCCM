@@ -692,7 +692,13 @@ The extension added four architecture and alignment figures. The nine reviewed f
 
 **[N089] · Release code and checkpoints.** The code branch is on private GitHub. The private Hugging Face release contains 86 files (2.72 GB), including model weights, configurations and evaluation outputs. [Data and checkpoints](#data-and-checkpoints)
 
-**[N090] · Launch gentle fine-tuning.** Jobs 1442638–1442645 test encoder learning rates of 0.1× and 0.3× on the in-domain SSL ResNet-50, two seeds in both directions. Each arm must exceed **.6760** on two-seed mean GOAL against the **.6706** control. MM3 and addition to N053 are secondary.
+**[N090] · Gentle fine-tuning (worse).** Lowering the encoder learning rate hurt the in-domain SSL ResNet-50: 0.3x .6617 (−.009) and 0.1x .6454 (−.025) against the .6706 control, mostly on draw 0 → 1. Unlike Cytoland (pretrained on another task), our in-domain encoders need full-rate fine-tuning; the interpolation stage was dropped by its kill rule. [N090]
+
+**[N091] · DINO self-distillation encoder (flat).** A DINO-style in-domain SSL objective (added to the SSL trainer, red-teamed and fixed to the standard prototype-layer handling) trained without collapse, but its fine-tuned model scored .6519 (−.019 vs SIGReg), and adding it to the record ensemble gave .6951 vs .6967 (bar .7021). Its frozen features cluster cell types better than the SIGReg features (kNN balanced accuracy .336 vs .306) but not better than raw image statistics (.354). [N091]
+
+**[N092] · Field-of-view shortcut audit.** A control trained on pairs of different cells from the same field of view reaches only R@10 .02–.03 (chance .01–.02), while true pairs reach .33–.40 and pick the partner within its field .77–.85 of the time (chance .23–.28). The within-slide LF↔Giemsa retrieval is genuine cell identity; the cross-slide failure is the slide shift. [N092]
+
+**[N093] · Class-conditional Giemsa → marker matching (worse than distillation).** Giemsa cells get the average marker profile of their predicted cell type (and, in a second arm, a within-type optimal-transport match). A classifier anchored on PBC smears collapses on BSCCM Giemsa images (97–99 % granulocyte). Trained on BSCCM Giemsa cells with cell types from their paired label-free images, the class route agrees with the label-free model at .62 on average (CD45 .89, CD16 .87, CD19 .19), close to perfect routing (.64–.66), but autofluorescence transfer is about half of distillation (.36 vs .66) and MLL23 fine contrasts are at chance (.49). Cell type alone cannot replace distillation. [N093]
 
 ## Figure gallery
 
@@ -888,3 +894,6 @@ Other open ideas include a zoomed ConvNeXt-S member, ImageStream pretraining wit
 [N088]: .agent-research/notebook/INDEX.md?plain=1#L66
 [N089]: .agent-research/notebook/INDEX.md?plain=1#L67
 [N090]: .agent-research/notebook/INDEX.md?plain=1#L68
+[N091]: .agent-research/notebook/INDEX.md?plain=1#L69
+[N092]: .agent-research/notebook/INDEX.md?plain=1#L70
+[N093]: .agent-research/notebook/INDEX.md?plain=1#L71
