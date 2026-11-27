@@ -1,0 +1,379 @@
+donor,arm,A,B,n_A,n_B,auroc
+0,all markers per cell,CD4 T,CD8 T,8730,3472,0.6169061046711114
+0,all markers per cell,CD4 T,B,8730,1519,0.7804053203145797
+0,all markers per cell,CD4 T,NK,8730,2168,0.8265560606636995
+0,all markers per cell,CD4 T,monocyte,8730,3009,0.9915346743275328
+0,all markers per cell,CD4 T,neutrophil,8730,53319,0.9784419586389271
+0,all markers per cell,CD4 T,eosinophil,8730,103,1.0
+0,all markers per cell,CD8 T,CD4 T,3472,8730,0.6169061046711113
+0,all markers per cell,CD8 T,B,3472,1519,0.7069301520221586
+0,all markers per cell,CD8 T,NK,3472,2168,0.6500467100005101
+0,all markers per cell,CD8 T,monocyte,3472,3009,0.9910403199005137
+0,all markers per cell,CD8 T,neutrophil,3472,53319,0.9489946250387741
+0,all markers per cell,CD8 T,eosinophil,3472,103,0.9987053151984251
+0,all markers per cell,B,CD4 T,1519,8730,0.7804053203145798
+0,all markers per cell,B,CD8 T,1519,3472,0.7069301520221587
+0,all markers per cell,B,NK,1519,2168,0.7047367721043898
+0,all markers per cell,B,monocyte,1519,3009,0.9186505657484425
+0,all markers per cell,B,neutrophil,1519,53319,0.8383155375903917
+0,all markers per cell,B,eosinophil,1519,103,0.9146219088950959
+0,all markers per cell,NK,CD4 T,2168,8730,0.8265560606636992
+0,all markers per cell,NK,CD8 T,2168,3472,0.6500467100005101
+0,all markers per cell,NK,B,2168,1519,0.7047367721043899
+0,all markers per cell,NK,monocyte,2168,3009,0.9768370932712318
+0,all markers per cell,NK,neutrophil,2168,53319,0.9429048946779908
+0,all markers per cell,NK,eosinophil,2168,103,0.9981325905492064
+0,all markers per cell,monocyte,CD4 T,3009,8730,0.9915346743275328
+0,all markers per cell,monocyte,CD8 T,3009,3472,0.9910403199005136
+0,all markers per cell,monocyte,B,3009,1519,0.9186505657484427
+0,all markers per cell,monocyte,NK,3009,2168,0.9768370932712319
+0,all markers per cell,monocyte,neutrophil,3009,53319,0.9310410603806902
+0,all markers per cell,monocyte,eosinophil,3009,103,0.9996676636756398
+0,all markers per cell,neutrophil,CD4 T,53319,8730,0.9784419586389272
+0,all markers per cell,neutrophil,CD8 T,53319,3472,0.9489946250387741
+0,all markers per cell,neutrophil,B,53319,1519,0.8383155375903916
+0,all markers per cell,neutrophil,NK,53319,2168,0.9429048946779908
+0,all markers per cell,neutrophil,monocyte,53319,3009,0.9310410603806902
+0,all markers per cell,neutrophil,eosinophil,53319,103,0.9549716971873083
+0,all markers per cell,eosinophil,CD4 T,103,8730,1.0
+0,all markers per cell,eosinophil,CD8 T,103,3472,0.9987053151984251
+0,all markers per cell,eosinophil,B,103,1519,0.9146219088950958
+0,all markers per cell,eosinophil,NK,103,2168,0.9981325905492064
+0,all markers per cell,eosinophil,monocyte,103,3009,0.9996676636756396
+0,all markers per cell,eosinophil,neutrophil,103,53319,0.9549716971873083
+0,measured,CD4 T,CD8 T,8730,3472,1.0
+0,measured,CD4 T,B,8730,1519,1.0
+0,measured,CD4 T,NK,8730,2168,0.9997003694263747
+0,measured,CD4 T,monocyte,8730,3009,1.0
+0,measured,CD4 T,neutrophil,8730,53319,0.9999717686155647
+0,measured,CD4 T,eosinophil,8730,103,1.0
+0,measured,CD8 T,CD4 T,3472,8730,1.0
+0,measured,CD8 T,B,3472,1519,0.9996243814903693
+0,measured,CD8 T,NK,3472,2168,0.9957105446630503
+0,measured,CD8 T,monocyte,3472,3009,0.9999935868278421
+0,measured,CD8 T,neutrophil,3472,53319,0.9999433405475417
+0,measured,CD8 T,eosinophil,3472,103,0.9987892040624581
+0,measured,B,CD4 T,1519,8730,1.0
+0,measured,B,CD8 T,1519,3472,0.9996243814903694
+0,measured,B,NK,1519,2168,0.9999404832758004
+0,measured,B,monocyte,1519,3009,0.999971776572849
+0,measured,B,neutrophil,1519,53319,0.9997803351388671
+0,measured,B,eosinophil,1519,103,0.9970662865835341
+0,measured,NK,CD4 T,2168,8730,0.9997003694263747
+0,measured,NK,CD8 T,2168,3472,0.9957105446630502
+0,measured,NK,B,2168,1519,0.9999404832758005
+0,measured,NK,monocyte,2168,3009,0.9990224590680603
+0,measured,NK,neutrophil,2168,53319,0.9989228568508045
+0,measured,NK,eosinophil,2168,103,0.9933319600186292
+0,measured,monocyte,CD4 T,3009,8730,1.0
+0,measured,monocyte,CD8 T,3009,3472,0.9999935868278421
+0,measured,monocyte,B,3009,1519,0.9999717765728489
+0,measured,monocyte,NK,3009,2168,0.9990224590680603
+0,measured,monocyte,neutrophil,3009,53319,0.9999534520964323
+0,measured,monocyte,eosinophil,3009,103,0.9996741168081515
+0,measured,neutrophil,CD4 T,53319,8730,0.9999717686155646
+0,measured,neutrophil,CD8 T,53319,3472,0.9999433405475416
+0,measured,neutrophil,B,53319,1519,0.9997803351388671
+0,measured,neutrophil,NK,53319,2168,0.9989228568508045
+0,measured,neutrophil,monocyte,53319,3009,0.9999534520964324
+0,measured,neutrophil,eosinophil,53319,103,0.9980806128054682
+0,measured,eosinophil,CD4 T,103,8730,1.0
+0,measured,eosinophil,CD8 T,103,3472,0.998789204062458
+0,measured,eosinophil,B,103,1519,0.9970662865835341
+0,measured,eosinophil,NK,103,2168,0.9933319600186293
+0,measured,eosinophil,monocyte,103,3009,0.9996741168081515
+0,measured,eosinophil,neutrophil,103,53319,0.9980806128054682
+0,one marker per cell,CD4 T,CD8 T,8730,3472,0.498184527108704
+0,one marker per cell,CD4 T,B,8730,1519,0.7387973790558235
+0,one marker per cell,CD4 T,NK,8730,2168,0.7328991041199072
+0,one marker per cell,CD4 T,monocyte,8730,3009,0.849129434910237
+0,one marker per cell,CD4 T,neutrophil,8730,53319,0.6918246682146342
+0,one marker per cell,CD4 T,eosinophil,8730,103,0.9952601786051892
+0,one marker per cell,CD8 T,CD4 T,3472,8730,0.49818452710870403
+0,one marker per cell,CD8 T,B,3472,1519,0.8212460712692986
+0,one marker per cell,CD8 T,NK,3472,2168,0.725545667395038
+0,one marker per cell,CD8 T,monocyte,3472,3009,0.97217405961838
+0,one marker per cell,CD8 T,neutrophil,3472,53319,0.8809013690790575
+0,one marker per cell,CD8 T,eosinophil,3472,103,0.9985375374703591
+0,one marker per cell,B,CD4 T,1519,8730,0.7387973790558235
+0,one marker per cell,B,CD8 T,1519,3472,0.8212460712692986
+0,one marker per cell,B,NK,1519,2168,0.8382678568392005
+0,one marker per cell,B,monocyte,1519,3009,0.9618937788346612
+0,one marker per cell,B,neutrophil,1519,53319,0.9194418662951811
+0,one marker per cell,B,eosinophil,1519,103,0.9803076883744415
+0,one marker per cell,NK,CD4 T,2168,8730,0.7328991041199071
+0,one marker per cell,NK,CD8 T,2168,3472,0.725545667395038
+0,one marker per cell,NK,B,2168,1519,0.8382678568392005
+0,one marker per cell,NK,monocyte,2168,3009,0.8354503678386734
+0,one marker per cell,NK,neutrophil,2168,53319,0.7011420470081593
+0,one marker per cell,NK,eosinophil,2168,103,0.9990506215741768
+0,one marker per cell,monocyte,CD4 T,3009,8730,0.8491294349102367
+0,one marker per cell,monocyte,CD8 T,3009,3472,0.97217405961838
+0,one marker per cell,monocyte,B,3009,1519,0.9618937788346614
+0,one marker per cell,monocyte,NK,3009,2168,0.8354503678386733
+0,one marker per cell,monocyte,neutrophil,3009,53319,0.7930961300036822
+0,one marker per cell,monocyte,eosinophil,3009,103,0.999612812049289
+0,one marker per cell,neutrophil,CD4 T,53319,8730,0.6918246682146342
+0,one marker per cell,neutrophil,CD8 T,53319,3472,0.8809013690790575
+0,one marker per cell,neutrophil,B,53319,1519,0.9194418662951811
+0,one marker per cell,neutrophil,NK,53319,2168,0.7011420470081593
+0,one marker per cell,neutrophil,monocyte,53319,3009,0.7930961300036823
+0,one marker per cell,neutrophil,eosinophil,53319,103,0.8977578986488541
+0,one marker per cell,eosinophil,CD4 T,103,8730,0.9952601786051891
+0,one marker per cell,eosinophil,CD8 T,103,3472,0.9985375374703592
+0,one marker per cell,eosinophil,B,103,1519,0.9803076883744416
+0,one marker per cell,eosinophil,NK,103,2168,0.9990506215741769
+0,one marker per cell,eosinophil,monocyte,103,3009,0.999612812049289
+0,one marker per cell,eosinophil,neutrophil,103,53319,0.8977578986488541
+1,all markers per cell,CD4 T,CD8 T,24720,13161,0.750106812898952
+1,all markers per cell,CD4 T,B,24720,6090,0.9756487171924902
+1,all markers per cell,CD4 T,NK,24720,3079,0.8866561349406303
+1,all markers per cell,CD4 T,monocyte,24720,2031,0.9995078508044405
+1,all markers per cell,CD4 T,neutrophil,24720,85771,0.997376875803746
+1,all markers per cell,CD4 T,eosinophil,24720,487,0.9999988370779423
+1,all markers per cell,CD8 T,CD4 T,13161,24720,0.750106812898952
+1,all markers per cell,CD8 T,B,13161,6090,0.767567684239984
+1,all markers per cell,CD8 T,NK,13161,3079,0.38288577081908054
+1,all markers per cell,CD8 T,monocyte,13161,2031,0.9981138789010442
+1,all markers per cell,CD8 T,neutrophil,13161,85771,0.8331959648125926
+1,all markers per cell,CD8 T,eosinophil,13161,487,0.6908528355275301
+1,all markers per cell,B,CD4 T,6090,24720,0.9756487171924901
+1,all markers per cell,B,CD8 T,6090,13161,0.7675676842399841
+1,all markers per cell,B,NK,6090,3079,0.597416819590947
+1,all markers per cell,B,monocyte,6090,2031,0.9657151588797288
+1,all markers per cell,B,neutrophil,6090,85771,0.8352565215517649
+1,all markers per cell,B,eosinophil,6090,487,0.698195446131437
+1,all markers per cell,NK,CD4 T,3079,24720,0.8866561349406302
+1,all markers per cell,NK,CD8 T,3079,13161,0.38288577081908054
+1,all markers per cell,NK,B,3079,6090,0.597416819590947
+1,all markers per cell,NK,monocyte,3079,2031,0.9783725748782791
+1,all markers per cell,NK,neutrophil,3079,85771,0.8026342427731412
+1,all markers per cell,NK,eosinophil,3079,487,0.3000774272027572
+1,all markers per cell,monocyte,CD4 T,2031,24720,0.9995078508044405
+1,all markers per cell,monocyte,CD8 T,2031,13161,0.9981138789010442
+1,all markers per cell,monocyte,B,2031,6090,0.9657151588797287
+1,all markers per cell,monocyte,NK,2031,3079,0.9783725748782791
+1,all markers per cell,monocyte,neutrophil,2031,85771,0.9954014244736885
+1,all markers per cell,monocyte,eosinophil,2031,487,0.998261040120433
+1,all markers per cell,neutrophil,CD4 T,85771,24720,0.9973768758037461
+1,all markers per cell,neutrophil,CD8 T,85771,13161,0.8331959648125927
+1,all markers per cell,neutrophil,B,85771,6090,0.8352565215517649
+1,all markers per cell,neutrophil,NK,85771,3079,0.8026342427731412
+1,all markers per cell,neutrophil,monocyte,85771,2031,0.9954014244736887
+1,all markers per cell,neutrophil,eosinophil,85771,487,0.9454198356413311
+1,all markers per cell,eosinophil,CD4 T,487,24720,0.9999988370779422
+1,all markers per cell,eosinophil,CD8 T,487,13161,0.6908528355275301
+1,all markers per cell,eosinophil,B,487,6090,0.698195446131437
+1,all markers per cell,eosinophil,NK,487,3079,0.30007742720275726
+1,all markers per cell,eosinophil,monocyte,487,2031,0.9982610401204332
+1,all markers per cell,eosinophil,neutrophil,487,85771,0.945419835641331
+1,measured,CD4 T,CD8 T,24720,13161,1.0
+1,measured,CD4 T,B,24720,6090,0.999999993357459
+1,measured,CD4 T,NK,24720,3079,0.9999886615773835
+1,measured,CD4 T,monocyte,24720,2031,0.9999999800821888
+1,measured,CD4 T,neutrophil,24720,85771,0.9993970300667778
+1,measured,CD4 T,eosinophil,24720,487,1.0
+1,measured,CD8 T,CD4 T,13161,24720,1.0
+1,measured,CD8 T,B,13161,6090,0.9999967311491171
+1,measured,CD8 T,NK,13161,3079,0.9980368790159417
+1,measured,CD8 T,monocyte,13161,2031,1.0
+1,measured,CD8 T,neutrophil,13161,85771,0.9996785341327248
+1,measured,CD8 T,eosinophil,13161,487,1.0
+1,measured,B,CD4 T,6090,24720,0.999999993357459
+1,measured,B,CD8 T,6090,13161,0.9999967311491171
+1,measured,B,NK,6090,3079,0.9999656553665357
+1,measured,B,monocyte,6090,2031,0.9999995149080873
+1,measured,B,neutrophil,6090,85771,0.9986603078855544
+1,measured,B,eosinophil,6090,487,0.9998445629048193
+1,measured,NK,CD4 T,3079,24720,0.9999886615773835
+1,measured,NK,CD8 T,3079,13161,0.9980368790159416
+1,measured,NK,B,3079,6090,0.9999656553665356
+1,measured,NK,monocyte,3079,2031,0.9999968017649141
+1,measured,NK,neutrophil,3079,85771,0.9987771845428011
+1,measured,NK,eosinophil,3079,487,0.9999786591689214
+1,measured,monocyte,CD4 T,2031,24720,0.9999999800821888
+1,measured,monocyte,CD8 T,2031,13161,1.0
+1,measured,monocyte,B,2031,6090,0.9999995149080873
+1,measured,monocyte,NK,2031,3079,0.999996801764914
+1,measured,monocyte,neutrophil,2031,85771,0.999904371906779
+1,measured,monocyte,eosinophil,2031,487,1.0
+1,measured,neutrophil,CD4 T,85771,24720,0.9993970300667779
+1,measured,neutrophil,CD8 T,85771,13161,0.9996785341327248
+1,measured,neutrophil,B,85771,6090,0.9986603078855544
+1,measured,neutrophil,NK,85771,3079,0.9987771845428011
+1,measured,neutrophil,monocyte,85771,2031,0.9999043719067789
+1,measured,neutrophil,eosinophil,85771,487,0.9957052441608458
+1,measured,eosinophil,CD4 T,487,24720,1.0
+1,measured,eosinophil,CD8 T,487,13161,1.0
+1,measured,eosinophil,B,487,6090,0.9998445629048192
+1,measured,eosinophil,NK,487,3079,0.9999786591689213
+1,measured,eosinophil,monocyte,487,2031,1.0
+1,measured,eosinophil,neutrophil,487,85771,0.9957052441608459
+1,one marker per cell,CD4 T,CD8 T,24720,13161,0.66380092089529
+1,one marker per cell,CD4 T,B,24720,6090,0.9371471947221026
+1,one marker per cell,CD4 T,NK,24720,3079,0.8838450469881051
+1,one marker per cell,CD4 T,monocyte,24720,2031,0.9981804382396479
+1,one marker per cell,CD4 T,neutrophil,24720,85771,0.9838090289643466
+1,one marker per cell,CD4 T,eosinophil,24720,487,0.9999710100144202
+1,one marker per cell,CD8 T,CD4 T,13161,24720,0.6638009208952901
+1,one marker per cell,CD8 T,B,13161,6090,0.7617220244068377
+1,one marker per cell,CD8 T,NK,13161,3079,0.5255104056566391
+1,one marker per cell,CD8 T,monocyte,13161,2031,0.9910438241449465
+1,one marker per cell,CD8 T,neutrophil,13161,85771,0.8180190080007566
+1,one marker per cell,CD8 T,eosinophil,13161,487,0.4200984584065265
+1,one marker per cell,B,CD4 T,6090,24720,0.9371471947221026
+1,one marker per cell,B,CD8 T,6090,13161,0.7617220244068378
+1,one marker per cell,B,NK,6090,3079,0.7065545986344275
+1,one marker per cell,B,monocyte,6090,2031,0.9768189936121481
+1,one marker per cell,B,neutrophil,6090,85771,0.8686207913120474
+1,one marker per cell,B,eosinophil,6090,487,0.5419326124558724
+1,one marker per cell,NK,CD4 T,3079,24720,0.8838450469881051
+1,one marker per cell,NK,CD8 T,3079,13161,0.5255104056566391
+1,one marker per cell,NK,B,3079,6090,0.7065545986344275
+1,one marker per cell,NK,monocyte,3079,2031,0.9844714492754316
+1,one marker per cell,NK,neutrophil,3079,85771,0.8642068758745184
+1,one marker per cell,NK,eosinophil,3079,487,0.26608815230417615
+1,one marker per cell,monocyte,CD4 T,2031,24720,0.9981804382396479
+1,one marker per cell,monocyte,CD8 T,2031,13161,0.9910438241449464
+1,one marker per cell,monocyte,B,2031,6090,0.9768189936121481
+1,one marker per cell,monocyte,NK,2031,3079,0.9844714492754318
+1,one marker per cell,monocyte,neutrophil,2031,85771,0.9939140010533012
+1,one marker per cell,monocyte,eosinophil,2031,487,0.9955110570550715
+1,one marker per cell,neutrophil,CD4 T,85771,24720,0.9838090289643466
+1,one marker per cell,neutrophil,CD8 T,85771,13161,0.8180190080007566
+1,one marker per cell,neutrophil,B,85771,6090,0.8686207913120475
+1,one marker per cell,neutrophil,NK,85771,3079,0.8642068758745185
+1,one marker per cell,neutrophil,monocyte,85771,2031,0.9939140010533011
+1,one marker per cell,neutrophil,eosinophil,85771,487,0.9679562074428789
+1,one marker per cell,eosinophil,CD4 T,487,24720,0.9999710100144202
+1,one marker per cell,eosinophil,CD8 T,487,13161,0.42009845840652654
+1,one marker per cell,eosinophil,B,487,6090,0.5419326124558723
+1,one marker per cell,eosinophil,NK,487,3079,0.26608815230417615
+1,one marker per cell,eosinophil,monocyte,487,2031,0.9955110570550715
+1,one marker per cell,eosinophil,neutrophil,487,85771,0.9679562074428788
+2,all markers per cell,CD4 T,CD8 T,8244,4919,0.5685693878877603
+2,all markers per cell,CD4 T,B,8244,2249,0.37625313120996795
+2,all markers per cell,CD4 T,NK,8244,1158,0.7466508850525299
+2,all markers per cell,CD4 T,monocyte,8244,1626,0.8294398982927238
+2,all markers per cell,CD4 T,neutrophil,8244,30627,0.9865089522240866
+2,all markers per cell,CD4 T,eosinophil,8244,1970,0.9983944022048338
+2,all markers per cell,CD8 T,CD4 T,4919,8244,0.5685693878877603
+2,all markers per cell,CD8 T,B,4919,2249,0.5447060973814026
+2,all markers per cell,CD8 T,NK,4919,1158,0.6804522557310995
+2,all markers per cell,CD8 T,monocyte,4919,1626,0.9789927702082469
+2,all markers per cell,CD8 T,neutrophil,4919,30627,0.9796815705379576
+2,all markers per cell,CD8 T,eosinophil,4919,1970,0.9962671419121752
+2,all markers per cell,B,CD4 T,2249,8244,0.3762531312099679
+2,all markers per cell,B,CD8 T,2249,4919,0.5447060973814026
+2,all markers per cell,B,NK,2249,1158,0.8655291816512578
+2,all markers per cell,B,monocyte,2249,1626,0.9555463218038139
+2,all markers per cell,B,neutrophil,2249,30627,0.9741430484960081
+2,all markers per cell,B,eosinophil,2249,1970,0.995722069368676
+2,all markers per cell,NK,CD4 T,1158,8244,0.74665088505253
+2,all markers per cell,NK,CD8 T,1158,4919,0.6804522557310995
+2,all markers per cell,NK,B,1158,2249,0.8655291816512578
+2,all markers per cell,NK,monocyte,1158,1626,0.9939258848547035
+2,all markers per cell,NK,neutrophil,1158,30627,0.988663388829198
+2,all markers per cell,NK,eosinophil,1158,1970,0.9932936184389329
+2,all markers per cell,monocyte,CD4 T,1626,8244,0.8294398982927238
+2,all markers per cell,monocyte,CD8 T,1626,4919,0.9789927702082469
+2,all markers per cell,monocyte,B,1626,2249,0.9555463218038138
+2,all markers per cell,monocyte,NK,1626,1158,0.9939258848547035
+2,all markers per cell,monocyte,neutrophil,1626,30627,0.9667857923559156
+2,all markers per cell,monocyte,eosinophil,1626,1970,0.9755180724396078
+2,all markers per cell,neutrophil,CD4 T,30627,8244,0.9865089522240866
+2,all markers per cell,neutrophil,CD8 T,30627,4919,0.9796815705379577
+2,all markers per cell,neutrophil,B,30627,2249,0.9741430484960081
+2,all markers per cell,neutrophil,NK,30627,1158,0.9886633888291981
+2,all markers per cell,neutrophil,monocyte,30627,1626,0.9667857923559153
+2,all markers per cell,neutrophil,eosinophil,30627,1970,0.9931964911356043
+2,all markers per cell,eosinophil,CD4 T,1970,8244,0.9983944022048339
+2,all markers per cell,eosinophil,CD8 T,1970,4919,0.9962671419121752
+2,all markers per cell,eosinophil,B,1970,2249,0.9957220693686761
+2,all markers per cell,eosinophil,NK,1970,1158,0.9932936184389329
+2,all markers per cell,eosinophil,monocyte,1970,1626,0.9755180724396078
+2,all markers per cell,eosinophil,neutrophil,1970,30627,0.9931964911356043
+2,measured,CD4 T,CD8 T,8244,4919,1.0
+2,measured,CD4 T,B,8244,2249,0.9999995145829005
+2,measured,CD4 T,NK,8244,1158,0.9999959147554006
+2,measured,CD4 T,monocyte,8244,1626,1.0
+2,measured,CD4 T,neutrophil,8244,30627,0.9997992427297464
+2,measured,CD4 T,eosinophil,8244,1970,1.0
+2,measured,CD8 T,CD4 T,4919,8244,1.0
+2,measured,CD8 T,B,4919,2249,0.99999466682624
+2,measured,CD8 T,NK,4919,1158,0.9941899883466212
+2,measured,CD8 T,monocyte,4919,1626,1.0
+2,measured,CD8 T,neutrophil,4919,30627,0.999845148704869
+2,measured,CD8 T,eosinophil,4919,1970,1.0
+2,measured,B,CD4 T,2249,8244,0.9999995145829005
+2,measured,B,CD8 T,2249,4919,0.99999466682624
+2,measured,B,NK,2249,1158,0.9994086798124057
+2,measured,B,monocyte,2249,1626,0.9999978123391727
+2,measured,B,neutrophil,2249,30627,0.9994631252328049
+2,measured,B,eosinophil,2249,1970,0.9964737853033384
+2,measured,NK,CD4 T,1158,8244,0.9999959147554007
+2,measured,NK,CD8 T,1158,4919,0.9941899883466211
+2,measured,NK,B,1158,2249,0.9994086798124056
+2,measured,NK,monocyte,1158,1626,1.0
+2,measured,NK,neutrophil,1158,30627,0.9999112672942074
+2,measured,NK,eosinophil,1158,1970,1.0
+2,measured,monocyte,CD4 T,1626,8244,1.0
+2,measured,monocyte,CD8 T,1626,4919,1.0
+2,measured,monocyte,B,1626,2249,0.9999978123391727
+2,measured,monocyte,NK,1626,1158,1.0
+2,measured,monocyte,neutrophil,1626,30627,0.9999999598389557
+2,measured,monocyte,eosinophil,1626,1970,0.9999281972515156
+2,measured,neutrophil,CD4 T,30627,8244,0.9997992427297463
+2,measured,neutrophil,CD8 T,30627,4919,0.999845148704869
+2,measured,neutrophil,B,30627,2249,0.9994631252328048
+2,measured,neutrophil,NK,30627,1158,0.9999112672942074
+2,measured,neutrophil,monocyte,30627,1626,0.9999999598389558
+2,measured,neutrophil,eosinophil,30627,1970,0.9983759063326063
+2,measured,eosinophil,CD4 T,1970,8244,1.0
+2,measured,eosinophil,CD8 T,1970,4919,1.0
+2,measured,eosinophil,B,1970,2249,0.9964737853033384
+2,measured,eosinophil,NK,1970,1158,1.0
+2,measured,eosinophil,monocyte,1970,1626,0.9999281972515157
+2,measured,eosinophil,neutrophil,1970,30627,0.9983759063326062
+2,one marker per cell,CD4 T,CD8 T,8244,4919,0.6269340240572677
+2,one marker per cell,CD4 T,B,8244,2249,0.44565011264912824
+2,one marker per cell,CD4 T,NK,8244,1158,0.790564488623746
+2,one marker per cell,CD4 T,monocyte,8244,1626,0.8997694025339089
+2,one marker per cell,CD4 T,neutrophil,8244,30627,0.9910643508935922
+2,one marker per cell,CD4 T,eosinophil,8244,1970,0.9964870313312004
+2,one marker per cell,CD8 T,CD4 T,4919,8244,0.6269340240572678
+2,one marker per cell,CD8 T,B,4919,2249,0.5980643200641861
+2,one marker per cell,CD8 T,NK,4919,1158,0.6888000109546677
+2,one marker per cell,CD8 T,monocyte,4919,1626,0.9932204917698699
+2,one marker per cell,CD8 T,neutrophil,4919,30627,0.9920212818741418
+2,one marker per cell,CD8 T,eosinophil,4919,1970,0.9997593502042736
+2,one marker per cell,B,CD4 T,2249,8244,0.4456501126491282
+2,one marker per cell,B,CD8 T,2249,4919,0.5980643200641862
+2,one marker per cell,B,NK,2249,1158,0.8391495817369609
+2,one marker per cell,B,monocyte,2249,1626,0.9715989667677913
+2,one marker per cell,B,neutrophil,2249,30627,0.9784289366033798
+2,one marker per cell,B,eosinophil,2249,1970,0.9903270037670436
+2,one marker per cell,NK,CD4 T,1158,8244,0.7905644886237461
+2,one marker per cell,NK,CD8 T,1158,4919,0.6888000109546677
+2,one marker per cell,NK,B,1158,2249,0.8391495817369607
+2,one marker per cell,NK,monocyte,1158,1626,0.9954493262549204
+2,one marker per cell,NK,neutrophil,1158,30627,0.994091295606341
+2,one marker per cell,NK,eosinophil,1158,1970,0.9965882889280485
+2,one marker per cell,monocyte,CD4 T,1626,8244,0.8997694025339089
+2,one marker per cell,monocyte,CD8 T,1626,4919,0.99322049176987
+2,one marker per cell,monocyte,B,1626,2249,0.9715989667677912
+2,one marker per cell,monocyte,NK,1626,1158,0.9954493262549207
+2,one marker per cell,monocyte,neutrophil,1626,30627,0.9868958328137497
+2,one marker per cell,monocyte,eosinophil,1626,1970,0.9866106605228488
+2,one marker per cell,neutrophil,CD4 T,30627,8244,0.9910643508935921
+2,one marker per cell,neutrophil,CD8 T,30627,4919,0.9920212818741418
+2,one marker per cell,neutrophil,B,30627,2249,0.9784289366033798
+2,one marker per cell,neutrophil,NK,30627,1158,0.994091295606341
+2,one marker per cell,neutrophil,monocyte,30627,1626,0.9868958328137497
+2,one marker per cell,neutrophil,eosinophil,30627,1970,0.9875256048750323
+2,one marker per cell,eosinophil,CD4 T,1970,8244,0.9964870313312004
+2,one marker per cell,eosinophil,CD8 T,1970,4919,0.9997593502042735
+2,one marker per cell,eosinophil,B,1970,2249,0.9903270037670436
+2,one marker per cell,eosinophil,NK,1970,1158,0.9965882889280485
+2,one marker per cell,eosinophil,monocyte,1970,1626,0.9866106605228488
+2,one marker per cell,eosinophil,neutrophil,1970,30627,0.9875256048750323

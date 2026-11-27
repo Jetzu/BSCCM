@@ -24,7 +24,8 @@ Sandbox (donors 0/1/2): measured r(CD3,CD19) in lymphocytes -.628/-.881/-.675; p
 -.860/-.934/-.829 (over-separated: one T<->B axis); AUROC B vs T all-marker .738/.940/.459, one-marker .807/.902/.512; predicted vs
 measured CD19 r .530/.657/.091 (all-marker) -> donor 2 CD19 not predicted, B vs T at chance there.
 CD4/CD8 (sandbox only): measured r(CD4,CD8) in T cells -.746/-.807/-.858; predicted all-marker -.853/-.429/+.202, one-marker -.049/-.496/+.332; AUROC CD4T vs CD8T .617/.753/.543 (all), .502/.675/.621 (one).
-Figures: figures/overview/fig11_lineages_bsccm.png, fig12_lineages_sandbox.png, fig13_cd4_cd8_sandbox.png (captions in CAPTIONS.md + .json).
+Pairwise separability (n097_separation.py; score z(pred a) - z(pred b), AUROC): BSCCM .82 (T vs B) - .99 (NK vs mono), slide control (all cells of slide a vs b) mean |AUROC-.5| .043, range .40-.54; sandbox myeloid vs lymphoid .88-1.00, CD4T vs CD8T .65/.60, CD8T vs NK .57/.65.
+Figures: figures/overview/fig11_lineages_bsccm.png, fig12_lineages_sandbox.png, fig13_cd4_cd8_sandbox.png, fig14_lineage_separability.png, fig15_marker_correlation.png (captions in CAPTIONS.md + .json).
 
 ## Outcome
 Models DO learn CD3-CD19 exclusivity as an output direction (within lymphocytes -.54 on BSCCM; sandbox even more anticorrelated than

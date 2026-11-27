@@ -424,3 +424,64 @@ The exclusivity is reproduced on one donor only; on donor 2 the predicted correl
 Paired t, Holm; with 3 donors, power is low.
 
 **Says:** CD4 and CD8 T cells look almost the same in these label-free images, so the models can tell T cells apart from other cells but not CD4 T from CD8 T cells. That is consistent with the literature (DeepIFC CD8 r .41).
+
+## Figure 14: How well can every pair of cell lineages be separated? (`fig14_lineage_separability`), N097
+
+**Scale:** each tile compares two lineages A and B, for example T vs B cells.
+- Every cell gets one score from the *predicted* markers: z(predicted marker of A) − z(predicted marker of B). For T vs B that is predicted CD3 − predicted CD19.
+- The tile shows the **AUROC** of this score: the probability that a randomly drawn A cell scores higher than a randomly drawn B cell.
+- Reading guide:
+
+  | AUROC | Meaning |
+  |---|---|
+  | .5 | Coin flip, not separable |
+  | .7 | Weak |
+  | .8 | Moderate |
+  | .9 | Good |
+  | 1.0 | Perfect |
+
+- No classifier is fitted, so the matrix is symmetric. Darker = better separated.
+
+**a. BSCCM, record ensemble**, mean of the 2 directions. Each lineage is the positive cells of its marker on its own single-stain slide of the test draw.
+- Pairs range from .82 (T vs B) to .99 (NK vs monocyte).
+- Both lineages in a pair come from different slides, so a slide control scores all cells of one slide against all cells of the other with the same score. Since every slide samples the same blood draw, this should be .5. Mean |AUROC − .5| is .04 (range .40–.54), so slide effects are small next to the lineage AUROCs.
+
+**b, c. ImageStream sandbox** (external data; all 9 markers on every cell; mean of 3 held-out donors). Models were trained with all markers per cell (b) or one marker per cell (c, the BSCCM-like setting).
+- With the measured markers, every pair scores 1.00 by construction.
+- Myeloid vs lymphoid pairs are separated well (.88–1.00).
+- Lymphocyte subsets are not:
+
+  | Pair | AUROC, all-marker (b) | AUROC, one-marker (c) |
+  |---|---|---|
+  | CD4 T vs CD8 T | .65 | .60 |
+  | CD8 T vs NK | .57 | .65 |
+  | B vs CD8 T | .67 | .73 |
+
+**Says:** the big lineages (granulocytes, monocytes, lymphocytes) are cleanly separable from label-free images. Inside the lymphocytes, separation weakens: T vs B is .82 on BSCCM, and CD4 T vs CD8 T is near chance.
+
+## Figure 15: Measured vs predicted lineage-defining markers on BSCCM (`fig15_marker_correlation`), N097
+
+Each panel shows the cells of one marker's single-stain slide in the test draw, scored with the record ensemble. Blue is train draw 1 → test draw 0 ("1→0"); orange is train draw 0 → test draw 1 ("0→1").
+
+**Axes:**
+- x: the measured label (asinh-transformed fluorescence, z-scored per slide). The vertical stack at the left is the clipped background floor.
+- y: the prediction, on the same scale.
+
+**Legend:** Pearson r over all test cells of the slide, with n. The display shows a random 800 cells per direction.
+
+| Marker | r (1→0 / 0→1) |
+|---|---|
+| CD3 | .81 / .77 |
+| CD19 | .36 / .36 |
+| CD56 | .49 / .58 |
+| CD14 | .85 / .83 |
+| CD16 | .91 / .89 |
+| CD123 | .63 / .60 |
+| HLA-DR | .52 / .45 |
+| CD45 | .73 / .83 |
+
+These are the per-marker r values that enter the GOAL.
+
+**Says:**
+- CD3, CD14 and CD16 positives form a separate high cloud that the model predicts well. These are the T-cell, monocyte and granulocyte populations.
+- CD19 (B cells) and CD56 (NK cells) are rare and dim: most positives get only slightly raised predictions, which is why r stays at .36–.58.
