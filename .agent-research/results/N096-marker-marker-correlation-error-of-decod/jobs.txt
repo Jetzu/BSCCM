@@ -1,2 +1,3 @@
 1471630 n096_sandbox n096_sandbox.sbatch
 1471668 n096_bsccm n096_bsccm.sbatch (CPU 48 cores)
+1471889 n096_sandbox n096_sandbox.sbatch (resubmit after red-team fix #3; 1471630 cancelled while pending)

@@ -472,7 +472,7 @@ def autocast(args):
     return torch.autocast('cuda', dtype=torch.bfloat16) if args.device == 'cuda' else nullcontext()
 
 
-def batch_loss(model, output, ids, targets, masks, pools, pool_masks, raw, calibration, args):
+def batch_loss(model, output, ids, targets, masks, pools, pool_masks, raw, calibration, args, corr=True):
     mu, pp, cov, _ = output
     y = targets[ids].to(args.device)
     mask = masks[ids].to(args.device)
@@ -480,7 +480,7 @@ def batch_loss(model, output, ids, targets, masks, pools, pool_masks, raw, calib
     if pp is not None:
         loss = loss + args.pool_weight * masked_mse(pp.float(), pools[ids].to(args.device),
                                                    pool_masks[ids].to(args.device))
-    if getattr(model, 'corr_target', None) is not None:
+    if corr and getattr(model, 'corr_target', None) is not None:   # N096 red-team #3: checkpoint selection uses the N080 loss only
         z = mu.float() - mu.float().mean(0)
         z = z / (z.square().mean(0).sqrt() + 1e-6)
         r = (z.T @ z) / len(z)
@@ -501,7 +501,7 @@ def validation_loss(model, pack, rows, scale, tensors, calibration, args):
     for x, ids in loader(pack, rows, args):
         with autocast(args):
             output = model(x.to(args.device) / scale)
-            loss = batch_loss(model, output, ids, *tensors, calibration, args)
+            loss = batch_loss(model, output, ids, *tensors, calibration, args, corr=False)
         # Skip cells without any observations (there are none for the supported regimes).
         total += float(loss) * len(x)
         count += len(x)

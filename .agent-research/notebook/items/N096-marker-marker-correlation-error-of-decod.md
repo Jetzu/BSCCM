@@ -30,6 +30,14 @@ C. Sandbox, same recipe as N080 single/full (15 ep, resnet50): single + corr los
    correlation, lambda 10. 3 held-out donors each (12 runs, ~1.5 H100-h). PRIMARY C: 36-pair error of the best-on-validation
    single+corr arm vs N080 single (.229 mean; full .189): success = mean <= .21 AND lower than single on 3/3 donors (same bar as
    the N087 marker prior). Secondary: macro r (loss > .02 = cost), within-type pairs (CD4-CD8 in T cells, N080 key pairs).
+AMENDMENT 2026-11-27 (after the Codex red-team codex_rt/redteam.md, BEFORE any sandbox run started and before reading the full B
+results): (C) checkpoint selection uses the N080 validation loss WITHOUT the correlation term (validation_loss corr=False), so arms
+and control share the selection rule; PRIMARY C = lambda 10 fixed (no per-fold selection; 1 and 100 descriptive); the treated single
+arm additionally sees the validation donor's joint label correlation (by design, as the N087 prior). (B) the headline is split by
+pair kind: pooled-marker pairs shared by fit and test (primary), pairs with no fit labels (grp:CD123/HLA-DR/CD14 in b10) and
+single~autofl pairs (autofl is not a GOAL target) reported separately; every summary asserts the expected finite pair count;
+the 'floor' is renamed 'source-transfer reference' (not a bound); lambda eligibility is reported per direction and a direction
+with no eligible lambda reports "no eligible lambda" (no primary effect from it).
 Kill: B and C both miss their bars -> correlation matching on the predicted means does not fix co-expression; record and stop.
 GOAL effect: B is a frozen-feature probe (not a GOAL record attempt); an improvement claim would need a pre-registered E8
 ensemble re-score > .7021 as a follow-up.
