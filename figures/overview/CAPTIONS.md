@@ -425,10 +425,10 @@ Paired t, Holm; with 3 donors, power is low.
 
 **Says:** CD4 and CD8 T cells look almost the same in these label-free images, so the models can tell T cells apart from other cells but not CD4 T from CD8 T cells. That is consistent with the literature (DeepIFC CD8 r .41).
 
-## Figure 14: How well can every pair of cell lineages be separated? (`fig14_lineage_separability`), N097
+## Figure 14: How well can every pair of cell lineages be separated on BSCCM? (`fig14_lineage_separability`), N097
 
-**Scale:** each tile compares two lineages A and B, for example T vs B cells.
-- Every cell gets one score from the *predicted* markers: z(predicted marker of A) − z(predicted marker of B). For T vs B that is predicted CD3 − predicted CD19.
+**Scale:** each tile compares two lineages A and B, for example T (CD3) vs B (CD19).
+- Every cell gets one score from the *predicted* markers of the record ensemble: z(predicted marker of A) − z(predicted marker of B). For T vs B that is predicted CD3 − predicted CD19.
 - The tile shows the **AUROC** of this score: the probability that a randomly drawn A cell scores higher than a randomly drawn B cell.
 - Reading guide:
 
@@ -442,22 +442,14 @@ Paired t, Holm; with 3 donors, power is low.
 
 - No classifier is fitted, so the matrix is symmetric. Darker = better separated.
 
-**a. BSCCM, record ensemble**, mean of the 2 directions. Each lineage is the positive cells of its marker on its own single-stain slide of the test draw.
-- Pairs range from .82 (T vs B) to .99 (NK vs monocyte).
-- Both lineages in a pair come from different slides, so a slide control scores all cells of one slide against all cells of the other with the same score. Since every slide samples the same blood draw, this should be .5. Mean |AUROC − .5| is .04 (range .40–.54), so slide effects are small next to the lineage AUROCs.
+Each lineage is the positive cells of its marker on its own single-stain slide of the test draw. Panels:
+- **a.** Train draw 1 → test draw 0: T vs B .95.
+- **b.** Train draw 0 → test draw 1: T vs B .70. This test draw has only 10 B cells, and about 10% of T cells look B-like to the model (Figure 11).
+- **c.** Mean of a and b: T vs B .82. All pairs range from .82 to .99; monocyte vs T and NK vs monocyte are ≥ .98.
 
-**b, c. ImageStream sandbox** (external data; all 9 markers on every cell; mean of 3 held-out donors). Models were trained with all markers per cell (b) or one marker per cell (c, the BSCCM-like setting).
-- With the measured markers, every pair scores 1.00 by construction.
-- Myeloid vs lymphoid pairs are separated well (.88–1.00).
-- Lymphocyte subsets are not:
+**Slide control:** the two lineages of a pair come from different slides. Scoring all cells of one slide against all cells of the other with the same score should give .5, since every slide samples the same blood draw. The result is mean |AUROC − .5| = .04 (range .40–.54), so slide effects are small.
 
-  | Pair | AUROC, all-marker (b) | AUROC, one-marker (c) |
-  |---|---|---|
-  | CD4 T vs CD8 T | .65 | .60 |
-  | CD8 T vs NK | .57 | .65 |
-  | B vs CD8 T | .67 | .73 |
-
-**Says:** the big lineages (granulocytes, monocytes, lymphocytes) are cleanly separable from label-free images. Inside the lymphocytes, separation weakens: T vs B is .82 on BSCCM, and CD4 T vs CD8 T is near chance.
+**Says:** monocytes, granulocytes and lymphocytes separate almost perfectly. T vs B is the weakest pair, and its strength depends on the direction.
 
 ## Figure 15: Measured vs predicted lineage-defining markers on BSCCM (`fig15_marker_correlation`), N097
 
@@ -485,3 +477,33 @@ These are the per-marker r values that enter the GOAL.
 **Says:**
 - CD3, CD14 and CD16 positives form a separate high cloud that the model predicts well. These are the T-cell, monocyte and granulocyte populations.
 - CD19 (B cells) and CD56 (NK cells) are rare and dim: most positives get only slightly raised predictions, which is why r stays at .36–.58.
+
+## Figure 16: CD3 vs CD19 on the same cells: where is the anticorrelation? (`fig16_cd3_cd19_anticorrelation`), N097
+
+Figure 15 plots each marker against itself (measured CD3 vs predicted CD3). That is an accuracy plot, so it must rise. Anticorrelation is a property of two *different* markers on the same cell. This figure plots CD3 against CD19.
+
+**a–c. ImageStream sandbox**, lymphocytes of held-out donor 0; both markers are measured on every cell. Legends give r for all three donors.
+- Measured (a): T cells (CD3 high, CD19 low) and B cells (CD19 high, CD3 low) form two clouds. r = −.63 (donors 1, 2: −.88, −.68).
+- Predicted, all-marker (b) or one-marker (c) training: one anti-diagonal band, r −.84 to −.93. That is more anticorrelated than measured.
+
+**d–f. BSCCM, record ensemble.** No BSCCM cell has both CD3 and CD19 measured, so only predictions can be plotted.
+- **d. All test cells:** r +.23 / +.18, positive. Both are lymphocyte markers, and most white cells (granulocytes, monocytes) are low on both.
+- **e. Gated lymphocytes** (draw-0 all-marker slide, 371 cells): r −.53.
+- **f. True T and true B cells** of test draw 0: r −.49. B cells sit at high predicted CD19 and low CD3, T cells the other way.
+
+**Says:**
+- Within lymphocytes the models do produce the expected CD3–CD19 anticorrelation.
+- Over all white cells the correlation turns positive, because the lymphocyte vs non-lymphocyte difference dominates.
+
+## Figure 17: Lineage separability in the ImageStream sandbox (`fig17_lineage_separability_sandbox`), N097
+
+Same score and AUROC scale as Figure 14, on the external ImageStream dataset; all 9 markers are measured on every cell. All T cells are merged into one T lineage (CD3). Values are the mean of 3 held-out donors. Panel a uses all-marker training, panel b one-marker training.
+- With the measured markers, every pair is 1.00 by construction.
+- Myeloid vs lymphoid pairs: .85–1.00.
+- Within lymphocytes:
+
+  | Pair | All-marker (a) | One-marker (b) |
+  |---|---|---|
+  | T vs B | .72 (donors .75 / .94 / .46) | .74 (.81 / .91 / .52) |
+  | B vs NK | .72 | .79 |
+  | T vs NK | .79 | .79 |

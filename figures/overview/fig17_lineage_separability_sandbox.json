@@ -1,0 +1,25 @@
+{
+ "png": "/home/hpc/v181bb/v181bb10/BSCCM/figures/overview/fig17_lineage_separability_sandbox.png",
+ "svg": "/home/hpc/v181bb/v181bb10/BSCCM/figures/overview/fig17_lineage_separability_sandbox.svg",
+ "created": "2026-11-27T17:15:00",
+ "command": [
+  "/home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python",
+  "figures/overview/make_lineage2.py"
+ ],
+ "cwd": "/home/hpc/v181bb/v181bb10/BSCCM",
+ "source": [
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N097-lineage-separation-of-decoded-markers-us/sep_sandbox.csv",
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N097-lineage-separation-of-decoded-markers-us/n097_separation.py"
+ ],
+ "notes": "N097. Same score and AUROC scale as fig14, in the ImageStream sandbox (external dataset; all 9 markers measured on every cell; lineages = gates on the held-out donor's measured labels, all T cells merged into one T lineage scored by CD3; mean of 3 held-out donors; N080 ResNet-50 models trained with all markers per cell (a) or one marker per cell (b), the BSCCM-like regime). The measured markers give AUROC 1.00 for every pair (by construction). Myeloid vs lymphoid pairs .85-1.00; T vs B .72 (a; donors .75/.94/.46) and .74 (b; .81/.91/.52); B vs NK .72/.79; T vs NK .79/.79.",
+ "page": "letter",
+ "width_in": 8.5,
+ "height_in": 3.2283,
+ "png_px": [
+  3840,
+  1458
+ ],
+ "significance": "two-sided; Holm-corrected over all comparisons of a panel (one family per panel); * <0.05 ** <0.01 *** <0.001 **** <0.0001",
+ "panels": [],
+ "matplotlib": "3.11.0"
+}

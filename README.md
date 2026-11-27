@@ -678,7 +678,7 @@ The extension added four architecture and alignment figures. The nine reviewed f
 
 **[N087] · Test decoders and autoencoders (complete).** On frozen fine-tuned features no decoder beats the model's own linear head (.673; ridge .670, kNN .664, MLP .661), and the predictions need about 8-12 dimensions (rank 4 .617, rank 8 .656). Frozen self-supervised features (MLP .603) carry no more marker information than 144 hand-made image statistics (.607); a 64-d image autoencoder reaches .624; fine-tuning is worth +.05-.07. Autoencoders cluster held-out cells by cell type better than the self-supervised features (kNN balanced accuracy .34-.35 vs .31) but no better than image statistics (.35), so they mostly encode brightness and scatter. Learned marker priors from another donor's joint labels did not meet their pre-registered bar in the ImageStream sandbox (best: autoencoder prior, co-expression error .212 vs .229 single, bar .21), and a flow-matching decoder fixed the spread but not co-expression. With the same number of labels, all-marker training on 1/9 of the cells gave co-expression error .174 vs .229, so joint measurement, not label count, carries the co-expression. [N087] · [Figure 10](figures/overview/fig10_decoders_autoencoders.png)
 
-**[N097] · Lineage separation of decoded markers (user 11-27).** On BSCCM the record ensemble detects each lineage on its own slide (AUROC CD3 .99/.86, CD14 .98/.97, CD16 .97/.97, CD19 .83/.87) and separates true B from true T cells with predicted CD19 − CD3 at .95 (train draw 1 → 0) but only .70 the other way (10 B cells; about 10% of T cells look B-like). Predicted CD3 and CD19 are anticorrelated within lymphocytes (−.54) but positively correlated over all white cells (+.2), as both are lymphocyte markers. In the ImageStream sandbox, where both are measured on every cell, the predictions are more anticorrelated than the truth (−.84..−.93 vs −.63..−.88) because the model places lymphocytes on one T↔B axis; T-vs-B AUROC still ranges .46–.94 across held-out donors because predicted CD19 itself fails on one donor (r .09). CD4 vs CD8 T cells (sandbox only; BSCCM has no CD4/CD8): measured r −.75..−.86 within T cells, predicted −.85..+.33, CD4 T vs CD8 T AUROC .50–.75 — the subsets are barely visible in label-free images. [N097] · [Figure 11](figures/overview/fig11_lineages_bsccm.png) · [Figure 12](figures/overview/fig12_lineages_sandbox.png) · [Figure 13](figures/overview/fig13_cd4_cd8_sandbox.png) · [Figure 14](figures/overview/fig14_lineage_separability.png) · [Figure 15](figures/overview/fig15_marker_correlation.png)
+**[N097] · Lineage separation of decoded markers (user 11-27).** On BSCCM the record ensemble detects each lineage on its own slide (AUROC CD3 .99/.86, CD14 .98/.97, CD16 .97/.97, CD19 .83/.87) and separates true B from true T cells with predicted CD19 − CD3 at .95 (train draw 1 → 0) but only .70 the other way (10 B cells; about 10% of T cells look B-like). Predicted CD3 and CD19 are anticorrelated within lymphocytes (−.54) but positively correlated over all white cells (+.2), as both are lymphocyte markers. In the ImageStream sandbox, where both are measured on every cell, the predictions are more anticorrelated than the truth (−.84..−.93 vs −.63..−.88) because the model places lymphocytes on one T↔B axis; T-vs-B AUROC still ranges .46–.94 across held-out donors because predicted CD19 itself fails on one donor (r .09). CD4 vs CD8 T cells (sandbox only; BSCCM has no CD4/CD8): measured r −.75..−.86 within T cells, predicted −.85..+.33, CD4 T vs CD8 T AUROC .50–.75 — the subsets are barely visible in label-free images. [N097] · [Figure 11](figures/overview/fig11_lineages_bsccm.png) · [Figure 12](figures/overview/fig12_lineages_sandbox.png) · [Figure 13](figures/overview/fig13_cd4_cd8_sandbox.png) · [Figure 14](figures/overview/fig14_lineage_separability.png) · [Figure 15](figures/overview/fig15_marker_correlation.png) · [Figure 16](figures/overview/fig16_cd3_cd19_anticorrelation.png) · [Figure 17](figures/overview/fig17_lineage_separability_sandbox.png)
 
 | Arm | Comparison | Jobs |
 |---|---|---|
@@ -785,9 +785,9 @@ Measured vs predicted CD4/CD8 in T cells, within-T-cell correlation, CD4 T vs CD
 
 ![CD4 vs CD8 T cells in the ImageStream sandbox](figures/overview/fig13_cd4_cd8_sandbox.png)
 
-### Figure 14 · Pairwise separability of all lineages
+### Figure 14 · Pairwise separability of all lineages on BSCCM
 
-AUROC of z(predicted marker of A) − z(predicted marker of B) for every lineage pair: BSCCM record ensemble and ImageStream sandbox (.5 = coin flip, 1 = perfect; N097).
+AUROC of z(predicted marker of A) − z(predicted marker of B) for every lineage pair, record ensemble, per direction and mean (.5 = coin flip, 1 = perfect; T vs B .95 / .70; N097).
 
 ![Pairwise separability of cell lineages](figures/overview/fig14_lineage_separability.png)
 
@@ -796,6 +796,18 @@ AUROC of z(predicted marker of A) − z(predicted marker of B) for every lineage
 Scatter of measured vs predicted CD3, CD19, CD56, CD14, CD16, CD123, HLA-DR and CD45 on BSCCM test slides with Pearson r per direction (N097).
 
 ![Measured vs predicted lineage-defining markers](figures/overview/fig15_marker_correlation.png)
+
+### Figure 16 · CD3 vs CD19 on the same cells
+
+Measured and predicted CD3 vs CD19 in the ImageStream sandbox and predicted CD3 vs CD19 on BSCCM (all cells, lymphocytes, true T and B cells) with Pearson r (N097).
+
+![CD3 vs CD19 anticorrelation](figures/overview/fig16_cd3_cd19_anticorrelation.png)
+
+### Figure 17 · Lineage separability in the ImageStream sandbox
+
+Same AUROC matrix as Figure 14 for the ImageStream sandbox models (N097).
+
+![Lineage separability in the ImageStream sandbox](figures/overview/fig17_lineage_separability_sandbox.png)
 
 ## Current work and open questions
 

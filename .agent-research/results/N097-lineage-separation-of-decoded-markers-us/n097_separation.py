@@ -15,8 +15,8 @@ HERE = os.path.dirname(os.path.abspath(__file__)); R = '/home/hpc/v181bb/v181bb1
 sys.path.insert(0, HERE); import n097_lineage as L
 B, SE = L.B, L.SE
 BS_LIN = [('T', 'CD3'), ('B', 'CD19'), ('NK', 'CD56'), ('monocyte', 'CD14'), ('neutrophil', 'CD16'), ('basophil/pDC', 'CD123')]
-SB_LIN = [('CD4 T', 'T4', 'CD4'), ('CD8 T', 'T8', 'CD8'), ('B', 'B', 'CD19'), ('NK', 'NK', 'CD56'), ('monocyte', 'mono', 'CD14'),
-          ('neutrophil', 'neut', 'CD15'), ('eosinophil', 'eos', 'Siglec8')]
+SB_LIN = [('T', ('T4', 'T8', 'Tother'), 'CD3'), ('B', ('B',), 'CD19'), ('NK', ('NK',), 'CD56'), ('monocyte', ('mono',), 'CD14'),
+          ('neutrophil', ('neut',), 'CD15'), ('eosinophil', ('eos',), 'Siglec8')]   # user 11-27: all T cells as one lineage (CD3), no CD4/CD8 split
 
 
 def auc(pos_score, neg_score):
@@ -53,12 +53,15 @@ def sandbox():
                 Z = (Q - Q.mean(0)) / Q.std(0)
                 for (na, ta, ma), (nb, tb, mb) in itertools.permutations(SB_LIN, 2):
                     s = Z[:, MK.index(ma)] - Z[:, MK.index(mb)]
-                    rows.append(dict(donor=d, arm=a_, A=na, B=nb, n_A=int((t == ta).sum()), n_B=int((t == tb).sum()),
-                                     auroc=auc(s[t == ta], s[t == tb])))
+                    ia, ib = np.isin(t, ta), np.isin(t, tb)
+                    rows.append(dict(donor=d, arm=a_, A=na, B=nb, n_A=int(ia.sum()), n_B=int(ib.sum()), auroc=auc(s[ia], s[ib])))
     return pd.DataFrame(rows)
 
 
 if __name__ == '__main__':
+    if '--sandbox-only' in sys.argv:
+        s = sandbox(); s.to_csv(f'{HERE}/sep_sandbox.csv', index=False); print(s.groupby(['arm', 'A', 'B']).auroc.mean().unstack().round(2).to_string())
+        print(s[(s.A == 'T') & (s.B == 'B')].round(3).to_string(index=False)); sys.exit()
     b, sc = bsccm(); b.to_csv(f'{HERE}/sep_bsccm.csv', index=False); sc.to_csv(f'{HERE}/scatter_bsccm.csv', index=False)
     s = sandbox(); s.to_csv(f'{HERE}/sep_sandbox.csv', index=False)
     print(b.groupby(['A', 'B'])[['auroc', 'slide_control']].mean().round(3).to_string())

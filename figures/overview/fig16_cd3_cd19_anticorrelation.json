@@ -1,0 +1,77 @@
+{
+ "png": "/home/hpc/v181bb/v181bb10/BSCCM/figures/overview/fig16_cd3_cd19_anticorrelation.png",
+ "svg": "/home/hpc/v181bb/v181bb10/BSCCM/figures/overview/fig16_cd3_cd19_anticorrelation.svg",
+ "created": "2026-11-27T17:15:03",
+ "command": [
+  "/home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python",
+  "figures/overview/make_lineage2.py"
+ ],
+ "cwd": "/home/hpc/v181bb/v181bb10/BSCCM",
+ "source": [
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N097-lineage-separation-of-decoded-markers-us/sandbox_lymph_cells.csv",
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N097-lineage-separation-of-decoded-markers-us/sandbox_cd3_cd19.csv",
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N097-lineage-separation-of-decoded-markers-us/cd3cd19_bsccm_cells.csv",
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N097-lineage-separation-of-decoded-markers-us/n097_cd3cd19.py"
+ ],
+ "notes": "N097. CD3 vs CD19 on the SAME cells (T vs B; the anticorrelation question). Fig 15 plots each marker against itself (measured vs predicted CD3), which is an accuracy plot and must be positive; anticorrelation is a property of two DIFFERENT markers on one cell. a-c ImageStream sandbox, lymphocytes of held-out donor 0 (both markers measured on every cell): measured (a) T and B cells form two clouds, r = -.63 (donors 1, 2: -.88, -.68); predicted with all-marker (b) or one-marker (c) training: one anti-diagonal band, r -.84..-.93 (more anticorrelated than measured). d-f BSCCM, record ensemble: no BSCCM cell has both CD3 and CD19 measured, so only predictions can be plotted. d all test cells (display 1,500 per direction): r +.23 / +.18 - positive, because both markers are lymphocyte markers and the majority of white cells (granulocytes, monocytes) is low on both. e gated lymphocytes (draw-0 all-marker slide, 371 cells, train draw 1 -> test draw 0): r -.53. f true T (CD3+ on the CD3 slide) and true B (CD19+ on the CD19 slide) cells of the test draw 0: r -.49. Label scale = asinh fluorescence z-scored per slide.",
+ "page": "letter",
+ "width_in": 8.5,
+ "height_in": 5.315,
+ "png_px": [
+  3840,
+  2401
+ ],
+ "significance": "two-sided; Holm-corrected over all comparisons of a panel (one family per panel); * <0.05 ** <0.01 *** <0.001 **** <0.0001",
+ "panels": [
+  {
+   "panel": "d",
+   "kind": "lines",
+   "series": [
+    {
+     "label": "1\u21920, all cells: r = +0.23",
+     "color": "#3A6C9E",
+     "points": 1500
+    },
+    {
+     "label": "0\u21921, all cells: r = +0.18",
+     "color": "#CF832F",
+     "points": 1500
+    }
+   ],
+   "xlabel": "Predicted CD3 (label scale)",
+   "ylabel": "Predicted CD19 (label scale)"
+  },
+  {
+   "panel": "e",
+   "kind": "lines",
+   "series": [
+    {
+     "label": "1\u21920, gated lymphocytes: r = -0.53",
+     "color": "#3A6C9E",
+     "points": 371
+    }
+   ],
+   "xlabel": "Predicted CD3 (label scale)",
+   "ylabel": "Predicted CD19 (label scale)"
+  },
+  {
+   "panel": "f",
+   "kind": "lines",
+   "series": [
+    {
+     "label": "true T cells (n = 89)",
+     "color": "#3A6C9E",
+     "points": 89
+    },
+    {
+     "label": "true B cells (n = 39)",
+     "color": "#B94A58",
+     "points": 39
+    }
+   ],
+   "xlabel": "Predicted CD3 (label scale)",
+   "ylabel": "Predicted CD19 (label scale)"
+  }
+ ],
+ "matplotlib": "3.11.0"
+}
