@@ -507,3 +507,23 @@ Same score and AUROC scale as Figure 14, on the external ImageStream dataset; al
   | T vs B | .72 (donors .75 / .94 / .46) | .74 (.81 / .91 / .52) |
   | B vs NK | .72 | .79 |
   | T vs NK | .79 | .79 |
+
+## Figure 18: AUROC matrix with values, BSCCM (`fig18_auroc_matrix_bsccm`), N097
+
+This is Figure 14 with the AUROC printed in every tile. The label under each matrix says what it shows:
+- **a.** BSCCM, train draw 1 → test draw 0.
+- **b.** BSCCM, train draw 0 → test draw 1.
+- **c.** Mean of a and b.
+
+Each tile compares the row lineage with the column lineage, using predicted markers from the record ensemble:
+- Every true cell of either lineage gets the score z(predicted marker of the row lineage) − z(predicted marker of the column lineage).
+- AUROC is the fraction of (row cell, column cell) pairs in which the row cell scores higher. .5 = coin flip, 1 = perfect.
+- The lineages are the measured positives of each marker on its own single-stain slide of the test draw.
+
+Cells per lineage (a / b): T 89 / 692, B 39 / 10, NK 34 / 112, monocyte 334 / 273, neutrophil 504 / 1,733, basophil/pDC 50 / 49.
+
+**Train/test split, exactly:** BSCCM contains two separate blood draws (the dataset's "batch 0" and "batch 1").
+- **Train draw 1 → test draw 0:** train on all 269,283 draw-1 cells; score on the 13,113 draw-0 cells in the held-out 10% of fields of view (FOV split 2).
+- **Train draw 0 → test draw 1:** train on all 127,946 draw-0 cells; score on the 26,322 draw-1 cells in FOV split 2.
+- The other 90% of the test draw is never used, not even for self-supervised pretraining.
+- The Wright-stained cells (10,015 in draw 0, 5,697 in draw 1) are excluded from both.

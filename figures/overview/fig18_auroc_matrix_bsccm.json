@@ -1,0 +1,26 @@
+{
+ "png": "/home/hpc/v181bb/v181bb10/BSCCM/figures/overview/fig18_auroc_matrix_bsccm.png",
+ "svg": "/home/hpc/v181bb/v181bb10/BSCCM/figures/overview/fig18_auroc_matrix_bsccm.svg",
+ "created": "2026-11-27T17:26:19",
+ "command": [
+  "/home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python",
+  "figures/overview/make_lineage2.py"
+ ],
+ "cwd": "/home/hpc/v181bb/v181bb10/BSCCM",
+ "source": [
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N097-lineage-separation-of-decoded-markers-us/sep_bsccm.csv",
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N097-lineage-separation-of-decoded-markers-us/auroc_matrix_bsccm.csv",
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N097-lineage-separation-of-decoded-markers-us/n097_separation.py"
+ ],
+ "notes": "N097. Same data as fig14 with the AUROC printed in every tile (user request 11-27). Tile = AUROC of row lineage vs column lineage on BSCCM, record ensemble: every true A cell and every true B cell gets the score z(predicted marker of A) - z(predicted marker of B); AUROC = fraction of (A cell, B cell) pairs in which the A cell scores higher (.5 = coin flip, 1 = perfect). Lineages = measured positives of each marker on its own single-stain slide of the test draw. a train draw 1 -> test draw 0, b train draw 0 -> test draw 1, c mean. Cells per lineage (a / b): T 89/692, B 39/10, NK 34/112, monocyte 334/273, neutrophil 504/1,733, basophil/pDC 50/49.",
+ "page": "letter",
+ "width_in": 8.5,
+ "height_in": 3.2283,
+ "png_px": [
+  3840,
+  1458
+ ],
+ "significance": "two-sided; Holm-corrected over all comparisons of a panel (one family per panel); * <0.05 ** <0.01 *** <0.001 **** <0.0001",
+ "panels": [],
+ "matplotlib": "3.11.0"
+}

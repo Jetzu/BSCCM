@@ -797,6 +797,12 @@ Scatter of measured vs predicted CD3, CD19, CD56, CD14, CD16, CD123, HLA-DR and 
 
 ![Measured vs predicted lineage-defining markers](figures/overview/fig15_marker_correlation.png)
 
+### Figure 18 · AUROC matrix with values (BSCCM)
+
+Figure 14 with the AUROC printed in each tile; labels under each matrix say which direction it shows (N097).
+
+![AUROC matrix with values](figures/overview/fig18_auroc_matrix_bsccm.png)
+
 ### Figure 16 · CD3 vs CD19 on the same cells
 
 Measured and predicted CD3 vs CD19 in the ImageStream sandbox and predicted CD3 vs CD19 on BSCCM (all cells, lymphocytes, true T and B cells) with Pearson r (N097).

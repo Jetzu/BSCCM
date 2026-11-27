@@ -19,9 +19,10 @@ def mat(df, labs):
 
 
 fig, ax = pfig.figure(1, 3, height_mm=82)
-for k, (dd, lab) in enumerate((('b10', 'train draw 1, test draw 0'), ('b01', 'train draw 0, test draw 1'), (None, 'mean of both directions'))):
+for k, (dd, lab) in enumerate((('b10', 'train draw 1 \u2192 test draw 0'), ('b01', 'train draw 0 \u2192 test draw 1'), (None, 'mean of both directions'))):
     sub = b if dd is None else b[b.direction == dd]
-    pfig.heatmap(ax[k], mat(sub, BL), [BN[x] for x in BL], [BN[x] for x in BL], vmin=.5, vmax=1, label=f'AUROC, {lab}', values='{:.2f}')
+    pfig.heatmap(ax[k], mat(sub, BL), [BN[x] for x in BL], [BN[x] for x in BL], vmin=.5, vmax=1, label='AUROC (.5 = chance, 1 = perfect)')
+    ax[k].set_xlabel(f'BSCCM, {lab}', fontsize=7, labelpad=6)
 for a in ax:
     for t in a.get_xticklabels() + a.get_yticklabels(): t.set_fontsize(5.5)
 sc = b.groupby(['A', 'B']).slide_control.mean()
@@ -35,10 +36,28 @@ pfig.save(fig, name='fig14_lineage_separability', sub='overview', root=R, source
                 'cells), c mean of a and b (T vs B .82; range .82-.99). Slide control (ALL cells of slide a vs ALL cells of slide b, same '
                 f'score; same blood draw -> expected .5): mean |AUROC - .5| = {abs(sc - .5).mean():.3f}, range {sc.min():.2f}-{sc.max():.2f}.')
 
+# ------------------------------------------------------------------ Figure 18: the same BSCCM AUROC matrices with the values printed (user 11-27)
+fig, ax = pfig.figure(1, 3, height_mm=82)
+for k, (dd, lab) in enumerate((('b10', 'train draw 1 \u2192 test draw 0'), ('b01', 'train draw 0 \u2192 test draw 1'), (None, 'mean of both directions'))):
+    sub = b if dd is None else b[b.direction == dd]
+    pfig.heatmap(ax[k], mat(sub, BL), [BN[x] for x in BL], [BN[x] for x in BL], vmin=.5, vmax=1, label='AUROC (.5 = chance, 1 = perfect)', values='{:.2f}')
+    ax[k].set_xlabel(f'BSCCM, {lab}', fontsize=7, labelpad=6)
+for a in ax:
+    for t in a.get_xticklabels() + a.get_yticklabels(): t.set_fontsize(5.5)
+pfig.save(fig, name='fig18_auroc_matrix_bsccm', sub='overview', root=R, source=[N + '/sep_bsccm.csv', N + '/auroc_matrix_bsccm.csv', N + '/n097_separation.py'],
+          notes='N097. Same data as fig14 with the AUROC printed in every tile (user request 11-27). Tile = AUROC of row lineage vs column '
+                'lineage on BSCCM, record ensemble: every true A cell and every true B cell gets the score z(predicted marker of A) - '
+                'z(predicted marker of B); AUROC = fraction of (A cell, B cell) pairs in which the A cell scores higher (.5 = coin flip, 1 = '
+                'perfect). Lineages = measured positives of each marker on its own single-stain slide of the test draw. a train draw 1 -> '
+                'test draw 0, b train draw 0 -> test draw 1, c mean. Cells per lineage (a / b): T 89/692, B 39/10, NK 34/112, monocyte '
+                '334/273, neutrophil 504/1,733, basophil/pDC 50/49.')
+
 # ------------------------------------------------------------------ Figure 17: same separability in the ImageStream sandbox
 fig, ax = pfig.figure(1, 2, height_mm=82)
-pfig.heatmap(ax[0], mat(s_sb[s_sb.arm == 'all markers per cell'], SL), [SN[x] for x in SL], [SN[x] for x in SL], vmin=.5, vmax=1, label='AUROC, all-marker training', values='{:.2f}')
-pfig.heatmap(ax[1], mat(s_sb[s_sb.arm == 'one marker per cell'], SL), [SN[x] for x in SL], [SN[x] for x in SL], vmin=.5, vmax=1, label='AUROC, one-marker training', values='{:.2f}')
+pfig.heatmap(ax[0], mat(s_sb[s_sb.arm == 'all markers per cell'], SL), [SN[x] for x in SL], [SN[x] for x in SL], vmin=.5, vmax=1, label='AUROC (.5 = chance, 1 = perfect)')
+ax[0].set_xlabel('ImageStream sandbox, all-marker training (mean of 3 donors)', fontsize=7, labelpad=6)
+pfig.heatmap(ax[1], mat(s_sb[s_sb.arm == 'one marker per cell'], SL), [SN[x] for x in SL], [SN[x] for x in SL], vmin=.5, vmax=1, label='AUROC (.5 = chance, 1 = perfect)')
+ax[1].set_xlabel('ImageStream sandbox, one-marker training (mean of 3 donors)', fontsize=7, labelpad=6)
 for a in ax:
     for t in a.get_xticklabels() + a.get_yticklabels(): t.set_fontsize(5.5)
 pfig.save(fig, name='fig17_lineage_separability_sandbox', sub='overview', root=R, source=[N + '/sep_sandbox.csv', N + '/n097_separation.py'],
