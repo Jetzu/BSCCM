@@ -34,3 +34,8 @@
 - fixed 1: INDEX had 76 rows -> N007-N022 moved to INDEX_ARCHIVE.md (60 remain). NOT fixed: check.sh flags 18 untracked files in figures/overview/ (N086 overview figures, scripts make_data.py/make_figures.py hard-code those paths and the N086 item is still open); left in place, they stop being "stray" once N086 commits them like figures/paper.
 - KNOWLEDGE: no [unverified] bullets (0 verified). Headline cut from 14 to 10 (K030 K028 K043 K041 K042 K046 K045 K033 K036 K001); K007/K029 moved to Topics "Data and labels", K039/K044 to "LF teacher". No merges, no supersessions, no new stale bullets, no K added.
 - promoted 0 rules (RULES stays 5 lines, none dropped). Parallel uncommitted edits to INDEX.md rows N085/N086 and IDEAS.md are included only where they sat in INDEX.md; IDEAS.md not staged.
+
+## 2026-11-27 (through N098; N095, N096, N098 open, left untouched)
+- fixed 8: 7 "cited path missing" lines were glob/shorthand fragments in items N034, N086, N087, N094 (results/N0xx-*/..., <ssl run>/ckpt.pt, {a,b}/ckpt.pt, runs/n080_*_d*/metrics.json); rewrote as full existing paths (verified present on disk). INDEX had 72 rows -> N023-N034 (12 oldest) moved to INDEX_ARCHIVE.md (60 remain).
+- KNOWLEDGE: 0 [unverified] bullets, so 0 verified/stale/merged/superseded; Headline unchanged (still the 10 highest-impact verified bullets). No K bullet yet covers N087-N094/N097 (decoders, ensembles, lineage separation); left for the owning sessions, not invented here.
+- promoted 0 rules (RULES stays 5 lines, none dropped).

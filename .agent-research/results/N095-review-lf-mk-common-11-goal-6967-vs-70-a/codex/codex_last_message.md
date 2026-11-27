@@ -1,0 +1,7 @@
+**Verdict:** E8 performs worse on draw 1, but the evidence does not establish test-draw label shift as the binding constraint. Smaller training-draw coverage also fits the results.
+
+I reproduced E8 at **.70657** for b10 and **.68689** for b01. Even with access to the true test labels, the best slide-specific slopes and intercepts reach only **.69956** across directions. Centering within fields raises scores in both directions, but changes the comparison. [Diagnosis red-team](</home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N095-review-lf-mk-common-11-goal-6967-vs-70-a/codex/diag_redteam.md:9>)
+
+The ideas report gives six proposals with expected gains, GPU-hour falsifiers, and build costs. I’d start by testing whether the same label budget goes further when spread across more fields. Draw 0 supplies pooled CD45 labels from **2,352 fields**, versus **6,250** in draw 1. [Ideas and experiment plan](</home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N095-review-lf-mk-common-11-goal-6967-vs-70-a/codex/ideas.md:3>)
+
+Only the two requested files were written. The saved-prediction audit used isolated host Python after the container’s FUSE mount failed. No training was run, and no independent reference assay or third draw was checked.

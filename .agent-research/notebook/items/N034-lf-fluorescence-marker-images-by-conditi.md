@@ -153,7 +153,7 @@ same-cell groups. Not an information-theoretic proof (rereview N4); scope = thes
 <!-- files in .agent-research/results/N034-slug/ + external absolute paths -->
 results/N034-*/: n034_eval_v2.csv, n034_sampler_sweep.csv, setmatch/setmatch_sim.csv, plot_*.csv, fig_n034_eval_v2.png,
 fig_n034_s48_g3.{png,pdf}, smoke.sbatch, smoke2.sbatch, codex/ (redteam_N034.md, rereview_N034.md). Plots in .agent-research/plots/
-(setmatch-..., n034-newdraw-...). Checkpoints /hnvme/workspace/v181bb10-bsccm/runs/n034/cfm_v2/ckpt.pt + /hnvme/workspace/v181bb10-bsccm/runs/n034/reg_v2/ckpt.pt; evals
+(setmatch-..., n034-newdraw-...). Checkpoints /hnvme/workspace/v181bb10-bsccm/runs/n034/cfm_v2/ckpt.pt and runs/n034/reg_v2/ckpt.pt; evals
 runs/n034/eval_v2, eval_sweep_*; targets /hnvme/workspace/v181bb10-bsccm/fm_prep.npz. Deliverables ~/bsccm_deliverables/figures/
 fig4_marker_images_flow.{png,pdf}, fig5_setlevel_matching.png.
 

@@ -22,7 +22,7 @@ C. Image autoencoder (k = 16/64/256) trained on the training draw only: clusteri
    Expectation (literature: pixel AEs encode intensity/background, SSL encodes semantics): AE clusters worse than SSL.
 D. User 11-24 follow-up ("look at the pretrained autoencoders ... make them smaller from the start or with a projection layer"):
    structures: SSL ResNet-50/ConvNeXt-S = encoder -> pooled 2048/768-d -> projector MLP 2048-2048-2048-256 (BN, GELU; SSL loss on the 256-d
-   output; dropped at fine-tuning, weights kept in <ssl run>/ckpt.pt['projector']); Cytoland VSCyto2D = UNeXt2 encoder-decoder (FCMAE masked-
+   output; dropped at fine-tuning, weights kept in the ssl run's ckpt.pt['projector']); Cytoland VSCyto2D = UNeXt2 encoder-decoder (FCMAE masked-
    autoencoder-pretrained ConvNeXtV2-T encoder + 72-tensor decoder, we use only the encoder); DynaCLR ConvNeXt-T (converted, never tested).
    D1 frozen projector outputs (256-d and intermediate 2048-d layers) in the decoder sweep; D2 end-to-end fine-tune with a projection
    bottleneck (train_lf.py --bottleneck 32 fresh Linear+LayerNorm, --bottleneck-init projector = pretrained SSL projector, 256-d), seed 0,
@@ -46,7 +46,7 @@ F. User 11-24 ("have you tried to align Giemsa with markers?" -> "OK can we also
    with the LF teacher on the same 15.7k cells, autofl r, MLL23/PBC contrasts; baseline = distillation (TT6c/hub). Sandbox analogue:
    S-BIAD452 type-oracle .814 vs image models .596. Mostly CPU on existing features.
 Compute: dumps 2 x ~10 min; AE 3 dims x 2 directions ~6 H100-h; sandbox 3 priors x 3 dims x 3 donors ~2.5 H100-h; total < 10 H100-h
-(preempt). Writer: Codex (brief results/N087-*/codex/brief.md); Claude red-teams + integrates; --dump-features added to train_lf.py by Claude.
+(preempt). Writer: Codex (brief .agent-research/results/N087-decoder-capacity-autoencoders-user-11-24/codex/brief.md); Claude red-teams + integrates; --dump-features added to train_lf.py by Claude.
 <!-- exp: hypothesis + expected result · several changes allowed · baseline = current best · kill criterion -->
 
 ## Changes

@@ -18,7 +18,7 @@ versions (independent replicate of E8), MM3. Kill: E8x2 <= .6967.
 ## Changes
 
 ## Evidence
-16 seed-5 fine-tunes, jobs 1468131-1468146 (results/N094-*/jobs.txt), all COMPLETED exit 0 (11-30 to 52 min each, ~10 H100-h),
+16 seed-5 fine-tunes, jobs 1468131-1468146 (.agent-research/results/N094-seed-averaged-record-ensemble-every-n085/jobs.txt), all COMPLETED exit 0 (11-30 to 52 min each, ~10 H100-h),
 outputs /hnvme/workspace/v181bb10-bsccm/runs/<member>_seed5_<b10|b01>. Pre-registered scorer n094_score.py (commit 5e98c51, before results):
 | set | b10 | b01 | GOAL | MM3 |
 |---|---|---|---|---|
