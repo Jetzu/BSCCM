@@ -326,3 +326,75 @@ No decoder (ridge .670, MLP .661, kNN .664) beats the fine-tuned model's own lin
 - The decoder is not the bottleneck; fine-tuning the encoder is what matters.
 - Autoencoders mostly capture brightness and scatter.
 - A marker prior borrowed from another donor helps co-expression only slightly; measuring the markers jointly is what really helps.
+
+## Figure 11: Can the models separate cell lineages? BSCCM (`fig11_lineages_bsccm`), N097
+
+BSCCM never measures two single markers on the same cell; CD3 and CD19 sit on different slides. Lineages are therefore defined on each marker's own slide of the **test** blood draw:
+- A cell is "positive" if its measured label lies above the valley between the two peaks of the label distribution.
+- For the rare lineage markers it must also lie above median + 3 MAD. Without this, 60% of draw-1 CD19-slide cells would count as B cells.
+
+The model is the N085 record ensemble (GOAL .6967).
+
+**a. Predicted marker profile of each true lineage** (mean predicted z-score, averaged over both directions):
+- T cells get high predicted CD3, and NK cells get high predicted CD56.
+- Monocytes get high CD14 and HLA-DR; CD123+ cells get high CD123 and HLA-DR.
+- B cells get high CD19 and low CD16 and CD14.
+- T cells also get somewhat raised CD19/CD56, and NK cells raised CD3. The three lymphocyte lineages share a "lymphocyte" signal.
+
+**b, c. Predicted CD3 vs predicted CD19 for true T cells (blue) and true B cells (red).**
+- Train draw 1 → test draw 0 (b): T and B cells lie on opposite arms. B vs T AUROC is .95 (39 B, 89 T).
+- Train draw 0 → test draw 1 (c): 67 of 692 true T cells get high predicted CD19 and higher predicted HLA-DR. They are spread over 63 fields of view and have clearly positive CD3 labels, so this is a model error, not a label artefact. Only 10 B cells exist in this test set, and AUROC is .70.
+
+**d. Does each marker detect its own positives?** AUROC on the marker's own slide, train draw 1 → 0 / train draw 0 → 1:
+
+| Test | AUROC |
+|---|---|
+| CD3+ vs CD3− | .99 / .86 |
+| CD19+ vs CD19− | .83 / .87 |
+| CD56+ vs CD56− | .91 / .94 |
+| CD14+ vs CD14− | .98 / .97 |
+| CD16+ vs CD16− | .97 / .97 |
+| CD123+ vs CD123− | .87 / .86 |
+| B vs T (predicted CD19 − CD3) | .95 / .70 |
+
+**e. Are predicted CD3 and CD19 anticorrelated?**
+- Over all cells: no, r +.23 / +.18. Both are lymphocyte markers, so both are higher in lymphocytes than in granulocytes and monocytes.
+- Within gated lymphocytes: yes, r −.54 (draw 0, the only draw with gated lymphocytes).
+- Within true T + B cells: −.49 in train draw 1 → 0, and +.01 in train draw 0 → 1.
+
+**f. B vs T AUROC for the record ensemble and each of its 8 members:**
+- Every member separates B from T in train draw 1 → 0 (.92–.95).
+- In train draw 0 → 1, members score .63–.76.
+
+**Says:**
+- Lineage identity is decoded well for the large, morphologically distinct populations: granulocytes (CD16), monocytes (CD14) and T cells (CD3).
+- CD3 and CD19 come out anticorrelated within lymphocytes, as expected, but not over all white blood cells.
+- T vs B separation works in one direction (.95) but drops to .70 in the other, where about 10% of T cells look B-like to the model.
+
+## Figure 12: CD3–CD19 exclusivity where every marker is measured: ImageStream sandbox (`fig12_lineages_sandbox`), N097
+
+The ImageStream sandbox (S-BIAD452: brightfield and side-scatter images) measures all 9 markers on every cell. Each of the 3 donors is held out once (N080 ResNet-50 models). Cell types come from gates on the held-out donor's own measured labels.
+
+**a–c. Lymphocytes of held-out donor 0, CD3 vs CD19.**
+- Measured (a): T cells (CD3 high, CD19 low) and B cells (CD3 low, CD19 high) form two separate clouds.
+- Predicted, both training regimes (b, c): one continuous anti-diagonal band. The model places each cell on a single "T ↔ B" axis instead of predicting two populations.
+
+**d. r(CD3, CD19) within lymphocytes** (rings are donors):
+- Measured: −.63 / −.88 / −.68.
+- Predicted: −.84 to −.93 in both regimes, so the predictions are *more* anticorrelated than the truth.
+
+**e. B vs T AUROC** (predicted CD19 − CD3):
+- All-marker training: .74 / .94 / .46. One-marker training: .81 / .90 / .51.
+- The anticorrelation is present, but a cell's position on the axis only partly tracks its true lineage.
+
+**f. Accuracy of the predicted CD3 and CD19 over all held-out cells:**
+- CD3: r .58–.89.
+- CD19: r .53 / .66 / .09 with all-marker training. On donor 2 the model barely predicts CD19, so B vs T there is at chance.
+
+**g–i. Mean z-score of every marker per gated type**, measured (g) vs predicted with all-marker (h) or one-marker (i) training:
+- The predictions reproduce the granulocyte / monocyte / lymphocyte split.
+- They compress the lymphocyte subtypes (CD4 T, CD8 T, B, NK) toward each other.
+
+All stars are paired t-tests, Holm-corrected; with 3 donors, power is low.
+
+**Says:** the exclusivity of CD3 and CD19 is learned as a direction in the output space, even too strongly. Assigning individual lymphocytes to T or B is limited by how well CD19 itself is predicted, and that is donor-dependent.

@@ -1,0 +1,5 @@
+slide 8 n 10210 label-only QC r(grp3,grp45 | grp16 top40%) = 0.09
+slide 14 n 13675 label-only QC r(grp3,grp45 | grp16 top40%) = 0.62
+slide 13 n 13399 label-only QC r(grp3,grp45 | grp16 top40%) = 0.14
+GOAL, grp:CD45 b01 scored on rep1 only: 0.7068
+GOAL, all pooled b01 on rep1 only: 0.7090

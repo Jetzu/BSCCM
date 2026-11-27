@@ -1,0 +1,199 @@
+direction,model,test,auroc
+b10,E8 record,CD3+ vs CD3- (own slide),0.9929879317519766
+b10,E8 record,CD19+ vs CD19- (own slide),0.8313797313797314
+b10,E8 record,CD56+ vs CD56- (own slide),0.9142324051039242
+b10,E8 record,CD14+ vs CD14- (own slide),0.9828359981498381
+b10,E8 record,CD16+ vs CD16- (own slide),0.9696926579396699
+b10,E8 record,CD123+ vs CD123- (own slide),0.8671977401129943
+b10,E8 record,HLA-DR+ vs HLA-DR- (own slide),0.8875890263029338
+b10,E8 record,CD45+ vs CD45- (own slide),0.9029250525216611
+b10,E8 record,B vs T by predicted CD19,0.7332180927686546
+b10,E8 record,T vs B by predicted CD3,0.9337366753097089
+b10,E8 record,B vs T by predicted CD19 - CD3,0.9467012388360702
+b10,n048_v9_base,CD3+ vs CD3- (own slide),0.9901581356637537
+b10,n048_v9_base,CD19+ vs CD19- (own slide),0.8655677655677656
+b10,n048_v9_base,CD56+ vs CD56- (own slide),0.8660621137950405
+b10,n048_v9_base,CD14+ vs CD14- (own slide),0.9782460131928211
+b10,n048_v9_base,CD16+ vs CD16- (own slide),0.9568827863150572
+b10,n048_v9_base,CD123+ vs CD123- (own slide),0.8521920903954803
+b10,n048_v9_base,HLA-DR+ vs HLA-DR- (own slide),0.8822770164296917
+b10,n048_v9_base,CD45+ vs CD45- (own slide),0.8996867347065625
+b10,n048_v9_base,B vs T by predicted CD19,0.7363872082973205
+b10,n048_v9_base,T vs B by predicted CD3,0.909536156727168
+b10,n048_v9_base,B vs T by predicted CD19 - CD3,0.9250936329588015
+b10,n048_v9_zoom2,CD3+ vs CD3- (own slide),0.9921556387848522
+b10,n048_v9_zoom2,CD19+ vs CD19- (own slide),0.8426739926739927
+b10,n048_v9_zoom2,CD56+ vs CD56- (own slide),0.9091766310889976
+b10,n048_v9_zoom2,CD14+ vs CD14- (own slide),0.9821755236916564
+b10,n048_v9_zoom2,CD16+ vs CD16- (own slide),0.9669575665591602
+b10,n048_v9_zoom2,CD123+ vs CD123- (own slide),0.8379322033898305
+b10,n048_v9_zoom2,HLA-DR+ vs HLA-DR- (own slide),0.894140333736148
+b10,n048_v9_zoom2,CD45+ vs CD45- (own slide),0.9035901197120944
+b10,n048_v9_zoom2,B vs T by predicted CD19,0.7167963123019302
+b10,n048_v9_zoom2,T vs B by predicted CD3,0.9011812157879574
+b10,n048_v9_zoom2,B vs T by predicted CD19 - CD3,0.9176029962546817
+b10,n053_cytoland,CD3+ vs CD3- (own slide),0.9906575114440284
+b10,n053_cytoland,CD19+ vs CD19- (own slide),0.7864061864061864
+b10,n053_cytoland,CD56+ vs CD56- (own slide),0.854887248214429
+b10,n053_cytoland,CD14+ vs CD14- (own slide),0.9777251342825831
+b10,n053_cytoland,CD16+ vs CD16- (own slide),0.9631553152469486
+b10,n053_cytoland,CD123+ vs CD123- (own slide),0.8271186440677964
+b10,n053_cytoland,HLA-DR+ vs HLA-DR- (own slide),0.8813873961895456
+b10,n053_cytoland,CD45+ vs CD45- (own slide),0.9037703715674452
+b10,n053_cytoland,B vs T by predicted CD19,0.6995102276001152
+b10,n053_cytoland,T vs B by predicted CD3,0.9288389513108614
+b10,n053_cytoland,B vs T by predicted CD19 - CD3,0.9369057908383751
+b10,comp_base,CD3+ vs CD3- (own slide),0.9917811069496463
+b10,comp_base,CD19+ vs CD19- (own slide),0.8150793650793651
+b10,comp_base,CD56+ vs CD56- (own slide),0.9193283043094455
+b10,comp_base,CD14+ vs CD14- (own slide),0.9752645023106188
+b10,comp_base,CD16+ vs CD16- (own slide),0.9666769430215646
+b10,comp_base,CD123+ vs CD123- (own slide),0.8172881355932203
+b10,comp_base,HLA-DR+ vs HLA-DR- (own slide),0.8688350088704907
+b10,comp_base,CD45+ vs CD45- (own slide),0.9000783163233593
+b10,comp_base,B vs T by predicted CD19,0.7265917602996255
+b10,comp_base,T vs B by predicted CD3,0.8945548833189281
+b10,comp_base,B vs T by predicted CD19 - CD3,0.9268222414289831
+b10,comp_z2,CD3+ vs CD3- (own slide),0.9908447773616313
+b10,comp_z2,CD19+ vs CD19- (own slide),0.822039072039072
+b10,comp_z2,CD56+ vs CD56- (own slide),0.8906588556295642
+b10,comp_z2,CD14+ vs CD14- (own slide),0.968759766479567
+b10,comp_z2,CD16+ vs CD16- (own slide),0.9610051856067793
+b10,comp_z2,CD123+ vs CD123- (own slide),0.7811864406779662
+b10,comp_z2,HLA-DR+ vs HLA-DR- (own slide),0.8904687218779729
+b10,comp_z2,CD45+ vs CD45- (own slide),0.8999726514426365
+b10,comp_z2,B vs T by predicted CD19,0.7300489772399884
+b10,comp_z2,T vs B by predicted CD3,0.9253817343704984
+b10,comp_z2,B vs T by predicted CD19 - CD3,0.926822241428983
+b10,comp_cyto,CD3+ vs CD3- (own slide),0.9921556387848522
+b10,comp_cyto,CD19+ vs CD19- (own slide),0.7922669922669923
+b10,comp_cyto,CD56+ vs CD56- (own slide),0.8426891902736537
+b10,comp_cyto,CD14+ vs CD14- (own slide),0.979329441326116
+b10,comp_cyto,CD16+ vs CD16- (own slide),0.9576890849301207
+b10,comp_cyto,CD123+ vs CD123- (own slide),0.8253107344632769
+b10,comp_cyto,HLA-DR+ vs HLA-DR- (own slide),0.8396009564703159
+b10,comp_cyto,CD45+ vs CD45- (own slide),0.8992392128587944
+b10,comp_cyto,B vs T by predicted CD19,0.7012388360702968
+b10,comp_cyto,T vs B by predicted CD3,0.9173148948429848
+b10,comp_cyto,B vs T by predicted CD19 - CD3,0.9363295880149812
+b10,cnxs_plain,CD3+ vs CD3- (own slide),0.9901789429879317
+b10,cnxs_plain,CD19+ vs CD19- (own slide),0.8452991452991454
+b10,cnxs_plain,CD56+ vs CD56- (own slide),0.8363092849691035
+b10,cnxs_plain,CD14+ vs CD14- (own slide),0.9784564482725572
+b10,cnxs_plain,CD16+ vs CD16- (own slide),0.9671868083222666
+b10,cnxs_plain,CD123+ vs CD123- (own slide),0.8597853107344632
+b10,cnxs_plain,HLA-DR+ vs HLA-DR- (own slide),0.8338672768878718
+b10,cnxs_plain,CD45+ vs CD45- (own slide),0.9027323695038721
+b10,cnxs_plain,B vs T by predicted CD19,0.7623163353500432
+b10,cnxs_plain,T vs B by predicted CD3,0.9461250360126764
+b10,cnxs_plain,B vs T by predicted CD19 - CD3,0.9495822529530394
+b10,cnxs_comp,CD3+ vs CD3- (own slide),0.9916562630045777
+b10,cnxs_comp,CD19+ vs CD19- (own slide),0.8214896214896215
+b10,cnxs_comp,CD56+ vs CD56- (own slide),0.8468220849049033
+b10,cnxs_comp,CD14+ vs CD14- (own slide),0.9764500227103204
+b10,cnxs_comp,CD16+ vs CD16- (own slide),0.9612186175931197
+b10,cnxs_comp,CD123+ vs CD123- (own slide),0.8001129943502826
+b10,cnxs_comp,HLA-DR+ vs HLA-DR- (own slide),0.7679119635924202
+b10,cnxs_comp,CD45+ vs CD45- (own slide),0.9002088435289584
+b10,cnxs_comp,B vs T by predicted CD19,0.7464707577067128
+b10,cnxs_comp,T vs B by predicted CD3,0.908959953903774
+b10,cnxs_comp,B vs T by predicted CD19 - CD3,0.9288389513108614
+b01,E8 record,CD3+ vs CD3- (own slide),0.8642843900159493
+b01,E8 record,CD19+ vs CD19- (own slide),0.8724719101123596
+b01,E8 record,CD56+ vs CD56- (own slide),0.9421160714285715
+b01,E8 record,CD14+ vs CD14- (own slide),0.9728357833898731
+b01,E8 record,CD16+ vs CD16- (own slide),0.9740937185582573
+b01,E8 record,CD123+ vs CD123- (own slide),0.8617074736871494
+b01,E8 record,HLA-DR+ vs HLA-DR- (own slide),0.8253794369645044
+b01,E8 record,CD45+ vs CD45- (own slide),0.9732150633792312
+b01,E8 record,B vs T by predicted CD19,0.6557803468208092
+b01,E8 record,T vs B by predicted CD3,0.6485549132947978
+b01,E8 record,B vs T by predicted CD19 - CD3,0.6952312138728324
+b01,n048_v9_base,CD3+ vs CD3- (own slide),0.8482792293548158
+b01,n048_v9_base,CD19+ vs CD19- (own slide),0.8301966292134831
+b01,n048_v9_base,CD56+ vs CD56- (own slide),0.9115267857142857
+b01,n048_v9_base,CD14+ vs CD14- (own slide),0.9690297389505832
+b01,n048_v9_base,CD16+ vs CD16- (own slide),0.9703993291122004
+b01,n048_v9_base,CD123+ vs CD123- (own slide),0.7894622965465256
+b01,n048_v9_base,HLA-DR+ vs HLA-DR- (own slide),0.80859241126071
+b01,n048_v9_base,CD45+ vs CD45- (own slide),0.9712557788975058
+b01,n048_v9_base,B vs T by predicted CD19,0.651878612716763
+b01,n048_v9_base,T vs B by predicted CD3,0.6830924855491329
+b01,n048_v9_base,B vs T by predicted CD19 - CD3,0.7219653179190751
+b01,n048_v9_zoom2,CD3+ vs CD3- (own slide),0.8625300953909607
+b01,n048_v9_zoom2,CD19+ vs CD19- (own slide),0.8161516853932584
+b01,n048_v9_zoom2,CD56+ vs CD56- (own slide),0.9194776785714286
+b01,n048_v9_zoom2,CD14+ vs CD14- (own slide),0.967417630742169
+b01,n048_v9_zoom2,CD16+ vs CD16- (own slide),0.9698012318550224
+b01,n048_v9_zoom2,CD123+ vs CD123- (own slide),0.7883525503224545
+b01,n048_v9_zoom2,HLA-DR+ vs HLA-DR- (own slide),0.8162403100775194
+b01,n048_v9_zoom2,CD45+ vs CD45- (own slide),0.9722009266932676
+b01,n048_v9_zoom2,B vs T by predicted CD19,0.6517341040462428
+b01,n048_v9_zoom2,T vs B by predicted CD3,0.5998554913294798
+b01,n048_v9_zoom2,B vs T by predicted CD19 - CD3,0.6302023121387283
+b01,n053_cytoland,CD3+ vs CD3- (own slide),0.8426296768491522
+b01,n053_cytoland,CD19+ vs CD19- (own slide),0.8478932584269663
+b01,n053_cytoland,CD56+ vs CD56- (own slide),0.9334732142857143
+b01,n053_cytoland,CD14+ vs CD14- (own slide),0.9656992084432718
+b01,n053_cytoland,CD16+ vs CD16- (own slide),0.96852225401842
+b01,n053_cytoland,CD123+ vs CD123- (own slide),0.7554579971523493
+b01,n053_cytoland,HLA-DR+ vs HLA-DR- (own slide),0.8160057119543043
+b01,n053_cytoland,CD45+ vs CD45- (own slide),0.9664291436667768
+b01,n053_cytoland,B vs T by predicted CD19,0.6872832369942197
+b01,n053_cytoland,T vs B by predicted CD3,0.6559248554913295
+b01,n053_cytoland,B vs T by predicted CD19 - CD3,0.724421965317919
+b01,comp_base,CD3+ vs CD3- (own slide),0.8537021140424841
+b01,comp_base,CD19+ vs CD19- (own slide),0.7317415730337079
+b01,comp_base,CD56+ vs CD56- (own slide),0.9052544642857143
+b01,comp_base,CD14+ vs CD14- (own slide),0.9755033005692637
+b01,comp_base,CD16+ vs CD16- (own slide),0.9748064388770077
+b01,comp_base,CD123+ vs CD123- (own slide),0.8417111030458695
+b01,comp_base,HLA-DR+ vs HLA-DR- (own slide),0.8174337005303958
+b01,comp_base,CD45+ vs CD45- (own slide),0.9697466469243459
+b01,comp_base,B vs T by predicted CD19,0.5602601156069364
+b01,comp_base,T vs B by predicted CD3,0.633092485549133
+b01,comp_base,B vs T by predicted CD19 - CD3,0.6273121387283237
+b01,comp_z2,CD3+ vs CD3- (own slide),0.8473744628544144
+b01,comp_z2,CD19+ vs CD19- (own slide),0.7275280898876405
+b01,comp_z2,CD56+ vs CD56- (own slide),0.9251919642857142
+b01,comp_z2,CD14+ vs CD14- (own slide),0.9679414692607304
+b01,comp_z2,CD16+ vs CD16- (own slide),0.9714774716699797
+b01,comp_z2,CD123+ vs CD123- (own slide),0.8178620285323431
+b01,comp_z2,HLA-DR+ vs HLA-DR- (own slide),0.8273623011015913
+b01,comp_z2,CD45+ vs CD45- (own slide),0.971715417378474
+b01,comp_z2,B vs T by predicted CD19,0.5637283236994219
+b01,comp_z2,T vs B by predicted CD3,0.5686416184971098
+b01,comp_z2,B vs T by predicted CD19 - CD3,0.6473988439306358
+b01,comp_cyto,CD3+ vs CD3- (own slide),0.8503789225596066
+b01,comp_cyto,CD19+ vs CD19- (own slide),0.7901685393258426
+b01,comp_cyto,CD56+ vs CD56- (own slide),0.9138660714285713
+b01,comp_cyto,CD14+ vs CD14- (own slide),0.9733402920738012
+b01,comp_cyto,CD16+ vs CD16- (own slide),0.9680490665078272
+b01,comp_cyto,CD123+ vs CD123- (own slide),0.7333607861749352
+b01,comp_cyto,HLA-DR+ vs HLA-DR- (own slide),0.7993370053039575
+b01,comp_cyto,CD45+ vs CD45- (own slide),0.9676821543850632
+b01,comp_cyto,B vs T by predicted CD19,0.7114161849710983
+b01,comp_cyto,T vs B by predicted CD3,0.6901734104046242
+b01,comp_cyto,B vs T by predicted CD19 - CD3,0.7439306358381503
+b01,cnxs_plain,CD3+ vs CD3- (own slide),0.8556678383128296
+b01,cnxs_plain,CD19+ vs CD19- (own slide),0.8330056179775281
+b01,cnxs_plain,CD56+ vs CD56- (own slide),0.9374776785714285
+b01,cnxs_plain,CD14+ vs CD14- (own slide),0.9683435298211025
+b01,cnxs_plain,CD16+ vs CD16- (own slide),0.9670801587480418
+b01,cnxs_plain,CD123+ vs CD123- (own slide),0.8620704095591726
+b01,cnxs_plain,HLA-DR+ vs HLA-DR- (own slide),0.8158710730314157
+b01,cnxs_plain,CD45+ vs CD45- (own slide),0.9704451594376371
+b01,cnxs_plain,B vs T by predicted CD19,0.6619942196531792
+b01,cnxs_plain,T vs B by predicted CD3,0.6400289017341041
+b01,cnxs_plain,B vs T by predicted CD19 - CD3,0.7595375722543353
+b01,cnxs_comp,CD3+ vs CD3- (own slide),0.8451363562481587
+b01,cnxs_comp,CD19+ vs CD19- (own slide),0.7393258426966293
+b01,cnxs_comp,CD56+ vs CD56- (own slide),0.8994910714285714
+b01,cnxs_comp,CD14+ vs CD14- (own slide),0.9651637720239303
+b01,cnxs_comp,CD16+ vs CD16- (own slide),0.9641185731486173
+b01,cnxs_comp,CD123+ vs CD123- (own slide),0.7762919121136826
+b01,cnxs_comp,HLA-DR+ vs HLA-DR- (own slide),0.811421868625051
+b01,cnxs_comp,CD45+ vs CD45- (own slide),0.969285283721123
+b01,cnxs_comp,B vs T by predicted CD19,0.6339595375722543
+b01,cnxs_comp,T vs B by predicted CD3,0.6105491329479767
+b01,cnxs_comp,B vs T by predicted CD19 - CD3,0.6499999999999999

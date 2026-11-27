@@ -1,0 +1,46 @@
+direction,model,cells,n,r
+b10,E8 record,all test cells,13113,0.23181843334311006
+b10,E8 record,gated lymphocytes,371,-0.5347284493995694
+b10,E8 record,true T + B cells,128,-0.49290831390782214
+b10,n048_v9_base,all test cells,13113,0.24431400370494466
+b10,n048_v9_base,gated lymphocytes,371,-0.4900508261479468
+b10,n048_v9_base,true T + B cells,128,-0.46073963394000045
+b10,n048_v9_zoom2,all test cells,13113,0.2365912417394355
+b10,n048_v9_zoom2,gated lymphocytes,371,-0.5328532164277673
+b10,n048_v9_zoom2,true T + B cells,128,-0.4678555166101804
+b10,n053_cytoland,all test cells,13113,0.1721439086137962
+b10,n053_cytoland,gated lymphocytes,371,-0.519629002969206
+b10,n053_cytoland,true T + B cells,128,-0.45997495468532257
+b10,comp_base,all test cells,13113,0.2589513920627487
+b10,comp_base,gated lymphocytes,371,-0.5151711834671063
+b10,comp_base,true T + B cells,128,-0.4117002015068445
+b10,comp_z2,all test cells,13113,0.2469278441563322
+b10,comp_z2,gated lymphocytes,371,-0.6080959163559619
+b10,comp_z2,true T + B cells,128,-0.47988708443696476
+b10,comp_cyto,all test cells,13113,0.16199741376455876
+b10,comp_cyto,gated lymphocytes,371,-0.3689481470770706
+b10,comp_cyto,true T + B cells,128,-0.44930739998283037
+b10,cnxs_plain,all test cells,13113,0.1085306831742291
+b10,cnxs_plain,gated lymphocytes,371,-0.5349264462082187
+b10,cnxs_plain,true T + B cells,128,-0.5952960411338851
+b10,cnxs_comp,all test cells,13113,0.09111771130182239
+b10,cnxs_comp,gated lymphocytes,371,-0.4900485834419024
+b10,cnxs_comp,true T + B cells,128,-0.5470239229048525
+b01,E8 record,all test cells,26322,0.18090672687980494
+b01,E8 record,true T + B cells,702,0.006127413052956697
+b01,n048_v9_base,all test cells,26322,0.1386854804003492
+b01,n048_v9_base,true T + B cells,702,-0.03628668498531771
+b01,n048_v9_zoom2,all test cells,26322,0.09995569133115997
+b01,n048_v9_zoom2,true T + B cells,702,-0.09095026633720946
+b01,n053_cytoland,all test cells,26322,0.1171949976179136
+b01,n053_cytoland,true T + B cells,702,-0.07082068743455094
+b01,comp_base,all test cells,26322,0.14443710561087536
+b01,comp_base,true T + B cells,702,-0.06560886889096966
+b01,comp_z2,all test cells,26322,0.12384429489852299
+b01,comp_z2,true T + B cells,702,-0.05895898465982623
+b01,comp_cyto,all test cells,26322,0.11124755765769398
+b01,comp_cyto,true T + B cells,702,-0.04458743375698962
+b01,cnxs_plain,all test cells,26322,0.20089736245785475
+b01,cnxs_plain,true T + B cells,702,0.07285522078263329
+b01,cnxs_comp,all test cells,26322,0.11532966242490346
+b01,cnxs_comp,true T + B cells,702,-0.01404908384644374

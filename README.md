@@ -678,6 +678,8 @@ The extension added four architecture and alignment figures. The nine reviewed f
 
 **[N087] · Test decoders and autoencoders (complete).** On frozen fine-tuned features no decoder beats the model's own linear head (.673; ridge .670, kNN .664, MLP .661), and the predictions need about 8-12 dimensions (rank 4 .617, rank 8 .656). Frozen self-supervised features (MLP .603) carry no more marker information than 144 hand-made image statistics (.607); a 64-d image autoencoder reaches .624; fine-tuning is worth +.05-.07. Autoencoders cluster held-out cells by cell type better than the self-supervised features (kNN balanced accuracy .34-.35 vs .31) but no better than image statistics (.35), so they mostly encode brightness and scatter. Learned marker priors from another donor's joint labels did not meet their pre-registered bar in the ImageStream sandbox (best: autoencoder prior, co-expression error .212 vs .229 single, bar .21), and a flow-matching decoder fixed the spread but not co-expression. With the same number of labels, all-marker training on 1/9 of the cells gave co-expression error .174 vs .229, so joint measurement, not label count, carries the co-expression. [N087] · [Figure 10](figures/overview/fig10_decoders_autoencoders.png)
 
+**[N097] · Lineage separation of decoded markers (user 11-27).** On BSCCM the record ensemble detects each lineage on its own slide (AUROC CD3 .99/.86, CD14 .98/.97, CD16 .97/.97, CD19 .83/.87) and separates true B from true T cells with predicted CD19 − CD3 at .95 (train draw 1 → 0) but only .70 the other way (10 B cells; about 10% of T cells look B-like). Predicted CD3 and CD19 are anticorrelated within lymphocytes (−.54) but positively correlated over all white cells (+.2), as both are lymphocyte markers. In the ImageStream sandbox, where both are measured on every cell, the predictions are more anticorrelated than the truth (−.84..−.93 vs −.63..−.88) because the model places lymphocytes on one T↔B axis; T-vs-B AUROC still ranges .46–.94 across held-out donors because predicted CD19 itself fails on one donor (r .09). [N097] · [Figure 11](figures/overview/fig11_lineages_bsccm.png) · [Figure 12](figures/overview/fig12_lineages_sandbox.png)
+
 | Arm | Comparison | Jobs |
 |---|---|---|
 | A · Frozen-feature readouts | Export seed-0 ResNet features in each direction. Compare the original head, ridge, reduced rank, multilayer perceptron (MLP) and nearest neighbours on frozen features. | Exports 1442342 and 1442343, decoder sweep 1442606 |
@@ -764,6 +766,18 @@ Clinical adaptation and test-draw normalization are compared with unadapted pred
 Bottleneck rank vs GOAL, frozen representations with an MLP decoder, cell-type clustering of held-out cells, and learned marker priors in the ImageStream sandbox (N087).
 
 ![Decoder capacity, autoencoder representations, clustering and marker priors](figures/overview/fig10_decoders_autoencoders.png)
+
+### Figure 11 · Cell lineages on BSCCM
+
+Predicted marker profile of each true lineage, predicted CD3 vs CD19 on true T and B cells, lineage AUROCs and the predicted CD3–CD19 correlation for the record ensemble (N097).
+
+![Lineage separation of the record ensemble on BSCCM](figures/overview/fig11_lineages_bsccm.png)
+
+### Figure 12 · CD3–CD19 exclusivity where every marker is measured
+
+ImageStream sandbox: measured vs predicted CD3/CD19 in lymphocytes, within-lymphocyte correlation, T-vs-B AUROC and per-type marker profiles (N097).
+
+![CD3-CD19 exclusivity and lineage profiles in the ImageStream sandbox](figures/overview/fig12_lineages_sandbox.png)
 
 ## Current work and open questions
 
@@ -897,3 +911,4 @@ Other open ideas include a zoomed ConvNeXt-S member, ImageStream pretraining wit
 [N091]: .agent-research/notebook/INDEX.md?plain=1#L69
 [N092]: .agent-research/notebook/INDEX.md?plain=1#L70
 [N093]: .agent-research/notebook/INDEX.md?plain=1#L71
+[N097]: .agent-research/notebook/INDEX.md?plain=1#L75

@@ -1,0 +1,239 @@
+{
+ "png": "/home/hpc/v181bb/v181bb10/BSCCM/figures/overview/fig11_lineages_bsccm.png",
+ "svg": "/home/hpc/v181bb/v181bb10/BSCCM/figures/overview/fig11_lineages_bsccm.svg",
+ "created": "2026-11-27T16:54:17",
+ "command": [
+  "/home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python",
+  "figures/overview/make_lineage.py"
+ ],
+ "cwd": "/home/hpc/v181bb/v181bb10/BSCCM",
+ "source": [
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N097-lineage-separation-of-decoded-markers-us/bsccm_lineage_profiles.csv",
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N097-lineage-separation-of-decoded-markers-us/bsccm_auroc.csv",
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N097-lineage-separation-of-decoded-markers-us/bsccm_cd3_cd19_corr.csv",
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N097-lineage-separation-of-decoded-markers-us/bsccm_tb_cells.csv",
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N097-lineage-separation-of-decoded-markers-us/n097_lineage.py"
+ ],
+ "notes": "N097. BSCCM never measures two single markers on one cell, so lineages are defined per single-stain slide of the TEST draw: positives = label above the 2-component GMM valley (CD16) or above max(valley, median + 3 MAD) for the rare-positive markers (evaluation only). Model = N085 record ensemble E8 (GOAL .6967), both directions. a mean predicted z-score (z over all test cells of a direction, averaged over the 2 directions) of every marker on the true positives of each lineage: T cells get high predicted CD3 and low CD19/CD14/CD16, monocytes high CD14/HLA-DR, CD16+ cells (neutrophils) high CD16; B cells are not cleanly separated from T cells. b, c predicted CD3 vs CD19 on true T (CD3+ on the CD3 slide) and true B (CD19+ on the CD19 slide) cells, b = train draw 1 -> test draw 0 (b10), c = b01 (counts {('b01', 'B (CD19+ slide)'): 10, ('b01', 'CD19- (CD19 slide)'): 712, ('b01', 'CD3- (CD3 slide)'): 2276, ('b01', 'T (CD3+ slide)'): 692, ('b10', 'B (CD19+ slide)'): 39, ('b10', 'CD19- (CD19 slide)'): 1260, ('b10', 'CD3- (CD3 slide)'): 540, ('b10', 'T (CD3+ slide)'): 89}); in c 67 of 692 measured-CD3+ cells get predicted CD19 z > 2 and predicted HLA-DR above the other T cells, spread over 63 of 249 fields of view with clearly positive CD3 labels (median 1.67) -> a model error (B-like T cells), not a field-of-view label artefact. d AUROC: each marker detects its own positives (CD3 .99/.86, CD14 .98/.97, CD16 .97/.97; CD19 .83/.87, CD123 .87/.86 for b10/b01); B vs T by predicted CD19 - CD3 .95 (b10, 39 B vs 89 T) and .70 (b01, only 10 B vs 692 T). e correlation of the predicted CD3 and CD19 outputs: positive over all cells (both are lymphocyte markers, +.23/+.18), negative within gated lymphocytes (-.54, draw 0 only) and within true T+B cells in b10 (-.49), ~0 in b01 (+.01). f B vs T AUROC for the record ensemble and each of its 8 members (rings = directions; R50 = ResNet-50, comp. = composite heads, CNX-S = ConvNeXt-S).",
+ "page": "letter",
+ "width_in": 8.5,
+ "height_in": 5.9055,
+ "png_px": [
+  3840,
+  2667
+ ],
+ "significance": "two-sided; Holm-corrected over all comparisons of a panel (one family per panel); * <0.05 ** <0.01 *** <0.001 **** <0.0001",
+ "panels": [
+  {
+   "panel": "b",
+   "kind": "lines",
+   "series": [
+    {
+     "label": "T cells",
+     "color": "#3A6C9E",
+     "points": 89
+    },
+    {
+     "label": "B cells",
+     "color": "#B94A58",
+     "points": 39
+    }
+   ],
+   "xlabel": "Predicted CD3 (z)",
+   "ylabel": "Predicted CD19 (z)"
+  },
+  {
+   "panel": "c",
+   "kind": "lines",
+   "series": [
+    {
+     "label": "T cells",
+     "color": "#3A6C9E",
+     "points": 692
+    },
+    {
+     "label": "B cells",
+     "color": "#B94A58",
+     "points": 10
+    }
+   ],
+   "xlabel": "Predicted CD3 (z)",
+   "ylabel": "Predicted CD19 (z)"
+  },
+  {
+   "panel": "d",
+   "kind": "bar",
+   "groups": [
+    "CD3+ vs -",
+    "CD19+ vs -",
+    "CD56+ vs -",
+    "CD14+ vs -",
+    "CD16+ vs -",
+    "CD123+ vs -",
+    "B vs T"
+   ],
+   "colors": [
+    "#3A6C9E",
+    "#3A6C9E",
+    "#3A6C9E",
+    "#3A6C9E",
+    "#3A6C9E",
+    "#3A6C9E",
+    "#B94A58"
+   ],
+   "n": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "mean": [
+    0.928636160883963,
+    0.8519258207460455,
+    0.9281742382662479,
+    0.9778358907698557,
+    0.9718931882489636,
+    0.8644526069000719,
+    0.8209662263544513
+   ],
+   "sd": [
+    0.0910071471242708,
+    0.029056558235571003,
+    0.01971672954250111,
+    0.0070712196700929274,
+    0.0031120198078161054,
+    0.0038822046202357835,
+    0.17781615991665584
+   ],
+   "median": [
+    0.928636160883963,
+    0.8519258207460455,
+    0.9281742382662479,
+    0.9778358907698557,
+    0.9718931882489636,
+    0.8644526069000719,
+    0.8209662263544513
+   ],
+   "whisker": "sd",
+   "stats": [],
+   "no_stats_reason": "one AUROC per direction (rings = 2 directions); dashed = chance",
+   "ylabel": "AUROC (record ensemble)"
+  },
+  {
+   "panel": "e",
+   "kind": "bar",
+   "groups": [
+    "all cells",
+    "gated\nlymphocytes",
+    "true T + B\ncells"
+   ],
+   "colors": [
+    "#767E86",
+    "#3A6C9E",
+    "#B94A58"
+   ],
+   "n": [
+    2,
+    1,
+    2
+   ],
+   "mean": [
+    0.20636258011145747,
+    -0.5347284493995694,
+    -0.24339045042743274
+   ],
+   "sd": [
+    0.03600001288198201,
+    null,
+    0.35287154658832504
+   ],
+   "median": [
+    0.20636258011145747,
+    -0.5347284493995694,
+    -0.24339045042743274
+   ],
+   "whisker": "sd",
+   "stats": [],
+   "no_stats_reason": "one r per direction (rings); gated lymphocytes exist only on the draw-0 all-marker slide (1 value)",
+   "ylabel": "r(predicted CD3, predicted CD19)"
+  },
+  {
+   "panel": "f",
+   "kind": "bar",
+   "groups": [
+    "record ens.",
+    "R50",
+    "R50 zoom",
+    "Cytoland",
+    "comp.",
+    "comp. zoom",
+    "comp. Cyto",
+    "CNX-S",
+    "CNX-S comp."
+   ],
+   "colors": [
+    "#3A6C9E",
+    "#767E86",
+    "#767E86",
+    "#767E86",
+    "#767E86",
+    "#767E86",
+    "#767E86",
+    "#767E86",
+    "#767E86"
+   ],
+   "n": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "mean": [
+    0.8209662263544513,
+    0.8235294754389384,
+    0.7739026541967049,
+    0.8306638780781471,
+    0.7770671900786534,
+    0.7871105426798094,
+    0.8401301119265658,
+    0.8545599126036874,
+    0.7894194756554307
+   ],
+   "sd": [
+    0.17781615991665584,
+    0.14363340901558797,
+    0.2032229726560434,
+    0.15024875391797377,
+    0.2117856246535156,
+    0.19758217919326543,
+    0.1360466037774234,
+    0.1343818824504859,
+    0.19716891333085568
+   ],
+   "median": [
+    0.8209662263544513,
+    0.8235294754389384,
+    0.7739026541967049,
+    0.8306638780781471,
+    0.7770671900786534,
+    0.7871105426798094,
+    0.8401301119265658,
+    0.8545599126036874,
+    0.7894194756554307
+   ],
+   "whisker": "sd",
+   "stats": [],
+   "no_stats_reason": "one AUROC per direction (rings); b01 has only 10 B cells",
+   "ylabel": "AUROC B vs T (pred. CD19 - CD3)"
+  }
+ ],
+ "matplotlib": "3.11.0"
+}

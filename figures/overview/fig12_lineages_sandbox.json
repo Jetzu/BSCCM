@@ -1,0 +1,198 @@
+{
+ "png": "/home/hpc/v181bb/v181bb10/BSCCM/figures/overview/fig12_lineages_sandbox.png",
+ "svg": "/home/hpc/v181bb/v181bb10/BSCCM/figures/overview/fig12_lineages_sandbox.svg",
+ "created": "2026-11-27T16:54:20",
+ "command": [
+  "/home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python",
+  "figures/overview/make_lineage.py"
+ ],
+ "cwd": "/home/hpc/v181bb/v181bb10/BSCCM",
+ "source": [
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N097-lineage-separation-of-decoded-markers-us/sandbox_cd3_cd19.csv",
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N097-lineage-separation-of-decoded-markers-us/sandbox_type_profiles.csv",
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N097-lineage-separation-of-decoded-markers-us/sandbox_lymph_cells.csv",
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N097-lineage-separation-of-decoded-markers-us/n097_lineage.py"
+ ],
+ "notes": "N097. ImageStream sandbox (S-BIAD452: brightfield/side-scatter images, 9 markers measured on EVERY cell, 3 donors, each held out once; N080 ResNet-50 models). Types = hierarchical gates on the held-out donor's own measured labels (evaluation only). a-c lymphocytes of held-out donor 0: measured CD3 vs CD19 (T and B cells form two separate clouds) vs predictions of the all-marker and one-marker models (one continuous anti-diagonal band). d r(CD3, CD19) within lymphocytes, rings = 3 donors: measured -.63/-.88/-.68; predictions are MORE anticorrelated (-.84..-.93): the models encode a single lymphocyte axis with CD3 and CD19 at opposite ends. e but where a cell sits on that axis tracks its true lineage only partly: AUROC B vs T .74/.94/.46 (all-marker) and .81/.90/.51 (one-marker); on donor 2 predicted CD19 has r .09 with the measured CD19, so B vs T is at chance. f Pearson r of predicted vs measured CD3 and CD19 over all held-out cells (rings = donors; paired t, Holm). g-i mean z of every marker per gated type: measured vs predicted; predictions reproduce the granulocyte/monocyte/lymphocyte split but compress the lymphocyte subtypes (T4/T8/B/NK) toward each other. Paired t vs measured (d) / all-marker (e), Holm (3 donors: low power). Corr-loss arms (N096) are added when present.",
+ "page": "letter",
+ "width_in": 8.5,
+ "height_in": 7.874,
+ "png_px": [
+  3840,
+  3557
+ ],
+ "significance": "two-sided; Holm-corrected over all comparisons of a panel (one family per panel); * <0.05 ** <0.01 *** <0.001 **** <0.0001",
+ "panels": [
+  {
+   "panel": "d",
+   "kind": "bar",
+   "groups": [
+    "measured",
+    "all-marker\ntraining",
+    "one-marker\ntraining"
+   ],
+   "colors": [
+    "#767E86",
+    "#3A6C9E",
+    "#CF832F"
+   ],
+   "n": [
+    3,
+    3,
+    3
+   ],
+   "mean": [
+    -0.7279937571735312,
+    -0.887279976582688,
+    -0.8744988680661026
+   ],
+   "sd": [
+    0.13473390399756918,
+    0.048085563666894926,
+    0.05393127853214631
+   ],
+   "median": [
+    -0.6752436861642964,
+    -0.8943474005947146,
+    -0.859814464284735
+   ],
+   "whisker": "sd",
+   "stats": [
+    {
+     "test": "paired t-test",
+     "p": 0.19801495178801098,
+     "n_i": 3,
+     "n_j": 3,
+     "p_holm": 0.21140675750775184,
+     "stars": "ns",
+     "a": "measured",
+     "b": "all-marker\ntraining",
+     "reference": "measured"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.10570337875387592,
+     "n_i": 3,
+     "n_j": 3,
+     "p_holm": 0.21140675750775184,
+     "stars": "ns",
+     "a": "measured",
+     "b": "one-marker\ntraining",
+     "reference": "measured"
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "r(CD3, CD19) in lymphocytes"
+  },
+  {
+   "panel": "e",
+   "kind": "bar",
+   "groups": [
+    "all-marker\ntraining",
+    "one-marker\ntraining"
+   ],
+   "colors": [
+    "#3A6C9E",
+    "#CF832F"
+   ],
+   "n": [
+    3,
+    3
+   ],
+   "mean": [
+    0.7122843719711559,
+    0.740198073175567
+   ],
+   "sd": [
+    0.24145925863809087,
+    0.2034477950540123
+   ],
+   "median": [
+    0.7381967320690335,
+    0.8067475429130266
+   ],
+   "whisker": "sd",
+   "stats": [
+    {
+     "test": "paired t-test",
+     "p": 0.48805446204051034,
+     "n_i": 3,
+     "n_j": 3,
+     "p_holm": 0.48805446204051034,
+     "stars": "ns",
+     "a": "all-marker\ntraining",
+     "b": "one-marker\ntraining",
+     "reference": "all-marker\ntraining"
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "AUROC B vs T (pred. CD19 - CD3)"
+  },
+  {
+   "panel": "f",
+   "kind": "bar",
+   "groups": [
+    "CD3, all-marker",
+    "CD3, one-marker",
+    "CD19, all-marker",
+    "CD19, one-marker"
+   ],
+   "colors": [
+    "#3A6C9E",
+    "#CF832F",
+    "#3A6C9E",
+    "#CF832F"
+   ],
+   "n": [
+    3,
+    3,
+    3,
+    3
+   ],
+   "mean": [
+    0.6820174125579858,
+    0.6679600119979755,
+    0.4258649037190248,
+    0.359461999122743
+   ],
+   "sd": [
+    0.17638831132377877,
+    0.17084700596153815,
+    0.29666988521155546,
+    0.2627438986388438
+   ],
+   "median": [
+    0.5843518572348942,
+    0.6705123302642677,
+    0.5299053764255027,
+    0.3004198179171941
+   ],
+   "whisker": "sd",
+   "stats": [
+    {
+     "test": "paired t-test",
+     "p": 0.18704841008158957,
+     "n_i": 3,
+     "n_j": 3,
+     "p_holm": 0.23207960630012692,
+     "stars": "ns",
+     "a": "CD3, all-marker",
+     "b": "CD19, all-marker"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.11603980315006346,
+     "n_i": 3,
+     "n_j": 3,
+     "p_holm": 0.23207960630012692,
+     "stars": "ns",
+     "a": "CD3, one-marker",
+     "b": "CD19, one-marker"
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "Pearson r, predicted vs measured"
+  }
+ ],
+ "matplotlib": "3.11.0"
+}

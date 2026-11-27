@@ -1,0 +1,25 @@
+C3 (26322,) [2 1]
+grp:CD45           slide_replicate_0 n=1565 r=0.579 spearman=0.597 r_wins1-99=0.588 top2%cells_SSEshare=0.22 skew=0.05 kurt=0.6 q01/50/99=[-2.8  -0.04  2.93] cens=0.04
+    cls0 n=390 r_within=0.440 ymean=1.10 pmean=0.98 ysd=1.02
+    cls1 n=852 r_within=0.169 ymean=-0.51 pmean=-0.77 ysd=0.85
+    cls2 n=323 r_within=0.438 ymean=0.17 pmean=0.67 ysd=1.24
+grp:CD45           slide_replicate_1 n=1242 r=0.884 spearman=0.823 r_wins1-99=0.884 top2%cells_SSEshare=0.22 skew=0.14 kurt=-1.6 q01/50/99=[-0.87 -0.09  1.13] cens=0.33
+    cls0 n=288 r_within=0.625 ymean=0.80 pmean=0.94 ysd=0.30
+    cls1 n=697 r_within=0.272 ymean=-0.62 pmean=-0.78 ysd=0.40
+    cls2 n=257 r_within=0.482 ymean=0.46 pmean=0.68 ysd=0.34
+grp:CD16           slide_replicate_0 n=1565 r=0.850 spearman=0.778 r_wins1-99=0.851 top2%cells_SSEshare=0.21 skew=-0.57 kurt=-1.0 q01/50/99=[-1.33  0.51  1.3 ] cens=0.12
+    cls0 n=390 r_within=0.347 ymean=-0.70 pmean=-1.02 ysd=0.52
+    cls1 n=852 r_within=0.307 ymean=0.76 pmean=0.90 ysd=0.30
+    cls2 n=323 r_within=0.298 ymean=-0.14 pmean=-0.44 ysd=0.50
+grp:CD16           slide_replicate_1 n=1242 r=0.792 spearman=0.796 r_wins1-99=0.792 top2%cells_SSEshare=0.21 skew=-1.41 kurt=1.0 q01/50/99=[-3.24  0.44  1.03] cens=0.03
+    cls0 n=288 r_within=0.232 ymean=-1.55 pmean=-1.00 ysd=1.14
+    cls1 n=697 r_within=0.596 ymean=0.60 pmean=0.89 ysd=0.26
+    cls2 n=257 r_within=0.242 ymean=-0.48 pmean=-0.45 ysd=0.82
+grp:CD3/CD19/CD56  slide_replicate_0 n=1565 r=0.810 spearman=0.760 r_wins1-99=0.812 top2%cells_SSEshare=0.20 skew=0.57 kurt=-0.4 q01/50/99=[-2.13 -0.38  2.53] cens=0.00
+    cls0 n=390 r_within=0.481 ymean=1.17 pmean=1.15 ysd=0.90
+    cls1 n=852 r_within=0.424 ymean=-0.82 pmean=-0.60 ysd=0.61
+    cls2 n=323 r_within=0.666 ymean=-0.09 pmean=-0.14 ysd=0.88
+grp:CD3/CD19/CD56  slide_replicate_1 n=1242 r=0.834 spearman=0.708 r_wins1-99=0.834 top2%cells_SSEshare=0.18 skew=0.55 kurt=-1.4 q01/50/99=[-0.63 -0.35  1.51] cens=0.19
+    cls0 n=288 r_within=0.471 ymean=1.20 pmean=1.10 ysd=0.35
+    cls1 n=697 r_within=0.025 ymean=-0.48 pmean=-0.61 ysd=0.26
+    cls2 n=257 r_within=0.363 ymean=0.53 pmean=-0.20 ysd=0.52

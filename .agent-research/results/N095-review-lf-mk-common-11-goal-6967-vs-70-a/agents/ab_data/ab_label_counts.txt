@@ -1,0 +1,38 @@
+0 antibodies_CD45/batch_1/slide_replicate_0 22033 batch [1] split2 2232 targets ['single:CD45', 'autofl']
+1 antibodies_CD123/batch_1/slide_replicate_0 30890 batch [1] split2 2973 targets ['single:CD123', 'autofl']
+2 antibodies_unstained/batch_0/slide_replicate_0 16338 batch [0] split2 1650 targets ['autofl']
+3 antibodies_CD19/batch_0/slide_replicate_0 12768 batch [0] split2 1299 targets ['single:CD19', 'autofl']
+4 antibodies_CD56/batch_1/slide_replicate_0 23141 batch [1] split2 2112 targets ['single:CD56', 'autofl']
+5 antibodies_CD45/batch_0/slide_replicate_0 10951 batch [0] split2 987 targets ['single:CD45', 'autofl']
+6 antibodies_CD19/batch_1/slide_replicate_0 7736 batch [1] split2 722 targets ['single:CD19', 'autofl']
+7 antibodies_CD123/batch_0/slide_replicate_0 18224 batch [0] split2 1820 targets ['single:CD123', 'autofl']
+8 antibodies_all/batch_0/slide_replicate_0 10210 batch [0] split2 1191 targets ['grp:CD123/HLA-DR/CD14', 'grp:CD3/CD19/CD56', 'grp:CD45', 'grp:CD16']
+9 antibodies_CD14/batch_0/slide_replicate_0 18442 batch [0] split2 1771 targets ['single:CD14', 'autofl']
+10 antibodies_CD16/batch_1/slide_replicate_0 27857 batch [1] split2 2911 targets ['single:CD16', 'autofl']
+11 antibodies_HLA-DR/batch_1/slide_replicate_0 32965 batch [1] split2 3418 targets ['single:HLA-DR', 'autofl']
+12 antibodies_CD56/batch_0/slide_replicate_0 14212 batch [0] split2 1500 targets ['single:CD56', 'autofl']
+13 antibodies_all/batch_1/slide_replicate_1 13399 batch [1] split2 1242 targets ['grp:CD3/CD19/CD56', 'grp:CD45', 'grp:CD16']
+14 antibodies_all/batch_1/slide_replicate_0 13675 batch [1] split2 1565 targets ['grp:CD3/CD19/CD56', 'grp:CD45', 'grp:CD16']
+15 antibodies_CD3/batch_1/slide_replicate_0 31332 batch [1] split2 2968 targets ['single:CD3', 'autofl']
+16 antibodies_HLA-DR/batch_0/slide_replicate_0 20881 batch [0] split2 2274 targets ['single:HLA-DR', 'autofl']
+17 antibodies_unstained/batch_1/slide_replicate_0 32674 batch [1] split2 3130 targets ['autofl']
+18 antibodies_CD3/batch_0/slide_replicate_0 6538 batch [0] split2 629 targets ['single:CD3', 'autofl']
+19 antibodies_unstained/batch_1/slide_replicate_1 14055 batch [1] split2 1490 targets ['autofl']
+20 antibodies_CD16/batch_0/slide_replicate_0 9397 batch [0] split2 1006 targets ['single:CD16', 'autofl']
+21 antibodies_CD14/batch_1/slide_replicate_0 25223 batch [1] split2 2168 targets ['single:CD14', 'autofl']
+
+per-target labelled cells: draw0 all/split2, draw1 all/split2, censored frac d0,d1
+single:CD45              [np.int64(10951), np.int64(987), np.int64(22033), np.int64(2232)] 0.005 0.005
+single:CD123             [np.int64(18224), np.int64(1820), np.int64(30890), np.int64(2973)] 0.005 0.005
+single:CD19              [np.int64(12768), np.int64(1299), np.int64(7736), np.int64(722)] 0.006 0.014
+single:CD56              [np.int64(14212), np.int64(1500), np.int64(23141), np.int64(2112)] 0.087 0.115
+single:CD14              [np.int64(18442), np.int64(1771), np.int64(25223), np.int64(2168)] 0.005 0.005
+single:CD16              [np.int64(9397), np.int64(1006), np.int64(27857), np.int64(2911)] 0.005 0.009
+single:HLA-DR            [np.int64(20881), np.int64(2274), np.int64(32965), np.int64(3418)] 0.005 0.005
+single:CD3               [np.int64(6538), np.int64(629), np.int64(31332), np.int64(2968)] 0.094 0.427
+grp:CD123/HLA-DR/CD14    [np.int64(10210), np.int64(1191), np.int64(0), np.int64(0)] 0.592 nan
+grp:CD3/CD19/CD56        [np.int64(10210), np.int64(1191), np.int64(27074), np.int64(2807)] 0.0 0.093
+grp:CD45                 [np.int64(10210), np.int64(1191), np.int64(27074), np.int64(2807)] 0.095 0.179
+grp:CD16                 [np.int64(10210), np.int64(1191), np.int64(27074), np.int64(2807)] 0.307 0.082
+autofl                   [np.int64(127751), np.int64(12936), np.int64(247906), np.int64(24124)] 0.01 0.005
+cells per draw (batch): {1: 274980, 0: 137961}
