@@ -1,0 +1,142 @@
+{
+ "png": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/plots/goal-direction-r-v10-n091_2026-11-27_1015.png",
+ "svg": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/plots/goal-direction-r-v10-n091_2026-11-27_1015.svg",
+ "created": "2026-11-27T10:15:34",
+ "command": [
+  "/home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python",
+  "/home/hpc/v181bb/v181bb10/.claude/skills/work-log/bin/plot_compare.py",
+  "--metric",
+  "GOAL direction r (v10) N091",
+  "--csv",
+  "results/N091-dino-style-self-distillation-ssl-encoder/plot_goal.csv",
+  "--item",
+  "N091",
+  "--baseline",
+  "E8 (N085 record)",
+  "--direction",
+  "higher",
+  "--noise",
+  "0.0027",
+  "--arm",
+  "arm",
+  "--value",
+  "value",
+  "--seed",
+  "seed"
+ ],
+ "cwd": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research",
+ "source": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N091-dino-style-self-distillation-ssl-encoder/plot_goal.csv",
+ "notes": {
+  "item": "N091",
+  "metric": "GOAL direction r (v10) N091",
+  "direction": "higher",
+  "noise_sd": 0.0027,
+  "stats": null
+ },
+ "page": "letter",
+ "width_in": 8.5,
+ "height_in": 2.5591,
+ "png_px": [
+  3840,
+  1156
+ ],
+ "significance": "two-sided; Holm-corrected over all comparisons of a panel (one family per panel); * <0.05 ** <0.01 *** <0.001 **** <0.0001",
+ "panels": [
+  {
+   "panel": "a",
+   "kind": "bar",
+   "groups": [
+    "E8 (N085 record)",
+    "E9 (PRIMARY)",
+    "single control",
+    "dino alone (2-seed mean)",
+    "single dino"
+   ],
+   "colors": [
+    "#767E86",
+    "#3A6C9E",
+    "#55BDB2",
+    "#A1CA8A",
+    "#CF832F"
+   ],
+   "n": [
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "mean": [
+    0.69675,
+    0.6951,
+    0.67065,
+    0.65445,
+    0.6519
+   ],
+   "sd": [
+    0.013930003589375023,
+    0.014424978336205629,
+    0.01463711037056157,
+    0.024678026663410537,
+    0.02446589462905452
+   ],
+   "median": [
+    0.69675,
+    0.6951,
+    0.67065,
+    0.65445,
+    0.6519
+   ],
+   "whisker": "sd",
+   "stats": [
+    {
+     "test": "paired t-test",
+     "p": 0.13306813826893363,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 0.31437483764784147,
+     "stars": "ns",
+     "a": "E8 (N085 record)",
+     "b": "E9 (PRIMARY)",
+     "reference": "E8 (N085 record)"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.012194289482005937,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 0.04877715792802375,
+     "stars": "*",
+     "a": "E8 (N085 record)",
+     "b": "single control",
+     "reference": "E8 (N085 record)"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.11317338493350813,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 0.31437483764784147,
+     "stars": "ns",
+     "a": "E8 (N085 record)",
+     "b": "dino alone (2-seed mean)",
+     "reference": "E8 (N085 record)"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.10479161254928049,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 0.31437483764784147,
+     "stars": "ns",
+     "a": "E8 (N085 record)",
+     "b": "single dino",
+     "reference": "E8 (N085 record)"
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "GOAL direction r (v10) N091"
+  }
+ ],
+ "matplotlib": "3.11.0"
+}

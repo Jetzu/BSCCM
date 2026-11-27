@@ -1,0 +1,11 @@
+arm,value,seed
+E9 (PRIMARY),0.7053,b10
+E9 (PRIMARY),0.6849,b01
+E8 (N085 record),0.7066,b10
+E8 (N085 record),0.6869,b01
+dino alone (2-seed mean),0.6719,b10
+dino alone (2-seed mean),0.637,b01
+single control,0.681,b10
+single control,0.6603,b01
+single dino,0.6692,b10
+single dino,0.6346,b01
