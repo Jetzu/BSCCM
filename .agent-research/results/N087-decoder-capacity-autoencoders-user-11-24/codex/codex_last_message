@@ -1,0 +1,9 @@
+PASS for Claude integration. The two production feature dumps reproduce the recorded common-11 GOAL within 1e-4.
+
+The shared scorer gives b10 0.68674590, b01 0.65918953 and GOAL 0.67296771 (reference_check/goal.csv:2). Original and factored scorer CLIs produced byte-identical CSVs on archived predictions.
+
+All 49 CPU tests passed in the supplied SIF environment, including the 31 archived sandbox tests. Two-step decoder training, signal/resume equivalence, validation-only marker priors, byte-identical no-prior predictions and N080 metric parity are covered in tests/test_n087_decoders.py:55, tests/test_images.py:50, tests/test_marker_prior.py:46 and tests/test_marker_prior.py:128. Each real SSL checkpoint also produced finite 4×2048 features in the exact supplied row order.
+
+Integration plan and run commands are in README.md:5. Apply the two verified diffs to scripts/score_goal_arms.py and scripts/train_ifc_sandbox.py, then install the five new n087_*.py entry points alongside them.
+
+The image AE reserves 1% of source FOVs for validation and masks 25% of image patches by default. Clustering reports both pooled out-of-fold and mean-fold balanced accuracy. Full-scale fits, GPU behavior, scheduler preemption, W&B synchronization and the one-H100-hour estimate remain unverified. Production placement and notebook integration remain with the submitter.

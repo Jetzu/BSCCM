@@ -1,0 +1,5 @@
+**Verdict: MAJOR.** The flow comparison cannot isolate the effect of flow matching. The sandbox flow has 34% more parameters than the MSE decoder, and the BSCCM flow receives roughly twice as many optimizer updates per epoch. Separately, `--bottleneck 1` makes every head image-independent. A CPU backward pass confirmed zero gradient into the projection weights.
+
+Both N051 dumps preserved checkpoint row order and split flags exactly. All three donors’ gates matched N080. Three of five decoder tests failed, including a reproduced `--reference-only` regression on valid prediction files.
+
+The [377-word findings report](./findings.md) includes file-line evidence and the remaining findings. Verification used the unpacked supplied SIF on CPU. Full training and GPU execution were outside the review.

@@ -1,0 +1,124 @@
+--- a/scripts/train_ifc_sandbox.py
++++ b/scripts/train_ifc_sandbox.py
+@@ -137,8 +137,57 @@
+         return (p - self.mean) / self.std
+ 
+ 
++class MarkerPrior(nn.Module):
++    """Decode a latent into the sandbox target coordinates. All fitted tensors are frozen."""
++    def __init__(self, kind, dim):
++        super().__init__()
++        self.dim = dim
++        self.register_buffer('center', torch.zeros(9))
++        self.register_buffer('scale', torch.ones(9))
++        self.decoder = (nn.Linear(dim, 9, bias=False) if kind == 'linear' else
++                        nn.Sequential(nn.Linear(dim, 64), nn.GELU(), nn.Linear(64, 9)))
++
++    def forward(self, latent):
++        return self.center + self.scale * self.decoder(latent)
++
++
++def marker_prior(kind, dim, val_y, seed, device):
++    """val_y contains all nine marker measurements in the validation fold's target units.
++
++    On resume only build the module; the checkpoint restores the fitted decoder and scaling.
++    Separate RNG streams keep image encoder initialization independent of prior fitting.
++    """
++    with torch.random.fork_rng(devices=[]):
++        torch.random.default_generator.manual_seed(seed)
++        prior = MarkerPrior(kind, dim).to(device)
++        if val_y is not None:
++            if len(val_y) <= dim:
++                raise ValueError('Need more validation profiles than prior dimensions.')
++            y = torch.as_tensor(val_y, dtype=torch.float32, device=device)
++            prior.center.copy_(y.mean(0))
++            prior.scale.copy_(y.std(0, unbiased=False).clamp_min(1e-6))
++            standardized = (y - prior.center) / prior.scale
++            if kind == 'linear':
++                _, vectors = torch.linalg.eigh(standardized.T @ standardized)
++                with torch.no_grad():
++                    prior.decoder.weight.copy_(vectors[:, -dim:].flip(1))
++            else:
++                encoder = nn.Sequential(nn.Linear(9, 64), nn.GELU(), nn.Linear(64, dim)).to(device)
++                ae = nn.Sequential(encoder, prior.decoder)
++                optimizer = torch.optim.Adam(ae.parameters(), lr=1e-3)
++                generator = torch.Generator(device=device).manual_seed(seed)
++                for _ in range(30):
++                    for rows in torch.randperm(len(y), generator=generator, device=device).split(512):
++                        batch = standardized[rows]
++                        optimizer.zero_grad(set_to_none=True)
++                        loss = F.mse_loss(ae(batch), batch)
++                        loss.backward()
++                        optimizer.step()
++        return prior.requires_grad_(False).eval()
++
++
+ class SandboxModel(nn.Module):
+-    def __init__(self, cov_rank=0, pooled_mode='none', calibration=None, tiny=False):
++    def __init__(self, cov_rank=0, pooled_mode='none', calibration=None, tiny=False, prior=None):
+         super().__init__()
+         if tiny:
+             self.encoder = nn.Sequential(nn.Conv2d(3, 8, 3, stride=4, padding=1), nn.ReLU(),
+@@ -148,7 +197,8 @@
+             import timm
+             self.encoder = timm.create_model('resnet50', pretrained=False, in_chans=3, num_classes=0)
+             nf = self.encoder.num_features
+-        self.mean = nn.Linear(nf, 9)
++        self.mean = nn.Linear(nf, prior.dim if prior is not None else 9)
++        self.prior = prior
+         self.rank = cov_rank
+         self.cov = nn.Linear(nf, 9 * (1 + cov_rank)) if cov_rank else None
+         self.pool_head = nn.Linear(nf, 2) if pooled_mode == 'head' else None
+@@ -157,6 +207,8 @@
+     def forward(self, x):
+         f = self.encoder(x)
+         mu = self.mean(f)
++        if self.prior is not None:
++            mu = self.prior(mu)
+         cov = None
+         if self.cov is not None:
+             z = self.cov(f).float()
+@@ -475,6 +527,8 @@
+     ap.add_argument('--regime', choices=['full', 'single', 'single_pooled'], default='single')
+     ap.add_argument('--test-donor', type=int, choices=[0, 1, 2], required=True)
+     ap.add_argument('--pooled-mode', choices=['inverse', 'head'], default='inverse')
++    ap.add_argument('--marker-prior', choices=['none', 'linear', 'ae'], default='none')
++    ap.add_argument('--prior-dim', type=int, choices=range(1, 10), default=4)
+     ap.add_argument('--cov-rank', type=int, choices=[0, 2], default=0)
+     ap.add_argument('--epochs', type=int, default=15)
+     ap.add_argument('--bs', type=int, default=256)
+@@ -575,7 +629,15 @@
+     pools = np.where(pool_masks, pools, 0).astype(np.float32)
+     tensors = tuple(torch.from_numpy(x) for x in (visible_y, masks, pools, pool_masks, visible_raw))
+     mode = args.pooled_mode if args.regime == 'single_pooled' else 'none'
+-    model = SandboxModel(args.cov_rank, mode, calibration, args.smoke_tiny_model).to(args.device)
++    prior = None
++    reported_args = vars(args).copy()
++    if args.marker_prior == 'none':
++        # Preserve archived control configs, results, checkpoints and RNG stream.
++        del reported_args['marker_prior'], reported_args['prior_dim']
++    else:
++        val_profiles = None if (out / 'ckpt.pt').exists() else y[va]
++        prior = marker_prior(args.marker_prior, args.prior_dim, val_profiles, args.seed, args.device)
++    model = SandboxModel(args.cov_rank, mode, calibration, args.smoke_tiny_model, prior).to(args.device)
+     opt = torch.optim.AdamW(model.parameters(), lr=args.lr, weight_decay=.05)
+     steps_per_epoch = len(epoch_batches(tr, args.bs, args.seed, 0))
+     total_steps = args.epochs * steps_per_epoch
+@@ -584,7 +646,7 @@
+     scheduler = torch.optim.lr_scheduler.OneCycleLR(opt, args.lr, total_steps=total_steps, pct_start=pct_start)
+     excluded = {'out', 'workers', 'threads', 'checkpoint_every', 'stop_after_steps',
+                 'knn_impute', 'knn_query_chunk', 'knn_reference_chunk'}
+-    cfg = {k: v for k, v in vars(args).items() if k not in excluded}
++    cfg = {k: v for k, v in reported_args.items() if k not in excluded}
+     cfg['pack'] = str(pack)
+     cfg['version'] = VERSION
+     cfg['labels_sha256'] = hashlib.sha256((pack / 'labels.npz').read_bytes()).hexdigest()
+@@ -696,7 +758,7 @@
+         os.replace(out / 'eval_preds.npz.tmp', out / 'eval_preds.npz')
+         write_json(out / 'metrics.json', dict(test_donor=args.test_donor, n_test=len(te),
+                    names=MARKERS, evaluation_thresholds=gates, model=metrics))
+-        write_json(out / 'result.json', dict(status='complete', args=vars(args), setup=setup,
++        write_json(out / 'result.json', dict(status='complete', args=reported_args, setup=setup,
+                    final=metrics, history=history, steps=step, resumed=resumed,
+                    selected_epoch=min(history, key=lambda h: h['validation_loss'])['epoch'],
+                    invocation_seconds=time.monotonic() - start_time))

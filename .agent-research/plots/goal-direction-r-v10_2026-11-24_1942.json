@@ -1,0 +1,107 @@
+{
+ "png": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/plots/goal-direction-r-v10_2026-11-24_1942.png",
+ "svg": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/plots/goal-direction-r-v10_2026-11-24_1942.svg",
+ "created": "2026-11-24T19:42:07",
+ "command": [
+  "/home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python",
+  "/home/hpc/v181bb/v181bb10/.claude/skills/work-log/bin/plot_compare.py",
+  "--metric",
+  "GOAL direction r (v10)",
+  "--csv",
+  "results/N090-feature-preserving-fine-tuning-of-the-in/plot_goal.csv",
+  "--item",
+  "N090",
+  "--baseline",
+  "control",
+  "--direction",
+  "higher",
+  "--noise",
+  "0.0027",
+  "--arm",
+  "arm",
+  "--value",
+  "value",
+  "--seed",
+  "seed"
+ ],
+ "cwd": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research",
+ "source": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N090-feature-preserving-fine-tuning-of-the-in/plot_goal.csv",
+ "notes": {
+  "item": "N090",
+  "metric": "GOAL direction r (v10)",
+  "direction": "higher",
+  "noise_sd": 0.0027,
+  "stats": null
+ },
+ "width_in": 8.5,
+ "height_in": 2.5591,
+ "png_px": [
+  3840,
+  1156
+ ],
+ "significance": "two-sided; Holm-corrected over all comparisons of a panel (one family per panel); * <0.05 ** <0.01 *** <0.001 **** <0.0001",
+ "panels": [
+  {
+   "panel": "a",
+   "kind": "bar",
+   "groups": [
+    "control",
+    "elr03",
+    "elr01"
+   ],
+   "colors": [
+    "#767E86",
+    "#3A6C9E",
+    "#55BDB2"
+   ],
+   "n": [
+    4,
+    4,
+    4
+   ],
+   "mean": [
+    0.6706138554618835,
+    0.6617346266122425,
+    0.6453927473747386
+   ],
+   "sd": [
+    0.012885182573160535,
+    0.019342122598011952,
+    0.017891025657779204
+   ],
+   "median": [
+    0.6682598730283962,
+    0.6628681099429065,
+    0.6449391112713299
+   ],
+   "whisker": "sd",
+   "stats": [
+    {
+     "test": "paired t-test",
+     "p": 0.15622464192428398,
+     "n_i": 4,
+     "n_j": 4,
+     "p_holm": 0.15622464192428398,
+     "stars": "ns",
+     "a": "control",
+     "b": "elr03",
+     "reference": "control"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.00462281904368473,
+     "n_i": 4,
+     "n_j": 4,
+     "p_holm": 0.00924563808736946,
+     "stars": "**",
+     "a": "control",
+     "b": "elr01",
+     "reference": "control"
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "GOAL direction r (v10)"
+  }
+ ],
+ "matplotlib": "3.11.0"
+}

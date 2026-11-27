@@ -1,0 +1,10 @@
+run,regime,test_donor,n_defined,mean_abs_bias
+/hnvme/workspace/v181bb10-bsccm/runs/n080_full_d0,full,0,36,0.19796890893092645
+/hnvme/workspace/v181bb10-bsccm/runs/n080_full_d1,full,1,36,0.19977790963245437
+/hnvme/workspace/v181bb10-bsccm/runs/n080_full_d2,full,2,36,0.16947872778840478
+/hnvme/workspace/v181bb10-bsccm/runs/n080_single_d0,single,0,36,0.27058538765654916
+/hnvme/workspace/v181bb10-bsccm/runs/n080_single_d1,single,1,36,0.2104983622340387
+/hnvme/workspace/v181bb10-bsccm/runs/n080_single_d2,single,2,36,0.2073734408082989
+/hnvme/workspace/v181bb10-bsccm/runs/n087_fullninth_d0,full_ninth,0,36,0.17119741717684772
+/hnvme/workspace/v181bb10-bsccm/runs/n087_fullninth_d1,full_ninth,1,36,0.1821485234835197
+/hnvme/workspace/v181bb10-bsccm/runs/n087_fullninth_d2,full_ninth,2,36,0.16810524441041613

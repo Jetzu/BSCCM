@@ -1,0 +1,84 @@
+diff --git a/scripts/train_lf.py b/scripts/train_lf.py
+index 5a6a157..40dd57e 100644
+--- a/scripts/train_lf.py
++++ b/scripts/train_lf.py
+@@ -20,6 +20,9 @@ ap.add_argument('--consist', type=float, default=0.0)   # N041: MSE weight betwe
+ ap.add_argument('--pseudo', default='')   # N040: comma-separated teacher train_preds.npz (P,G on TRAINING-draw rows), averaged; pseudo-label targets a cell lacks
+ ap.add_argument('--pseudo-w', type=float, default=0.3)   # N040: weight of the pseudo-label MSE (only used with --pseudo)
+ ap.add_argument('--dump-train-preds', type=int, default=0)   # N040: load the finished checkpoint, predict all training rows -> <out>/train_preds.npz, exit
++ap.add_argument('--bottleneck', type=int, default=0)   # N087 D2: Linear(NF, k) + LayerNorm projection between the pooled features and all heads (0 = off)
++ap.add_argument('--bottleneck-init', default='', choices=['', 'projector'])   # N087 D2: keep the pretrained SSL projector MLP (from <init-ssl dir>/ckpt.pt) as the projection
++ap.add_argument('--dump-features', type=int, default=0)   # N087: load the finished checkpoint, write pooled features H (fp16) + P for train AND eval rows -> <out>/features.npz, exit
+ ap.add_argument('--lowpass', type=float, default=0.0)   # N042 probe: Gaussian low-pass (sigma px) on the normalised LF input, train AND eval (0 = off)
+ ap.add_argument('--dual-zoom', type=int, default=1)   # N026: shared encoder sees full view AND centre-zoom view; features concatenated
+ ap.add_argument('--adabn', type=int, default=0)   # N026: after training, recompute BN stats on N unlabelled target-batch images (split 0), evaluate again
+@@ -343,6 +346,20 @@ if SSL:
+     net.load_state_dict(torch.load(a.init_ssl, map_location='cpu', weights_only=True), strict=True); print('init from SSL', a.init_ssl, flush=True)
+ if a.stem == 'nomaxpool': net.maxpool = nn.Identity()   # stride 2 instead of 4 before layer1 (weights unchanged)
+ NF = net.num_features * (2 if a.dual_zoom > 1 else 1)
++if a.bottleneck or a.bottleneck_init:   # N087 D2: low-dimensional projection layer before the heads
++    if DENSE or EXT or a.arch in _N053 or a.dual_zoom > 1 or (a.bottleneck and a.bottleneck_init): ap.error('--bottleneck/--bottleneck-init: plain encoders only, one of the two')
++    if a.bottleneck_init == 'projector':
++        if not SSL: ap.error('--bottleneck-init projector needs --init-ssl')
++        _ps = torch.load(os.path.join(os.path.dirname(a.init_ssl), 'ckpt.pt'), map_location='cpu', weights_only=False)['projector']
++        _pd = _ps['6.weight'].shape[0]
++        _proj = nn.Sequential(nn.Linear(NF, 2048), nn.BatchNorm1d(2048), nn.GELU(), nn.Linear(2048, 2048), nn.BatchNorm1d(2048), nn.GELU(), nn.Linear(2048, _pd))
++        _proj.load_state_dict(_ps, strict=True); print('N087: pretrained SSL projector ->', _pd, 'dims', flush=True)
++    else:
++        _pd = a.bottleneck; _proj = nn.Sequential(nn.Linear(NF, _pd), nn.LayerNorm(_pd))
++    class _Bottleneck(nn.Module):
++        def __init__(s, net, proj, nf): super().__init__(); s.net, s.proj, s.num_features = net, proj, nf
++        def forward(s, x): return s.proj(s.net(x))
++    net = _Bottleneck(net, _proj, _pd); NF = _pd
+ model = nn.ModuleDict({'enc': net, 'reg': nn.Linear(NF, K), 'c3': nn.Linear(NF, 3), 'c10': nn.Linear(NF, 10),
+                       'dom': nn.Sequential(nn.Linear(NF, 256), nn.ReLU(), nn.Linear(256, 1))}).to(DEVICE)
+ if DENSE: model['dense'] = DenseDecoder(net.num_features, a.dense_width).to(DEVICE)
+@@ -587,7 +604,7 @@ def _run_args():
+         if not getattr(a, key): args.pop(key)
+     return args
+ try:
+-    if a.dump_train_preds: raise RuntimeError('no wandb for a teacher dump (would append to the teacher run)')
++    if a.dump_train_preds or a.dump_features: raise RuntimeError('no wandb for a dump (would append to the finished run)')
+     import wandb; run = wandb.init(project=os.environ.get('WANDB_PROJECT', 'BSCCM'), name=os.path.basename(a.out.rstrip('/')), id=os.path.basename(a.out.rstrip('/')), resume='allow', config=_run_args())
+ except Exception as e: print('wandb off:', e); run = None
+ _NEW_DEFAULTS = {'stem': 'std', 'zoom': 1, 'dual_zoom': 1, 'lowpass': 0.0, 'phys_aug': 0.0, 'consist': 0.0, 'pseudo': '', 'pseudo_w': 0.3, 'enc_lr_mult': 1.0, 'drop_path': 0.1}   # options added after older checkpoints were written: omitted at default so they still resume
+@@ -597,8 +614,9 @@ _NEW_DEFAULTS.update(dense_aux='', dense_w=0.5, dense_width=64)
+ _NEW_DEFAULTS.update(aux_label='', aux_w=1.0)
+ _NEW_DEFAULTS.update(init_full='', train_panel='')
+ _NEW_DEFAULTS.update(ext_ifc='', ext_w=0.5, ext_train_donors='sample0,sample1,sample2', ext_test_donor='sample2')
++_NEW_DEFAULTS.update(bottleneck=0, bottleneck_init='')
+ def _cfg():
+-    cfg = {k: v for k, v in _run_args().items() if k not in ('workers', 'out', 'adabn', 'dump_train_preds') and not (k in _NEW_DEFAULTS and v == _NEW_DEFAULTS[k])}
++    cfg = {k: v for k, v in _run_args().items() if k not in ('workers', 'out', 'adabn', 'dump_train_preds', 'dump_features') and not (k in _NEW_DEFAULTS and v == _NEW_DEFAULTS[k])}
+     if EXT: cfg['ifc_setup'] = ifc.identity
+     if DENSE: cfg['dense_setup'] = dense_targets.identity
+     if PHYS: cfg['phys_calibration'] = phys_calibration   # pin source row IDs, fitted gain/offsets and method on resume
+@@ -612,9 +630,9 @@ if os.path.exists(ck):
+     if s.get('cfg') != cfg or not np.array_equal(s.get('tr'), tr) or not np.array_equal(s.get('ev'), ev):
+         raise SystemExit(f'refusing to resume {ck}: config/rows differ from the checkpoint (red-team F3)')
+     model.load_state_dict(s['m']); opt.load_state_dict(s['o']); sched.load_state_dict(s['s']); ep0, log = s['ep'], s['log']; print('resumed', ep0, flush=True)
+-if SETUP is not None and not a.dump_train_preds:
++if SETUP is not None and not (a.dump_train_preds or a.dump_features):
+     with open(a.out + '/head_setup.json', 'w') as f: json.dump(SETUP, f, indent=2)
+-if PHYS and not a.dump_train_preds:
++if PHYS and not (a.dump_train_preds or a.dump_features):
+     with open(a.out + '/phys_aug_calibration.json', 'w') as f: json.dump(phys_calibration, f, indent=2)
+ if a.dump_train_preds:   # N040 teacher pass: needs the finished checkpoint (resumed above); writes P,G for every training row, then exits
+     if not os.path.exists(ck) or ep0 != a.epochs: raise SystemExit('dump-train-preds needs a FINISHED checkpoint in --out (nothing written)')
+@@ -622,6 +640,16 @@ if a.dump_train_preds:   # N040 teacher pass: needs the finished checkpoint (res
+     with torch.no_grad():
+         for raw, ph, g, *_ in mk(tr, False): _p = fwd(prep(raw, ph, g, False))[0]; _PP.append(_p.float().cpu().numpy()); _GG.append(g.numpy())
+     np.savez(a.out + '/train_preds.npz', P=np.concatenate(_PP), G=np.concatenate(_GG), names=np.array([str(n) for n in names])); print('N040: wrote', a.out + '/train_preds.npz', len(tr), flush=True); sys.exit(0)
++if a.dump_features:   # N087: frozen pooled features of the finished model (decoder sweeps); train rows first, then eval rows
++    if not os.path.exists(ck) or ep0 != a.epochs: raise SystemExit('dump-features needs a FINISHED checkpoint in --out (nothing written)')
++    model.eval(); _HH, _PP, _GG, _SS = [], [], [], []
++    with torch.no_grad():
++        for _split, _rows in ((0, tr), (1, ev)):
++            for raw, ph, g, *_ in mk(_rows, False):
++                _p, _, _, _h = fwd(prep(raw, ph, g, False)); _HH.append(_h.half().cpu().numpy()); _PP.append(_p.float().cpu().numpy())
++                _GG.append(g.numpy()); _SS.append(np.full(len(g), _split, np.int8))
++    np.savez(a.out + '/features.npz', H=np.concatenate(_HH), P=np.concatenate(_PP), G=np.concatenate(_GG), is_eval=np.concatenate(_SS),
++             names=np.array([str(n) for n in names])); print('N087: wrote', a.out + '/features.npz', len(tr), len(ev), flush=True); sys.exit(0)
+ t0 = time.time(); step = ep0 * len(dtr)
+ for ep in range(ep0, a.epochs):
+     tl = n = 0; dl = 0.0

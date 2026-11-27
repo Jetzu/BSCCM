@@ -47,3 +47,10 @@ idea · mechanism · cheapest test · status open|testing|promising|dead(why)
   BSCCM with separate heads): N081 shared trunk + shared rows hurt (CD19 conflict); pretraining-only avoids head conflicts. open
 - Joint decoding: single-stain training loses CD4-CD8 exclusivity (N080). Any joint-structure transfer to BSCCM needs either joint labels
   or a learned joint prior; a prior from external all-marker data is close to the declined exclusivity prior (user 11-17) -> ask first.
+
+## 2026-11-27 (from N087 / N088)
+- Class-conditional Giemsa -> marker matching (user 11-24, N087 arm F not run): Giemsa cell-type classifier -> class-mean marker profile,
+  then within-class OT between Giemsa embeddings and marker profiles; endpoints = LF-teacher agreement, autofl, MLL23/PBC. open
+- N088 portfolio still open: missing-marker completion from the measured marker (B-P1, sandbox gate first); field-of-view shortcut audit
+  of LF<->Giemsa retrieval (C-P1, CPU); nested (Matryoshka) projection head (A-P2); cell-type mixture head with S-BIAD452 profiles (B-P2);
+  DINO-style in-domain SSL and cross-slide positives as ensemble members (A-P3, C-P3). open

@@ -287,3 +287,42 @@ All are ns at n = 3 teachers. By the pre-registered rule, latent distillation co
 **Says:**
 - Unsupervised distribution-level alignment (DANN, whitening, OT, mean shift, CORAL, AdaBN) gave no consistent gain on any of the three shifts. One exception: a mean shift on the latent-distillation student passed its noise floor on 4 PBC contrasts (+.053 vs .048) but lost .031 on MLL23.
 - The largest gains came from distilling the teacher's latent and from stronger class anchors, and even those are ns at 3 teachers.
+
+## Figure 10: Decoders, autoencoders and marker priors (`fig10_decoders_autoencoders`), N087
+
+**a. How many dimensions do the predictions need?** A linear decoder with a rank-k bottleneck on frozen features. On the fine-tuned ResNet-50 features, rank 1 gives .458, rank 4 .617, rank 8 .656 and rank 12 .664; the model's own head (dashed) is .673. Self-supervised features that were not fine-tuned saturate near .59. The predictions use about 8–12 dimensions, so a very low-dimensional bottleneck would cost accuracy.
+
+**b. Frozen features with an MLP decoder** (rings are the 2 directions):
+
+| Frozen features | GOAL |
+|---|---|
+| Self-supervised ResNet-50, not fine-tuned | .603 |
+| 144 hand-made per-channel image statistics (no learning) | .607 |
+| Autoencoder latent, 16 / 64 / 256 dims | .617 / .624 / .594 |
+| Fine-tuned model, own head | .673 |
+
+No decoder (ridge .670, MLP .661, kNN .664) beats the fine-tuned model's own linear head.
+
+**c. Clustering of 10,137 held-out draw-0 cells against 10 gated cell types** (kNN balanced accuracy, chance .10):
+- Autoencoders .342–.346 beat self-supervised features (.306). K-means NMI shows the same order: .38–.39 vs .34.
+- Simple image statistics do as well (.354, NMI .351).
+- So the autoencoder's clustering advantage is mostly brightness, scatter and contrast, not a better representation of cell identity.
+- The self-supervised features are deliberately isotropic and cluster worst.
+
+**d. Learned marker priors in the ImageStream data** (9 markers on every cell; rings are 3 held-out donors). The measure is the registered co-expression error over 36 marker pairs:
+
+| Training | Co-expression error |
+|---|---|
+| One marker per cell | .229 |
+| + linear prior (4 dims) | .270 |
+| + autoencoder prior (6 dims) | .212 |
+| All 9 markers, 1/9 of the cells (same label count) | .174 |
+| All 9 markers, all cells | .189 |
+
+- Both priors were fitted on another donor's full labels.
+- The autoencoder prior is lower than single-marker training on all 3 donors (paired t, Holm p < .05), but it misses the pre-registered bar of ≤ .21.
+
+**Says:**
+- The decoder is not the bottleneck; fine-tuning the encoder is what matters.
+- Autoencoders mostly capture brightness and scatter.
+- A marker prior borrowed from another donor helps co-expression only slightly; measuring the markers jointly is what really helps.

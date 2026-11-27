@@ -1,0 +1,159 @@
+{
+ "png": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/plots/goal-direction-r-frozen-decoders_2026-11-27_0725.png",
+ "svg": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/plots/goal-direction-r-frozen-decoders_2026-11-27_0725.svg",
+ "created": "2026-11-27T07:25:36",
+ "command": [
+  "/home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python",
+  "/home/hpc/v181bb/v181bb10/.claude/skills/work-log/bin/plot_compare.py",
+  "--metric",
+  "GOAL direction r frozen decoders",
+  "--csv",
+  "results/N087-decoder-capacity-autoencoders-user-11-24/plot_goal.csv",
+  "--item",
+  "N087",
+  "--baseline",
+  "finetuned head",
+  "--direction",
+  "higher",
+  "--noise",
+  "0.0027",
+  "--arm",
+  "arm",
+  "--value",
+  "value",
+  "--seed",
+  "seed"
+ ],
+ "cwd": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research",
+ "source": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N087-decoder-capacity-autoencoders-user-11-24/plot_goal.csv",
+ "notes": {
+  "item": "N087",
+  "metric": "GOAL direction r frozen decoders",
+  "direction": "higher",
+  "noise_sd": 0.0027,
+  "stats": null
+ },
+ "page": "letter",
+ "width_in": 8.5,
+ "height_in": 2.5591,
+ "png_px": [
+  3840,
+  1156
+ ],
+ "significance": "two-sided; Holm-corrected over all comparisons of a panel (one family per panel); * <0.05 ** <0.01 *** <0.001 **** <0.0001",
+ "panels": [
+  {
+   "panel": "a",
+   "kind": "bar",
+   "groups": [
+    "finetuned head",
+    "finetuned ridge",
+    "finetuned MLP",
+    "AE64 MLP",
+    "image stats MLP",
+    "SSL frozen MLP"
+   ],
+   "colors": [
+    "#767E86",
+    "#3A6C9E",
+    "#55BDB2",
+    "#A1CA8A",
+    "#CF832F",
+    "#B94A58"
+   ],
+   "n": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "mean": [
+    0.6729677138634037,
+    0.6699946676738802,
+    0.6604763231179073,
+    0.6235223771687931,
+    0.6070960300988401,
+    0.6027074529126316
+   ],
+   "sd": [
+    0.019485294506149702,
+    0.01596479034690946,
+    0.011885796336593103,
+    0.004347846188329374,
+    2.491737772729741e-05,
+    0.015813647164650075
+   ],
+   "median": [
+    0.6729677138634037,
+    0.6699946676738802,
+    0.6604763231179073,
+    0.6235223771687931,
+    0.6070960300988401,
+    0.6027074529126316
+   ],
+   "whisker": "sd",
+   "stats": [
+    {
+     "test": "paired t-test",
+     "p": 0.44377666987786585,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 0.8364789374161706,
+     "stars": "ns",
+     "a": "finetuned head",
+     "b": "finetuned ridge",
+     "reference": "finetuned head"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.2586314970840014,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 0.8364789374161706,
+     "stars": "ns",
+     "a": "finetuned head",
+     "b": "finetuned MLP",
+     "reference": "finetuned head"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.20911973435404266,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 0.8364789374161706,
+     "stars": "ns",
+     "a": "finetuned head",
+     "b": "AE64 MLP",
+     "reference": "finetuned head"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.13110419287850872,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 0.6555209643925436,
+     "stars": "ns",
+     "a": "finetuned head",
+     "b": "image stats MLP",
+     "reference": "finetuned head"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.21730778210649013,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 0.8364789374161706,
+     "stars": "ns",
+     "a": "finetuned head",
+     "b": "SSL frozen MLP",
+     "reference": "finetuned head"
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "GOAL direction r frozen decoders"
+  }
+ ],
+ "matplotlib": "3.11.0"
+}

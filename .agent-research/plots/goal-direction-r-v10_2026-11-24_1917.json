@@ -1,0 +1,141 @@
+{
+ "png": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/plots/goal-direction-r-v10_2026-11-24_1917.png",
+ "svg": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/plots/goal-direction-r-v10_2026-11-24_1917.svg",
+ "created": "2026-11-24T19:17:45",
+ "command": [
+  "/home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python",
+  "/home/hpc/v181bb/v181bb10/.claude/skills/work-log/bin/plot_compare.py",
+  "--metric",
+  "GOAL direction r (v10)",
+  "--csv",
+  "results/N085-stronger-members-convnext-s-with-120-ep/plot_goal.csv",
+  "--item",
+  "N085",
+  "--baseline",
+  "N053 ensemble",
+  "--direction",
+  "higher",
+  "--noise",
+  "0.0027",
+  "--arm",
+  "arm",
+  "--value",
+  "value",
+  "--seed",
+  "seed"
+ ],
+ "cwd": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research",
+ "source": "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N085-stronger-members-convnext-s-with-120-ep/plot_goal.csv",
+ "notes": {
+  "item": "N085",
+  "metric": "GOAL direction r (v10)",
+  "direction": "higher",
+  "noise_sd": 0.0027,
+  "stats": null
+ },
+ "width_in": 8.5,
+ "height_in": 2.5591,
+ "png_px": [
+  3840,
+  1156
+ ],
+ "significance": "two-sided; Holm-corrected over all comparisons of a panel (one family per panel); * <0.05 ** <0.01 *** <0.001 **** <0.0001",
+ "panels": [
+  {
+   "panel": "a",
+   "kind": "bar",
+   "groups": [
+    "N053 ensemble",
+    "E8 (PRIMARY)",
+    "E6 (no ConvNeXt-S)",
+    "cnxs_plain",
+    "cnxs_comp"
+   ],
+   "colors": [
+    "#767E86",
+    "#3A6C9E",
+    "#55BDB2",
+    "#A1CA8A",
+    "#CF832F"
+   ],
+   "n": [
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "mean": [
+    0.6861999999999999,
+    0.69675,
+    0.6929000000000001,
+    0.6751,
+    0.669
+   ],
+   "sd": [
+    0.019657568516985975,
+    0.013930003589375023,
+    0.0151320851173921,
+    0.012303657992645907,
+    0.009050966799187833
+   ],
+   "median": [
+    0.6861999999999999,
+    0.69675,
+    0.6929000000000001,
+    0.6751,
+    0.669
+   ],
+   "whisker": "sd",
+   "stats": [
+    {
+     "test": "paired t-test",
+     "p": 0.23334566272913534,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 0.9333826509165414,
+     "stars": "ns",
+     "a": "N053 ensemble",
+     "b": "E8 (PRIMARY)",
+     "reference": "N053 ensemble"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.2836633110059198,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 0.9333826509165414,
+     "stars": "ns",
+     "a": "N053 ensemble",
+     "b": "E6 (no ConvNeXt-S)",
+     "reference": "N053 ensemble"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.2789067634869256,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 0.9333826509165414,
+     "stars": "ns",
+     "a": "N053 ensemble",
+     "b": "cnxs_plain",
+     "reference": "N053 ensemble"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.26177156552108,
+     "n_i": 2,
+     "n_j": 2,
+     "p_holm": 0.9333826509165414,
+     "stars": "ns",
+     "a": "N053 ensemble",
+     "b": "cnxs_comp",
+     "reference": "N053 ensemble"
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "GOAL direction r (v10)"
+  }
+ ],
+ "matplotlib": "3.11.0"
+}

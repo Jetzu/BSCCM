@@ -1,0 +1,249 @@
+{
+ "png": "/home/hpc/v181bb/v181bb10/BSCCM/figures/overview/fig10_decoders_autoencoders.png",
+ "svg": "/home/hpc/v181bb/v181bb10/BSCCM/figures/overview/fig10_decoders_autoencoders.svg",
+ "created": "2026-11-27T07:25:00",
+ "command": [
+  "/home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python",
+  "figures/overview/make_n087.py"
+ ],
+ "cwd": "/home/hpc/v181bb/v181bb10/BSCCM",
+ "source": [
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N087-decoder-capacity-autoencoders-user-11-24/decoders/goal.csv",
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N087-decoder-capacity-autoencoders-user-11-24/decoders_ae/goal.csv",
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N087-decoder-capacity-autoencoders-user-11-24/decoders_stats/goal.csv",
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N087-decoder-capacity-autoencoders-user-11-24/cluster/",
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N087-decoder-capacity-autoencoders-user-11-24/sandbox_eval/",
+  "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N087-decoder-capacity-autoencoders-user-11-24/fullninth_eval/"
+ ],
+ "notes": "N087. a GOAL of a linear decoder with a rank-k bottleneck on frozen features (dashed = the fine-tuned model's own head .6730); predictions need about 8-12 dimensions. b frozen features with an MLP decoder (fine-tuned = own linear head; rings = the 2 directions): self-supervised features without fine-tuning (.603) are no better than 144 hand-made per-channel image statistics (.607); autoencoders .594-.624; fine-tuning .673. c clustering of 10,137 held-out draw-0 cells against 10 gated cell types (kNN balanced accuracy, chance .10): autoencoders (.342-.346) beat self-supervised features (.306) but equal image statistics (.354) -> they mostly encode brightness/scatter. d ImageStream sandbox (9 markers per cell, rings = 3 held-out donors): registered co-expression error over 36 marker pairs; learned marker priors (fitted on another donor's joint labels) do not reach all-marker training (autoencoder prior lower than single-marker training on all 3 donors, paired t Holm p < .05, but above the pre-registered .21 bar); all-marker training on 1/9 of the cells (same label count) is as good as on all cells -> joint measurement, not label count, gives the co-expression.",
+ "page": "letter",
+ "width_in": 8.5,
+ "height_in": 5.0394,
+ "png_px": [
+  3840,
+  2276
+ ],
+ "significance": "two-sided; Holm-corrected over all comparisons of a panel (one family per panel); * <0.05 ** <0.01 *** <0.001 **** <0.0001",
+ "panels": [
+  {
+   "panel": "a",
+   "kind": "lines",
+   "series": [
+    {
+     "label": "fine-tuned ResNet-50",
+     "color": "#3A6C9E",
+     "points": 5
+    },
+    {
+     "label": "self-supervised, not fine-tuned",
+     "color": "#767E86",
+     "points": 5
+    }
+   ],
+   "xlabel": "Decoder bottleneck rank k",
+   "ylabel": "GOAL (mean Pearson r)"
+  },
+  {
+   "panel": "b",
+   "kind": "bar",
+   "groups": [
+    "fine-tuned\n(own head)",
+    "self-supervised",
+    "image\nstatistics",
+    "autoencoder\n16-d",
+    "autoencoder\n64-d",
+    "autoencoder\n256-d"
+   ],
+   "colors": [
+    "#767E86",
+    "#3A6C9E",
+    "#A1CA8A",
+    "#CF832F",
+    "#CF832F",
+    "#CF832F"
+   ],
+   "n": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "mean": [
+    0.6729677138634037,
+    0.6027074529126316,
+    0.6070960300988401,
+    0.617323195582361,
+    0.6235223771687931,
+    0.594403831017086
+   ],
+   "sd": [
+    0.019485294506149702,
+    0.015813647164650075,
+    2.491737772729741e-05,
+    0.008535925373516665,
+    0.004347846188329374,
+    0.016056780464881865
+   ],
+   "median": [
+    0.6729677138634037,
+    0.6027074529126316,
+    0.6070960300988401,
+    0.617323195582361,
+    0.6235223771687931,
+    0.594403831017086
+   ],
+   "whisker": "sd",
+   "stats": [],
+   "no_stats_reason": "one model per representation; rings = the 2 directions",
+   "ylabel": "GOAL, frozen features + MLP"
+  },
+  {
+   "panel": "c",
+   "kind": "bar",
+   "groups": [
+    "self-supervised",
+    "image\nstatistics",
+    "autoencoder\n16-d",
+    "autoencoder\n64-d",
+    "autoencoder\n256-d"
+   ],
+   "colors": [
+    "#3A6C9E",
+    "#A1CA8A",
+    "#CF832F",
+    "#CF832F",
+    "#CF832F"
+   ],
+   "n": [
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "mean": [
+    0.3060827439562726,
+    0.3535857224380924,
+    0.3421835688199939,
+    0.3461150827833197,
+    0.3444382128294899
+   ],
+   "sd": [
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "median": [
+    0.3060827439562726,
+    0.3535857224380924,
+    0.3421835688199939,
+    0.3461150827833197,
+    0.3444382128294899
+   ],
+   "whisker": "sd",
+   "stats": [],
+   "no_stats_reason": "one value per representation (10,137 cells, 10 classes, 5-fold CV grouped by field of view)",
+   "ylabel": "Cell-type kNN balanced accuracy"
+  },
+  {
+   "panel": "d",
+   "kind": "bar",
+   "groups": [
+    "one marker\nper cell",
+    "+ linear\nprior (4)",
+    "+ autoencoder\nprior (6)",
+    "all markers,\n1/9 of cells",
+    "all markers,\nall cells"
+   ],
+   "colors": [
+    "#767E86",
+    "#B94A58",
+    "#B94A58",
+    "#55BDB2",
+    "#3A6C9E"
+   ],
+   "n": [
+    3,
+    3,
+    3,
+    3,
+    3
+   ],
+   "mean": [
+    0.22948573023296223,
+    0.27020609205072615,
+    0.21230612531470208,
+    0.17381706169026115,
+    0.1890751821172618
+   ],
+   "sd": [
+    0.03562762500829113,
+    0.03833151178242271,
+    0.033126125579539624,
+    0.007379046334978548,
+    0.016995113638389375
+   ],
+   "median": [
+    0.2104983622340387,
+    0.2713883781987388,
+    0.1954317658024689,
+    0.1711974171768477,
+    0.1979689089309264
+   ],
+   "whisker": "sd",
+   "stats": [
+    {
+     "test": "paired t-test",
+     "p": 0.4309775778047845,
+     "n_i": 3,
+     "n_j": 3,
+     "p_holm": 0.4309775778047845,
+     "stars": "ns",
+     "a": "one marker\nper cell",
+     "b": "+ linear\nprior (4)",
+     "reference": "one marker\nper cell"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.0076738880949525565,
+     "n_i": 3,
+     "n_j": 3,
+     "p_holm": 0.030695552379810226,
+     "stars": "*",
+     "a": "one marker\nper cell",
+     "b": "+ autoencoder\nprior (6)",
+     "reference": "one marker\nper cell"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.12789134845065725,
+     "n_i": 3,
+     "n_j": 3,
+     "p_holm": 0.38367404535197175,
+     "stars": "ns",
+     "a": "one marker\nper cell",
+     "b": "all markers,\n1/9 of cells",
+     "reference": "one marker\nper cell"
+    },
+    {
+     "test": "paired t-test",
+     "p": 0.15270823776487605,
+     "n_i": 3,
+     "n_j": 3,
+     "p_holm": 0.38367404535197175,
+     "stars": "ns",
+     "a": "one marker\nper cell",
+     "b": "all markers,\nall cells",
+     "reference": "one marker\nper cell"
+    }
+   ],
+   "no_stats_reason": null,
+   "ylabel": "Co-expression error, 36 pairs (|r|)"
+  }
+ ],
+ "matplotlib": "3.11.0"
+}

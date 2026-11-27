@@ -405,7 +405,7 @@ In the round-one code check, 16 of 19 discovered tests passed. Three augmentatio
 
 The links lead to experiment records or their rows in the notebook index. Early scores use the label version and split in force at the time. Scores are rounded to three decimals except where extra precision identifies a record, re-base or small effect.
 “Flat” refers to an item's registered comparison. A positive result for the GS student or MM3 can coexist with a flat GOAL result.
-As of 24 November 2026, the N088 literature review is complete, N085 set the record (.6967), N087 is open, N089 records the private release, and N090 has launched.
+As of 24 November 2026, the N088 literature review is complete, N085 set the record (.6967), N087 (decoders, autoencoders, marker priors) and N090 (gentle fine-tuning, worse) are complete, and N089 records the private release.
 The index jumps from N068 to N073. [Archive](.agent-research/notebook/INDEX_ARCHIVE.md) · [Current index](.agent-research/notebook/INDEX.md)
 
 ### Establish the dataset and the two measurable links
@@ -676,7 +676,7 @@ The item has a plan and submitted work. Its primary result was still pending at 
 **[N086] · Publish the overview figures.** Five initial figures summarized progress, experiments, errors, joint decoding and GS transfer.
 The extension added four architecture and alignment figures. The nine reviewed figures and their data sources are linked below.
 
-**[N087] · Test decoders and autoencoders.** The item records 14 jobs. The conditional flow comparison is complete. [Frozen-feature results](#what-did-the-flow-decoder-recover)
+**[N087] · Test decoders and autoencoders (complete).** On frozen fine-tuned features no decoder beats the model's own linear head (.673; ridge .670, kNN .664, MLP .661), and the predictions need about 8-12 dimensions (rank 4 .617, rank 8 .656). Frozen self-supervised features (MLP .603) carry no more marker information than 144 hand-made image statistics (.607); a 64-d image autoencoder reaches .624; fine-tuning is worth +.05-.07. Autoencoders cluster held-out cells by cell type better than the self-supervised features (kNN balanced accuracy .34-.35 vs .31) but no better than image statistics (.35), so they mostly encode brightness and scatter. Learned marker priors from another donor's joint labels did not meet their pre-registered bar in the ImageStream sandbox (best: autoencoder prior, co-expression error .212 vs .229 single, bar .21), and a flow-matching decoder fixed the spread but not co-expression. With the same number of labels, all-marker training on 1/9 of the cells gave co-expression error .174 vs .229, so joint measurement, not label count, carries the co-expression. [N087] · [Figure 10](figures/overview/fig10_decoders_autoencoders.png)
 
 | Arm | Comparison | Jobs |
 |---|---|---|
@@ -752,6 +752,12 @@ On held-out slides, SigLIP ranked the paired LF cell in the top ten for .030 of 
 Clinical adaptation and test-draw normalization are compared with unadapted predictions, class anchoring and changes to the teacher target.
 
 ![Clinical marker contrasts and new-draw effects of domain adaptation](figures/overview/fig9_alignment_domain.png)
+
+### Figure 10 · Decoders, autoencoders and marker priors
+
+Bottleneck rank vs GOAL, frozen representations with an MLP decoder, cell-type clustering of held-out cells, and learned marker priors in the ImageStream sandbox (N087).
+
+![Decoder capacity, autoencoder representations, clustering and marker priors](figures/overview/fig10_decoders_autoencoders.png)
 
 ## Current work and open questions
 

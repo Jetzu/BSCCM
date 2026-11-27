@@ -1,0 +1,17 @@
+1442342 n087_feat_b10 scripts/train_lf.py --out /hnvme/workspace/v181bb10-bsccm/runs/n051_v10_base_b10 --protocol b1to0 --channels all --phase 1 --arch resnet50 --epochs 10 --bs 256 --lr 0.0005 --workers 15 --seed 0 --w-cls 0.5 --include-gs 0 --dual-zoom 1 --targets targets_v5cx_v10.npz --zoom 1 --init-ssl /hnvme/workspace/v181bb10-bsccm/runs/n031_ssl_aug_ex0/encoder_final.pt --dump-features 1
+1442343 n087_feat_b01 scripts/train_lf.py --out /hnvme/workspace/v181bb10-bsccm/runs/n051_v10_base_b01 --protocol b0to1 --channels all --phase 1 --arch resnet50 --epochs 10 --bs 256 --lr 0.0005 --workers 15 --seed 0 --w-cls 0.5 --include-gs 0 --dual-zoom 1 --targets targets_v5cx_v10.npz --zoom 1 --init-ssl /hnvme/workspace/v181bb10-bsccm/runs/n031_ssl_aug_ex1/encoder_final.pt --dump-features 1
+1442504 n087_flow /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N087-decoder-capacity-autoencoders-user-11-24/n087_flow_decoder.py /hnvme/workspace/v181bb10-bsccm/runs/n087_flow --part both
+1442606 n087_decoders STEP=decoders
+1442607 n087_ae16_b10 STEP=ae D=b10 DIM=16 mask 0
+1442608 n087_ae64_b10 STEP=ae D=b10 DIM=64 mask 0
+1442609 n087_ae256_b10 STEP=ae D=b10 DIM=256 mask 0
+1442610 n087_ae16_b01 STEP=ae D=b01 DIM=16 mask 0
+1442611 n087_ae64_b01 STEP=ae D=b01 DIM=64 mask 0
+1442612 n087_ae256_b01 STEP=ae D=b01 DIM=256 mask 0
+1442613 n087_sandbox STEP=sandbox
+1442617 n087_fullninth_d0 scripts/train_ifc_sandbox.py --regime full --test-donor 0 --max-train 5890 --epochs 135 --out /hnvme/workspace/v181bb10-bsccm/runs/n087_fullninth_d0
+1442618 n087_fullninth_d1 scripts/train_ifc_sandbox.py --regime full --test-donor 1 --max-train 8734 --epochs 135 --out /hnvme/workspace/v181bb10-bsccm/runs/n087_fullninth_d1
+1442619 n087_fullninth_d2 scripts/train_ifc_sandbox.py --regime full --test-donor 2 --max-train 15825 --epochs 135 --out /hnvme/workspace/v181bb10-bsccm/runs/n087_fullninth_d2
+1444242 n087_post STEP=post
+1444332 n087_stats_b10 (CPU 48 cores: image statistics baseline) /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N087-decoder-capacity-autoencoders-user-11-24/n087_stats_baseline.py /hnvme/workspace/v181bb10-bsccm/runs/n051_v10_base_b10/features.npz /hnvme/workspace/v181bb10-bsccm/runs/n087/stats_b10/features.npz --device cpu
+1444333 n087_stats_b01 (CPU 48 cores: image statistics baseline) /home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N087-decoder-capacity-autoencoders-user-11-24/n087_stats_baseline.py /hnvme/workspace/v181bb10-bsccm/runs/n051_v10_base_b01/features.npz /hnvme/workspace/v181bb10-bsccm/runs/n087/stats_b01/features.npz --device cpu

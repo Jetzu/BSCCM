@@ -1,0 +1,5 @@
+**PASS for integration.** The real feature dumps scored **0.68674590** for b10 and **0.65918953** for b01, giving **GOAL 0.67296771**. This reproduces the recorded 0.6730 within the requested tolerance. [Reference scores](./reference_check/goal.csv)
+
+All **49 CPU tests passed**, including the 31 archived N080 tests. Verification covered two-step training, AE recovery after SIGTERM and SIGUSR1, validation-only marker priors, and byte-identical no-prior predictions and metrics. Both integration diffs apply cleanly. [Verification details](./README.md#cpu-verification)
+
+The five new scripts, two patched copies, diffs, tests, and exact run commands are staged for Claude. The image AE reserves 1% of source-draw fields for validation and masks 25% of image patches by default. Full-scale fits, GPU behavior, scheduler preemption, W&B synchronization, and the one-H100-hour estimate remain unverified. [Integration plan](./README.md#integration) · [Handback](./codex_last_message)
