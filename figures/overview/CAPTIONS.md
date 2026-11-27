@@ -239,7 +239,7 @@ There are 15.7k registered cell pairs on 2 slides. The aim is to make LF-trained
 - SOTAlign (SigLIP plus optimal transport on unpaired clinical GS and LF cells): .028.
 - Across slides, every method stays at .01–.04.
 - Within a slide (held-out fields of view, chance .010–.016), the same SigLIP and SOTAlign models reach R@10 .38–.40.
-- Caveat (literature review N088, check pending): paired images share their field of view (background, focus) and there are only ~3 paired cells per field, so part of the within-slide score may come from recognising the field rather than the cell. The cross-slide number is the trustworthy one.
+- The field-of-view audit (N092) ruled out a shortcut: trained on pairs of different cells from the same field, the same model reaches only R@10 .02-.03 (chance .01-.02), while true pairs pick the partner within its field .77-.85 of the time (chance .23-.28). So the embedding does learn cell identity; it breaks under the shift from one slide to another.
 
 **b. Transferring a per-cell signal.** The signal is a scalar measured on both slides (autofluorescence); the score is r against its measured value on the held-out cells. Each bar is a complete pipeline.
 - Embedding plus ridge readout: .21–.40 (CCA .21, SigLIP .28, SOTAlign .33, Procrustes .40). The linear map gives .57.
@@ -254,7 +254,7 @@ There are 15.7k registered cell pairs on 2 slides. The aim is to make LF-trained
 - Sets of different cells carry no per-cell information (r ≈ 0).
 
 **Says:**
-- Joint embeddings retrieve cells within a slide (possibly helped by a field-of-view shortcut, check pending) but not on a new slide.
+- Joint embeddings learn cell identity within a slide (confirmed by the N092 field-of-view control) but do not survive a new slide.
 - For carrying a per-cell signal from LF to GS, directly distilling the LF model into a GS network beat every embedding-plus-readout pipeline we ran.
 - Without paired cells, only small sets of the same cells give useful supervision.
 

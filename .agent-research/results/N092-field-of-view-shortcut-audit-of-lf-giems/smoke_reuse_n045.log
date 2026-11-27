@@ -1,0 +1,22 @@
+{"event": "selftest_passed", "toy1_n": 33, "toy1_R1": 0.36363636363636365, "toy1_R10": 0.6363636363636364, "toy1_withinfield_acc": 0.3225806451612903, "toy1_fovhit10": 1.0, "toy1_fieldmean_R10": 0.6363636363636364, "toy2_n": 148, "toy2_R10": 0.5135135135135135, "toy2_n045_R10": 0.5135135135135135, "toy2_fovhit10": 0.668918918918919, "toy2_withinfield_acc": 0.49264705882352944, "derangement_pairs": 136}
+{"event": "data_loaded", "seconds": 0.2, "n_pairs": 15712, "universe": 15712}
+{"event": "partition_matches_n045_v2", "protocol": "fov_b0", "seed": 0}
+{"event": "arm_complete", "protocol": "fov_b0", "seed": 0, "arm": "raw_ridge", "alpha": 1.0, "val_R10": 0.14386317907444668, "n_train": 8007, "reused": true, "fit_seconds": 0.0}
+{"event": "arm_complete", "protocol": "fov_b0", "seed": 0, "arm": "cca", "n_train": 8007, "reused": true, "fit_seconds": 0.0}
+{"event": "arm_complete", "protocol": "fov_b0", "seed": 0, "arm": "siglip_pairs", "best_step": 4100, "last_step": 4500, "best_val_R10": 0.4124748490945674, "n_train": 8007, "reused": true, "fit_seconds": 0.0}
+== fov_b0 seed0 (GS query -> LF gallery, n_test=1014)
+                     arm          ckpt            R1           R10        v2_R10      fovhit10   ch_fovhit10   inField_acc    ch_inField   R10_exclFOV   ch_R10_excl fieldmean_R10       n_train
+                     cca          best        0.0325        0.1785        0.1785        0.2239        0.0475        0.6715        0.2328        0.1795        0.0099        0.2870          8007
+               raw_ridge          best        0.0237        0.1479        0.1479        0.1992        0.0475        0.6538        0.2328        0.1479        0.0099        0.3501          8007
+            siglip_pairs          best        0.0868        0.3994        0.3994        0.4349        0.0475        0.8399        0.2328        0.4034        0.0099        0.4517          8007
+            siglip_pairs          last        0.0819        0.4034        0.3994        0.4408        0.0475        0.8462        0.2328        0.4053        0.0099        0.4428          8007
+{"event": "partition_matches_n045_v2", "protocol": "fov_b1", "seed": 0}
+{"event": "arm_complete", "protocol": "fov_b1", "seed": 0, "arm": "raw_ridge", "alpha": 100.0, "val_R10": 0.14839797639123103, "n_train": 4495, "reused": true, "fit_seconds": 0.0}
+{"event": "arm_complete", "protocol": "fov_b1", "seed": 0, "arm": "cca", "n_train": 4495, "reused": true, "fit_seconds": 0.0}
+{"event": "arm_complete", "protocol": "fov_b1", "seed": 0, "arm": "siglip_pairs", "best_step": 1400, "last_step": 4500, "best_val_R10": 0.40640809443507586, "n_train": 4495, "reused": true, "fit_seconds": 0.0}
+== fov_b1 seed0 (GS query -> LF gallery, n_test=609)
+                     arm          ckpt            R1           R10        v2_R10      fovhit10   ch_fovhit10   inField_acc    ch_inField   R10_exclFOV   ch_R10_excl fieldmean_R10       n_train
+                     cca          best        0.0411        0.2036        0.2036        0.2545        0.0643        0.6758        0.2821        0.2036        0.0165        0.2496          4495
+               raw_ridge          best        0.0197        0.1445        0.1445        0.1921        0.0643        0.6538        0.2821        0.1461        0.0165        0.2447          4495
+            siglip_pairs          best        0.0788        0.3842        0.3842        0.4319        0.0643        0.7985        0.2821        0.3859        0.0165        0.4187          4495
+            siglip_pairs          last        0.0476        0.3612        0.3842        0.4089        0.0643        0.7711        0.2821        0.3629        0.0165        0.3530          4495

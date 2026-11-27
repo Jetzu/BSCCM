@@ -1,7 +1,7 @@
 {
  "png": "/home/hpc/v181bb/v181bb10/BSCCM/figures/overview/fig9_alignment_domain.png",
  "svg": "/home/hpc/v181bb/v181bb10/BSCCM/figures/overview/fig9_alignment_domain.svg",
- "created": "2026-11-24T18:22:29",
+ "created": "2026-11-27T09:26:42",
  "command": [
   "/home/hpc/v181bb/v181bb10/miniforge3/envs/triad/bin/python",
   "figures/overview/make_alignment.py"
@@ -14,6 +14,7 @@
   "/home/hpc/v181bb/v181bb10/BSCCM/.agent-research/results/N058-confirm-hub-tt6c-on-mll23-fine-contrasts/n058_per_run.csv"
  ],
  "notes": "Domain shift. a-b a network that reads Giemsa photos (GS student, trained on BSCCM Giemsa cells) applied to public clinical smear datasets (other labs, stains, cameras); quality = AUROC of pre-registered cell-class contrasts (0.5 = chance). a PBC (N020, seed 0, pbc_transfer_auroc.csv; rings = the 8 contrasts, paired t vs no adaptation, Holm): means .406 / .438 / .462 / .555; unsupervised domain-adversarial training (DANN, unlabelled PBC half A) and test-time whitening do not transfer reliably (contrasts .11-.90). b MLL23, 15 contrasts (N056-N058 harness; rings = 3 LF teacher models, each the mean of its 2-3 student seeds; paired t by teacher vs output distillation, Holm). All arms use class anchoring (cross-entropy on 3 common classes of labelled PBC half A; anchor x 4 / x 16 = loss weight .5 -> 2 / 8). Post-hoc alignment of the clinical features to BSCCM (N056 tables/contrasts_all.csv; unbalanced OT tau .91, mean shift, CORAL) moves the 3-teacher mean by <= .007 but single teachers by up to -.038 (OT, teacher 0); the aligned arms decode a normalised 8-view mean embedding while the raw arm averages 8 decoded predictions. Distilling the LF latent instead of the outputs: .681 (matched anchoring, N058) / .704 (N056 anchoring). Registered rules: latent vs output distillation = higher (N058, mean gain .113 > seed floor .074); anchor sweep = no difference. c LF model applied to a new blood draw, change vs the seed-matched unadapted model: DANN batch-adversarial training (N014, ResNet-18, v4 labels, 12-target mean; 2 directions +.0025 / -.0015 vs the full-precision seed-0 baseline in n013_v4_noise.csv); AdaBN (re-estimated BatchNorm statistics on 20k unlabelled new-draw images, N026, 4 runs) -.005 to -.011.",
+ "page": "letter",
  "width_in": 8.5,
  "height_in": 2.8346,
  "png_px": [
