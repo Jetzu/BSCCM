@@ -15,6 +15,11 @@ Baseline = the same model's regression outputs, score z(out a) - z(out b) (fig14
 (39 B vs 89 T; b01 has only 10 B cells -> descriptive). Success = heads beat regression by >= .05 on b10 T vs B AND the mean over all
 15 lineage pairs (both directions) rises by >= .02, with slide control |AUROC - .5| <= .1 for every pair. Kill: T vs B gain < .02.
 AMENDMENT (user 11-27 "train a classifier head on this", before any N098 result was read): third arm "multiclass" = one 6-lineage multinomial head (n098_multiclass.py), same metric + slide control; descriptive unless its slide control stays within .5 +- .1.
+AMENDMENT 2 (user 11-27 "test them on the full ensemble"; written after the single-model heads result (flat: T vs B .921 vs .928 b10,
+.728 vs .711 b01) and BEFORE any ensemble dump ran): arm "E8 heads" (n098_ensemble_heads.py) = the same per-marker heads on the frozen
+features of every single-marker model of the 8 E8 members (20 dumps via train_lf.py --dump-features, sanity: eval preds = archived),
+C fixed 1e-3, z-logits averaged over seeds then over the 8 members. Baseline = E8 regression outputs (T vs B b10 .947, b01 .695, mean
+.821). Success = T vs B mean over both directions >= +.05 over E8 regression AND all-pair mean >= +.02, slide control within .5 +- .1.
 If it succeeds: add the heads to fine-tuning (GPU, needs its own item) and re-score E8-style ensembles.
 
 ## Changes
