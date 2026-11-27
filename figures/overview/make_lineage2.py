@@ -21,7 +21,7 @@ def mat(df, labs):
 fig, ax = pfig.figure(1, 3, height_mm=82)
 for k, (dd, lab) in enumerate((('b10', 'train draw 1, test draw 0'), ('b01', 'train draw 0, test draw 1'), (None, 'mean of both directions'))):
     sub = b if dd is None else b[b.direction == dd]
-    pfig.heatmap(ax[k], mat(sub, BL), [BN[x] for x in BL], [BN[x] for x in BL], vmin=.5, vmax=1, label=f'AUROC, {lab}')
+    pfig.heatmap(ax[k], mat(sub, BL), [BN[x] for x in BL], [BN[x] for x in BL], vmin=.5, vmax=1, label=f'AUROC, {lab}', values='{:.2f}')
 for a in ax:
     for t in a.get_xticklabels() + a.get_yticklabels(): t.set_fontsize(5.5)
 sc = b.groupby(['A', 'B']).slide_control.mean()
@@ -37,8 +37,8 @@ pfig.save(fig, name='fig14_lineage_separability', sub='overview', root=R, source
 
 # ------------------------------------------------------------------ Figure 17: same separability in the ImageStream sandbox
 fig, ax = pfig.figure(1, 2, height_mm=82)
-pfig.heatmap(ax[0], mat(s_sb[s_sb.arm == 'all markers per cell'], SL), [SN[x] for x in SL], [SN[x] for x in SL], vmin=.5, vmax=1, label='AUROC, all-marker training')
-pfig.heatmap(ax[1], mat(s_sb[s_sb.arm == 'one marker per cell'], SL), [SN[x] for x in SL], [SN[x] for x in SL], vmin=.5, vmax=1, label='AUROC, one-marker training')
+pfig.heatmap(ax[0], mat(s_sb[s_sb.arm == 'all markers per cell'], SL), [SN[x] for x in SL], [SN[x] for x in SL], vmin=.5, vmax=1, label='AUROC, all-marker training', values='{:.2f}')
+pfig.heatmap(ax[1], mat(s_sb[s_sb.arm == 'one marker per cell'], SL), [SN[x] for x in SL], [SN[x] for x in SL], vmin=.5, vmax=1, label='AUROC, one-marker training', values='{:.2f}')
 for a in ax:
     for t in a.get_xticklabels() + a.get_yticklabels(): t.set_fontsize(5.5)
 pfig.save(fig, name='fig17_lineage_separability_sandbox', sub='overview', root=R, source=[N + '/sep_sandbox.csv', N + '/n097_separation.py'],
